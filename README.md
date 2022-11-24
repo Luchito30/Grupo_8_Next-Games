@@ -10,7 +10,7 @@ La parte de periféricos estan orientados a la conformidad del jugador y son de 
 * Mi nombre es Edgardo de la Cruz, tengo 24 años, resido en La Matanza. Me estoy formando en Programación Web Full Stack en Digital House. Actualmente me interesa trabajar en una sofware Factory en el área de desarrrollo. Me pienso como alguien responsable, paciente y proactivo, 
 ---
 
-* Mi nombre es Adriana Guitian, tengo 35 años, resido en Rosario. Estudiante de Programación Web Full Stack en Digital House. Me considero una mujer emprendedora, ya que trabajo por mi cuenta con mis emprendimientos que genero. Y me gusta la independecia economica apunto a eso siempre. Estoy en constante actualización y me adapto a los cambios.
+* Mi nombre es Adriana Guitian, tengo 35 años, resido en Rosario. Estudiante de Programación Web Full Stack en Digital House. Me considero una mujer emprendedora, me gusta la independecia economica apunto a eso siempre. Estoy en constante actualización y me adapto a los cambios. 
 ---
 
 *
