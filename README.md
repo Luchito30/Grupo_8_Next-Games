@@ -16,7 +16,7 @@ La parte de periféricos estan orientados a la conformidad del jugador y son de 
 * Mi nombre es Luis Dick, tengo 32 años, resido en Berazategui en la provincia de Buenos Aires. Soy estudiante de Programación Web full Stack en fundación formar que dictan el curso de Digital House. Me considero una persona que le gusta aprender, que se adapta a los cambios y que es responsable en las cosas que hace. Actualmente busco insertarme en el mercado laboral para tener mi primera experiencia como desarollador Web, a su vez seguir capacitándome.
 ---
 
-*
+* Mi nombre es Agustina Acosta, tengo 21 años, resido en Buenos Aires. Soy estudiante de Programación Web Full Stack en la fundación FORMAR 
 ---
 
 *
