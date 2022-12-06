@@ -1,5 +1,5 @@
 # NextGames
-![logo](/public/img/dese.jpeg)
+![logo](/public/img/deus.png)
 
 _NextGames es una empresa de venta de videojuegos y periféricos gamers.
 Los productos comercializados abarcan desde franquicias como Assassins creed, Far cry, Doom, Disney, Star Wars, entre otros muchos más!
