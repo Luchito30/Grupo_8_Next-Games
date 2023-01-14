@@ -1,0 +1,61 @@
+body{
+    background-color: var(--fondo1VioletaO);
+}
+
+.logo{
+width: 25%;
+display:block;
+margin: 0px 120px;
+position:absolute;
+top:-10px;
+    
+}
+.search-bar{
+    display: none;
+}
+.menu-hamburguesa{
+    width: 30px;
+    height: 30px;
+    color: white;
+    border: 1px solid var(--fondo2VioletaC);
+    border-radius: 50%;
+    background-color: var(--fondo2VioletaC);
+    text-align: center;
+    font-size: 15px;
+    margin: 20px 10px;
+    padding-top: 5px;
+
+}
+.right-nav-bar{
+    float:right;
+    position:absolute;
+    top:0;
+    right: 0;
+    margin: 20px 10px
+}
+
+.left-nav-bar{
+    display: none;
+}
+
+.carro{
+    color: white;
+    background-color: violet;
+    border-radius: 50%;
+    background-color: var(--fondo2VioletaC);
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--fondo2VioletaC);
+}
+
+.lupita{
+    margin-right: 5px;
+    border-radius: 50%;
+    background-color: var(--fondo2VioletaC);
+    text-align: center;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--fondo2VioletaC);
+}
