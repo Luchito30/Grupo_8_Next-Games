@@ -69,12 +69,7 @@ a {
     width: 20px;
     height: 20px;
     border: 1px solid var(--fondo2VioletaC);
-<<<<<<< HEAD
-    justify-content: s;
-}
-
-=======
-    font-size: 9px;
+     font-size: 9px;
 }
 
 @media (min-width: 485px) {
@@ -167,4 +162,3 @@ a {
 
     }
 }
->>>>>>> e2f9150d28235e13d1841d6edca6e07f5c86f05e
