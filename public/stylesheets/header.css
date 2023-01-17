@@ -1,19 +1,30 @@
-body{
+body {
     background-color: var(--fondo1VioletaO);
 }
 
-.logo{
-width: 25%;
-display:block;
-margin: 0px 120px;
-position:absolute;
-top:-10px;
+a {
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     
 }
-.search-bar{
+
+.logo {
+    width: 25%;
+    position: relative;
+    left: 7px;
+    bottom: 7px;
+}
+
+.search-bar {
     display: none;
 }
-.menu-hamburguesa{
+
+.menu-hamburguesa {
     width: 30px;
     height: 30px;
     color: white;
@@ -26,38 +37,134 @@ top:-10px;
     padding-top: 5px;
 
 }
-.right-nav-bar{
-    float:right;
-    position:absolute;
-    top:0;
-    right: 0;
+
+.right-nav-bar {
+    float: right;
     margin: 20px 10px
 }
 
-.left-nav-bar{
+.left-nav-bar--1,
+.left-nav-bar--2 {
     display: none;
 }
 
-.carro{
+.carro {
+    font-size: 10px;
     color: white;
     background-color: violet;
     border-radius: 50%;
     background-color: var(--fondo2VioletaC);
     text-align: center;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border: 1px solid var(--fondo2VioletaC);
 }
 
-.lupita{
+.lupita {
     margin-right: 5px;
     border-radius: 50%;
     background-color: var(--fondo2VioletaC);
     text-align: center;
     color: white;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border: 1px solid var(--fondo2VioletaC);
+<<<<<<< HEAD
     justify-content: s;
 }
 
+=======
+    font-size: 9px;
+}
+
+@media (min-width: 485px) {
+    .logo {
+        left: -27px;
+    }
+
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    .left-nav-bar--1 {
+        display: flex;
+        position: relative;
+        padding-top: 44px;
+        right: 45px;
+    }
+
+
+    .left-nav-bar--2 {
+        right: 11px;
+        display: flex;
+        order: 2;
+        position: relative;
+        top: 46px;
+        ;
+    }
+
+    .carro {
+        left: 91px;
+        position: relative;
+        top: 15px;
+        ;
+    }
+
+
+    .lupita {
+        display: block;
+        position: relative;
+        top: 36px;
+        left: 61px;
+    }
+
+    .search-bar {
+        display: block;
+        right: 23px;
+        display: block;
+        position: relative;
+        top: 39px;
+        width: 80%;
+        margin: -15px;
+        border: 1px solid var(--letrasSubtitulos1);
+        border-radius: 7px;
+        background-color: transparent;
+    }
+    .search-bar::placeholder
+    {
+        font-size: 12px;
+        padding: 5px;
+        font-family: var(--FontTitulo);
+    }
+    .home {
+        right: 12px;
+        position: relative;
+        font-family: var(--FontTitulo);
+
+
+    }
+
+    .registro {
+        bottom: 3px;
+        position: relative;
+        right: 17px;
+        color: var(--letrasSubtitulos2);
+        font-family: var(--FontTitulo);
+
+    }
+
+    .login {
+        bottom: 2px;
+        position: relative;
+        right:10px;
+        font-family: var(--FontTitulo);
+
+
+    }
+    .produ
+    {
+        font-family: var(--FontTitulo);
+
+    }
+}
+>>>>>>> e2f9150d28235e13d1841d6edca6e07f5c86f05e
