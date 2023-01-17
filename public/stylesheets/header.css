@@ -58,4 +58,6 @@ top:-10px;
     width: 30px;
     height: 30px;
     border: 1px solid var(--fondo2VioletaC);
+    justify-content: s;
 }
+
