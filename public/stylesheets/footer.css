@@ -19,27 +19,41 @@ footer{
 
  
  .footer-d .footer-left img{
-    width: 150px;
-    margin: 0;
+    width: 81px;
+    height: 84px;
+    margin: 31px;
+    margin-left: 15px;
+    margin-top: 52px;
+    position: relative;
+
     
  }
  .footer-d .footer-links{
     color: #fff;
-    margin: 16px 0 12px;
-   ;
+   
     display: table-row;
  }
  .footer-d .footer-links a{
     display: inline-block;
     line-height: 1.8;
     color: #fff;
-    font-family: 'Inter', sans-serif ;
+    font-family: 'Inter semi-bold', sans-serif ;
+    font-size: 13px;
+    margin-left: 27px;
+    margin-top:-25px;
+    
+ }
+  hr{
+   width: 80%;
+   margin: 7px;
+  margin-left: 13px;
+   border: 1px solid #d9d9d9d4;
  }
  .footer-d .footer-company-name{
     color: gray;
     font-size: 14px;
-    font-weight: normal;
-    margin: 0;
+    
+    margin: 12px;
     margin-top: 15px;
     
  }
@@ -49,7 +63,8 @@ footer{
     color: #fff;
     font-size: 13px;
     font-weight: normal;
-    margin: 0;
+    margin: 54px;
+    width: 100px;
     
  }
  .footer-d .social-icons{
@@ -74,3 +89,42 @@ footer{
   margin-right:12px ;
   margin-bottom: 3px;
  }
+ /*--------TABLET---------*/
+
+ @media (min-width:765px) {
+   .footer-d .footer-links a{
+      margin-left: 30px;
+      font-size: 20px;
+      margin-top: 10px;
+   
+   }
+   hr{
+      width: 900px;
+   margin: 20px;
+  margin-left: 20px;
+   }
+   .footer-d .footer-company-name{
+     
+      font-size: 18px;
+      
+      margin: 15px;
+      margin-top: 15px;
+      
+   }
+   .footer-d .social-icons a{
+    width: 30%;
+    font-size: 25px;
+    margin-right: 18px;
+    margin-left: -10px;
+    margin-bottom: 15px;
+   
+ }
+ .footer-d  img{
+   width: 150px;
+   height: 113px;
+   margin-top: 60px;
+   position: relative;
+   margin: 31px;
+    margin-left: 15px;
+ }
+}
