@@ -13,6 +13,7 @@ a {
 .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__logo {
@@ -63,7 +64,7 @@ a {
 }
 
 .right-nav-bar--form input::placeholder {
-    color: black;
+    color: white;
     font-size: 15px;
 }
 
@@ -86,12 +87,12 @@ a {
     text-align: center;
     font-size: 14px;
     padding-top: 9px;
-    margin-top: 18px;
     margin-left: 13px;
 }
 
 .menu-hamburguesa:hover {
     background-color: var(--letrasSubtitulos1);
+    color: black;
 }
 
 .left-nav-bar--1,
@@ -109,11 +110,11 @@ a {
     width: 35px;
     height: 35px;
     border: 1px solid var(--fondo2VioletaC);
-    margin-top: 18px;
 }
 
 .carro:hover {
     background-color: var(--letrasSubtitulos1);
+    color:black
 }
 
 @media (min-width: 485px) {
@@ -152,7 +153,7 @@ a {
     }
 
     .right-nav-bar--busq2::placeholder {
-        color: black;
+        color: white;
         font-size: 18px;
     }
 
@@ -180,7 +181,7 @@ a {
         width: 40px;
         height: 40px;
         font-size: 17px;
-        margin-top: 20px;
+        margin-top: 3px;
     }
 
     .header__section__article {
