@@ -1,0 +1,130 @@
+footer{
+   
+    position: fixed;
+    bottom: 0;
+    background-color: var(--fondo1VioletaO);
+}
+ .footer-d{
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 80px;
+    
+ }
+ .footer-d .footer-left,
+ .footer-d .footer-right{
+    display: flex;
+    vertical-align: top;
+    justify-content: space-between;
+ }
+
+ 
+ .footer-d .footer-left img{
+    width: 81px;
+    height: 84px;
+    margin: 31px;
+    margin-left: 15px;
+    margin-top: 52px;
+    position: relative;
+
+    
+ }
+ .footer-d .footer-links{
+    color: #fff;
+   
+    display: table-row;
+ }
+ .footer-d .footer-links a{
+    display: inline-block;
+    line-height: 1.8;
+    color: #fff;
+    font-family: 'Inter semi-bold', sans-serif ;
+    font-size: 13px;
+    margin-left: 27px;
+    margin-top:-25px;
+    
+ }
+  hr{
+   width: 80%;
+   margin: 7px;
+  margin-left: 13px;
+   border: 1px solid #d9d9d9d4;
+ }
+ .footer-d .footer-company-name{
+    color: gray;
+    font-size: 14px;
+    
+    margin: 12px;
+    margin-top: 15px;
+    
+ }
+
+ .footer-d .footer-right{
+    line-height: 20px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 54px;
+    width: 100px;
+    
+ }
+ .footer-d .social-icons{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+ }
+ 
+
+ .footer-d .social-icons a{
+   color: #fff;
+   display: inline-block;
+   width: 25px;
+  height: 15px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 55px;
+  
+  margin-right:12px ;
+  margin-bottom: 3px;
+ }
+ /*--------TABLET---------*/
+
+ @media (min-width:765px) {
+   .footer-d .footer-links a{
+      margin-left: 30px;
+      font-size: 20px;
+      margin-top: 10px;
+   
+   }
+   hr{
+      width: 900px;
+   margin: 20px;
+  margin-left: 20px;
+   }
+   .footer-d .footer-company-name{
+     
+      font-size: 18px;
+      
+      margin: 15px;
+      margin-top: 15px;
+      
+   }
+   .footer-d .social-icons a{
+    width: 30%;
+    font-size: 25px;
+    margin-right: 18px;
+    margin-left: -10px;
+    margin-bottom: 15px;
+   
+ }
+ .footer-d  img{
+   width: 150px;
+   height: 113px;
+   margin-top: 60px;
+   position: relative;
+   margin: 31px;
+    margin-left: 15px;
+ }
+}
