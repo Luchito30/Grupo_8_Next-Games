@@ -2,6 +2,7 @@ footer{
    
     position: fixed;
     bottom: 0;
+    background-color: var(--fondo1VioletaO);
 }
  .footer-d{
     box-sizing: border-box;
