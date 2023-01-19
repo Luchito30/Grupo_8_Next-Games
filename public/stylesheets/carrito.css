@@ -1,0 +1,39 @@
+.header-2 {
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: 'Inter semi-bold', sans-serif;
+    
+    width: 95%;
+    height: 140px;
+    /* top: ; */
+}
+
+.web-segura {
+    display: flex;
+    justify-content: space-between;
+}
+
+.venta-telefonica {
+    display: inline-block;
+}
+
+.sitio.seguro {
+    display: inline-block;
+}
+
+.body {
+    background-color: var(--fondo2VioletaC);
+}
+
+.logo img {
+    text-align: center;
+    width: 25%;
+}
+
+.mi-carrito {
+    color: var(--letrasTitulos);
+    font-family: var(--FontTitulo);
+    padding: 0px 20px;
+
+}
