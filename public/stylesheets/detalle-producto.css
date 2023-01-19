@@ -1,0 +1,83 @@
+
+body{
+    background-color: #2A2868;
+}
+.container{
+    visibility: hidden;
+}
+img{
+    width: 300px;
+    margin: 50px;
+    transform: rotate(-25.05deg);
+}
+h2{
+    font-family: "Inter-bold", sans-serif;
+    color: white;
+}
+
+.container-details{
+    margin: -6px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index:6 ;
+    height: 117px;
+    background-color: rgb(68, 57, 170, 74%);
+    border-top-right-radius: 60px;
+     border-top-left-radius: 60px;
+  padding-top: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);  
+  cursor: default;
+}
+.odc-header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.cta-text{
+    margin-top: 11px;
+    margin-left: 25px;
+    color: white;
+    font-size: 18px;
+
+}.read{
+    background: transparent;
+    border: none;
+    color: #BC79F0;
+}
+.precio{
+    position: relative;
+    top: 9px;
+    left: -81px;
+    font-family: "Inter semi-bold", sans-serif;
+    font-size: 18px;
+}
+.crd-button{
+    position: relative;
+    left: 60px;
+    
+  
+    margin-top: 29px;
+    padding: 20px 40px;
+    background-color:rgba(26, 2, 122, 0.24);
+    width: 143px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+   cursor: pointer;
+}
+.crd-button p{
+    position: relative;
+    bottom: 34px;
+    font-size: 18px;
+    line-height: 21.78px;
+    font-family: "Inter semi-bold", sans-serif;
+}
+.descripcion p{
+    font-family: "Inter semi-bold", sans-serif;
+    font-size: 15px;
+    color: white;
+}
