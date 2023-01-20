@@ -1,9 +1,9 @@
 body {
-    background-color: var(--fondo2VioletaC);
+    background-color: var(--fondo1VioletaO);
 }
 
 header {
-    background-color: var(--fondo1VioletaO);
+    background-image: url(/images/1600_Featured_Games.jpg);
 }
 
 a {
@@ -71,6 +71,7 @@ a {
 .right-nav-bar--form input:hover {
     outline: none;
     width: 150px;
+    color: white;
 }
 
 .right-nav-bar2 {
@@ -149,7 +150,8 @@ a {
         padding-left: 20px;
         border: none;
         width: 250px;
-        margin-left: 5px
+        margin-left: 5px;
+        color: white;
     }
 
     .right-nav-bar--busq2::placeholder {

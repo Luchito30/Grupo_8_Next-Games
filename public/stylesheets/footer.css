@@ -43,7 +43,7 @@ footer{
     margin-top:-25px;
     
  }
-  hr{
+  .linea-footer{
    width: 80%;
    margin: 7px;
   margin-left: 13px;
@@ -98,7 +98,7 @@ footer{
       margin-top: 10px;
    
    }
-   hr{
+   .linea-footer{
       width: 900px;
    margin: 20px;
   margin-left: 20px;
