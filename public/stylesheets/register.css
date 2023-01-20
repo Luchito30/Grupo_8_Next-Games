@@ -16,7 +16,7 @@ h3{
     right: 68px;
     font-size: 24px;
 }
-.left{
+.left-register{
    visibility: hidden;
 }
 .login-register{
@@ -58,6 +58,7 @@ h3{
     border: none;
 }
 form{
+    
     text-align: center;
     display: block;
 }
@@ -114,7 +115,7 @@ font-style: normal;
     color: var(--letrasSubtitulos1);
     font-size: 15px;
     font-family: 'Inter', sans-serif;
-    position: absolute;
+    position: relative;
     margin-top: -0.55rem;
     margin-left: -1%;
     padding: 0 5px;
@@ -132,13 +133,13 @@ font-style: normal;
  }
 
  @media(min-width :769px){
-    .split-1 {
+    .split {
         height: 100%;
         width: 50%;
         position: relative;
         z-index: 1;
         top: 0;
-        overflow-x: hidden;
+       
         padding-top: 511px;
 
 
@@ -155,12 +156,10 @@ font-style: normal;
       }
      
       .right-register {
-      
+       
         display: flex;
         bottom: 7px;
         float: right;
-        margin-top: -600px;
-        align-items: flex-start;
         height: 100%;
         padding: 5px;
         padding-top: 10px;
