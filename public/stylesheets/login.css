@@ -2,7 +2,7 @@
     margin-bottom: 5px;
     text-align: center;
     margin-top: 45px;
-    font-size: 18px;
+    font-size: 16px;
     color: var(--letrasTitulos);
     font-family: var(--FontTitulo);
 }
@@ -31,8 +31,10 @@
     top: -18px;
     transition: all 0.3s;
     background-color: var(--fondo1VioletaO);
+    font-size: 13px;
 }
-.login__main__section2--form .login__main__form-control input::placeholder{
+
+.login__main__section2--form .login__main__form-control input::placeholder {
     color: white;
     font-size: 12px;
     font-family: var(--FontSubtitulo);
@@ -58,12 +60,37 @@
 .login__main__form-control label {
     color: white;
     font-family: var(--FontSubtitulo);
-    font-size: 14px;
+    font-size: 15px;
 }
-#username, #password{
+
+#username,
+#password {
     color: white;
+    position: relative;
 }
+
+.login__main__form-control--button{
+    display: flex;
+    justify-content: right;
+    margin-top: -52px;
+    margin-right: 6px;
+}
+
+.form__button{
+    border: none;
+    background-color: var(--fondo1VioletaO);
+    color: white;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.form__button:hover{
+    color: var(--letrasSubtitulos2)
+}
+
 .login__enviar {
+    font-size: 14px;
     background-color: var(--letrasSubtitulos2);
     color: #fff;
     width: 100%;
@@ -74,82 +101,221 @@
     cursor: pointer;
 }
 
-.login__enviar:hover{
-    background: rgba(73,155,234,1);
+.login__enviar:hover {
+    background: rgba(73, 155, 234, 1);
     border: none;
 }
-.login__main__section3{
+
+.login__main__section3 {
     justify-content: space-around;
     display: flex;
 }
-.login__main__section3--inicio{
+
+.login__main__section3--inicio {
     display: flex;
     align-items: center;
     margin-top: 15px;
     margin-bottom: 16px;
 }
-.login__main_div--hrleft{
+
+.login__main_div--hrleft {
     width: 70px;
     margin-right: 20px;
 }
-.login__main__section3--span{
+
+.login__main__section3--span {
     font-size: 12px;
     font-family: var(--FontSubtitulo);
     color: white;
 }
-.login__main-div--hrrigth{
+
+.login__main-div--hrrigth {
     width: 70px;
     margin-left: 20px;
 }
-.login__main__section4{
+
+.login__main__section4 {
     margin-bottom: 43px;
     display: flex;
     justify-content: center;
     margin-top: 15px;
 }
-.login__main__section4_div--button{
+
+.login__main__section4_div--button {
     border-radius: 30px;
     background-color: var(--letrasSubtitulos2);
-}
-.login__main__section4_div--button:hover{
-    background-color: rgba(73,155,234,1);
     border: none;
 }
-.login__main__section4_div2--span a{
-    color:white;
+
+.login__main__section4_div--button:hover {
+    background-color: rgba(73, 155, 234, 1);
 }
-.login__main__section4_div2--span img{
+
+.login__main__section4_div2--span a {
+    color: white;
+}
+
+.login__main__section4_div2--span img {
     width: 25px;
 }
-.login__main__section4_div2--span span{
+
+.login__main__section4_div2--span span {
     margin-left: 10px;
     margin-right: 3px;
     position: relative;
     bottom: 6px;
 }
-.login__main__section5{
+
+.login__main__section5 {
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--FontSubtitulo);
 }
-.login__main__section5_div{
+
+.login__main__section5_div {
     padding-bottom: 35px;
 }
-.login__main__section5_div2{
+
+.login__main__section5_div--link i{
+    font-size: 12px;
+}
+
+.login__main__section5_div p a:hover{
+    color:rgba(73, 155, 234, 1);
+
+}
+
+.login__main__section5_div2 {
     padding-bottom: 30px;
 }
+
 .login__main__section5_div--link2 {
     color: var(--letrasSubtitulos2);
 }
 
+.login__main__section5_div--link2:hover{
+    color: rgba(73, 155, 234, 1);;
+}
 
-
-
-
-.login__main_left {
+.login__main__costados {
     display: none;
 }
 
-.login__main_right {
-    display: none;
+/* tablet */
+@media(min-width:485px) {
+.login__main__section {
+    font-size: 18px;
+}
+.login__main__form-control label {
+    font-size: 17px;
+}
+.login__main__section2--form .login__main__form-control input {
+    font-size: 15px;
+}
+.login__main__section2--form .login__main__form-control input::placeholder {
+    font-size: 15px;
+}
+.login__main__section3--span {
+    font-size: 13px;
+}
+.login__main__section5 {
+    font-size: 17px;
+}
+.login__enviar {
+    font-size: 15px;
+}
+}
+/* Tablets, Ipads */
+@media(min-width:769px) {
+    .login__main__section {
+        font-size: 20px;
+    }
+
+    .login__main__section2--form .login__main__form-control input::placeholder {
+        font-size: 17;
+    }
+
+    .login__main__section2--form .login__main__form-control input {
+        top: -23px;
+        font-size: 17px;
+    }
+
+    .login__main__form-control label {
+        font-size: 19px;
+    }
+
+    .login__main__section3--span {
+        font-size: 15px;
+    }
+
+    .login__main__section5 {
+        font-size: 19px;
+    }
+    .login__enviar {
+        font-size: 17px;
+    }
+}
+
+/* Desktops */
+@media(min-width:1024px) {
+    .login__main__section {
+        font-size: 21px;
+    }
+
+    .login__main__section2--form .login__main__form-control input::placeholder {
+        font-size: 18;
+    }
+
+    .login__main__section2--form .login__main__form-control input {
+        top: -23px;
+        font-size: 18px;
+    }
+
+    .login__main__form-control label {
+        font-size: 20px;
+    }
+
+    .login__main__section3--span {
+        font-size: 16px;
+    }
+
+    .login__main__section5 {
+        font-size: 20px;
+    }
+    .login__main__costados {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .login__main__costados--left {
+        position: absolute;
+        width: 285px;
+        min-height: 642px;
+        background-color: rgba(188, 121, 240, 0.4);
+    }
+
+    .login__main__costados--right {
+        width: 285px;
+        position: absolute;
+        min-height: 642px;
+        background-color: rgba(188, 121, 240, 0.4);
+        right: 0;
+    }
+
+    .login__main_left--img {
+        width: 285px;
+        min-height: 675px;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .login__main_right--img {
+        width: 285px;
+        position: absolute;
+        min-height: 675px;
+        z-index: -1;
+    }
+    .login__enviar {
+        font-size: 18px;
+    }
 }
