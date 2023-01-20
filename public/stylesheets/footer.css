@@ -1,0 +1,117 @@
+@keyframes rotation{
+   0%{
+   transform: rotateY(-180deg);
+   }
+   100%{
+   transform: rotateY(180deg);
+   }
+}
+
+footer{
+   background-image: url(/images/1600_Featured_Games.jpg);
+}
+.footer__section{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.footer__section--left{
+   margin-left: -3px;
+}
+.footer__section--left img{
+   width: 30%;
+   animation: rotation 8s linear infinite normal;
+}
+.footer-right ul{
+   display: flex;
+}
+.footer-right ul li{
+   margin-right: 20px;
+}
+.footer-right ul li i:hover{
+   color: var(--letrasSubtitulos2);
+}
+.footer-right{
+   font-size: 18px;
+}
+.footer__section2{
+   width: 85%;
+   padding: 20px 0px;
+}
+.footer__section2--links{
+   display: flex;
+   justify-content: space-around;
+}
+.footer__section2--links li{
+   margin: 0px 10px;
+}
+.footer__section2--links span{
+   color: white;
+}
+.footer__section2--links li a{
+   font-size: 12px;
+}
+.footer__section2 ul li a:hover{
+   color: var(--letrasSubtitulos2);
+}
+.footer__section3{
+   width: 83%;
+   margin-left: 10px;
+   margin-bottom: 15px;
+}
+.footer-company-name{
+   margin-left: 10px;
+   margin-right: 10px;
+   padding-bottom: 15px;
+   font-size: 14px;
+   color: grey;
+}
+
+ /*--------TABLET---------*/
+@media(min-width:485px){
+   .footer__section2--links li a{
+      font-size: 14px;
+ }
+ .footer-right{
+   font-size: 20px;
+}
+}
+
+@media (min-width:765px) {
+   .footer__section--left img{
+      width: 40%;
+   }
+   .footer-right ul {
+      font-size: 20px;
+   }
+   .footer-right ul li{
+      margin-right: 30px;
+   }
+   .footer-right{
+      font-size: 22px;
+   }
+   .footer__section2--links li a {
+      font-size: 15px;
+      font-family: var(--FontSubtitulo);
+  }
+  .footer-company-name {
+   font-size: 16px;
+}
+}
+
+@media(min-width:1024px){
+   .footer__section--left img{
+      width: 50%;
+      margin-left: 15px;
+   }
+   .footer-right ul {
+      font-size: 20px;
+      margin-right: 15px;
+   }
+   .footer-right ul li{
+      margin-right: 40px;
+  }
+  .footer__section2--links li a {
+   font-size: 16px;
+}
+}
