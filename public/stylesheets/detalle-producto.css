@@ -2,11 +2,24 @@
 main{
     background-color: var(--fondo1VioletaO);
 }
+
+.description-22, .cantidad-producto{
+    visibility: hidden;
+}
 .slider-wrapper img{
     width: 400px;
   position: relative;
   left: 92px;
   
+}
+.tarjetas-detalle img{
+    width: 134px;
+    position: relative;
+    
+    top: 14px;
+    margin-bottom: 35px;
+    left: 12px;
+
 }
 .titulo-1{
     color: var(--letrasTitulos);
@@ -40,6 +53,139 @@ main{
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
     background: rgba(68, 57, 170, 0.74);;
+}
+.sub-header h2{
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasTitulos);
+position: relative;
+top: 39px;
+left: 46px;
+}
+.card-btn{
+    background-color: var(--fondo1VioletaO);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+position: relative;
+float: right;
+top: 9px;
+right: 43px;
+
+}
+
+@media (min-width: 769px){
+    .metodos{
+        position: relative;
+        top: 5px;
+    }
+    .descriction{
+        visibility: hidden;
+    }
+    .description-22{
+        visibility: visible;
+    }
+  
+    main{
+        background-color: var(--fondo2VioletaC);
+        display: flex;
+        height: 700px;
+    }
+    .imagenes{
+        background-color: var(--fondo1VioletaO);
+        border-radius: 28px;
+    position: relative;
+    width: 186%;
+    height: 101%;
+    top: -1%;;
+    left: -2%;
+}
+.slider-wrapper img{
+    width: 334px;
+  position: relative;
+  display: flex;
+  left: 30px;
+ 
+  top: 136px
+  
+  
+}
+.descripcion-detalle{
+    
+    position: relative;
+    
+}
+.sub {
+    color: var(--letrasTitulos);
+    font-family: var(--FontSubtitulo);
+    font-size: 14px;
+    text-align: left;
+    }
+    .imagen-right img{
+        width: 100px;
+    }
+    .otros-colores{
+        display: flex;
+        position: relative;
+        top: 15px;
+        right: 49px;
+        justify-content: space-evenly;
+    }
+    .color1{
+        background-color: var(--fondo1VioletaO);
+        height: 139px;
+        width: 136px;
+        border-radius: 18px;
+
+    }
+    .color2{
+        background-color: var(--fondo1VioletaO);
+        height: 139px;
+        width: 136px;
+        border-radius: 18px;
+        margin-left: -36px;
+    }
+    h3{
+        color: #fff;
+        font-family: var(--FontSubtitulo);
+    }
+    
+
+.sub-header {
+    position: relative;
+   top: -105px;
+   border: 1px ;
+    left: 5px;
+    height: 80px;
+    width: 772px;
+   border-radius: 60px;
+    background: var( --letrasSubtitulos2)
+
+
+}
+
+.cantidad-producto{
+    visibility: visible;
+    display: flex;
+    position: relative;
+    left: 502px;
+    
+}
+.cantidad-producto input{
+    width: 20px;
+    margin: 3px;
+    margin-top: -1px;
+}
+.cantidad-producto button{
+    color: var(--fondo1VioletaO);
+    border: 1px solid var(--fondo1VioletaO);
+    height: 19px;
+    width: -4px;
+    background: none;
+}
+.card-btn{
+    top: -20px;
+}
+
 }
 
 
