@@ -51,15 +51,22 @@ h3{
 }
 .guardar{
     width: 80px;
-    border-radius: 15px;
+    height: 28px;
+    border-radius: 59px;
+    color: #fff;
+    font-family: var(--FontTitulo);
     display: flex;
     position: relative;
     left: 85px;
     align-items: center;
     justify-content: center;
-    background-color: var(--fondo2VioletaC);
+    background-color: var(--letrasSubtitulos2);
     border: none;
-} .hr-register{
+}
+.guardar:hover{
+    background-color: var(--fondo2VioletaC);
+}
+ .hr-register{
     color: var(--letrasSubtitulos1);
     width: 70%;
     margin-left: auto;
@@ -127,7 +134,11 @@ font-weight: 400;
 font-style: normal;
 }
 .e-mail {
-    margin-right: 80px;
+    margin-right: 36px;
+}
+.f-name{
+    margin-right:-46px;
+
 }
 
 .forms input:focus ~ label{
@@ -152,37 +163,92 @@ font-style: normal;
     }
     .card {
         align-items: center;
-        
+        position: relative;
+        bottom: 85px;
+        right: -0.65%;
         display: flex;
+  
+        
     }
         
     .titles-left{
-        height: 168px;
+        height: 205px;
+        position: relative;
+        left: -17px;
     }
-    .titles-left h2, h3{
+    .titles-left  h3{
         position: relative;
         width: 80%;
-        height: 35%;
-        top: 20%;
-        left: -23%;
+        height: 37%;
+        top: 16%;
+        right: 3.5%;
+        font-size: 22px;
 
+    }
+    .titles-left h2{
+        position: relative;
+        width: 80%;
+        height: 50%;
+        right: 9.5%;
+        top: 41%;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 21px;
+       
     }
     .titles{
         background-color: var(--fondo2VioletaC);
         visibility: visible;
         position: absolute;
-        width: 40%;
-			height: 50%;
-			top:  18%;
-			left: 5%;
-			background: var(--fondo2VioletaC);
-            border-radius: 37px;
+        width: 45%;
+        height: 60%;
+	    top:  18%;
+	    left: 5%;
+		background: var(--fondo2VioletaC);
+        border-radius: 37px;
        
+    }
+    .titles h1{
+        position: relative;
+        top: 42px;
+        left: 15px;
+        font-size: 50px;
+        color: #fff;
+        font-family: var(--FontTitulo);
+    }
+    .titles h2{
+        position: relative;
+        top: 80px;
+        left: 16px;
+       font-size: 27px;
+       text-align: left;
+        color: #fff;
+        font-family: var(--FontSubtitulo);
+    }
+    .aca{
+        color: var(--letrasSubtitulos2);
+    }
+    .divider{
+        bottom: 67px;
+        right: 1px;
+    position: relative
+    }
+    .titles-register{
+        bottom: 53px;
+        position: relative
+    }
+    .google{
+        height: 42px;
+    width: 262px;
     }
 
         
         }
-     
+
+ @media(min-width:1024px){
+
+        }
 
       
         
