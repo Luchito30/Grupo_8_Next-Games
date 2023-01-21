@@ -1,9 +1,10 @@
-body {
-    background-color: var(--fondo2VioletaC);
+body
+{
+    background-color: var(--fondo1VioletaO);
 }
 
 header {
-    background-color: var(--fondo1VioletaO);
+    background-image: url(/images/1600_Featured_Games.jpg);
 }
 
 a {
@@ -13,6 +14,7 @@ a {
 .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__logo {
@@ -63,13 +65,14 @@ a {
 }
 
 .right-nav-bar--form input::placeholder {
-    color: black;
+    color: white;
     font-size: 15px;
 }
 
 .right-nav-bar--form input:hover {
     outline: none;
     width: 150px;
+    color: white;
 }
 
 .right-nav-bar2 {
@@ -86,12 +89,12 @@ a {
     text-align: center;
     font-size: 14px;
     padding-top: 9px;
-    margin-top: 18px;
     margin-left: 13px;
 }
 
 .menu-hamburguesa:hover {
     background-color: var(--letrasSubtitulos1);
+    color: black;
 }
 
 .left-nav-bar--1,
@@ -109,11 +112,11 @@ a {
     width: 35px;
     height: 35px;
     border: 1px solid var(--fondo2VioletaC);
-    margin-top: 18px;
 }
 
 .carro:hover {
     background-color: var(--letrasSubtitulos1);
+    color:black
 }
 
 @media (min-width: 485px) {
@@ -148,12 +151,14 @@ a {
         padding-left: 20px;
         border: none;
         width: 250px;
-        margin-left: 5px
+        margin-left: 5px;
+        color: white;
+        font-size: 14px;
     }
 
     .right-nav-bar--busq2::placeholder {
-        color: black;
-        font-size: 18px;
+        color: white;
+        font-size: 15px;
     }
 
     .right-nav-bar--busq2:hover {
@@ -180,7 +185,7 @@ a {
         width: 40px;
         height: 40px;
         font-size: 17px;
-        margin-top: 20px;
+        margin-top: 3px;
     }
 
     .header__section__article {
@@ -190,9 +195,14 @@ a {
 
     .left-nav-bar--1 {
         display: flex;
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 20px;
         margin-bottom: 10px;
+    }
+
+    .left-nav-bar--1 i{
+        font-size: 12px;
+        margin-left: 8px;
     }
 
     .home {
@@ -220,7 +230,7 @@ a {
 
     .left-nav-bar--2 {
         display: flex;
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 20px;
         margin-bottom: 10px;
     }
@@ -269,6 +279,7 @@ a {
         position: relative;
         height: 60px;
         width: 430px;
+        font-size: 18px;
     }
 
     .right-nav-bar--button {
@@ -279,8 +290,7 @@ a {
     }
 
     .right-nav-bar--busq2::placeholder {
-
-        font-size: 22px;
+        font-size: 17px;
     }
 
     .carro {
@@ -291,12 +301,46 @@ a {
     }
 
     .left-nav-bar--1 {
-        font-size: 24px;
+        font-size: 18px;
         margin-bottom: 10px;
     }
 
+    .left-nav-bar--1 i{
+        font-size: 14px;
+    }
+
     .left-nav-bar--2 {
-        font-size: 24px;
+        font-size: 18px;
         margin-bottom: 15px;
+    }
+}
+
+@media(min-width:1024px){
+    .right-nav-bar--busq2 {
+        font-size: 20px;
+    }
+
+    .right-nav-bar--button {
+        font-size: 22px;
+         }
+
+    .right-nav-bar--busq2::placeholder {
+        font-size: 19px;
+    }
+
+    .carro {
+        font-size: 22px; 
+    }
+
+    .left-nav-bar--1 {
+        font-size: 20px;
+    }
+
+    .left-nav-bar--1 i{
+        font-size: 16px;
+    }
+
+    .left-nav-bar--2 {
+        font-size: 20px;
     }
 }

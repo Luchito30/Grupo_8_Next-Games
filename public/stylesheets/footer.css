@@ -1,130 +1,198 @@
-footer{
-   
-    position: fixed;
-    bottom: 0;
-    background-color: var(--fondo1VioletaO);
+@keyframes rotation {
+   0% {
+      transform: rotateY(-180deg);
+   }
+
+   100% {
+      transform: rotateY(180deg);
+   }
 }
- .footer-d{
-    box-sizing: border-box;
-    width: 100%;
-    margin-top: 80px;
-    
- }
- .footer-d .footer-left,
- .footer-d .footer-right{
-    display: flex;
-    vertical-align: top;
-    justify-content: space-between;
- }
 
- 
- .footer-d .footer-left img{
-    width: 81px;
-    height: 84px;
-    margin: 31px;
-    margin-left: 15px;
-    margin-top: 52px;
-    position: relative;
+footer {
+   background-image: url(/images/1600_Featured_Games.jpg);
+}
 
-    
- }
- .footer-d .footer-links{
-    color: #fff;
-   
-    display: table-row;
- }
- .footer-d .footer-links a{
-    display: inline-block;
-    line-height: 1.8;
-    color: #fff;
-    font-family: 'Inter semi-bold', sans-serif ;
-    font-size: 13px;
-    margin-left: 27px;
-    margin-top:-25px;
-    
- }
-  hr{
-   width: 80%;
-   margin: 7px;
-  margin-left: 13px;
-   border: 1px solid #d9d9d9d4;
- }
- .footer-d .footer-company-name{
-    color: gray;
-    font-size: 14px;
-    
-    margin: 12px;
-    margin-top: 15px;
-    
- }
+.footer__section {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
 
- .footer-d .footer-right{
-    line-height: 20px;
-    color: #fff;
-    font-size: 13px;
-    font-weight: normal;
-    margin: 54px;
-    width: 100px;
-    
- }
- .footer-d .social-icons{
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    
- }
- 
+.footer__section--left {
+   margin-left: -3px;
+}
 
- .footer-d .social-icons a{
-   color: #fff;
-   display: inline-block;
-   width: 25px;
-  height: 15px;
-  font-size: 20px;
-  text-align: center;
-  line-height: 55px;
-  
-  margin-right:12px ;
-  margin-bottom: 3px;
- }
- /*--------TABLET---------*/
+.footer__section--left img {
+   width: 30%;
+   animation: rotation 8s linear infinite normal;
+}
 
- @media (min-width:765px) {
-   .footer-d .footer-links a{
-      margin-left: 30px;
+.footer-right ul {
+   display: flex;
+}
+
+.footer-right ul li {
+   margin-right: 20px;
+}
+
+.footer-right ul li i:hover {
+   color: var(--letrasSubtitulos2);
+}
+
+.footer-right {
+   font-size: 18px;
+}
+
+.footer__section2 {
+   width: 85%;
+   padding: 20px 0px;
+}
+
+.footer__section2--links {
+   display: flex;
+   justify-content: space-around;
+}
+
+.footer__section2--links li {
+   margin: 0px 10px;
+}
+
+.footer__section2--links span {
+   color: white;
+}
+
+.footer__section2--links li a {
+   font-size: 12px;
+}
+
+.footer__section2 ul li a:hover {
+   color: var(--letrasSubtitulos2);
+}
+
+.footer__section3 {
+   width: 83%;
+   margin-left: 10px;
+   margin-bottom: 20px;
+}
+
+.footer-company-name {
+   margin-left: 10px;
+   margin-right: 10px;
+   padding-bottom: 15px;
+   font-size: 14px;
+   color: grey;
+}
+
+.footer__payments {
+   display: flex;
+   justify-content: center;
+   margin-bottom: 15px;
+}
+
+.tarjetas img {
+   width: 125px;
+   margin-right: 5px;
+}
+
+.mercado img {
+   width: 67px;
+   margin-right: 5px;
+   height: 23px;
+}
+
+.ahora img {
+   width: 67px;
+   margin-right: 5px;
+   height: 23px;
+}
+.footer__envio{
+   display: flex;
+   justify-content: center;
+   margin-bottom: 15px;
+}
+.oca img{
+   width: 67px;
+   margin-right: 5px;
+   height: 23px;
+}
+.andriani img{
+   width: 67px;
+   margin-right: 5px;
+   height: 23px;
+}
+
+
+/*--------TABLET---------*/
+@media(min-width:485px) {
+   .footer__section2--links li a {
+      font-size: 14px;
+   }
+
+   .footer-right {
       font-size: 20px;
-      margin-top: 10px;
+   }
+   .tarjetas img {
+      width: 125px;
+   }
    
+   .mercado img {
+      width: 67px;
    }
-   hr{
-      width: 900px;
-   margin: 20px;
-  margin-left: 20px;
-   }
-   .footer-d .footer-company-name{
-     
-      font-size: 18px;
-      
-      margin: 15px;
-      margin-top: 15px;
-      
-   }
-   .footer-d .social-icons a{
-    width: 30%;
-    font-size: 25px;
-    margin-right: 18px;
-    margin-left: -10px;
-    margin-bottom: 15px;
    
- }
- .footer-d  img{
-   width: 150px;
-   height: 113px;
-   margin-top: 60px;
-   position: relative;
-   margin: 31px;
-    margin-left: 15px;
- }
+   .ahora img {
+      width: 67px;
+   }
+   .oca img{
+      width: 67px;
+   }
+   .andriani img{
+      width: 67px;
+   }
+}
+
+@media (min-width:765px) {
+   .footer__section--left img {
+      width: 40%;
+   }
+
+   .footer-right ul {
+      font-size: 20px;
+   }
+
+   .footer-right ul li {
+      margin-right: 30px;
+   }
+
+   .footer-right {
+      font-size: 22px;
+   }
+
+   .footer__section2--links li a {
+      font-size: 15px;
+      font-family: var(--FontSubtitulo);
+   }
+
+   .footer-company-name {
+      font-size: 16px;
+   }
+}
+
+@media(min-width:1024px) {
+   .footer__section--left img {
+      width: 50%;
+      margin-left: 15px;
+   }
+
+   .footer-right ul {
+      font-size: 20px;
+      margin-right: 15px;
+   }
+
+   .footer-right ul li {
+      margin-right: 40px;
+   }
+
+   .footer__section2--links li a {
+      font-size: 16px;
+   }
 }
