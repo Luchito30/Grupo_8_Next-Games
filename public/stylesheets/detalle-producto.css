@@ -1,19 +1,19 @@
+.swiper {
+    width: 100%;
+    height: 300px;
+  }
+.detalle-imagenes{
+    width: 100%;
+    text-align: center;
+}
+
 h3{
     color: #fff;
     font-family: var(--FontSubtitulo);
 }
-img{
-    width: 100px;
-}
 
 .description-22, .cantidad-producto,.otros-colores ,.colores, .color1,.color2{
     display: none;
-}
-.slider-wrapper img{
-    width: 250px;
-  position: relative;
-  left: 92px;
-  
 }
 .tarjetas-detalle img{
     width: 134px;
@@ -61,7 +61,6 @@ img{
     top: 5px;
     left: -9px;
     height: 78px;
-    width: 476px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
     background: rgba(68, 57, 170, 0.74);
@@ -92,9 +91,14 @@ right: 43px;
 
 }
 
-@media (min-width: 769px){
+ @media (min-width: 769px){
     main{
         background-color: var(--fondo2VioletaC);
+        display: flex;
+    }
+    .detalle-imagenes{
+        width: 50%;
+        margin-left: 25px;
     }
     .metodos{
         position: relative;
@@ -106,37 +110,20 @@ right: 43px;
     .description-22,.otros-colores,.colores{
        display: flex;
     }
-  
-   
-    .imagenes{
-        background-color: var(--fondo1VioletaO);
-        border-radius: 28px;
-        position: absolute;
-        width: 51%;
-        height: 94%;
-        padding: 4px;
-        top: 19%;
-        left: 0%;
-    }
-      
    
 
-.slider-wrapper img{
-    width: 296px;
-  position: relative;
-  display: flex;
-  left: 30px;
- 
-  top: 136px
-  
-  
-}
 .descripcion-detalle{
     
     position: relative;
-    left: 342px;
-    
+    padding-right: 15px;
+    margin-right: 120px;
 }
+.detalle-img--conteiner{
+    background-color: var(--fondo1VioletaO);
+    height: 162vh;
+    border-radius: 28px;
+}
+    
 .sub {
     color: var(--letrasTitulos);
     font-family: var(--FontSubtitulo);
@@ -158,11 +145,8 @@ right: 43px;
     }
     .otros-colores{
         display: flex;
-        position: relative;
-        top: 43px;
-        right: 166px;
         height: 407px;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
     .color1{
         display: flex;
@@ -257,8 +241,7 @@ right: 43px;
 .tarjetas-detalle h3{
     color: #fff;
 }
-}
-
+ }
 
 
 @media (min-width: 1024px){
