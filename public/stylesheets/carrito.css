@@ -1,3 +1,7 @@
+body {
+    background-color: var(--fondo2VioletaC);
+}
+
 .header-2 {
     background-color: var(--fondo1VioletaO);
     border: 1px solid white;
@@ -36,9 +40,6 @@
     font-size: 16px;
 }
 
-.body {
-    background-color: var(--fondo2VioletaC);
-}
 
 .mi-carrito {
     font-family: var(--FontTitulo);
@@ -47,6 +48,7 @@
 }
 
 .descripcion-carrito {
+    background-color: var(--fondo1VioletaO);
     margin: 20px 10px;
     max-width: 768px;
     border: 1px solid var(--letrasTitulos);
@@ -175,6 +177,7 @@
 }
 
 .resumen-carrito {
+    background-color: var(--fondo1VioletaO);
     margin: auto;
     margin-bottom: 20px;
     border: 1px solid var(--letrasTitulos);
@@ -248,13 +251,12 @@
     border-radius: 5px;
     font-family: var(--FontSubtitulo);
     color: var(--letrasTitulos);
-    font-size: 11px;
+    font-size: 12px;
     width: 50%;
-    height: 25px;
+    height: 29px;
     margin: 0px 25%;
     margin-bottom: 20px;
     display: inline-block;
-
 }
 
 .boton2:hover {
@@ -306,6 +308,22 @@
         display: flex;
         justify-content: space-evenly;
     }
+
+    .boton2 {
+        height: 32px;
+    }
+
+    .boton3 {
+        height: 32px;
+    }
+
+    .medio-pago h5 {
+        font-size: 14px;
+    }
+
+    .fin-compra h5 {
+        font-size: 14px;
+    }
 }
 
 /* Desktop */
@@ -339,5 +357,21 @@
     .despacho {
         margin: 20px 0px;
         padding: 0px 5px 10px 75px;
+    }
+
+    .boton2 {
+        height: 35px;
+    }
+
+    .boton3 {
+        height: 35px;
+    }
+
+    .medio-pago h5 {
+        font-size: 16px;
+    }
+
+    .fin-compra h5 {
+        font-size: 16px;
     }
 }
