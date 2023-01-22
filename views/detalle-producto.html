@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
+ <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
     <header>
@@ -80,7 +81,7 @@
 
     </header>
 <main>
-    <section class="imagenes">
+    <div class="imagenes">
 
     <section class="imagenes-detalle">
         <div class="slider">
@@ -88,17 +89,26 @@
                 <img class="" src="/images/detalle-producto/joy-blanco.png" alt="">
 
             </div>
-        </div>
+            <div class="slider-wrapper-2">
+                <img style="width: 100px;" src="/images/detalle-producto/cargador-2.png" alt="">
+            </div>
+            <div class="slider-wrapper-3">
+                <img style="width: 100px;" src="/images/detalle-producto/cargador-1.png" alt="">
+            </div>
+            <button aria-label="Previous" class="glider-prev">«</button>
+            <button aria-label="Next" class="glider-next">»</button>
+            <div role="tablist" class="dots"></div>
+           
   
     </section>
-    </section>
+    </div>
     <section class="descripcion-detalle">
         <div class="descripciones">
             <div class="titulos">
                 <h2 class="titulo-1">JoyStick PS5 with RAZER quick charging stand</h2>
             </div>
             <div class="rank">
-                <p style="font-size: 14px; margin: 7px;">PERISFERICOS  |</p>
+                <p >PERISFERICOS  |</p>
                 <div class="stars">
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
@@ -178,7 +188,8 @@ con PS5 como pc
     <div class="sub-header">
         <h2>$5.500</h2>
         <div class="cantidad-producto">
-            <h5>cantidad:</h5>
+            <h5 style="color: white;
+            ">cantidad:</h5>
             <button>+</button>
             <input type="number">
             <button>-</button>
@@ -241,6 +252,20 @@ con PS5 como pc
             All other trademarks are properties of their respective owners. All rights reserved.
         </p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+    <script> new Glider(document.querySelector('.imagenes-detalle'), {
+        slidesToShow: 1,
+        dots: '#dots',
+        draggable: true,
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        }
+      });
+    </script>
   
 </body>
 </html>
