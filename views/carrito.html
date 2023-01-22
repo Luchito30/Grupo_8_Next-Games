@@ -24,7 +24,7 @@
             <section class="right-nav-bar">
                 <form action="" method="" autocomplete="off" class="right-nav-bar--form">
                     <div>
-                        <input type="search" name="search" class="right-nav-bar--busq" placeholder="Buscar Producto"
+                        <input type="text" name="search" class="right-nav-bar--busq" placeholder="Buscar Producto"
                             title="¿Que desea Buscar?">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
@@ -34,7 +34,7 @@
             <section class="right-nav-bar2">
                 <form action="" method="" autocomplete="off" class="right-nav-bar--form2">
                     <div>
-                        <input type="search" name="search" class="right-nav-bar--busq2" placeholder="Buscar Producto"
+                        <input type="text" name="search" class="right-nav-bar--busq2" placeholder="Buscar Producto"
                             title="¿Que desea Buscar?">
                         <button class="right-nav-bar--button">
                             <i class="fa-solid fa-magnifying-glass"></i>
@@ -44,7 +44,6 @@
             </section>
 
             <div>
-
                 <button class="carro">
                     <i class="fa-solid fa-cart-shopping" id="carrito"></i>
                 </button>
@@ -56,12 +55,10 @@
                 <div>
                     <ul class="left-nav-bar--1">
                         <li>
-                            <a class="home" href="">Home</a>
+                            <a class="home" href="/">Home</a>
                         </li>
-
-
                         <li>
-                            <a class="produ" href="">Productos</a>
+                            <a class="produ" href="">Productos<i class="fa-solid fa-chevron-down"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -72,131 +69,185 @@
                             <a class="registro" href="#">Registro</a>
                         </li>
                         <li>
-                            <a class="login" href="#">Login</a>
+                            <a class="login" href="/login">Login</a>
                         </li>
                     </ul>
                 </div>
             </article>
         </section>
-
-
     </header>
-    <!-- body -->
+
     <main>
         <section class="header-2">
             <div class="web-segura">
                 <div class="venta-telefonica">
-                    <h3>Venta Telefónica <i class="fa-duotone fa-phone-volume"></i></h3>
+                    <h3>Venta Telefónica <i class="fa-solid fa-phone"></i></h3>
                     <h5>Lun a Vi de 10 a 21hs. y Sáb de 10 a 16hs.</h5>
                 </div>
                 <div class="sitio-seguro">
-                    <h3>Sitio Seguro <i class="fa-solid fa-lock-keyhole"></i></h3>
+                    <h3>Sitio Seguro <i class="fa-sharp fa-solid fa-lock"></i></h3>
                 </div>
             </div>
         </section>
-        <section class="body">
-            <div class="logo">
-                <img src="/images/Level__2_-removebg-preview.png" alt="logo">
-            </div>
-        </section>
-            <section>
+        <section>
             <div class="mi-carrito">
-                <h1><i class="fa-sharp fa-solid fa-cart-shopping"></i>Mi Carrito</h1>
+                <h1><i class="fa-sharp fa-solid fa-cart-shopping"></i> Mi Carrito</h1>
             </div>
         </section>
-        <section>
-            <div class="descripcion">
-                <h4>Producto</h4>
-                <h4>Precio</h4>
-                <h4>Cantidad</h4>
-                <h4>Total</h4>
-            </div>
-            <div class="detalle-carrito">
-                <img src="/images/ps5fifa23.webp" alt="juego">
-                <p>PS5 EA SPORT FIFA 23</p>
-                <p>$29.999</p>
-                <button>
-                    <p>- 1 +</p>
-                </button>
-                <p>$29.999</p>
-            </div>
+
+        <section class="descripcion-resumen">
+            <section class="descripcion-carrito">
+                <div class="descripcion">
+                    <h4 class="product">Producto</h4>
+                    <h4 class="price">Precio</h4>
+                    <h4 class="quantity">Cantidad</h4>
+                    <h4 class="cost">Total</h4>
+                </div>
+                <div>
+                    <button class="cruz">
+                        <p>x</p>
+                    </button>
+                </div>
+                <div class="detalle-carrito">
+                    <div class="imagen-detalle"><img src="/images/ps5fifa23.webp" alt="juego">
+                        <h6 class="producto"> PS5 EA SPORT FIFA 23</h6>
+                    </div>
+                    <h5 class="precio">$29.999</h5>
+                    <div class="unidad">
+                        <button class="menos">
+                            <p>-</p>
+                        </button>
+                        <button class="numero">
+                            <p>1</p>
+                        </button>
+                        <button class="mas">
+                            <p>+</p>
+                        </button>
+                    </div>
+                    <h5 class="total">$29.999</h5>
+                </div>
+            </section>
+
+            <section class="resumen-despacho">
+                <section>
+                    <div class="resumen-carrito">
+                        <h4>Resumen</h4>
+                        <div class="resume-cost">
+                            <div class="resume-cost-total">
+                                <h5>SUBTOTAL</h5>
+                                <h5>ENVIO</h5>
+                                <h5>DESCUENTO</h5>
+                                <h5>TOTAL</h5>
+                            </div>
+                            <div class="resume-cost-total1">
+                                <h5>$29.999</h5>
+                                <h5>$1000</h5>
+                                <h5>$-4.999</h5>
+                                <h5>$25.000</h5>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="despacho">
+                        <div class="envio-domicilio">
+                            <button class="boton1">
+                                <h5>Envio a Domicilio</h5>
+                                <i class="fa-solid fa-truck-fast"></i></i>
+                            </button>
+                        </div>
+                        <div class="retiro-tienda">
+                            <button class="boton1">
+                                <h5>Retiro en Tienda</h5>
+                                <i class="fa-solid fa-store"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </section>
         </section>
+
+
         <section>
-            <div class="resumen-carrito">
-                <h5>Resumen</h5>
-                <p>SUBTOTAL</p>
-                <p>$29.999</p>
-                <p>ENVIO A DOMICILIO</p>
-                <p>$1000</p>
-                <p>DESCUENTO</p>
-                <p>$-4.999</p>
-                <p>TOTAL</p>
-                <p>$25.000</p>
-            </div>
-        </section>
-        <section>
-            <div class="envio-domicilio">
-                <button>
-                    <h2>Envio a Domicilio</h2>
-                    <i class="fa-regular fa-truck-fast"></i>
-                </button>
-            </div>
-            <div class="retiro-tienda">
-                <button>
-                    <h2>Retiro en Tienda</h2>
-                    <i class="fa-solid fa-shop"></i>
-                    <i class="fa-solid fa-store"></i>
-                </button>
-            </div>
             <div class="medio-pago">
-                <button>
-                    <h2>Medios de Pago</h2>
-                    <i class="fa-regular fa-credit-card"></i>
+                <button class="boton2">
+                    <h5>Medios de Pago <i class="fa-solid fa-hand-holding-dollar"></i> <i
+                            class="fa-regular fa-credit-card"></i></h5>
                 </button>
             </div>
         </section>
-        <section>
-            <div class="agregar-productos">
-                <button>
-                    <h2>AGREGAR MAS PRODUCTOS</h2>
+        <section class="fin-compra">
+            <div class="finalizar-compra">
+                <button class="boton3">
+                    <h5>Finalizar compra</h5>
                 </button>
             </div>
-            <div class="finalizar-compra">
-                <button>
-                    <h2>FINALIZAR COMPRA</h2>
+            <div class="agregar-prductos">
+                <button class="boton2">
+                    <h5>Agregar mas productos</h5>
+                </button>
+            </div>
+            <div class="cancelar-compra">
+                <button class="boton2">
+                    <h5>Cancelar compra</h5>
                 </button>
             </div>
         </section>
     </main>
-   <!--  <footer class="footer-d">
-        <div class="footer-left">
-            <img src="/images/Level__2_-removebg-preview.png" alt="">
-            <div class="footer-right">
-                <div class="social-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-        </div>
-            <p class="footer-links">
-                <a href="#">IMPRINT</a>
-                   |
-                <a href="#">TERMS OF USE</a>
-                |
-               <a href="#">PRIVACY</a>
-            |
-                <a href="#">POLICY</a>
-            |
-            </p>
-            <hr>
-            <p class="footer-company-name">
-                © 2022 gamigo US Inc., a member of gamigo group. gamigo is a registered trademark of gamigo AG in Germany, in the European Union and United Kingdom. gamigo group is a registered trademark of gamigo AG in Germany. Glyph is a registered trademark of Blockescence DLT Solutions GmbH in the European Union, UK and the US.
-                 All other trademarks are properties of their respective owners. All rights reserved.
-            </p>
-    </footer> -->
-
 </body>
+<!-- footer -->
+<footer class="footer-d">
+
+    <section class="footer__section">
+        <div class="footer__section--left">
+            <img src="/images/Level__2_-removebg-preview.png" alt="">
+        </div>
+
+        <div class="footer-right">
+            <ul>
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="footer__section2">
+        <ul class="footer__section2--links">
+            <li><a href="#">IMPRINT</a></li>
+            <span>|</span>
+            <li><a href="#">TERMS OF USE</a></li>
+            <span>|</span>
+            <li><a href="#">PRIVACY</a></li>
+            <span>|</span>
+            <li><a href="#">POLICY</a></li>
+            <span>|</span>
+        </ul>
+    </section>
+
+    <section class="footer__section3">
+        <div class="footer__section3--separacion">
+            <hr class="footer__section3--linea">
+        </div>
+    </section>
+    <div class="footer__payments">
+        <div class="tarjetas"><img src="/images/tarjetas.png" alt=""></div>
+        <div class="mercado"><img src="/images/mercadopago.png" alt=""></div>
+        <div class="ahora"><img src="/images/ahora12.png" alt=""></div>
+    </div>
+
+    <div class="footer__envio">
+        <div class="oca"><img src="/images/oca.png" alt=""></div>
+        <div class="andriani"><img src="/images/andreani.png" alt=""></div>
+    </div>
+    <p class="footer-company-name">
+        © 2022 gamigo US Inc., a member of gamigo group. gamigo is a registered trademark of gamigo AG in Germany,
+        in the European Union and United Kingdom. gamigo group is a registered trademark of gamigo AG in Germany.
+        Glyph is a registered trademark of Blockescence DLT Solutions GmbH in the European Union, UK and the US.
+        All other trademarks are properties of their respective owners. All rights reserved.
+    </p>
+</footer>
 
 </html>
