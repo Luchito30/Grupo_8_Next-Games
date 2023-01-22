@@ -55,9 +55,9 @@ h3{
    
 }
 .guardar{
-    width: 80px;
-    height: 28px;
-    border-radius: 59px;
+    width: 97px;
+    height: 36px;
+    border-radius: 10px;
     color: #fff;
     font-family: var(--FontTitulo);
     display: flex;
@@ -65,11 +65,11 @@ h3{
     left: 85px;
     align-items: center;
     justify-content: center;
-    background-color: var(--letrasSubtitulos2);
+    background-color: var(--fondo2VioletaC);
     border: none;
 }
 .guardar:hover{
-    background-color: var(--fondo2VioletaC);
+    background-color: var(--letrasSubtitulos2);
 }
  .hr-register{
     color: var(--letrasSubtitulos1);
