@@ -20,12 +20,16 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+#oferta{
+    width: 40%;
+}
 
-.home__main--titulo {
-    padding-bottom: 30px;
-    font-size: 22px;
-    padding-top: 30px;
-    padding-left: 30px;
+.home__main--titulo h2{
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 16;
 }
 
 .home__main--img {
@@ -88,18 +92,54 @@
     
 }
 .home__main__carrusel__item{
+   display: none;
+}
+#header__botonizq, #header__botonderecha{
+    opacity: 1;
+    color: white;
+}
+
+.home__main__carrusel__item2{
     margin-right: 43px;
     margin-left: 43px;
 }
+.home__main__bannermid{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.home__main__bannermid--izq, .home__main__bannermid--der{
+    width: 40%;
+}
+.home__main__bannermid--izq img, .home__main__bannermid--der img{
+    width: 90%;
+}
+.swiper {
+    width: 100%x;
+}
+.swiper-notebook .swiper-slide{
+    width: 250px;
+}
 
 
-
-
-@media(min-width:796px){
+@media(min-width:769px){
     .home__main__section--carrusel1{
        display: none;
     }
     .home__main__section--carrusel2{
        display: block;
+    }
+    .home__main__carrusel__item{
+        display: block;
+        margin-right: 43px;
+        margin-left: 43px;
+    }
+    .home__main__carrusel__item2{
+        display: none;
+        margin-right: 43px;
+        margin-left: 43px;
+    }
+    #oferta {
+        width: 20%;
     }
 }
