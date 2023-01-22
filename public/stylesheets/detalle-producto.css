@@ -1,9 +1,6 @@
 
-main{
-    background-color: var(--fondo1VioletaO);
-}
 
-.description-22, .cantidad-producto{
+.description-22, .cantidad-producto, .otros-colores,.colores{
     visibility: hidden;
 }
 .slider-wrapper img{
@@ -81,26 +78,31 @@ right: 43px;
     .descriction{
         visibility: hidden;
     }
-    .description-22{
+    .description-22,.otros-colores,.colores{
         visibility: visible;
     }
   
     main{
         background-color: var(--fondo2VioletaC);
         display: flex;
-        height: 700px;
+        height: 792px;
+        padding: 31px;
+        margin: 2px;
+        width: 111%;
     }
     .imagenes{
         background-color: var(--fondo1VioletaO);
         border-radius: 28px;
-    position: relative;
-    width: 186%;
-    height: 101%;
-    top: -1%;;
-    left: -2%;
+        position: relative;
+        width: 136%;
+        height: 108%;
+        padding: 4px;
+        top: -4%;
+        left: -3%;
+      
 }
 .slider-wrapper img{
-    width: 334px;
+    width: 296px;
   position: relative;
   display: flex;
   left: 30px;
@@ -112,6 +114,7 @@ right: 43px;
 .descripcion-detalle{
     
     position: relative;
+    right: 47px;
     
 }
 .sub {
@@ -122,6 +125,10 @@ right: 43px;
     }
     .imagen-right img{
         width: 100px;
+    }
+    .imagen-left img{
+        width: 122px;
+
     }
     .otros-colores{
         display: flex;
@@ -152,13 +159,24 @@ right: 43px;
 
 .sub-header {
     position: relative;
-   top: -105px;
-   border: 1px ;
-    left: 5px;
-    height: 80px;
-    width: 752px;
-   border-radius: 60px;
-    background: var( --letrasSubtitulos2)
+    top: -105px;
+    border: 1px;
+    left: 124px;
+    height: 79px;
+    width: 795px;
+    border-radius: 14px;
+    background: #1A027A;
+}
+.sub h3{
+    position: relative;
+    top: 12px;
+}
+.sub h4{
+    position: relative;
+    top: 12px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+}
 
 
 }
@@ -167,7 +185,8 @@ right: 43px;
     visibility: visible;
     display: flex;
     position: relative;
-    left: 502px;
+    float: right;
+    margin: 0;
     
 }
 .cantidad-producto input{
@@ -185,7 +204,10 @@ right: 43px;
 .card-btn{
     top: -20px;
 }
-
+.descripciones{
+    position: relative;
+    left: 31px;
+    top: 26px;
 }
 
 
@@ -204,11 +226,5 @@ right: 43px;
 
 
 
-/*.imagenes{
-    background-color: var(--fondo1VioletaO);
-    position: relative;
-    width: 45%;
-    height: 60%;
-    top:  18%;
-    left: 5%;
-}*/
+
+
