@@ -6,6 +6,12 @@
     width: 100%;
     text-align: center;
 }
+.envios h4{
+    color: #fff;
+    font-family: var(--FontSubtitulo);
+    margin: 5px;
+    font-size: 13px;
+}
 
 h3{
     color: #fff;
