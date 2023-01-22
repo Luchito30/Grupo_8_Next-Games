@@ -1,20 +1,23 @@
 
 body{
     background-color: var(--fondo1VioletaO);
-} 
+} h2{
+    bottom: 55px;
+}
 
 h2, h3{
     color: #fff;
     font-family: sans-serif;
     position: relative;
     
-    bottom: -7px;
+    
     font-size: 24px;
     text-align: center;
+    height: 80px;
 }
 h3{
     position: relative;
-    bottom: 36px;
+    bottom: 92px;
     
     font-size: 24px;
 }
@@ -27,6 +30,8 @@ h3{
     align-items: center;
     justify-content: center;
     margin: 15px;
+    position: relative;
+    bottom: 118px;
 }
 .log{
     height: 20px;
@@ -74,6 +79,8 @@ h3{
  }
  .divider{
     margin-top: 35px;
+    position: relative;
+    bottom: 130px;
 }
 .orSpan{
     color: var(--letrasSubtitulos1);
@@ -86,6 +93,8 @@ h3{
     background-color: var(--fondo1VioletaO);
 }
 .card{
+    position: relative;
+    bottom: 144px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -154,6 +163,10 @@ font-style: normal;
  
 
  @media(min-width :769px){
+    .login-register{
+        position: relative;
+        top: 1px;
+    }
     .right-register{
         display: flex;
         align-items: right;
@@ -174,7 +187,7 @@ font-style: normal;
     .titles-left{
         height: 205px;
         position: relative;
-        left: -17px;
+        left: 43px;
     }
     .titles-left  h3{
         position: relative;
@@ -202,8 +215,8 @@ font-style: normal;
         visibility: visible;
         position: absolute;
         width: 45%;
-        height: 60%;
-	    top:  18%;
+        height: 89%;
+        top: 21%;
 	    left: 5%;
 		background: var(--fondo2VioletaC);
         border-radius: 37px;
@@ -245,15 +258,48 @@ font-style: normal;
 
         
         }
+  @media(min-width : 1024px){
+    .titles-register {
+        bottom: 53px;
+        position: relative;
+        right: 82px;
+    }
+    .divider {
+        bottom: 67px;
+        right: 75px;
+        position: relative;
+    
+    
+  }    
+  .hr-register {
+    color: var(--letrasSubtitulos1);
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;  
+  }
+ 
 
- @media(min-width:1024px){
-
-        }
-
-      
+  .card {
+    align-items: center;
+    position: relative;
+    bottom: 85px;
+    right: 16.35%;
+    display: flex;  
+  }
+  .titles {
+    background-color: var(--fondo2VioletaC);
+    visibility: visible;
+    position: absolute;
+    width: 48%;
+    height: 98%;
+    top: 21%;
+    left: 3%;
+    background: var(--fondo2VioletaC);
+    border-radius: 37px;
+} 
         
         
       
       
    
- 
+}
