@@ -1,4 +1,10 @@
-
+h3{
+    color: #fff;
+    font-family: var(--FontSubtitulo);
+}
+img{
+    width: 100px;
+}
 
 .description-22, .cantidad-producto,.otros-colores ,.colores, .color1,.color2{
     display: none;
@@ -21,7 +27,7 @@
 .titulo-1{
     color: var(--letrasTitulos);
     font-family: var(--FontTitulo);
-    font-size: 27px;
+    font-size: 22px;
     position: relative;
     bottom: 25px;
 }
@@ -38,7 +44,7 @@
     margin: 2px;
     color: #fff;
 }
-.descriction h5{
+.description h5{
     color: #fff;;
     font-family: var(--FontSubtitulo);
 
@@ -52,13 +58,13 @@
 }
 .sub-header{
     position: relative;
-    top: 10px;
-    left: 2px;
-    height: 107px;
-    width: 386px;
+    top: 5px;
+    left: -9px;
+    height: 78px;
+    width: 476px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
-    background: rgba(68, 57, 170, 0.74);;
+    background: rgba(68, 57, 170, 0.74);
 }
 .sub-header h2{
     font-family: var(--FontSubtitulo);
@@ -67,6 +73,13 @@ position: relative;
 top: 39px;
 left: 46px;
 }
+.descripciones{
+    position: relative;
+    left: 12px;
+    top: 13px;
+    height: 262px;
+}
+
 .card-btn{
     background-color: var(--fondo1VioletaO);
     color: #fff;
@@ -87,7 +100,7 @@ right: 43px;
         position: relative;
         top: 5px;
     }
-    .descriction{
+    .description{
         display: none;
     }
     .description-22,.otros-colores,.colores{
@@ -238,6 +251,11 @@ right: 43px;
     position: relative;
     left: 64px;
     top: 54px;
+    height: 50%;
+    
+}
+.tarjetas-detalle h3{
+    color: #fff;
 }
 }
 
@@ -248,7 +266,7 @@ right: 43px;
     .imagenes {
         background-color: var(--fondo1VioletaO);
         border-radius: 28px;
-       position: absolute;
+       
         width: 48%;
         height: 85%;
         padding: 4px;
@@ -257,8 +275,9 @@ right: 43px;
     }
     .descripciones{
         position: relative;
-        left: 141px;
+        left: 179px;
         top: 56px;
+        margin: -28px;
     }
     .descripcion-detalle {
         position: relative;
@@ -277,6 +296,14 @@ right: 43px;
     .imagenes-detalle{
         position: relative;
     left: 110px;
+    }
+    .otros-colores{
+        position: relative;
+        right:294px ;
+    }
+    .color2{
+        position: relative;
+        right: 222px;
     }
 }
 
