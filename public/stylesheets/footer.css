@@ -81,6 +81,7 @@ footer {
    padding-bottom: 15px;
    font-size: 14px;
    color: grey;
+   margin-bottom: 0;
 }
 
 .footer__payments {

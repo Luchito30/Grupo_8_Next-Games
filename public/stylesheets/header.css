@@ -11,7 +11,7 @@ a {
     color: white;
 }
 
-.container {
+.header__inicio {
     display: flex;
     justify-content: space-between;
     align-items: center;
