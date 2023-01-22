@@ -146,6 +146,7 @@ right: 43px;
     .otros-colores{
         display: flex;
         height: 407px;
+        margin-top: 36px;
         justify-content: space-between;
     }
     .color1{
@@ -162,9 +163,9 @@ right: 43px;
         height: 139px;
         width: 136px;
         position: relative;
-        right: 104px;
+        right: -29px;
         border-radius: 18px;
-        margin-left: -36px;
+        margin-left: -6px;
     }
     h3{
         color: #fff;
@@ -174,9 +175,9 @@ right: 43px;
 
 .sub-header {
     position: relative;
-    top: -122px;
+    top: -303px;
     border: 1px;
-    left: 47px;
+    left: 35px;
     height: 79px;
     width: 707px;
     border-radius: 14px;
@@ -233,7 +234,7 @@ right: 43px;
 }
 .descripciones{
     position: relative;
-    left: 64px;
+    left: 37px;
     top: 54px;
     height: 50%;
     
@@ -264,11 +265,12 @@ right: 43px;
     }
     .descripcion-detalle {
         position: relative;
-        right: 42px;
+        right: 113px;
+        top: 36px;
     }
     .sub-header {
         position: relative;
-        top: -132px;
+        top: -400px;
         border: 1px;
         left: 69px;
         height: 79px;
@@ -282,11 +284,11 @@ right: 43px;
     }
     .otros-colores{
         position: relative;
-        right:294px ;
+        right:-12px ;
     }
     .color2{
         position: relative;
-        right: 222px;
+        right: 136px;
     }
 }
 
