@@ -283,10 +283,11 @@ a {
     }
 
     .right-nav-bar--button {
+        right: 30px;
         height: 60px;
         width: 60px;
         font-size: 20px;
-        top: 2px;
+        top: 1px;
     }
 
     .right-nav-bar--busq2::placeholder {
