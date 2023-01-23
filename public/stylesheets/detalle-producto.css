@@ -102,6 +102,14 @@ right: 43px;
         background-color: var(--fondo2VioletaC);
         display: flex;
     }
+    .titulo-1{
+        position: relative;
+    bottom: -25px;
+    }
+    .rank{
+        position: relative;
+        bottom: -33px;
+    }
     .detalle-imagenes{
         width: 50%;
         margin-left: 25px;
@@ -116,6 +124,12 @@ right: 43px;
     .description-22,.otros-colores,.colores{
        display: flex;
     }
+    .colores{
+        position: relative;
+        top: 55px;
+        /* left: -7px; */
+        right: 426px;
+    }
    
 
 .descripcion-detalle{
@@ -126,8 +140,10 @@ right: 43px;
 }
 .detalle-img--conteiner{
     background-color: var(--fondo1VioletaO);
-    height: 162vh;
+    height: 50vh;
     border-radius: 28px;
+    position: relative;
+    top: 68px;
 }
     
 .sub {
@@ -137,10 +153,11 @@ right: 43px;
     text-align: left;
     }
     .imagen-right img{
-        width: 100px;
+        width: 209px;
       position: relative;
-      top: 9px;
-      left: 19px;
+      top: -6px;
+      left: -37px;
+      height: 159px;
     }
     .imagen-left img{
         width: 122px;
@@ -150,9 +167,11 @@ right: 43px;
 
     }
     .otros-colores{
-        display: flex;
-        height: 407px;
-        margin-top: 36px;
+        position: relative;
+        right: 388px;
+        top: 75px;
+        height: 463px;
+        
         justify-content: space-between;
     }
     .color1{
@@ -181,9 +200,9 @@ right: 43px;
 
 .sub-header {
     position: relative;
-    top: -303px;
+    top: -136px;
     border: 1px;
-    left: 35px;
+    left: 23px;
     height: 79px;
     width: 707px;
     border-radius: 14px;
@@ -238,15 +257,25 @@ right: 43px;
     left: 57px;
     
 }
+.description-22{
+    position: relative;
+    top: 48px;
+}
 .descripciones{
     position: relative;
-    left: 37px;
+    left: 44px;
     top: 54px;
     height: 50%;
     
 }
-.tarjetas-detalle h3{
+.envios{
+    position: relative;
+    top: 56px;
+}
+.tarjetas-detalle{
     color: #fff;
+    position: relative;
+    top: 59px;
 }
  }
 
@@ -276,7 +305,7 @@ right: 43px;
     }
     .sub-header {
         position: relative;
-        top: -400px;
+        top: -110px;
         border: 1px;
         left: 69px;
         height: 79px;
@@ -290,12 +319,49 @@ right: 43px;
     }
     .otros-colores{
         position: relative;
-        right:-12px ;
+        float: left;
+    
+        /*
+        top: 91px;
+        */
+        right:422px ;
+        height: 483px;
+        justify-content: space-between;
+    }
+    .color1{
+        display: flex;
+        background-color: var(--fondo1VioletaO);
+        height: 139px;
+        width: 136px;
+        border-radius: 18px;
+
     }
     .color2{
+        display: flex;
+        background-color: var(--fondo1VioletaO);
+        height: 139px;
+        width: 136px;
         position: relative;
-        right: 136px;
+        right: -34px;
+        border-radius: 18px;
+        margin-left: -6px;
     }
+    .colores {
+        position: relative;
+        top: 83px;
+        /* left: -7px; */
+        right: 600px;
+    }
+    .detalle-img--conteiner {
+        background-color: var(--fondo1VioletaO);
+        height: 44vh;
+        border-radius: 28px;
+        position: relative;
+        top: 72px;
+    
+   
+    
+        
 }
 
 
@@ -325,3 +391,4 @@ right: 43px;
 
 
 
+}
