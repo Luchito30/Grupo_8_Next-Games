@@ -98,9 +98,9 @@ right: 43px;
 }
 
  @media (min-width: 769px){
-    main{
+    .main-detalledeproducto{
         background-color: var(--fondo2VioletaC);
-        display: flex;
+        display:flex
     }
     .titulo-1{
         position: relative;
