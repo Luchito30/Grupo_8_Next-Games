@@ -208,7 +208,7 @@ font-style: normal;
         left: 5%;
         background: var(--fondo2VioletaC);
         border-radius: 37px;
-        height: 58pc;
+        height: 55pc;
         z-index: -1;
     }
     .titles h1{
@@ -258,7 +258,21 @@ font-style: normal;
         position: relative;
     
     
-  }    
+  } 
+  .titles{
+    height: 55pc;
+  }
+  .titles h2{
+    margin-left: -45px;
+  }
+  .titles h1{
+    margin-left: 21px;
+  }
+  .right-register{
+    width: 91%;
+    position: relative;
+    left: 46px;
+  }   
   .hr-register {
     color: var(--letrasSubtitulos1);
     width: 96%;
