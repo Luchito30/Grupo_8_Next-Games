@@ -1,7 +1,7 @@
-const swiper = new Swiper('.swiper-notebook', {
+const swiper = new Swiper('.swiper-notebook1', {
     // Optional parameters
-    slidesPerView: 3,
-   
+    slidesPerView: 5,
+    spaceBrtween: 0,
     direction: 'horizontal',
     loop: true,
     autoplay:{

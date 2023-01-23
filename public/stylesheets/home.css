@@ -12,7 +12,7 @@
     display: none;
 }
 .home__main__section__article {
-    margin: 10px;
+    margin: 2px;
     transition: all 1s;
 }
 .home__main__section {
@@ -72,9 +72,9 @@
 }
 
 .home__main__section__article:hover h5{
-    height: 60px;
-    font-size: 16px;
-    padding-top: 15px;
+    height: 55px;
+    font-size: 14px;
+    padding-top: 5px;
 }
 
 .home__main--flex {
@@ -104,24 +104,49 @@
     margin-left: 43px;
 }
 .home__main__bannermid{
-    display: flex;
-    justify-content: center;
     margin: 30px 0;
 }
 .home__main__bannermid--izq, .home__main__bannermid--der{
-    width: 40%;
+    text-align: center;
 }
 .home__main__bannermid--izq img, .home__main__bannermid--der img{
-    width: 90%;
+    width: 95%;
 }
-.swiper {
-    width: 100%x;
+.swiper-notebook1 {
+    width: 100%;
 }
-.swiper-notebook .swiper-slide{
+.swiper-notebook1 .swiper-slide{
     width: 250px;
 }
-
-
+.swiper-notebook1 .swiper-button-prev, .swiper-notebook1 .swiper-button-next{
+    --swiper-navigation-size: 25px;
+    background-color: var(--fondo1VioletaO);
+    color: white;
+    height: 70px;
+    width: 50px;
+    margin-top: -35px;
+    opacity: 0;
+}
+.swiper-notebook1 .swiper-button-prev{
+    border-radius: 0 65px 65px 0;
+    left: -5px;
+}
+.swiper-notebook1 .swiper-button-next{
+    border-radius: 65px 0 0 65px;
+    right: -5px;
+}
+.swiper-notebook1:hover .swiper-button-prev, .swiper-notebook1:hover .swiper-button-next{
+    opacity: 1;
+}
+.home__main__section__article .notebook{
+    margin: 2px;
+}
+#oferta{
+    margin: 10px;
+}
+#masbuscado{
+    width: 90%;
+}
 @media(min-width:769px){
     .home__main__section--carrusel1{
        display: none;
@@ -141,5 +166,16 @@
     }
     #oferta {
         width: 20%;
+    }
+    .home__main__bannermid--izq img, .home__main__bannermid--der img{
+        width: 90%;
+    }
+    .home__main__bannermid{
+        display: flex;
+    }
+}
+@media(min-width:1024px){
+    #oferta {
+        width: 16%;
     }
 }
