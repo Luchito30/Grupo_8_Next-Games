@@ -55,14 +55,14 @@ h3{
    
 }
 .guardar{
-    width: 97px;
-    height: 36px;
+    width: 152px;
+    height: 40px;
     border-radius: 10px;
     color: #fff;
     font-family: var(--FontTitulo);
     display: flex;
     position: relative;
-    left: 85px;
+    left: 39px;
     align-items: center;
     justify-content: center;
     background-color: var(--fondo2VioletaC);
@@ -111,21 +111,16 @@ form{
     position: relative;
 }
 
-input{
-    padding: 12px 15px;
-    margin: 8px 0;
-    height: 43px;
-}
-
 .forms input{
     text-align: center;
     width: 100%;
-    
     background: transparent;
     border: 2px solid var(--letrasSubtitulos1);
     border-radius: 6px;
     outline: none;
     padding: 0 10px;
+    height: 43px;
+    margin: 8px 0;
     font-size: 20px;
 }
 .forms  label{
@@ -164,7 +159,6 @@ font-style: normal;
 
  @media(min-width :769px){
     .login-register{
-        position: relative;
         top: 1px;
     }
     .right-register{
@@ -180,64 +174,58 @@ font-style: normal;
         bottom: 85px;
         right: -0.65%;
         display: flex;
-  
-        
     }
         
     .titles-left{
         height: 205px;
-        position: relative;
-        left: 43px;
+        margin-left: 25px;
     }
     .titles-left  h3{
-        position: relative;
         width: 80%;
-        height: 37%;
         top: 16%;
-        right: 3.5%;
+        left: 30px;
         font-size: 22px;
 
     }
     .titles-left h2{
-        position: relative;
-        width: 80%;
         height: 50%;
-        right: 9.5%;
-        top: 41%;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 21px;
+    top: 41%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    right: 6px;
        
     }
+    .left-register {
+        position: relative;
+    }
+       
     .titles{
-        background-color: var(--fondo2VioletaC);
         visibility: visible;
         position: absolute;
         width: 45%;
-        height: 89%;
-        top: 21%;
-	    left: 5%;
-		background: var(--fondo2VioletaC);
+        left: 5%;
+        background: var(--fondo2VioletaC);
         border-radius: 37px;
-       
+        height: 58pc;
+        z-index: -1;
     }
     .titles h1{
         position: relative;
         top: 42px;
-        left: 15px;
         font-size: 50px;
         color: #fff;
         font-family: var(--FontTitulo);
+        margin-left: 30px;
     }
     .titles h2{
         position: relative;
-        top: 80px;
-        left: 16px;
-       font-size: 27px;
-       text-align: left;
-        color: #fff;
-        font-family: var(--FontSubtitulo);
+    top: 80px;
+    font-size: 27px;
+    color: #fff;
+    font-family: var(--FontSubtitulo);
+    margin-left: 10px;
     }
     .aca{
         color: var(--letrasSubtitulos2);
@@ -249,7 +237,7 @@ font-style: normal;
     }
     .titles-register{
         bottom: 53px;
-        position: relative
+        position: relative;
     }
     .google{
         height: 42px;
@@ -286,20 +274,4 @@ font-style: normal;
     right: 16.35%;
     display: flex;  
   }
-  .titles {
-    background-color: var(--fondo2VioletaC);
-    visibility: visible;
-    position: absolute;
-    width: 48%;
-    height: 98%;
-    top: 21%;
-    left: 3%;
-    background: var(--fondo2VioletaC);
-    border-radius: 37px;
-} 
-        
-        
-      
-      
-   
 }
