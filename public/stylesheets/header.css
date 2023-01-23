@@ -1,9 +1,9 @@
 body {
-    background-color: var(--fondo2VioletaC);
+    background-color: var(--fondo1VioletaO);
 }
 
 header {
-    background-color: var(--fondo1VioletaO);
+    background-image: url(/images/1600_Featured_Games.jpg);
 }
 
 a {
@@ -13,63 +13,15 @@ a {
 .container {
     display: flex;
     justify-content: space-between;
-}
-
-.header__logo {
-    width: 90%;
-    height: 60px;
-    padding-top: 13px;
-    margin-left: 40px;
-    margin-bottom: 10px;
-}
-
-.right-nav-bar--busq {
-    font: inherit;
-}
-
-.right-nav-bar {
-    display: flex;
-}
-
-.right-nav-bar--form {
-    margin: auto;
+    
 }
 
 .right-nav-bar--form i {
     color: white;
     width: 0;
     position: relative;
-    right: 8px;
-    bottom: 2px;
-}
-
-.right-nav-bar--form>div {
-    display: flex;
-    background-color: var(--fondo2VioletaC);
-    padding: 11px 20px 5px 14px;
-    border-radius: 30px;
-    margin-left: 50px;
-    margin-bottom: 2px;
-}
-
-.right-nav-bar--form input {
-    border: none;
-    background: transparent;
-    font-weight: bold;
-    background-size: 16px;
-    width: 0px;
-    z-index: 10;
-    transition: all 1s;
-}
-
-.right-nav-bar--form input::placeholder {
-    color: black;
-    font-size: 15px;
-}
-
-.right-nav-bar--form input:hover {
-    outline: none;
-    width: 150px;
+    left: 7px;
+    bottom: 7px;
 }
 
 .right-nav-bar2 {
@@ -84,14 +36,15 @@ a {
     border-radius: 50%;
     background-color: var(--fondo2VioletaC);
     text-align: center;
-    font-size: 14px;
-    padding-top: 9px;
-    margin-top: 18px;
-    margin-left: 13px;
+    font-size: 15px;
+    margin: 20px 10px;
+    padding-top: 5px;
+
 }
 
-.menu-hamburguesa:hover {
-    background-color: var(--letrasSubtitulos1);
+.right-nav-bar {
+    float: right;
+    margin: 20px 10px
 }
 
 .left-nav-bar--1,
@@ -112,8 +65,16 @@ a {
     margin-top: 18px;
 }
 
-.carro:hover {
-    background-color: var(--letrasSubtitulos1);
+.lupita {
+    margin-right: 5px;
+    border-radius: 50%;
+    background-color: var(--fondo2VioletaC);
+    text-align: center;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--fondo2VioletaC);
+     font-size: 9px;
 }
 
 @media (min-width: 485px) {
@@ -138,49 +99,16 @@ a {
 
     .right-nav-bar2 {
         display: flex;
-        align-items: center;
-    }
-
-    .right-nav-bar--busq2 {
-        background-color: var(--fondo2VioletaC);
-        border-radius: 30px;
-        height: 40px;
-        padding-left: 20px;
-        border: none;
-        width: 250px;
-        margin-left: 5px
-    }
-
-    .right-nav-bar--busq2::placeholder {
-        color: black;
-        font-size: 18px;
-    }
-
-    .right-nav-bar--busq2:hover {
-        background-color: var(--letrasSubtitulos1);
-    }
-
-    .right-nav-bar--button:hover {
-        background-color: var(--letrasSubtitulos1);
-    }
-
-    .right-nav-bar--button {
-        background-color: var(--fondo2VioletaC);
-        border: 1px solid var(--fondo2VioletaC);
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        font-size: 17px;
-        color: white;
+        order: 2;
         position: relative;
         right: 40px;
     }
 
     .carro {
-        width: 40px;
-        height: 40px;
-        font-size: 17px;
-        margin-top: 20px;
+        left: 91px;
+        position: relative;
+        top: 15px;
+        ;
     }
 
     .header__section__article {
@@ -188,14 +116,22 @@ a {
         justify-content: space-around;
     }
 
-    .left-nav-bar--1 {
-        display: flex;
-        font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 10px;
+    .search-bar {
+        display: block;
+        right: 23px;
+        display: block;
+        position: relative;
+        top: 39px;
+        width: 80%;
+        margin: -15px;
+        border: 1px solid var(--letrasSubtitulos1);
+        border-radius: 7px;
+        background-color: transparent;
     }
-
-    .home {
+    .search-bar::placeholder
+    {
+        font-size: 12px;
+        padding: 5px;
         font-family: var(--FontTitulo);
     }
 
@@ -218,11 +154,6 @@ a {
         padding: 10px;
     }
 
-    .left-nav-bar--2 {
-        display: flex;
-        font-size: 18px;
-        margin-top: 20px;
-        margin-bottom: 10px;
     }
 
     .registro {
@@ -263,40 +194,9 @@ a {
         margin-right: -7px;
 
     }
+    .produ
+    {
+        font-family: var(--FontTitulo);
 
-    .right-nav-bar--busq2 {
-        left: 25px;
-        position: relative;
-        height: 60px;
-        width: 430px;
-    }
-
-    .right-nav-bar--button {
-        height: 60px;
-        width: 60px;
-        font-size: 20px;
-        top: 2px;
-    }
-
-    .right-nav-bar--busq2::placeholder {
-
-        font-size: 22px;
-    }
-
-    .carro {
-        width: 60px;
-        height: 60px;
-        font-size: 20px;
-        margin-top: 8px;
-    }
-
-    .left-nav-bar--1 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    .left-nav-bar--2 {
-        font-size: 24px;
-        margin-bottom: 15px;
     }
 }
