@@ -281,6 +281,13 @@ right: 43px;
 
 
 @media (min-width: 1024px){
+    .imagen-right img {
+        width: 181px;
+        position: relative;
+        top: 11px;
+        left: -26px;
+        height: 130px;
+    }
     
     .imagenes {
         background-color: var(--fondo1VioletaO);
@@ -319,13 +326,13 @@ right: 43px;
     }
     .otros-colores{
         position: relative;
-        float: left;
+        
     
         /*
         top: 91px;
         */
-        right:422px ;
-        height: 483px;
+        right:-10px ;
+        height: 507px;
         justify-content: space-between;
     }
     .color1{
@@ -342,19 +349,19 @@ right: 43px;
         height: 139px;
         width: 136px;
         position: relative;
-        right: -34px;
+        right: 122px;
         border-radius: 18px;
-        margin-left: -6px;
+       
     }
     .colores {
         position: relative;
-        top: 83px;
+        top: 68px;
         /* left: -7px; */
-        right: 600px;
+        left: -7px;
     }
     .detalle-img--conteiner {
         background-color: var(--fondo1VioletaO);
-        height: 60vh;
+        height: 49vh;
         border-radius: 28px;
         position: relative;
         top: 72px;
