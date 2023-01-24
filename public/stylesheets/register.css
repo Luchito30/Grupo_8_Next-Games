@@ -1,11 +1,11 @@
 
 body{
     background-color: var(--fondo1VioletaO);
-} h2{
+}.titulo-register1 {
     bottom: 55px;
 }
 
-h2, h3{
+.titulo-register1, .titulo-register2{
     color: #fff;
     font-family: sans-serif;
     position: relative;
@@ -15,7 +15,7 @@ h2, h3{
     text-align: center;
     height: 80px;
 }
-h3{
+.titulo-register2{
     position: relative;
     bottom: 92px;
     
@@ -130,13 +130,22 @@ left: -51px;
 text-transform: capitalize;
 font-size: 16px;
 transition: top .2s;
-padding: 0 5px;
+
 pointer-events: none;
 color: rgba(255, 255, 255, 1);
 font-family: 'Inter', sans-serif;
 font-weight: 400;
 font-style: normal;
 }
+
+.us-name{
+    padding-right: 35px;
+}
+
+.direccion{
+    padding-right: 15px;
+}
+
 .e-mail {
     margin-right: 36px;
 }
