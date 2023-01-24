@@ -47,7 +47,7 @@
 .home__main--div {
     border-top: 1px solid var(--colorGrisclaro);
     padding: 10px;
-    background-color: var(--fondo2VioletaC);
+    background-color: var( --fondo1VioletaO);
     position: relative;
     padding-top: 35px;
 }
@@ -78,7 +78,7 @@
 .home__main__section__article:hover h5 {
     height: 55px;
     font-size: 14px;
-    padding-top: 5px;
+    padding-top: 15px;
 }
 
 .home__main--flex {
@@ -229,6 +229,7 @@
     --swiper-pagination-bullet-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 4px;
   }
+  
 
 @media(min-width:769px) {
     .home__main__section--carrusel1 {

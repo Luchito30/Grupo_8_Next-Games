@@ -1,5 +1,4 @@
-body
-{
+body {
     background-color: var(--fondo1VioletaO);
 }
 
@@ -116,7 +115,7 @@ a {
 
 .carro:hover {
     background-color: var(--letrasSubtitulos1);
-    color:black
+    color: black
 }
 
 @media (min-width: 485px) {
@@ -200,7 +199,7 @@ a {
         margin-bottom: 10px;
     }
 
-    .left-nav-bar--1 i{
+    .left-nav-bar--1 i {
         font-size: 12px;
         margin-left: 8px;
     }
@@ -233,6 +232,12 @@ a {
         font-size: 16px;
         margin-top: 20px;
         margin-bottom: 10px;
+        display: flex;
+        font-size: 16px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 10;
     }
 
     .registro {
@@ -273,10 +278,11 @@ a {
         margin-right: -7px;
 
     }
-    .produ
-    {
+
+    .produ {
         font-family: var(--FontTitulo);
     }
+
     .right-nav-bar--busq2 {
         left: 25px;
         position: relative;
@@ -309,7 +315,7 @@ a {
         margin-bottom: 10px;
     }
 
-    .left-nav-bar--1 i{
+    .left-nav-bar--1 i {
         font-size: 14px;
     }
 
@@ -319,28 +325,28 @@ a {
     }
 }
 
-@media(min-width:1024px){
+@media(min-width:1024px) {
     .right-nav-bar--busq2 {
         font-size: 20px;
     }
 
     .right-nav-bar--button {
         font-size: 22px;
-         }
+    }
 
     .right-nav-bar--busq2::placeholder {
         font-size: 19px;
     }
 
     .carro {
-        font-size: 22px; 
+        font-size: 22px;
     }
 
     .left-nav-bar--1 {
         font-size: 20px;
     }
 
-    .left-nav-bar--1 i{
+    .left-nav-bar--1 i {
         font-size: 16px;
     }
 
