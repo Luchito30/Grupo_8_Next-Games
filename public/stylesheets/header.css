@@ -273,7 +273,10 @@ a {
         margin-right: -7px;
 
     }
-
+    .produ
+    {
+        font-family: var(--FontTitulo);
+    }
     .right-nav-bar--busq2 {
         left: 25px;
         position: relative;
