@@ -15,51 +15,65 @@ footer{
    justify-content: space-between;
    align-items: center;
 }
-.footer__section--left{
+
+.footer__section--left {
    margin-left: -3px;
 }
-.footer__section--left img{
+
+.footer__section--left img {
    width: 30%;
    animation: rotation 8s linear infinite normal;
 }
-.footer-right ul{
+
+.footer-right ul {
    display: flex;
 }
-.footer-right ul li{
+
+.footer-right ul li {
    margin-right: 20px;
 }
-.footer-right ul li i:hover{
+
+.footer-right ul li i:hover {
    color: var(--letrasSubtitulos2);
 }
-.footer-right{
+
+.footer-right {
    font-size: 18px;
 }
-.footer__section2{
+
+.footer__section2 {
    width: 85%;
    padding: 20px 0px;
 }
-.footer__section2--links{
+
+.footer__section2--links {
    display: flex;
    justify-content: space-around;
 }
-.footer__section2--links li{
+
+.footer__section2--links li {
    margin: 0px 10px;
 }
-.footer__section2--links span{
+
+.footer__section2--links span {
    color: white;
 }
-.footer__section2--links li a{
+
+.footer__section2--links li a {
    font-size: 12px;
 }
-.footer__section2 ul li a:hover{
+
+.footer__section2 ul li a:hover {
    color: var(--letrasSubtitulos2);
 }
-.footer__section3{
+
+.footer__section3 {
    width: 83%;
    margin-left: 10px;
-   margin-bottom: 15px;
+   margin-bottom: 20px;
 }
-.footer-company-name{
+
+.footer-company-name {
    margin-left: 10px;
    margin-right: 10px;
    padding-bottom: 15px;

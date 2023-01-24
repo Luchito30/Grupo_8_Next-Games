@@ -1,0 +1,377 @@
+body {
+    background-color: var(--fondo2VioletaC);
+}
+
+.header-2 {
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: var(--FontSubtitulo);
+    width: 100%;
+    height: 70px;
+}
+
+.web-segura {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.venta-telefonica {
+    display: inline-block;
+    margin: 15px 10px;
+}
+
+.venta-telefonica h3 {
+    font-size: 16px;
+}
+
+.venta-telefonica h5 {
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.sitio-seguro {
+    display: inline-block;
+    margin: auto 10px;
+}
+
+.sitio-seguro h3 {
+    font-size: 16px;
+}
+
+
+.mi-carrito {
+    font-family: var(--FontTitulo);
+    color: var(--letrasTitulos);
+    margin: 20px 10px;
+}
+
+.descripcion-carrito {
+    background-color: var(--fondo1VioletaO);
+    margin: 20px 10px;
+    max-width: 768px;
+    border: 1px solid var(--letrasTitulos);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(224, 97, 243, 0.87);
+}
+
+.descripcion {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.product {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.cost {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.price {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.quantity {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.cruz {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 15px;
+    padding: 2px;
+    background-color: var(--letrasSubtitulos1);
+    margin-bottom: 5px;
+}
+
+.cruz:hover {
+    background-color: var(--letrasSubtitulos2);
+    transition: all 0.3s;
+}
+
+.cruz p {
+    color: black;
+}
+
+.detalle-carrito {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detalle-carrito img {
+    width: 40%;
+    height: 55px;
+}
+
+.detalle-carrito .producto {
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+    text-align: center;
+    display: inline-block;
+    width: 50%;
+}
+
+.imagen-detalle {
+    display: inline-block;
+    width: 20%;
+    margin: auto;
+}
+
+.precio {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.unidad {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+}
+
+.unidad button {
+    border: 1px solid white;
+    border-radius: 2px;
+    width: 15px;
+    padding: 2px;
+    background-color: var(--letrasSubtitulos1);
+}
+
+.unidad button:hover {
+    background-color: var(--letrasSubtitulos2);
+    transition: all 0.3s;
+}
+
+.unidad button p {
+    color: black;
+}
+
+.total {
+    width: 20%;
+    margin: auto;
+    text-align: center;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.resumen-carrito {
+    background-color: var(--fondo1VioletaO);
+    margin: auto;
+    margin-bottom: 20px;
+    border: 1px solid var(--letrasTitulos);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgb(224, 97, 243, 0.87);
+    display: flex;
+    flex-direction: column;
+    max-width: 484px;
+    width: 80%;
+}
+
+.resume-cost {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resume-cost-total {
+    text-align: left;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.resume-cost-total1 {
+    text-align: right;
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+}
+
+.resumen-carrito h4 {
+    color: var(--letrasSubtitulos1);
+    font-family: var(--FontSubtitulo);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.boton1 {
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasTitulos);
+    font-size: 12px;
+    width: 70%;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.boton1:hover {
+    background-color: var(--letrasSubtitulos2);
+}
+
+.envio-domicilio {
+    display: inline-block;
+    text-align: right;
+}
+
+.retiro-tienda {
+    display: inline-block;
+}
+
+.despacho {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boton2 {
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasTitulos);
+    font-size: 12px;
+    width: 50%;
+    height: 29px;
+    margin: 0px 25%;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.boton2:hover {
+    background-color: var(--letrasSubtitulos2);
+}
+
+.boton3 {
+    background-color: var(--letrasSubtitulos2);
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasTitulos);
+    padding: 5px;
+    width: 50%;
+    height: 25px;
+    margin: 0px 25%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.boton3:hover {
+    background-color: var(--fondo1VioletaO);
+}
+
+
+/* Tablet */
+@media(min-width: 485px) {
+    .resumen-carrito {
+        display: inline-block;
+        width: 100%;
+        margin: 0px 20px 20px 0px;
+    }
+
+    .despacho {
+        display: inline-block;
+        margin: 20px;
+    }
+
+    .envio-domicilio {
+        text-align: center;
+    }
+
+    .retiro-tienda {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .resumen-despacho {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .boton2 {
+        height: 32px;
+    }
+
+    .boton3 {
+        height: 32px;
+    }
+
+    .medio-pago h5 {
+        font-size: 14px;
+    }
+
+    .fin-compra h5 {
+        font-size: 14px;
+    }
+}
+
+/* Desktop */
+@media(min-width: 769px) {
+    .descripcion-carrito {
+        width: 52%;
+        float: left;
+    }
+
+    .resumen-carrito {
+        width: 130%;
+        float: left;
+        margin: 20px 0px;
+    }
+
+    .envio-domicilio {
+        width: 65%;
+        float: left;
+        height: 40px;
+    }
+
+    .retiro-tienda {
+        width: 65%;
+        float: left;
+    }
+
+    .descripcion-resumen {
+        width: 100%;
+    }
+
+    .despacho {
+        margin: 20px 0px;
+        padding: 0px 5px 10px 75px;
+    }
+
+    .boton2 {
+        height: 35px;
+    }
+
+    .boton3 {
+        height: 35px;
+    }
+
+    .medio-pago h5 {
+        font-size: 16px;
+    }
+
+    .fin-compra h5 {
+        font-size: 16px;
+    }
+}
