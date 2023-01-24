@@ -11,76 +11,77 @@
 </head>
 <body>
   
-  <header>
-    <div class="container">
-        <div class="menu-hamburguesa">
-            <i class="fa-solid fa-bars"></i>
-        </div>
+    <header>
+        <div class="header__inicio">
+            <div class="menu-hamburguesa">
+                <i class="fa-solid fa-bars"></i>
+            </div>
 
-        <div class="header__div__logo">
-            <a href="/"><img class="header__logo" src="/images/next-games-nuevologo-horizontal.png" alt="logo"></a>
-        </div>
+            <div class="header__div__logo">
+                <a href="/"><img class="header__logo" src="/images/next-games-nuevologo-horizontal.png"
+                        alt="logo"></a>
+            </div>
 
-        <section class="right-nav-bar">
-            <form action="" method="" autocomplete="off" class="right-nav-bar--form">
-                <div>
-                    <input type="text" name="search" class="right-nav-bar--busq" placeholder="Buscar Producto"
-                        title="¿Que desea Buscar?">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </form>
-        </section>
-
-        <section class="right-nav-bar2">
-            <form action="" method="" autocomplete="off" class="right-nav-bar--form2">
-                <div>
-                    <input type="text" name="search" class="right-nav-bar--busq2" placeholder="Buscar Producto"
-                        title="¿Que desea Buscar?">
-                    <button class="right-nav-bar--button">
+            <section class="right-nav-bar">
+                <form action="" method="" autocomplete="off" class="right-nav-bar--form">
+                    <div>
+                        <input type="search" name="search" class="right-nav-bar--busq" id="search"
+                            placeholder="Buscar Producto" title="¿Que desea Buscar?">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="right-nav-bar2">
+                <form action="" method="" autocomplete="off" class="right-nav-bar--form2">
+                    <div>
+                        <input type="search" name="search" class="right-nav-bar--busq2" id="search"
+                            placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                        <button class="right-nav-bar--button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <div>
+
+                <button class="carro">
+                    <i class="fa-solid fa-cart-shopping" id="carrito"></i>
+                </button>
+            </div>
+        </div>
+
+        <section class="header__section">
+            <article class="header__section__article">
+                <div>
+                    <ul class="left-nav-bar--1">
+                        <li>
+                            <a class="home" href="/">Home</a>
+                        </li>
+
+
+                        <li>
+                            <a class="produ" href="">Productos<i class="fa-solid fa-chevron-down"></i></a>
+                        </li>
+                    </ul>
                 </div>
-            </form>
+
+                <div>
+                    <ul class="left-nav-bar--2">
+                        <li>
+                            <a class="registro" href="/register">Registro</a>
+                        </li>
+                        <li>
+                            <a class="login" href="/login">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
         </section>
 
-        <div>
 
-            <button class="carro">
-                <i class="fa-solid fa-cart-shopping" id="carrito"></i>
-            </button>
-        </div>
-    </div>
-
-    <section class="header__section">
-        <article class="header__section__article">
-            <div>
-                <ul class="left-nav-bar--1">
-                    <li>
-                        <a class="home" href="/">Home</a>
-                    </li>
-
-
-                    <li>
-                        <a class="produ" href="">Productos<i class="fa-solid fa-chevron-down"></i></a>
-                    </li>
-                </ul>
-            </div>
-
-            <div>
-                <ul class="left-nav-bar--2">
-                    <li>
-                        <a class="registro" href="#">Registro</a>
-                    </li>
-                    <li>
-                        <a class="login" href="/login">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </article>
-    </section>
-
-
-</header>
+    </header>
 
 
 
@@ -152,7 +153,7 @@
   </div>
 
 </main>
-  <footer class="footer-d">
+<footer class="footer-d">
 
     <section class="footer__section"> 
         <div class="footer__section--left">
@@ -187,16 +188,23 @@
             <hr class="footer__section3--linea">
         </div>
     </section>
-    
+    <div class="footer__payments">
+    <div class="tarjetas"><img src="/images/tarjetas.png" alt=""></div>
+    <div class="mercado"><img src="/images/mercadopago.png" alt=""></div>
+    <div class="ahora"><img src="/images/ahora12.png" alt=""></div>
+    </div>
+
+    <div class="footer__envio">
+        <div class="oca"><img src="/images/oca.png" alt=""></div>
+        <div class="andriani"><img src="/images/andreani.png" alt=""></div>
+    </div>
     <p class="footer-company-name">
         © 2022 gamigo US Inc., a member of gamigo group. gamigo is a registered trademark of gamigo AG in Germany,
         in the European Union and United Kingdom. gamigo group is a registered trademark of gamigo AG in Germany.
         Glyph is a registered trademark of Blockescence DLT Solutions GmbH in the European Union, UK and the US.
         All other trademarks are properties of their respective owners. All rights reserved.
     </p>
-
 </footer>
-
 
 </body>
 </html>
