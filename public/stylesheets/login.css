@@ -302,14 +302,14 @@
     .login__main__costados--left {
         position: absolute;
         width: 285px;
-        min-height: 640px;
+        min-height: 644px;
         background-color: rgba(188, 121, 240, 0.4);
     }
 
     .login__main__costados--right {
         width: 285px;
         position: absolute;
-        min-height: 640px;
+        min-height: 644px;
         background-color: rgba(188, 121, 240, 0.4);
         right: 0;
     }
