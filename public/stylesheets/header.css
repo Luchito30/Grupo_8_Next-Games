@@ -187,9 +187,14 @@ a {
         margin-top: 3px;
     }
 
+    .header__section{
+        height: 60px;
+    }
+
     .header__section__article {
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .left-nav-bar--1 {
@@ -208,23 +213,43 @@ a {
         font-family: var(--FontTitulo);
     }
 
-    .home:hover {
-        background-color: var(--letrasSubtitulos1);
-        color: var(--fondo2VioletaC);
-        border-radius: 30px;
-        padding: 10px;
-    }
-
     .produ {
         font-family: var(--FontTitulo);
         margin-left: 50px;
     }
+    
 
-    .produ:hover {
-        background-color: var(--letrasSubtitulos1);
-        color: var(--fondo2VioletaC);
-        border-radius: 30px;
-        padding: 10px;
+    .produ hr{
+        display: none;
+    }
+    
+    .produ:hover hr{
+        display: block;
+        color: white;
+        width: 30%;
+        position: relative;
+        top: 2px;
+        margin-left: 50px;
+    }
+
+    .produ:hover{
+        color: var(--letrasSubtitulos2);
+    }
+
+    .home hr{
+        display: none;
+    }
+    
+    .home:hover hr{
+        display: block;
+        color: white;
+        width: 60%;
+        position: relative;
+        top: 2px;
+    }
+
+    .home:hover{
+        color: var(--letrasSubtitulos2);
     }
 
     .left-nav-bar--2 {
@@ -232,38 +257,52 @@ a {
         font-size: 16px;
         margin-top: 20px;
         margin-bottom: 10px;
-        display: flex;
-        font-size: 16px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        position: relative;
-        z-index: 10;
     }
 
     .registro {
         color: var(--letrasSubtitulos2);
         font-family: var(--FontTitulo);
-        margin-right: 50px;
+        position: relative;
+        right: 50px;
     }
 
-    .registro:hover {
-        background-color: var(--letrasSubtitulos1);
-        color: var(--fondo2VioletaC);
-        border-radius: 30px;
-        padding: 10px;
+    .registro hr{
+        display: none;
     }
+    
+    .registro:hover hr{
+        display: block;
+        color: var(--letrasSubtitulos2);
+        width: 60%;
+        top: 2px;
+    }
+
+    .registro:hover{
+        color: white;
+    }
+
 
     .login {
         font-family: var(--FontTitulo);
 
     }
 
-    .login:hover {
-        background-color: var(--letrasSubtitulos1);
-        color: var(--fondo2VioletaC);
-        border-radius: 30px;
-        padding: 10px;
+    .login hr{
+        display: none;
     }
+    
+    .login:hover hr{
+        display: block;
+        color:white;
+        width: 60%;
+        position: relative;
+       top: 2px;
+    }
+
+    .login:hover{
+        color: var(--letrasSubtitulos2);
+    }
+
 }
 
 @media(min-width: 769px) {
