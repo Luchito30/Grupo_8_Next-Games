@@ -47,9 +47,9 @@
 .home__main--div {
     border-top: 1px solid var(--colorGrisclaro);
     padding: 10px;
-    background-color: var( --fondo1VioletaO);
+    background-color: var(--fondo1VioletaO);
     position: relative;
-    padding-top: 35px;
+    color: white;
 }
 
 .home__main--div img {
@@ -69,22 +69,28 @@
     animation: rotation 3s linear infinite normal;
 }
 
-.home__main__section__article h5 {
+.home__main__section__article .home__main--ocultar {
     height: 0px;
     transition: all 1.5s;
     overflow: hidden;
 }
 
-.home__main__section__article:hover h5 {
-    height: 55px;
-    font-size: 14px;
+
+.home__main__section__article:hover .home__main--ocultar {
+    height: 100px;
+    font-size: 19px;
     padding-top: 15px;
+    overflow: hidden;
 }
 
 .home__main--flex {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    flex-direction: column;
+}
+
+.home__main__detalle-h4{
+    margin-bottom: 10px;
 }
 
 .home__main--precio {
@@ -94,6 +100,26 @@
 .home__main--descuento {
     font-size: 16px;
 
+}
+
+.home__main--descripcion{
+    margin-top: 12px;
+}
+
+.home__main--div button{
+    margin-top: 9px;
+    background-color: var(--swiper-theme-color);
+    border: none;
+    border-radius: 30px;
+    height: 24px;
+    width: 100px;
+    color: white;
+    text-align: center;
+    transition: all 1s;
+}
+
+.home__main--div button:hover{
+    background-color: var(--fondo2VioletaC)
 }
 
 .home__main__carrusel__item {
@@ -197,13 +223,6 @@
     width: 100%;
 }
 
-.home__main__notebook,
-.home__main__ingresos,
-.home__main__tarjetasd {
-    margin-right: 43px;
-    margin-left: 43px;
-}
-
 .home__main__notebook2,
 .home__main__notebook1,
 .home__main__ingresos1,
@@ -217,8 +236,6 @@
 
 .home__main__ps4 {
     display: block;
-    margin-right: 43px;
-    margin-left: 43px;
     margin-bottom: 40px;
 }
 .swiper-banner .swiper-pagination, .swiper-banner2 .swiper-pagination, .swiper-notebook3 .swiper-pagination, .swiper-notebook2 .swiper-pagination, .swiper-notebook1 .swiper-pagination {
