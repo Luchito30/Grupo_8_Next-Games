@@ -92,7 +92,7 @@
 
 .login__enviar {
     font-size: 14px;
-    background-color: var(--letrasSubtitulos2);
+    background-color: var(--fondo1VioletaO);
     color: #fff;
     width: 100%;
     border: none;
@@ -100,10 +100,11 @@
     border-radius: 30px;
     margin-top: 25px;
     cursor: pointer;
+    transition: all 1s;
 }
 
 .login__enviar:hover {
-    background: rgba(73, 155, 234, 1);
+    background-color: var(--letrasSubtitulos2);;
     border: none;
 }
 
@@ -144,8 +145,8 @@
 
 .login__main__section4_div--button {
     border-radius: 30px;
-    background-color: var(--letrasSubtitulos2);
-    border: none;
+    background-color: transparent;
+    border-color: white;
 }
 
 .login__main__section4_div--button:hover {

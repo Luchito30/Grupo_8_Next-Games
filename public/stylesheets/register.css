@@ -33,6 +33,13 @@ body{
     position: relative;
     bottom: 118px;
 }
+.aca{
+    color: var(--letrasSubtitulos2);
+    transition: all 1s;
+}
+.aca:hover{
+    color:white;
+}
 .log{
     height: 20px;
     width: 20px;
@@ -40,7 +47,7 @@ body{
     justify-content: right;
 }
 .google{
-    background-color: var(--fondo1VioletaO);
+    background-color: transparent;
     font-family: 'Inter', sans-serif;
     font-size: 17px;
     color: #fff;
@@ -67,6 +74,7 @@ body{
     justify-content: center;
     background-color: var( --fondo1VioletaO);
     border: none;
+    transition: all 1s;
 }
 .guardar:hover{
     background-color: var(--letrasSubtitulos2);
@@ -235,9 +243,6 @@ font-style: normal;
     color: #fff;
     font-family: var(--FontSubtitulo);
     padding-left: 30px;
-    }
-    .aca{
-        color: var(--letrasSubtitulos2);
     }
     .divider{
         bottom: 67px;

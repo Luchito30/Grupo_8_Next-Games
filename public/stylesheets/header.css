@@ -211,11 +211,13 @@ a {
 
     .home {
         font-family: var(--FontTitulo);
+        transition: all 1s;
     }
 
     .produ {
         font-family: var(--FontTitulo);
         margin-left: 50px;
+        transition: all 1s;
     }
     
 
@@ -257,6 +259,8 @@ a {
         font-size: 16px;
         margin-top: 20px;
         margin-bottom: 10px;
+        z-index: 10;
+        position: relative;
     }
 
     .registro {
@@ -264,6 +268,7 @@ a {
         font-family: var(--FontTitulo);
         position: relative;
         right: 50px;
+        transition: all 1s;
     }
 
     .registro hr{
@@ -284,6 +289,7 @@ a {
 
     .login {
         font-family: var(--FontTitulo);
+        transition: all 1s;
 
     }
 

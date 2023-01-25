@@ -69,7 +69,7 @@ h3{
     height: 78px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
-    background: rgba(68, 57, 170, 0.74);
+    background: #1A027A;
 }
 .sub-header h2{
     font-family: var(--FontSubtitulo);
@@ -86,15 +86,20 @@ left: 46px;
 }
 
 .card-btn{
-    background-color: var(--fondo1VioletaO);
+    width: 101px;
+    background-color: var(--fondo2VioletaC);
     color: #fff;
     border: none;
     border-radius: 10px;
-position: relative;
-float: right;
-top: 9px;
-right: 43px;
-
+    position: relative;
+    float: right;
+    transition: all 1s;
+    top: 9px;
+    right: 43px;
+    height: 25px
+}
+.card-btn:hover{
+    background-color: var(--fondo1VioletaO);
 }
 
  @media (min-width: 769px){
@@ -206,7 +211,6 @@ right: 43px;
     height: 79px;
     width: 707px;
     border-radius: 14px;
-    background: #1A027A;
 }
 .sub-header h2 {
     font-family: var(--FontSubtitulo);
