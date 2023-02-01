@@ -1,3 +1,4 @@
+
 const swiper = new Swiper('.swiper-notebook1', {
   // Optional parameters
   slidesPerView: 3,
@@ -116,7 +117,7 @@ const swiper4 = new Swiper('.swiper-banner2', {
   pagination: {
     el: '.swiper-pagination',
     clickable:true,
-    dynamicBullets:true,
+    dynamicBullets:true
   },
 
   // Navigation arrows
@@ -125,4 +126,3 @@ const swiper4 = new Swiper('.swiper-banner2', {
     prevEl: '.swiper-button-prev',
   },
 });
-

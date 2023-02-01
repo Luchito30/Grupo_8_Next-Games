@@ -219,9 +219,9 @@
     margin-bottom: 50px;
 }
 
-.swiper-banner2 img {
+/* .swiper-banner2 img {
     width: 100%;
-}
+} */
 
 .home__main__notebook2,
 .home__main__notebook1,
@@ -238,14 +238,14 @@
     display: block;
     margin-bottom: 40px;
 }
-.swiper-banner .swiper-pagination, .swiper-banner2 .swiper-pagination, .swiper-notebook3 .swiper-pagination, .swiper-notebook2 .swiper-pagination, .swiper-notebook1 .swiper-pagination {
+/* .swiper-banner .swiper-pagination, .swiper-banner2 .swiper-pagination, .swiper-notebook3 .swiper-pagination, .swiper-notebook2 .swiper-pagination, .swiper-notebook1 .swiper-pagination {
     --swiper-pagination-color: white;
     --swiper-pagination-bullet-size: 10px;
     --swiper-pagination-bullet-inactive-color: #000;
     --swiper-pagination-bullet-inactive-opacity: 0.8;
     --swiper-pagination-bullet-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 4px;
-  }
+  } */
   
 
 @media(min-width:769px) {
@@ -283,7 +283,7 @@
         display: flex;
     }
 
-    .swiper-notebook1:hover .swiper-button-prev,
+  /*   .swiper-notebook1:hover .swiper-button-prev,
     .swiper-notebook1:hover .swiper-button-next,
     .swiper-banner:hover .swiper-button-prev,
     .swiper-banner:hover .swiper-button-next,
@@ -291,9 +291,9 @@
     .swiper-banner2:hover .swiper-button-next,.swiper-notebook2:hover .swiper-button-prev,
     .swiper-notebook2:hover .swiper-button-next {
         opacity: 1;
-    }
+    } */
 
-    .swiper-banner2 .swiper-button-prev,
+/*     .swiper-banner2 .swiper-button-prev,
     .swiper-banner2 .swiper-button-next,
     .swiper-notebook2 .swiper-button-prev,
     .swiper-notebook2 .swiper-button-next {
@@ -305,9 +305,9 @@
         margin-top: -35px;
         opacity: 0;
         transition: all 1s;
-    }
+    } */
 
-    .swiper-banner2 .swiper-button-prev,
+/*     .swiper-banner2 .swiper-button-prev,
     .swiper-notebook2 .swiper-button-prev {
         border-radius: 0 65px 65px 0;
         left: -5px;
@@ -317,7 +317,7 @@
     .swiper-notebook2 .swiper-button-next {
         border-radius: 65px 0 0 65px;
         right: -5px;
-    }
+    } */
 
     .home__main__notebook,
     .home__main__ingresos,

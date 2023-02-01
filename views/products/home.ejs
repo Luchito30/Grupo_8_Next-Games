@@ -17,14 +17,14 @@
 </head>
 
 <body>
-   <%- include('./partials/header.ejs') %>
+   <%- include('../partials/header.ejs') %>
     <main>
 
 
         <section class="home__main__section--carrusel1">
 
             <!-- Slider main container -->
-            <div class="swiper swiper-banner2">
+            <div class="swiper swiper-banner">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
@@ -37,7 +37,7 @@
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-
+            </div>
         </section>
 
         <section class="home__main__section--carrusel2">
@@ -61,7 +61,7 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
 
-
+            </div>
 
         </section>
 
@@ -4039,21 +4039,21 @@
 
     </main>
     <!-- footer -->
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 
-    <!-- glider -->
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
     <!--swiper  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- glider -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
 
 
     <!-- carrusel deskop -->
-    <script src="/javascript/buscados.js"></script>
+    <script src="/javascripts/buscados.js"></script>
     <!-- carrusel mobile -->
-    <script src="/javascript/buscados2.js"></script>
+    <script src="/javascripts/buscados2.js"></script>
     <!-- slider notebook -->
-    <script src="/javascript/notebook.js"></script>
+    <script src="/javascripts/notebook.js"></script>
 </body>
 
 </html>
