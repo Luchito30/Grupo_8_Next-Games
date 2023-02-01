@@ -1,4 +1,4 @@
-const controller = {
+module.exports = {
   
     carrito: (req, res) => {
         return res.render('products/carrito');
@@ -8,4 +8,3 @@ const controller = {
     }
 }
 
-module.exports =controller
