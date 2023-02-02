@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Game | Edicion</title>
+    <script src="https://kit.fontawesome.com/89a4980149.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <%- include('../partials/header.ejs') %>
+
+    <main class="edition">
+        <div class="edition-container">
+            <h1 class="edition-titular">Editá tus productos</h1>
+            <section class="edition-form">
+                <form action="/edicion">
+
+                    <div class="edition-form-box">
+                        <label for="name">Nombre del Producto</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="edition-form-box-checkbox">
+                        <label for="edition-discount" class="edition-discount">Seleccioná</label>
+                        <div>
+                            <div>
+                                <input type="checkbox" id="discount" name="discount" value="discount">
+                                <label for="discount">Nuevo</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="" name="" value="">
+                                <label for="">Oferta</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="envio-gratis" name="envio-gratis" value="envio-gratis">
+                                <label for="envio-gratis">Envio Gratis</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edition-form-box">
+                        <label for="description">Descripcion</label>
+                        <input type="textarea" id="description" name="description">
+                    </div>
+                    <div class="edition-form-box-img">
+                        <label for="image">Imagen del Producto</label>
+                        <input class="image" type="file" id="image" name="image">
+                    </div>
+                    <div class="edition-form-box">
+                        <label for="edition-products">Seleccioná la Categoria</label>
+                        <select id="edition-products" name="products">
+                            <option value="products-edition">Categorias...</option>
+                            <option value="products-edition">Perifericos</option>
+                            <option value="products-edition">Juegos</option>
+                            <option value="products-edition">Gifts Cards</option>
+                            <option value="products-edition">Consolas</option>
+                            <option value="products-edition">Notebooks</option>
+                            <option value="products-edition">Accesorios</option>
+                        </select>
+                    </div>
+
+                    <div class="edition-form-box">
+                        <label for="price">Precio Actual</label>
+                        <input type="price" id="price" name="price">
+                    </div>
+
+                    <div class="swtich-container-edition">
+                        <input type="checkbox" id="swtich-edit">Descuento
+                        <label for="swtich-edit" class="edit-swtich"></label>
+                    </div>
+
+                    <div class="edition-form-box-button">
+                        <button type="reset">Eliminar Producto</button>
+                        <button type="submit">Confirmar Edicion</button>
+                        <button type="reset">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>
