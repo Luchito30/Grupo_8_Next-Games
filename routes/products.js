@@ -1,5 +1,5 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, crearItem} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, crearItem,store} = require('../controllers/productController');
 
 const router = express.Router();
 
@@ -8,5 +8,7 @@ router.get('/carrito', carrito)
 router.get('/detalle-producto', detalleproducto)
 router.get('/edicion', edicion)
 router.get('/crear-item', crearItem)
-
+/*** CREATE ONE PRODUCT ***/
+router.get('/createItem/', crearItem);
+router.post('/createItem', store)
 module.exports = router;
