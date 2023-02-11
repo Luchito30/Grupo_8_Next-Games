@@ -32,7 +32,7 @@
     cursor: pointer;
 }
 
-.edition-form-box input {
+.edition-form-box input, textarea, #discount {
     background-color: var(--fondo1VioletaO);
     margin: 20px 10px;
     max-width: 768px;
@@ -42,6 +42,9 @@
     box-shadow: 15px 10px 5px #BC79F0;
     width: 80%;
     height: 50px;
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasSubtitulos1);
+    font-size: 20px;
 }
 
 .edition-form-box #description {

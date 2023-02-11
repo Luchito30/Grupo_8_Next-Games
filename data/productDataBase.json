@@ -1,0 +1,112 @@
+[
+    {
+        "id": 1,
+        "name": "Cafetera Moulinex Dolce Gusto Edited",
+        "price": 100,
+        "discount": 50,
+        "category": "visited",
+        "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
+        "image": "img-cafetera-moulinex.jpg",
+        "selection": "Oferta"
+     },
+     {
+        "id": 2,
+        "name": "Macbook Pro 2022",
+        "price": 500,
+        "discount": 3,
+        "category": "in-sale",
+        "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
+        "image": "img-macbook-pro-2019.jpg",
+        "selection": "Envio Gratis"
+     },
+     {
+        "id": 3,
+        "name": "Samsung Galaxy S10",
+        "price": 72999,
+        "discount": 25,
+        "category": "in-sale",
+        "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
+        "image": "img-samsung-galaxy-s10.jpg",
+        "selection": "Oferta"
+     },
+     {
+        "id": 4,
+        "name": "Samsung Galaxy S10",
+        "price": 72999,
+        "discount": 25,
+        "category": "in-sale",
+        "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
+        "image": "img-samsung-galaxy-s10.jpg",
+        "selection": "Oferta"
+     },
+     {
+        "id": 5,
+        "name": "teclado",
+        "description": "aaaaaaaaaaaaaaaa",
+        "price": 580,
+        "discount": null,
+        "image": "item5.jpg",
+        "category": "Perifericos",
+        "selection": "Nuevo"
+     },
+     {
+        "id": 6,
+        "name": "mouse",
+        "description": "lorem ipsum dx",
+        "price": 500,
+        "discount": null,
+        "image": "item6.jpg",
+        "category": "in-sale",
+        "selection": "Nuevo"
+     },
+     {
+        "id": 7,
+        "name": "mouse",
+        "description": "",
+        "price": 580,
+        "discount": null,
+        "image": "item7.jpg",
+        "category": "Perifericos",
+        "selection": "Nuevo"
+     },
+     {
+        "id": 8,
+        "name": "juego1",
+        "description": "",
+        "price": 222,
+        "discount": null,
+        "image": "item8.jpg",
+        "category": "Perifericos",
+        "selection": "Nuevo"
+     },
+     {
+        "id": 9,
+        "name": "juego1",
+        "description": "",
+        "price": 222,
+        "discount": null,
+        "image": "item18.jpg",
+        "category": "Perifericos",
+        "selection": "Nuevo"
+     },
+     {
+        "id": 10,
+        "name": "juego",
+        "description": "",
+        "price": 222,
+        "discount": null,
+        "image": "item10.jpg",
+        "category": "Perifericos",
+        "selection": "Nuevo"
+     },
+     {
+        "id": 11,
+        "name": "juego10",
+        "description": "",
+        "price": 5000,
+        "discount": null,
+        "image": "item17.jpg",
+        "category": "Juegos",
+        "selection": "Nuevo"
+     }
+  ]

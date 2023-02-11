@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="any" href="/images/next-games-nuevologo.png">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/2d353964a9.js" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Next Game | Productos</title>
+</head>
+
+
+<body>
+    <%- include('partials/header') %> 
+    
+        <div class="col-12">
+            <h2 class="products-title">Todos los productos</h2>
+        </div>
+
+        <section class="home__main__section">
+			<% products.forEach(({id,image,price,discount,name,description,category,selection}) => { %>
+				<%- include('./partials/product',{
+					id,
+					image,
+					price,
+					discount,
+					name,
+                    description,
+                    category,
+                    selection
+				}) %>
+			<% }) %>
+        </section>
+        
+    <%- include('partials/footer') %>
+</body>
+</html>
