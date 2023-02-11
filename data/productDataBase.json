@@ -6,16 +6,16 @@
       "discount": 50,
       "category": "visited",
       "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
-      "image": "img-cafetera-moulinex.jpg"
+      "image": "item1.jpg"
    },
    {
       "id": 2,
-      "name": "Macbook Pro 2022",
+      "name": "Joystick ps5",
       "price": 500,
       "discount": 3,
       "category": "in-sale",
       "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
-      "image": "img-macbook-pro-2019.jpg"
+      "image": "item2.jpg"
    },
    {
       "id": 3,
@@ -24,7 +24,7 @@
       "discount": 25,
       "category": "in-sale",
       "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
-      "image": "img-samsung-galaxy-s10.jpg"
+      "image": "item3.jpg"
    },
    {
       "id": 4,
@@ -33,7 +33,7 @@
       "discount": 25,
       "category": "in-sale",
       "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
-      "image": "img-samsung-galaxy-s10.jpg"
+      "image": "item4.jpg"
    },
    {
       "id": 5,
@@ -41,7 +41,61 @@
       "description": "aaaaaaaaaaaaaaaa",
       "price": 580,
       "discount": null,
-      "image": null,
+      "image": "item5.jpg",
       "category": "Perifericos"
+   },
+   {
+      "id": 6,
+      "name": "mouse",
+      "description": "lorem ipsum dx",
+      "price": 500,
+      "discount": null,
+      "image": "item6.jpg",
+      "category": "in-sale"
+   },
+   {
+      "id": 7,
+      "name": "mouse",
+      "description": "",
+      "price": 580,
+      "discount": null,
+      "image": "item7.jpg",
+      "category": "Perifericos"
+   },
+   {
+      "id": 8,
+      "name": "juego1",
+      "description": "",
+      "price": 222,
+      "discount": null,
+      "image": "item8.jpg",
+      "category": "Perifericos"
+   },
+   {
+      "id": 9,
+      "name": "juego1",
+      "description": "",
+      "price": 222,
+      "discount": null,
+      "image": "item18.jpg",
+      "category": "Perifericos"
+   },
+   {
+      "id": 10,
+      "name": "juego",
+      "description": "",
+      "price": 222,
+      "discount": null,
+      "image": "item10.jpg",
+      "category": "Perifericos"
+   },
+   {
+      "id": 11,
+      "name": "juego10",
+      "description": "",
+      "price": 5000,
+      "discount": null,
+      "image": "item17.jpg",
+      "category": "Juegos"
    }
 ]

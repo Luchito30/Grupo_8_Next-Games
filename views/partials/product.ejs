@@ -1,16 +1,16 @@
 
 
     <article class="home__main__section__article" id="oferta">
-        <img class="home__main--img" src="/images/oferta1.jpg" alt="oferta 1">
+        <img class="home__main--img" src="/images/<%- image %>" alt="oferta 1">
 
         <div class="home__main--div">
-            <img src="/images/p-oferta.png" alt="oferta">
+            <img src="/images/<%- image %>" alt="oferta">
             <div class="home__main--flex">
                 <div class="home__main__detalle-h4">
-                    <h4 class="home__main--precio">$<%-toThousand(price)  %></h4>
+                    <h4 class="home__main--precio">$<%-price %></h4>
                 </div>
                 <div>
-                    <p class="home__main--descuento"></p>
+                    <p class="home__main--descuento">$<%-discount  %></p>
                 </div>
             </div>
             <div class="home__main--ocultar">

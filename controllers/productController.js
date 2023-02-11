@@ -6,6 +6,12 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
+    index: (req, res) => {
+		return res.render('products',{
+			products,
+			toThousand
+		})
+	},
   
     carrito: (req, res) => {
         return res.render('productos/carrito');

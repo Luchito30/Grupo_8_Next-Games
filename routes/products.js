@@ -1,9 +1,10 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, crearItem,store} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, crearItem,store,index} = require('../controllers/productController');
 
 const router = express.Router();
 
-
+/*** GET ALL PRODUCTS ***/ 
+router.get('/', index); 
 router.get('/carrito', carrito)
 router.get('/detalle-producto', detalleproducto)
 router.get('/edicion', edicion)
