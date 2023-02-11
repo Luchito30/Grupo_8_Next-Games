@@ -18,15 +18,15 @@
 
   <main class="main-crear">
    
-    <form method="post" class="crear-form">
+    <form method="post" class="crear-form" novalidate>
 
       <h1 class="titulo-crear">
         Crea un nuevo producto
       </h1>
       
       <div class="crear__nameprodu">
-        <label for="nameprodu">Nombre del producto</label>
-        <input type="text" name="nameprodu" id="nameprodu" placeholder="Nombre del producto" required>
+        <label for="nombreprodu">Nombre del producto</label>
+        <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto" required>
       </div>
 
       <section class="crear-formulario-2">
@@ -34,14 +34,14 @@
 
         <div class="crear-formulario-2__precio">
           <label for="precio">Precio</label>
-          <input type="number" placeholder="Precio" name="precio" id="precio" required>
+          <input type="number" placeholder="Precio" name="price" id="precio" required>
         </div>
       </section>
 
       <section class="crear__switch">
         <div class="crear__switch__conteiner">
           <input type="checkbox" id="switch" class="crear__switch__conteiner--switch">
-          <label for="switch" class="crear__lbl"></label><span>Descuento</span>
+          <label for="switch" class="crear__lbl" name="discount"></label><span>Descuento</span>
           <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento">
 
         </div>
@@ -78,7 +78,7 @@
       </div>
 
       <div class="dropdown--crear">
-        <select name="categorias" id="lang" class="form-control">
+        <select name="category" id="lang" class="form-control">
           <option value="Categorias" selected>Categorias</option>
           <option value="Perifericos">Perifericos</option>
           <option value="Juegos">Juegos</option>
@@ -97,7 +97,7 @@
       </div>
 
       <div class="submit-btn--crear">
-        <input type="file" id="myFile" name="filename" class="submit-btn--crear__buscar" accept="images/*">
+        <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar" accept="images/*">
         <label for="myFile">
           <i class="fa-solid fa-image"></i><br>
           <div class="submit-btn--crea__nombrearchi">
@@ -116,7 +116,7 @@
       <section class="crear__descripcion">
         <div class="crear-formulario-2__descripcion">
           <label for="Descripcion"></label>
-          <textarea name="Descripcion" id="Descripcion" cols="30" rows="10"></textarea>
+          <textarea name="description" id="Descripcion" cols="30" rows="10"></textarea>
         </div>
       </section>
 

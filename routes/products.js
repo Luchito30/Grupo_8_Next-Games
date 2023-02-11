@@ -7,7 +7,7 @@ const router = express.Router();
 router.get('/carrito', carrito)
 router.get('/detalle-producto', detalleproducto)
 router.get('/edicion', edicion)
-router.get('/crear-item', crearItem)
+
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/', crearItem);
 router.post('/createItem', store)
