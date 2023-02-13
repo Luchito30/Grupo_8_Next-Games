@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crea nuevo item</title>
+  <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+
+<body>
+  <!-- header -->
+<%- include('../partials/header.ejs') %>
+  
+
+  <main class="main-crear">
+   
+    <form method="post" class="crear-form" novalidate>
+
+      <h1 class="titulo-crear">
+        Crea un nuevo producto
+      </h1>
+      
+      <div class="crear__nameprodu">
+        <label for="nombreprodu">Nombre del producto</label>
+        <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto" required>
+      </div>
+
+      <section class="crear-formulario-2">
+
+
+        <div class="crear-formulario-2__precio">
+          <label for="precio">Precio</label>
+          <input type="number" placeholder="Precio" name="price" id="precio" required>
+        </div>
+      </section>
+
+      <section class="crear__switch">
+        <div class="crear__switch__conteiner">
+          <input type="checkbox" id="switch" class="crear__switch__conteiner--switch">
+          <label for="switch" class="crear__lbl" name="discount"></label><span>Descuento</span>
+          <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento">
+
+        </div>
+      </section>
+
+      <div class="crear__subtitulo">
+        <h3>Seleccioná</h3>
+      </div>
+
+      <section class="crear__checkbox">
+        <label for="section"></label>
+        <div class="form-check-crear">
+          <input class="form-check-input" type="checkbox" name="section" id="newer">
+          <label class="form-check-label" for="newer">
+            NUEVO
+          </label>
+        </div>
+        <div class="form-check-crear2">
+          <input class="form-check-input" type="checkbox" name="section" id="sale">
+          <label class="form-check-label" for="sale">
+            OFERTA
+          </label>
+        </div>
+        <div class="form-check-crear3">
+          <input class="form-check-input" type="checkbox" name="section" id="free">
+          <label class="form-check-label" for="free">
+            ENVIO GRATIS
+          </label>
+        </div>
+      </section>
+
+      <div class="crear__subtitulo">
+        <h3>Seleccioná la categoria</h3>
+      </div>
+
+      <div class="dropdown--crear">
+        <select name="category" id="lang" class="form-control">
+          <option value="Categorias" selected>Categorias</option>
+          <option value="Perifericos">Perifericos</option>
+          <option value="Juegos">Juegos</option>
+          <option value="Gifts Cards">Gifts Cards</option>
+          <option value="Consolas">Consolas</option>
+          <option value="Notebooks">Notebooks</option>
+          <option value="Accesorios">Accesorios</option>
+
+
+        </select>
+      </div>
+
+
+      <div class="crear__subtitulo">
+        <h3>Imagen del Producto</h3>
+      </div>
+
+      <div class="submit-btn--crear">
+        <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar" accept="images/*">
+        <label for="myFile">
+          <i class="fa-solid fa-image"></i><br>
+          <div class="submit-btn--crea__nombrearchi">
+            <span>Subir imagen</span>
+          </div>
+        </label>
+      </div>
+
+
+
+      <div class="crear__subtitulo">
+        <h3>Descripción del producto</h3>
+      </div>
+
+
+      <section class="crear__descripcion">
+        <div class="crear-formulario-2__descripcion">
+          <label for="Descripcion"></label>
+          <textarea name="description" id="Descripcion" cols="30" rows="10"></textarea>
+        </div>
+      </section>
+
+      <div class="crear-btnform">
+        <button type="submit" class="crear-btn--submit">Aceptar</button>
+
+
+        <button type="reset" class="crear-btn--reset">Borrar</button>
+
+
+        <button class="crear-btn--cancelar"><a href="/">Cancelar</a></button>
+      </div>
+    </form>
+  </main>
+  <script src="/javascripts/buscarimagen.js"></script>
+  <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

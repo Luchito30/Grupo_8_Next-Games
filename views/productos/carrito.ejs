@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Game | Carrito</title>
+    <script src="https://kit.fontawesome.com/89a4980149.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+        <section class="header-2">
+            <div class="web-segura">
+                <div class="venta-telefonica">
+                    <h3>Venta Telefónica <i class="fa-solid fa-phone"></i></h3>
+                    <h5>Lun a Vi de 10 a 21hs. y Sáb de 10 a 16hs.</h5>
+                </div>
+                <div class="sitio-seguro">
+                    <h3>Sitio Seguro <i class="fa-sharp fa-solid fa-lock"></i></h3>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="mi-carrito">
+                <h1><i class="fa-sharp fa-solid fa-cart-shopping"></i> Mi Carrito</h1>
+            </div>
+        </section>
+
+        <section class="descripcion-resumen">
+            <section class="descripcion-carrito">
+                <div class="descripcion">
+                    <h4 class="product">Producto</h4>
+                    <h4 class="price">Precio</h4>
+                    <h4 class="quantity">Cantidad</h4>
+                    <h4 class="cost">Total</h4>
+                </div>
+                <div>
+                    <button class="cruz">
+                        <p>x</p>
+                    </button>
+                </div>
+                <div class="detalle-carrito">
+                    <div class="imagen-detalle"><img src="/images/ps5fifa23.webp" alt="juego">
+                        <h6 class="producto"> PS5 EA SPORT FIFA 23</h6>
+                    </div>
+                    <h5 class="precio">$29.999</h5>
+                    <div class="unidad">
+                        <button class="menos">
+                            <p>-</p>
+                        </button>
+                        <button class="numero">
+                            <p>1</p>
+                        </button>
+                        <button class="mas">
+                            <p>+</p>
+                        </button>
+                    </div>
+                    <h5 class="total">$29.999</h5>
+                </div>
+            </section>
+
+            <section class="resumen-despacho">
+                <section>
+                    <div class="resumen-carrito">
+                        <h4>Resumen</h4>
+                        <div class="resume-cost">
+                            <div class="resume-cost-total">
+                                <h5>SUBTOTAL</h5>
+                                <h5>ENVIO</h5>
+                                <h5>DESCUENTO</h5>
+                                <h5>TOTAL</h5>
+                            </div>
+                            <div class="resume-cost-total1">
+                                <h5>$29.999</h5>
+                                <h5>$1000</h5>
+                                <h5>$-4.999</h5>
+                                <h5>$25.000</h5>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="despacho">
+                        <div class="envio-domicilio">
+                            <button class="boton1">
+                                <h5>Envio a Domicilio</h5>
+                                <i class="fa-solid fa-truck-fast"></i></i>
+                            </button>
+                        </div>
+                        <div class="retiro-tienda">
+                            <button class="boton1">
+                                <h5>Retiro en Tienda</h5>
+                                <i class="fa-solid fa-store"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+
+
+        <section>
+            <div class="medio-pago">
+                <button class="boton2">
+                    <h5>Medios de Pago <i class="fa-solid fa-hand-holding-dollar"></i> <i
+                            class="fa-regular fa-credit-card"></i></h5>
+                </button>
+            </div>
+        </section>
+        <section class="fin-compra">
+            <div class="finalizar-compra">
+                <button class="boton3">
+                    <h5>Finalizar compra</h5>
+                </button>
+            </div>
+            <div class="agregar-prductos">
+                <button class="boton2">
+                    <h5>Agregar mas productos</h5>
+                </button>
+            </div>
+            <div class="cancelar-compra">
+                <button class="boton2">
+                    <h5>Cancelar compra</h5>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+<%- include('../partials/footer.ejs') %>
+</body>
+
+
+</html>
