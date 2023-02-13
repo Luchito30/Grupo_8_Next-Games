@@ -81,8 +81,8 @@
    },
    {
       "id": 9,
-      "name": "juego1",
-      "description": "",
+      "name": "Digimon Survive Standard Edition",
+      "description": "Con este juego de Digimon vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 222,
       "discount": null,
       "image": "item18.jpg",
@@ -91,8 +91,8 @@
    },
    {
       "id": 10,
-      "name": "juego",
-      "description": "",
+      "name": "Naruto Shippuden Ultimate Ninja Storm Trilogy Ps4",
+      "description": "Juego Naruto Shippuden: Incluye las ediciones remasterizadas HD:Naruto: Ultimate Ninja StormNaruto: Ultimate Ninja Storm 2.Naruto: Ultimate Ninja Storm 3 Full Burst",
       "price": 222,
       "discount": null,
       "image": "item10.jpg",
@@ -101,8 +101,8 @@
    },
    {
       "id": 11,
-      "name": "juego10",
-      "description": "",
+      "name": "Heavy Rain + Beyond Two Souls Ps4",
+      "description": "De los creadores de Heavy Rain, Beyond para PS4 es una aventura gráfica que nos contará la historia durante quince años de la complicada vida de Jodie Holmes (interpretada por la actriz Ellen Page), desde la infancia a la madurez, siempre acompañada de una presencia, un espíritu qué no sabemos quién es, ni por qué se mantiene a su lado, pero que la ayudara, aunque a veces también le complicará la existencia. Una aventura gráfica que aspira a contar una gran historia capaz de emocionar a los jugadores con un gran nivel de detalle en los rostros y la animación de los personajes.",
       "price": 5000,
       "discount": null,
       "image": "item17.jpg",
@@ -111,8 +111,8 @@
    },
    {
       "id": 12,
-      "name": "juego5",
-      "description": "",
+      "name": "Call Of Duty Modern Warfare Remastered Ps4",
+      "description": "Call of Duty: Modern Warfare Remastered lleva a la generación de PlayStation 4, Xbox One y de los PCs de la actualidad el exitoso videojuego de acción bélica en primera persona que supuso el salto a la era moderna de una franquicia que, hasta la fecha, se conocía por estar ambientada en la Segunda Guerra Mundial. Con la campaña y 10 mapas multijugador, los jugadores pueden rememorar una contemporánea guerra en un ficticio conflicto ambientado en Oriente Medio y otros lugares de Europa",
       "price": 5000,
       "discount": null,
       "image": "item11.jpg",
@@ -121,8 +121,8 @@
    },
    {
       "id": 13,
-      "name": "mouse8",
-      "description": "",
+      "name": "Fallout 76 Standard Edition",
+      "description": "Con este juego de Fallout vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 580,
       "discount": null,
       "image": "item12.jpg",
@@ -131,8 +131,8 @@
    },
    {
       "id": 14,
-      "name": "notebook",
-      "description": "",
+      "name": "Apple MacBook Air A2337",
+      "description": "La notebook más delgada y ligera de Apple viene con los superpoderes del chip M1. Termina todos tus proyectos mucho más rápido con el CPU de 8 núcleos y disfruta como nunca antes de apps y juegos con gráficos avanzados gracias al GPU de hasta 8 núcleos.",
       "price": 8000,
       "discount": null,
       "image": "note1.jpg",
@@ -141,9 +141,9 @@
    },
    {
       "id": 15,
-      "name": "notebook2",
-      "description": "",
-      "price": 5000,
+      "name": "Notebook Dell Gaming G5 5525 R7 16gb 512gb Fhd Rtx 3060 W11",
+      "description": "Alto rendimiento perpetuo. Con los procesadores AMD Ryzen™ de última generación y una configuración de rendimiento optimizada, podrás disfrutar de un rendimiento de alto nivel, potente y constante en cualquier experiencia de juego. Además, el nuevo y mejorado diseño térmico inspirado en Alienware ofrece una refrigeración óptima gracias a dos entradas de aire, unas aspas de ventilador ultrafinas, conductos de cobre y cuatro rejillas de ventilación estratégicamente situadas",
+      "price": 500000,
       "discount": null,
       "image": "note2.jpg",
       "subCategory": "",
@@ -158,16 +158,7 @@
       "image": "note3.jpg",
       "subCategory": "",
       "category": "in-sale"
-   },
-   
-   {
-      "id": 17,
-      "name": "Celular100",
-      "description": "",
-      "price": 45545,
-      "discount": null,
-      "image": "note12.jpg",
-      "subCategory": "",
-      "category": "in-sale"
    }
+   
+   
 ]
