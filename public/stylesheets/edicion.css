@@ -32,7 +32,7 @@
     cursor: pointer;
 }
 
-.edition-form-box input {
+.edition-form-box input, .edicion__texto, #discount {
     background-color: var(--fondo1VioletaO);
     margin: 20px 10px;
     max-width: 768px;
@@ -42,6 +42,9 @@
     box-shadow: 15px 10px 5px #BC79F0;
     width: 80%;
     height: 50px;
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasSubtitulos1);
+    font-size: 20px;
 }
 
 .edition-form-box #description {
@@ -122,7 +125,7 @@
     display: none;
 }
 
-.edition-form-box-button button {
+.edition-form-box-button__a{
     background-color: var(--letrasSubtitulos2);
     border: 1px solid white;
     border-radius: 5px;
@@ -135,6 +138,10 @@
     margin-bottom: 20px;
     box-shadow: 15px 10px 5px #2a2868;
     font-size: 18px;
+}
+.buton1{
+    position: relative;
+    top: 13px;
 }
 
 /* Tablet */

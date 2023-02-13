@@ -45,7 +45,7 @@
                     </div>
                     <div class="edition-form-box">
                         <label for="description">Descripcion</label>
-                        <input type="textarea" id="description" name="description">
+                        <input type="textarea" id="description" name="description" class="edicion__texto">
                     </div>
                     <div class="edition-form-box-img">
                         <label for="image">Imagen del Producto</label>
@@ -75,9 +75,9 @@
                     </div>
 
                     <div class="edition-form-box-button">
-                        <button type="reset">Eliminar Producto</button>
-                        <button type="submit">Confirmar Edicion</button>
-                        <button type="reset">Cancelar</button>
+                        <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
+                        <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
+                        <button type="reset" class="edition-form-box-button__a">Cancelar</button>
                     </div>
                 </form>
             </section>
