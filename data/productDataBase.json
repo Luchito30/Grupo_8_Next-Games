@@ -1,12 +1,13 @@
 [
    {
       "id": 1,
-      "name": "Cafetera Moulinex Dolce Gusto Edited",
-      "price": 100,
-      "discount": 50,
-      "category": "visited",
-      "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
-      "image": "item1.jpg"
+      "name": "as",
+      "description": "asdasd",
+      "price": 120,
+      "discount": 22,
+      "image": "item1.jpg",
+      "subCategory": "Accesorios",
+      "category": "Envio Gratis"
    },
    {
       "id": 2,
@@ -14,6 +15,7 @@
       "price": 500,
       "discount": 3,
       "category": "in-sale",
+      "subCategory": null,
       "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
       "image": "item2.jpg"
    },
@@ -23,6 +25,7 @@
       "price": 72999,
       "discount": 25,
       "category": "in-sale",
+      "subCategory": null,
       "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
       "image": "item3.jpg"
    },
@@ -32,6 +35,7 @@
       "price": 72999,
       "discount": 25,
       "category": "in-sale",
+      "subCategory": null,
       "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
       "image": "item4.jpg"
    },
@@ -42,7 +46,8 @@
       "price": 580,
       "discount": null,
       "image": "item5.jpg",
-      "category": "Perifericos"
+      "category": "Perifericos",
+      "subCategory": null
    },
    {
       "id": 6,
@@ -51,7 +56,8 @@
       "price": 500,
       "discount": null,
       "image": "item6.jpg",
-      "category": "in-sale"
+      "category": "in-sale",
+      "subCategory": null
    },
    {
       "id": 7,
@@ -60,7 +66,8 @@
       "price": 580,
       "discount": null,
       "image": "item7.jpg",
-      "category": "Perifericos"
+      "category": "Perifericos",
+      "subCategory": null
    },
    {
       "id": 8,
@@ -69,7 +76,8 @@
       "price": 222,
       "discount": null,
       "image": "item8.jpg",
-      "category": "Perifericos"
+      "category": "Perifericos",
+      "subCategory": null
    },
    {
       "id": 9,
@@ -78,7 +86,8 @@
       "price": 222,
       "discount": null,
       "image": "item18.jpg",
-      "category": "Perifericos"
+      "category": "Perifericos",
+      "subCategory": null
    },
    {
       "id": 10,
@@ -87,7 +96,8 @@
       "price": 222,
       "discount": null,
       "image": "item10.jpg",
-      "category": "Perifericos"
+      "category": "Perifericos",
+      "subCategory": null
    },
    {
       "id": 11,
@@ -96,6 +106,17 @@
       "price": 5000,
       "discount": null,
       "image": "item17.jpg",
-      "category": "Juegos"
+      "category": "Juegos",
+      "subCategory": null
+   },
+   {
+      "id": 12,
+      "name": "perro",
+      "description": "asdkadashdlashdl",
+      "price": 787878,
+      "discount": 232323,
+      "image": null,
+      "subCategory": "Perifericos",
+      "category": "Nuevo"
    }
 ]
