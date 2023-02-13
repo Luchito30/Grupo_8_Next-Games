@@ -1,75 +1,83 @@
 [
    {
       "id": 1,
-      "name": "Cafetera Moulinex Dolce Gusto Edited",
-      "price": 100,
-      "discount": 50,
-      "category": "visited",
-      "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
+      "name": "FIFA 23",
+      "price": 4000,
+      "discount": 20,
+      "category": "in-sale",
+      "subCategory": "",
+      "description": "Disfruta de la tecnología HyperMotion2 de nueva generación, el fútbol de clubes femenino, la FIFA World Cup™ masculina y femenina, función de juego cruzado y mucho más.",
       "image": "item1.jpg"
    },
    {
       "id": 2,
-      "name": "Joystick ps5",
+      "name": "Joystick PS5",
       "price": 500,
       "discount": 3,
+      "subCategory": "",
       "category": "in-sale",
-      "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
+      "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
       "image": "item2.jpg"
    },
    {
       "id": 3,
-      "name": "Samsung Galaxy S10",
+      "name": "Ghost Of Tsushima PS4",
       "price": 72999,
       "discount": 25,
+      "subCategory": "",
       "category": "in-sale",
-      "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
+      "description": "Con este juego de Ghost of Tsushima vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "image": "item3.jpg"
    },
    {
       "id": 4,
-      "name": "Samsung Galaxy S10",
+      "name": "The King Of Fighters Xv",
       "price": 72999,
       "discount": 25,
+      "subCategory": "",
       "category": "in-sale",
-      "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
+      "description": "Con este juego de The King of Fighters vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "image": "item4.jpg"
    },
    {
       "id": 5,
-      "name": "teclado",
-      "description": "aaaaaaaaaaaaaaaa",
-      "price": 580,
+      "name": "One Piece Odyssey",
+      "description": "Con este juego de One Piece vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 29.236,
       "discount": null,
       "image": "item5.jpg",
-      "category": "Perifericos"
+      "subCategory": "Perifericos",
+      "category": ""
    },
    {
       "id": 6,
-      "name": "mouse",
-      "description": "lorem ipsum dx",
-      "price": 500,
+      "name": "Dragon Ball The Breakers Special Edition Ps4",
+      "description": "Con este juego de Dragon Ball vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 15.5,
       "discount": null,
       "image": "item6.jpg",
+      "subCategory": "",
       "category": "in-sale"
    },
    {
       "id": 7,
-      "name": "mouse",
-      "description": "",
+      "name": "Resident Evil Village Gold Edition",
+      "description": "Con este juego de Resident Evil vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 580,
       "discount": null,
       "image": "item7.jpg",
-      "category": "Perifericos"
+      "subCategory": "Perifericos",
+      "category": ""
    },
    {
       "id": 8,
-      "name": "juego1",
-      "description": "",
+      "name": "DEATH STRANDING DIRECTOR'S CUT",
+      "description": "Remasterizado para PlayStation 5. Experimenta más acción de personajes, historias extendidas a través de nuevas misiones y un Sistema social de hebras exclusivo para conectarte con otros jugadores del mundo",
       "price": 222,
       "discount": null,
       "image": "item8.jpg",
-      "category": "Perifericos"
+      "subCategory": "Perifericos",
+      "category": ""
    },
    {
       "id": 9,
@@ -78,7 +86,8 @@
       "price": 222,
       "discount": null,
       "image": "item18.jpg",
-      "category": "Perifericos"
+      "subCategory": "Perifericos",
+      "category": ""
    },
    {
       "id": 10,
@@ -87,7 +96,8 @@
       "price": 222,
       "discount": null,
       "image": "item10.jpg",
-      "category": "Perifericos"
+      "subCategory": "Perifericos",
+      "category": ""
    },
    {
       "id": 11,
@@ -96,6 +106,68 @@
       "price": 5000,
       "discount": null,
       "image": "item17.jpg",
-      "category": "Juegos"
+      "category": "",
+      "subCategory": "Juegos"
+   },
+   {
+      "id": 12,
+      "name": "juego5",
+      "description": "",
+      "price": 5000,
+      "discount": null,
+      "image": "item11.jpg",
+      "subCategory": "Juegos",
+      "category": ""
+   },
+   {
+      "id": 13,
+      "name": "mouse8",
+      "description": "",
+      "price": 580,
+      "discount": null,
+      "image": "item12.jpg",
+      "subCategory": "",
+      "category": "in-sale"
+   },
+   {
+      "id": 14,
+      "name": "notebook",
+      "description": "",
+      "price": 8000,
+      "discount": null,
+      "image": "note1.jpg",
+      "subCategory": "",
+      "category": "in-sale"
+   },
+   {
+      "id": 15,
+      "name": "notebook2",
+      "description": "",
+      "price": 5000,
+      "discount": null,
+      "image": "note2.jpg",
+      "subCategory": "",
+      "category": "in-sale"
+   },
+   {
+      "id": 16,
+      "name": "notebook2",
+      "description": "",
+      "price": 5000,
+      "discount": null,
+      "image": "note3.jpg",
+      "subCategory": "",
+      "category": "in-sale"
+   },
+   
+   {
+      "id": 17,
+      "name": "Celular100",
+      "description": "",
+      "price": 45545,
+      "discount": null,
+      "image": "note12.jpg",
+      "subCategory": "",
+      "category": "in-sale"
    }
 ]

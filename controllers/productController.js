@@ -28,7 +28,7 @@ module.exports = {
   store: (req,res)=>{
     
    
-    const{name,price,description,discount,image,category}= req.body;
+    const{name,price,description,discount,image,category,subCategory}= req.body;
     const newProduct={
         id:products[products.length -1].id +1,
         name:name.trim(),
@@ -36,6 +36,7 @@ module.exports = {
         price:+price,
         discount:+discount,
         image:null,
+        subCategory,
         category
     };
     products.push(newProduct);
