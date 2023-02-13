@@ -35,7 +35,7 @@ module.exports = {
         const { id } = req.params
         const product = products.find(product => product.id === +id);
 
-        const { name, discount, price, description, category, image, selection } = req.body;
+        const { name, discount, price, description, category, selection } = req.body;
 
         const productModified = {
             id: +id,
@@ -43,7 +43,7 @@ module.exports = {
             description: description.trim(),
             price: +price,
             discount: +discount,
-            image: null,
+            image: product.image,
             category,
             selection
         };
@@ -55,7 +55,7 @@ module.exports = {
 
             return product;
         })
-        product.push(productModified);
+        
         fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null, 3), "utf-8");
 
         return res.redirect("/products" + id)

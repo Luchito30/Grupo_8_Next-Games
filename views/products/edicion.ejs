@@ -18,60 +18,53 @@
 
     <main class="edition">
         <div class="edition-container">
-            <h1 class="edition-titular">Editá tu producto <i></i></h1>
+            <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
             <section class="edition-form">
-                <form action=""
+                <form action="/products/edicion/<%= id %>?_method=PUT"
                     method="POST" novalidate>
                     <div class="edition-form-box">
                         <label for="name">Nombre del Producto</label>
-                        <input type="text" id="name" name="name" >
-                    </div>
-                    <div class="edition-form-box-checkbox">
-                        <label for="edition-discount" class="edition-discount">Seleccioná</label>
-                        <div>
-                            <div>
-                                <input type="checkbox" id="selection" name="selection" value="selection">
-                                <label for="selection">Nuevo</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="selection" name="selection" value="selection">
-                                <label for="selection">Oferta</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="selection" name="selection" value="selection">
-                                <label for="selection">Envio Gratis</label>
-                            </div>
-                        </div>
+                        <input type="text" id="name" name="name" value="<%= name %>">
                     </div>
                     <div class="edition-form-box">
+                        <label for="edition-products">Seleccioná una Opción</label>
+                        <select id="edition-products" name="selection">
+                            <option value="" >Selecciona...</option>
+                            <option value="Nuevo" <%= selection === "Nuevo" && 'selected'%>>Nuevo</option>
+                            <option value="Oferta" <%= selection === "Oferta" && 'selected'%>>Oferta</option>
+                            <option value="Envio Gratis" <%= selection === "Envio Gratis" && 'selected'%>>Envio Gratis</option>
+                        </select>
+                    </div>
+        
+                    <div class="edition-form-box">
                         <label for="description">Descripcion</label>
-                        <textarea name="description" id="description"></textarea>
+                        <textarea name="description" id="description" value="<%= description %>"></textarea>
                     </div>
                     <div class="edition-form-box-img">
                         <label for="image">Imagen del Producto</label>
-                        <input class="image" type="file" id="image" name="image">
+                        <input class="image" type="file" id="image" name="image" value="<%= image %>">
                     </div>
                     <div class="edition-form-box">
                         <label for="edition-products">Seleccioná la Categoria</label>
                         <select id="edition-products" name="category">
-                            <option value="products-edition" selected>Categorias...</option>
-                            <option value="Perifericos">Perifericos</option>
-                            <option value="Juegos">Juegos</option>
-                            <option value="Gifts Cards">Gifts Cards</option>
-                            <option value="Consolas">Consolas</option>
-                            <option value="Notebooks">Notebooks</option>
-                            <option value="Accesorios">Accesorios</option>
+                            <option value="products-edition" >Categorias...</option>
+                            <option value="Perifericos" <%= category === "Perifericos" && 'selected'%>>Perifericos</option>
+                            <option value="Juegos" <%= category === "Juegos" && 'selected'%>>Juegos</option>
+                            <option value="Gifts Cards" <%= category === "Gifts Cards" && 'selected'%>>Gifts Cards</option>
+                            <option value="Consolas" <%= category === "Consolas" && 'selected'%>>Consolas</option>
+                            <option value="Notebooks" <%= category === "Notebooks" && 'selected'%>>Notebooks</option>
+                            <option value="Accesorios" <%= category === "Accesorios" && 'selected'%>>Accesorios</option>
                         </select>
                     </div>
 
                     <div class="edition-form-box">
                         <label for="price">Precio Actual</label>
-                        <input type="text" id="price" name="price" required>
+                        <input type="text" id="price" name="price" value="<%= price %>" required>
                     </div>
 
                     <div class="swtich-container-edition">
                         <input type="checkbox" id="swtich-edit">   Descuento  <label for="swtich-edit" class="edit-swtich"></label>
-                        <input type="text" id="discount" name="discount" >
+                        <input type="text" id="discount" name="discount" value="<%= discount %>">
                     </div>
 
                     <div class="edition-form-box-button">
