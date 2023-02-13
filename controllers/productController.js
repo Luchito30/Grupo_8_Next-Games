@@ -55,10 +55,12 @@ module.exports = {
 
             return product;
         })
-        
+
+        products.push(productsModified);
+
         fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null, 3), "utf-8");
 
-        return res.redirect("/products" + id)
+        return res.redirect("/products")
     },
 
     crearItem: (req, res) => {

@@ -11,7 +11,7 @@
     
     
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Next Game | Productos</title>
+    <title>Next Game | Usuarios</title>
 </head>
 
 
@@ -19,23 +19,24 @@
     <%- include('partials/header') %> 
     
         <div class="home__main--titulo">
-            <h2>Todos los productos</h2>
+            <h2>Todos los usuarios</h2>
         </div>
 
         <section class="home__main__section">
-			<% products.forEach(({id,image,price,discount,name}) => { %>
-				<%- include('./partials/product',{
+			<% users.forEach(({id,firsName,lastName,email,password,category,image}) => { %>
+				<%- include('./partials/register',{
 					id,
 					image,
-					price,
-					discount,
+					lastemail,
+					email,
 					name,
-                
-                   
+                    password,
+                    category,
+                    image
 				}) %>
 			<% }) %>
         </section>
-        
+       
     <%- include('partials/footer') %>
 </body>
 </html>
