@@ -23,11 +23,11 @@
         </div>
 
         <section class="home__main__section">
-			<% users.forEach(({id,firsName,lastName,email,password,category,image}) => { %>
-				<%- include('./partials/register',{
+			<% users.forEach(({id, firtsName, lastName, email, password, category, image}) => { %>
+				<%- include('./users/register',{
 					id,
-					image,
-					lastemail,
+					firtsName,
+					lastName,
 					email,
 					name,
                     password,

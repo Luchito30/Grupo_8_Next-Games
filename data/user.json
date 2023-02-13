@@ -1,39 +1,59 @@
 [
-    {
-        "id": "id",
-        "firstName": "firstName",
-        "lastName": "lastName",
-         "email": "email",
-         "password": "password",
-         "category": "category",
-         "image": "image"
-    },
-    {
-        "id": "id",
-        "firstName": "firstName",
-        "lastName": "lastName",
-         "email": "email",
-         "password": "password",
-         "category": "category",
-         "image": "image"
-    },
-    {
-        "id": "id",
-        "firstName": "firstName",
-        "lastName": "lastName",
-         "email": "email",
-         "password": "password",
-         "category": "category",
-         "image": "image"
-    },
-    {
-        "id": "id",
-        "firstName": "firstName",
-        "lastName": "lastName",
-         "email": "email",
-         "password": "password",
-         "category": "category",
-         "image": "image"
-    }
-
+   {
+      "id": "id",
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "email": "email",
+      "password": "password",
+      "category": "category",
+      "image": "image"
+   },
+   {
+      "id": "adri3",
+      "lastName": "gui",
+      "email": "adri@gmail.com",
+      "password": "123463",
+      "category": "vendedor",
+      "image": null
+   },
+   {
+      "id": "lau3",
+      "lastName": "zar",
+      "email": "lau@gmail.com",
+      "password": "654321",
+      "category": "comprador",
+      "image": null
+   },
+   {
+      "id": "so45",
+      "lastName": "nie",
+      "email": "sofi@gmail.com",
+      "password": "789456",
+      "category": "vendedor",
+      "image": null
+   },
+   {
+      "id": "jaz62",
+      "lastName": "riv",
+      "email": "jaz@gmail.com",
+      "password": "456123",
+      "category": "comprador"
+   },
+   {
+      "id": "cr7",
+      "firstName": "cristiano",
+      "lastName": "ronaldo",
+      "email": "cr7@gmail.com",
+      "password": "369852",
+      "category": "comprador"
+   },
+   {
+      "id": "10m",
+      "firstName": "lionel",
+      "lastName": "messi",
+      "email": "10m@gmail.com",
+      "password": "147852",
+      "category": "vendedor",
+      "image": "2018-08-04-18-02-18.jpeg"
+   }
 ]
