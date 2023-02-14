@@ -1,90 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Next Game | Register</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
   <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
-  
+
 </head>
+
 <body>
-  
-    <%- include('../partials/header.ejs') %>
+
+  <%- include('../partials/header.ejs') %>
 
 
 
-<main>
-  <div class="split-screen">
-    
-   <div class="left-register">
-      <div class="titles">
-        <h1>Start your gaming journey with us</h1>
-        <h2 class="titulo-register1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h2>
+    <main>
+      <div class="split-screen">
 
-      </div>
-    </div>
-    
-  
-    <div class=" right-register">
-      <form >
-        <section class="titles-register">
-            <div class="titles-left">
-          <h2 class="titulo-register1">CREA TU CUENTA</h2>
-          <h3 class="titulo-register2">Ya tenes una cuenta? ingresa <a class="aca" href="/users/login">aca</a></h3>
-        </div>
-          <div class="login-register">
-            <button class="google">
-              <img src="/images/google-icon.png" alt="logo-google" class="log">
-              Sign up with Google
-            </button>
-            
-        </section>
-        <div class="divider">
-            <span class="orSpan">
-              or</span>
-              <hr class="hr-register">
-          
-           </div>
-        
-         <div class="card">
-        <div class="forms">
-          <div class="name">
-          
-              <input type="text" required>
-              <label for="" class="f-name">Nombre completo</label>
+        <div class="left-register">
+          <div class="titles">
+            <h1>Start your gaming journey with us</h1>
+            <h2 class="titulo-register1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h2>
 
-              <input type="text" required>
-              <label for="" class="us-name">Usuario</label>
-
-           
-            
-              <input type="email" required>
-              <label for="" class="e-mail">E-mail</label>
-
-              <input type="password" required>
-              <label for="">Contraseña</label>
-            
-              <input type="number" required>
-              <label for="">Documento</label>
-
-              <input type="text " required style="color: white;">
-              <label for="" class="direccion">Dirección</label>
-          
           </div>
-          <button type="submit" class="guardar">registrar</button>
-         
         </div>
-      </div>
-      </form>
-    </div>
-    
-  </div>
 
-</main>
-<!-- footer -->
-<%- include('../partials/footer.ejs') %>
+
+        <div class=" right-register">
+          <form method="POST" action="/users/register">
+            <section class="titles-register">
+              <div class="titles-left">
+                <h2 class="titulo-register1">CREA TU CUENTA</h2>
+                <h3 class="titulo-register2">Ya tenes una cuenta? ingresa <a class="aca" href="/users/login">aca</a>
+                </h3>
+              </div>
+              <div class="login-register">
+                <button class="google">
+                  <img src="/images/google-icon.png" alt="logo-google" class="log">
+                  Sign up with Google
+                </button>
+
+            </section>
+            <div class="divider">
+              <span class="orSpan">
+                or</span>
+              <hr class="hr-register">
+
+            </div>
+
+            <div class="card">
+              <div class="forms">
+                <div class="name">
+
+                  <input type="text" name="firstName" value="" required style="color: white;">
+                  <label for="">Nombre</label>
+
+                  <input type="text" name="lastName" value="" required style="color: white;">
+                  <label for="">Apellido</label>
+
+                  <input type="text" name="id" required style="color: white;">
+                  <label for="">Usuario</label>
+
+                  <input type="email" name="email" required style="color: white;">
+                  <label for="">E-mail</label>
+
+                  <input type="password" name="password" required style="color: white;">
+                  <label for="">Contraseña</label>
+
+                  <input type="file" name="image" style="color: white; font-size: 10px; padding: 10px;">
+                  <label for="">Avatar</label>
+
+                </div>
+                <button type="submit" class="guardar">registrar</button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </main>
+    <!-- footer -->
+    <%- include('../partials/footer.ejs') %>
 
 </body>
+
 </html>

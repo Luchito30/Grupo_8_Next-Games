@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+=======
+
+>>>>>>> developEJS
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Document</title>
     <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
@@ -159,4 +164,169 @@ const swiper = new Swiper('.swiper-imagenes', {
     </script>
   
 </body>
+=======
+    <title>Next Game | Detalle de producto</title>
+    <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+        <main class="main-detalledeproducto">
+
+            <section class="detalle-imagenes">
+                <div>
+                    <a href="/productos/edicion/:id"><button class="card-btn">
+                            >>edit product</button></a>
+                </div>
+                <div class="detalle-img--conteiner">
+                    <!-- Slider main container -->
+                    <div class="swiper swiper-imagenes">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide"><img class="detalle-imagen1"
+                                    src="/images/detalle-producto/joy-blanco.png" alt=""></div>
+                            <div class="swiper-slide"><img class="detalle-imagen2"
+                                    src="/images/detalle-producto/cargador-2.png" alt=""></div>
+                            <div class="swiper-slide"> <img class="detalle-imagen3"
+                                    src="/images/detalle-producto/cargador-1.png" alt=""></div>
+                            ...
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="descripcion-detalle">
+                <div class="descripciones">
+                   
+                    <div class="titulos">
+                        <h2 class="titulo-1">JoyStick PS5 with RAZER quick charging stand</h2>
+                    </div>
+                    <div class="rank">
+                        <p>PERISFERICOS |</p>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+
+                        </div>
+                        <p>(103)</p>
+                    </div>
+                    <div class="description-22">
+                        <div class="category-product">
+
+                            <div class="sub">
+                                <h3>CARGA RAPIDA :
+                                </h3>
+                                <h4>capaz de cargar tu control en menos de 3 horas
+
+                                    el stand también esta diseñado con protección
+                                </h4>
+
+                                <h3>CARGA CON USB :
+                                </h3>
+                                <h4>
+                                    carga facil con cable usb compatible tanto
+
+                                    con PS5 como pc
+                                </h4>
+
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tarjetas-detalle">
+                        <div class="metodos" style="color:white;">
+                            <h3>metodos de pago:</h3>
+                        </div>
+                        <img src="/images/tarjetas.png" alt="">
+                    </div>
+                    <div class="envios">
+                        <h3>metodos de envío:</h3>
+                        <h4>envios gratis a todo el pais</h4>
+                    </div>
+                    <div class="description">
+                        <h5>Diseñado para satisfacer las ...</h5>
+                        <button class="read-btn">read more</button>
+
+
+                    </div>
+                    <h3 class="colores">colores:</h3>
+                    <div class="otros-colores">
+
+                        <div class="color1">
+                            <div class="imagen-right">
+                                <img src="/images/detalle-producto/joy-negro.png" alt="">
+                            </div>
+                        </div>
+                        <div class="color2">
+                            <div class="imagen-left">
+                                <img src="/images/detalle-producto/joy-violeta.png" alt="">
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            </section>
+        </main>
+        <div class="add-carrito">
+            <div class="sub-header">
+                <h2>$5.500</h2>
+                <div class="cantidad-producto">
+                    <h5 style="color: white;
+            ">cantidad:</h5>
+                    <button>+</button>
+                    <input type="number">
+                    <button>-</button>
+                </div>
+                <a href="/products/carrito"><button class="card-btn">
+                        add to card</button></a>
+                
+            </div>
+           
+        </div>
+        <!-- footer -->
+        <%- include('../partials/footer.ejs') %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+            <script>
+                const swiper = new Swiper('.swiper-imagenes', {
+                    // Optional parameters
+                    direction: 'horizontal',
+                    loop: true,
+                    // If we need pagination
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                    // Navigation arrows
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            </script>
+
+</body>
+
+>>>>>>> developEJS
 </html>
