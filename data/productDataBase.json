@@ -148,55 +148,5 @@
       "image": "note2.jpg",
       "subCategory": "notebooks",
       "category": "in-sale"
-   },
-   {
-      "id": 16,
-      "name": "notebook2",
-      "description": "",
-      "price": 5.000,
-      "discount": null,
-      "image": "note3.jpg",
-      "subCategory": "notebooks",
-      "category": "in-sale"
-   },
-   {
-      "id": 17,
-      "name": "prueba",
-      "description": "asd",
-      "price": 20,
-      "discount": 20,
-      "image": "note1.jpg",
-      "subCategory": "Notebooks",
-      "category": "in-sale"
-   },
-   {
-      "id": 18,
-      "name": "prueba",
-      "description": "asd",
-      "price": 20,
-      "discount": 20,
-      "image": "note1.jpg",
-      "subCategory": "Notebooks",
-      "category": "in-sale"
-   },
-   {
-      "id": 19,
-      "name": "prueba",
-      "description": "asd",
-      "price": 20,
-      "discount": 20,
-      "image": "note1.jpg",
-      "subCategory": "Notebooks",
-      "category": "in-sale"
-   },
-   {
-      "id": 20,
-      "name": "prueba",
-      "description": "asd",
-      "price": 20,
-      "discount": 20,
-      "image": "note1.jpg",
-      "subCategory": "Notebooks",
-      "category": "in-sale"
    }
 ]
