@@ -52,28 +52,9 @@
     width: 80%;
 }
 
-.edition-form-box-img {
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasSubtitulos1);
-    font-size: 20px;
-}
-
-.edition-form-box-img #image {
+#crear__color{
     background-color: var(--fondo1VioletaO);
-    margin: 20px 10px;
-    max-width: 768px;
-    border: 1px solid var(--letrasTitulos);
-    border-radius: 5px;
-    padding: 10px;
     box-shadow: 15px 10px 5px #BC79F0;
-    width: 80%;
-    height: 50px;
-}
-
-.edition-form-box-img input#image.image {
-    font-size: 10px;
-    padding: 15px;
-    cursor: pointer;
 }
 
 .edition-form-box-checkbox {

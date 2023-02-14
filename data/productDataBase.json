@@ -22,12 +22,12 @@
    {
       "id": 3,
       "name": "Ghost Of Tsushima PS4",
+      "description": "Con este juego de Ghost of Tsushima vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 72999,
       "discount": 25,
-      "subCategory": "",
-      "category": "in-sale",
-      "description": "Con este juego de Ghost of Tsushima vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
-      "image": "item3.jpg"
+      "image":"item3.jpg",
+      "subCategory": "products-edition",
+      "category": "in-sale"
    },
    {
       "id": 4,
@@ -158,7 +158,45 @@
       "image": "note3.jpg",
       "subCategory": "",
       "category": "in-sale"
+   },
+   {
+      "id": 17,
+      "name": "prueba",
+      "description": "asd",
+      "price": 20,
+      "discount": 20,
+      "image": "note1.jpg",
+      "subCategory": "Notebooks",
+      "category": "in-sale"
+   },
+   {
+      "id": 18,
+      "name": "prueba",
+      "description": "asd",
+      "price": 20,
+      "discount": 20,
+      "image": "note1.jpg",
+      "subCategory": "Notebooks",
+      "category": "in-sale"
+   },
+   {
+      "id": 19,
+      "name": "prueba",
+      "description": "asd",
+      "price": 20,
+      "discount": 20,
+      "image": "note1.jpg",
+      "subCategory": "Notebooks",
+      "category": "in-sale"
+   },
+   {
+      "id": 20,
+      "name": "prueba",
+      "description": "asd",
+      "price": 20,
+      "discount": 20,
+      "image": "note1.jpg",
+      "subCategory": "Notebooks",
+      "category": "in-sale"
    }
-   
-   
 ]

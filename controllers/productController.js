@@ -35,7 +35,7 @@ module.exports = {
       const id = +req.params.id
       const product = products.find(product => product.id === +id);
 
-      const { name, discount, price, description, category, subCategory } = req.body;
+      const { name, discount, price, description, image, category, subCategory } = req.body;
 
       const productUpdated = {
           id,
@@ -43,7 +43,7 @@ module.exports = {
           description: description.trim(),
           price: +price,
           discount: +discount,
-          image: product.image,
+          image: image,
           subCategory,
           category
           
@@ -72,7 +72,7 @@ module.exports = {
         description: description.trim(),
         price:+price,
         discount:+discount,
-        image:null,
+        image,
         subCategory,
         category
     };

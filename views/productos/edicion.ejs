@@ -18,51 +18,6 @@
 
     <main class="edition">
         <div class="edition-container">
-<<<<<<< HEAD
-            <h1 class="edition-titular">Editá tus productos</h1>
-            <section class="edition-form">
-                <form action="/edicion">
-
-                    <div class="edition-form-box">
-                        <label for="name">Nombre del Producto</label>
-                        <input type="text" id="name" name="name">
-                    </div>
-                    <div class="edition-form-box-checkbox">
-                        <label for="edition-discount" class="edition-discount">Seleccioná</label>
-                        <div>
-                            <div>
-                                <input type="checkbox" id="discount" name="discount" value="discount">
-                                <label for="discount">Nuevo</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="" name="" value="">
-                                <label for="">Oferta</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="envio-gratis" name="envio-gratis" value="envio-gratis">
-                                <label for="envio-gratis">Envio Gratis</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="edition-form-box">
-                        <label for="description">Descripcion</label>
-                        <input type="textarea" id="description" name="description">
-                    </div>
-                    <div class="edition-form-box-img">
-                        <label for="image">Imagen del Producto</label>
-                        <input class="image" type="file" id="image" name="image">
-                    </div>
-                    <div class="edition-form-box">
-                        <label for="edition-products">Seleccioná la Categoria</label>
-                        <select id="edition-products" name="products">
-                            <option value="products-edition">Categorias...</option>
-                            <option value="products-edition">Perifericos</option>
-                            <option value="products-edition">Juegos</option>
-                            <option value="products-edition">Gifts Cards</option>
-                            <option value="products-edition">Consolas</option>
-                            <option value="products-edition">Notebooks</option>
-                            <option value="products-edition">Accesorios</option>
-=======
             <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
             <section class="edition-form">
                 <form action="/products/edicion/<%= id %>?_method=PUT"
@@ -85,10 +40,15 @@
                         <label for="description">Descripcion</label>
                         <textarea name="description" id="description" value="" class="edicion__texto"><%= description %></textarea>
                     </div>
-                    <div class="edition-form-box-img">
-                        <label for="image">Imagen del Producto</label>
-                        <input class="image" type="file" id="image" name="image" value="<%= image %>">
-                    </div>
+                    <div class="submit-btn--crear" id="crear__color">
+                        <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
+                        <label for="image">
+                          <i class="fa-solid fa-image"></i><br>
+                          <div class="submit-btn--crea__nombrearchi">
+                            <span><%= image %></span>
+                          </div>
+                        </label>
+                      </div>
                     <div class="edition-form-box">
                         <label for="edition-products">Seleccioná la Categoria</label>
                         <select id="edition-products" name="subCategory">
@@ -99,26 +59,11 @@
                             <option value="Consolas" <%= subCategory === "Consolas" && 'selected'%>>Consolas</option>
                             <option value="Notebooks" <%= subCategory === "Notebooks" && 'selected'%>>Notebooks</option>
                             <option value="Accesorios" <%= subCategory === "Accesorios" && 'selected'%>>Accesorios</option>
->>>>>>> developEJS
                         </select>
                     </div>
 
                     <div class="edition-form-box">
                         <label for="price">Precio Actual</label>
-<<<<<<< HEAD
-                        <input type="price" id="price" name="price">
-                    </div>
-
-                    <div class="swtich-container-edition">
-                        <input type="checkbox" id="swtich-edit">Descuento
-                        <label for="swtich-edit" class="edit-swtich"></label>
-                    </div>
-
-                    <div class="edition-form-box-button">
-                        <button type="reset">Eliminar Producto</button>
-                        <button type="submit">Confirmar Edicion</button>
-                        <button type="reset">Cancelar</button>
-=======
                         <input type="number" id="price" name="price" value="<%= price %>" required>
                     </div>
 
@@ -131,7 +76,6 @@
                         <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
                         <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
                         <button type="reset" class="edition-form-box-button__a">Cancelar</button>
->>>>>>> developEJS
                     </div>
                 </form>
             </section>
@@ -141,6 +85,7 @@
     <!-- Footer -->
     <%- include('../partials/footer.ejs') %>
 
+    <script src="/javascripts/buscarimagen.js"></script>
 </body>
 
 </html>
