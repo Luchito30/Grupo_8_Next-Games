@@ -23,7 +23,7 @@
         </div>
 
         <section class="home__main__section">
-			<% users.forEach(({id, firtsName, lastName, email, password, category, image}) => { %>
+			<% users.forEach(({id, firtsName, lastName, email, password, image}) => { %>
 				<%- include('./users/register',{
 					id,
 					firtsName,
@@ -31,7 +31,6 @@
 					email,
 					name,
                     password,
-                    category,
                     image
 				}) %>
 			<% }) %>
