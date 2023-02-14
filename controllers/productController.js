@@ -19,7 +19,10 @@ module.exports = {
         return res.render('productos/carrito');
     },
     detalleproducto: (req, res) => {
-        return res.render('productos/detalle-producto');
+      let product= products.find(product => product.id === +req.params.id);
+        return res.render('productos/detalle-producto', {
+          ...product
+        });
     }, 
     edicion: (req, res) => {
       const { id } = req.params;
@@ -29,6 +32,7 @@ module.exports = {
           toThousand
       });
   },
+  
   /* Update - Method to update */
   update: (req, res) => {
 

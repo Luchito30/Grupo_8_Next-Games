@@ -5,7 +5,7 @@
       "price": 4000,
       "discount": 20,
       "category": "in-sale",
-      "subCategory": "",
+      "subCategory": "juegos",
       "description": "Disfruta de la tecnología HyperMotion2 de nueva generación, el fútbol de clubes femenino, la FIFA World Cup™ masculina y femenina, función de juego cruzado y mucho más.",
       "image": "item1.jpg"
    },
@@ -14,7 +14,7 @@
       "name": "Joystick PS5",
       "price": 500,
       "discount": 3,
-      "subCategory": "",
+      "subCategory": "perifericos",
       "category": "in-sale",
       "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
       "image": "item2.jpg"
@@ -34,7 +34,7 @@
       "name": "The King Of Fighters Xv",
       "price": 72999,
       "discount": 25,
-      "subCategory": "",
+      "subCategory": "Juegos",
       "category": "in-sale",
       "description": "Con este juego de The King of Fighters vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "image": "item4.jpg"
@@ -43,20 +43,20 @@
       "id": 5,
       "name": "One Piece Odyssey",
       "description": "Con este juego de One Piece vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
-      "price": 29.236,
+      "price": 29236,
       "discount": null,
       "image": "item5.jpg",
-      "subCategory": "Perifericos",
+      "subCategory": "Juegos",
       "category": ""
    },
    {
       "id": 6,
       "name": "Dragon Ball The Breakers Special Edition Ps4",
       "description": "Con este juego de Dragon Ball vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
-      "price": 15.5,
+      "price": 155,
       "discount": null,
       "image": "item6.jpg",
-      "subCategory": "",
+      "subCategory": "Juegos",
       "category": "in-sale"
    },
    {
@@ -66,7 +66,7 @@
       "price": 580,
       "discount": null,
       "image": "item7.jpg",
-      "subCategory": "Perifericos",
+      "subCategory": "Juegos",
       "category": ""
    },
    {
@@ -76,7 +76,7 @@
       "price": 222,
       "discount": null,
       "image": "item8.jpg",
-      "subCategory": "Perifericos",
+      "subCategory": "Juegos",
       "category": ""
    },
    {
@@ -113,7 +113,7 @@
       "id": 12,
       "name": "Call Of Duty Modern Warfare Remastered Ps4",
       "description": "Call of Duty: Modern Warfare Remastered lleva a la generación de PlayStation 4, Xbox One y de los PCs de la actualidad el exitoso videojuego de acción bélica en primera persona que supuso el salto a la era moderna de una franquicia que, hasta la fecha, se conocía por estar ambientada en la Segunda Guerra Mundial. Con la campaña y 10 mapas multijugador, los jugadores pueden rememorar una contemporánea guerra en un ficticio conflicto ambientado en Oriente Medio y otros lugares de Europa",
-      "price": 5000,
+      "price": 5.000,
       "discount": null,
       "image": "item11.jpg",
       "subCategory": "Juegos",
@@ -126,37 +126,37 @@
       "price": 580,
       "discount": null,
       "image": "item12.jpg",
-      "subCategory": "",
+      "subCategory": "Juegos",
       "category": "in-sale"
    },
    {
       "id": 14,
       "name": "Apple MacBook Air A2337",
       "description": "La notebook más delgada y ligera de Apple viene con los superpoderes del chip M1. Termina todos tus proyectos mucho más rápido con el CPU de 8 núcleos y disfruta como nunca antes de apps y juegos con gráficos avanzados gracias al GPU de hasta 8 núcleos.",
-      "price": 8000,
+      "price": 8.000,
       "discount": null,
       "image": "note1.jpg",
-      "subCategory": "",
+      "subCategory": "notebooks",
       "category": "in-sale"
    },
    {
       "id": 15,
       "name": "Notebook Dell Gaming G5 5525 R7 16gb 512gb Fhd Rtx 3060 W11",
       "description": "Alto rendimiento perpetuo. Con los procesadores AMD Ryzen™ de última generación y una configuración de rendimiento optimizada, podrás disfrutar de un rendimiento de alto nivel, potente y constante en cualquier experiencia de juego. Además, el nuevo y mejorado diseño térmico inspirado en Alienware ofrece una refrigeración óptima gracias a dos entradas de aire, unas aspas de ventilador ultrafinas, conductos de cobre y cuatro rejillas de ventilación estratégicamente situadas",
-      "price": 500000,
+      "price": 500.000,
       "discount": null,
       "image": "note2.jpg",
-      "subCategory": "",
+      "subCategory": "notebooks",
       "category": "in-sale"
    },
    {
       "id": 16,
       "name": "notebook2",
       "description": "",
-      "price": 5000,
+      "price": 5.000,
       "discount": null,
       "image": "note3.jpg",
-      "subCategory": "",
+      "subCategory": "notebooks",
       "category": "in-sale"
    },
    {
