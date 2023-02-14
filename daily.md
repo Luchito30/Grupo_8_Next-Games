@@ -1,36 +1,35 @@
-Viernes 27/01 21:30hs. 1er Daily Presentes: Agustina Acosta, Luis Dick y Adriana Guitian
+Jueves 09/02 21:30hs. 1er Daily del 4to sprint Presentes: Agustina Acosta, Luis Dick y Adriana Guitian
 
 Tareas realizadas:
-1-Actualizamos Trello;
-2-Dividimos el trabajo a realizar en los 4 integrantes del grupo:
+1-Actualizamos views home; crear-item y edicion;
+2-Solucionamos algunos conflictos de rutas, faltan solucionar otros;
+3-Agregamos Json de prueba y partials products
 
-Edgardo De La Cruz: Implementar el módulo EJS y renombrar todas las vistas actuales para que utilicen la extensión .ejs.
-Modificar los métodos de los controladores para que utilicen el método render().
-Crear una carpeta llamada partials dentro de la carpeta de views, separar las áreas comunes del sitio.
-● Head (incluyendo todo el elemento <head></head>) → head.ejs
-● Header (incluyendo barras de navegación) → header.ejs
-● Footer (incluyendo todo el elemento <footer></footer>) → footer.ejs
-● (Opcional) Otras secciones de su sitio que se repitan.
-Fecha de Entrega: 29/01 21:30hs en la daily del dia Domingo.
+Edgardo De La Cruz: Presentar view detalle de producto.
+Luis Dick: Presentar view eliminar.
 
-Agustina Acosta y Luis Dick: Formulario al que accede el usuario administrador para cargar nuevos productos.
-Un buen punto de partida para los campos de estos formularios puede ser el siguiente:
-● Nombre del producto (name)
-● Descripción (description)
-● Imagen (image)
-● Categoría (category)
-● Colores (o cualquier otro campo similar como: tamaños, talles, etc)
-● Precio (price)
-Fecha de Entrega Html: 29/01 21:30hs en la daily del dia Domingo
+Daily y reunion viernes 10/02 21:30hs
 
-Adriana Guitian: Formulario al que accede el usuario administrador para editar productos.
-Un buen punto de partida para los campos de estos formularios puede ser el siguiente:
-● Nombre del producto (name)
-● Descripción (description)
-● Imagen (image)
-● Categoría (category)
-● Colores (o cualquier otro campo similar como: tamaños, talles, etc)
-● Precio (price)
-Fecha de entrega Html: 29/01 21:30hs en la daily del dia Domingo
+---------------------------------------------------------------------------------
+
+Viernes 10/02 21:30hs. 2da Daily del 4to sprint Presentes: Agustina Acosta, Luis Dick y Adriana Guitian
+
+Tareas realizadas:
+1-Actualizamos views home; crear-item y edicion;
+2-Solucionamos algunos conflictos de rutas;
+3-Agregamos Json de prueba y partials products
+4-Repartimos las 3 tarjetas restantes a realizar.
+
+Agustina Acosta: Tarjeta: *1*CRUD de productos | listado;
+*2*Definir los campos necesarios para los productos y generar archivo JSON  
+
+Adriana Guitian: Tarjeta: *3*Definir los campos necesarios para los usuarios y generar archivo JSON
+
+Luis Dick: Terminar view eliminar
+
+Edgardo De La Cruz: Presentar view detalle de producto
+
+Proxima daily y reunion Domingo 12/02 21:30hs
+
 
 

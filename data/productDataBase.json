@@ -42,7 +42,7 @@
    {
       "id": 5,
       "name": "teclado",
-      "description": "aaaaaaaaaaaaaaaa",
+      "description": "teclado español",
       "price": 580,
       "discount": null,
       "image": "item5.jpg",
@@ -108,15 +108,5 @@
       "image": "item17.jpg",
       "category": "Juegos",
       "subCategory": null
-   },
-   {
-      "id": 12,
-      "name": "perro",
-      "description": "asdkadashdlashdl",
-      "price": 787878,
-      "discount": 232323,
-      "image": null,
-      "subCategory": "Perifericos",
-      "category": "Nuevo"
    }
 ]

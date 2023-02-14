@@ -1,5 +1,4 @@
 const express = require('express');
-const { get } = require('http');
 const {carrito,detalleproducto,edicion, crearItem,store,index,update,removeConfirm,remove} = require('../controllers/productController');
 
 const router = express.Router();
