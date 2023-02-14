@@ -1,0 +1,45 @@
+.remove__section{
+        border: 1px solid white;
+    background-color: var(--fondo1VioletaO);
+    width: 80%;
+    margin: 60px auto;
+}
+.remove__titulo{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 32px;
+    color: var(--letrasSubtitulos1);
+    text-decoration: underline;
+    text-decoration-color: var(--letrasSubtitulos1);
+}
+.remove__name{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+.remove__confirm{
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+.remove__buttoms{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+.remove__buttoms form{
+    margin-right: 25px;
+}
+.remove__buttom{
+    width: 150px;
+    border: none;
+    height: 33px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    background-color: var(--fondo2VioletaC);
+    transition: all 1.5s;
+}
+.remove__buttom:hover{
+    background-color: var(--letrasSubtitulos2);
+}

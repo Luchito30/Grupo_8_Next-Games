@@ -18,34 +18,35 @@
 
     <main class="edition">
         <div class="edition-container">
-            <h1 class="edition-titular">Editá tu producto <i></i></h1>
+<<<<<<< HEAD
+            <h1 class="edition-titular">Editá tus productos</h1>
             <section class="edition-form">
-                <form action=""
-                    method="POST" novalidate>
+                <form action="/edicion">
+
                     <div class="edition-form-box">
                         <label for="name">Nombre del Producto</label>
-                        <input type="text" id="name" name="name" >
+                        <input type="text" id="name" name="name">
                     </div>
                     <div class="edition-form-box-checkbox">
                         <label for="edition-discount" class="edition-discount">Seleccioná</label>
                         <div>
                             <div>
-                                <input type="checkbox" id="selection" name="selection" value="selection">
-                                <label for="selection">Nuevo</label>
+                                <input type="checkbox" id="discount" name="discount" value="discount">
+                                <label for="discount">Nuevo</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="selection" name="selection" value="selection">
-                                <label for="selection">Oferta</label>
+                                <input type="checkbox" id="" name="" value="">
+                                <label for="">Oferta</label>
                             </div>
                             <div>
-                                <input type="checkbox" id="selection" name="selection" value="selection">
-                                <label for="selection">Envio Gratis</label>
+                                <input type="checkbox" id="envio-gratis" name="envio-gratis" value="envio-gratis">
+                                <label for="envio-gratis">Envio Gratis</label>
                             </div>
                         </div>
                     </div>
                     <div class="edition-form-box">
                         <label for="description">Descripcion</label>
-                        <textarea name="description" id="description"></textarea>
+                        <input type="textarea" id="description" name="description">
                     </div>
                     <div class="edition-form-box-img">
                         <label for="image">Imagen del Producto</label>
@@ -53,31 +54,84 @@
                     </div>
                     <div class="edition-form-box">
                         <label for="edition-products">Seleccioná la Categoria</label>
+                        <select id="edition-products" name="products">
+                            <option value="products-edition">Categorias...</option>
+                            <option value="products-edition">Perifericos</option>
+                            <option value="products-edition">Juegos</option>
+                            <option value="products-edition">Gifts Cards</option>
+                            <option value="products-edition">Consolas</option>
+                            <option value="products-edition">Notebooks</option>
+                            <option value="products-edition">Accesorios</option>
+=======
+            <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
+            <section class="edition-form">
+                <form action="/products/edicion/<%= id %>?_method=PUT"
+                    method="POST" novalidate>
+                    <div class="edition-form-box">
+                        <label for="name">Nombre del Producto</label>
+                        <input type="text" id="name" name="name" value="<%= name %>">
+                    </div>
+                    <div class="edition-form-box">
+                        <label for="edition-products">Seleccioná una Opción</label>
                         <select id="edition-products" name="category">
-                            <option value="products-edition" selected>Categorias...</option>
-                            <option value="Perifericos">Perifericos</option>
-                            <option value="Juegos">Juegos</option>
-                            <option value="Gifts Cards">Gifts Cards</option>
-                            <option value="Consolas">Consolas</option>
-                            <option value="Notebooks">Notebooks</option>
-                            <option value="Accesorios">Accesorios</option>
+                            <option value="" >Selecciona...</option>
+                            <option value="Nuevo" <%= category === "Nuevo" && 'selected'%>>Nuevo</option>
+                            <option value="in-sale" <%= category === "in-sale" && 'selected'%>>Oferta</option>
+                            <option value="Envio Gratis" <%= category === "Envio Gratis" && 'selected'%>>Envio Gratis</option>
+                        </select>
+                    </div>
+        
+                    <div class="edition-form-box">
+                        <label for="description">Descripcion</label>
+                        <textarea name="description" id="description" value="" class="edicion__texto"><%= description %></textarea>
+                    </div>
+                    <div class="edition-form-box-img">
+                        <label for="image">Imagen del Producto</label>
+                        <input class="image" type="file" id="image" name="image" value="<%= image %>">
+                    </div>
+                    <div class="edition-form-box">
+                        <label for="edition-products">Seleccioná la Categoria</label>
+                        <select id="edition-products" name="subCategory">
+                            <option value="products-edition" >Categorias...</option>
+                            <option value="Perifericos" <%= subCategory === "Perifericos" && 'selected'%>>Perifericos</option>
+                            <option value="Juegos" <%= subCategory === "Juegos" && 'selected'%>>Juegos</option>
+                            <option value="Gifts Cards" <%= subCategory === "Gifts Cards" && 'selected'%>>Gifts Cards</option>
+                            <option value="Consolas" <%= subCategory === "Consolas" && 'selected'%>>Consolas</option>
+                            <option value="Notebooks" <%= subCategory === "Notebooks" && 'selected'%>>Notebooks</option>
+                            <option value="Accesorios" <%= subCategory === "Accesorios" && 'selected'%>>Accesorios</option>
+>>>>>>> developEJS
                         </select>
                     </div>
 
                     <div class="edition-form-box">
                         <label for="price">Precio Actual</label>
-                        <input type="text" id="price" name="price" required>
+<<<<<<< HEAD
+                        <input type="price" id="price" name="price">
                     </div>
 
                     <div class="swtich-container-edition">
-                        <input type="checkbox" id="swtich-edit">   Descuento  <label for="swtich-edit" class="edit-swtich"></label>
-                        <input type="text" id="discount" name="discount" >
+                        <input type="checkbox" id="swtich-edit">Descuento
+                        <label for="swtich-edit" class="edit-swtich"></label>
                     </div>
 
                     <div class="edition-form-box-button">
                         <button type="reset">Eliminar Producto</button>
                         <button type="submit">Confirmar Edicion</button>
-                        <button> <a href="/">Cancelar</a></button>
+                        <button type="reset">Cancelar</button>
+=======
+                        <input type="number" id="price" name="price" value="<%= price %>" required>
+                    </div>
+
+                    <div class="swtich-container-edition">
+                        <input type="checkbox" id="swtich-edit">   Descuento  <label for="swtich-edit" class="edit-swtich"></label>
+                        <input type="number" id="discount" name="discount" value="<%= discount %>">
+                    </div>
+
+                    <div class="edition-form-box-button">
+                        <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
+                        <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
+                        <button type="reset" class="edition-form-box-button__a">Cancelar</button>
+>>>>>>> developEJS
                     </div>
                 </form>
             </section>

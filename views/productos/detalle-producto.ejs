@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +16,7 @@
 
             <section class="detalle-imagenes">
                 <div>
-                    <a href="/products/edicion/:id"><button class="card-btn">
+                    <a href="/productos/edicion/:id"><button class="card-btn">
                             >>edit product</button></a>
                 </div>
                 <div class="detalle-img--conteiner">
@@ -48,7 +47,7 @@
                 <div class="descripciones">
                    
                     <div class="titulos">
-                        <h2 class="titulo-1">JoyStick PS5 with RAZER quick charging stand</h2>
+                        <h2 class="titulo-1"><%=name%></h2>
                     </div>
                     <div class="rank">
                         <p>PERISFERICOS |</p>
@@ -66,20 +65,18 @@
                         <div class="category-product">
 
                             <div class="sub">
-                                <h3>CARGA RAPIDA :
+                                <h3>DESCRIPCIÓN :
                                 </h3>
-                                <h4>capaz de cargar tu control en menos de 3 horas
-
-                                    el stand también esta diseñado con protección
+                                <h4><%=description%>
                                 </h4>
 
-                                <h3>CARGA CON USB :
+                               <!--  <h3>CARGA CON USB :
                                 </h3>
                                 <h4>
                                     carga facil con cable usb compatible tanto
 
                                     con PS5 como pc
-                                </h4>
+                                </h4> -->
 
 
 
@@ -150,17 +147,14 @@
             <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
             <script>
-
                 const swiper = new Swiper('.swiper-imagenes', {
                     // Optional parameters
                     direction: 'horizontal',
                     loop: true,
-
                     // If we need pagination
                     pagination: {
                         el: '.swiper-pagination',
                     },
-
                     // Navigation arrows
                     navigation: {
                         nextEl: '.swiper-button-next',

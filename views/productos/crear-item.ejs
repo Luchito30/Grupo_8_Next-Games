@@ -25,7 +25,7 @@
       </h1>
       
       <div class="crear__nameprodu">
-        <label for="nombreprodu">Nombre del producto</label>
+        <label for="nombre">Nombre del producto</label>
         <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto" required>
       </div>
 
@@ -41,8 +41,8 @@
       <section class="crear__switch">
         <div class="crear__switch__conteiner">
           <input type="checkbox" id="switch" class="crear__switch__conteiner--switch">
-          <label for="switch" class="crear__lbl" name="discount"></label><span>Descuento</span>
-          <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento">
+          <label for="switch" class="crear__lbl" ></label><span>Descuento</span>
+          <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento" name="discount">
 
         </div>
       </section>
@@ -51,23 +51,23 @@
         <h3>Seleccioná</h3>
       </div>
 
-      <section class="crear__checkbox">
+      <section class="crear__checkbox" value="in-sale">
         <label for="section"></label>
         <div class="form-check-crear">
-          <input class="form-check-input" type="checkbox" name="section" id="newer">
-          <label class="form-check-label" for="newer">
+          <input class="form-check-input" type="checkbox" name="category" >
+          <label class="form-check-label" >
             NUEVO
           </label>
         </div>
         <div class="form-check-crear2">
-          <input class="form-check-input" type="checkbox" name="section" id="sale">
-          <label class="form-check-label" for="sale">
+          <input class="form-check-input" type="checkbox" name="category" value="in-sale" >
+          <label class="form-check-label"  >
             OFERTA
           </label>
         </div>
         <div class="form-check-crear3">
-          <input class="form-check-input" type="checkbox" name="section" id="free">
-          <label class="form-check-label" for="free">
+          <input class="form-check-input" type="checkbox" name="category" id="free">
+          <label class="form-check-label" >
             ENVIO GRATIS
           </label>
         </div>
@@ -78,7 +78,7 @@
       </div>
 
       <div class="dropdown--crear">
-        <select name="category" id="lang" class="form-control">
+        <select name="subCategory" id="lang" class="form-control">
           <option value="Categorias" selected>Categorias</option>
           <option value="Perifericos">Perifericos</option>
           <option value="Juegos">Juegos</option>
@@ -124,7 +124,7 @@
         <button type="submit" class="crear-btn--submit">Aceptar</button>
 
 
-        <button type="reset" class="crear-btn--reset">Borrar</button>
+        <button type="reset" class="crear-btn--reset">Resetear</button>
 
 
         <button class="crear-btn--cancelar"><a href="/">Cancelar</a></button>

@@ -1,16 +1,22 @@
 const express = require('express');
-const {carrito, detalleproducto, edicion, crearItem, index, update} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove} = require('../controllers/productController');
 
 const router = express.Router();
 
-router.get('/', index);
+/*** GET ALL PRODUCTS ***/ 
+router.get('/', index); 
 router.get('/carrito', carrito)
-router.get('/detalle-producto', detalleproducto)
+router.get('/detalle-producto/:id', detalleproducto)
+
+/*** CREATE ONE PRODUCT ***/
+router.get('/createItem/', createItem);
+router.post('/createItem', store)
 
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
 router.put('/edicion/:id', update);
 
-router.get('/crear-item', crearItem)
-
+/*** Eliminar producto ***/
+router.get("/remove/:id",removeConfirm)
+router.delete("/remove/:id",remove)
 module.exports = router;
