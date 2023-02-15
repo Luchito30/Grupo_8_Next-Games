@@ -10,10 +10,16 @@ module.exports  = {
     home: (req,res) =>{
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
     const inSale = products.filter(product => product.category === "in-sale" )
-    const notebook = products.filter(product => product.subCategory === "Notebooks" )
+    const computacion = products.filter(product => product.subCategory === "Notebooks" )
+    const ingresos = products.filter(product => product.category === "newer" )
+    const tarjetas = products.filter(product => product.subCategory === "Gifts Cards" )
+    const asd = products.filter(product => product.subCategory === "Consolas" )
      return res.render('home',{
         inSale,
-        notebook,
+        computacion,
+        ingresos,
+        tarjetas,
+        asd,
         toThousand
      })   
     }

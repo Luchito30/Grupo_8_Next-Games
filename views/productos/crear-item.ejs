@@ -48,30 +48,16 @@
       </section>
 
       <div class="crear__subtitulo">
-        <h3>Seleccioná</h3>
+        <h3>Estado del Producto</h3>
       </div>
 
-      <section class="crear__checkbox" value="in-sale">
-        <label for="section"></label>
-        <div class="form-check-crear">
-          <input class="form-check-input" type="checkbox" name="category" >
-          <label class="form-check-label" >
-            NUEVO
-          </label>
-        </div>
-        <div class="form-check-crear2">
-          <input class="form-check-input" type="checkbox" name="category" value="in-sale" >
-          <label class="form-check-label"  >
-            OFERTA
-          </label>
-        </div>
-        <div class="form-check-crear3">
-          <input class="form-check-input" type="checkbox" name="category" id="free">
-          <label class="form-check-label" >
-            ENVIO GRATIS
-          </label>
-        </div>
-      </section>
+      <div class="dropdown--crear">
+        <select name="category" id="lang" class="form-control">
+          <option value="null" selected>Selecciona...</option>
+          <option value="newer">Nuevo</option>
+          <option value="in-sale">Oferta</option>
+        </select>
+      </div>
 
       <div class="crear__subtitulo">
         <h3>Seleccioná la categoria</h3>
@@ -79,15 +65,13 @@
 
       <div class="dropdown--crear">
         <select name="subCategory" id="lang" class="form-control">
-          <option value="Categorias" selected>Categorias</option>
+          <option value="null" selected>Categorias</option>
           <option value="Perifericos">Perifericos</option>
           <option value="Juegos">Juegos</option>
           <option value="Gifts Cards">Gifts Cards</option>
           <option value="Consolas">Consolas</option>
           <option value="Notebooks">Notebooks</option>
           <option value="Accesorios">Accesorios</option>
-
-
         </select>
       </div>
 
@@ -97,8 +81,8 @@
       </div>
 
       <div class="submit-btn--crear">
-        <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
-        <label for="image">
+        <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar" accept="images/*">
+        <label for="myFile">
           <i class="fa-solid fa-image"></i><br>
           <div class="submit-btn--crea__nombrearchi">
             <span>Subir imagen</span>

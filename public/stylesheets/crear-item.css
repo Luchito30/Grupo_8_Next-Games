@@ -58,27 +58,6 @@
     font-weight: 500;
     margin-bottom: 30px;
 }
-.crear__checkbox{
-    font-size: 14px;
-    border: 1px solid white;
-    background-color: #7110bd;
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-.form-check-crear{
-    margin-bottom: 15px;
-    margin-top: 20px;
-}
-.form-check-crear2{
-    margin-bottom: 15px;
-}
-.form-check-crear label, .form-check-crear2 label, .form-check-crear3 label{
-    color: white;
-}
-.form-check-crear3{
-    margin-bottom: 30px;
-}
 .crear-formulario-2__descripcion{
     width: 100%;
     margin: 0 auto;

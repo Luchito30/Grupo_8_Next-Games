@@ -49,7 +49,7 @@ module.exports = {
           discount: +discount,
           image: image,
           subCategory,
-          category
+          category: category ? category : null
           
       };
 

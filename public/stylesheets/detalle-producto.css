@@ -87,7 +87,7 @@ left: 46px;
 
 .card-btn{
     width: 101px;
-    background-color: var(--fondo2VioletaC);
+    background-color: var(--fondo1VioletaO);
     color: #fff;
     border: none;
     border-radius: 10px;
@@ -99,7 +99,7 @@ left: 46px;
     height: 25px
 }
 .card-btn:hover{
-    background-color: var(--fondo1VioletaO);
+    background-color: #1A027A;
 }
 
  @media (min-width: 769px){

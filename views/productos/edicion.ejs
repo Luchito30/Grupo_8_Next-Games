@@ -27,12 +27,11 @@
                         <input type="text" id="name" name="name" value="<%= name %>">
                     </div>
                     <div class="edition-form-box">
-                        <label for="edition-products">Seleccioná una Opción</label>
+                        <label for="edition-products">Estado del Producto</label>
                         <select id="edition-products" name="category">
                             <option value="" >Selecciona...</option>
-                            <option value="Nuevo" <%= category === "Nuevo" && 'selected'%>>Nuevo</option>
+                            <option value="newer" <%= category === "newer" && 'selected'%>>Nuevo</option>
                             <option value="in-sale" <%= category === "in-sale" && 'selected'%>>Oferta</option>
-                            <option value="Envio Gratis" <%= category === "Envio Gratis" && 'selected'%>>Envio Gratis</option>
                         </select>
                     </div>
         
