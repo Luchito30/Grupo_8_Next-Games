@@ -22,5 +22,14 @@ module.exports  = {
         asd,
         toThousand
      })   
-    }
+    },
+    search: (req, res) => {
+        const {keywords} = req.query;
+        const productFiltered = products.filter(product => product.name.toLowerCase().includes(keywords.toLowerCase()) || product.description.toLowerCase().includes(keywords.toLowerCase()))
+        return res.render('results', {
+			productFiltered,
+			toThousand,
+			keywords,
+		})
+    },
 }

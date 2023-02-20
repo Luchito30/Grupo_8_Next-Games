@@ -1,5 +1,5 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove,search} = require('../controllers/productController');
 
 const router = express.Router();
 
@@ -19,4 +19,6 @@ router.put('/edicion/:id', update);
 /*** Eliminar producto ***/
 router.get("/remove/:id",removeConfirm)
 router.delete("/remove/:id",remove)
+
 module.exports = router;
+

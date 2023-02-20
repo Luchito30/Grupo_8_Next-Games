@@ -5,38 +5,37 @@
         </div>
 
         <div class="header__div__logo">
-            <a href="/"><img class="header__logo" src="/images/next-games-nuevologo-horizontal.png"
-                    alt="logo"></a>
+            <a href="/"><img class="header__logo" src="/images/next-games-nuevologo-horizontal.png" alt="logo"></a>
         </div>
-
         <section class="right-nav-bar">
-            <form action="" method="" autocomplete="off" class="right-nav-bar--form">
+            <form action="/search" method="GET" autocomplete="off" class="right-nav-bar--form">
                 <div>
-                    <input type="search" name="search" class="right-nav-bar--busq" id="search"
+                    <input type="text" name="keywords" class="right-nav-bar--busq" id="search"
                         placeholder="Buscar Producto" title="¿Que desea Buscar?">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </form>
         </section>
-
+        
         <section class="right-nav-bar2">
-            <form action="" method="" autocomplete="off" class="right-nav-bar--form2">
+            <form action="/search" method="GET" autocomplete="off" class="right-nav-bar--form2">
                 <div>
-                    <input type="search" name="search" class="right-nav-bar--busq2" id="search"
+                    <input type="text" name="keywords" class="right-nav-bar--busq2" id="search"
                         placeholder="Buscar Producto" title="¿Que desea Buscar?">
-                    <button class="right-nav-bar--button">
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                    <button  type="submit" class="right-nav-bar--button">
+                       <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </div>
             </form>
         </section>
 
-        <div>
 
-            <button class="carro">
-                <a href="/products/carrito"><i class="fa-solid fa-cart-shopping" id="carrito"></i></a>
-            </button>
-        </div>
+            <div>
+
+                <button class="carro">
+                    <a href="/products/carrito"><i class="fa-solid fa-cart-shopping" id="carrito"></i></a>
+                </button>
+            </div>
     </div>
 
     <section class="header__section">
@@ -44,15 +43,21 @@
             <div>
                 <ul class="left-nav-bar--1">
                     <li>
-                        <a class="home" href="/">Home<hr></a>
+                        <a class="home" href="/">Home
+                            <hr>
+                        </a>
                     </li>
 
 
                     <li>
-                        <a class="produ" href="/products">Productos<hr></a>
+                        <a class="produ" href="/products">Productos
+                            <hr>
+                        </a>
                     </li>
                     <li>
-                        <a class="produ" href="/products/createItem">Crear<hr></a>
+                        <a class="produ" href="/products/createItem">Crear
+                            <hr>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -60,10 +65,14 @@
             <div>
                 <ul class="left-nav-bar--2">
                     <li>
-                        <a class="registro" href="/users/register">Registro<hr></a>
+                        <a class="registro" href="/users/register">Registro
+                            <hr>
+                        </a>
                     </li>
                     <li>
-                        <a class="login" href="/users/login">Login<hr></a>
+                        <a class="login" href="/users/login">Login
+                            <hr>
+                        </a>
                     </li>
                 </ul>
             </div>

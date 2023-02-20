@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Games | Search</title>
+    <script src="https://kit.fontawesome.com/89a4980149.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+
+
+    <div class="home__main--titulo">
+        <h2>Resultados de la búsqueda: "<%= keywords %>"</h2>
+    </div>
+
+    <section class="home__main__section">
+        <% if (productFiltered.length) { %>
+            <% productFiltered.forEach(({id,image,price,discount,name})=> { %>
+                <section>
+                    <article class="home__main__section__article">
+                        <a href="/products/detalle-producto/<%= id %>">
+                            <figure>
+                                <img class="home__main--img" src="/images/<%= image ? image : 'default-image.png' %>"
+                                    alt="imagen de producto">
+                            </figure>
+                            <div class="home__main--div">
+                                <% if (discount) { %>
+                                    <h2>$<%= toThousand(price) %>
+                                    </h2>
+                                    <span>
+                                        <%= discount %>% OFF
+                                    </span>
+                                    <% } else { %>
+                                        <h2>$<%=toThousand(price) %>
+                                        </h2>
+                                        <% } %>
+                                            <p>
+                                                <%= name %>
+                                            </p>
+                            </div>
+                        </a>
+                    </article>
+                </section>
+
+                <% }) %>
+                    <% } else { %>
+                        <div>
+                            <h2 class="products-title" style="color: tomato;">No hay productos que coincidan
+                                con esa búsqueda</h2>
+                        </div>
+                        <% } %>
+
+
+
+    </section>
+
+</body>
+
+</html>
