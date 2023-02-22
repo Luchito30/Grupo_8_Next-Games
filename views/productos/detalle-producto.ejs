@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Game | Detalle de producto</title>
-    <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+
+<%- include('../partials/head.ejs') %>
 
 <body>
     <%- include('../partials/header.ejs') %>
-        <main class="main-detalledeproducto">
 
+
+    <div class="detalle__boton--edit">
+        <a href="/products/edicion/<%= id %>"><button class="card-btn1">
+                edit product</button></a>
+    </div>
+
+        <main class="main-detalledeproducto">
             <section class="detalle-imagenes">
-                <div>
-                    <a href="/products/edicion/<%= id %>"><button class="card-btn">
-                            edit product</button></a>
-                </div>
                 <div class="detalle-img--conteiner">
                     <!-- Slider main container -->
                     <div class="swiper swiper-imagenes">
@@ -45,12 +40,16 @@
 
             <section class="descripcion-detalle">
                 <div class="descripciones">
-                   
+
                     <div class="titulos">
-                        <h2 class="titulo-1"><%=name%></h2>
+                        <h2 class="titulo-1">
+                            <%=name%>
+                        </h2>
                     </div>
                     <div class="rank">
-                        <p><%=subCategory%></p>
+                        <p>
+                            <%=subCategory%>
+                        </p>
                         <div class="stars">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -67,7 +66,8 @@
                             <div class="sub">
                                 <h3>DESCRIPCIÓN :
                                 </h3>
-                                <h4><%=description%>
+                                <h4>
+                                    <%=description%>
                                 </h4>
 
                             </div>
@@ -114,20 +114,41 @@
         </main>
         <div class="add-carrito">
             <div class="sub-header">
-                <h2>$ <%=price%></h2>
-                <div class="cantidad-producto">
-                    <h5 style="color: white;
-            ">cantidad:</h5>
-                    <button>+</button>
-                    <input type="number">
-                    <button>-</button>
+                <div class="detalle__precio--box">
+                    <% if (discount) { %>
+
+                        <div>
+                            <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
+                            <span class="detalle__precio--barra">/</span>
+                            <b class="detalle__precio--porcentaje">
+                                <%= discount %>% OFF
+                            </b>
+
+                            <p class="detalle__precio--descuento">
+                                $<%= toThousand(Math.round(price - (price * discount) / 100))%>
+                            </p>
+                        </div>
+                        <% } else { %>
+                            <p class="detalle__precio--sincambio">
+                                $<%= toThousand(Math.round(price)) %>
+                            </p>
+
+                            <% } %>
+                                <div class="cantidad-producto">
+                                    <h5 class="detalle__cantidad">cantidad:</h5>
+                                    <button>+</button>
+                                    <input type="number">
+                                    <button>-</button>
+                                </div>
+                                <a href="/products/carrito"><button class="card-btn">
+                                        add to card</button></a>
+
                 </div>
-                <a href="/products/carrito"><button class="card-btn">
-                        add to card</button></a>
-                
             </div>
-           
         </div>
+
+         <!--whatsapp-->
+         <%- include('../partials/whatsApp.ejs') %>
         <!-- footer -->
         <%- include('../partials/footer.ejs') %>
 

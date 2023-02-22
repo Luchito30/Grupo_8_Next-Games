@@ -28,7 +28,7 @@ const swiper = new Swiper('.swiper-notebook1', {
           slidesPerView: 2,
           spaceBetween: 5,
         },
-        768: {
+        769: {
           slidesPerView: 4,
           spaceBetween: 5,
         },

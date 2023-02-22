@@ -10,6 +10,8 @@
 
 footer {
    background-image: url(/images/1600_Featured_Games.jpg);
+   z-index: 10000;
+   position: relative;
 }
 
 .footer__section {
@@ -23,7 +25,7 @@ footer {
 }
 
 .footer__section--left img {
-   width: 30%;
+   width: 70%;
    animation: rotation 8s linear infinite normal;
 }
 
@@ -35,30 +37,72 @@ footer {
    margin-right: 20px;
 }
 
-.footer-right ul li i:hover {
-   color: var(--letrasSubtitulos2);
-}
-
 .footer-right {
    font-size: 18px;
 }
 
+.footer-right a {
+   border: 1px solid var(--fondo2VioletaC);
+   background-color: var(--fondo2VioletaC);
+   border-radius: 30px;
+   width: 35px;
+   display: inline-block;
+   height: 35px;
+   text-align: center;
+   padding-top: 6px;
+}
+
+.footer-right a:hover{
+   transform: scale(1.5);
+   color: var(--letrasSubtitulos2);
+}
+
 .footer__section2 {
-   width: 85%;
-   padding: 20px 0px;
+   display: flex;
+   margin-left: 25px;
+   margin-top: 30px;
+}
+
+.footer__section__contacto--titulo {
+   margin-bottom: 10px;
+   font-size: 26px;
+   font-weight: 600;
+   color: var(--letrasSubtitulos2);
+}
+
+.footer__section__contacto--telefono {
+   margin-bottom: 10px;
+   font-size: 20px;
+   margin-left: 20px;
+}
+
+.footer__section__contacto--horario {
+   margin-bottom: 10px;
+   font-size: 20px;
+   margin-left: 20px;
+}
+
+.footer__section__contacto {
+   margin-bottom: 10px;
+}
+
+.footer__section__contacto1 {
+   margin-bottom: 10px;
 }
 
 .footer__section2--links {
    display: flex;
-   justify-content: space-around;
+   flex-direction: column;
+   font-size: 16px;
+   color: white;
 }
 
 .footer__section2--links li {
-   margin: 0px 10px;
+   margin-bottom: 10px;
 }
 
-.footer__section2--links span {
-   color: white;
+.footer__section2--links hr {
+   margin-bottom: 20px;
 }
 
 .footer__section2--links li a {
@@ -69,10 +113,53 @@ footer {
    color: var(--letrasSubtitulos2);
 }
 
-.footer__section3 {
-   width: 83%;
-   margin-left: 10px;
+.footer__section__categoria {
+   text-align: center;
+}
+
+.footer__section__categoria li a {
+   margin-bottom: 10px;
+   font-size: 20px;
+}
+
+.footer__section2--links-li form {
+   text-align: unset;
+   display: inline-block;
+}
+
+.footer__section2--links-li input {
+   padding-left: 10px;
+   height: 27px;
+   margin-top: 10px;
    margin-bottom: 20px;
+   width: 100%;
+   background-color: var(--fondo2VioletaC);
+   color: white;
+   border-radius: 9px;
+   border: none;
+}
+
+.footer__section2--links-li input::placeholder {
+   color: white
+}
+
+.footer__section2--links-li button {
+   height: 25px;
+   width: 40%;
+   border: none;
+   border-radius: 30px;
+   background-color: var(--fondo2VioletaC);
+   color: white;
+}
+
+.footer__section2--links-li button:hover {
+   color: black;
+   background-color: var(--swiper-theme-color);
+}
+
+.footer__section3 {
+   padding-top: 20px;
+   padding-bottom: 25px;
 }
 
 .footer-company-name {
@@ -81,7 +168,6 @@ footer {
    padding-bottom: 15px;
    font-size: 14px;
    color: grey;
-   margin-bottom: 0;
 }
 
 .footer__payments {
@@ -106,17 +192,20 @@ footer {
    margin-right: 5px;
    height: 23px;
 }
-.footer__envio{
+
+.footer__envio {
    display: flex;
    justify-content: center;
    margin-bottom: 15px;
 }
-.oca img{
+
+.oca img {
    width: 67px;
    margin-right: 5px;
    height: 23px;
 }
-.andriani img{
+
+.andriani img {
    width: 67px;
    margin-right: 5px;
    height: 23px;
@@ -132,30 +221,29 @@ footer {
    .footer-right {
       font-size: 20px;
    }
+
    .tarjetas img {
       width: 125px;
    }
-   
+
    .mercado img {
       width: 67px;
    }
-   
+
    .ahora img {
       width: 67px;
    }
-   .oca img{
+
+   .oca img {
       width: 67px;
    }
-   .andriani img{
+
+   .andriani img {
       width: 67px;
    }
 }
 
-@media (min-width:765px) {
-   .footer__section--left img {
-      width: 40%;
-   }
-
+@media (min-width:769px) {
    .footer-right ul {
       font-size: 20px;
    }
@@ -168,13 +256,58 @@ footer {
       font-size: 22px;
    }
 
-   .footer__section2--links li a {
-      font-size: 15px;
-      font-family: var(--FontSubtitulo);
+   .footer__section2 {
+      margin-left: 50px;
+      justify-content: space-between;
+   }
+
+   .footer__section__contacto--titulo {
+      font-size: 21px;
+   }
+
+   .footer__section__contacto--telefono {
+      font-size: 16px;
+      margin-left: 10px;
+   }
+
+   .footer__section__contacto--horario {
+      font-size: 16px;
+      margin-left: 10px;
+   }
+
+   .footer__section2--links {
+      flex-direction: row;
+   }
+
+   .footer__section2--links hr {
+      margin-right: 20px;
+      margin-left: 20px;
+   }
+
+   .footer__section__categoria li a {
+      font-size: 16px;
+   }
+
+   .footer__section2--links-li button {
+      height: 25px;
+      width: 40%;
+      border: none;
+      border-radius: 30px;
+      background-color: var(--fondo2VioletaC);
+      color: white;
+   }
+
+   .footer__section2--links-li button:hover {
+      color: black;
+      background-color: var(--swiper-theme-color);
    }
 
    .footer-company-name {
       font-size: 16px;
+   }
+
+   .tarjetas img {
+      width: 170px;
    }
 }
 
@@ -193,7 +326,33 @@ footer {
       margin-right: 40px;
    }
 
-   .footer__section2--links li a {
-      font-size: 16px;
+   .footer__section__contacto--titulo {
+      font-size: 24px;
+   }
+
+   .footer__section__contacto--telefono {
+      font-size: 18px;
+   }
+
+   .footer__section__contacto--horario {
+      font-size: 18px;
+   }
+
+   .footer__section__categoria li a {
+      font-size: 18px;
+   }
+
+   .footer__section2--links hr {
+      margin-right: 30px;
+      margin-left: 30px;
+   }
+
+   .footer__section2--links-li input {
+      width: 90%;
+   }
+
+   .footer__section2--links-li button {
+      font-size: 14;
+      width: 60%;
    }
 }

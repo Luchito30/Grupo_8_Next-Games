@@ -1,5 +1,5 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos} = require('../controllers/productController');
 
 const router = express.Router();
 
@@ -7,6 +7,14 @@ const router = express.Router();
 router.get('/', index); 
 router.get('/carrito', carrito)
 router.get('/detalle-producto/:id', detalleproducto)
+router.get("/notebook", notebook)
+router.get("/accesorios", accesorios)
+router.get("/consolas", consolas)
+router.get("/tarjetas", tarjetas)
+router.get("/juegos", juegos)
+router.get("/perifericos", perifericos)
+router.get("/insale", ofertas)
+router.get("/ingresos", ingresos)
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/', createItem);

@@ -9,13 +9,13 @@ module.exports = {
     register: (req, res) => {
         return res.render('users/register', {
             ...user,
+			title: "Next Game | Registro"
 
         });
 
     },
 
     create: (req, res) => {
-		// Do the magic
 		const {id, firstName, lastName, email, password, category, image } = req.body
 
 		const newUser = {
@@ -39,7 +39,7 @@ module.exports = {
     login: (req, res) => {
         return res.render('users/login', {
             ...user,
-
+            title:"Next Game | Login"
         });
     },
 }

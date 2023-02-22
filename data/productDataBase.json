@@ -14,7 +14,7 @@
       "name": "NBA2K23 PS4",
       "price": 18000,
       "discount": 5,
-      "subCategory": "Perifericos",
+      "subCategory": "Juegos",
       "category": "in-sale",
       "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
       "image": "item2.jpg"
@@ -86,7 +86,7 @@
       "price": 15000,
       "discount": 0,
       "image": "item18.jpg",
-      "subCategory": "Perifericos",
+      "subCategory": "Juegos",
       "category": "newer"
    },
    {
@@ -96,7 +96,7 @@
       "price": 12999,
       "discount": 0,
       "image": "item10.jpg",
-      "subCategory": "Perifericos",
+      "subCategory": "Juegos",
       "category": "newer"
    },
    {
@@ -397,6 +397,6 @@
       "discount": 0,
       "image": "play13.jpg",
       "subCategory": "Consolas",
-      "category": "in-sale"
+      "category": "newer"
    }
 ]
