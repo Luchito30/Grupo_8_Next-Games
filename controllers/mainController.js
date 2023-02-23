@@ -24,5 +24,21 @@ module.exports  = {
         juegos,
         toThousand
      })   
+    },
+    newslletter: (req,res) =>{
+        const newslletteremail = path.join(__dirname, '../data/newsletter.json');
+        const noticias = JSON.parse(fs.readFileSync(newslletteremail, 'utf-8'));
+        const{email}= req.body;
+
+        const newNoticia={
+            id:+noticias[noticias.length -1].id +1,
+            email: email
+        };
+          noticias.push(newNoticia);
+          fs.writeFileSync('./data/newsletter.json', JSON.stringify(noticias, null,3), 'utf-8')
+          return res.redirect('/')
+
     }
+
+    
 }
