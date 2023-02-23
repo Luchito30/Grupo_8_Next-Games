@@ -1,18 +1,27 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos,storeMultipleImages} = require('../controllers/productController');
 const { uploadProductImages } = require('../middlewares/upload')
 const router = express.Router();
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', index); 
 router.get('/carrito', carrito)
-router.get('/detalle-producto', detalleproducto)
+router.get('/detalle-producto/:id', detalleproducto)
+router.get("/notebook", notebook)
+router.get("/accesorios", accesorios)
+router.get("/consolas", consolas)
+router.get("/tarjetas", tarjetas)
+router.get("/juegos", juegos)
+router.get("/perifericos", perifericos)
+router.get("/insale", ofertas)
+router.get("/ingresos", ingresos)
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/', createItem);
 
 router.post('/createItem/',uploadProductImages.single('image'),store);
-/*router.post('/createItem/',uploadProductImages.array('image'),store);*/
+router.post('/createItem/',uploadProductImages.array('image'),storeMultipleImages);
+
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
 

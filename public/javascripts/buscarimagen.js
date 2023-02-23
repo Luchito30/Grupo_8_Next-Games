@@ -11,3 +11,4 @@ Array.from(files).forEach(
         });
     }
 );
+

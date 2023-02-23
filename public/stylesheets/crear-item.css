@@ -49,34 +49,17 @@
     font-family: var(--FontSubtitulo);
     font-size: 15px;
 }
-#nameprodu, #precio{
+#nameprodu, #precio, #discount{
     color: white;
+}
+.crear__boxprecio{
+    display: flex;
+    justify-content: center;
 }
 .crear__subtitulo{
     color: white;
     font-size: 16px;
     font-weight: 500;
-    margin-bottom: 30px;
-}
-.crear__checkbox{
-    font-size: 14px;
-    border: 1px solid white;
-    background-color: #7110bd;
-    width: 50%;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-.form-check-crear{
-    margin-bottom: 15px;
-    margin-top: 20px;
-}
-.form-check-crear2{
-    margin-bottom: 15px;
-}
-.form-check-crear label, .form-check-crear2 label, .form-check-crear3 label{
-    color: white;
-}
-.form-check-crear3{
     margin-bottom: 30px;
 }
 .crear-formulario-2__descripcion{
@@ -171,7 +154,7 @@
 .crear-formulario-2__precio label{
     color: white;
 }
-.crear-btn--submit, .crear-btn--reset, .crear-btn--cancelar{
+.crear-btn--submit, .crear-btn--reset{
     color: white;
     border: none;
     background-color: var(--fondo2VioletaC);
@@ -179,71 +162,26 @@
     width: 30%;
     height: 30px;
     transition: all 1.5s;
+    display: inline-block;
+}
+.crear-btn--cancelar{
+    color: white;
+    border: none;
+    background-color: var(--fondo2VioletaC);
+    border-radius: 10px;
+    width: 30%;
+    height: 30px;
+    transition: all 1.5s;
+    display: inline-block;
+    position: relative;
+    bottom: 6px;
+    cursor: pointer;
+}
+.crear-btn--cancelar--letra{
+    position: relative;
+    top: 6px;
 }
 .crear-btn--submit:hover , .crear-btn--reset:hover , .crear-btn--cancelar:hover{
     background-color: var(--letrasSubtitulos2);
 }
-.crear__lbl{
-    display: inline-block;
-    width: 70px;
-    height: 30px;
-    background-color: var(--letrasSubtitulos2);
-    border-radius: 30px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.3s;
-}
-.crear__lbl::after{
-    content: "";
-    display: block;
-    width: 25px;
-    height: 25px;
-    background-color: #eee;
-    border-radius: 30px;
-    position: absolute;
-    top: 2px;
-    left: 4px;
-    transition: all 0.3s;
-}
-#switch:checked+.crear__lbl::after{
-    left: 40px;
-    background-color: blue;
-}
-#switch:checked+.crear__lbl{
-    background-color:  #7110bd;
-}
-.crear__switch__conteiner--switch{
-    display: none;
-}
-.crear__switch span{
-    color: white;
-    position: relative;
-    bottom: 8px;
-    margin-left: 15px;
-}
-.crear__switch{
-    margin-bottom: 30px;
-}
-.crear__switch__conteiner--text{
-    border-left: none;
-    border-bottom: 1px solid white;
-    position: relative;
-    background-color: #7110bd;
-    border-right: none;
-    border-top: none;
-    color: white;
-    outline: none;
-    padding-left: 15px;
-    margin-top: 15px;
-    margin-left: 13px;
-    height: 27px;
-}
-.crear__switch__conteiner--text::placeholder{
-    color: white;
-}
 
-@media (min-width: 485px){
-    .crear__switch__conteiner--text{
-        bottom: 10px;
-    }
-}

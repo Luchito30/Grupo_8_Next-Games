@@ -1,3 +1,6 @@
+.detalle__boton--edit{
+    text-align: center;
+}
 .swiper-imagenes {
     width: 100%;
     height: 300px;
@@ -64,8 +67,6 @@ h3{
 }
 .sub-header{
     position: relative;
-    top: 5px;
-    left: -9px;
     height: 78px;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
@@ -87,19 +88,54 @@ left: 46px;
 
 .card-btn{
     width: 101px;
-    background-color: var(--fondo2VioletaC);
+    background-color: var(--fondo1VioletaO);
     color: #fff;
     border: none;
     border-radius: 10px;
-    position: relative;
-    float: right;
     transition: all 1s;
-    top: 9px;
-    right: 43px;
-    height: 25px
+    height: 25px;
 }
-.card-btn:hover{
+.card-btn1{
+    width: 101px;
     background-color: var(--fondo1VioletaO);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: all 1s;
+    height: 25px;
+}
+.card-btn:hover, .card-btn1:hover{
+    background-color: #1A027A;
+}
+.detalle__precio--box{
+    position: relative;
+    top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.detalle__precio--original{
+    color: white;
+    text-decoration: line-through;
+    text-decoration-color: red;
+    font-size: 16px;
+}
+.detalle__precio--barra{
+    color: white;
+}
+.detalle__precio--porcentaje{
+    color: aqua;
+}
+.detalle__precio--descuento{
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+.detalle__precio--sincambio{
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    position: relative;
 }
 
  @media (min-width: 769px){
@@ -212,6 +248,21 @@ left: 46px;
     width: 707px;
     border-radius: 14px;
 }
+.detalle__precio--box{
+
+}
+.detalle__precio--original{
+
+}
+.detalle__precio--porcentaje{
+
+}
+.detalle__precio--descuento{
+
+}
+.detalle__precio--sincambio{
+
+}
 .sub-header h2 {
     font-family: var(--FontSubtitulo);
     color: var(--letrasTitulos);
@@ -235,16 +286,11 @@ left: 46px;
 
 
 .cantidad-producto{
-    visibility: visible;
     display: flex;
-    position: relative;
-    right: 209px;
-    float: right;
-    margin: 0;
     
 }
 .cantidad-producto input{
-    width: 20px;
+    width: 35px;
     margin: 3px;
     margin-top: -1px;
 }
@@ -281,7 +327,12 @@ left: 46px;
     position: relative;
     top: 59px;
 }
- }
+.detalle__cantidad{
+    color: white;
+    font-size: 16px;
+    margin-right: 10px;
+}
+}
 
 
 @media (min-width: 1024px){

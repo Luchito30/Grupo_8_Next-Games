@@ -11,128 +11,130 @@
 </head>
 
 
-<body>
-  <!-- header -->
-<%- include('../partials/header.ejs') %>
+  <body>
+    <!-- header -->
+  <%- include('../partials/header.ejs') %>
+    
   
-
-  <main class="main-crear">
-   
-    <form method="post" class="crear-form" novalidate enctype="multipart/form-data">
-
-      <h1 class="titulo-crear">
-        Crea un nuevo producto
-      </h1>
-      
-      <div class="crear__nameprodu">
-        <label for="nombre">Nombre del producto</label>
-        <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto" required>
-      </div>
-
-      <section class="crear-formulario-2">
-
-
-        <div class="crear-formulario-2__precio">
-          <label for="precio">Precio</label>
-          <input type="number" placeholder="Precio" name="price" id="precio" required>
+    <main class="main-crear">
+     
+      <form method="post" class="crear-form" novalidate enctype="multipart/form-data">
+  
+        <h1 class="titulo-crear">
+          Crea un nuevo producto
+        </h1>
+        
+        <div class="crear__nameprodu">
+          <label for="nombre">Nombre del producto</label>
+          <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto" required>
         </div>
-      </section>
-
-      <section class="crear__switch">
-        <div class="crear__switch__conteiner">
-          <input type="checkbox" id="switch" class="crear__switch__conteiner--switch">
-          <label for="switch" class="crear__lbl" ></label><span>Descuento</span>
-          <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento" name="discount">
-
-        </div>
-      </section>
-
-      <div class="crear__subtitulo">
-        <h3>Seleccioná</h3>
-      </div>
-
-      <section class="crear__checkbox" value="in-sale">
-        <label for="section"></label>
-        <div class="form-check-crear">
-          <input class="form-check-input" type="checkbox" name="category" >
-          <label class="form-check-label" >
-            NUEVO
-          </label>
-        </div>
-        <div class="form-check-crear2">
-          <input class="form-check-input" type="checkbox" name="category" value="in-sale" >
-          <label class="form-check-label"  >
-            OFERTA
-          </label>
-        </div>
-        <div class="form-check-crear3">
-          <input class="form-check-input" type="checkbox" name="category" id="free">
-          <label class="form-check-label" >
-            ENVIO GRATIS
-          </label>
-        </div>
-      </section>
-
-      <div class="crear__subtitulo">
-        <h3>Seleccioná la categoria</h3>
-      </div>
-
-      <div class="dropdown--crear">
-        <select name="subCategory" id="lang" class="form-control">
-          <option value="Categorias" selected>Categorias</option>
-          <option value="Perifericos">Perifericos</option>
-          <option value="Juegos">Juegos</option>
-          <option value="Gifts Cards">Gifts Cards</option>
-          <option value="Consolas">Consolas</option>
-          <option value="Notebooks">Notebooks</option>
-          <option value="Accesorios">Accesorios</option>
-
-
-        </select>
-      </div>
-
-
-      <div class="crear__subtitulo">
-        <h3>Imagen del Producto</h3>
-      </div>
-
-      <div class="submit-btn--crear">
-        <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar" accept="images/*">
-        <label for="myFile">
-          <i class="fa-solid fa-image"></i><br>
-          <div class="submit-btn--crea__nombrearchi">
-            <span>Subir imagen</span>
+  
+        <section class="crear-formulario-2">
+  
+  
+          <div class="crear-formulario-2__precio">
+            <label for="precio">Precio</label>
+            <input type="number" placeholder="Precio" name="price" id="precio" required>
           </div>
-        </label>
-      </div>
-
-
-
-      <div class="crear__subtitulo">
-        <h3>Descripción del producto</h3>
-      </div>
-
-
-      <section class="crear__descripcion">
-        <div class="crear-formulario-2__descripcion">
-          <label for="Descripcion"></label>
-          <textarea name="description" id="Descripcion" cols="30" rows="10"></textarea>
+        </section>
+  
+        <section class="crear__switch">
+          <div class="crear__switch__conteiner">
+            <input type="checkbox" id="switch" class="crear__switch__conteiner--switch">
+            <label for="switch" class="crear__lbl" ></label><span>Descuento</span>
+            <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento" name="discount">
+  
+          </div>
+        </section>
+  
+        <div class="crear__subtitulo">
+          <h3>Seleccioná</h3>
         </div>
-      </section>
+  
+        <section class="crear__checkbox" value="in-sale">
+          <label for="section"></label>
+          <div class="form-check-crear">
+            <input class="form-check-input" type="checkbox" name="category" >
+            <label class="form-check-label" >
+              NUEVO
+            </label>
+          </div>
+          <div class="form-check-crear2">
+            <input class="form-check-input" type="checkbox" name="category" value="in-sale" >
+            <label class="form-check-label"  >
+              OFERTA
+            </label>
+          </div>
+          <div class="form-check-crear3">
+            <input class="form-check-input" type="checkbox" name="category" id="free">
+            <label class="form-check-label" >
+              ENVIO GRATIS
+            </label>
+          </div>
+        </section>
+  
+        <div class="crear__subtitulo">
+          <h3>Seleccioná la categoria</h3>
+        </div>
+  
+        <div class="dropdown--crear">
+          <select name="subCategory" id="lang" class="form-control">
+            <option value="Categorias" selected>Categorias</option>
+            <option value="Perifericos">Perifericos</option>
+            <option value="Juegos">Juegos</option>
+            <option value="Gifts Cards">Gifts Cards</option>
+            <option value="Consolas">Consolas</option>
+            <option value="Notebooks">Notebooks</option>
+            <option value="Accesorios">Accesorios</option>
+  
+  
+          </select>
+        </div>
+  
+  
+        <div class="crear__subtitulo">
+          <h3>Imagen del Producto</h3>
+        </div>
+  
+        <div class="submit-btn--crear">
+          <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar"  multiple>
+          <label for="myFile">
+            <i class="fa-solid fa-image"></i><br>
+            <div class="submit-btn--crea__nombrearchi">
+              <span>Subir imagen</span>
+            </div>
+          </label>
+        </div>
+  
+  
+  
+        <div class="crear__subtitulo">
+          <h3>Descripción del producto</h3>
+        </div>
+  
+  
+        <section class="crear__descripcion">
+          <div class="crear-formulario-2__descripcion">
+            <label for="Descripcion"></label>
+            <textarea name="description" id="Descripcion" cols="30" rows="10"></textarea>
+          </div>
+        </section>
+  
+        <div class="crear-btnform">
+          <button type="submit" class="crear-btn--submit">Aceptar</button>
+  
+  
+          <button type="reset" class="crear-btn--reset">Resetear</button>
+  
+  
+          <button class="crear-btn--cancelar"><a href="/">Cancelar</a></button>
+        </div>
+      </form>
+    </main>
+    <script src="/javascripts/buscarimagen.js"></script>
+    <%- include('../partials/footer.ejs') %>
 
-      <div class="crear-btnform">
-        <button type="submit" class="crear-btn--submit">Aceptar</button>
-
-
-        <button type="reset" class="crear-btn--reset">Resetear</button>
-
-
-        <button class="crear-btn--cancelar"><a href="/">Cancelar</a></button>
-      </div>
-    </form>
-  </main>
-  <script src="/javascripts/buscarimagen.js"></script>
-  <%- include('../partials/footer.ejs') %>
+  
 </body>
 
 </html>

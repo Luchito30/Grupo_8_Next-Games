@@ -32,7 +32,7 @@
     cursor: pointer;
 }
 
-.edition-form-box input, .edicion__texto, #discount {
+.edition-form-box input, .edicion__texto{
     background-color: var(--fondo1VioletaO);
     margin: 20px 10px;
     max-width: 768px;
@@ -52,28 +52,9 @@
     width: 80%;
 }
 
-.edition-form-box-img {
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasSubtitulos1);
-    font-size: 20px;
-}
-
-.edition-form-box-img #image {
+#crear__color{
     background-color: var(--fondo1VioletaO);
-    margin: 20px 10px;
-    max-width: 768px;
-    border: 1px solid var(--letrasTitulos);
-    border-radius: 5px;
-    padding: 10px;
     box-shadow: 15px 10px 5px #BC79F0;
-    width: 80%;
-    height: 50px;
-}
-
-.edition-form-box-img input#image.image {
-    font-size: 10px;
-    padding: 15px;
-    cursor: pointer;
 }
 
 .edition-form-box-checkbox {
@@ -81,48 +62,6 @@
     color: var(--letrasSubtitulos1);
     font-size: 20px;
     margin: 20px 10px;
-}
-
-.swtich-container-edition {
-    margin: 20px;
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasSubtitulos1);
-    font-size: 20px;
-}
-
-.edit-swtich {
-    display: inline-block;
-    width: 65px;
-    height: 33px;
-    background-color: #BC79F0;
-    border-radius: 100px;
-    cursor: pointer;
-    transition: .2s;
-    position: relative;
-}
-
-.edit-swtich::after {
-    content: '';
-    display: block;
-    width: 25px;
-    height: 25px;
-    background: #fff;
-    border-radius: 100px;
-    margin: 4px;
-    transition: .2s;
-    position: absolute;
-}
-
-#swtich-edit:checked+.edit-swtich::after {
-    left: 32px;
-}
-
-#swtich-edit:checked+.edit-swtich {
-    background-color: var(--fondo1VioletaO);
-}
-
-#swtich-edit {
-    display: none;
 }
 
 .edition-form-box-button__a{
@@ -138,6 +77,10 @@
     margin-bottom: 20px;
     box-shadow: 15px 10px 5px #2a2868;
     font-size: 18px;
+}
+.edicion-form-box-button__letra{
+    position: relative;
+    top: 14px;
 }
 .buton1{
     position: relative;

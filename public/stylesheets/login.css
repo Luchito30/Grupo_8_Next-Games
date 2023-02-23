@@ -317,14 +317,14 @@
     .login__main_left--img {
         width: 285px;
         position: absolute;
-        min-height: 640px;
+        min-height: 644px;
         z-index: -1;
     }
 
     .login__main_right--img {
         width: 285px;
         position: absolute;
-        min-height: 640px;
+        min-height: 644px;
         z-index: -1;
     }
 

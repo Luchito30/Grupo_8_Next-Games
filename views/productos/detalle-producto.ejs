@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Game | Detalle de producto</title>
-    <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+<%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('../partials/header') %>
+    <%- include('../partials/header.ejs') %>
 
 
     <div class="detalle__boton--edit">
@@ -153,9 +145,9 @@
         </div>
 
          <!--whatsapp-->
-         <%- include('./partials/whatsApp') %>
+         <%- include('../partials/whatsApp.ejs') %>
         <!-- footer -->
-        <%- include('./partials/footer') %>
+        <%- include('../partials/footer') %>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
