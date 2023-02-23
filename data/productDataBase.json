@@ -158,7 +158,47 @@
       "image": "note3.jpg",
       "subCategory": "",
       "category": "in-sale"
+   },
+   {
+      "id": 17,
+      "price": null,
+      "discount": null,
+      "image": "default-image.png"
+   },
+   {
+      "id": 18,
+      "price": null,
+      "discount": null,
+      "image": "default-image.png"
+   },
+   {
+      "id": 19,
+      "price": null,
+      "discount": null,
+      "image": "default-image.png"
+   },
+   {
+      "id": 20,
+      "price": null,
+      "discount": null,
+      "image": "default-image.png"
+   },
+   {
+      "id": 21,
+      "name": "hello kitty",
+      "description": "",
+      "price": 10500,
+      "discount": 0,
+      "image": "1677027506195_detalle-producto_.jpg",
+      "subCategory": "Categorias"
+   },
+   {
+      "id": 22,
+      "name": "FIFA 23",
+      "description": "",
+      "price": 10500,
+      "discount": 0,
+      "image": "1677028074766_images_.jpg",
+      "subCategory": "Categorias"
    }
-   
-   
 ]

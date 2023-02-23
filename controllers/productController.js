@@ -19,8 +19,11 @@ module.exports = {
         return res.render('productos/carrito');
     },
     detalleproducto: (req, res) => {
-        return res.render('productos/detalle-producto');
-    }, 
+      let product= products.find(product => product.id === +req.params.id);
+      return res.render('productos/detalle-producto', {
+        ...product
+      });
+     }, 
     edicion: (req, res) => {
       const { id } = req.params;
       const product = products.find(product => product.id === +id);
@@ -39,13 +42,14 @@ module.exports = {
 
       const productUpdated = {
           id,
-          name: name.trim(),
-          description: description.trim(),
+          name: name,
+          description: description,
           price: +price,
           discount: +discount,
           image: product.image,
           subCategory,
           category
+          /*  mainImage : req.files && req.files.mainImage ? req.files.mainImage[0].filename : null,*/
           
       };
 
@@ -68,11 +72,11 @@ module.exports = {
     const{name,price,description,discount,image,category,subCategory}= req.body;
     const newProduct={
         id:products[products.length -1].id +1,
-        name:name.trim(),
-        description: description.trim(),
+        name:name,/*req.body.name*/
+        description: description,
         price:+price,
         discount:+discount,
-        image:null,
+        image: req.file ? req.file.filename : 'default-image.png',/*req.files.map(file => file.filename)*/
         subCategory,
         category
     };

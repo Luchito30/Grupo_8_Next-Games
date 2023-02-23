@@ -1,6 +1,6 @@
 const express = require('express');
 const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove} = require('../controllers/productController');
-
+const { uploadProductImages } = require('../middlewares/upload')
 const router = express.Router();
 
 /*** GET ALL PRODUCTS ***/ 
@@ -10,12 +10,14 @@ router.get('/detalle-producto', detalleproducto)
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/', createItem);
-router.post('/createItem', store)
 
+router.post('/createItem/',uploadProductImages.single('image'),store);
+/*router.post('/createItem/',uploadProductImages.array('image'),store);*/
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
-router.put('/edicion/:id', update);
 
+router.put('/edicion/:id',uploadProductImages.single('image'), update);
+/*router.put('/edicion/:id',uploadProductImages.array('image'), update);*/
 /*** Eliminar producto ***/
 router.get("/remove/:id",removeConfirm)
 router.delete("/remove/:id",remove)
