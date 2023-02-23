@@ -47,7 +47,7 @@ module.exports = {
       const { name, discount, price, description, category, subCategory } = req.body;
 
       const productUpdated = {
-          id,
+           id,
           name: name,
           description: description,
           price: +price,
@@ -90,22 +90,24 @@ module.exports = {
     fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null,3), 'utf-8')
     return res.redirect('/')
   },
-  storeMultipleImages:(req,res) =>{
-    const productsFilePath = path.join(__dirname, '../data/productDataBase.json');
+  storeMainImage:(req,res) =>{
+    
     const newProduct={
       id:products[products.length -1].id +1,
       name:req.body.name,
-      description: description,
-      price:+price,
-      discount:+discount,
-      image: req.files.map(file => file.filename),
-      subCategory,
-      category
+      description: "lorem ipsum dolor amet sit",
+      price:null,
+      discount:null,
+      image : req.files && req.files.image ? req.files.image[0].filename : null,
+    images : req.files && req.files.images ? req.files.images.map(file => file.filename) : [],
+    
+
+      
   };
 
   products.push(newProduct);
 
-        writeJSON('productsMultipleImages.json', products);
+  fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null,3), 'utf-8')
 
         return res.redirect('/')
     },

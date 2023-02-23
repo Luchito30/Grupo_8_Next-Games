@@ -20,12 +20,14 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <div class="swiper-slide"><img class="detalle-imagen1"
-                                    src="/images/detalle-producto/joy-blanco.png" alt=""></div>
-                            <div class="swiper-slide"><img class="detalle-imagen2"
-                                    src="/images/detalle-producto/cargador-2.png" alt=""></div>
-                            <div class="swiper-slide"> <img class="detalle-imagen3"
-                                    src="/images/detalle-producto/cargador-1.png" alt=""></div>
+                            <% images.forEach((image)=> { %>
+                            <%- include('../partials/detalle-producto-carrusel',{
+                                images
+                            }) %>
+                         
+                               
+                                <% }) %>
+                            
                             ...
                         </div>
                         <!-- If we need pagination -->
