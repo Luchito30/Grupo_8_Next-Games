@@ -113,6 +113,9 @@
 .submit-btn--crear__buscar{
     display: none;
 }
+.submit-btn22{
+    display: none;
+}
 .form-control{
     height: 25px;
     border-radius: 20px;

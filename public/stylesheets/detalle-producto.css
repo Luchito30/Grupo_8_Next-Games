@@ -9,6 +9,12 @@
     width: 100%;
     text-align: center;
 }
+.img-detalle-carrusel{
+    width: 238px;
+    height: 318px;
+    margin-top: 10px;
+    overflow: visible;
+}
 .envios h4{
     color: #fff;
     font-family: var(--FontSubtitulo);

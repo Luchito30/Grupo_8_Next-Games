@@ -438,5 +438,36 @@
       "subCategory": "Consolas",
       "category": "newer",
       "images": null
+   },
+   {
+      "id": 41,
+      "name": "FIFA 23 PS445",
+      "description": "sads",
+      "price": 10500,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "1677243692986_images_.png",
+      "images": [
+         "1677243692990_images_.jpg",
+         "1677243692993_images_.png",
+         "1677243692999_images_.jpg"
+      ]
+   },
+   {
+      "id": 42,
+      "name": "FIFA 23 PS445",
+      "description": "",
+      "price": 2,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "newer",
+      "image": null,
+      "images": [
+         "1677245494997_images_.png",
+         "1677245494997_images_.jpg",
+         "1677245494997_images_.jpg",
+         "1677245494997_images_.png"
+      ]
    }
 ]

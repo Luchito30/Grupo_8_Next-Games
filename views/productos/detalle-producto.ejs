@@ -16,14 +16,14 @@
                 <section class="detalle-imagenes">
                     <div class="detalle-img--conteiner">
                         <!-- Slider main container -->
-                        <div class="swiper swiper-imagenes">
+                        <div class="swiper swiper-imagenes" >
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 
                                 <% images.forEach(image => { %>
                                 <!--slide-->
                                 <div class="swiper-slide">
-                                    <img src="/images/<%= image %>">
+                                    <img src="/images/<%= image %>" class="img-detalle-carrusel">
                                 </div>
                                 <% }) %>
 
