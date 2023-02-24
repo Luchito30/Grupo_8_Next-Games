@@ -1,5 +1,5 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,index,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos,storeMainImage} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,index,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos,storeMainImage, update} = require('../controllers/productController');
 const {uploadProductImages} = require("../middlewares/upload")
 
 const router = express.Router();
@@ -19,12 +19,14 @@ router.get("/ingresos", ingresos)
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/', createItem);
-router.post('/createItem/',uploadProductImages.fields([{name: 'image'},{name: 'images'}]), storeMainImage);
+router.post('/createItem/',uploadProductImages.fields([{name: 'image'},{name: 'images'}]),storeMainImage );
 
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
 router.put('/edicion/:id',uploadProductImages.fields([{name: 'image'},{name: 'images'}]), storeMainImage);
 
+/*UPDATE PRODUCT*/ 
+router.put('edicion/:id',uploadProductImages.array,update)
 /*** Eliminar producto ***/
 router.get("/remove/:id",removeConfirm)
 router.delete("/remove/:id",remove)

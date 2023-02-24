@@ -62,6 +62,7 @@ module.exports = {
 
           return product;
       })
+     
 
       fs.writeFileSync('./data/productDataBase.json', JSON.stringify(productsModified, null, 3), "utf-8");
       return res.redirect("/products")
@@ -89,12 +90,14 @@ module.exports = {
       
   };
 
+
   products.push(newProduct);
 
   fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null,3), 'utf-8')
 
         return res.redirect('/')
     },
+    
 
     removeConfirm : (req,res) => {
       const id = req.params.id;
