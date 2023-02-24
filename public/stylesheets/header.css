@@ -2,12 +2,14 @@ body {
     background-color: var(--fondo1VioletaO);
 }
 
-header {
-    background-image: url(/images/1600_Featured_Games.jpg);
-}
-
 a {
     color: white;
+}
+
+.header__box{
+    position: relative;
+    z-index: 100000;
+    background-image: url(/images/1600_Featured_Games.jpg);
 }
 
 .header__inicio {
@@ -275,8 +277,10 @@ a {
 }
 
 .header__nav>ul {
+    z-index: 10000;
     height: 100%;
     display: flex;
+    position: relative;
 }
 
 .header__nav>ul>li {
@@ -364,6 +368,10 @@ a {
     font-size: 14px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
+#fixed{
+    position: fixed;
+    z-index: 100;
+}
 
 
 @media (min-width: 560px) {
@@ -410,6 +418,7 @@ a {
 
     .right-nav-bar--busq2:hover {
         background-color: var(--letrasSubtitulos1);
+        color: black;
     }
 
     .right-nav-bar--button:hover {

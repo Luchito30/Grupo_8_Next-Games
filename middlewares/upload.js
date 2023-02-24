@@ -1,6 +1,6 @@
 const multer = require('multer');
 const path = require('path');
-const storageCourseImages = multer.diskStorage({
+const storageProductImages = multer.diskStorage({
     destination : function(req,file,callback){
         callback(null,'public/images')
     },
@@ -8,7 +8,7 @@ const storageCourseImages = multer.diskStorage({
         callback(null,`${Date.now()}_images_${path.extname(file.originalname)}`)
     }
 }); const uploadProductImages = multer({
-    storage : storageCourseImages
+    storage : storageProductImages
 });
 module.exports ={
     uploadProductImages

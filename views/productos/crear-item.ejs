@@ -1,103 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crea nuevo item</title>
-  <script src="https://kit.fontawesome.com/23870b4d48.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+<%- include('../partials/head.ejs') %>
 
-
-  <body>
-    <!-- header -->
+<body>
+  <!-- header -->
   <%- include('../partials/header.ejs') %>
-    
-  
+
+
     <main class="main-crear">
-     
-      <form method="post" class="crear-form" novalidate enctype="multipart/form-data">
-  
+
+      <form method="post" class="crear-form" enctype="multipart/form-data">
+
         <h1 class="titulo-crear">
           Crea un nuevo producto
         </h1>
-        
+
         <div class="crear__nameprodu">
           <label for="nombre">Nombre del producto</label>
           <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto" required>
         </div>
-  
+
+        <div class="crear__boxprecio">
+
         <section class="crear-formulario-2">
-  
-  
           <div class="crear-formulario-2__precio">
             <label for="precio">Precio</label>
             <input type="number" placeholder="Precio" name="price" id="precio" required>
           </div>
         </section>
-  
-        <section class="crear__switch">
-          <div class="crear__switch__conteiner">
-            <input type="checkbox" id="switch" class="crear__switch__conteiner--switch">
-            <label for="switch" class="crear__lbl" ></label><span>Descuento</span>
-            <input type="text" class="crear__switch__conteiner--text" placeholder="Ingrese Descuento" name="discount">
-  
+
+        <section class="crear-formulario-2">
+          <div class="crear-formulario-2__precio">
+            <label for="discount">Descuento</label>
+            <input type="number" placeholder="Ingrese Descuento" name="discount" id="discount" >
           </div>
         </section>
-  
+
+      </div>
+
         <div class="crear__subtitulo">
-          <h3>Seleccioná</h3>
+          <h3>Estado del Producto</h3>
         </div>
-  
-        <section class="crear__checkbox" value="in-sale">
-          <label for="section"></label>
-          <div class="form-check-crear">
-            <input class="form-check-input" type="checkbox" name="category" >
-            <label class="form-check-label" >
-              NUEVO
-            </label>
-          </div>
-          <div class="form-check-crear2">
-            <input class="form-check-input" type="checkbox" name="category" value="in-sale" >
-            <label class="form-check-label"  >
-              OFERTA
-            </label>
-          </div>
-          <div class="form-check-crear3">
-            <input class="form-check-input" type="checkbox" name="category" id="free">
-            <label class="form-check-label" >
-              ENVIO GRATIS
-            </label>
-          </div>
-        </section>
-  
+
+        <div class="dropdown--crear">
+          <select name="category" id="lang" class="form-control">
+            <option value="newer">Nuevo</option>
+            <option value="in-sale">Oferta</option>
+          </select>
+        </div>
+
         <div class="crear__subtitulo">
           <h3>Seleccioná la categoria</h3>
         </div>
-  
+
         <div class="dropdown--crear">
           <select name="subCategory" id="lang" class="form-control">
-            <option value="Categorias" selected>Categorias</option>
             <option value="Perifericos">Perifericos</option>
             <option value="Juegos">Juegos</option>
             <option value="Gifts Cards">Gifts Cards</option>
             <option value="Consolas">Consolas</option>
             <option value="Notebooks">Notebooks</option>
             <option value="Accesorios">Accesorios</option>
-  
-  
           </select>
         </div>
-  
-  
+
+
         <div class="crear__subtitulo">
           <h3>Imagen del Producto</h3>
         </div>
-<!--
+
         <div class="submit-btn--crear">
-          <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar"  >
+          <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar">
           <label for="myFile">
             <i class="fa-solid fa-image"></i><br>
             <div class="submit-btn--crea__nombrearchi">
@@ -105,43 +79,46 @@
             </div>
           </label>
         </div>
-        -->
-        <div class="mb-3">
-          <input type="file" name="mainImage">
-      </div>
-      <div class="mb-3">
-          <input type="file" name="images"  multiple>
-      </div>
-  
-  
-  
+
+        <div class="submit-btn--crear">
+          <input type="file" id="myFile" name="images" multiple>
+          <label for="myFile">
+            <i class="fa-solid fa-image"></i><br>
+            <div class="submit-btn--crea__nombrearchi">
+              <span>Subir imagen</span>
+            </div>
+          </label>
+        </div>
+
+
+
         <div class="crear__subtitulo">
           <h3>Descripción del producto</h3>
         </div>
-  
-  
+
+
         <section class="crear__descripcion">
           <div class="crear-formulario-2__descripcion">
             <label for="Descripcion"></label>
             <textarea name="description" id="Descripcion" cols="30" rows="10"></textarea>
           </div>
         </section>
-  
+
         <div class="crear-btnform">
           <button type="submit" class="crear-btn--submit">Aceptar</button>
-  
-  
+
+
           <button type="reset" class="crear-btn--reset">Resetear</button>
-  
-  
-          <button class="crear-btn--cancelar"><a href="/">Cancelar</a></button>
+
+
+          <a href="/products" class="crear-btn--cancelar"><span class="crear-btn--cancelar--letra">Cancelar</span></a>
         </div>
       </form>
     </main>
     <script src="/javascripts/buscarimagen.js"></script>
-    <%- include('../partials/footer.ejs') %>
 
   
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

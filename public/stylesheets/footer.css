@@ -137,10 +137,20 @@ footer {
    color: white;
    border-radius: 9px;
    border: none;
+   outline: none;
+}
+
+.footer__section2--links-li input:hover{
+   background-color: white;
+   color: black;
 }
 
 .footer__section2--links-li input::placeholder {
    color: white
+}
+
+.footer__section2--links-li input:hover::placeholder{
+   color: black;
 }
 
 .footer__section2--links-li button {

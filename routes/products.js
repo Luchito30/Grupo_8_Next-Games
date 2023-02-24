@@ -1,6 +1,7 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,store,index,update,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos,storeMainImage} = require('../controllers/productController');
-const { uploadProductImages } = require('../middlewares/upload')
+const {carrito,detalleproducto,edicion, createItem,index,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos,storeMainImage} = require('../controllers/productController');
+const {uploadProductImages} = require("../middlewares/upload")
+
 const router = express.Router();
 
 /*** GET ALL PRODUCTS ***/ 
@@ -18,15 +19,12 @@ router.get("/ingresos", ingresos)
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/', createItem);
-
-router.post('/createItem/',uploadProductImages.fields([{name: 'mainImage'},{name: 'images'}]), storeMainImage);
-
+router.post('/createItem/',uploadProductImages.fields([{name: 'image'},{name: 'images'}]), storeMainImage);
 
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
+router.put('/edicion/:id',uploadProductImages.fields([{name: 'image'},{name: 'images'}]), storeMainImage);
 
-router.put('/edicion/:id',uploadProductImages.fields([{name: 'mainImage'},{name: 'images'}]), storeMainImage);
-/*router.put('/edicion/:id',uploadProductImages.array('image'), update);*/
 /*** Eliminar producto ***/
 router.get("/remove/:id",removeConfirm)
 router.delete("/remove/:id",remove)
