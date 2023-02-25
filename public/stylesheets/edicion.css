@@ -57,6 +57,13 @@
     box-shadow: 15px 10px 5px #BC79F0;
 }
 
+.edicion__subtitulos{
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasSubtitulos1);
+    font-size: 20px;
+    margin: 20px 0;
+}
+
 .edition-form-box-checkbox {
     font-family: var(--FontSubtitulo);
     color: var(--letrasSubtitulos1);

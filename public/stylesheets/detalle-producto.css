@@ -10,8 +10,8 @@
     text-align: center;
 }
 .img-detalle-carrusel{
-    width: 238px;
-    height: 318px;
+    width: 85%;
+    height: 85%;
     margin-top: 10px;
     overflow: visible;
 }
@@ -86,10 +86,7 @@ top: 39px;
 left: 46px;
 }
 .descripciones{
-    position: relative;
-    left: 12px;
-    top: 13px;
-    height: 262px;
+    margin: 50px 40px;
 }
 
 .card-btn{
@@ -147,7 +144,8 @@ left: 46px;
  @media (min-width: 769px){
     .main-detalledeproducto{
         background-color: var(--fondo2VioletaC);
-        display:flex
+        display:flex;
+        justify-content: center;
     }
     .titulo-1{
         position: relative;
@@ -364,11 +362,11 @@ left: 46px;
         position: relative;
         left: 179px;
         top: 56px;
-        margin: -28px;
+        bottom: 150px;
     }
     .descripcion-detalle {
         position: relative;
-        right: 113px;
+        right: 50px;
         top: 36px;
     }
     .sub-header {

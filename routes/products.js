@@ -23,7 +23,7 @@ router.post('/createItem/',uploadProductImages.fields([{name: 'image'},{name: 'i
 
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
-router.put('/edicion/:id',uploadProductImages.fields([{name: 'image'},{name: 'images'}]), storeMainImage);
+router.put('/edicion/:id',uploadProductImages.fields([{name: 'image'},{name: 'images'}]), update);
 
 /*UPDATE PRODUCT*/ 
 router.put('edicion/:id',uploadProductImages.array,update)

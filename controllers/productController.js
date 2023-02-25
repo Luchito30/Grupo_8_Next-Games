@@ -49,10 +49,10 @@ module.exports = {
           description: description.trim(),
           price: +price,
           discount: +discount,
-          image: req.file ? req.file.filename : product.image,
           subCategory,
-          category: category ? category : null,
-          images: images
+          category,
+          image:  req.files && req.files.image ? req.files.image[0].filename : null,
+          images : req.files && req.files.images ? req.files.images.map(file => file.filename) : []
           
       };
       const productsModified = products.map(product => {
@@ -95,7 +95,7 @@ module.exports = {
 
   fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null,3), 'utf-8')
 
-        return res.redirect('/')
+        return res.redirect('/products')
     },
     
 
