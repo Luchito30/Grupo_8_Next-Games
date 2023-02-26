@@ -25,35 +25,41 @@
                         <a href="/products/detalle-producto/<%= id %>">
                             <figure>
                                 <img class="home__main--img" src="/images/<%= image ? image : 'default-image.png' %>"
-                                    alt="imagen de producto">
+                                    alt="imagen">
                             </figure>
                             <div class="home__main--div">
-                                <% if (discount) { %>
-                                    <h2>$<%= toThousand(price) %>
-                                    </h2>
-                                    <span>
-                                        <%= discount %>% OFF
-                                    </span>
-                                    <% } else { %>
-                                        <h2>$<%=toThousand(price) %>
-                                        </h2>
-                                        <% } %>
-                                            <p>
-                                                <%= name %>
+                                <div class="home__main--flex">
+                                    <div class="home__main__detalle-h4">
+                                        <% if (discount) { %>
+                                            <p class="home__main--descuento">$<%= toThousand(price) %>
                                             </p>
+                                            <span>
+                                                <%= discount %>% OFF
+                                            </span>
+                                            <% } else { %>
+                                                <h4 class="home__main--precio">$<%=toThousand(price) %>
+                                                </h4>
+                                                <% } %>
+                                                    
+                                                        <h5 class="home__main--descripcion"><%- name %></h5>
+                                                        <a href="/products/detalle-producto/<%= id %>"><button>Ver
+                                                                Detalle</button></a>
+                                                   
+                                    </div>
+                                </div>
                             </div>
                         </a>
                     </article>
                 </section>
-
+               
                 <% }) %>
                     <% } else { %>
                         <div>
-                            <h2 class="products-title" style="color: tomato;">No hay productos que coincidan
+                            <h2 class="products-title" style="text-align: center; color:tomato">No hay productos que coincidan
                                 con esa búsqueda</h2>
                         </div>
                         <div>
-                            <a href="/"><button class="card-btn">
+                            <a href="/"><button class="card-btn" style="position:sticky; margin: 0px 25px">
                                     Next Game</button></a>
                         </div>
                         <% } %>
