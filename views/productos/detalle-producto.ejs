@@ -9,35 +9,72 @@
 
             <div class="detalle__boton--edit">
                 <a href="/products/edicion/<%= id %>"><button class="card-btn1">
-                        edit product</button></a>
+                        editar producto</button></a>
             </div>
 
             <main class="main-detalledeproducto">
-                <section class="detalle-imagenes">
-                    <div class="detalle-img--conteiner">
-                        <!-- Slider main container -->
-                        <div class="swiper swiper-imagenes" >
-                            <!-- Additional required wrapper -->
-                            <div class="swiper-wrapper">
-                                
-                                <% images.forEach(image => { %>
-                                <!--slide-->
-                                <div class="swiper-slide">
-                                    <img src="/images/products/<%= image %>" class="img-detalle-carrusel">
+                <div class="main-detalledeproducto-boxOne">
+                    <section class="detalle-imagenes">
+                        <div class="detalle-img--conteiner">
+                            <!-- Slider main container -->
+                            <div class="swiper swiper-imagenes">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    <% images.forEach(image => { %>
+                                        <!--slide-->
+                                        <div class="swiper-slide">
+                                            <img src="/images/products/<%= image %>" class="img-detalle-carrusel">
+                                        </div>
+                                        <% }) %>
                                 </div>
-                                <% }) %>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
 
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev" id="boton__prev"></div>
+                                <div class="swiper-button-next" id="boton__next"></div>
                             </div>
                         </div>
-                        <!-- If we need pagination -->
-                        <div class="swiper-pagination"></div>
+                    </section>
 
-                        <!-- If we need navigation buttons -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                    </div>
-                </section>
+                    
+                    <section class="detalle-carrito">
+                        <div>
+                            <% if (discount) { %>
+                                <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
+                                <span class="detalle__precio--barra">/</span>
+                                <b class="detalle__precio--porcentaje">
+                                    <%= discount %>% OFF
+                                </b>
+
+                                <p class="detalle__precio--descuento">
+                                    $<%= toThousand(Math.round(price - (price * discount) / 100))%>
+                                </p>
+                                <% } else { %>
+                                    <p class="detalle__precio--sincambio">
+                                        $<%= toThousand(Math.round(price)) %>
+                                    </p>
+
+                                    <% } %>
+                        </div>
+                        <div class="detalle__add-card">
+                            <div>
+                                <h5 class="detalle__cantidad">cantidad:</h5>
+                                <button>-</button>
+                                <input type="number" style="width: 30px;">
+                                <button>+</button>
+                            </div>
+                            <div>
+                                <a href="/products/carrito"><button class="card-btn">
+                                        añadir tarjeta</button></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                
+
 
                 <section class="descripcion-detalle">
                     <div class="descripciones">
@@ -61,6 +98,8 @@
                             </div>
                             <p>(103)</p>
                         </div>
+
+
                         <div class="description-22">
                             <div class="category-product">
 
@@ -75,78 +114,31 @@
                             </div>
 
                         </div>
-                        <div class="tarjetas-detalle">
-                            <div class="metodos" style="color:white;">
-                                <h3>metodos de pago:</h3>
+                        <div class="box-metodos">
+                            <div class="tarjetas-detalle">
+                                <div class="metodos" style="color:white;">
+                                    <h3>metodos de pago:</h3>
+                                </div>
+                                <img src="/images/tarjetas.png" alt="">
                             </div>
-                            <img src="/images/tarjetas.png" alt="">
+                            <div class="envios">
+                                <h3>metodos de envío:</h3>
+                                <h4>envios gratis a todo el pais</h4>
+                            </div>
                         </div>
-                        <div class="envios">
-                            <h3>metodos de envío:</h3>
-                            <h4>envios gratis a todo el pais</h4>
-                        </div>
+
                         <div class="description">
                             <h5>Diseñado para satisfacer las ...</h5>
                             <button class="read-btn">read more</button>
 
 
                         </div>
-                        <h3 class="colores">colores:</h3>
-                        <div class="otros-colores">
-
-                            <div class="color1">
-                                <div class="imagen-right">
-                                    <img src="/images/detalle-producto/joy-negro.png" alt="">
-                                </div>
-                            </div>
-                            <div class="color2">
-                                <div class="imagen-left">
-                                    <img src="/images/detalle-producto/joy-violeta.png" alt="">
-                                </div>
-
-                            </div>
-
-                        </div>
                     </div>
                 </section>
 
 
-                </section>
             </main>
-            <div class="add-carrito">
-                <div class="sub-header">
-                    <div class="detalle__precio--box">
-                        <% if (discount) { %>
 
-                            <div>
-                                <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
-                                <span class="detalle__precio--barra">/</span>
-                                <b class="detalle__precio--porcentaje">
-                                    <%= discount %>% OFF
-                                </b>
-
-                                <p class="detalle__precio--descuento">
-                                    $<%= toThousand(Math.round(price - (price * discount) / 100))%>
-                                </p>
-                            </div>
-                            <% } else { %>
-                                <p class="detalle__precio--sincambio">
-                                    $<%= toThousand(Math.round(price)) %>
-                                </p>
-
-                                <% } %>
-                                    <div class="cantidad-producto">
-                                        <h5 class="detalle__cantidad">cantidad:</h5>
-                                        <button>+</button>
-                                        <input type="number">
-                                        <button>-</button>
-                                    </div>
-                                    <a href="/products/carrito"><button class="card-btn">
-                                            add to card</button></a>
-
-                    </div>
-                </div>
-            </div>
 
             <!--whatsapp-->
             <%- include('../partials/whatsApp.ejs') %>

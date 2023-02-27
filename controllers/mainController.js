@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/productDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
@@ -38,6 +40,17 @@ module.exports  = {
           fs.writeFileSync('./data/newsletter.json', JSON.stringify(noticias, null,3), 'utf-8')
           return res.redirect('/')
 
+    },
+     search: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const {keywords} = req.query;
+        const productFiltered = products.filter(product => product.name.toLowerCase().includes(keywords.toLowerCase()) || product.subCategory.toLowerCase().includes(keywords.toLowerCase()) || product.description.toLowerCase().includes(keywords.toLowerCase()))
+        return res.render('results', {
+            title: "Next Games | Search",
+			productFiltered,
+			toThousand,
+			keywords,
+		})
     }
 
     

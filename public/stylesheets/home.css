@@ -95,6 +95,7 @@
     height: 250px;
     border: 3px solid black;
     border-radius: 8px;
+    height: 270px;
 }
 
 .home__main--img:hover {

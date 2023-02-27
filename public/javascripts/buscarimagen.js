@@ -44,4 +44,3 @@ Array.from(files).forEach(
         });
     }
 );
-

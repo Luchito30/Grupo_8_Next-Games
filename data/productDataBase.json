@@ -7,13 +7,8 @@
       "discount": 20,
       "subCategory": "Juegos",
       "category": "in-sale",
-      "image": "1677359091729_products_.jpg",
-      "images": [
-         "1677359091730_products_.jpg",
-         "1677359091732_products_.jpg",
-         "1677359091732_products_.jpg",
-         "1677359091733_products_.jpg"
-      ]
+      "image": "item1.jpg",
+      "images": []
    },
    {
       "id": 2,
@@ -40,11 +35,11 @@
    {
       "id": 4,
       "name": "The King Of Fighters Xv",
+      "description": "Con este juego de The King of Fighters vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 15000,
       "discount": 25,
       "subCategory": "Juegos",
       "category": "in-sale",
-      "description": "Con este juego de The King of Fighters vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "image": "item4.jpg",
       "images": []
    },
