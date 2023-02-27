@@ -39,51 +39,61 @@ module.exports = {
       toThousand
       });
   },
-    update: (req, res) => {
-      const id = +req.params.id
-      const product = products.find(product => product.id === +id);
-      const { name, discount, price, description, image, category, subCategory } = req.body;
-      const productUpdated = {
-          id,
-          name: name.trim(),
-          description: description.trim(),
-          price: +price,
-          discount: +discount,
-          image: image,
-          subCategory,
-          category: category ? category : null
-          
-      };
-      const productsModified = products.map(product => {
-          if (product.id === +id) {
-              return productUpdated
-          }
+  update: (req, res) => {
+    const id = +req.params.id
+    const product = products.find(product => product.id === +id);
+    const { name, discount, price, description, category, subCategory } = req.body;
+    const productUpdated = {
+        id,
+        name: name.trim(),
+        description: description.trim(),
+        price: +price,
+        discount: +discount,
+        subCategory,
+        category,
+        image:  req.files && req.files.image ? req.files.image[0].filename : product.image,
+        images : req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
+        
+    };
+    const productsModified = products.map(product => {
+        if (product.id === +id) {
+            return productUpdated
+        }
 
-          return product;
-      })
+        return product;
+    })
+   
 
-      fs.writeFileSync('./data/productDataBase.json', JSON.stringify(productsModified, null, 3), "utf-8");
-      return res.redirect("/products")
-  },
+    fs.writeFileSync('./data/productDataBase.json', JSON.stringify(productsModified, null, 3), "utf-8");
+    return res.redirect("/products")
+},
     createItem: (req, res) => {
       return res.render('productos/crear-item',{
         title: "Next Games | Crear Producto"
       });
 },
-    store: (req,res)=>{
-      const{name,price,description,discount,image,category,subCategory}= req.body;
-      const newProduct={
-        id:products[products.length -1].id +1,
-        name:name.trim(),
-        description: description.trim(),
-        price:+price,
-        discount:+discount,
-        image,
-        subCategory,
-        category
-    };
-      products.push(newProduct);
-      fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null,3), 'utf-8')
+storeMainImage:(req,res) =>{
+  const{name,price,description,discount,image,images,category,subCategory}= req.body;
+  const newProduct={
+    id:products[products.length -1].id +1,
+    name:name.trim(),
+    description: description.trim(),
+    price:+price,
+    discount:+discount,
+    subCategory,
+    category,
+    image : req.files && req.files.image ? req.files.image[0].filename : "default-image.png",
+    images : req.files && req.files.images ? req.files.images.map(file => file.filename) : [],
+  
+
+    
+};
+
+
+products.push(newProduct);
+
+fs.writeFileSync('./data/productDataBase.json', JSON.stringify(products, null,3), 'utf-8')
+
       return res.redirect('/products')
   },
     removeConfirm : (req,res) => {

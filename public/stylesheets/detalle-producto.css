@@ -1,92 +1,162 @@
-.detalle__boton--edit{
+.main-detalledeproducto {
+    background-color: var(--fondo2VioletaC);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-detalledeproducto-boxOne {
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle__boton--edit {
     text-align: center;
 }
+
+.detalle-img--conteiner {
+    background-color: var(--fondo1VioletaO);
+    border-radius: 20px;
+}
+
 .swiper-imagenes {
     width: 100%;
     height: 300px;
-  }
-.detalle-imagenes{
-    width: 100%;
-    text-align: center;
 }
-.envios h4{
+
+.detalle-imagenes {
+    text-align: center;
+    margin: 43px;
+}
+
+.img-detalle-carrusel{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.envios h4 {
     color: #fff;
     font-family: var(--FontSubtitulo);
     margin: 5px;
     font-size: 13px;
 }
 
-h3{
+h3 {
     color: #fff;
     font-family: var(--FontSubtitulo);
 }
 
-.description-22, .cantidad-producto,.otros-colores ,.colores, .color1,.color2{
+.description-22,
+.cantidad-producto,
+.otros-colores,
+.colores,
+.color1,
+.color2 {
     display: none;
 }
-.tarjetas-detalle img{
+
+.tarjetas-detalle img {
     width: 134px;
-    position: relative;
-    
-    top: 14px;
     margin-bottom: 35px;
     left: 12px;
-
 }
-.titulo-1{
+
+#boton__prev{
+    --swiper-navigation-size: 25px;
+    background-color: var(--fondo2VioletaC);
+    color: white;
+    height: 70px;
+    width: 50px;
+    margin-top: -35px;
+    border-radius: 0 65px 65px 0;
+    left: -5px;
+}
+
+#boton__next{
+    --swiper-navigation-size: 25px;
+    background-color: var(--fondo2VioletaC);
+    color: white;
+    height: 70px;
+    width: 50px;
+    margin-top: -35px;
+    border-radius: 65px 0 0 65px;
+    right: -5px;
+}
+
+.titulo-1 {
     color: var(--letrasTitulos);
     font-family: var(--FontTitulo);
     font-size: 22px;
-    position: relative;
-    bottom: 25px;
+
 }
-.stars i{
+
+.stars i {
     color: yellow;
 }
-.rank{
+
+.rank {
     display: flex;
-    position: relative;
-    bottom: 15px;
+
 }
-.rank p{
+
+.rank p {
     font-size: 14px;
     margin: 2px;
     color: #fff;
 }
-.description h5{
-    color: #fff;;
+
+.description h5 {
+    color: #fff;
+    ;
     font-family: var(--FontSubtitulo);
 
 }
-.read-btn{
-    position: relative;
-    top: 5px;
+
+.read-btn {
+
     background: none;
     color: violet;
     border: none;
 }
-.sub-header{
-    position: relative;
-    height: 78px;
+
+.detalle-carrito {
+    margin: 30px 0;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    background: #1A027A;
+    border-radius: 50px;
+}
+
+.detalle__add-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sub-header {
+
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
     background: #1A027A;
 }
-.sub-header h2{
+
+.sub-header h2 {
     font-family: var(--FontSubtitulo);
     color: var(--letrasTitulos);
-position: relative;
-top: 39px;
-left: 46px;
-}
-.descripciones{
-    position: relative;
-    left: 12px;
-    top: 13px;
-    height: 262px;
+
 }
 
-.card-btn{
+.descripciones {
+
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-btn {
     width: 101px;
     background-color: var(--fondo1VioletaO);
     color: #fff;
@@ -95,7 +165,8 @@ left: 46px;
     transition: all 1s;
     height: 25px;
 }
-.card-btn1{
+
+.card-btn1 {
     width: 101px;
     background-color: var(--fondo1VioletaO);
     color: #fff;
@@ -104,118 +175,128 @@ left: 46px;
     transition: all 1s;
     height: 25px;
 }
-.card-btn:hover, .card-btn1:hover{
+
+.card-btn:hover,
+.card-btn1:hover {
     background-color: #1A027A;
 }
-.detalle__precio--box{
-    position: relative;
-    top: 20px;
+
+.detalle__cantidad{
+    color: white;
+}
+
+.detalle__precio--box {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.detalle__precio--original{
+
+.detalle__precio--original {
     color: white;
     text-decoration: line-through;
     text-decoration-color: red;
     font-size: 16px;
 }
-.detalle__precio--barra{
+
+.detalle__precio--barra {
     color: white;
 }
-.detalle__precio--porcentaje{
+
+.detalle__precio--porcentaje {
     color: aqua;
 }
-.detalle__precio--descuento{
+
+.detalle__precio--descuento {
     font-size: 30px;
     color: white;
     font-weight: 600;
-}
-.detalle__precio--sincambio{
-    font-size: 30px;
-    color: white;
-    font-weight: 600;
-    position: relative;
 }
 
- @media (min-width: 769px){
-    .main-detalledeproducto{
-        background-color: var(--fondo2VioletaC);
-        display:flex
+.detalle__precio--sincambio {
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+}
+
+.metodos {
+    margin-bottom: 10px;
+}
+
+.box-metodos {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 769px) {
+
+    .box-metodos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
-    .titulo-1{
-        position: relative;
-    bottom: -25px;
+
+    .titulo-1 {
+
+        bottom: -25px;
     }
-    .rank{
-        position: relative;
+
+    .rank {
         bottom: -33px;
     }
-    .detalle-imagenes{
-        width: 50%;
-        margin-left: 25px;
+
+    .detalle-imagenes {
+        width: 70%;
+        margin: 40px auto;
     }
-    .metodos{
-        position: relative;
-        top: 5px;
-    }
-    .description{
+
+    .description {
         display: none;
     }
-    .description-22,.otros-colores,.colores{
-       display: flex;
+
+    .description-22,
+    .otros-colores,
+    .colores {
+        display: flex;
     }
-    .colores{
-        position: relative;
+
+    .colores {
         top: 55px;
-        /* left: -7px; */
         right: 426px;
     }
-   
 
-.descripcion-detalle{
-    
-    position: relative;
-    padding-right: 15px;
-    margin-right: 120px;
-}
-.detalle-img--conteiner{
-    background-color: var(--fondo1VioletaO);
-    height: 50vh;
-    border-radius: 28px;
-    position: relative;
-    top: 68px;
-}
-    
-.sub {
-    color: var(--letrasTitulos);
-    font-family: var(--FontSubtitulo);
-    font-size: 14px;
-    text-align: left;
+
+    .descripcion-detalle {
+        padding-right: 15px;
+        margin-right: 120px;
     }
-    .imagen-right img{
+
+    .sub {
+        color: var(--letrasTitulos);
+        font-family: var(--FontSubtitulo);
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .imagen-right img {
         width: 209px;
-      position: relative;
-      top: -6px;
-      left: -37px;
-      height: 159px;
+        height: 159px;
     }
-    .imagen-left img{
+
+    .imagen-left img {
         width: 122px;
-        position: relative;
-      top: 16px;
-      right: -8px;
+        top: 16px;
+        right: -8px;
 
     }
-    .otros-colores{
-        position: relative;
+
+    .otros-colores {
         right: 388px;
         top: 75px;
         height: 463px;
-        
         justify-content: space-between;
     }
-    .color1{
+
+    .color1 {
         display: flex;
         background-color: var(--fondo1VioletaO);
         height: 139px;
@@ -223,234 +304,121 @@ left: 46px;
         border-radius: 18px;
 
     }
-    .color2{
+
+    .color2 {
         display: flex;
         background-color: var(--fondo1VioletaO);
         height: 139px;
         width: 136px;
-        position: relative;
-        right: -29px;
         border-radius: 18px;
-        margin-left: -6px;
     }
-    h3{
+
+    h3 {
         color: #fff;
         font-family: var(--FontSubtitulo);
     }
-    
-
-.sub-header {
-    position: relative;
-    top: -136px;
-    border: 1px;
-    left: 23px;
-    height: 79px;
-    width: 707px;
-    border-radius: 14px;
-}
-.detalle__precio--box{
-
-}
-.detalle__precio--original{
-
-}
-.detalle__precio--porcentaje{
-
-}
-.detalle__precio--descuento{
-
-}
-.detalle__precio--sincambio{
-
-}
-.sub-header h2 {
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasTitulos);
-    position: relative;
-    top: 26px;
-    left: 46px;
-}
-.sub h3{
-    position: relative;
-    top: 12px;
-}
-.sub h4{
-    position: relative;
-    font-size: 12px;
-    top: 12px;
-    margin-top: 11px;
-    margin-bottom: 20px;
-}
 
 
-
-
-.cantidad-producto{
-    display: flex;
-    
-}
-.cantidad-producto input{
-    width: 35px;
-    margin: 3px;
-    margin-top: -1px;
-}
-.cantidad-producto button{
-    color: var(--fondo1VioletaO);
-    border: 1px solid var(--fondo1VioletaO);
-    height: 19px;
-    width: -4px;
-    background: none;
-}
-.card-btn{
-    position: relative;
-    top: 1px;
-    left: 57px;
-    
-}
-.description-22{
-    position: relative;
-    top: 48px;
-}
-.descripciones{
-    position: relative;
-    left: 44px;
-    top: 54px;
-    height: 50%;
-    
-}
-.envios{
-    position: relative;
-    top: 56px;
-}
-.tarjetas-detalle{
-    color: #fff;
-    position: relative;
-    top: 59px;
-}
-.detalle__cantidad{
-    color: white;
-    font-size: 16px;
-    margin-right: 10px;
-}
-}
-
-
-@media (min-width: 1024px){
-    .imagen-right img {
-        width: 181px;
-        position: relative;
-        top: 11px;
-        left: -26px;
-        height: 130px;
+    .sub-header {
+        border: 1px;
+        height: 79px;
+        border-radius: 14px;
     }
-    
+
+    .sub-header h2 {
+        font-family: var(--FontSubtitulo);
+        color: var(--letrasTitulos);
+    }
+
+    .sub h4 {
+        font-size: 12px;
+        margin-top: 11px;
+        margin-bottom: 20px;
+    }
+
+    .cantidad-producto {
+        display: flex;
+
+    }
+
+    .cantidad-producto button {
+        color: var(--fondo1VioletaO);
+        border: 1px solid var(--fondo1VioletaO);
+        background: none;
+    }
+
+    .tarjetas-detalle {
+        color: #fff;
+        top: 59px;
+    }
+
+    .detalle__cantidad {
+        color: white;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .main-detalledeproducto {
+        margin-top: 30px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .main-detalledeproducto-boxOne {
+        width: 40%;
+        flex-wrap: wrap;
+    }
+
+    .detalle-carrito {
+        width: 107%;
+    }
+
+    .descripcion-detalle {
+        width: 40%;
+    }
+
+    .detalle-imagenes {
+        width: 100%;
+    }
+
     .imagenes {
         background-color: var(--fondo1VioletaO);
         border-radius: 28px;
-       
-        width: 48%;
-        height: 85%;
         padding: 4px;
-        top: 19%;
-        left: -3%;
+
     }
-    .descripciones{
-        position: relative;
-        left: 179px;
-        top: 56px;
-        margin: -28px;
-    }
-    .descripcion-detalle {
-        position: relative;
-        right: 113px;
-        top: 36px;
-    }
+
     .sub-header {
-        position: relative;
-        top: -110px;
-        border: 1px;
-        left: 69px;
-        height: 79px;
-        width: 871px;
         border-radius: 14px;
         background: #1A027A;
     }
-    .imagenes-detalle{
-        position: relative;
-    left: 110px;
-    }
-    .otros-colores{
-        position: relative;
-        
-    
-        /*
-        top: 91px;
-        */
-        right:-10px ;
+
+    .otros-colores {
         height: 507px;
         justify-content: space-between;
     }
-    .color1{
+
+    .color1 {
         display: flex;
         background-color: var(--fondo1VioletaO);
         height: 139px;
         width: 136px;
         border-radius: 18px;
-
     }
-    .color2{
+
+    .color2 {
         display: flex;
         background-color: var(--fondo1VioletaO);
-        height: 139px;
-        width: 136px;
-        position: relative;
-        right: 122px;
         border-radius: 18px;
-       
     }
-    .colores {
-        position: relative;
-        top: 68px;
-        /* left: -7px; */
-        left: -7px;
+
+    .tarjetas-detalle {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
-    .detalle-img--conteiner {
-        background-color: var(--fondo1VioletaO);
-        height: 49vh;
-        border-radius: 28px;
-        position: relative;
-        top: 72px;
-    
-   
-    
-        
-}
-
-
-
-
-
-
-
-
-
-
-
-/*  background-color: var(--fondo1VioletaO);
-        border-radius: 28px;
-        position: relative;
-        width: 136%;
-        height: 108%;
-        padding: 4px;
-        top: -4%;
-        left: -3%;*/
-
-
-
-
-
-
-
-
-
 }

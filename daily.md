@@ -82,6 +82,15 @@ Adriana Guitian => Tarjeta: Dar funcionalidad a la barra de busqueda.
 
 Trabajos a presentar el dia miercoles 22/02.
 
+---------------------------------------------------------------------------------------------
+
+Martes 21/02 7ma Daily del 4to sprint. Presentes: Agustina Acosta, Luis Dick y Adriana Guitian
+
+Tareas realizadas: Presentamos las tarjetas de recomendacion terminadas y funcionando. Realizamos modificaciones.
+
+Edgardo De La Cruz (ausente y no presenta trabajo) => Tarjeta: Al crear el producto que redireccione a la vista de lista de productos como lo hace en la edicion del producto. **Y modificacion en la vista de detalle de producto, traducir al castellano las palabras en ingles y eliminar el item "seleccion de colores".
+
+Presentar trabajo terminado el jueves 23/02 en la daily de las 11am o 21:30pm.
 
 
 

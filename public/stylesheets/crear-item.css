@@ -113,6 +113,51 @@
 .submit-btn--crear__buscar{
     display: none;
 }
+.submit-btn--crear2{
+    border: 1px solid white;
+    background-color: #7110bd;
+    width: 50%;
+    margin: 0 auto;
+    height: 100px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.submit-btn--crear2 label i{
+    font-size: 40px;
+    margin-top: 15px;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.submit-btn--crear2 label i:hover{
+    color:var(--fondo1VioletaO);
+}
+.submit-btn--crea__nombrearchi2{
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.submit-btn--crear2 span{
+    color: white;
+    font-size: 14px;
+}
+.submit-btn--crear2 span:hover{
+    color:var(--fondo1VioletaO);
+}
+.submit-btn--crear__buscar2{
+    display: none;
+}
+.submit-btn--crear3 span{
+    color: white;
+    font-size: 14px;
+}
+.submit-btn--crear3 span:hover{
+    color:var(--fondo1VioletaO);
+}
+.submit-btn--crear__buscar3{
+    display: none;
+}
 .form-control{
     height: 25px;
     border-radius: 20px;

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/header.ejs') %>
+
+            <div class="home__main--titulo">
+                <h2>Resultados de la búsqueda: "<%= keywords %>"</h2>
+            </div>
+
+            <section class="home__main__section">
+                <% if (productFiltered.length) { %>
+                    <% productFiltered.forEach(({id,image,price,discount,name,category,subCategory})=> { %>
+                        <section>
+                            <article class="home__main__section__article">
+                                <a href="/products/detalle-producto/<%= id %>">
+                                    <figure>
+                                        <img class="home__main--img" src="/images/products/<%= image ? image : 'default-image.png' %>"
+                                            alt="imagen">
+                                    </figure>
+                                    <div class="home__main--div">
+                                        <div class="home__main--flex">
+                                            <div class="home__main__detalle-h4">
+                                                <% if (discount) { %>
+                                                    <p class="home__main--descuento">$<%= toThousand(price) %>
+                                                    </p>
+                                                    <span>
+                                                        <%= discount %>% OFF
+                                                    </span>
+                                                    <% } else { %>
+                                                        <h4 class="home__main--precio">$<%=toThousand(price) %>
+                                                        </h4>
+                                                        <% } %>
+                                                            
+                                                                <h5 class="home__main--descripcion"><%- name %></h5>
+                                                                <a href="/products/detalle-producto/<%= id %>"><button>Ver
+                                                                        Detalle</button></a>
+                                                           
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                        </section>
+                       
+                        <% }) %>
+                            <% } else { %>
+                                <div>
+                                    <h2 class="products-title" style="text-align: center; color:tomato; margin-bottom: 40px;">No hay productos que coincidan
+                                        con esa búsqueda</h2>
+                                </div>
+                                <div>
+                                    <a href="/"><button class="card-btn" style="position:sticky; margin: 0px 25px;margin-bottom: 40px;">
+                                            Next Game</button></a>
+                                </div>
+                                <% } %>
+        
+        
+        
+            </section>
+        
+
+            <%- include('./partials/whatsApp.ejs') %>
+
+    <%- include('./partials/footer.ejs') %>
+
+    </body>
+
+</html>

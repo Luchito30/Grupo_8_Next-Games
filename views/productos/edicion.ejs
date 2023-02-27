@@ -14,7 +14,7 @@
             <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
             <section class="edition-form">
                 <form action="/products/edicion/<%= id %>?_method=PUT"
-                    method="POST" novalidate>
+                    method="POST"  enctype="multipart/form-data" novalidate>
                     <div class="edition-form-box">
                         <label for="name">Nombre del Producto</label>
                         <input type="text" id="name" name="name" value="<%= name %>">
@@ -31,15 +31,40 @@
                         <label for="description">Descripcion</label>
                         <textarea name="description" id="description" value="" class="edicion__texto"><%= description %></textarea>
                     </div>
+
+
+                    <div class="edicion__subtitulos">Imagen del Producto</div>
+
                     <div class="submit-btn--crear" id="crear__color">
-                        <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
+                        <input type="file" id="image" name="image" class="submit-btn--crear__buscar3" value="<%= image %>">
                         <label for="image">
-                          <i class="fa-solid fa-image"></i><br>
-                          <div class="submit-btn--crea__nombrearchi">
-                            <span><%= image %></span>
-                          </div>
+                            <i class="fa-solid fa-image"></i><br>
+                            <div class="submit-btn--crea__nombrearchi3">
+                                <span>
+                                    <%= image %>
+                                </span>
+                            </div>
                         </label>
-                      </div>
+                    </div>
+
+                    <!--imagenes-->
+
+                    <div class="edicion__subtitulos">Imagenes del Producto</div>
+
+                    <div class="submit-btn--crear2" id="crear__color">
+                        <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" multiple />
+                        <label for="images" class="form-label"> <i class="fa-solid fa-image"></i><br>
+                            <div class="submit-btn--crea__nombrearchi2">
+                                <span>
+                                    <%= images.length + " Imagenes seleccionadas" %>
+                                </span>
+                            </div>
+                        </label>
+
+
+                    </div>
+
+
                     <div class="edition-form-box">
                         <label for="edition-products">Seleccioná la Categoria</label>
                         <select id="edition-products" name="subCategory">
@@ -63,8 +88,8 @@
                     </div>
 
                     <div class="edition-form-box-button">
-                        <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
                         <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
+                        <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
                         <a href="/products/detalle-producto/<%= id %>" class="edition-form-box-button__a"><span class="edicion-form-box-button__letra">Cancelar</span> </a>
                     </div>
                 </form>

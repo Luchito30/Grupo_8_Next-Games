@@ -86,6 +86,12 @@
     position: relative;
     top: 13px;
 }
+.edicion__subtitulos{
+    font-family: var(--FontSubtitulo);
+    color: var(--letrasSubtitulos1);
+    font-size: 20px;
+    margin-bottom: 20px; 
+}
 
 /* Tablet */
 @media(min-width: 641px) {
