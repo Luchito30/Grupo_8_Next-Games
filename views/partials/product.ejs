@@ -1,20 +1,27 @@
 <article class="home__main__section__article" id="oferta">
-    <img class="home__main--img" src="/images/<%= image %>" alt="imagen">
-
+    <img class="home__main--img" src="/images/products/<%= image %>" alt="imagen">
     <div class="home__main--div">
-        <img src="/images/p-oferta.png" alt="oferta">
+        <img src="/images/<%= category == "in-sale" ? "p-oferta.png" : "p-nuevo.png"%>" alt="oferta">
         <div class="home__main--flex">
-            <div class="home__main__detalle-h4">
-                <h4 class="home__main--precio">$<%= price %></h4>
-            </div>
-            <div>
-                <p class="home__main--descuento"><%= discount  %>% OFF</p>
+            <div class="card__precio">
+                <p class="home__main--descuento">
+                    <% if (discount) { %>
+                        <h2 class="home__main__preciototal">$<%= toThousand(Math.round(price - (price * discount) /
+                                100))%>
+                        </h2>
+                        <span class="card__descuento">
+                            <%= discount %>% OFF
+                        </span>
+                        <% }else{ %>
+                            <h2 class="home__main__preciototal">$<%= toThousand(Math.round(price)) %>
+                            </h2>
+                            <% } %>
+                </p>
             </div>
         </div>
         <div class="home__main--ocultar">
             <h5 class="home__main--descripcion"><%- name %></h5>
-            <a href="/products/detalle-producto/<%= id %>"><button>Ver Detalle</button></a>
+            <div class="home__main--producto"><a href="/products/detalle-producto/<%= id %>"><button>Ver Detalle</button></a></div>
         </div>
     </div>
-
 </article>

@@ -1,1115 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" sizes="any" href="/images/next-games-nuevologo.png">
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/2d353964a9.js" crossorigin="anonymous"></script>
-    <!-- glider -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css">
-    <!--swiper  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Document</title>
-</head>
+<%- include('./partials/head.ejs') %>
 
 <body>
-   <%- include('./partials/header.ejs') %>
-    <main>
+    <%- include('./partials/header.ejs') %>
+        <main>
+
+            <%- include('./partials/bannerPrincipal.ejs') %>
+
+                <%- include('./partials/formadepago.ejs') %>
+
+                    <div class="home__main--titulo">
+                        <h2>ULTIMAS OFERTAS</h2><a href="/products/insale"> ver más</a>
+                    </div>
+                    <section class="home__main__section">
+                        <% inSale.forEach(({id,image,price,discount,name,category})=> { %>
+                            <%- include('./partials/product',{ id, image, price, discount, name, category }) %>
+                                <% }) %>
+                    </section>
 
 
-        <section class="home__main__section--carrusel1">
 
-            <!-- Slider main container -->
-            <div class="swiper swiper-banner">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><a href=""><img src="/images/bannermob1.jpg" alt="banner 6"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/bannermob2.jpg" alt="banner 7"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/bannermob3.jpg" alt="banner 8"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/bannermob4.jpg" alt="banner 9"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/bannermob5.jpg" alt="banner 10"></a></div>
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
+                    <div class="home__main--titulo">
+                        <h2>JUEGOS</h2> <a href="/products/juegos"> ver más</a>
+                    </div>
 
-        <section class="home__main__section--carrusel2">
+                    <section class="home__main__juegos">
 
-            <!-- Slider main container -->
-            <div class="swiper swiper-banner2">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><a href=""><img src="/images/banner1.jpg" alt="banner 1"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/banner2.jpg" alt="banner 2"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/banner3.jpg" alt="banner 3"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/banner4.jpg" alt="banner 4"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/banner5.jpg" alt="banner 5"></a></div>
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% juegos.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
 
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                                            ...
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
 
-            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
 
-        </section>
+                        </div>
+                    </section>
 
-        <section class="home__main__meddepago">
+                <%- include('./partials/bannermid.ejs') %>
 
-            <div class="home__main__meddepago--banner">
-                <img src="/images/baner-mediopago.svg" alt="medios de pago">
-            </div>
+                    <div class="home__main--titulo">
+                        <h2>NOTEBOOKS</h2> <a href="/products/notebook"> ver más</a>
+                    </div>
 
-        </section>
+                    <section class="home__main__notebook">
 
-        <div class="home__main--titulo">
-            <h2>ULTIMAS OFERTAS</h2><a href=""> ver más</p></a>
-        </div>
-        <section class="home__main__section">
-        <% inSale.forEach(({id,image,price,discount,name}) => { %>
-            <%- include('./partials/product',{
-                id,
-                image,
-                price,
-                discount,
-                name
-            }) %>
-        <% }) %>
-    </section>
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% computacion.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
 
-      
+                                            ...
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
 
-        <div class="home__main--titulo">
-            <h2>JUEGOS MAS BUSCADOS</h2> <a href="../products/detalle-producto"> ver más</p></a>
-        </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
 
-        <section class="home__main__carrusel__item">
+                        </div>
+                    </section>
 
-            <div class="glider-contain">
-                <div class="glider">
+                    <div class="home__main--titulo">
+                        <h2>NUEVOS INGRESOS</h2> <a href="/products/ingresos"> ver más</a>
+                    </div>
 
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item1.jpg" alt="item 1">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
+                    <section class="home__main__ingresos">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% ingresos.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+
+                                            ...
+                            </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                        </div>
+
+                    </section>
+
+
+                    <%- include('./partials/bannerfinal.ejs') %>
+
+                    <div class="home__main--titulo">
+                        <h2>TARJETAS DIGITALES PS4</h2><a href="/products/tarjetas"> ver más</a>
+                    </div>
+
+
+                    <section class="home__main__tarjetasd">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% tarjetas.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
                             </div>
 
-                        </article>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
+
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </section>
+
+                    <div class="home__main--titulo">
+                        <h2>CONSOLAS</h2><a href="/products/consolas"> ver más</a>
                     </div>
 
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item2.jpg" alt="item 2">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
+
+                    <section class="home__main__ps4">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% consolas.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+
+                                            ...
                             </div>
+                            <!-- If we need pagination -->
+                            <div class="swiper-pagination"></div>
 
-                        </article>
-                    </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
 
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item3.jpg" alt="item 3">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
+                        </div>
 
-                        </article>
-                    </div>
 
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item4.jpg" alt="item 4">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
+                    </section>
+        </main>
+        <!--whatsapp-->
+        <%- include('./partials/whatsApp.ejs') %>
+        <!-- footer -->
+        <%- include('./partials/footer.ejs') %>
 
-                        </article>
-                    </div>
+            <!--swiper  -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+            <!-- glider -->
+            <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item5.jpg" alt="item 5">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
 
-                        </article>
-                    </div>
 
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item6.jpg" alt="item 6">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item7.jpg" alt="item 7">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item8.jpg" alt="item 8">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item9.png" alt="item 9">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item10.jpg" alt="item 10">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item11.jpg" alt="item 11">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item12.jpg" alt="item 12">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item13.jpg" alt="item 13">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item14.jpg" alt="item 14">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item15.jpg" alt="item 15">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item16.jpg" alt="item 16">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item17.jpg" alt="item 17">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item18.jpg" alt="item 18">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-                </div>
-                <div class="home__main__botoncarrusel">
-                    <button aria-label="Previous" class="glider-prev" id="header__botonizq">«</button>
-                    <button aria-label="Next" class="glider-next" id="header__botonderecha">»</button>
-                    <div role="tablist" class="dots" id="home__main__circulcarrusel">
-
-                    </div>
-                </div>
-            </div>
-
-
-        </section>
-
-        <section class="home__main__carrusel__item2">
-
-            <div class="glider-contain">
-                <div class="glider2">
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item1.jpg" alt="item 1">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item2.jpg" alt="item 2">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item3.jpg" alt="item 3">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item4.jpg" alt="item 4">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item5.jpg" alt="item 5">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item6.jpg" alt="item 6">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item7.jpg" alt="item 7">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item8.jpg" alt="item 8">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item9.png" alt="item 9">
-                            <div class="home__main--div">
-                                <img src="/images/p-nuevo.png" alt="nuevo">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item10.jpg" alt="item 10">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item11.jpg" alt="item 11">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item12.jpg" alt="item 12">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item13.jpg" alt="item 13">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item14.jpg" alt="item 14">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item15.jpg" alt="item 15">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item16.jpg" alt="item 16">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item17.jpg" alt="item 17">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-
-                    <div>
-                        <article class="home__main__section__article" id="masbuscado">
-                            <img class="home__main--img" src="/images/item18.jpg" alt="item 18">
-                            <div class="home__main--div">
-                                <img src="/images/p-oferta.png" alt="oferta">
-                                <div class="home__main--flex">
-                                    <div class="home__main__detalle-h4">
-                                        <h4 class="home__main--precio">$70.500</h4>
-                                    </div>
-                                    <div>
-                                        <p class="home__main--descuento">10% OFF</p>
-                                    </div>
-                                </div>
-                                <div class="home__main--ocultar">
-                                    <h5 class="home__main--descripcion">Devil May cry 5</h5>
-                                    <a href="../products/detalle-producto"><button>Ver Detalle</button></a>
-                                </div>
-                            </div>
-
-                        </article>
-                    </div>
-                </div>
-                <div class="home__main__botoncarrusel">
-                    <button aria-label="Previous" class="glider-prev" id="header__botonizq">«</button>
-                    <button aria-label="Next" class="glider-next" id="header__botonderecha">»</button>
-                    <div role="tablist" class="dots" id="home__main__circulcarrusel">
-
-                    </div>
-                </div>
-            </div>
-
-
-        </section>
-
-        <section class="home__main__bannermid">
-
-            <div class="home__main__bannermid--izq">
-                <img src="/images/baner-medio-izq.jpg" alt="">
-            </div>
-
-            <div class="home__main__bannermid--der">
-                <img src="/images/baner-medio-der.jpg" alt="">
-            </div>
-
-        </section>
-
-        <div class="home__main--titulo">
-            <h2>NOTEBOOKS</h2> <a href="../products/detalle-producto"> ver más</p></a>
-        </div>
-
-        <section class="home__main__notebook">
-
-                <!-- Slider main container -->
-            <div class="swiper swiper-notebook1">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <% computacion.forEach(({id,image,price,discount,name}) => { %>
-                        <%- include('./partials/carrusel',{
-                            id,
-                            image,
-                            price,
-                            discount,
-                            name
-                        }) %>
-                    <% }) %>
-                    
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-            </div>
-        </section>
-
-        <div class="home__main--titulo">
-            <h2>NUEVOS INGRESOS</h2> <a href="../products/detalle-producto"> ver más</p></a>
-        </div>
-
-        <section class="home__main__ingresos">
-
-            <!-- Slider main container -->
-            <div class="swiper swiper-notebook1">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <% ingresos.forEach(({id,image,price,discount,name}) => { %>
-                        <%- include('./partials/carrusel',{
-                            id,
-                            image,
-                            price,
-                            discount,
-                            name
-                        }) %>
-                    <% }) %>
-                    
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-            </div>
-
-        </section>
-
-
-        <section class="home__secrion--banner2">
-
-            <!-- Slider main container -->
-            <div class="swiper swiper-banner">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide"><a href=""></a> <img src="/images/banner6.jpg" alt="banner 6"></a></div>
-                    <div class="swiper-slide"><a href=""></a> <img src="/images/banner7.jpg" alt="banner 7"></a></div>
-                    <div class="swiper-slide"><a href=""></a> <img src="/images/banner8.jpg" alt="banner 8"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/banner9.jpg" alt="banner 9"></a></div>
-                    <div class="swiper-slide"><a href=""><img src="/images/banner10.jpg" alt="banner 10"></a></div>
-                    ...
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-            </div>
-
-
-        </section>
-
-        <div class="home__main--titulo">
-            <h2>TARJETAS DIGITALES PS4</h2><a href=""> ver más</p></a>
-        </div>
-
-
-        <section class="home__main__tarjetasd">
-
-            <!-- Slider main container -->
-            <div class="swiper swiper-notebook1">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <% tarjetas.forEach(({id,image,price,discount,name}) => { %>
-                        <%- include('./partials/carrusel',{
-                            id,
-                            image,
-                            price,
-                            discount,
-                            name
-                        }) %>
-                    <% }) %>
-                </div>
-
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </section>
-
-        <div class="home__main--titulo">
-            <h2>CONSOLAS</h2><a href=""> ver más</p></a>
-        </div>
-
-
-        <section class="home__main__ps4">
-
-          <!-- Slider main container -->
-          <div class="swiper swiper-notebook1">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <% asd.forEach(({id,image,price,discount,name}) => { %>
-                    <%- include('./partials/carrusel',{
-                        id,
-                        image,
-                        price,
-                        discount,
-                        name
-                    }) %>
-                <% }) %>
-                
-                ...
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-        </div>
-
-
-        </section>
-    </main>
-    <!-- footer -->
-    <%- include('./partials/footer.ejs') %>
-
-    <!--swiper  -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <!-- glider -->
-    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-
-
-
-    <!-- carrusel deskop -->
-    <script src="/javascripts/buscados.js"></script>
-    <!-- carrusel mobile -->
-    <script src="/javascripts/buscados2.js"></script>
-    <!-- slider notebook -->
-    <script src="/javascripts/notebook.js"></script>
+            <!-- carrusel deskop -->
+            <script src="/javascripts/buscados.js"></script>
+            <!-- carrusel mobile -->
+            <script src="/javascripts/buscados2.js"></script>
+            <!-- slider notebook -->
+            <script src="/javascripts/notebook.js"></script>
 </body>
 
 </html>

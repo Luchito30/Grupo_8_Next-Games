@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Game | Carrito</title>
-    <script src="https://kit.fontawesome.com/89a4980149.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+<%- include('../partials/head.ejs') %>
 
 <body>
     <%- include('../partials/header.ejs') %>
@@ -45,7 +38,7 @@
                     </button>
                 </div>
                 <div class="detalle-carrito">
-                    <div class="imagen-detalle"><img src="/images/ps5fifa23.webp" alt="juego">
+                    <div class="imagen-detalle"><img src="/images/products/item1.jpg" alt="juego">
                         <h6 class="producto"> PS5 EA SPORT FIFA 23</h6>
                     </div>
                     <h5 class="precio">$29.999</h5>
@@ -131,6 +124,8 @@
             </div>
         </section>
     </main>
+     <!--whatsapp-->
+     <%- include('../partials/whatsApp.ejs') %>
     <!-- footer -->
 <%- include('../partials/footer.ejs') %>
 </body>

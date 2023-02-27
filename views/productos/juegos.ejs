@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <div class="home__main--titulo">
+        <h2 >JUEGOS</h2>
+    </div>
+
+        <section class="home__main__section">
+            <% juegos.forEach(({id,image,price,discount,name,category,subCategory})=> { %>
+                <%- include('../partials/product.ejs',{ id, image, price, discount, name, category, subCategory }) %>
+                    <% }) %>
+        </section>
+        
+         <!--whatsapp-->
+         <%- include('../partials/whatsApp.ejs') %>
+
+        <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

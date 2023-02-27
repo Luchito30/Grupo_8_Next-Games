@@ -3,25 +3,18 @@
 
 <!-- Head -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next Game | Edicion</title>
-    <script src="https://kit.fontawesome.com/89a4980149.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+<%- include('../partials/head.ejs') %>
 
-<body>
-    <!-- Header -->
-    <%- include('../partials/header.ejs') %>
+    <body>
+        <!-- Header -->
+        <%- include('../partials/header.ejs') %>
 
     <main class="edition">
         <div class="edition-container">
             <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
             <section class="edition-form">
                 <form action="/products/edicion/<%= id %>?_method=PUT"
-                    method="POST" novalidate>
+                    method="POST"  enctype="multipart/form-data" novalidate>
                     <div class="edition-form-box">
                         <label for="name">Nombre del Producto</label>
                         <input type="text" id="name" name="name" value="<%= name %>">
@@ -29,7 +22,6 @@
                     <div class="edition-form-box">
                         <label for="edition-products">Estado del Producto</label>
                         <select id="edition-products" name="category">
-                            <option value="" >Selecciona...</option>
                             <option value="newer" <%= category === "newer" && 'selected'%>>Nuevo</option>
                             <option value="in-sale" <%= category === "in-sale" && 'selected'%>>Oferta</option>
                         </select>
@@ -39,19 +31,43 @@
                         <label for="description">Descripcion</label>
                         <textarea name="description" id="description" value="" class="edicion__texto"><%= description %></textarea>
                     </div>
+
+
+                    <div class="edicion__subtitulos">Imagen del Producto</div>
+
                     <div class="submit-btn--crear" id="crear__color">
-                        <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
+                        <input type="file" id="image" name="image" class="submit-btn--crear__buscar3" value="<%= image %>">
                         <label for="image">
-                          <i class="fa-solid fa-image"></i><br>
-                          <div class="submit-btn--crea__nombrearchi">
-                            <span><%= image %></span>
-                          </div>
+                            <i class="fa-solid fa-image"></i><br>
+                            <div class="submit-btn--crea__nombrearchi3">
+                                <span>
+                                    <%= image %>
+                                </span>
+                            </div>
                         </label>
-                      </div>
+                    </div>
+
+                    <!--imagenes-->
+
+                    <div class="edicion__subtitulos">Imagenes del Producto</div>
+
+                    <div class="submit-btn--crear2" id="crear__color">
+                        <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" multiple />
+                        <label for="images" class="form-label"> <i class="fa-solid fa-image"></i><br>
+                            <div class="submit-btn--crea__nombrearchi2">
+                                <span>
+                                    <%= images.length + " Imagenes seleccionadas" %>
+                                </span>
+                            </div>
+                        </label>
+
+
+                    </div>
+
+
                     <div class="edition-form-box">
                         <label for="edition-products">Seleccioná la Categoria</label>
                         <select id="edition-products" name="subCategory">
-                            <option value="products-edition" >Categorias...</option>
                             <option value="Perifericos" <%= subCategory === "Perifericos" && 'selected'%>>Perifericos</option>
                             <option value="Juegos" <%= subCategory === "Juegos" && 'selected'%>>Juegos</option>
                             <option value="Gifts Cards" <%= subCategory === "Gifts Cards" && 'selected'%>>Gifts Cards</option>
@@ -61,30 +77,105 @@
                         </select>
                     </div>
 
-                    <div class="edition-form-box">
-                        <label for="price">Precio Actual</label>
-                        <input type="number" id="price" name="price" value="<%= price %>" required>
-                    </div>
+                            
+                            <div class="edition-form-box">
+                                <label for="edition-products">Estado del Producto</label>
+                                <select id="edition-products" name="category">
+                                    <option value="newer" <%=category==="newer" && 'selected' %>>Nuevo</option>
+                                    <option value="in-sale" <%=category==="in-sale" && 'selected' %>>Oferta</option>
+                                </select>
+                            </div>
 
-                    <div class="swtich-container-edition">
-                        <input type="checkbox" id="swtich-edit">   Descuento  <label for="swtich-edit" class="edit-swtich"></label>
-                        <input type="number" id="discount" name="discount" value="<%= discount %>">
-                    </div>
+                            <div class="edition-form-box">
+                                <label for="description">Descripcion</label>
+                                <textarea name="description" id="description" value=""
+                                    class="edicion__texto"><%= description %></textarea>
+                            </div>
 
                     <div class="edition-form-box-button">
-                        <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
                         <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
-                        <button type="reset" class="edition-form-box-button__a">Cancelar</button>
+                        <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar Producto</span></a>
+                        <a href="/products/detalle-producto/<%= id %>" class="edition-form-box-button__a"><span class="edicion-form-box-button__letra">Cancelar</span> </a>
                     </div>
                 </form>
             </section>
         </div>
     </main>
-
     <!-- Footer -->
     <%- include('../partials/footer.ejs') %>
 
-    <script src="/javascripts/buscarimagen.js"></script>
-</body>
+                            <div class="submit-btn--crear" id="crear__color">
+                                <input type="file" id="image" name="image" class="submit-btn--crear__buscar3" value="<%= image %>">
+                                <label for="image">
+                                    <i class="fa-solid fa-image"></i><br>
+                                    <div class="submit-btn--crea__nombrearchi3">
+                                        <span>
+                                            <%= image %>
+                                        </span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <!--imagenes-->
+
+                            <div class="edicion__subtitulos" for="images">Imagenes del Producto</div>
+
+                            <div class="submit-btn--crear2" id="crear__color">
+                                <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" multiple />
+                                <label for="images" class="form-label"> <i class="fa-solid fa-image"></i><br>
+                                    <div class="submit-btn--crea__nombrearchi2">
+                                        <span>
+                                            <%= images.length + " Imagenes seleccionadas" %>
+                                        </span>
+                                    </div>
+                                </label>
+
+
+                            </div>
+
+
+                            <div class="edition-form-box">
+                                <label for="edition-products">Seleccioná la Categoria</label>
+                                <select id="edition-products" name="subCategory">
+                                    <option value="Perifericos" <%=subCategory==="Perifericos" && 'selected' %>
+                                        >Perifericos</option>
+                                    <option value="Juegos" <%=subCategory==="Juegos" && 'selected' %>>Juegos</option>
+                                    <option value="Gifts Cards" <%=subCategory==="Gifts Cards" && 'selected' %>>Gifts
+                                        Cards</option>
+                                    <option value="Consolas" <%=subCategory==="Consolas" && 'selected' %>>Consolas
+                                    </option>
+                                    <option value="Notebooks" <%=subCategory==="Notebooks" && 'selected' %>>Notebooks
+                                    </option>
+                                    <option value="Accesorios" <%=subCategory==="Accesorios" && 'selected' %>>Accesorios
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="edition-form-box">
+                                <label for="price">Precio Actual</label>
+                                <input type="number" id="price" name="price" value="<%= price %>" required>
+                            </div>
+
+                            <div class="edition-form-box">
+                                <label for="discount">Descuento Actual</label>
+                                <input type="number" id="discount" name="discount" value="<%= discount %>" required>
+                            </div>
+
+                            <div class="edition-form-box-button">
+                                <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
+                                <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span
+                                        class="buton1">Eliminar Producto</span></a>
+                                <a href="/products/detalle-producto/<%= id %>" class="edition-form-box-button__a"><span
+                                        class="edicion-form-box-button__letra">Cancelar</span> </a>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </main>
+            <!-- Footer -->
+            <%- include('../partials/footer.ejs') %>
+
+                <script src="/javascripts/buscarimagen.js"></script>
+    </body>
 
 </html>
