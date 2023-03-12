@@ -25,11 +25,7 @@ module.exports =[
 
     body('email')
     .notEmpty().withMessage('El email es obligatorio').bail()
-    .isEmail().withMessage('Debe ser un email con formato válido')
-    .custom((value,{req}) =>{
-        let user = JSON.parse(fs.readFileSync(path.resolve(__dirname,json) )).find(user=>user.email===value)
-        return !user
-    }).withMessage('El email ya se encuentra registrado'),
+    .isEmail().withMessage('Debe ser un email con formato válido'),
     
     check('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()

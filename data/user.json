@@ -79,5 +79,29 @@
       "email": "123@456.com",
       "password": "$2a$12$Ml282piv11.QTSqsDcFdIOo1V2Qdj9n7RM8yJb./hdxI0KYFl.LnO",
       "image": ""
+   },
+   {
+      "id": null,
+      "firstName": "ag",
+      "lastName": "aa",
+      "email": "12df@323.com",
+      "password": "$2a$12$X1YVW3868bBjHVupEE.43u2wEFIKhjSTgzGNjGq4WEeozbTdtoKPq",
+      "image": ""
+   },
+   {
+      "id": null,
+      "firstName": "ag",
+      "lastName": "aa",
+      "email": "agus19111458882@gmail.com",
+      "password": "$2a$12$o7yaB8PBcmd0Ijj2sQa05e06s1f6VmiekD1oQyHBGI41x1BnoPmtS",
+      "image": ""
+   },
+   {
+      "id": 1,
+      "firstName": "ag",
+      "lastName": "aa",
+      "email": "agus191aa11458882@gmail.com",
+      "password": "$2a$12$hxoU9ija6hxrS5wlfh8R0u20MlXJRb9yOeDtJ7YCYlmAubhs9nb.G",
+      "image": "default-image.png"
    }
 ]
