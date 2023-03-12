@@ -159,10 +159,7 @@ font-style: normal;
 .e-mail {
     margin-right: 36px;
 }
-.f-name{
-    margin-right:-46px;
 
-}
 
 
 
@@ -170,6 +167,9 @@ font-style: normal;
  .name{
     margin-top: 43px;
     margin-right: 25px;
+ }
+ .input-avatar-register, input{
+    border-radius: 50%;
  }
  
 

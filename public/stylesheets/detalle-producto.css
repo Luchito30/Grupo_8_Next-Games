@@ -3,6 +3,9 @@
     display: flex;
     flex-direction: column;
 }
+#more{
+    display: none;
+}
 
 .main-detalledeproducto-boxOne {
     display: flex;

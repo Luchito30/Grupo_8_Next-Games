@@ -55,5 +55,29 @@
       "password": "147852",
       "category": "vendedor",
       "image": "2018-08-04-18-02-18.jpeg"
+   },
+   {
+      "id": "agustina@gmail.com",
+      "firstName": "agustina",
+      "lastName": "acosta",
+      "email": "Agustinad@gmail.com",
+      "password": "123123",
+      "image": ""
+   },
+   {
+      "id": null,
+      "firstName": "agus",
+      "lastName": "acos",
+      "email": "agus1923@gmail.co",
+      "password": "$2a$12$cUtPnfvRHGPoCZOBxCvTNe8LylndyTl2/w5cQDQHvUBPcEz7QiCSm",
+      "image": "bannermob4.jpg"
+   },
+   {
+      "id": null,
+      "firstName": "1",
+      "lastName": "2",
+      "email": "123@456.com",
+      "password": "$2a$12$Ml282piv11.QTSqsDcFdIOo1V2Qdj9n7RM8yJb./hdxI0KYFl.LnO",
+      "image": ""
    }
 ]
