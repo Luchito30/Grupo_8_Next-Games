@@ -103,5 +103,13 @@
       "email": "agus191aa11458882@gmail.com",
       "password": "$2a$12$hxoU9ija6hxrS5wlfh8R0u20MlXJRb9yOeDtJ7YCYlmAubhs9nb.G",
       "image": "default-image.png"
+   },
+   {
+      "id": 2,
+      "firstName": "aa",
+      "lastName": "aa",
+      "email": "12aadaf@323.com",
+      "password": "$2a$12$0BzFJaiP8x986IQfoz1VSeJ8jMd4l9Mer4OE3/ulPFK2o5.F4VJ3W",
+      "image": "default-image.png"
    }
 ]
