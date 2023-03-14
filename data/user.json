@@ -76,5 +76,14 @@
       "password": "$2a$12$udUketGNWfOM3MLpFAlM5.ZJTnlmxAy1v/GhLmd7oKsLJS9LbfLGC",
       "userName": "z3",
       "image": "1678778629226_users_.jpg"
+   },
+   {
+      "id": 10,
+      "firstName": "as",
+      "lastName": "as",
+      "email": "as@gmail.com",
+      "password": "$2a$12$RjNk/mL4m8c1Kp82ExtcWumzmId4GrWefKQJ4PrUcIlOgeN3F32ee",
+      "userName": "123",
+      "image": "default-image.png"
    }
 ]

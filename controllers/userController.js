@@ -34,8 +34,7 @@ module.exports = {
                 email: email,
                 password: hashSync(password,12),
                 userName: userName,
-                image: req.file ? req.file.filename : null,
-                /* image: req.files && req.files.image ? req.files.image[0].filename : "default-image.png", */
+                image: req.file ? req.file.filename : "default-image.png",
             };
     
             user.push(newUser);
