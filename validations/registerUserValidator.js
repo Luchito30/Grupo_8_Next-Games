@@ -24,11 +24,19 @@ module.exports = [
         .notEmpty().withMessage('Debes escribir un usuario').bail()
         .isLength({
             min: 2
-        }).withMessage('Mínimo dos letras').bail(),
+        }).withMessage('Mínimo dos letras').bail()
+        /* .custom((value, {req}) => {
+            let user = readJSON('user.json').find(user => user.userName === value);
+            return !user 
+        }).withMessage('El nombre de usuario ya se encuentra en uso') */,
 
     body('email')
         .notEmpty().withMessage('El email es obligatorio').bail()
         .isEmail().withMessage('Debe ser un email con formato válido'),
+        /* .custom((value, {req}) => {
+            let user = readJSON('user.json').find(user => user.email === value);
+            return !user 
+        }).withMessage('El email ya se encuentra registrado'), */
 
     check('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()

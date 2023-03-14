@@ -30,7 +30,7 @@
                     </li>
                     <% if (locals.userLogin) { %>
                         <li>
-                            <a href="users/profile/<%= userLogin.id %>">Hola, Cliente N°<%=userLogin.id %></a>
+                            <a href="users/profile/<%= userLogin.id %>">Hola, <%=locals.userLogin.userName %></a>
                         </li>
                         <li>
                             <a href="/users/logout">SALIR</a>
@@ -98,8 +98,7 @@
                                     </li>
                                     <% if (locals.userLogin) { %>
                                         <li>
-                                            <a href="/users/profile/<%= locals.userLogin.id %>">                                <a href="/users/profile/<%= locals.userLogin.id %>">Hola! Cliente N° <%= locals.userLogin.id %></a>
-                                            <%= locals.userLogin.id %></a>
+                                            <a href="/users/profile/<%= locals.userLogin.id %>">Hola! <%=locals.userLogin.userName %></a>
                                         </li>
                                         <li>
                                             <a href="/users/logout">SALIR</a>
@@ -187,7 +186,7 @@
                         </li>
                         <% if (locals.userLogin) { %>
                             <li>
-                                <a href="/users/profile/<%= locals.userLogin.id %>">Hola! Cliente N° <%= locals.userLogin.id %></a>
+                                <a href="/users/profile/<%= locals.userLogin.id %>">Hola! <%=locals.userLogin.userName %></a>
                             </li>
                             <li>
                                 <a href="/users/logout">SALIR</a>

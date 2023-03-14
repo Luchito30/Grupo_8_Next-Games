@@ -85,5 +85,23 @@
       "password": "$2a$12$RjNk/mL4m8c1Kp82ExtcWumzmId4GrWefKQJ4PrUcIlOgeN3F32ee",
       "userName": "123",
       "image": "default-image.png"
+   },
+   {
+      "id": 11,
+      "firstName": "ae",
+      "lastName": "ad",
+      "email": "as@gmail.com",
+      "password": "$2a$12$AQmizO8HKjEO8QO4T.b3WOZvOnZGiL0dptYCe1h/Y8qpci4Dm6IDG",
+      "userName": "125",
+      "image": "default-image.png"
+   },
+   {
+      "id": 12,
+      "firstName": "ad",
+      "lastName": "lo",
+      "email": "al@gmail.com",
+      "password": "$2a$12$lXm5xT6HJaBBsVe7.72aeOxjLt5wqJeTvqv781vSEM8TJj/Chedi2",
+      "userName": "al3",
+      "image": "default-image.png"
    }
 ]
