@@ -51,27 +51,27 @@
 
                   <input type="text" name="firstName" value="" class="<%= (locals.errors && errors.firstName) && 'is-invalid'%>" value="<%= (locals.old && old.firstName) && old.firstName %>" style="color: white;">
                   <label for="">Nombre</label>
-                  <small style="color: tomato; font-size: 10px; "><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></small>
+                  <small class="text danger"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></small>
 
                   <input type="text" name="lastName" value="<%= (locals.old && old.lastName) && old.lastName%>" class="form-control  <%= (locals.errors && errors.lastName) && 'is-invalid'%>" style="color: white;">
                   <label for="">Apellido</label>
-                  <small style="color: tomato; font-size: 10px; "><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></small>
+                  <small class="text danger"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></small>
 
                   <input type="text" name="userName" style="color: white;">
                   <label for="">Usuario</label>
-                  <small style="color: tomato; font-size: 10px; "><%= locals.errors && errors.userName ? errors.userName.msg : null %></small>
+                  <small class="text danger"><%= locals.errors && errors.userName ? errors.userName.msg : null %></small>
 
                   <input type="email" name="email" <%= (locals.errors && errors.email) && 'is-invalid'%>, style="color: white;">
                   <label for="">E-mail</label>
-                  <small style="color: tomato; font-size: 10px; "><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                  <small class="text danger"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
 
                   <input type="password" name="password" <%= (locals.errors && errors.password) && 'is-invalid'%> style="color: white;">
                   <label for="">Contraseña</label>
-                  <small style="color: tomato; font-size: 10px; "><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                  <small class="text danger"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
 
                   <input type="password" name="password2" <%= (locals.errors && errors.password2) && 'is-invalid'%>  style="color: white;">
                   <label for="" >Confirmar</label>
-                  <small style="color: tomato; font-size: 10px; "><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                  <small class="text danger"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
 
                 </div>
                 <button type="submit" class="guardar">registrar</button>
