@@ -25,17 +25,23 @@
         </section>
 
         <section class="login__main__section2">
-            <form autocomplete="off" action="/" method="get" class="login__main__section2--form">
+            <form autocomplete="off" action="" method="POST" class="login__main__section2--form">
                 <div class="login__main__form-control">
                     <label for="username">Usuario o correo electrónico</label>
-                    <input type="text" id="username" placeholder="Usuario o correo electrónico" required>
+                    <input type="text" id="username" placeholder="Usuario o correo electrónico" name="email" value="<%= locals.old && old.email ? old.email : null %>">
+                    <small style="color: tomato; font-size: 10px; "> <%= (locals.errors && errors.email) && errors.email.msg %></small>
                 </div>
                 <div class="login__main__form-control">
                     <label for="password">Contraseña</label>
-                    <input type="password" id="password" placeholder="Contraseña" name="password" minlength="8" maxlength="40" required>
+                    <input type="password" id="password" placeholder="Contraseña" name="password"  value="<%= locals.old && old.password ? old.password : null %>">
+                    <small style="color: tomato; font-size: 10px; " ><%= (locals.errors && errors.password) && errors.password.msg %></small>
                     <div class="login__main__form-control--button">
                         <button class="form__button" type="button" onclick="mostrarContrasena()"><i class="fa-solid fa-eye"></i></button>
                     </div>
+                </div>
+                <div>
+                    <label for="remember" style="color: white;">Recordarme</label>
+                    <input style="margin:10px"  type="checkbox" name="remember">
                 </div>
                 
                 <div>

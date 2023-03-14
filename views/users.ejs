@@ -11,7 +11,7 @@
     
     
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Next Game | Usuarios</title>
+    <title>Next Games | Usuarios</title>
 </head>
 
 
@@ -23,17 +23,18 @@
         </div>
 
         <section class="home__main__section">
-			<% users.forEach(({id, firtsName, lastName, email, password, image}) => { %>
+			<% users.forEach(({id, firtsName, lastName,userName, email, password, image}) => { %>
 				<%- include('./users/register',{
 					id,
 					firtsName,
 					lastName,
+                    userName,
 					email,
-					name,
                     password,
                     image
 				}) %>
-			<% }) %>
+			<% })%>
+            
         </section>
 
          <!--whatsapp-->

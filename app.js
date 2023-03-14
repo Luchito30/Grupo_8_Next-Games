@@ -5,13 +5,15 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const methodOverride = require ("method-override")
 
+const session = require("express-session");
+
 const mainRouter = require("./routes/main");
 const userRouter = require("./routes/users");
 const productRouter = require('./routes/products')
 
+const localsUserCheck = require("./middlewares/localsUserCheck");
+
 const app = express();
-
-
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -23,6 +25,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(methodOverride("_method"))
+
+app.use(
+  session({
+    secret: "NextGamePlay",
+    resave: false,
+    saveUninitialized: true
+  })
+)
+app.use(localsUserCheck)
+
+
 // routes
 app.use("/", mainRouter);
 app.use("/users", userRouter);

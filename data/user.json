@@ -1,59 +1,80 @@
 [
    {
-      "id": "id",
-      "firstName": "firstName",
-      "lastName": "lastName",
-      "email": "email",
-      "password": "password",
-      "category": "category",
-      "image": "image"
-   },
-   {
-      "id": "adri3",
+      "id": 1,
+      "image": "default-image.png",
+      "firstName": "adri",
       "lastName": "gui",
       "email": "adri@gmail.com",
-      "password": "123463",
-      "category": "vendedor",
-      "image": null
+      "password": "12345678"
    },
    {
-      "id": "lau3",
+      "id": 2,
+      "image": "default-image.png",
+      "firstName": "lau",
       "lastName": "zar",
       "email": "lau@gmail.com",
-      "password": "654321",
-      "category": "comprador",
-      "image": null
+      "password": "12345678"
    },
    {
-      "id": "so45",
-      "lastName": "nie",
-      "email": "sofi@gmail.com",
-      "password": "789456",
-      "category": "vendedor",
-      "image": null
+      "id": 3,
+      "firstName": "lau",
+      "lastName": "zar",
+      "email": "riv@gmail.com",
+      "password": "$2a$12$/2fx4XVywGMMYoT/4ynuxuMNXRitczGSOdd/8zihAMaa/UHkGfa3a",
+      "image": "default-image.png"
    },
    {
-      "id": "jaz62",
-      "lastName": "riv",
-      "email": "jaz@gmail.com",
-      "password": "456123",
-      "category": "comprador"
+      "id": 4,
+      "firstName": "dig",
+      "lastName": "hou",
+      "email": "dh@gmail.com",
+      "password": "$2a$12$cpyHAevKUWKTyRIKi5X/XOZBFMaL3Phzw/2uSesDjciEsXdxHS/9m",
+      "userName": "dh18",
+      "image": "default-image.png"
    },
    {
-      "id": "cr7",
-      "firstName": "cristiano",
-      "lastName": "ronaldo",
-      "email": "cr7@gmail.com",
-      "password": "369852",
-      "category": "comprador"
-   },
-   {
-      "id": "10m",
-      "firstName": "lionel",
+      "id": 5,
+      "firstName": "lio",
       "lastName": "messi",
-      "email": "10m@gmail.com",
-      "password": "147852",
-      "category": "vendedor",
-      "image": "2018-08-04-18-02-18.jpeg"
+      "email": "m10@gmail.com",
+      "password": "$2a$12$EyWdQ5zXbb6SkztVnFTMp.mnjU4lubPolaa36MK32SyblVvvA/asK",
+      "userName": "m10",
+      "image": "default-image.png"
+   },
+   {
+      "id": 6,
+      "firstName": "lau",
+      "lastName": "zar",
+      "email": "lauri@gmail.com",
+      "password": "$2a$12$XEpzjqzaj8bP77U0ijscbOgjnZQdYRozp4S7DPg.FzS5/uOE4bTTi",
+      "userName": "lz13",
+      "image": "default-image.png"
+   },
+   {
+      "id": 7,
+      "firstName": "cr",
+      "lastName": "ro",
+      "email": "cr7@gmail.com",
+      "password": "$2a$12$4h8a7QO5kA6VnQ4yiUHeiuoBryIGV05jEcHY/rGbZ9CzQfUPxajMO",
+      "userName": "cr7",
+      "image": "default-image.png"
+   },
+   {
+      "id": 8,
+      "firstName": "jo",
+      "lastName": "za",
+      "email": "jz@gmail.com",
+      "password": "$2a$12$7zTqMCnqxwODR.OceJ4vz.LBKfvzHEOxGamd2IZhR4TO7vJIUOPV6",
+      "userName": "j22",
+      "image": "1678778242234_users_.jpg"
+   },
+   {
+      "id": 9,
+      "firstName": "du",
+      "lastName": "ki",
+      "email": "lz@gmail.com",
+      "password": "$2a$12$udUketGNWfOM3MLpFAlM5.ZJTnlmxAy1v/GhLmd7oKsLJS9LbfLGC",
+      "userName": "z3",
+      "image": "1678778629226_users_.jpg"
    }
 ]

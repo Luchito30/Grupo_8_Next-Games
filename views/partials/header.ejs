@@ -28,14 +28,23 @@
                         <a href="/products/createItem">Crear
                         </a>
                     </li>
-                    <li>
-                        <a href="/users/register">Registro
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/users/login">Login
-                        </a>
-                    </li>
+                    <% if (locals.userLogin) { %>
+                        <li>
+                            <a href="users/profile/<%= userLogin.id %>">Hola, Cliente N°<%=userLogin.id %></a>
+                        </li>
+                        <li>
+                            <a href="/users/logout">SALIR</a>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <a href="/users/register">Registro
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/users/login">Login
+                                </a>
+                            </li>
+                            <% } %>
                 </ul>
             </nav>
         </article>
@@ -87,14 +96,24 @@
                                         <a href="/products/createItem">Crear
                                         </a>
                                     </li>
-                                    <li class="header__nav--navegacion--primaria">
-                                        <a href="/users/register">Registro
-                                        </a>
-                                    </li>
-                                    <li class="header__nav--navegacion--primaria">
-                                        <a href="/users/login">Login
-                                        </a>
-                                    </li>
+                                    <% if (locals.userLogin) { %>
+                                        <li>
+                                            <a href="/users/profile/<%= locals.userLogin.id %>">                                <a href="/users/profile/<%= locals.userLogin.id %>">Hola! Cliente N° <%= locals.userLogin.id %></a>
+                                            <%= locals.userLogin.id %></a>
+                                        </li>
+                                        <li>
+                                            <a href="/users/logout">SALIR</a>
+                                        </li>
+                                        <% } else { %>
+                                            <li>
+                                                <a href="/users/register">Registro
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/users/login">Login
+                                                </a>
+                                            </li>
+                                            <% } %>
                                 </ul>
                             </div>
                         </nav>
@@ -166,14 +185,23 @@
                             <a href="/products/createItem">Crear
                             </a>
                         </li>
-                        <li>
-                            <a href="/users/register">Registro
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/users/login">Login
-                            </a>
-                        </li>
+                        <% if (locals.userLogin) { %>
+                            <li>
+                                <a href="/users/profile/<%= locals.userLogin.id %>">Hola! Cliente N° <%= locals.userLogin.id %></a>
+                            </li>
+                            <li>
+                                <a href="/users/logout">SALIR</a>
+                            </li>
+                            <% } else { %>
+                                <li>
+                                    <a href="/users/register">Registro
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/users/login">Login
+                                    </a>
+                                </li>
+                                <% } %>
                     </ul>
                 </nav>
             </article>
