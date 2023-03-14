@@ -21,6 +21,13 @@ module.exports =[
     .isAlpha('es-ES',{
         ignore:" "
     }).withMessage('Solo caracteres alfabéticos'),
+    check('user')
+    .notEmpty().withMessage('Debes ingresar un usuario').bail()
+    .isLength({
+        min:2
+    }).withMessage('Mínimo dos letras').bail()
+,
+
 
 
     body('email')

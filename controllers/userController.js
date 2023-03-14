@@ -21,7 +21,7 @@ module.exports = {
 
 	if(errors.isEmpty()){
 		
-		const {id, firstName, lastName, email, password, category, image } = req.body
+		const {id, firstName, lastName, email, password, category, user,image } = req.body
 
 		const newUser = {
 			id: user[user.length -1].id +1,
@@ -30,6 +30,7 @@ module.exports = {
 			email: email,
 			password: hashSync(password,12),
 			category: category,
+			user:user,
 			image: req.files && req.files.image ? req.files.image[0].filename : "default-image.png",
 		};
 
