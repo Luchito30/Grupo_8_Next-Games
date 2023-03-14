@@ -83,6 +83,7 @@ body{
     background-color: var( --fondo1VioletaO);
     border: none;
     transition: all 1s;
+    margin-top: 5px;
 }
 .guardar:hover{
     background-color: var(--letrasSubtitulos2);
@@ -182,6 +183,15 @@ font-style: normal;
  
 
  @media(min-width :769px){
+    .text{
+        color: white;
+        font-family: 'Inter',sans-serif;
+        background-color: tomato;
+       border-radius: 5px;
+        
+    
+    }
+
     .login-register{
         top: 1px;
     }
