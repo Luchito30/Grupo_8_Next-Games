@@ -23,7 +23,7 @@ Edgardo De La Cruz: Del dia martes 07/03 tiene dañada su pc, hoy no pudo conect
 
 Luis Dick: Presenta mal estado de salud por eso no puede presentarse a la reunion. 
 
-------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 
 Domingo 12/03 4ta Daily Presentes: Agustina Acosta , Luis Dick y Adriana Guitian
 
@@ -39,3 +39,9 @@ Luis Dick: Toma a cargo la tarjeta que le pertenecia a Edgardo, implementar ruta
 
 Proxima daily: Lunes 13/03 18:15hs
 
+-------------------------------------------------------------------------------
+
+Lunes 13/03 5ta Daily 18:15hs y 23hs
+
+Tareas realizadas: Se realizan las ultimas correcciones.
+Se termina el proyecto.
