@@ -2,17 +2,14 @@ const fs = require('fs');
 const path = require('path');
 
 const {validationResult} = require('express-validator');
-const { readJSON} = require("../data");
+const { readJSON, writeJSON} = require("../data");
 const {hashSync} = require('bcryptjs')
 
-const users = path.join(__dirname, '../data/user.json');
-const user = JSON.parse(fs.readFileSync(users, 'utf-8'));
 
 module.exports = {
 
     register: (req, res) => {
         return res.render('users/register', {
-            ...user,
 			title: "Next Games | Registro"
 
         });
@@ -25,10 +22,11 @@ module.exports = {
 
         if(errors.isEmpty()){
 		
-            const {id, firstName, lastName, email, password, userName, image } = req.body
+            const users = readJSON("user.json")
+            const {firstName, lastName, email, password, userName, image } = req.body
     
             const newUser = {
-                id: user[user.length -1].id +1,
+                id: users.length ? users[users.length -1].id +1 : 1,
                 firstName: firstName,
                 lastName: lastName,
                 email: email,
@@ -37,14 +35,14 @@ module.exports = {
                 image: req.file ? req.file.filename : "default-image.png",
             };
     
-            user.push(newUser);
+            users.push(newUser);
     
-            fs.writeFileSync(users, JSON.stringify(user, null, 3), 'utf-8');
+            writeJSON("user.json",users);
     
             return res.redirect('/users/login');
         }else{
             return res.render('users/register',{
-                title:"Next Games | Register",
+            title:"Next Games | Register",
             errors : errors.mapped(),
             old:req.body
         });
@@ -105,6 +103,7 @@ module.exports = {
     },
     logout : (req,res) => {
         req.session.destroy();
+        res.clearCookie("usernextgames")
         return res.redirect('/')
     },
     list : (req,res) => {

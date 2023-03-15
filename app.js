@@ -10,8 +10,8 @@ const session = require("express-session");
 const mainRouter = require("./routes/main");
 const userRouter = require("./routes/users");
 const productRouter = require('./routes/products')
-
 const localsUserCheck = require("./middlewares/localsUserCheck");
+const checkCookie = require("./middlewares/checkCookie");
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(methodOverride("_method"))
+app.use(methodOverride("_method"));
 
 app.use(
   session({
@@ -33,7 +33,8 @@ app.use(
     saveUninitialized: true
   })
 )
-app.use(localsUserCheck)
+app.use(localsUserCheck);
+app.use(checkCookie);
 
 
 // routes

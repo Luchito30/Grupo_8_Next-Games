@@ -49,29 +49,29 @@
                   <input type="file" name="image" style="color: white; font-size: 10px; padding: 10px;">
                   <label for="">Avatar</label>
 
-                  <input type="text" name="firstName" class="<%= (locals.errors && errors.firstName) && 'is-invalid'%>" value="<%= (locals.old && old.firstName) && old.firstName %>" style="color: white;">
+                  <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>"  id="<%= locals.errors && errors.firstName ? "boder-color" : null%>" style="color: white;">
                   <label for="">Nombre</label>
-                  <small class="text danger"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></small>
+                  <p class="text danger"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></p>
 
-                  <input type="text" name="lastName" value="<%= (locals.old && old.lastName) && old.lastName%>" class="form-control  <%= (locals.errors && errors.lastName) && 'is-invalid'%>" style="color: white;">
+                  <input type="text" name="lastName" value="<%= (locals.old && old.lastName) && old.lastName%>" id="<%= locals.errors && errors.lastName ? "boder-color" : null%>" style="color: white;">
                   <label for="">Apellido</label>
-                  <small class="text danger"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></small>
+                  <p class="text danger"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></p>
 
-                  <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>" class="form-control  <%= (locals.errors && errors.userName) && 'is-invalid'%>" style="color: white;">
+                  <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>" id="<%= locals.errors && errors.userName ? "boder-color" : null%>" style="color: white;">
                   <label for="">Usuario</label>
-                  <small class="text danger"><%= locals.errors && errors.userName ? errors.userName.msg : null %></small>
+                  <p class="text danger"><%= locals.errors && errors.userName ? errors.userName.msg : null %></p>
 
-                  <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" class="form-control  <%= (locals.errors && errors.email) && 'is-invalid'%>" style="color: white;">
+                  <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="<%= locals.errors && errors.email ? "boder-color" : null%>" style="color: white;">
                   <label for="">E-mail</label>
-                  <small class="text danger"><%= locals.errors && errors.email ? errors.email.msg : null %></small>
+                  <p class="text danger"><%= locals.errors && errors.email ? errors.email.msg : null %></p>
 
-                  <input type="password" name="password" <%= (locals.errors && errors.password) && 'is-invalid'%> style="color: white;">
+                  <input type="password" name="password" id="<%= locals.errors && errors.password ? "boder-color" : null%>" style="color: white;">
                   <label for="">Contraseña</label>
-                  <small class="text danger"><%= locals.errors && errors.password ? errors.password.msg : null %></small>
+                  <p class="text danger"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
 
-                  <input type="password" name="password2" <%= (locals.errors && errors.password2) && 'is-invalid'%>  style="color: white;">
+                  <input type="password" name="password2" id="<%= locals.errors && errors.password2 ? "boder-color" : null%>" style="color: white;">
                   <label for="" >Confirmar</label>
-                  <small class="text danger"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></small>
+                  <p class="text danger"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></p>
 
                 </div>
                 <button type="submit" class="guardar">registrar</button>
