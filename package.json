@@ -1,9 +1,9 @@
 {
-  "name": "site",
+  "name": "Next Games",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./src/bin/www"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
