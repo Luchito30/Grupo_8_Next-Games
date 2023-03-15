@@ -20,6 +20,15 @@ module.exports = {
 
         const errors = validationResult(req);
 
+        if(req.fileValidationError){
+            errors.errors.push({
+              value : "",
+              msg : req.fileValidationError,
+              param : "images",
+              location : "files"
+            })
+          }
+
         if(errors.isEmpty()){
 		
             const users = readJSON("user.json")
@@ -27,9 +36,9 @@ module.exports = {
     
             const newUser = {
                 id: users.length ? users[users.length -1].id +1 : 1,
-                firstName: firstName,
-                lastName: lastName,
-                email: email,
+                firstName: firstName.trim(),
+                lastName: lastName.trim(),
+                email: email.trim(),
                 password: hashSync(password,12),
                 userName: userName,
                 image: req.file ? req.file.filename : "default-image.png",

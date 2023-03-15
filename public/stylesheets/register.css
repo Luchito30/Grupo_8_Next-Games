@@ -148,22 +148,34 @@ form {
     position: relative;
 }
 
-.forms input {
-    text-align: center;
+.forms input  {
     width: 100%;
     background: transparent;
     border: 2px solid var(--letrasSubtitulos1);
     border-radius: 6px;
     outline: none;
-    padding: 0 10px;
+    padding: 15px 15px;
     height: 43px;
     margin: 8px 0;
-    font-size: 20px;
+    font-size: 16px;
+}
+
+#register-image{
+    color: white;
+    font-size: 10px;
+    padding-top: 12px;
+}
+
+#boder-color2{
+    border: 4px solid red;
+    color: white;
+    font-size: 10px;
+    padding-top: 12px;
 }
 
 .forms label {
     position: relative;
-    top: -60px;
+    top: -65px;
     left: -51px;
     text-transform: capitalize;
     font-size: 16px;

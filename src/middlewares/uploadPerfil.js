@@ -12,10 +12,18 @@ const storagePerfil = multer.diskStorage({
     }
 });
 
-const uploadPerfil = multer({
-    storage : storagePerfil
+const uploadperdilImages = multer({
+    storage : storagePerfil,
+    fileFilter: (req, file, cb) => {
+        if(!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)){
+            req.fileValidationError = "Solo se permite imágenes";
+            return cb(null,false,req.fileValidationError);
+        }
+    
+        cb(null, true)
+      }
 });
 
 module.exports = {
-    uploadPerfil
+    uploadperdilImages
 }

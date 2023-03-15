@@ -46,32 +46,34 @@
             <div class="card">
               <div class="forms">
                 <div class="name">
-                  <input type="file" name="image" style="color: white; font-size: 10px; padding: 10px;">
+                  <input type="file" name="image" id="<%= locals.errors && errors.images ? "boder-color2" : "register-image" %>">
                   <label for="">Avatar</label>
+                  <p class="text"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
+
 
                   <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>"  id="<%= locals.errors && errors.firstName ? "boder-color" : null%>" style="color: white;">
                   <label for="">Nombre</label>
-                  <p class="text danger"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></p>
+                  <p class="text"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></p>
 
                   <input type="text" name="lastName" value="<%= (locals.old && old.lastName) && old.lastName%>" id="<%= locals.errors && errors.lastName ? "boder-color" : null%>" style="color: white;">
                   <label for="">Apellido</label>
-                  <p class="text danger"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></p>
+                  <p class="text"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></p>
 
                   <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>" id="<%= locals.errors && errors.userName ? "boder-color" : null%>" style="color: white;">
                   <label for="">Usuario</label>
-                  <p class="text danger"><%= locals.errors && errors.userName ? errors.userName.msg : null %></p>
+                  <p class="text"><%= locals.errors && errors.userName ? errors.userName.msg : null %></p>
 
                   <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="<%= locals.errors && errors.email ? "boder-color" : null%>" style="color: white;">
                   <label for="">E-mail</label>
-                  <p class="text danger"><%= locals.errors && errors.email ? errors.email.msg : null %></p>
+                  <p class="text"><%= locals.errors && errors.email ? errors.email.msg : null %></p>
 
                   <input type="password" name="password" id="<%= locals.errors && errors.password ? "boder-color" : null%>" style="color: white;">
                   <label for="">Contraseña</label>
-                  <p class="text danger"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
+                  <p class="text"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
 
                   <input type="password" name="password2" id="<%= locals.errors && errors.password2 ? "boder-color" : null%>" style="color: white;">
                   <label for="" >Confirmar</label>
-                  <p class="text danger"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></p>
+                  <p class="text"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></p>
 
                 </div>
                 <button type="submit" class="guardar">registrar</button>
