@@ -71,7 +71,7 @@ module.exports = {
 
        if(errors.isEmpty()){
            
-             const {id, firtsName,userName, email, rol} = readJSON('user.json').find(user => user.email === req.body.email);
+             const {id, firtsName,userName, email, rol} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail);
 
             req.session.userLogin = {
                 id,

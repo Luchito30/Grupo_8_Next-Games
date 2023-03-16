@@ -1,3 +1,11 @@
 [
-
+   {
+      "id": 1,
+      "firstName": "Luis",
+      "lastName": "Dick",
+      "email": "luchodick24@gmail.com",
+      "password": "$2a$12$hZ1655N5QTEFBJMI5R75Ue7tLftHOso0aapas6UsgvN8xnt8Z0sjK",
+      "userName": "murdoy",
+      "image": "1678921395491_users_.jpg"
+   }
 ]

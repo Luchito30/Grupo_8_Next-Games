@@ -83,7 +83,7 @@
     font-size: 18px;
     position: relative;
     z-index: 2;
-    bottom: 5px;
+    bottom: 10px;
 }
 
 .form__button:hover {
@@ -237,6 +237,10 @@
 
 /* Tablets, Ipads */
 @media(min-width:769px) {
+    .form__button{
+        bottom: 18px;
+    }
+
     .login__main__section {
         font-size: 20px;
     }

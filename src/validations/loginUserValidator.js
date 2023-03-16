@@ -3,14 +3,13 @@ const { readJSON} = require("../data");;
 const {compareSync} = require('bcryptjs');
 
 module.exports = [
-    check('email')
-        .notEmpty().withMessage('El email es obligatorio').bail()
-        .isEmail().withMessage('El email tiene un formato incorrecto'),
+    check('useremail')
+        .notEmpty().withMessage('El Usuario o Email es obligatorio'),
     
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .custom((value, {req}) => {
-            let user = readJSON('user.json').find(user => user.email === req.body.email && compareSync(value, user.password));
+            let user = readJSON('user.json').find(user => user.email === req.body.useremail || user.userName === req.body.useremail && compareSync(value, user.password));
             return user
         }).withMessage('Credenciales inválidas')
 ]
