@@ -32,8 +32,10 @@ app.use(
     saveUninitialized: true
   })
 )
-app.use(localsUserCheck);
+
 app.use(checkCookie);
+app.use(localsUserCheck);
+
 
 
 // routes

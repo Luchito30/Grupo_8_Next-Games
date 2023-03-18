@@ -6,8 +6,7 @@ const storagePerfil = multer.diskStorage({
         callback(null,'public/images/users')
         
     },
-    filename : function (req,file,callback
-        ){
+    filename : function (req,file,callback){
             callback(null,`${Date.now()}_users_${path.extname(file.originalname)}`)
     }
 });

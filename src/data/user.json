@@ -4,8 +4,19 @@
       "firstName": "Luis",
       "lastName": "Dick",
       "email": "luchodick24@gmail.com",
-      "password": "$2a$12$hZ1655N5QTEFBJMI5R75Ue7tLftHOso0aapas6UsgvN8xnt8Z0sjK",
+      "password": "$2a$12$5aIUzLxeDjkoUa8BY4sZYu0F0OZM/EYC6c5jvsjZIqbAaSKszsvBm",
       "userName": "murdoy",
-      "image": "1678921395491_users_.jpg"
+      "image": "default-image.png",
+      "rol": "admin"
+   },
+   {
+      "id": 2,
+      "firstName": "pedo",
+      "lastName": "ads",
+      "email": "pechito@gmail.com",
+      "password": "$2a$12$KvDExfkOpnLSI8sMRdvpW.5YFY9Z0aDCLC15clYACXKvWjYbdFRpa",
+      "userName": "garch",
+      "image": "default-image.png",
+      "rol": "user"
    }
 ]

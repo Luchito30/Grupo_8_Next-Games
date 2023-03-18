@@ -1,15 +1,9 @@
 const express = require('express');
 
 const {login,register,processLogin,processRegister,profile,update,logout} = require('../controllers/userController');
-
 const checkUser = require('../middlewares/checkUser');
-
-
-
 const checkUserLogin = require('../middlewares/checkUserLogin');
-
 const { uploadperdilImages } = require('../middlewares/uploadPerfil');
-
 const { registerUserValidator, loginUserValidator } = require('../validations');
 
 const router = express.Router();

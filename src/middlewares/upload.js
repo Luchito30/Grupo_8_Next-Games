@@ -10,9 +10,18 @@ const storageProductImages = multer.diskStorage({
     }
 });
 
-const uploadProductImages = multer({
-    storage : storageProductImages
+const uploadproductImages = multer({
+    storage : storageProductImages,
+    fileFilter: (req, file, cb) => {
+        if(!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)){
+            req.fileValidationError = "Solo se permite imágenes";
+            return cb(null,false,req.fileValidationError);
+        }
+    
+        cb(null, true)
+      }
 });
-module.exports ={
-    uploadProductImages
+
+module.exports = {
+    uploadproductImages
 }

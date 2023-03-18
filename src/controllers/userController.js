@@ -40,8 +40,9 @@ module.exports = {
                 lastName: lastName.trim(),
                 email: email.trim(),
                 password: hashSync(password,12),
-                userName: userName,
+                userName: userName.toLowerCase().trim(),
                 image: req.file ? req.file.filename : "default-image.png",
+                rol : 'user'
             };
     
             users.push(newUser);
@@ -61,8 +62,7 @@ module.exports = {
     
     login: (req, res) => {
         return res.render('users/login', {
-        
-            title:"Next Games | Login"
+        title:"Next Games | Login"
         });
     },
 
@@ -71,13 +71,11 @@ module.exports = {
 
        if(errors.isEmpty()){
            
-             const {id, firtsName,userName, email, rol} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail);
+             const {id, firstName, rol} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail.toLowerCase());
 
             req.session.userLogin = {
                 id,
-                firtsName,
-                userName,
-                email,
+                firstName,
                 rol
                 
             };
@@ -90,7 +88,7 @@ module.exports = {
         }else{
            
            return res.render('users/login',{
-            title : "Inicio de sesión",
+            title : "Next Games | Login",
             errors : errors.mapped()
         })
     }

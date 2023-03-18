@@ -9,7 +9,7 @@ module.exports = [
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
         .custom((value, {req}) => {
-            let user = readJSON('user.json').find(user => user.email === req.body.useremail || user.userName === req.body.useremail && compareSync(value, user.password));
+            let user = readJSON('user.json').find(user => user.email === req.body.useremail || user.userName === req.body.useremail.toLowerCase() && compareSync(value, user.password));
             return user
         }).withMessage('Credenciales inválidas')
 ]
