@@ -2,11 +2,17 @@
    {
       "id": 1,
       "name": "FIFA 23",
-      "description": "isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s",
+      "description": [
+         "isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s,isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s",
+         "isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s,isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s"
+      ],
       "price": 15000,
       "discount": 20,
       "subCategory": "Juegos",
-      "category": "in-sale",
+      "category": [
+         "newer",
+         "newer"
+      ],
       "image": "item1.jpg",
       "images": []
    },

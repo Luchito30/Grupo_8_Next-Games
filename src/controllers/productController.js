@@ -40,33 +40,85 @@ module.exports = {
     });
   },
   update: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const id = +req.params.id
-    const product = products.find(product => product.id === +id);
-    const { name, discount, price, description, category, subCategory } = req.body;
-    const productUpdated = {
-      id,
-      name: name.trim(),
-      description: description.trim(),
-      price: +price,
-      discount: +discount,
-      subCategory,
-      category,
-      image: req.files && req.files.image ? req.files.image[0].filename : product.image,
-      images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
 
-    };
-    const productsModified = products.map(product => {
-      if (product.id === +id) {
-        return productUpdated
-      }
+    const errors = validationResult(req);
 
-      return product;
-    })
+    if (req.fileValidationError) {
+      errors.errors.push({
+        value: "",
+        msg: req.fileValidationError,
+        param: "images",
+        location: "files"
+      })
+    }
+
+    if (req.fileValidationError) {
+      errors.errors.push({
+        value: "",
+        msg: req.fileValidationError,
+        param: "image",
+        location: "files"
+      })
+    }
 
 
-    writeJSON("productDataBase.json",productsModified)
-    return res.redirect("/products")
+    if (errors.isEmpty()) {
+
+      const products = readJSON("productDataBase.json");
+      const id = +req.params.id
+      const product = products.find(product => product.id === +id);
+      const { name, discount, price, description, category, subCategory } = req.body;
+
+      const productsModified = products.map(product => {
+        if (product.id === +id) {
+
+          const productUpdated = {
+            id,
+            name: name.trim(),
+            description: description.trim(),
+            price: +price,
+            discount: +discount,
+            subCategory,
+            category,
+            image: req.files && req.files.image ? req.files.image[0].filename : product.image,
+            images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
+          };
+
+          if (req.files.image) {
+            products.image.forEach(image => {
+              fs.existsSync(`./public/images/products/${image}`) && fs.unlinkSync(`./public/images/products/${image}`);
+            });
+          }
+
+          if (req.files.images) {
+            products.images.forEach(images => {
+              fs.existsSync(`./public/images/products/${images}`) && fs.unlinkSync(`./public/images/products/${images}`);
+            });
+          }
+
+          return productUpdated
+        }
+
+        return product;
+      })
+
+
+      writeJSON("productDataBase.json", productsModified)
+      return res.redirect("/products")
+
+    }else{
+      const products = readJSON("productDataBase.json");
+      const { id } = req.params;
+      const product = products.find(product => product.id === +id);
+      return res.render('productos/edicion', {
+        title: "Next Games | Editar Producto",
+        ...product,
+        toThousand,
+        errors : errors.mapped(),
+        old : req.body
+      });
+    }
+
   },
   createItem: (req, res) => {
     return res.render('productos/crear-item', {
@@ -77,101 +129,101 @@ module.exports = {
 
     const errors = validationResult(req);
 
-    if(!req.files.images && !req.fileValidationError){
+    if (!req.files.images && !req.fileValidationError) {
       errors.errors.push({
-        value : "",
-        msg : "El producto debe tener por lo menos una imagen",
-        param : "images",
-        location : "files"
+        value: "",
+        msg: "El producto debe tener por lo menos una imagen",
+        param: "images",
+        location: "files"
       })
     }
 
-    if(req.fileValidationError){
+    if (req.fileValidationError) {
       errors.errors.push({
-        value : "",
-        msg : req.fileValidationError,
-        param : "images",
-        location : "files"
+        value: "",
+        msg: req.fileValidationError,
+        param: "images",
+        location: "files"
       })
     }
 
-    if(!req.files.image && !req.fileValidationError){
+    if (!req.files.image && !req.fileValidationError) {
       errors.errors.push({
-        value : "",
-        msg : "El producto debe tener una imagen",
-        param : "image",
-        location : "files"
+        value: "",
+        msg: "El producto debe tener una imagen",
+        param: "image",
+        location: "files"
       })
     }
 
-    if(req.fileValidationError){
+    if (req.fileValidationError) {
       errors.errors.push({
-        value : "",
-        msg : req.fileValidationError,
-        param : "image",
-        location : "files"
+        value: "",
+        msg: req.fileValidationError,
+        param: "image",
+        location: "files"
       })
     }
 
-    if(errors.isEmpty()){
+    if (errors.isEmpty()) {
 
       const products = readJSON("productDataBase.json")
       const { name, price, description, discount, image, images, category, subCategory } = req.body;
-    
+
       const newProduct = {
-      id:  products.length ? products[products.length -1].id +1 : 1,
-      name: name.trim(),
-      description: description.trim(),
-      price: +price,
-      discount: +discount,
-      subCategory,
-      category,
-      image: req.files && req.files.image ? req.files.image[0].filename : "default-image.png",
-      images: req.files && req.files.images ? req.files.images.map(file => file.filename) : [],
+        id: products.length ? products[products.length - 1].id + 1 : 1,
+        name: name.trim(),
+        description: description.trim(),
+        price: +price,
+        discount: +discount,
+        subCategory,
+        category,
+        image: req.files && req.files.image ? req.files.image[0].filename : "default-image.png",
+        images: req.files && req.files.images ? req.files.images.map(file => file.filename) : [],
       };
 
 
-    products.push(newProduct);
+      products.push(newProduct);
 
-    writeJSON("productDataBase.json",products);
+      writeJSON("productDataBase.json", products);
 
-    return res.redirect('/products');
-  
-  }else{
+      return res.redirect(`detalle-producto/${newProduct.id}`);
 
-    if(req.files.image){       
-      req.files.image.forEach(file =>{
-        fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
-        errors.errors.push({
-          value : "",
-          msg : "Debe seleccionar de nuevo la imagen",
-          param : "image",
-          location : "files"
-        })
-      });
+    } else {
+
+      if (req.files.image) {
+        req.files.image.forEach(file => {
+          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+          errors.errors.push({
+            value: "",
+            msg: "Debe seleccionar de nuevo la imagen",
+            param: "image",
+            location: "files"
+          })
+        });
+      }
+
+      if (req.files.images) {
+        req.files.images.forEach(file => {
+          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+          errors.errors.push({
+            value: "",
+            msg: "Debe seleccionar de nuevo las imagenes",
+            param: "images",
+            location: "files"
+          })
+        });
+      }
+
+      return res.render('productos/crear-item', {
+        title: "Next Games | Crear Producto",
+        errors: errors.mapped(),
+        old: req.body
+      })
     }
 
-    if(req.files.images){       
-      req.files.images.forEach(file =>{
-        fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
-        errors.errors.push({
-          value : "",
-          msg : "Debe seleccionar de nuevo las imagenes",
-          param : "images",
-          location : "files"
-        })
-      });
-    }
+  },
 
-    return res.render('productos/crear-item',{
-      title: "Next Games | Crear Producto",
-      errors: errors.mapped(),
-      old : req.body
-    })
-  }
-
-    },
-    
   removeConfirm: (req, res) => {
     const products = readJSON("productDataBase.json");
     const id = req.params.id;
@@ -188,7 +240,7 @@ module.exports = {
     const productsModified = products.filter(product => product.id !== +id);
 
 
-    writeJSON("productDataBase.json",productsModified)
+    writeJSON("productDataBase.json", productsModified)
     return res.redirect(`/products`)
   },
   notebook: (req, res) => {

@@ -25,7 +25,7 @@ router.post('/createItem/',uploadproductImages.fields([{name: 'image'},{name: 'i
 
 /* EDIT PRODUCT */
 router.get('/edicion/:id', edicion);
-router.put('/edicion/:id',uploadproductImages.fields([{name: 'image'},{name: 'images'}]),update);
+router.put('/edicion/:id',uploadproductImages.fields([{name: 'image'},{name: 'images'}]),productValidator,update);
 
 /*** Eliminar producto ***/
 router.get("/remove/:id",removeConfirm)
