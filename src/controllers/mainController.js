@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { readJSON} = require("../data");
 
 const productsFilePath = path.join(__dirname, '../data/productDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -9,7 +10,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports  = {
     home: (req,res) =>{
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const products = readJSON("productDataBase.json")
     const inSale = products.filter(product => product.category === "in-sale" )
     const computacion = products.filter(product => product.subCategory === "Notebooks" )
     const ingresos = products.filter(product => product.category === "newer" )
@@ -42,7 +43,7 @@ module.exports  = {
 
     },
      search: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const products = readJSON("productDataBase.json")
         const {keywords} = req.query;
         const productFiltered = products.filter(product => product.name.toLowerCase().includes(keywords.toLowerCase()) || product.subCategory.toLowerCase().includes(keywords.toLowerCase()) || product.description.toLowerCase().includes(keywords.toLowerCase()))
         return res.render('results', {
@@ -53,8 +54,10 @@ module.exports  = {
 		})
     },
      admin: (req,res) => {
+        const products = readJSON("productDataBase.json")
         return res.render("dashboardProduct",{
-            title : "Next Games | dashboard Productos"
+            title : "Next Games | dashboard Productos",
+            products
         })
      }
 

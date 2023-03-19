@@ -23,11 +23,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% products.forEach(product => { %>
-                         <tr>
-                            
-                         </tr>
-                        <% }) %>
+                        <% products.forEach(({id,name,image,price,discount,category,subCategory}) => { %>
+                            <tr>
+                               <td><%= id %></td>
+                               <td><%= name %></td>
+                               <td><img src="/images/products/<%= image %>"></td>
+                               <td><%= price %></td>
+                               <td><%= discount %></td>
+                               <td><%= category %></td>
+                               <td><%= subCategory %></td>
+                               <td>asd</td>
+                            </tr>
+                           <% }) %>
                     </tbody>
 
                 </table>

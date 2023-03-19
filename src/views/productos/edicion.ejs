@@ -105,6 +105,7 @@
                                     <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
                                     <select id="edition-products" name="category">
                                         <option value="newer" <%=category==="newer" && 'selected' %>>Nuevo</option>
+                                        <option value="normally" <%=category==="normally" && 'selected' %>>Normal</option>
                                         <option value="in-sale" <%=category==="in-sale" && 'selected' %>>Oferta</option>
                                     </select>
                                 </div>

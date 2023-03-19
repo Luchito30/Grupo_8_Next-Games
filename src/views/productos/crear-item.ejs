@@ -50,6 +50,7 @@
           <select name="category" id="lang" class="form-control">
             <option value="" selected hidden>Seleccione...</option>
             <option value="newer" <%= locals.old && old.category && old.category === "newer" ? 'selected' : null %>>Nuevo</option>
+            <option value="normally " <%= locals.old && old.category && old.category === "normally " ? 'selected' : null %>>Normal</option>
             <option value="in-sale" <%= locals.old && old.category && old.category === "in-sale" ? 'selected' : null %>>Oferta</option>
           </select>
           <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
