@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header') %> 
+    
+        <main>
+             
+            <div class="">
+                <table class="dashboard__table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th>Precio</th>
+                            <th>Descuento</th>
+                            <th>Estado</th>
+                            <th>Categoria</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach(product => { %>
+                         <tr>
+                            
+                         </tr>
+                        <% }) %>
+                    </tbody>
+
+                </table>
+
+            </div>
+        </main>
+</body>
+</html>

@@ -2,28 +2,22 @@
    {
       "id": 1,
       "name": "FIFA 23",
-      "description": [
-         "isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s,isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s",
-         "isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s,isruta de la tecnologa perotion de nuea generación el tbol de clubes eenino la  orld up asculina  eenina unción de uego cruado  uco s"
-      ],
+      "description": "Disfruta de la tecnología HyperMotion2 de nueva generación, el fútbol de clubes femenino, la FIFA World Cup™ masculina y femenina, función de juego cruzado y mucho más.",
       "price": 15000,
       "discount": 20,
       "subCategory": "Juegos",
-      "category": [
-         "newer",
-         "newer"
-      ],
+      "category": "in-sale",
       "image": "item1.jpg",
       "images": []
    },
    {
       "id": 2,
       "name": "NBA2K23 PS4",
-      "description": "escubre una eperiencia de uego s intensa e inersia con el innoador control de S",
       "price": 18000,
       "discount": 5,
       "subCategory": "Juegos",
       "category": "in-sale",
+      "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
       "image": "item2.jpg",
       "images": []
    },

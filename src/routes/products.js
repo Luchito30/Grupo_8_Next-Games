@@ -1,5 +1,6 @@
 const express = require('express');
 const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos} = require('../controllers/productController');
+const checkAdmin = require('../middlewares/checkAdmin');
 const {uploadproductImages} = require("../middlewares/upload");
 const { productValidator } = require('../validations');
 
@@ -20,15 +21,15 @@ router.get("/insale", ofertas)
 router.get("/ingresos", ingresos)
 
 /*** CREATE ONE PRODUCT ***/
-router.get('/createItem/', createItem);
+router.get('/createItem/',checkAdmin, createItem);
 router.post('/createItem/',uploadproductImages.fields([{name: 'image'},{name: 'images'}]), productValidator , storeMainImage );
 
 /* EDIT PRODUCT */
-router.get('/edicion/:id', edicion);
+router.get('/edicion/:id',checkAdmin, edicion);
 router.put('/edicion/:id',uploadproductImages.fields([{name: 'image'},{name: 'images'}]),productValidator,update);
 
 /*** Eliminar producto ***/
-router.get("/remove/:id",removeConfirm)
+router.get("/remove/:id",checkAdmin,removeConfirm)
 router.delete("/remove/:id",remove)
 
 module.exports = router;

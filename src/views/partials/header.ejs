@@ -24,11 +24,13 @@
                             <li><a href="/products">Todos los Productos</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="/products/createItem">Crear
-                        </a>
-                    </li>
                     <% if (locals.userLogin) { %>
+                        <% if (userLogin.rol === "admin") { %>
+                            <li>
+                                <a href="/products/createItem">Crear
+                                </a>
+                            </li>
+                        <% } %>
                         <li>
                             <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
                         </li>
@@ -92,23 +94,25 @@
                                                     los Productos</a></li>
                                         </ul>
                                     </li>
-                                    <li class="header__nav--navegacion--primaria">
-                                        <a href="/products/createItem">Crear
-                                        </a>
-                                    </li>
                                     <% if (locals.userLogin) { %>
-                                        <li  class="header__nav--navegacion--primaria">
-                                            <a href="/users/profile/<%= locals.userLogin.id %>">Hola!, <%= locals.userLogin.firstName %></a>
+                                        <% if (userLogin.rol === "admin") { %>
+                                            <li>
+                                                <a href="/products/createItem">Crear
+                                                </a>
+                                            </li>
+                                        <% } %>
+                                        <li>
+                                            <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
                                         </li>
-                                        <li  class="header__nav--navegacion--primaria">
+                                        <li>
                                             <a href="/users/logout">SALIR</a>
                                         </li>
                                         <% } else { %>
-                                            <li  class="header__nav--navegacion--primaria"> 
+                                            <li>
                                                 <a href="/users/register">Registro
                                                 </a>
                                             </li>
-                                            <li  class="header__nav--navegacion--primaria">
+                                            <li>
                                                 <a href="/users/login">Login
                                                 </a>
                                             </li>
@@ -180,13 +184,15 @@
                                 <li><a href="/products">Todos los Productos</a></li>
                             </ul>
                         </li>
-                        <li>
-                            <a href="/products/createItem">Crear
-                            </a>
-                        </li>
                         <% if (locals.userLogin) { %>
+                            <% if (userLogin.rol === "admin") { %>
+                                <li>
+                                    <a href="/products/createItem">Crear
+                                    </a>
+                                </li>
+                            <% } %>
                             <li>
-                                <a href="/users/profile/<%= locals.userLogin.id %>">Hola!, <%= locals.userLogin.firstName %></a>
+                                <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
                             </li>
                             <li>
                                 <a href="/users/logout">SALIR</a>

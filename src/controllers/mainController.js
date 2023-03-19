@@ -51,7 +51,12 @@ module.exports  = {
 			toThousand,
 			keywords,
 		})
-    }
+    },
+     admin: (req,res) => {
+        return res.render("dashboardProduct",{
+            title : "Next Games | dashboard Productos"
+        })
+     }
 
     
 }
