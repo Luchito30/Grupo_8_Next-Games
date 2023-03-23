@@ -40,7 +40,7 @@ module.exports = {
                 lastName: lastName.trim(),
                 email: email.trim(),
                 password: hashSync(password,12),
-                userName: userName.toLowerCase().trim(),
+                userName: userName.trim(),
                 image: req.file ? req.file.filename : "default-image.png",
                 rol : 'user'
             };
@@ -71,7 +71,7 @@ module.exports = {
 
        if(errors.isEmpty()){
            
-             const {id, firstName, rol} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail.toLowerCase());
+             const {id, firstName, rol} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail);
 
             req.session.userLogin = {
                 id,

@@ -25,8 +25,6 @@ body {
     color: #fff;
     font-family: sans-serif;
     position: relative;
-
-
     font-size: 24px;
     text-align: center;
     height: 80px;
@@ -210,6 +208,10 @@ form {
 .name {
     margin-top: 43px;
     margin-right: 25px;
+}
+
+.register__avataradv{
+    color: white;
 }
 
 

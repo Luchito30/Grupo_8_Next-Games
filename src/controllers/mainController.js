@@ -57,7 +57,8 @@ module.exports  = {
         const products = readJSON("productDataBase.json")
         return res.render("dashboardProduct",{
             title : "Next Games | dashboard Productos",
-            products
+            products,
+            toThousand
         })
      }
 

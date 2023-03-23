@@ -1,0 +1,21 @@
+.dashboard--image, .dashboard--price, .dashboard--discount, .dashboard--category, .dashboard--subCategory{
+    display: none;
+}
+@media (min-width: 560px) {
+    .dashboard--price, .dashboard--discount{
+        display: revert;
+    }
+}
+@media(min-width: 769px){
+    .dashboard--category, .dashboard--subCategory{
+        display: revert;
+    }
+}
+@media(min-width:1024px){
+    .dashboard--image{
+        display: revert;
+    }
+    .dashboard--img{
+        width: 25%;
+    }
+}

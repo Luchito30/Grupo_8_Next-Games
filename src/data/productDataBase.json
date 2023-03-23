@@ -227,7 +227,7 @@
       "discount": 0,
       "image": "card10usa.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -238,7 +238,7 @@
       "discount": 0,
       "image": "card100usa.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -249,7 +249,7 @@
       "discount": 0,
       "image": "card50arg.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -260,7 +260,7 @@
       "discount": 0,
       "image": "play6.png",
       "subCategory": "Consolas",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -271,7 +271,7 @@
       "discount": 0,
       "image": "note11.jpg",
       "subCategory": "Notebooks",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -304,7 +304,7 @@
       "discount": 0,
       "image": "play4.jpg",
       "subCategory": "Consolas",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -315,7 +315,7 @@
       "discount": 0,
       "image": "nuevo8.jpg",
       "subCategory": "Consolas",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -326,7 +326,7 @@
       "discount": 0,
       "image": "oferta17.jpg",
       "subCategory": "Consolas",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -337,7 +337,7 @@
       "discount": 0,
       "image": "card10arg.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -348,7 +348,7 @@
       "discount": 0,
       "image": "card100arg.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -359,7 +359,7 @@
       "discount": 0,
       "image": "card75arg.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -370,7 +370,7 @@
       "discount": 0,
       "image": "card20arg.jpg",
       "subCategory": "Gifts Cards",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -392,7 +392,7 @@
       "discount": 0,
       "image": "play9.jpg",
       "subCategory": "Consolas",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {
@@ -403,7 +403,7 @@
       "discount": 0,
       "image": "play10.jpg",
       "subCategory": "Consolas",
-      "category": "null",
+      "category": "normally",
       "images": []
    },
    {

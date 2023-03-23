@@ -4,7 +4,12 @@
         <img class="home__main--img" src="/images/products/<%= image %>" alt="imagen">
 
         <div class="home__main--div">
-            <img src="/images/<%= category == "in-sale" ? "p-oferta.png" : "p-nuevo.png"%>" alt="oferta">
+            <% if ( category == "in-sale" ) { %>
+                <img src="/images/p-oferta.png" alt="oferta">
+                <% } %>
+                <% if (category == "newer") { %>
+                  <img src="/images/p-nuevo.png" alt="nuevo">
+                  <% } %>
             <div class="home__main--flex">
                 <div class="card__precio">
                     <p class="home__main--descuento">
