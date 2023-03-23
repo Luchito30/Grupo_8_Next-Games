@@ -1,16 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const { readJSON} = require("../data");
-
-const productsFilePath = path.join(__dirname, '../data/productDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
+const { readJSON, writeJSON} = require("../data");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports  = {
     home: (req,res) =>{
-        const products = readJSON("productDataBase.json")
+    const products = readJSON("productDataBase.json")
     const inSale = products.filter(product => product.category === "in-sale" )
     const computacion = products.filter(product => product.subCategory === "Notebooks" )
     const ingresos = products.filter(product => product.category === "newer" )
@@ -29,8 +25,7 @@ module.exports  = {
      })   
     },
     newslletter: (req,res) =>{
-        const newslletteremail = path.join(__dirname, '../data/newsletter.json');
-        const noticias = JSON.parse(fs.readFileSync(newslletteremail, 'utf-8'));
+        const noticias =  readJSON("newsletter.json")
         const{email}= req.body;
 
         const newNoticia={
@@ -38,7 +33,7 @@ module.exports  = {
             email: email
         };
           noticias.push(newNoticia);
-          fs.writeFileSync('./data/newsletter.json', JSON.stringify(noticias, null,3), 'utf-8')
+          writeJSON("newsletter.json", noticias)
           return res.redirect('/')
 
     },
@@ -52,15 +47,5 @@ module.exports  = {
 			toThousand,
 			keywords,
 		})
-    },
-     admin: (req,res) => {
-        const products = readJSON("productDataBase.json")
-        return res.render("dashboardProduct",{
-            title : "Next Games | dashboard Productos",
-            products,
-            toThousand
-        })
-     }
-
-    
+    }
 }

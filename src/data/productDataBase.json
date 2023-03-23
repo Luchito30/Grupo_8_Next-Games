@@ -13,11 +13,11 @@
    {
       "id": 2,
       "name": "NBA2K23 PS4",
+      "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
       "price": 18000,
       "discount": 5,
       "subCategory": "Juegos",
       "category": "in-sale",
-      "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
       "image": "item2.jpg",
       "images": []
    },

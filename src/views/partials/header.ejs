@@ -96,23 +96,23 @@
                                     </li>
                                     <% if (locals.userLogin) { %>
                                         <% if (userLogin.rol === "admin") { %>
-                                            <li>
+                                            <li  class="header__nav--navegacion--primaria">
                                                 <a href="/products/createItem">Crear
                                                 </a>
                                             </li>
                                         <% } %>
-                                        <li>
+                                        <li  class="header__nav--navegacion--primaria">
                                             <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
                                         </li>
-                                        <li>
+                                        <li  class="header__nav--navegacion--primaria">
                                             <a href="/users/logout">SALIR</a>
                                         </li>
                                         <% } else { %>
-                                            <li>
+                                            <li  class="header__nav--navegacion--primaria">
                                                 <a href="/users/register">Registro
                                                 </a>
                                             </li>
-                                            <li>
+                                            <li  class="header__nav--navegacion--primaria">
                                                 <a href="/users/login">Login
                                                 </a>
                                             </li>

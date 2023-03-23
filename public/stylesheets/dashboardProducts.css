@@ -1,21 +1,42 @@
-.dashboard--image, .dashboard--price, .dashboard--discount, .dashboard--category, .dashboard--subCategory{
+.dashboard--image,
+.dashboard--price,
+.dashboard--discount,
+.dashboard--category,
+.dashboard--subCategory,
+.dashboard--image2 {
     display: none;
 }
+
+.dashboard--accion {
+    width: 150px;
+    text-align: center;
+}
+
 @media (min-width: 560px) {
-    .dashboard--price, .dashboard--discount{
+
+    .dashboard--price,
+    .dashboard--discount {
         display: revert;
+        text-align: center;
     }
 }
-@media(min-width: 769px){
-    .dashboard--category, .dashboard--subCategory{
+
+@media(min-width: 769px) {
+
+    .dashboard--category,
+    .dashboard--subCategory {
         display: revert;
+        text-align: center;
     }
 }
-@media(min-width:1024px){
-    .dashboard--image{
+
+@media(min-width:1024px) {
+    .dashboard--image {
         display: revert;
+        text-align: center;
     }
-    .dashboard--img{
-        width: 25%;
+
+    .dashboard--img {
+        width: 40%;
     }
 }

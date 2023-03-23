@@ -7,10 +7,12 @@
         <%- include('../partials/header.ejs') %>
 
 
+            <% if (locals.userLogin && userLogin.rol === "admin") { %>
             <div class="detalle__boton--edit">
-                <a href="/products/edicion/<%= id %>"><button class="card-btn1">
-                        editar producto</button></a>
+                <a href="/admin/dashboardProduct"><button class="card-btn1">
+                        Volver</button></a>
             </div>
+            <% } %>
 
             <main class="main-detalledeproducto">
                 <div class="main-detalledeproducto-boxOne">
@@ -65,7 +67,7 @@
                             </div>
                             <div>
                                 <a href="/products/carrito"><button class="card-btn">
-                                        añadir tarjeta</button></a>
+                                       Agregar Carrito</button></a>
                             </div>
                         </div>
                     </section>
@@ -155,7 +157,7 @@
                                 </p>
                                 <% } %>
                     </div>
-                    <div class="detalle__add-card">
+                    <div class="detalle__add-card2">
                         <div>
                             <h5 class="detalle__cantidad">cantidad:</h5>
                             <button>-</button>
@@ -163,8 +165,8 @@
                             <button>+</button>
                         </div>
                         <div>
-                            <a href="/products/carrito"><button class="card-btn">
-                                    añadir tarjeta</button></a>
+                            <a href="/products/carrito"><button class="card-btn2">
+                                Agregar Carrito</button></a>
                         </div>
                     </div>
                 </section>
