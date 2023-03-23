@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+  <!-- header -->
+  <%- include('../partials/header.ejs') %>
+
+
+    <main class="main-crear">
+
+      <form method="POST" class="crear-form"  enctype="multipart/form-data">
+
+        <h1 class="titulo-crear">
+          Crea un nuevo producto
+        </h1>
+
+        <small class="text-crear"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+        <div class="crear__nameprodu">
+          <label for="nombre">Nombre del producto</label>
+          <input type="text" name="name" id="nameprodu" placeholder="Nombre del producto"  value="<%= (locals.old && old.name) && old.name %>">
+        </div>
+
+        <div class="crear__boxprecio">
+
+        <section class="crear-formulario-2">
+          <small class="text-crear"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+          <div class="crear-formulario-2__precio">
+            <label for="precio">Precio</label>
+            <input type="number" placeholder="Precio" name="price" id="precio" value="<%= (locals.old && old.price) && old.price %>">
+          </div>
+        </section>
+
+        <section class="crear-formulario-2">
+          <small class="text-crear"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+          <div class="crear-formulario-2__precio">
+            <label for="discount">Descuento</label>
+            <input type="number" placeholder="Ingrese Descuento" name="discount" id="discount" value="<%= locals.old && old.discount ? old.discount : 0 %>" >
+          </div>
+        </section>
+
+      </div>
+
+        <div class="crear__subtitulo">
+          <h3>Estado del Producto</h3>
+        </div>
+
+        <div class="dropdown--crear">
+          <select name="category" id="lang" class="form-control">
+            <option value="" selected hidden>Seleccione...</option>
+            <option value="newer" <%= locals.old && old.category && old.category === "newer" ? 'selected' : null %>>Nuevo</option>
+            <option value="normally " <%= locals.old && old.category && old.category === "normally " ? 'selected' : null %>>Normal</option>
+            <option value="in-sale" <%= locals.old && old.category && old.category === "in-sale" ? 'selected' : null %>>Oferta</option>
+          </select>
+          <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+        </div>
+
+        <div class="crear__subtitulo">
+          <h3>Seleccioná la categoria</h3>
+        </div>
+
+        <div class="dropdown--crear">
+          <select name="subCategory" id="lang" class="form-control">
+            <option value="" selected hidden>Seleccione...</option>
+            <option value="Perifericos" <%= locals.old && old.subCategory && old.subCategory === "Perifericos" ? 'selected' : null %>>Perifericos</option>
+            <option value="Juegos" <%= locals.old && old.subCategory && old.subCategory === "Juegos" ? 'selected' : null %>>Juegos</option>
+            <option value="Gifts Cards" <%= locals.old && old.subCategory && old.subCategory === "Gifts Cards" ? 'selected' : null %>>Gifts Cards</option>
+            <option value="Consolas" <%= locals.old && old.subCategory && old.subCategory === "Consolas" ? 'selected' : null %>>Consolas</option>
+            <option value="Notebooks" <%= locals.old && old.subCategory && old.subCategory === "Notebooks" ? 'selected' : null %>>Notebooks</option>
+            <option value="Accesorios" <%= locals.old && old.subCategory && old.subCategory === "Accesorios" ? 'selected' : null %>>Accesorios</option>
+          </select>
+          <smallp class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></smallp>
+        </div>
+
+
+        
+        <div class="crear__subtitulo">
+          <h3>Imagen del Producto</h3>
+        </div>
+
+        <small class="text-crear"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
+       <div class="submit-btn--crear">
+          <input type="file" id="myFile" name="image" class="submit-btn--crear__buscar">
+          <label for="myFile">
+            <i class="fa-solid fa-image"></i><br>
+            <div class="submit-btn--crea__nombrearchi">
+              <span>Subir imagen</span>
+            </div>
+          </label >
+        </div>
+
+        <div class="crear__subtitulo">
+          <h3>Imagenes del Producto</h3>
+        </div>
+
+        <small class="text-crear"><%= locals.errors && errors.images ? errors.images.msg : null %></small>
+        <div class="submit-btn--crear2">
+          <label for="images" class="form-label"> <i class="fa-solid fa-image"></i><br>
+            <div class="submit-btn--crea__nombrearchi2">
+              <span>Subir imagenes</span>
+            </div></label>
+          <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" multiple/>
+        </div>
+
+
+        <div class="crear__subtitulo">
+          <h3>Descripción del producto</h3>
+        </div>
+
+
+        <section class="crear__descripcion">
+          <small class="text-crear"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+          <div class="crear-formulario-2__descripcion">
+            <label for="Descripcion"></label>
+            <textarea name="description" id="Descripcion" cols="30" rows="10"><%= (locals.old && old.description) && old.description %></textarea>
+          </div>
+        </section>
+
+        <div class="crear-btnform">
+          <button type="submit" class="crear-btn--submit">Aceptar</button>
+
+
+          <button type="reset" class="crear-btn--reset">Resetear</button>
+
+
+          <a href="/products" class="crear-btn--cancelar"><span class="crear-btn--cancelar--letra">Cancelar</span></a>
+        </div>
+      </form>
+    </main>
+    <script src="/javascripts/buscarimagen.js"></script>
+
+  
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

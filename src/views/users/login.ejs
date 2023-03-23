@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <main class="login__main">
+
+        <section class="login__main__costados">
+            <div class="login__main__costados--left">
+                <img src="/images/Fondo_1.png" alt="Imagen no encontrada" class="login__main_left--img">
+            </div>
+    
+            <div class="login__main__costados--right">
+                <img src="/images/Fondo_2.png" alt="Imagen no encontrada" class="login__main_right--img">
+            </div>
+        </section>
+
+        <section class="login__main__section">
+            <div class="login__main__section--titulo">
+                <h1 class="login__main__section--h1">Iniciar Sesion</h1>
+            </div>
+        </section>
+
+        <section class="login__main__section2">
+            <form autocomplete="off" action="" method="POST" class="login__main__section2--form">
+                <div class="login__main__form-control">
+                    <label for="username">Usuario o correo electrónico</label>
+                    <input type="text" id="username" placeholder="Usuario o correo electrónico" name="useremail">
+                    <small class="text"> <%= (locals.errors && errors.useremail) && errors.useremail.msg %></small>
+                </div>
+                <div class="login__main__form-control">
+                    <label for="password">Contraseña <button class="form__button" type="button" onclick="mostrarContrasena()"><i class="fa-solid fa-eye"></i></button></label>
+                    <input type="password" id="password" placeholder="Contraseña" name="password">
+                    <small class="text"><%= (locals.errors && errors.password) && errors.password.msg %></small>
+                </div>
+                <div class="login__recordame">
+                    <label for="remember">Recordarme</label>
+                    <input style="margin:20px 10px"  type="checkbox" name="remember">
+                </div>
+                
+                <div>
+                    <input class="login__enviar" type="submit" value="Ingresar">
+                </div>
+            </form>
+        </section>
+       
+        <section class="login__main__section3">
+            <div class="login__main__section3--inicio">
+                <div>
+                    <hr class="login__main_div--hrleft">  
+                </div>     
+                
+                <div>           
+                    <span class="login__main__section3--span">O INICIA 
+                        SESIÓN CON</span>  
+                </div>  
+            
+                <div>
+                    <hr class="login__main-div--hrrigth">
+                </div>
+            </div>        
+        </section>
+
+        <section class="login__main__section4">
+        <div class="login__main__section4_div">
+            <button class="login__main__section4_div--button">
+                <div class="login__main__section4_div2--span">
+                    <a href="/"><img class="login__main-div2--img" src="/images/Logo-logeo.png" alt="Google" class="login__main__section4_div2--img">
+                   <span>Login con Google</span></a>
+                </div>
+            </button>
+        </div>
+        </section>
+
+
+        <section class="login__main__section5">
+        <div class="login__main__section5_div">
+            <p class="login__main__section5_div--p">
+                <a class="login__main__section5_div--link" href="#"> ¿No podes iniciar sesión?<i class="fa-solid fa-up-right-from-square"></i>
+            </p>
+        </div>
+
+        <div class="login__main__section5_div2">
+            <p class="login__main__section5_div2--p">
+                ¿No tienes cuenta? <span class="login__main_div2--span"><a class="login__main__section5_div--link2" href="/users/register">Create una</a></span>
+            </p>
+        </div>
+        </section>
+        
+    </main>
+     <!--whatsapp-->
+     <%- include('../partials/whatsApp.ejs') %>
+
+    <!-- footer -->
+    <%- include('../partials/footer.ejs') %>
+
+
+</body>
+<script src="/javascripts/login.js"></script>
+</html>

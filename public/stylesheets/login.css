@@ -22,13 +22,14 @@
 }
 
 .login__main__section2--form .login__main__form-control input {
+    height: 40px;
     display: block;
     border: none;
     border-bottom: 1px solid #ccc;
     width: 100%;
     padding: 8px 13px;
     position: relative;
-    top: -18px;
+    top: -30px;
     transition: all 0.3s;
     background-color: var(--fondo1VioletaO);
     font-size: 13px;
@@ -69,13 +70,6 @@
     position: relative;
 }
 
-.login__main__form-control--button {
-    display: flex;
-    justify-content: right;
-    margin-top: -52px;
-    margin-right: 6px;
-}
-
 .form__button {
     border: none;
     background-color: transparent;
@@ -83,7 +77,7 @@
     font-size: 18px;
     position: relative;
     z-index: 2;
-    bottom: 5px;
+    float: right;
 }
 
 .form__button:hover {
@@ -204,6 +198,12 @@
     display: none;
 }
 
+.login__recordame{
+    color: white;
+    font-family: 'Inter';
+    margin-top: -30px;
+}
+
 /* tablet */
 @media(min-width:485px) {
     .login__main__section {
@@ -246,7 +246,6 @@
     }
 
     .login__main__section2--form .login__main__form-control input {
-        top: -23px;
         font-size: 17px;
     }
 
@@ -278,7 +277,6 @@
     }
 
     .login__main__section2--form .login__main__form-control input {
-        top: -23px;
         font-size: 18px;
     }
 
@@ -302,14 +300,14 @@
     .login__main__costados--left {
         position: absolute;
         width: 285px;
-        min-height: 644px;
+        min-height: 736px;
         background-color: rgba(188, 121, 240, 0.4);
     }
 
     .login__main__costados--right {
         width: 285px;
         position: absolute;
-        min-height: 644px;
+        min-height: 736px;
         background-color: rgba(188, 121, 240, 0.4);
         right: 0;
     }
@@ -317,14 +315,14 @@
     .login__main_left--img {
         width: 285px;
         position: absolute;
-        min-height: 644px;
+        min-height: 736px;
         z-index: -1;
     }
 
     .login__main_right--img {
         width: 285px;
         position: absolute;
-        min-height: 644px;
+        min-height: 736px;
         z-index: -1;
     }
 

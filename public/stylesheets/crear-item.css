@@ -1,3 +1,12 @@
+.text-crear {
+    font-family: 'Inter', sans-serif;
+    color: red;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    background-color: snow;
+    font-size: 13px;
+}
 .titulo-crear{
     text-align: center;
     color: white;

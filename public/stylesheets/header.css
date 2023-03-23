@@ -43,22 +43,23 @@ a {
     width: 0;
     position: relative;
     right: 8px;
+    top: 5px;
 }
 
 .right-nav-bar--form>div {
     display: flex;
     background-color: var(--fondo2VioletaC);
-    padding: 11px 20px 5px 14px;
+    padding: 5px 20px 5px 14px;
     border-radius: 30px;
     margin-bottom: 2px;
     position: absolute;
-    top: 20px;
+    top: 17px;
     transition: all 0.8s ease;
     z-index: 10;
 }
 
 .right-nav-bar--form>div:hover {
-    top: 73px;
+    top: 70px;
     right: 75px;
     background-color: var(--fondo1VioletaO);
 }
@@ -517,3 +518,4 @@ a {
     }
 
 }
+

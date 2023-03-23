@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+<body>
+
+  <%- include('../partials/header.ejs') %>
+
+
+
+    <main>
+      <div class="split-screen">
+
+        <div class="left-register">
+          <div class="titles">
+            <h1>Start your gaming journey with us</h1>
+            <h2 class="titulo-register1">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</h2>
+
+          </div>
+        </div>
+
+
+        <div class=" right-register">
+          <form method="POST" action="" enctype="multipart/form-data">
+            <section class="titles-register">
+              <div class="titles-left">
+                <h2 class="titulo-register1">CREA TU CUENTA</h2>
+                <h3 class="titulo-register2">Ya tenes una cuenta? ingresa <a class="aca" href="/users/login">aca</a>
+                </h3>
+              </div>
+              <div class="login-register">
+                <button class="google">
+                  <img src="/images/google-icon.png" alt="logo-google" class="log">
+                  Sign up with Google
+                </button>
+
+            </section>
+            <div class="divider">
+              <span class="orSpan">
+                or</span>
+              <hr class="hr-register">
+
+            </div>
+
+            <div class="card">
+              <div class="forms">
+                <div class="name">
+                  <input type="file" name="image" id="<%= locals.errors && errors.images ? "boder-color2" : "register-image" %>">
+                  <label for="">Avatar</label>
+                  <p class="text"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
+
+
+                  <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>"  id="<%= locals.errors && errors.firstName ? "boder-color" : null%>" style="color: white;">
+                  <label for="">Nombre</label>
+                  <p class="text"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></p>
+
+                  <input type="text" name="lastName" value="<%= (locals.old && old.lastName) && old.lastName%>" id="<%= locals.errors && errors.lastName ? "boder-color" : null%>" style="color: white;">
+                  <label for="">Apellido</label>
+                  <p class="text"><%= locals.errors && errors.lastName ? errors.lastName.msg : null %></p>
+
+                  <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>" id="<%= locals.errors && errors.userName ? "boder-color" : null%>" style="color: white;">
+                  <label for="">Usuario</label>
+                  <p class="text"><%= locals.errors && errors.userName ? errors.userName.msg : null %></p>
+
+                  <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="<%= locals.errors && errors.email ? "boder-color" : null%>" style="color: white;">
+                  <label for="">E-mail</label>
+                  <p class="text"><%= locals.errors && errors.email ? errors.email.msg : null %></p>
+
+                  <input type="password" name="password" id="<%= locals.errors && errors.password ? "boder-color" : null%>" style="color: white;">
+                  <label for="">Contraseña</label>
+                  <p class="text"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
+
+                  <input type="password" name="password2" id="<%= locals.errors && errors.password2 ? "boder-color" : null%>" style="color: white;">
+                  <label for="" >Confirmar</label>
+                  <p class="text"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></p>
+
+                  <small class="register__avataradv">*Nombre de usuario se debe respetaran mayusculas y minusculas para el ingreso </small>
+                </div>
+                <button type="submit" class="guardar">Registrar</button>
+
+              </div>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </main>
+
+     <!--whatsapp-->
+     <%- include('../partials/whatsApp.ejs') %>
+    <!-- footer -->
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>
