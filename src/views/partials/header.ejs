@@ -27,14 +27,14 @@
                     <% if (locals.userLogin) { %>
                         <% if (userLogin.rol === "admin") { %>
                             <li>
-                                <a href="/products/createItem">Crear
+                                <a href="/admin/dashboardProduct">Dashboard
                                 </a>
                             </li>
                         <% } %>
-                        <li>
-                            <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
+                        <li id="header__admin--li2">
+                            <a href="/users/profile/<%= userLogin.id %>"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : "default-image.png" %>" alt="">Hola, <%= locals.userLogin.firstName %></a>
                         </li>
-                        <li>
+                        <li id="header__admin--li">
                             <a href="/users/logout">SALIR</a>
                         </li>
                         <% } else { %>
@@ -96,8 +96,8 @@
                                     </li>
                                     <% if (locals.userLogin) { %>
                                         <% if (userLogin.rol === "admin") { %>
-                                            <li  class="header__nav--navegacion--primaria">
-                                                <a href="/products/createItem">Crear
+                                            <li class="header__nav--navegacion--primaria">
+                                                <a href="/admin/dashboardProduct">Dashboard
                                                 </a>
                                             </li>
                                         <% } %>
@@ -187,14 +187,14 @@
                         <% if (locals.userLogin) { %>
                             <% if (userLogin.rol === "admin") { %>
                                 <li>
-                                    <a href="/products/createItem">Crear
+                                    <a href="/admin/dashboardProduct">Dashboard
                                     </a>
                                 </li>
                             <% } %>
-                            <li>
-                                <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
+                            <li id="header__admin--li2">
+                                <a href="/users/profile/<%= userLogin.id %>"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : "default-image.png" %>" alt="">Hola, <%= locals.userLogin.firstName %></a>
                             </li>
-                            <li>
+                            <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>
                             </li>
                             <% } else { %>

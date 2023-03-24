@@ -71,17 +71,17 @@ module.exports = {
 
        if(errors.isEmpty()){
            
-             const {id, firstName, rol} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail);
+             const {id, firstName, rol,image} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail);
 
             req.session.userLogin = {
                 id,
                 firstName,
-                rol
-                
-            };
+                rol,
+                image
+                };
 
             if(req.body.remember){
-                res.cookie('usernextgames',req.session.userLogin,{maxAge: 1000*60} )
+                res.cookie('usernextgames',req.session.userLogin,{maxAge: 1000*60*10} )
            }
 
             return res.redirect('/')
@@ -95,7 +95,7 @@ module.exports = {
         
     },
     profile : (req,res) => {
-        const users=readJSON('user.json');
+        const users = readJSON('user.json');
         const {id}= req.session.userLogin;
         const user= users.find((user)=> user.id === +id)
 
@@ -112,11 +112,6 @@ module.exports = {
         req.session.destroy();
         res.clearCookie("usernextgames")
         return res.redirect('/')
-    },
-    list : (req,res) => {
-        return res.render('users/users',{
-            users : readJSON('user.json')
-        })
     }
 }
 

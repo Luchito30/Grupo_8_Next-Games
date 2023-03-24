@@ -65,10 +65,10 @@
                             <section>
                                 <div class="edicion__subtitulos">Imagenes del Producto</div>
                                 <small class="text-crear"><%= locals.errors && errors.images ? errors.images.msg : null %></small>
-                                <div class="submit-btn--crear2" id="crear__color">
-                                    <input type="file" class="submit-btn--crear__buscar2" id="images" name="images"
-                                        multiple />
-                                    <label for="images" class="form-label"> <i class="fa-solid fa-image"></i><br>
+                                <div class="submit-btn--crear" id="crear__color">
+                                    <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" value="<%= images.length + " Imagenes seleccionadas" %>" multiple>
+                                    <label for="images">
+                                        <i class="fa-solid fa-image"></i><br>
                                         <div class="submit-btn--crea__nombrearchi2">
                                             <span>
                                                 <%= images.length + " Imagenes seleccionadas" %>
@@ -132,7 +132,8 @@
                     </section>
                 </div>
             </main>
+            <script src="/javascripts/buscarimagen.js"></script>
             <!-- Footer -->
             <%- include('../partials/footer.ejs') %>
-
+    </body>
 </html>

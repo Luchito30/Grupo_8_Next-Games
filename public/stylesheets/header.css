@@ -146,6 +146,16 @@ a {
     height: 100%;
 }
 
+#header__admin--li{
+    right: 25px;
+    position: absolute;
+}
+
+#header__admin--li2{
+    right: 125px;
+    position: absolute;
+}
+
 .header__menu1 {
     max-width: 1160px;
     margin: auto;
@@ -372,9 +382,12 @@ a {
     position: fixed;
     z-index: 100;
 }
+.header__avatar--image{
+ display: none;
+}
 
 
-@media (min-width: 560px) {
+@media (min-width: 658px) {
     .header__hamburgersa__menu {
         display: none;
     }
@@ -449,6 +462,7 @@ a {
     .header__container__menu {
         display: block;
     }
+    
 
 }
 
@@ -492,6 +506,15 @@ a {
         height: 60px;
         font-size: 20px;
         margin-top: 8px;
+    }
+
+    .header__avatar--image {
+        border: 1px solid black;
+        border-radius: 55px;
+        position: absolute;
+        display: flex;
+        right: 135px;
+        width: 60px;
     }
 }
 

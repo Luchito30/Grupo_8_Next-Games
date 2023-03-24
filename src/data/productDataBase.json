@@ -7,8 +7,12 @@
       "discount": 20,
       "subCategory": "Juegos",
       "category": "in-sale",
-      "image": "item1.jpg",
-      "images": []
+      "image": "1677359091729_products_.jpg",
+      "images": [
+         "img-1679600240532.jpg",
+         "img-1679600240530.jpg",
+         "img-1679600240531.jpg"
+      ]
    },
    {
       "id": 2,
@@ -19,7 +23,11 @@
       "subCategory": "Juegos",
       "category": "in-sale",
       "image": "item2.jpg",
-      "images": []
+      "images": [
+         "img-1679602776061.jpg",
+         "img-1679602776063.jpg",
+         "img-1679602776070.jpg"
+      ]
    },
    {
       "id": 3,
@@ -27,10 +35,14 @@
       "description": "Con este juego de Ghost of Tsushima vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 15000,
       "discount": 25,
-      "image": "item3.jpg",
-      "subCategory": "juegos",
+      "subCategory": "Perifericos",
       "category": "in-sale",
-      "images": []
+      "image": "item3.jpg",
+      "images": [
+         "img-1679603156202.jpg",
+         "img-1679603156203.jpg",
+         "img-1679603156204.jpg"
+      ]
    },
    {
       "id": 4,
@@ -41,7 +53,12 @@
       "subCategory": "Juegos",
       "category": "in-sale",
       "image": "item4.jpg",
-      "images": []
+      "images": [
+         "img-1679603293326.jpg",
+         "img-1679603293327.jpg",
+         "img-1679603293333.jpg",
+         "img-1679603293341.jpg"
+      ]
    },
    {
       "id": 5,
@@ -49,10 +66,15 @@
       "description": "Con este juego de One Piece vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 24999,
       "discount": 0,
-      "image": "item5.jpg",
       "subCategory": "Juegos",
       "category": "newer",
-      "images": []
+      "image": "item5.jpg",
+      "images": [
+         "img-1679604023559.jpg",
+         "img-1679604023563.jpg",
+         "img-1679604023564.jpg",
+         "img-1679604023571.jpg"
+      ]
    },
    {
       "id": 6,
@@ -60,10 +82,14 @@
       "description": "Con este juego de Dragon Ball vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 20000,
       "discount": 5,
-      "image": "item6.jpg",
       "subCategory": "Juegos",
       "category": "in-sale",
-      "images": []
+      "image": "item6.jpg",
+      "images": [
+         "img-1679604220489.jpg",
+         "img-1679604220490.jpg",
+         "img-1679604220525.jpg"
+      ]
    },
    {
       "id": 7,
@@ -71,10 +97,15 @@
       "description": "Con este juego de Resident Evil vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 24999,
       "discount": 0,
-      "image": "item7.jpg",
       "subCategory": "Juegos",
       "category": "newer",
-      "images": []
+      "image": "item7.jpg",
+      "images": [
+         "img-1679604480605.jpg",
+         "img-1679604480612.jpg",
+         "img-1679604480614.jpg",
+         "img-1679604480621.png"
+      ]
    },
    {
       "id": 8,
@@ -82,10 +113,14 @@
       "description": "Remasterizado para PlayStation 5. Experimenta más acción de personajes, historias extendidas a través de nuevas misiones y un Sistema social de hebras exclusivo para conectarte con otros jugadores del mundo",
       "price": 19999,
       "discount": 0,
-      "image": "item8.jpg",
       "subCategory": "Juegos",
       "category": "newer",
-      "images": []
+      "image": "item8.jpg",
+      "images": [
+         "img-1679604652356.jpg",
+         "img-1679604652357.jpg",
+         "img-1679604652358.jpeg"
+      ]
    },
    {
       "id": 9,
@@ -93,10 +128,13 @@
       "description": "Con este juego de Digimon vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 15000,
       "discount": 0,
-      "image": "item18.jpg",
       "subCategory": "Juegos",
       "category": "newer",
-      "images": []
+      "image": "item18.jpg",
+      "images": [
+         "img-1679604932365.jpg",
+         "img-1679604932370.jpg"
+      ]
    },
    {
       "id": 10,
@@ -104,21 +142,29 @@
       "description": "Juego Naruto Shippuden: Incluye las ediciones remasterizadas HD:Naruto: Ultimate Ninja StormNaruto: Ultimate Ninja Storm 2.Naruto: Ultimate Ninja Storm 3 Full Burst",
       "price": 12999,
       "discount": 0,
-      "image": "item10.jpg",
       "subCategory": "Juegos",
       "category": "newer",
-      "images": []
+      "image": "item10.jpg",
+      "images": [
+         "img-1679605191489.jpg",
+         "img-1679605191491.jpg",
+         "img-1679605191493.jpg"
+      ]
    },
    {
       "id": 11,
       "name": "Heavy Rain + Beyond Two Souls Ps4",
-      "description": "De los creadores de Heavy Rain, Beyond para PS4 es una aventura gráfica que nos contará la historia durante quince años de la complicada vida de Jodie Holmes (interpretada por la actriz Ellen Page), desde la infancia a la madurez, siempre acompañada de una presencia, un espíritu qué no sabemos quién es, ni por qué se mantiene a su lado, pero que la ayudara, aunque a veces también le complicará la existencia. Una aventura gráfica que aspira a contar una gran historia capaz de emocionar a los jugadores con un gran nivel de detalle en los rostros y la animación de los personajes.",
+      "description": "Beyond para PS4 es una aventura gráfica que nos contará la historia durante quince años de la complicada vida de Jodie Holmes (interpretada por la actriz Ellen Page), desde la infancia a la madurez, siempre acompañada de una presencia, un espíritu qué no sabemos quién es, ni por qué se mantiene a su lado, pero que la ayudara.",
       "price": 14999,
       "discount": 5,
-      "image": "item17.jpg",
-      "category": "in-sale",
       "subCategory": "Juegos",
-      "images": []
+      "category": "in-sale",
+      "image": "item17.jpg",
+      "images": [
+         "img-1679607511495.jpg",
+         "img-1679607511491.jpg",
+         "img-1679607511494.jpg"
+      ]
    },
    {
       "id": 12,
@@ -126,10 +172,15 @@
       "description": "Call of Duty: Modern Warfare Remastered lleva a la generación de PlayStation 4, Xbox One y de los PCs de la actualidad el exitoso videojuego de acción bélica en primera persona que supuso el salto a la era moderna de una franquicia que, hasta la fecha, se conocía por estar ambientada en la Segunda Guerra Mundial. Con la campaña y 10 mapas multijugador, los jugadores pueden rememorar una contemporánea guerra en un ficticio conflicto ambientado en Oriente Medio y otros lugares de Europa",
       "price": 14999,
       "discount": 0,
-      "image": "item11.jpg",
       "subCategory": "Juegos",
       "category": "newer",
-      "images": []
+      "image": "item11.jpg",
+      "images": [
+         "img-1679607815417.jpg",
+         "img-1679607815406.jpg",
+         "img-1679607815414.jpg",
+         "img-1679607815416.jpg"
+      ]
    },
    {
       "id": 13,
@@ -137,10 +188,15 @@
       "description": "Con este juego de Fallout vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
       "price": 12999,
       "discount": 5,
-      "image": "item12.jpg",
       "subCategory": "Juegos",
       "category": "in-sale",
-      "images": []
+      "image": "item12.jpg",
+      "images": [
+         "img-1679608169684.jpeg",
+         "img-1679608169686.jpg",
+         "img-1679608169694.jpg",
+         "img-1679608169699.jpg"
+      ]
    },
    {
       "id": 14,
@@ -148,10 +204,15 @@
       "description": "La notebook más delgada y ligera de Apple viene con los superpoderes del chip M1. Termina todos tus proyectos mucho más rápido con el CPU de 8 núcleos y disfruta como nunca antes de apps y juegos con gráficos avanzados gracias al GPU de hasta 8 núcleos.",
       "price": 688999,
       "discount": 5,
-      "image": "note1.jpg",
       "subCategory": "Notebooks",
       "category": "in-sale",
-      "images": []
+      "image": "note1.jpg",
+      "images": [
+         "img-1679609186774.jpg",
+         "img-1679609186775.jpg",
+         "img-1679609186776.jpg",
+         "img-1679609186778.jpg"
+      ]
    },
    {
       "id": 15,
@@ -159,10 +220,15 @@
       "description": "Potencie sus habilidades con la nueva Dell G15 Ryzen Edition. Especialmente diseñada para jugadores exigentes, esta laptop gamer tiene una pantalla de 15.6 pulgadas con una tasa de refresco de 120 Hz, procesador AMD de la serie 5000, gráficos Nvidia GeForce y tecnología Game Shift.\r\n\r\nCaracteristicas:\r\n\r\nMICROPROCESADOR RYZEN 7 5800H\r\nPLACA DE VIDEO GEFORCE 3050Ti RTX\r\nMEMORIA 8GB DDR4\r\nDISCO 512GB SSD\r\nPANTALLA 15.6\" FHD 120Hz\r\nSISTEMA OPERATIVO WIN 11 HOME\r\nPUERTOS HDMI x1 / ETHERNET x1 / USB x4\r\nCOLOR PHANTOM GREY\r\nTECLADO EN INGLES",
       "price": 410000,
       "discount": 5,
-      "image": "note2.jpg",
       "subCategory": "Notebooks",
       "category": "in-sale",
-      "images": []
+      "image": "note2.jpg",
+      "images": [
+         "img-1679609378138.jpg",
+         "img-1679609378141.jpg",
+         "img-1679609378147.jpg",
+         "img-1679609378181.jpg"
+      ]
    },
    {
       "id": 16,
@@ -170,10 +236,14 @@
       "description": "Alimentada por la nueva generación de gráficos NVIDIA® GeForce GTX™ y procesador Intel® Core™, la laptop gaming Victus tiene todo lo que necesitas para jugar y gestionar tus tareas diarias respetando el medio ambiente gracias a los materiales reciclados que integra.\r\n\r\n\r\n\r\nCaracteristicas:\r\n\r\n\r\nMICROPROCESADOR Ryzen 7 5800\r\nPLACA DE VIDEO GEFORCE 3050 RTX\r\nMEMORIA 16GB DDR4\r\nDISCO 512GB SSD\r\nPANTALLA 16.1\" FHD 60Hz\r\nSISTEMA OPERATIVO WIN 11 HOME\r\nPUERTOS 3.5MM JACK x1 / HDMI 2.1 x1 / USB 3.0 x4 / LAN x1 / DISPLAY PORT x1\r\nCOLOR NEGRO\r\nTECLADO EN INGLES",
       "price": 415000,
       "discount": 10,
-      "image": "note3.jpg",
       "subCategory": "Notebooks",
       "category": "in-sale",
-      "images": []
+      "image": "note3.jpg",
+      "images": [
+         "img-1679609776342.png",
+         "img-1679609776349.jpg",
+         "img-1679609776350.png"
+      ]
    },
    {
       "id": 17,
@@ -181,10 +251,14 @@
       "description": "Los procesadores Intel® Core™ te ofrecen un rendimiento superior para gaming y proporcionan la flexibilidad para realizar múltiples tareas sin problemas. La innovadora arquitectura nueva se adapta al núcleo correcto de la carga de trabajo adecuada, por lo que las tareas en segundo plano no interrumpirán tu sesión de juegos, y te da la libertad de chatear, navegar, transmitir, editar, grabar y reproducir sin ningún problema.",
       "price": 265000,
       "discount": 7,
-      "image": "note4.jpg",
       "subCategory": "Notebooks",
       "category": "in-sale",
-      "images": []
+      "image": "note4.jpg",
+      "images": [
+         "img-1679610258857.jpg",
+         "img-1679610258859.jpg",
+         "img-1679610258861.jpg"
+      ]
    },
    {
       "id": 18,
@@ -192,10 +266,14 @@
       "description": "Caracteristicas: \r\nPROCESADOR\r\nMarca: AMD / Modelo: Ryzen 7 5800H\r\nNúcleos: 8/16 / Frecuencia: 4.40 GHz\r\n\r\nGRÁFICOS\r\nMarca: nVidia / Modelo: GeForce RTX 3060 6Gb\r\n\r\nMEMORIA\r\nCapacidad: 16GB 3200Mhz (2x8GB)  / Tipo: DDR4 SODIMM\r\nExpansión: No\r\n\r\nALMACENAMIENTO\r\nCapacidad: 512Gb NVME / Clase: NVME SSD\r\nPuerto M2: Si\r\n\r\nPANTALLA\r\nTamaño: 15.6 / Resolución: 1920x1080 165Hz IPS G-Sync\r\n\r\nCONECTIVIDAD\r\nWiFi: Si, AX / Bluetooth: Si, 5.1\r\nHDMI: Si / Red: Si\r\nUSB Type A: 4 / USB Type C: 2\r\nGrabadora DVD: No / Lector Memorias: Si\r\n\r\nSISTEMA OPERATIVO\r\nOS: Windows 11 Home\r\n\r\nOTRAS ESPECIFICACIONES\r\nColor: Phantom Blue (Arriba), Shadow Black (Abajo) / WebCam: Si, HD\r\nTeclado: Español RGB / Pad Numérico: Si\r\nDimensiones: 26.06cm Profundidad, 36.25cm Ancho, 2.57cm Alto\r\nBatería: 60 Wh / Garantía: 12 Meses Lenovo Oficial\r\nPeso: 2.40Kg / Modelo: 82JU00ENAR",
       "price": 640000,
       "discount": 0,
-      "image": "note5.jpg",
       "subCategory": "Notebooks",
       "category": "newer",
-      "images": []
+      "image": "note5.jpg",
+      "images": [
+         "img-1679611534655.jpg",
+         "img-1679611534656.jpg",
+         "img-1679611534659.jpg"
+      ]
    },
    {
       "id": 19,
@@ -203,10 +281,14 @@
       "description": "La última iteración de la serie GAMING emblemática de MSI una vez más ofrece alto desempeño, bajo ruido y una estética que los gamers han llegado a reconocer y confiar. Ahora tú también puedes disfrutar de tus juegos favoritos con una tarjeta gráfica poderosa que se mantiene fría y silenciosa. Justo como te gusta",
       "price": 378000,
       "discount": 10,
-      "image": "nuevo10.jpg",
       "subCategory": "Perifericos",
       "category": "in-sale",
-      "images": []
+      "image": "nuevo10.jpg",
+      "images": [
+         "img-1679611804460.jpg",
+         "img-1679611804461.jpg",
+         "img-1679611804462.jpg"
+      ]
    },
    {
       "id": 20,
@@ -214,10 +296,13 @@
       "description": "Play Has No Limits Experimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.",
       "price": 327000,
       "discount": 0,
-      "image": "nuevo2.jpg",
       "subCategory": "Consolas",
       "category": "newer",
-      "images": []
+      "image": "nuevo2.jpg",
+      "images": [
+         "img-1679611922528.jpg",
+         "img-1679611922533.jpg"
+      ]
    },
    {
       "id": 21,
@@ -228,7 +313,9 @@
       "image": "card10usa.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card10usa.jpg"
+      ]
    },
    {
       "id": 22,
@@ -239,7 +326,9 @@
       "image": "card100usa.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card100usa.jpg"
+      ]
    },
    {
       "id": 23,
@@ -250,7 +339,9 @@
       "image": "card50arg.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card50arg.jpg"
+      ]
    },
    {
       "id": 24,
@@ -258,10 +349,14 @@
       "description": "joystick\r\ncontrol\r\ngamepad\r\njostin",
       "price": 21000,
       "discount": 0,
-      "image": "play6.png",
       "subCategory": "Consolas",
       "category": "normally",
-      "images": []
+      "image": "play6.png",
+      "images": [
+         "img-1679612373813.jpg",
+         "img-1679612373815.jpg",
+         "img-1679612373819.jpg"
+      ]
    },
    {
       "id": 25,
@@ -269,10 +364,15 @@
       "description": "Diseñado para juegos serios y durabilidad en el mundo real, TUF Gaming es una computadora portátil para juegos que puede llevarte a la victoria.",
       "price": 409999,
       "discount": 0,
-      "image": "note11.jpg",
       "subCategory": "Notebooks",
       "category": "normally",
-      "images": []
+      "image": "note11.jpg",
+      "images": [
+         "img-1679612531951.jpg",
+         "img-1679612531922.jpg",
+         "img-1679612531923.jpg",
+         "img-1679612531928.png"
+      ]
    },
    {
       "id": 26,
@@ -280,10 +380,15 @@
       "description": "MICROPROCESADOR INTEL i7-12650H\r\nPLACA DE VIDEO GEFORCE 3070 RTX\r\nMEMORIA 16GB DDR5\r\nDISCO 512GB SSD\r\nPANTALLA 15.6\" 144Hz\r\nSISTEMA OPERATIVO WIN 11 HOME\r\nCOLOR BLACK\r\nTECLADO EN INGLES",
       "price": 590000,
       "discount": 0,
-      "image": "note12.jpg",
       "subCategory": "Notebooks",
       "category": "newer",
-      "images": []
+      "image": "note12.jpg",
+      "images": [
+         "img-1679612776053.png",
+         "img-1679612776138.jpg",
+         "img-1679612776140.jpg",
+         "img-1679612776147.jpg"
+      ]
    },
    {
       "id": 27,
@@ -291,10 +396,12 @@
       "description": "Play Has No Limits™\r\nExperimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.",
       "price": 342000,
       "discount": 0,
-      "image": "play2.jpg",
       "subCategory": "Consolas",
       "category": "newer",
-      "images": []
+      "image": "play2.jpg",
+      "images": [
+         "img-1679612981992.jpg"
+      ]
    },
    {
       "id": 28,
@@ -302,10 +409,13 @@
       "description": "Play Has No Limits™\r\nExperimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.",
       "price": 319000,
       "discount": 0,
-      "image": "play4.jpg",
       "subCategory": "Consolas",
       "category": "normally",
-      "images": []
+      "image": "play4.jpg",
+      "images": [
+         "img-1679613061744.jpg",
+         "img-1679613061746.jpg"
+      ]
    },
    {
       "id": 29,
@@ -313,10 +423,13 @@
       "description": "Consola retro",
       "price": 6000,
       "discount": 0,
-      "image": "nuevo8.jpg",
       "subCategory": "Consolas",
       "category": "normally",
-      "images": []
+      "image": "nuevo8.jpg",
+      "images": [
+         "img-1679614569669.jpg",
+         "img-1679614569670.png"
+      ]
    },
    {
       "id": 30,
@@ -324,10 +437,13 @@
       "description": "Producto nuevo, en caja cerrada.",
       "price": 170000,
       "discount": 0,
-      "image": "oferta17.jpg",
       "subCategory": "Consolas",
       "category": "normally",
-      "images": []
+      "image": "oferta17.jpg",
+      "images": [
+         "img-1679614800074.jpg",
+         "img-1679614800077.png"
+      ]
    },
    {
       "id": 31,
@@ -338,7 +454,9 @@
       "image": "card10arg.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card10arg.jpg"
+      ]
    },
    {
       "id": 32,
@@ -349,7 +467,9 @@
       "image": "card100arg.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card100arg.jpg"
+      ]
    },
    {
       "id": 33,
@@ -360,7 +480,9 @@
       "image": "card75arg.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card75arg.jpg"
+      ]
    },
    {
       "id": 34,
@@ -371,7 +493,9 @@
       "image": "card20arg.jpg",
       "subCategory": "Gifts Cards",
       "category": "normally",
-      "images": []
+      "images": [
+         "card20arg.jpg"
+      ]
    },
    {
       "id": 35,
@@ -379,10 +503,14 @@
       "description": "Steam Deck es el dispositivo de juego portátil más potente y lleno de funcionalidad del mundo.",
       "price": 430000,
       "discount": 0,
-      "image": "play8.jpg",
       "subCategory": "Consolas",
       "category": "newer",
-      "images": []
+      "image": "play8.jpg",
+      "images": [
+         "img-1679615106556.jpg",
+         "img-1679615106558.jpg",
+         "img-1679615106560.jpg"
+      ]
    },
    {
       "id": 36,
@@ -390,10 +518,14 @@
       "description": "La consola Nintendo Switch está diseñada para cualquier estilo de vida, transformándose rápidamente de una consola casera a una consola portátil.",
       "price": 210000,
       "discount": 0,
-      "image": "play9.jpg",
       "subCategory": "Consolas",
       "category": "normally",
-      "images": []
+      "image": "play9.jpg",
+      "images": [
+         "img-1679615400384.jpg",
+         "img-1679615400385.jpg",
+         "img-1679615400386.jpg"
+      ]
    },
    {
       "id": 37,
@@ -401,10 +533,13 @@
       "description": "La Xbox más rápida y potente de la historia.",
       "price": 306000,
       "discount": 0,
-      "image": "play10.jpg",
       "subCategory": "Consolas",
       "category": "normally",
-      "images": []
+      "image": "play10.jpg",
+      "images": [
+         "img-1679615567261.jpg",
+         "img-1679615567262.jpg"
+      ]
    },
    {
       "id": 38,
@@ -412,10 +547,15 @@
       "description": "La consola Nintendo Switch está diseñada para cualquier estilo de vida, transformándose rápidamente de una consola casera a una consola portátil.",
       "price": 227590,
       "discount": 0,
-      "image": "play11.jpg",
       "subCategory": "Consolas",
       "category": "newer",
-      "images": []
+      "image": "play11.jpg",
+      "images": [
+         "img-1679615772300.jpg",
+         "img-1679615772301.jpg",
+         "img-1679615772319.jpg",
+         "img-1679615772320.jpg"
+      ]
    },
    {
       "id": 39,
@@ -423,10 +563,14 @@
       "description": "Steam Deck es el dispositivo de juego portátil más potente y lleno de funcionalidad del mundo.",
       "price": 305000,
       "discount": 15,
-      "image": "play12.jpg",
       "subCategory": "Consolas",
       "category": "in-sale",
-      "images": []
+      "image": "play12.jpg",
+      "images": [
+         "img-1679615822759.jpg",
+         "img-1679615822760.jpg",
+         "img-1679615822761.jpg"
+      ]
    },
    {
       "id": 40,
@@ -434,9 +578,13 @@
       "description": "Tipo de control: Gamepad\r\nEs inalámbrico: Sí\r\nCon detección de movimiento: Sí\r\nCon vibración: Sí\r\nCon Bluetooth: Sí\r\nUnidades por paquete: 2\r\nCon touchpad: No",
       "price": 30000,
       "discount": 0,
-      "image": "play13.jpg",
       "subCategory": "Consolas",
       "category": "newer",
-      "images": []
+      "image": "play13.jpg",
+      "images": [
+         "img-1679615961730.png",
+         "img-1679615961738.jpg",
+         "img-1679615961739.jpg"
+      ]
    }
 ]

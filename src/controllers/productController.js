@@ -84,17 +84,18 @@ module.exports = {
             images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
           };
 
-          if (req.files.image) {
-            products.image.forEach(image => {
-              fs.existsSync(`./public/images/products/${image}`) && fs.unlinkSync(`./public/images/products/${image}`);
-            });
-          }
+         
+      if (req.files.image) {
+        req.files.image.forEach(file => {
+          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        });
+      }
 
-          if (req.files.images) {
-            products.images.forEach(images => {
-              fs.existsSync(`./public/images/products/${images}`) && fs.unlinkSync(`./public/images/products/${images}`);
-            });
-          }
+      if (req.files.images) {
+        req.files.images.forEach(images => {
+          fs.existsSync(`./public/images/products/${images}`) && fs.unlinkSync(`./public/images/products/${images}`);
+        });
+      }
 
           return productUpdated
         }
