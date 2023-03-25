@@ -12,6 +12,62 @@
     text-align: center;
 }
 
+#dashboardadmin__button{
+    font-size: 15px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.dashboardp__buscador{
+    background-color: white;
+    border-radius: 30px;
+    height: 40px;
+    padding-left: 20px;
+    border: none;
+    width: 250px;
+    margin-left: 5px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.dashboardp__buscador:hover{
+    background-color: var(--letrasSubtitulos2);
+}
+
+.dashboardp__buscador::placeholder{
+    color: black;
+}
+
+.dashboardp__buscador:hover::placeholder{
+    color: white;
+}
+
+.dashboardp__lupa{
+    border: 1px solid white;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 17px;
+    color: black;
+    position: relative;
+    right: 40px;
+    top: 1px;
+}
+
+.dashboardp__lupa:hover{
+    background-color: var(--letrasSubtitulos2);
+    color: white;
+}
+
+.dashboard__sn{
+    margin: 0 auto;
+    display: table;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    color: wheat;
+}
+
 @media (min-width: 560px) {
 
     .dashboard--price,
@@ -27,6 +83,17 @@
     .dashboard--subCategory {
         display: revert;
         text-align: center;
+    }
+    .dashboardp__section--nav{
+        display: flex;
+        justify-content: center;
+    }
+    .dashboardp__nav{
+        display: flex;
+        gap: 120px;
+    }
+    .dashboardp__buscador{
+        width: 350px;
     }
 }
 

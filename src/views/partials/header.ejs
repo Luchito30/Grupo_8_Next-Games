@@ -32,7 +32,7 @@
                             </li>
                         <% } %>
                         <li id="header__admin--li2">
-                            <a href="/users/profile/<%= userLogin.id %>"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : "default-image.png" %>" alt="">Hola, <%= locals.userLogin.firstName %></a>
+                            <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                         </li>
                         <li id="header__admin--li">
                             <a href="/users/logout">SALIR</a>
@@ -69,9 +69,7 @@
                                         <a href="/"><i class="fa-solid fa-house"></i>
                                         </a>
                                     </li>
-
-
-                                    <li class="header__nav--navegacion--primaria">
+                                            <li class="header__nav--navegacion--primaria">
                                         <a href="#">Productos</a>
                                         <ul>
                                             <li class="header__nav--navegacion--secundaria"><a
@@ -102,7 +100,7 @@
                                             </li>
                                         <% } %>
                                         <li  class="header__nav--navegacion--primaria">
-                                            <a href="users/profile/<%= userLogin.id %>">Hola, <%= locals.userLogin.firstName %></a>
+                                            <a href="/users/profile/<%= userLogin.id %>"> <span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                                         </li>
                                         <li  class="header__nav--navegacion--primaria">
                                             <a href="/users/logout">SALIR</a>
@@ -192,7 +190,7 @@
                                 </li>
                             <% } %>
                             <li id="header__admin--li2">
-                                <a href="/users/profile/<%= userLogin.id %>"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : "default-image.png" %>" alt="">Hola, <%= locals.userLogin.firstName %></a>
+                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                             </li>
                             <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>

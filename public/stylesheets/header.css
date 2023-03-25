@@ -509,12 +509,12 @@ a {
     }
 
     .header__avatar--image {
+        display: block;
         border: 1px solid black;
         border-radius: 55px;
-        position: absolute;
-        display: flex;
-        right: 135px;
         width: 60px;
+        position: relative;
+        right: 10px;
     }
 }
 

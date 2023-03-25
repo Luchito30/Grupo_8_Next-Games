@@ -8,10 +8,19 @@ module.exports = {
 
   index: (req, res) => {
     const products = readJSON("productDataBase.json");
+    let allproducts;
+    const {searchallprodu} = req.query
+
+      if(searchallprodu){
+        allproducts = products.filter(product => product.name.toLowerCase().includes(searchallprodu.toLowerCase()) || product.subCategory.toLowerCase().includes(searchallprodu.toLowerCase()) || product.category.toLowerCase().includes(searchallprodu.toLowerCase()) || product.description.toLowerCase().includes(searchallprodu.toLowerCase()))
+      }else{
+        allproducts = products
+      }
+
 
     return res.render('products', {
       title: "Next Games | Productos",
-      products,
+      products: allproducts,searchallprodu ,
       toThousand
     })
   },
