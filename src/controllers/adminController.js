@@ -11,7 +11,7 @@ module.exports = {
         if(searchprodu){
             productsDashboard = products.filter(product => product.name.toLowerCase().includes(searchprodu.toLowerCase()) || product.subCategory.toLowerCase().includes(searchprodu.toLowerCase()) || product.category.toLowerCase().includes(searchprodu.toLowerCase()) || product.description.toLowerCase().includes(searchprodu.toLowerCase()))
         }else{
-            productsDashboard = products
+            productsDashboard = products;
         }
 
 
@@ -23,9 +23,17 @@ module.exports = {
      },
      dashboardUser: (req,res) => {
         const users = readJSON("user.json")
+        let userDashboard;
+        const {searchuser} = req.query;
+
+        if(searchuser){
+            userDashboard = users.filter(user => user.firstName.toLowerCase().includes(searchuser.toLowerCase()) || user.lastName.toLowerCase().includes(searchuser.toLowerCase()) || user.email.toLowerCase().includes(searchuser.toLowerCase()) || user.userName.toLowerCase().includes(searchuser.toLowerCase()))
+        }else{
+            userDashboard = users;
+        }
         return res.render("admin/dashboardUser",{
             title : "Next Games | dashboard Usuarios",
-            users,
+            users: userDashboard, searchuser,
         })
      }
 }

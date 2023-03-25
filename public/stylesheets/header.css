@@ -383,7 +383,10 @@ a {
     z-index: 100;
 }
 .header__avatar--image{
- display: none;
+    display: none;
+}
+#header__nav__hamburger-secundary{
+    top: 109px;
 }
 
 

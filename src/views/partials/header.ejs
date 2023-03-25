@@ -27,8 +27,11 @@
                     <% if (locals.userLogin) { %>
                         <% if (userLogin.rol === "admin") { %>
                             <li>
-                                <a href="/admin/dashboardProduct">Dashboard
-                                </a>
+                                <a href="#">Dashboard</a>
+                                <ul>
+                                    <li><a href="/admin/dashboardProduct">Productos</a></li>
+                                    <li><a href="/admin/dashboardUser">Usuarios</a></li>
+                                </ul>
                             </li>
                         <% } %>
                         <li id="header__admin--li2">
@@ -95,8 +98,11 @@
                                     <% if (locals.userLogin) { %>
                                         <% if (userLogin.rol === "admin") { %>
                                             <li class="header__nav--navegacion--primaria">
-                                                <a href="/admin/dashboardProduct">Dashboard
-                                                </a>
+                                                <a href="#" >Dashboard</a>
+                                                <ul id="header__nav__hamburger-secundary">
+                                                    <li class="header__nav--navegacion--secundaria"><a href="/admin/dashboardProduct">Productos</a></li>
+                                                    <li class="header__nav--navegacion--secundaria"><a href="/admin/dashboardUser">Usuarios</a></li>
+                                                </ul>
                                             </li>
                                         <% } %>
                                         <li  class="header__nav--navegacion--primaria">
@@ -185,8 +191,11 @@
                         <% if (locals.userLogin) { %>
                             <% if (userLogin.rol === "admin") { %>
                                 <li>
-                                    <a href="/admin/dashboardProduct">Dashboard
-                                    </a>
+                                    <a href="#">Dashboard</a>
+                                    <ul>
+                                        <li><a href="/admin/dashboardProduct">Productos</a></li>
+                                        <li><a href="/admin/dashboardUser">Usuarios</a></li>
+                                    </ul>
                                 </li>
                             <% } %>
                             <li id="header__admin--li2">

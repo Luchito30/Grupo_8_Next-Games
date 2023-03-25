@@ -5,30 +5,65 @@
   <!-- Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
-<body>
+<body class="headeradmin_body">
     <%- include('../partials/headerAdmin.ejs') %>
+
+    <div class="home__main--titulo" id="headeradmin__titulo"><span
+        class="headeradmin__tituloletra">Usuarios</span></div>
+
+
+<section class="dashboardp__section--nav">
+<div class="dashboardp__nav">
+
+    <form action="/admin/dashboardUser" method="GET" autocomplete="off">
+        <div>
+            <input type="search" name="searchuser" id="searchuser" class="dashboardp__buscador" placeholder="Buscar Usuario" title="¿Que desea Buscar?">
+            <button class="dashboardp__lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </form>
+</div>
+</section>
     
     <div class= "table-responsive{-sm|-md|-lg|-xl|-xxl}">
-                 <table class="table table-striped">
+                 <table class="table table-striped" id="headeradmin__table">
                     <thead class="table-dark">
                         <tr>
-                            <th scope="col" class="dashboard--id">#</th>
-                            <th scope="col" class="dashboard--name">Nombre</th>
-                            <th scope="col" class="dashboard--price">Precio</th>
-                            <th scope="col" class="dashboard--discount">Descuento</th>
-                            <th scope="col" class="dashboard--total">Total</th>
-                            <th scope="col" class="dashboard--category">Estado</th>
-                            <th scope="col" class="dashboard--subCategory">Categoria</th>
-                            <th scope="col" class="dashboard--image">Imagen</th>
-                            <th scope="col" class="dashboard--accion">Acciones</th>
+                            <th scope="col" class="dashboarduser--id">#</th>
+                            <th scope="col" class="dashboarduser--name">Nombre</th>
+                            <th scope="col" class="dashboarduser--lastname">Apellido</th>
+                            <th scope="col" class="dashboarduser--email">Email</th>
+                            <th scope="col" class="dashboarduser--user">Usuario</th>
+                            <th scope="col" class="dashboarduser--rol">Rol</th>
+                            <th scope="col" class="dashboarduser--image">Imagen</th>
+                            <th scope="col" class="dashboarduser--accion">Acciones</th>
                         </tr>
                     </thead>
                     <tbody class="table-light">
-                        
+                        <% users.forEach(({id,firstName,lastName,email,userName,rol,image})=> { %>
+                            <tr>
+                                <th scope="row" class="dashboard--id"><%= id %></th>
+                                <td class="dashboarduser--name"><%= firstName %></td>
+                                <td class="dashboarduser--lastname"><%= lastName %></td>
+                                <td class="dashboarduser--email"><%= email %>%</td>
+                                <td class="dashboarduser--user"><%= userName %></td>
+                                <td class="dashboarduser--rol"><%= rol %></td>
+                                <td class="dashboarduser--image"><img class="dashboard--img" src="/images/users/<%= image %>"></td>
+                                <td class="dashboard--accion">
+                                    <div class="d-flex gap-2">
+                                        <a class="btn btn-sm btn-primary" href=""><i class="far fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-danger" href=""><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <% }) %>
                     </tbody>
 
                 </table>
             </div> 
+
+            <% if (!users.length) { %>
+                <h2 class="dashboard__sn">No se encontro Usuario</h2>
+            <% }%>
             
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
