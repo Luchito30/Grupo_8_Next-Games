@@ -75,7 +75,6 @@ module.exports = {
 
       const products = readJSON("productDataBase.json");
       const id = +req.params.id
-      const product = products.find(product => product.id === +id);
       const { name, discount, price, description, category, subCategory } = req.body;
 
       const productsModified = products.map(product => {
@@ -93,19 +92,6 @@ module.exports = {
             images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
           };
 
-         
-      if (req.files.image) {
-        req.files.image.forEach(file => {
-          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
-        });
-      }
-
-      if (req.files.images) {
-        req.files.images.forEach(images => {
-          fs.existsSync(`./public/images/products/${images}`) && fs.unlinkSync(`./public/images/products/${images}`);
-        });
-      }
-
           return productUpdated
         }
 
@@ -114,9 +100,24 @@ module.exports = {
 
 
       writeJSON("productDataBase.json", productsModified)
-      return res.redirect("/products")
+      return res.redirect("/admin/dashboardProduct")
 
     }else{
+      
+
+      if (req.files.image) {
+        req.files.image.forEach(file => {
+          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        });
+      }
+
+      if (req.files.images) {
+        req.files.images.forEach(file => {
+          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        });
+      }
+
+
       const products = readJSON("productDataBase.json");
       const { id } = req.params;
       const product = products.find(product => product.id === +id);
@@ -251,7 +252,7 @@ module.exports = {
 
 
     writeJSON("productDataBase.json", productsModified)
-    return res.redirect(`/products`)
+    return res.redirect("/admin/dashboardProduct")
   },
   notebook: (req, res) => {
     const products = readJSON("productDataBase.json");

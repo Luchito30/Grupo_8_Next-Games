@@ -15,6 +15,8 @@
 <section class="dashboardp__section--nav">
 <div class="dashboardp__nav">
 
+    <button type="button" class="btn btn-primary btn-lg" id="dashboardadmin__button"><a href="/products/createItem" id="headeradmin-color">Agregar Administrador</a></button>
+
     <form action="/admin/dashboardUser" method="GET" autocomplete="off">
         <div>
             <input type="search" name="searchuser" id="searchuser" class="dashboardp__buscador" placeholder="Buscar Usuario" title="¿Que desea Buscar?">
@@ -34,7 +36,7 @@
                             <th scope="col" class="dashboarduser--email">Email</th>
                             <th scope="col" class="dashboarduser--user">Usuario</th>
                             <th scope="col" class="dashboarduser--rol">Rol</th>
-                            <th scope="col" class="dashboarduser--image">Imagen</th>
+                            <th scope="col" class="dashboard--image">Imagen</th>
                             <th scope="col" class="dashboarduser--accion">Acciones</th>
                         </tr>
                     </thead>
@@ -44,14 +46,14 @@
                                 <th scope="row" class="dashboard--id"><%= id %></th>
                                 <td class="dashboarduser--name"><%= firstName %></td>
                                 <td class="dashboarduser--lastname"><%= lastName %></td>
-                                <td class="dashboarduser--email"><%= email %>%</td>
+                                <td class="dashboarduser--email"><%= email %></td>
                                 <td class="dashboarduser--user"><%= userName %></td>
                                 <td class="dashboarduser--rol"><%= rol %></td>
-                                <td class="dashboarduser--image"><img class="dashboard--img" src="/images/users/<%= image %>"></td>
+                                <td class="dashboard--image"><img class="dashboard--img" src="/images/users/<%= image %>"></td>
                                 <td class="dashboard--accion">
                                     <div class="d-flex gap-2">
-                                        <a class="btn btn-sm btn-primary" href=""><i class="far fa-eye"></i></a>
-                                        <a class="btn btn-sm btn-danger" href=""><i class="fas fa-trash"></i></a>
+                                        <a class="btn btn-sm btn-primary" href="/users/profile/<%= id %>"><i class="far fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-danger" href="/users/removeuser/<%= id %>"><i class="fas fa-trash"></i></a>
                                     </div>
                                 </td>
                             </tr>

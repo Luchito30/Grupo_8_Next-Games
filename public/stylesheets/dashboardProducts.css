@@ -68,6 +68,12 @@
     color: wheat;
 }
 
+ .dashboardp__section--nav{
+        background-color: #023877;
+        padding-top: 30px;
+        padding-bottom: 10px;
+    }
+
 @media (min-width: 560px) {
 
     .dashboard--price,

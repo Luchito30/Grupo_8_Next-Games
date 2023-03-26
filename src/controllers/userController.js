@@ -3,7 +3,7 @@ const path = require('path');
 
 const {validationResult} = require('express-validator');
 const { readJSON, writeJSON} = require("../data");
-const {hashSync} = require('bcryptjs')
+const {hashSync} = require('bcryptjs');
 
 
 module.exports = {
@@ -112,6 +112,24 @@ module.exports = {
         req.session.destroy();
         res.clearCookie("usernextgames")
         return res.redirect('/')
+    },
+    removeuserConfirm : (req,res) => {
+        const users = readJSON('user.json');
+        const id = req.params.id;
+        const user = users.find(user => user.id === +id);
+
+        return res.render("users/removeuserConfirm", {
+            ...user,
+            title: "Next Games | Advertencia"
+        })
+    },
+    removeusers : (req,res) => {
+        const users = readJSON('user.json');
+        const id = req.params.id;
+        const usersModified = users.filter(user => user.id !== +id);
+
+        writeJSON("user.json", usersModified);
+        return res.redirect("/admin/dashboardUser")
     }
 }
 
