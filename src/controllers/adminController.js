@@ -27,7 +27,7 @@ module.exports = {
         const {searchuser} = req.query;
 
         if(searchuser){
-            userDashboard = users.filter(user => user.firstName.toLowerCase().includes(searchuser.toLowerCase()) || user.lastName.toLowerCase().includes(searchuser.toLowerCase()) || user.email.toLowerCase().includes(searchuser.toLowerCase()) || user.userName.toLowerCase().includes(searchuser.toLowerCase()))
+            userDashboard = users.filter(user => user.firstName.toLowerCase().includes(searchuser.toLowerCase()) || user.lastName.toLowerCase().includes(searchuser.toLowerCase()) || user.email.toLowerCase().includes(searchuser.toLowerCase()) || user.userName.toLowerCase().includes(searchuser.toLowerCase()) || user.rol.toLowerCase().includes(searchuser.toLowerCase()))
         }else{
             userDashboard = users;
         }

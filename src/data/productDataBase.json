@@ -3,10 +3,10 @@
       "id": 1,
       "name": "FIFA 23",
       "description": "Disfruta de la tecnología HyperMotion2 de nueva generación, el fútbol de clubes femenino, la FIFA World Cup™ masculina y femenina, función de juego cruzado y mucho más.",
-      "price": 15000,
-      "discount": 20,
+      "price": 25999,
+      "discount": 0,
       "subCategory": "Juegos",
-      "category": "in-sale",
+      "category": "normally",
       "image": "1677359091729_products_.jpg",
       "images": [
          "img-1679600240532.jpg",
@@ -17,11 +17,11 @@
    {
       "id": 2,
       "name": "NBA2K23 PS4",
-      "description": "Descubre una experiencia de juego más intensa e inmersiva con el innovador control de PS5™",
-      "price": 18000,
-      "discount": 5,
+      "description": "NBA 2K23 es un videojuego de baloncesto de 2022 desarrollado por Visual Concepts y publicado por 2K Sports, basado en la Asociación Nacional de Baloncesto",
+      "price": 23000,
+      "discount": 0,
       "subCategory": "Juegos",
-      "category": "in-sale",
+      "category": "normally",
       "image": "item2.jpg",
       "images": [
          "img-1679602776061.jpg",
@@ -86,9 +86,9 @@
       "category": "in-sale",
       "image": "item6.jpg",
       "images": [
+         "img-1679604220525.jpg",
          "img-1679604220489.jpg",
-         "img-1679604220490.jpg",
-         "img-1679604220525.jpg"
+         "img-1679604220490.jpg"
       ]
    },
    {
@@ -292,7 +292,7 @@
    },
    {
       "id": 20,
-      "name": "PS5 Consola Edición GOW Digital",
+      "name": "PS5 Consola Edición GOD Digital",
       "description": "Play Has No Limits Experimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.",
       "price": 327000,
       "discount": 0,
@@ -585,6 +585,147 @@
          "img-1679615961730.png",
          "img-1679615961738.jpg",
          "img-1679615961739.jpg"
+      ]
+   },
+   {
+      "id": 41,
+      "name": "God of War Ragnarok",
+      "description": "Embárcate en un épico y cordial viaje mientras Kratos y Atreus luchan por aferrarse y soltar",
+      "price": 19999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679901605891.jpg",
+      "images": [
+         "img-1679901605893.jpg",
+         "img-1679901605892.jpg"
+      ]
+   },
+   {
+      "id": 42,
+      "name": "God of War Ragnarok + Dualshock 4",
+      "description": "Embárcate en un épico y cordial viaje mientras Kratos y Atreus luchan por aferrarse y soltar",
+      "price": 45000,
+      "discount": 20,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "img-1679901803064.jpg",
+      "images": [
+         "img-1679901803066.jpg",
+         "img-1679901803069.jpg"
+      ]
+   },
+   {
+      "id": 43,
+      "name": "Dead space",
+      "description": "Dead Space es un videojuego de disparos en tercera persona con ambientación de videojuego de terror, desarrollado por EA Redwood Shores y distribuido por Electronic Arts. Es el primer título de la serie Dead Space, franquicia que incluye videojuegos, cómics y películas",
+      "price": 20999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679902224812.jpg",
+      "images": [
+         "img-1679902224813.jpg",
+         "img-1679902224815.jpg"
+      ]
+   },
+   {
+      "id": 44,
+      "name": "PS4 Resident Evil 4 Remake",
+      "description": "Resident Evil 4 es un remake del Resident Evil 4 original del 2005.",
+      "price": 27000,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679902478645.jpg",
+      "images": [
+         "img-1679902478646.jpg",
+         "img-1679902478647.jpg"
+      ]
+   },
+   {
+      "id": 45,
+      "name": "PS5 Resident Evil 4 Remake",
+      "description": "Resident Evil 4 es un remake del Resident Evil 4 original del 2005.",
+      "price": 28000,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679902586423.jpg",
+      "images": [
+         "img-1679902586424.jpg",
+         "img-1679902586425.jpg",
+         "img-1679902586426.jpg"
+      ]
+   },
+   {
+      "id": 46,
+      "name": "PS4 Resident Evil 4",
+      "description": "Resident Evil 4, es un videojuego de acción-aventura y disparos en tercera persona de estilo terror y supervivencia desarrollado por Capcom Production Studio 4 y distribuido por varias compañías de videojuegos",
+      "price": 6000,
+      "discount": 15,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "img-1679902738122.jpg",
+      "images": [
+         "img-1679902738123.jpg"
+      ]
+   },
+   {
+      "id": 47,
+      "name": "Hogwarts Legacy",
+      "description": "Experimenta Hogwarts a finales del siglo XIX y decide el futuro del mundo de la hechicería",
+      "price": 28500,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679903235124.jpg",
+      "images": [
+         "img-1679903287837.jpg",
+         "img-1679903287836.jpg"
+      ]
+   },
+   {
+      "id": 48,
+      "name": "Playstation VR2 HORIZON CALL OF THE MOUNTAIN BUNDLE",
+      "description": "Experimenta la nueva generación de juegos de realidad virtual con impresionantes efectos virtuales 4K HDR, juegos que definen el género y sensaciones únicas gracias al innovador casco PLaystation VR2 y al control Playstation VR2 Sense",
+      "price": 422000,
+      "discount": 0,
+      "subCategory": "Accesorios",
+      "category": "normally ",
+      "image": "img-1679903537875.jpeg",
+      "images": [
+         "img-1679903537876.jpg",
+         "img-1679903537878.jpg"
+      ]
+   },
+   {
+      "id": 49,
+      "name": "Oculus Casco de Realidad Virtual Meta Quest 2 128gb + Resident Evil 4",
+      "description": "Lleva la realidad virtual tu Quest 2 ligero y portátil dondequiera que vayas en el mundo real",
+      "price": 250000,
+      "discount": 20,
+      "subCategory": "Accesorios",
+      "category": "in-sale",
+      "image": "img-1679903655020.jpg",
+      "images": [
+         "img-1679903655020.jpg",
+         "img-1679903655021.jpg",
+         "img-1679903655022.jpg"
+      ]
+   },
+   {
+      "id": 50,
+      "name": "Metroid Prime Remastered",
+      "description": "Colócate detrás del visor de la cazarrecompensas intergaláctica Samus Aran en esta aclamada aventura con perspectiva de primera persona",
+      "price": 19999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679903901812.jpg",
+      "images": [
+         "img-1679903951105.jpg",
+         "img-1679903951106.jpg"
       ]
    }
 ]

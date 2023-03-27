@@ -18,5 +18,15 @@
       "userName": "asd23",
       "image": "default-image.png",
       "rol": "user"
+   },
+   {
+      "id": 3,
+      "firstName": "nicolas",
+      "lastName": "pucheiro",
+      "email": "nico@gmail.com",
+      "password": "$2a$12$2V.yyInjuApw7f7Ae.P7E.sJx8txHkO92HlwAi3uxnryeGllK5rMu",
+      "userName": "pucherito02",
+      "image": "default-image.png",
+      "rol": "admin"
    }
 ]

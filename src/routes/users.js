@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {login,register,processLogin,processRegister,profile,update,logout,removeuserConfirm,removeusers} = require('../controllers/userController');
+const {login,register,processLogin,processRegister,profile,update,logout,removeuserConfirm,removeusers,ProcessAdmin,registerAdmin} = require('../controllers/userController');
 const checkUser = require('../middlewares/checkUser');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkAdmin = require('../middlewares/checkAdmin');
@@ -10,18 +10,21 @@ const { registerUserValidator, loginUserValidator } = require('../validations');
 const router = express.Router();
 
 /* /users */
-router.get('/login',checkUser,login),
-router.post('/login', loginUserValidator,processLogin)
+router.get('/login',checkUser,login);
+router.post('/login', loginUserValidator,processLogin);
 
-router.get('/register',checkUser,register),
-router.post('/register',uploadperdilImages.single("image"),registerUserValidator, processRegister)
+router.get('/register',checkUser,register);
+router.post('/register',uploadperdilImages.single("image"),registerUserValidator, processRegister);
 
-router.get('/profile/:id',checkUserLogin, profile)
+router.get("/createAdmin", checkAdmin, registerAdmin);
+router.post("/createAdmin",uploadperdilImages.single("image"),registerUserValidator,ProcessAdmin)
 
-router.get("/removeuser/:id", checkAdmin, removeuserConfirm)
-router.delete("/removeuser/:id", removeusers)
+router.get('/profile/:id',checkUserLogin, profile);
 
-router.put('/update',update)
-router.get('/logout',checkUserLogin,logout)
+router.get("/removeuser/:id", checkAdmin ,removeuserConfirm);
+router.delete("/removeuser/:id", removeusers);
+
+router.put('/update',update);
+router.get('/logout',checkUserLogin,logout);
 
 module.exports = router;

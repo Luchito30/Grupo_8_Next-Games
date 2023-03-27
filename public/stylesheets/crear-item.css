@@ -37,6 +37,7 @@
     transition: all 0.3s;
     background-color: #7110bd;
     font-size: 13px;
+    color: white;
 }
 .crear-form .crear__nameprodu input::placeholder{
     color: white;

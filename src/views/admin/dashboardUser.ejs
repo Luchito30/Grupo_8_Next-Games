@@ -15,7 +15,7 @@
 <section class="dashboardp__section--nav">
 <div class="dashboardp__nav">
 
-    <button type="button" class="btn btn-primary btn-lg" id="dashboardadmin__button"><a href="/products/createItem" id="headeradmin-color">Agregar Administrador</a></button>
+    <button type="button" class="btn btn-primary btn-lg" id="dashboardadmin__button"><a href="/users/createAdmin" id="headeradmin-color">Agregar Administrador</a></button>
 
     <form action="/admin/dashboardUser" method="GET" autocomplete="off">
         <div>
@@ -50,10 +50,15 @@
                                 <td class="dashboarduser--user"><%= userName %></td>
                                 <td class="dashboarduser--rol"><%= rol %></td>
                                 <td class="dashboard--image"><img class="dashboard--img" src="/images/users/<%= image %>"></td>
-                                <td class="dashboard--accion">
+                                <td class="dashboarduser--accion">
                                     <div class="d-flex gap-2">
+                                        <% if (id === 1) { %>
+                                            <a class="btn btn-sm btn-primary" href="/users/profile/<%= id %>"><i class="far fa-eye"></i></a>
+                                        <% } %>
+                                        <% if (id !== 1) { %>
                                         <a class="btn btn-sm btn-primary" href="/users/profile/<%= id %>"><i class="far fa-eye"></i></a>
                                         <a class="btn btn-sm btn-danger" href="/users/removeuser/<%= id %>"><i class="fas fa-trash"></i></a>
+                                        <% } %>
                                     </div>
                                 </td>
                             </tr>

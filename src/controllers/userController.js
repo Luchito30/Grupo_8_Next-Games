@@ -15,7 +15,6 @@ module.exports = {
         });
 
     },
-
 	processRegister : (req,res) => {
 
         const errors = validationResult(req);
@@ -59,13 +58,11 @@ module.exports = {
     }
         },
         
-    
     login: (req, res) => {
         return res.render('users/login', {
         title:"Next Games | Login"
         });
     },
-
 	processLogin : (req,res) => {
         const errors = validationResult(req);
 
@@ -130,6 +127,57 @@ module.exports = {
 
         writeJSON("user.json", usersModified);
         return res.redirect("/admin/dashboardUser")
+    },
+    registerAdmin: (req, res) => {
+        return res.render('users/crearAdmin', {
+			title: "Next Games | Crear Administrador"
+
+        });
+
+    },
+    ProcessAdmin : (req,res) => {
+
+        const errors = validationResult(req);
+
+        if(req.fileValidationError){
+            errors.errors.push({
+              value : "",
+              msg : req.fileValidationError,
+              param : "images",
+              location : "files"
+            })
+          }
+
+        if(errors.isEmpty()){
+		
+            const users = readJSON("user.json")
+            const {firstName, lastName, email, password, userName, image } = req.body
+    
+            const newUser = {
+                id: users.length ? users[users.length -1].id +1 : 1,
+                firstName: firstName.trim(),
+                lastName: lastName.trim(),
+                email: email.trim(),
+                password: hashSync(password,12),
+                userName: userName.trim(),
+                image: req.file ? req.file.filename : "default-image.png",
+                rol : 'admin'
+            };
+    
+            users.push(newUser);
+    
+            writeJSON("user.json",users);
+    
+            return res.redirect('/admin/dashboardUser');
+        }else{
+            return res.render('users/crearAdmin',{
+            title: "Next Games | Crear Administrador",
+            errors : errors.mapped(),
+            old:req.body
+        });
     }
+        },
+
+
 }
 
