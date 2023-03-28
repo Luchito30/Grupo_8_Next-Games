@@ -7,17 +7,12 @@
     <%- include('partials/header') %> 
     
         <div class="home__main--titulo">
-            <h2>TODOS LOS PRODUCTOS</h2>
+            <h2>PRODUCTOS</h2>
         </div>
 
-        <div>
-            <form action="/products" method="GET" autocomplete="off">
-                <div>
-                    <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador" placeholder="Buscar Producto" title="¿Que desea Buscar?">
-                    <button class="dashboardp__lupa"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </form>
-        </div>
+        <% if (searchallprodu) { %>
+            <h2 class="dashboard__sn">Busqueda : <%= searchallprodu %></h2>
+        <% }%>
 
         <section class="home__main__section">
 			<% products.forEach(({id,image,price,discount,name,category,subCategory}) => { %>

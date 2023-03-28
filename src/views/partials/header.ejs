@@ -11,7 +11,7 @@
 
 
                     <li>
-                        <a href="#">Productos</a>
+                        <p class="home__nav--productos">Productos</p>
                         <ul>
                             <li><a href="/products/accesorios">Accesorios</a></li>
                             <li><a href="/products/consolas">Consolas</a></li>
@@ -34,6 +34,15 @@
                                 </ul>
                             </li>
                         <% } %>
+
+                         <li class="dashboardp__buscarprodu">
+                            <form action="/products" method="GET" autocomplete="off">
+                                <div>
+                                    <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                    <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </div>
+                            </form>
+                        </li>
                         <li id="header__admin--li2">
                             <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                         </li>
@@ -175,7 +184,7 @@
 
 
                         <li>
-                            <a href="#">Productos</a>
+                            <p class="home__nav--productos">Productos</p>
                             <ul>
                                 <li><a href="/products/accesorios">Accesorios</a></li>
                                 <li><a href="/products/consolas">Consolas</a></li>
