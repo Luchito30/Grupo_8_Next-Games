@@ -163,7 +163,7 @@
 }
 
 .card__descuento {
-    margin-left: 15px;
+    margin-left: 10px;
     color: aqua;
     font-size: 16px;
 }
@@ -378,11 +378,11 @@
 
 @media(min-width:560px) {
     .card__descuento {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .home__main__preciototal {
-        font-size: 26px;
+        font-size: 24px;
     }
 }
 
