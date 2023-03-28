@@ -238,16 +238,15 @@ form {
 
     .titles-left {
         height: 205px;
-        margin-left: 25px;
+        margin-left: 40px;
     }
 
     .titles-left h3 {
         width: 80%;
         top: 16%;
-        left: 30px;
+        left: 10px;
         font-size: 22px;
-
-    }
+}
 
     .titles-left h2 {
         height: 50%;
@@ -256,10 +255,9 @@ form {
         font-style: normal;
         font-weight: 600;
         font-size: 21px;
-        right: 6px;
-
+        right: 26px;
     }
-
+    
     .left-register {
         position: relative;
     }
@@ -284,13 +282,35 @@ form {
         padding-left: 15px;
     }
 
-    .titles h2 {
+    .register__titulo--import1 {
         position: relative;
         top: 80px;
         font-size: 27px;
         color: #fff;
         font-family: var(--FontSubtitulo);
         padding-left: 30px;
+        text-align: center;
+        height: 80px;
+    }
+
+    .register__titulo--import2 {
+        position: relative;
+        top: 220px;
+        font-size: 20px;
+        color: mediumpurple;
+        font-family: var(--FontSubtitulo);
+        padding-left: 30px;
+        text-align: center;
+        height: 80px;
+    }
+
+    .register__img--import{
+        top: 220px;
+        text-align: center;
+        position: relative;
+    }
+    .register__img--img{
+        width: 55%;
     }
 
     .divider {
