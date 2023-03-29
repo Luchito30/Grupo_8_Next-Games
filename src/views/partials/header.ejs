@@ -50,6 +50,15 @@
                             <a href="/users/logout">SALIR</a>
                         </li>
                         <% } else { %>
+                            
+                            <li class="dashboardp__buscarprodu">
+                                <form action="/products" method="GET" autocomplete="off">
+                                    <div>
+                                        <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                        <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </li>
                             <li>
                                 <a href="/users/register">Registro
                                 </a>
