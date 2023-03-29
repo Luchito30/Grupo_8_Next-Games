@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/header.ejs') %>
+
+    <div class="logo-reset-password">
+        <img src="/images/users/User Password.png" alt="">
+    </div>
+    <h1>Recupera tu contraseña</h1>
+    <h4>Ingresa tu email y te enviaremos instrucciones de como resetear tu contraseña</h4>
+    <div class="email-input">
+    <label for="email" ></label>
+<input type="email" id="email" name="email" placeholder="Ingresa tu email">
+</div>
+<div class="recuperarcontrasela-btn">
+    <button>Enviar email</button>
+    <button>Cancelar</button>
+</div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>

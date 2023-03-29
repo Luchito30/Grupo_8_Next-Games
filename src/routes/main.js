@@ -8,7 +8,8 @@ const checkAdmin = require('../middlewares/checkAdmin');
 router.get('/', home);
 router.get('/search', search);
 router.post("/newslletter", newslletter);
-router.get("/admin", checkAdmin ,admin)
+router.get("/admin", checkAdmin ,admin);
+
 
 
 module.exports = router;

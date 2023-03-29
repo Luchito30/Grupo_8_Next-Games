@@ -117,6 +117,13 @@ module.exports = {
         return res.render('users/users',{
             users : readJSON('user.json')
         })
+    },
+    recuperarContraseña : (req,res)=>{
+        return res.render('users/recuperarContraseña', {
+            title:"Next Games | Recuperar contraseña"
+            });
+    
+       
     }
 }
 

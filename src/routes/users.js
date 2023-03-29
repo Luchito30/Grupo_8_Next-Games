@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {login,register,processLogin,processRegister,profile,update,logout} = require('../controllers/userController');
+const {login,register,processLogin,processRegister,profile,update,logout,recuperarContraseña} = require('../controllers/userController');
 const checkUser = require('../middlewares/checkUser');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const { uploadperdilImages } = require('../middlewares/uploadPerfil');
@@ -19,5 +19,6 @@ router.get('/profile/:id',checkUserLogin,profile)
 
 router.put('/update',update)
 router.get('/logout',checkUserLogin,logout)
+router.get('recuperarContraseña', recuperarContraseña)
 
 module.exports = router;
