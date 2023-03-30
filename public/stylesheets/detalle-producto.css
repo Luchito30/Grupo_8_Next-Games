@@ -3,15 +3,16 @@
     display: flex;
     flex-direction: column;
 }
-#more{
+
+#more {
     display: none;
 }
 
-.description--more{
+.description--more {
     color: white;
 }
 
-#description--more{
+#description--more {
     margin-top: 15px;
     margin-bottom: 20px;
 }
@@ -41,7 +42,7 @@
     margin: 43px;
 }
 
-.img-detalle-carrusel{
+.img-detalle-carrusel {
     width: 100%;
     height: 100%;
     border-radius: 20px;
@@ -74,7 +75,7 @@ h3 {
     left: 12px;
 }
 
-#boton__prev{
+#boton__prev {
     --swiper-navigation-size: 25px;
     background-color: var(--fondo2VioletaC);
     color: white;
@@ -85,7 +86,7 @@ h3 {
     left: -5px;
 }
 
-#boton__next{
+#boton__next {
     --swiper-navigation-size: 25px;
     background-color: var(--fondo2VioletaC);
     color: white;
@@ -148,6 +149,12 @@ h3 {
     gap: 20px;
 }
 
+.detalle__add-card2 {
+    display: flex;
+    align-items: center;
+    gap: 116px;
+}
+
 .sub-header {
 
     border-top-left-radius: 60px;
@@ -169,13 +176,25 @@ h3 {
 }
 
 .card-btn {
-    width: 101px;
+    width: 110px;
     background-color: var(--fondo1VioletaO);
     color: #fff;
     border: none;
     border-radius: 10px;
     transition: all 1s;
-    height: 25px;
+    height: 30px;
+}
+
+.card-btn2 {
+    top: 5px;
+    position: relative;
+    width: 121px;
+    background-color: var(--fondo1VioletaO);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    transition: all 1s;
+    height: 32px;
 }
 
 .card-btn1 {
@@ -193,7 +212,7 @@ h3 {
     background-color: #1A027A;
 }
 
-.detalle__cantidad{
+.detalle__cantidad {
     color: white;
 }
 
@@ -239,7 +258,7 @@ h3 {
     flex-direction: column;
 }
 
-#datalle__ocult2{
+#datalle__ocult2 {
     display: none;
 }
 
@@ -372,6 +391,26 @@ h3 {
         font-size: 16px;
         margin-right: 10px;
     }
+
+    .detalle__add-card {
+        flex-direction: inherit;
+        top: 5px;
+        position: relative;
+        height: 32px;
+        gap: 120px;
+    }
+
+    .card-btn {
+        top: 5px;
+        position: relative;
+        width: 121px;
+        background-color: var(--fondo1VioletaO);
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        transition: all 1s;
+        height: 32px;
+    }
 }
 
 
@@ -436,14 +475,14 @@ h3 {
         gap: 10px;
     }
 
-    #datalle__ocult2{
+    #datalle__ocult2 {
         display: flex;
         width: 70%;
         height: 125px;
         justify-content: space-around;
     }
-    
-    #datalle__ocult1{
+
+    #datalle__ocult1 {
         display: none;
     }
 }

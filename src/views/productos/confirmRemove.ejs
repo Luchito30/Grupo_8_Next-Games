@@ -4,7 +4,7 @@
 <%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('../partials/header') %> 
+    <%- include('../partials/headerAdmin') %> 
     
             
     
@@ -21,10 +21,9 @@
             <form action="/products/remove/<%- id %>?_method=DELETE" method="post">
             <button type="submit" class="remove__buttom">Borrar</button>
         </form>
-        <button class="remove__buttom"><a href="/products/edicion/<%- id %> ">Cancelar</a></button>
+        <button class="remove__buttom"><a href="/admin/dashboardProduct">Cancelar</a></button>
     </div>
         </section>
 	
-    <%- include('../partials/footer') %>
 </body>
 </html>

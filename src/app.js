@@ -3,12 +3,13 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-const methodOverride = require ("method-override")
+const methodOverride = require ("method-override");
 const session = require("express-session");
 
 const mainRouter = require("./routes/main");
 const userRouter = require("./routes/users");
-const productRouter = require('./routes/products')
+const productRouter = require('./routes/products');
+const adminRouter = require('./routes/admin')
 const localsUserCheck = require("./middlewares/localsUserCheck");
 const checkCookie = require("./middlewares/checkCookie");
 
@@ -42,6 +43,7 @@ app.use(localsUserCheck);
 app.use("/", mainRouter);
 app.use("/users", userRouter);
 app.use("/products", productRouter);
+app.use("/admin", adminRouter )
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

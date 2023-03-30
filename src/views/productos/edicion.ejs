@@ -7,7 +7,7 @@
 
     <body>
         <!-- Header -->
-        <%- include('../partials/header.ejs') %>
+        <%- include('../partials/headerAdmin.ejs') %>
 
             <main class="edition">
                 <div class="edition-container">
@@ -65,10 +65,10 @@
                             <section>
                                 <div class="edicion__subtitulos">Imagenes del Producto</div>
                                 <small class="text-crear"><%= locals.errors && errors.images ? errors.images.msg : null %></small>
-                                <div class="submit-btn--crear2" id="crear__color">
-                                    <input type="file" class="submit-btn--crear__buscar2" id="images" name="images"
-                                        multiple />
-                                    <label for="images" class="form-label"> <i class="fa-solid fa-image"></i><br>
+                                <div class="submit-btn--crear" id="crear__color">
+                                    <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" value="<%= images.length + " Imagenes seleccionadas" %>" multiple>
+                                    <label for="images">
+                                        <i class="fa-solid fa-image"></i><br>
                                         <div class="submit-btn--crea__nombrearchi2">
                                             <span>
                                                 <%= images.length + " Imagenes seleccionadas" %>
@@ -125,14 +125,15 @@
                                 <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
                                 <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span
                                         class="buton1">Eliminar Producto</span></a>
-                                <a href="/products/detalle-producto/<%= id %>" class="edition-form-box-button__a"><span
+                                <a href="/admin/dashboardProduct" class="edition-form-box-button__a"><span
                                         class="edicion-form-box-button__letra">Cancelar</span> </a>
                             </div>
                         </form>
                     </section>
                 </div>
             </main>
+            <script src="/javascripts/buscarimagen.js"></script>
             <!-- Footer -->
             <%- include('../partials/footer.ejs') %>
-
+    </body>
 </html>

@@ -163,7 +163,7 @@
 }
 
 .card__descuento {
-    margin-left: 15px;
+    margin-left: 10px;
     color: aqua;
     font-size: 16px;
 }
@@ -355,14 +355,34 @@
     width: 50px;
 }
 
+.home__button--volver{
+    height: 30px;
+    width: 100px;
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid var(--fondo1VioletaO);
+    border-radius: 15px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 25px;
+    cursor: pointer;
+    }
+
+.home__button--volver:hover{
+    background-color: var(--letrasSubtitulos2);
+}
+
+.home__button--volver:hover a{
+    color:black
+}
+
 
 @media(min-width:560px) {
     .card__descuento {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .home__main__preciototal {
-        font-size: 26px;
+        font-size: 24px;
     }
 }
 

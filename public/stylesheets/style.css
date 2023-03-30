@@ -12,5 +12,7 @@
 @import './crear-item.css';
 @import './removeconfirm.css';
 @import './dashboardProducts.css';
-@import './recuperar-contraseña.css'
+@import './recuperar-contraseña.css';
+@import './headerAdmin.css';
+@import './dashboardusers.css';
 

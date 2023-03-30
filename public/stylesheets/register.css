@@ -33,7 +33,6 @@ body {
 .titulo-register2 {
     position: relative;
     bottom: 92px;
-
     font-size: 24px;
 }
 
@@ -213,10 +212,15 @@ form {
     color: white;
 }
 
+.right-register{
+    margin-top: -140px;
+    margin-bottom: -50px;
+}
 
 @media(min-width :769px) {
     .login-register {
         top: 1px;
+        right: 11px;
     }
 
     .right-register {
@@ -224,7 +228,8 @@ form {
         align-items: right;
         justify-content: right;
         position: relative;
-
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .card {
@@ -236,17 +241,18 @@ form {
     }
 
     .titles-left {
+        right: 7px;
         height: 205px;
-        margin-left: 25px;
+        margin-left: 40px;
+        position: relative;
     }
 
     .titles-left h3 {
         width: 80%;
         top: 16%;
-        left: 30px;
+        left: 10px;
         font-size: 22px;
-
-    }
+}
 
     .titles-left h2 {
         height: 50%;
@@ -255,10 +261,9 @@ form {
         font-style: normal;
         font-weight: 600;
         font-size: 21px;
-        right: 6px;
-
+        right: 26px;
     }
-
+    
     .left-register {
         position: relative;
     }
@@ -278,24 +283,45 @@ form {
         position: relative;
         top: 42px;
         font-size: 50px;
-        color: #fff;
+        color: var(--letrasSubtitulos2);
         font-family: var(--FontTitulo);
-        padding-left: 15px;
+        margin: 0px 50px;
+        text-align: center;
     }
-
-    .titles h2 {
+    .register__titulo--import1 {
         position: relative;
-        top: 80px;
         font-size: 27px;
         color: #fff;
         font-family: var(--FontSubtitulo);
-        padding-left: 30px;
+        text-align: center;
+        margin: 0px 50px 15px;
+        height: 80px;
+        top: 80px;
+    }
+    
+    .register__titulo--import2 {
+        position: relative;
+        top: 220px;
+        font-size: 20px;
+        color: mediumpurple;
+        font-family: var(--FontSubtitulo);
+        text-align: center;
+        height: 80px;
+    }
+
+    .register__img--import{
+        top: 220px;
+        text-align: center;
+        position: relative;
+    }
+    .register__img--img{
+        width: 55%;
     }
 
     .divider {
         bottom: 67px;
-        right: 1px;
-        position: relative
+        right: 12px;
+        position: relative;
     }
 
     .titles-register {
@@ -328,10 +354,6 @@ form {
 
     .titles {
         height: 55pc;
-    }
-
-    .titles h2 {
-        margin-left: -45px;
     }
 
     .titles h1 {

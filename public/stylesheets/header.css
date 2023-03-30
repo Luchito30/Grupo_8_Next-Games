@@ -43,23 +43,22 @@ a {
     width: 0;
     position: relative;
     right: 8px;
-    top: 5px;
 }
 
 .right-nav-bar--form>div {
     display: flex;
     background-color: var(--fondo2VioletaC);
-    padding: 5px 20px 5px 14px;
+    padding: 11px 20px 5px 14px;
     border-radius: 30px;
     margin-bottom: 2px;
     position: absolute;
-    top: 17px;
+    top: 20px;
     transition: all 0.8s ease;
     z-index: 10;
 }
 
 .right-nav-bar--form>div:hover {
-    top: 70px;
+    top: 73px;
     right: 75px;
     background-color: var(--fondo1VioletaO);
 }
@@ -145,6 +144,16 @@ a {
 
 .header__nav {
     height: 100%;
+}
+
+#header__admin--li{
+    right: 25px;
+    position: absolute;
+}
+
+#header__admin--li2{
+    right: 125px;
+    position: absolute;
 }
 
 .header__menu1 {
@@ -298,7 +307,26 @@ a {
     text-transform: uppercase;
     font-size: 16px;
     transition: all 300ms ease;
+}
 
+.home__nav--productos{
+     width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: all 300ms ease;
+    color: white;
+}
+
+.home__nav--productos:hover{
+    transform: scale(1.1);
+    background-color: #0074c7;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-weight: 600;
 }
 
 .header__nav>ul>li>a:hover {
@@ -373,9 +401,15 @@ a {
     position: fixed;
     z-index: 100;
 }
+.header__avatar--image{
+    display: none;
+}
+#header__nav__hamburger-secundary{
+    top: 109px;
+}
 
 
-@media (min-width: 560px) {
+@media (min-width: 658px) {
     .header__hamburgersa__menu {
         display: none;
     }
@@ -450,6 +484,7 @@ a {
     .header__container__menu {
         display: block;
     }
+    
 
 }
 
@@ -494,6 +529,15 @@ a {
         font-size: 20px;
         margin-top: 8px;
     }
+
+    .header__avatar--image {
+        display: block;
+        border: 1px solid black;
+        border-radius: 55px;
+        width: 60px;
+        position: relative;
+        right: 10px;
+    }
 }
 
 @media(min-width:1024px) {
@@ -518,4 +562,3 @@ a {
     }
 
 }
-

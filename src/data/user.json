@@ -1,22 +1,22 @@
 [
    {
       "id": 1,
-      "firstName": "Luis",
-      "lastName": "Dick",
-      "email": "luchodick24@gmail.com",
+      "firstName": "admin",
+      "lastName": "nextgames",
+      "email": "nextventa@nextgames.com.ar",
       "password": "$2a$12$5aIUzLxeDjkoUa8BY4sZYu0F0OZM/EYC6c5jvsjZIqbAaSKszsvBm",
-      "userName": "murdoy",
-      "image": "default-image.png",
+      "userName": "nextgamesAdmin",
+      "image": "admin.jpg",
       "rol": "admin"
    },
    {
       "id": 2,
-      "firstName": "luci",
-      "lastName": "asdio",
-      "email": "luci@gmail.com",
-      "password": "$2a$12$0/t7xmjRDCBPJWecv5gG6ODSgZP9E2DlRwphe/M7NOvhtYl09fD.q",
-      "userName": "asd23",
-      "image": "default-image.png",
-      "rol": "user"
+      "firstName": "Luis",
+      "lastName": "Dick",
+      "email": "luchodick24@gmail.com",
+      "password": "$2a$12$1/FcB/KCX/2qeNcmtP2jju/uvPPCcbsaLqhmoaREo.JYR4GIrirjO",
+      "userName": "Murdoy",
+      "image": "1680127198004_users_.png",
+      "rol": "admin"
    }
 ]
