@@ -16,7 +16,7 @@ router.post('/login', loginUserValidator,processLogin);
 router.get('/register',checkUser,register);
 router.post('/register',uploadperdilImages.single("image"),registerUserValidator, processRegister);
 
-router.get('/recuperarPassword', recuperarContraseña);
+router.get('/recuperarPassword',checkUser, recuperarContraseña);
 
 router.get("/createAdmin", checkAdmin, registerAdmin);
 router.post("/createAdmin",uploadperdilImages.single("image"),registerUserValidator,ProcessAdmin)
