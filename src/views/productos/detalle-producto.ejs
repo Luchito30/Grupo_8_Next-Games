@@ -6,6 +6,12 @@
     <body>
         <%- include('../partials/header.ejs') %>
 
+
+            <div class="detalle__boton--edit">
+                <a href="/products/edicion/<%= id %>"><button class="card-btn1">
+                        editar producto</button></a>
+            </div>
+
             <main class="main-detalledeproducto">
                 <div class="main-detalledeproducto-boxOne">
                     <section class="detalle-imagenes">
@@ -33,7 +39,7 @@
                     </section>
 
                     
-                    <section class="detalle-carrito">
+                    <section class="detalle-carrito" id="datalle__ocult1">
                         <div>
                             <% if (discount) { %>
                                 <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
@@ -41,7 +47,6 @@
                                 <b class="detalle__precio--porcentaje">
                                     <%= discount %>% OFF
                                 </b>
-
                                 <p class="detalle__precio--descuento">
                                     $<%= toThousand(Math.round(price - (price * discount) / 100))%>
                                 </p>
@@ -49,7 +54,6 @@
                                     <p class="detalle__precio--sincambio">
                                         $<%= toThousand(Math.round(price)) %>
                                     </p>
-
                                     <% } %>
                         </div>
                         <div class="detalle__add-card">
@@ -61,7 +65,7 @@
                             </div>
                             <div>
                                 <a href="/products/carrito"><button class="card-btn">
-                                       Agregar Carrito</button></a>
+                                        añadir tarjeta</button></a>
                             </div>
                         </div>
                     </section>
@@ -121,10 +125,18 @@
                             </div>
                         </div>
 
-                        <div class="description">
-                            <h5>Diseñado para satisfacer las ...</h5>
-                            <button class="read-btn">read more</button>
+                        <div class="description--more">
+                            <h3 id="description--more">DESCRIPCIÓN :
+                            </h3>
+                            <p>...<span id="dots"></span>
+                                <span id="more"><%= description %></span>
+                            </p>
+                            <button onclick="myFunction()" id="myBtn" class="read-btn">Read less</button>
 
+
+                        </div>
+                    </div>
+                </section>
 
                 <section class="detalle-carrito" id="datalle__ocult2">
                     <div>
@@ -143,7 +155,7 @@
                                 </p>
                                 <% } %>
                     </div>
-                    <div class="detalle__add-card2">
+                    <div class="detalle__add-card">
                         <div>
                             <h5 class="detalle__cantidad">cantidad:</h5>
                             <button>-</button>
@@ -151,8 +163,8 @@
                             <button>+</button>
                         </div>
                         <div>
-                            <a href="/products/carrito"><button class="card-btn2">
-                                Agregar Carrito</button></a>
+                            <a href="/products/carrito"><button class="card-btn">
+                                    añadir tarjeta</button></a>
                         </div>
                     </div>
                 </section>
@@ -186,6 +198,24 @@
                                 prevEl: '.swiper-button-prev',
                             },
                         });
+                    </script>
+
+                    <script>
+                        function myFunction() {
+                            var dots = document.getElementById("dots");
+                            var moreText = document.getElementById("more");
+                            var btnText = document.getElementById("myBtn");
+                          
+                            if (dots.style.display === "none") {
+                              dots.style.display = "inline";
+                              btnText.innerHTML = "Read more";
+                              moreText.style.display = "none";
+                            } else {
+                              dots.style.display = "none";
+                              btnText.innerHTML = "Read less";
+                              moreText.style.display = "inline";
+                            }
+                          }
                     </script>
 
     </body>

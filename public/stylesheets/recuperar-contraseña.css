@@ -5,17 +5,17 @@
      text-align:center;
     
    }
-   img{
+   .recuperarContraseña--img{
     width:200px;
     
    }
-   h1,h4{
+   .recuperarContraseña--h1, .recuperarContraseña--h4{
      text-align: center;
      color:white;
      font-family:'Inter', sans-serif;
      margin: 25px;
    }
-   h4{
+   .recuperarContraseña--h4{
      font-size:18px;
    }
    .email-input{

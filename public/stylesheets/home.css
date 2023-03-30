@@ -459,11 +459,11 @@
     }
 
     .card__descuento {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .home__main__preciototal {
-        font-size: 20px;
+        font-size: 18px;
     }
 
 }
@@ -498,5 +498,13 @@
     .swiper-notebook3:hover .swiper-button-prev,
     .swiper-notebook3:hover .swiper-button-next {
         opacity: 1;
+    }
+
+    .card__descuento {
+        font-size: 17px;
+    }
+
+    .home__main__preciototal {
+        font-size: 20px;
     }
 }
