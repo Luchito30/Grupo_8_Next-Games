@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('../partials/head.ejs') %>
-<body>
+<body class="body-recuperar-contra">
     <%- include('../partials/header.ejs') %>
 
     <div class="logo-reset-password">
@@ -11,11 +11,11 @@
     <h4>Ingresa tu email y te enviaremos instrucciones de como resetear tu contraseña</h4>
     <div class="email-input">
     <label for="email" ></label>
-<input type="email" id="email" name="email" placeholder="Ingresa tu email">
+<input class="input-recuperar-contraseña" type="email" id="email" name="email" placeholder="Ingresa tu email">
 </div>
-<div class="recuperarcontrasela-btn">
-    <button>Enviar email</button>
-    <button>Cancelar</button>
+<div class="recuperarContraseña-btn">
+    <button class="boton-recuperar-contraseña">Enviar email</button>
+    <button class="boton-recuperar-contraseña">Cancelar</button>
 </div>
 
     <%- include('../partials/footer.ejs') %>

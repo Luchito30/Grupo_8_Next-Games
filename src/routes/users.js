@@ -19,6 +19,6 @@ router.get('/profile/:id',checkUserLogin,profile)
 
 router.put('/update',update)
 router.get('/logout',checkUserLogin,logout)
-router.get('recuperarContraseña', recuperarContraseña)
+router.get('/recuperarPassword', recuperarContraseña)
 
 module.exports = router;
