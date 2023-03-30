@@ -45,3 +45,11 @@ Lunes 13/03 5ta Daily 18:15hs y 23hs
 
 Tareas realizadas: Se realizan las ultimas correcciones.
 Se termina el proyecto.
+
+-------------------------------------------------------------------------------
+
+Miercoles 29/03 Daily Revisión 21:30hs
+
+Presentes: Agustina Acosta, Luis Dick y Adriana Guitian.
+Se dió de baja Edgardo De La Cruz al curso. Procedemos a eliminarlo del proyecto y grupo de trabajo.
+Tareas realizadas: Se presentan tareas terminadas, se suben cambios a la rama develop.
