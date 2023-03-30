@@ -8,7 +8,7 @@ La parte de periféricos estan orientados a la conformidad del jugador y son de 
 
 ## Integrantes
 Somos un grupo de desarrolladores web, que nos contrataron para realizar la web de la empresa NextGame. Nos encargaron realizar un ecommerce de ventas de videos juegos y perifericos. 
--Luis Dick, Edgardo De La Cruz, Agustina Acosta y Adriana Guitian.
+-Luis Dick, Agustina Acosta y Adriana Guitian.
 
 ## Páginas de referencia
 
