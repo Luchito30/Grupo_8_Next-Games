@@ -103,5 +103,14 @@
       "password": "$2a$12$lXm5xT6HJaBBsVe7.72aeOxjLt5wqJeTvqv781vSEM8TJj/Chedi2",
       "userName": "al3",
       "image": "default-image.png"
+   },
+   {
+      "id": 13,
+      "firstName": "adri",
+      "lastName": "gui",
+      "email": "adri87@gmail.com",
+      "password": "$2a$12$wBNpL3DXR9KVRg1oY5Jb8u49//QReX3xURVOOjCbXwfuKsM5CO1.W",
+      "userName": "adri87",
+      "image": "1680233565971_users_.png"
    }
 ]

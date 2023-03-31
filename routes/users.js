@@ -21,7 +21,7 @@ router.post('/login', loginUserValidator,processLogin)
 router.get('/register',checkUser,register),
 router.post('/register',uploadPerfil.single('image'),registerUserValidator, processRegister)
 
-router.get('/profile/:id',checkUserLogin,profile)
+router.get('/profile/:id',uploadPerfil.single('image'), checkUserLogin, profile)
 
 router.put('/update',update)
 router.get('/logout',checkUserLogin,logout)
