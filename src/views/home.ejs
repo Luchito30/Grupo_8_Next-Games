@@ -36,12 +36,8 @@
                                 <% juegos.forEach(({id,image,price,discount,name,category})=> { %>
                                     <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
                                         <% }) %>
-
-                                            ...
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
+                        
                             <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
@@ -65,12 +61,7 @@
                                 <% computacion.forEach(({id,image,price,discount,name,category})=> { %>
                                     <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
                                         <% }) %>
-
-                                            ...
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
                             <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
@@ -92,12 +83,7 @@
                                 <% ingresos.forEach(({id,image,price,discount,name,category})=> { %>
                                     <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
                                         <% }) %>
-
-                                            ...
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
                             <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
@@ -125,10 +111,6 @@
                                     <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
                                         <% }) %>
                             </div>
-
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
                             <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
@@ -150,12 +132,7 @@
                                 <% consolas.forEach(({id,image,price,discount,name,category})=> { %>
                                     <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
                                         <% }) %>
-
-                                            ...
                             </div>
-                            <!-- If we need pagination -->
-                            <div class="swiper-pagination"></div>
-
                             <!-- If we need navigation buttons -->
                             <div class="swiper-button-prev"></div>
                             <div class="swiper-button-next"></div>
@@ -172,17 +149,12 @@
 
             <!--swiper  -->
             <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-            <!-- glider -->
-            <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
 
-
-
-            <!-- carrusel deskop -->
-            <script src="/javascripts/buscados.js"></script>
-            <!-- carrusel mobile -->
-            <script src="/javascripts/buscados2.js"></script>
-            <!-- slider notebook -->
+            <!-- slider -->
             <script src="/javascripts/notebook.js"></script>
+        
+            <!-- fixed -->
+            <script src="/javascripts/fixed.js"></script>
 </body>
 
 </html>

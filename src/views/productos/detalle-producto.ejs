@@ -125,7 +125,7 @@
                             <p>...<span id="dots"></span>
                                 <span id="more"><%= description %></span>
                             </p>
-                            <button onclick="myFunction()" id="myBtn" class="read-btn">Read less</button>
+                            <button onclick="myFunction()" id="myBtn" class="read-btn">Ver más</button>
 
 
                         </div>
@@ -172,9 +172,6 @@
                 <!-- footer -->
                 <%- include('../partials/footer.ejs') %>
 
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-                        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-                        crossorigin="anonymous"></script>
                     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
                     <script>
@@ -202,15 +199,18 @@
                           
                             if (dots.style.display === "none") {
                               dots.style.display = "inline";
-                              btnText.innerHTML = "Read more";
+                              btnText.innerHTML = "Ver más";
                               moreText.style.display = "none";
                             } else {
                               dots.style.display = "none";
-                              btnText.innerHTML = "Read less";
+                              btnText.innerHTML = "Ver menos";
                               moreText.style.display = "inline";
                             }
                           }
                     </script>
+
+                      <!-- fixed -->
+            <script src="/javascripts/fixed.js"></script>
 
     </body>
 

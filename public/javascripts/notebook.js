@@ -24,7 +24,7 @@ const swiper = new Swiper('.swiper-notebook1', {
         clickable: true,
       },
       breakpoints: {
-       485: {
+       460: {
           slidesPerView: 2,
           spaceBetween: 5,
         },

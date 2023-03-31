@@ -181,4 +181,7 @@
     background-color: var(--letrasSubtitulos2);
     color: white;
 }
+.dashboardp__buscarprodu--box{
+    margin-left: 5px;
+}
 }

@@ -1,80 +1,5 @@
 <header>
-
-    <section class="header__container__menu" id="fixed">
-        <article class="header__menu">
-            <nav class="header__nav">
-                <ul>
-                    <li>
-                        <a href="/" id="selected"><i class="fa-solid fa-house"></i>
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <p class="home__nav--productos">Productos</p>
-                        <ul>
-                            <li><a href="/products/accesorios">Accesorios</a></li>
-                            <li><a href="/products/consolas">Consolas</a></li>
-                            <li><a href="/products/tarjetas">Gifts Cards</a></li>
-                            <li><a href="/products/juegos">Juegos</a></li>
-                            <li><a href="/products/notebook">Notebooks</a></li>
-                            <li><a href="/products/perifericos">Perifericos</a></li>
-                            <li><a href="/products/insale">Ofertas</a></li>
-                            <li><a href="/products/ingresos">Nuevos Ingresos</a></li>
-                            <li><a href="/products">Todos los Productos</a></li>
-                        </ul>
-                    </li>
-                    <% if (locals.userLogin) { %>
-                        <% if (userLogin.rol === "admin") { %>
-                            <li>
-                                <a href="#">Dashboard</a>
-                                <ul>
-                                    <li><a href="/admin/dashboardProduct">Productos</a></li>
-                                    <li><a href="/admin/dashboardUser">Usuarios</a></li>
-                                </ul>
-                            </li>
-                        <% } %>
-
-                         <li class="dashboardp__buscarprodu">
-                            <form action="/products" method="GET" autocomplete="off">
-                                <div>
-                                    <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
-                                    <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                </div>
-                            </form>
-                        </li>
-                        <li id="header__admin--li2">
-                            <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
-                        </li>
-                        <li id="header__admin--li">
-                            <a href="/users/logout">SALIR</a>
-                        </li>
-                        <% } else { %>
-                            
-                            <li class="dashboardp__buscarprodu">
-                                <form action="/products" method="GET" autocomplete="off">
-                                    <div>
-                                        <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
-                                        <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                    </div>
-                                </form>
-                            </li>
-                            <li>
-                                <a href="/users/register">Registro
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/users/login">Login
-                                </a>
-                            </li>
-                            <% } %>
-                </ul>
-            </nav>
-        </article>
-    </section>
-
-
-    <div class="header__box">
+ <div class="header__box">
 
         <div class="header__inicio">
 
@@ -182,7 +107,7 @@
         </div>
 
 
-        <section class="header__container__menu">
+        <section class="header__container__menu" id="bloker">
             <article class="header__menu">
                 <nav class="header__nav">
                     <ul>
@@ -195,22 +120,28 @@
                         <li>
                             <p class="home__nav--productos">Productos</p>
                             <ul>
-                                <li><a href="/products/accesorios">Accesorios</a></li>
-                                <li><a href="/products/consolas">Consolas</a></li>
-                                <li><a href="/products/tarjetas">Gifts Cards</a></li>
-                                <li><a href="/products/juegos">Juegos</a></li>
-                                <li><a href="/products/notebook">Notebooks</a></li>
-                                <li><a href="/products/perifericos">Perifericos</a></li>
-                                <li><a href="/products/insale">Ofertas</a></li>
-                                <li><a href="/products/ingresos">Nuevos Ingresos</a></li>
-                                <li><a href="/products">Todos los Productos</a></li>
+                                <div>
+                                    <li><a href="/products/accesorios">Accesorios</a></li>
+                                    <li><a href="/products/consolas">Consolas</a></li>
+                                    <li><a href="/products/tarjetas">Gifts Cards</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/juegos">Juegos</a></li>
+                                    <li><a href="/products/notebook">Notebooks</a></li>
+                                    <li><a href="/products/perifericos">Perifericos</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/insale">Ofertas</a></li>
+                                    <li><a href="/products/ingresos">Nuevos Ingresos</a></li>
+                                    <li><a href="/products">Todos los Productos</a></li>
+                                </div>
                             </ul>
                         </li>
                         <% if (locals.userLogin) { %>
                             <% if (userLogin.rol === "admin") { %>
                                 <li>
-                                    <a href="#">Dashboard</a>
-                                    <ul>
+                                    <p class="home__nav--productos">Dashboard</p>
+                                    <ul id="header__nav--submenudash">
                                         <li><a href="/admin/dashboardProduct">Productos</a></li>
                                         <li><a href="/admin/dashboardUser">Usuarios</a></li>
                                     </ul>
@@ -236,6 +167,86 @@
                 </nav>
             </article>
         </section>
+
+        <section class="header__container__menu2" id="fixed">
+            <article class="header__menu">
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                            <a href="/" id="selected"><i class="fa-solid fa-house"></i>
+                            </a>
+                        </li>
+    
+    
+                        <li>
+                            <p class="home__nav--productos">Productos</p>
+                            <ul>
+                                <div>
+                                    <li><a href="/products/accesorios">Accesorios</a></li>
+                                    <li><a href="/products/consolas">Consolas</a></li>
+                                    <li><a href="/products/tarjetas">Gifts Cards</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/juegos">Juegos</a></li>
+                                    <li><a href="/products/notebook">Notebooks</a></li>
+                                    <li><a href="/products/perifericos">Perifericos</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/insale">Ofertas</a></li>
+                                    <li><a href="/products/ingresos">Nuevos Ingresos</a></li>
+                                    <li><a href="/products">Todos los Productos</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <% if (locals.userLogin) { %>
+                            <% if (userLogin.rol === "admin") { %>
+                                <li>
+                                    <p class="home__nav--productos">Dashboard</p>
+                                    <ul id="header__nav--submenudash">
+                                        <li><a href="/admin/dashboardProduct">Productos</a></li>
+                                        <li><a href="/admin/dashboardUser">Usuarios</a></li>
+                                    </ul>
+                                </li>
+                            <% } %>
+    
+                             <li class="dashboardp__buscarprodu">
+                                <form action="/products" method="GET" autocomplete="off">
+                                    <div class="dashboardp__buscarprodu--box">
+                                        <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                        <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </li>
+                            <li id="header__admin--li2">
+                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                            </li>
+                            <li id="header__admin--li">
+                                <a href="/users/logout">SALIR</a>
+                            </li>
+                            <% } else { %>
+                                
+                                <li class="dashboardp__buscarprodu">
+                                    <form action="/products" method="GET" autocomplete="off">
+                                        <div>
+                                            <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                            <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li>
+                                    <a href="/users/register">Registro
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/users/login">Login
+                                    </a>
+                                </li>
+                                <% } %>
+                    </ul>
+                </nav>
+            </article>
+        </section>
+    
     </div>
 
 </header>
