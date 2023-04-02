@@ -18,5 +18,15 @@
       "userName": "Murdoy",
       "image": "1680127198004_users_.png",
       "rol": "admin"
+   },
+   {
+      "id": 3,
+      "firstName": "Laureano",
+      "lastName": "Zarate",
+      "email": "lauri@gmail.com",
+      "password": "$2a$12$7/WuwbQdLkn0xzziKrm4rObj2.nYyczwiM0qG86o6XBBUPQvc0/Fu",
+      "userName": "Lauri13",
+      "image": "1680401215317_users_.jpg",
+      "rol": "user"
    }
 ]
