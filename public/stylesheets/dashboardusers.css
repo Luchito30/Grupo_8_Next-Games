@@ -1,0 +1,16 @@
+.dashboarduser--email, .dashboarduser--name, .dashboarduser--lastname{
+    display: none;
+}
+.dashboarduser--accion, .dashboarduser--email{
+    text-align: center;
+}
+@media (min-width: 560px){
+    .dashboarduser--email{
+        display: revert;
+}
+}
+@media (min-width: 769px){
+    .dashboarduser--name, .dashboarduser--lastname{
+        display: revert;
+    }
+}

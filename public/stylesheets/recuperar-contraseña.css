@@ -1,0 +1,42 @@
+.body-recuperar-contra{
+    background-color:#3C0260;
+   }
+   .logo-reset-password{
+     text-align:center;
+    
+   }
+   .recuperarContraseña--img{
+    width:200px;
+    
+   }
+   .recuperarContraseña--h1, .recuperarContraseña--h4{
+     text-align: center;
+     color:white;
+     font-family:'Inter', sans-serif;
+     margin: 25px;
+   }
+   .recuperarContraseña--h4{
+     font-size:18px;
+   }
+   .email-input{
+    text-align:center;
+   }
+   .recuperarContraseña-btn{
+     text-align:center;
+     margin: 10px;
+   }
+   .input-recuperar-contraseña{
+     width:300px;
+     height:30px;
+     border:solid white;
+     background:white;
+     margin: 20px;
+   }
+   .boton-recuperar-contraseña{
+     background-color:#8300D3;
+     border:solid transparent;
+     color:white;
+     border-radius:20px;
+     height:31px;
+     width:120px;
+   }

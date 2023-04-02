@@ -1,3 +1,12 @@
+.text-crear {
+    font-family: 'Inter', sans-serif;
+    color: red;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    margin-top: -20px;
+    background-color: snow;
+    font-size: 13px;
+}
 .titulo-crear{
     text-align: center;
     color: white;
@@ -28,6 +37,7 @@
     transition: all 0.3s;
     background-color: #7110bd;
     font-size: 13px;
+    color: white;
 }
 .crear-form .crear__nameprodu input::placeholder{
     color: white;

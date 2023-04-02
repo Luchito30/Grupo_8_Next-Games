@@ -136,6 +136,14 @@ a {
     display: none;
 }
 
+.header__container__menu2 {
+    width: 100%;
+    height: 70px;
+    background-color: #023877;
+    padding-left: 40px;
+    display: none;
+}
+
 .header__menu {
     max-width: 1160px;
     margin: auto;
@@ -144,6 +152,16 @@ a {
 
 .header__nav {
     height: 100%;
+}
+
+#header__admin--li{
+    right: 25px;
+    position: absolute;
+}
+
+#header__admin--li2{
+    right: 125px;
+    position: absolute;
 }
 
 .header__menu1 {
@@ -297,7 +315,27 @@ a {
     text-transform: uppercase;
     font-size: 16px;
     transition: all 300ms ease;
+}
 
+.home__nav--productos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: all 300ms ease;
+    color: white;
+    cursor: pointer;
+}
+
+.home__nav--productos:hover{
+    transform: scale(1.1);
+    background-color: #0074c7;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    color: black;
+    font-weight: 600;
 }
 
 .header__nav>ul>li>a:hover {
@@ -316,19 +354,19 @@ a {
 }
 
 .header__nav ul li ul {
-    width: 200px;
+    width: 470px;
     display: flex;
-    flex-direction: column;
     background-color: #023877;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
     position: absolute;
     top: 85px;
     left: -5px;
-    padding: 14px 0px;
+    padding: 15px 30px;
     visibility: hidden;
     opacity: 0;
     z-index: 10;
     transition: all 300ms ease;
+    gap: 32px;
 }
 
 .header__nav ul li:hover ul {
@@ -368,13 +406,26 @@ a {
     font-size: 14px;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
+
+#header__nav--submenudash{
+        flex-direction: column;
+        width: 200px;
+        gap: 0;
+}
+
 #fixed{
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
+}
+.header__avatar--image{
+    display: none;
+}
+#header__nav__hamburger-secundary{
+    top: 109px;
 }
 
 
-@media (min-width: 560px) {
+@media (min-width: 658px) {
     .header__hamburgersa__menu {
         display: none;
     }
@@ -446,9 +497,19 @@ a {
         margin-right: 25px;
     }
 
-    .header__container__menu {
-        display: block;
+    .header__container__menu{
+    display: block;
     }
+
+    .scroll__bloker--nav{
+        display: none;
+    }
+
+    .scroll__fixer--nav{
+        display: block;
+        top: 0;
+    }
+    
 
 }
 
@@ -492,6 +553,15 @@ a {
         height: 60px;
         font-size: 20px;
         margin-top: 8px;
+    }
+
+    .header__avatar--image {
+        display: block;
+        border: 1px solid black;
+        border-radius: 55px;
+        width: 60px;
+        position: relative;
+        right: 10px;
     }
 }
 

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('./partials/header.ejs') %>
+        <main>
+
+            <%- include('./partials/bannerPrincipal.ejs') %>
+
+                <%- include('./partials/formadepago.ejs') %>
+
+                    <div class="home__main--titulo">
+                        <h2>ULTIMAS OFERTAS</h2><a href="/products/insale"> ver más</a>
+                    </div>
+                    <section class="home__main__section">
+                        <% inSale.forEach(({id,image,price,discount,name,category})=> { %>
+                            <%- include('./partials/product',{ id, image, price, discount, name, category }) %>
+                                <% }) %>
+                    </section>
+
+
+
+                    <div class="home__main--titulo">
+                        <h2>JUEGOS</h2> <a href="/products/juegos"> ver más</a>
+                    </div>
+
+                    <section class="home__main__juegos">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% juegos.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+                            </div>
+                        
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                        </div>
+                    </section>
+
+                <%- include('./partials/bannermid.ejs') %>
+
+                    <div class="home__main--titulo">
+                        <h2>NOTEBOOKS</h2> <a href="/products/notebook"> ver más</a>
+                    </div>
+
+                    <section class="home__main__notebook">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% computacion.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                        </div>
+                    </section>
+
+                    <div class="home__main--titulo">
+                        <h2>NUEVOS INGRESOS</h2> <a href="/products/ingresos"> ver más</a>
+                    </div>
+
+                    <section class="home__main__ingresos">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% ingresos.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                        </div>
+
+                    </section>
+
+
+                    <%- include('./partials/bannerfinal.ejs') %>
+
+                    <div class="home__main--titulo">
+                        <h2>TARJETAS DIGITALES PS4</h2><a href="/products/tarjetas"> ver más</a>
+                    </div>
+
+
+                    <section class="home__main__tarjetasd">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% tarjetas.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>
+                    </section>
+
+                    <div class="home__main--titulo">
+                        <h2>CONSOLAS</h2><a href="/products/consolas"> ver más</a>
+                    </div>
+
+
+                    <section class="home__main__ps4">
+
+                        <!-- Slider main container -->
+                        <div class="swiper swiper-notebook1">
+                            <!-- Additional required wrapper -->
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <% consolas.forEach(({id,image,price,discount,name,category})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                        <% }) %>
+                            </div>
+                            <!-- If we need navigation buttons -->
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+
+                        </div>
+
+
+                    </section>
+        </main>
+        <!--whatsapp-->
+        <%- include('./partials/whatsApp.ejs') %>
+        <!-- footer -->
+        <%- include('./partials/footer.ejs') %>
+
+            <!--swiper  -->
+            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+            <!-- slider -->
+            <script src="/javascripts/notebook.js"></script>
+        
+            <!-- fixed -->
+            <script src="/javascripts/fixed.js"></script>
+</body>
+
+</html>

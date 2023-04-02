@@ -163,7 +163,7 @@
 }
 
 .card__descuento {
-    margin-left: 15px;
+    margin-left: 10px;
     color: aqua;
     font-size: 16px;
 }
@@ -241,7 +241,7 @@
     height: 70px;
     width: 50px;
     margin-top: -35px;
-    opacity: 0;
+    opacity: 1;
     transition: all 1s;
 }
 
@@ -316,27 +316,19 @@
 .swiper-banner2 .swiper-pagination,
 .swiper-notebook3 .swiper-pagination,
 .swiper-notebook2 .swiper-pagination,
-.swiper-notebook1 .swiper-pagination {
-    --swiper-pagination-color: var(--letrasSubtitulos2);
+.swiper-notebook1 .swiper-pagination,
+.swiper-imagenes .swiper-pagination {
+    --swiper-pagination-color: #0014ff;
     --swiper-pagination-bullet-size: 10px;
-    --swiper-pagination-bullet-inactive-color: #000;
+    --swiper-pagination-bullet-inactive-color: black;
     --swiper-pagination-bullet-inactive-opacity: 1;
     --swiper-pagination-bullet-opacity: 1;
     --swiper-pagination-bullet-horizontal-gap: 4px;
 }
 
-.swiper-horizontal>.swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-}
-
 .home__main--whatsapp {
     position: fixed;
-    z-index: 1000;
+    z-index: 10;
     right: 10px;
     bottom: -7px;
     border-left: 3px solid;
@@ -355,14 +347,34 @@
     width: 50px;
 }
 
+.home__button--volver{
+    height: 30px;
+    width: 100px;
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid var(--fondo1VioletaO);
+    border-radius: 15px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 25px;
+    cursor: pointer;
+    }
+
+.home__button--volver:hover{
+    background-color: var(--letrasSubtitulos2);
+}
+
+.home__button--volver:hover a{
+    color:black
+}
+
 
 @media(min-width:560px) {
     .card__descuento {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .home__main__preciototal {
-        font-size: 26px;
+        font-size: 24px;
     }
 }
 
@@ -400,6 +412,11 @@
     .home__main__bannermid {
         display: flex;
     }
+
+    .swiper-notebook1 .swiper-button-prev,
+    .swiper-notebook1 .swiper-button-next{
+    opacity: 0;
+}
 
     .swiper-notebook1:hover .swiper-button-prev,
     .swiper-notebook1:hover .swiper-button-next,
@@ -439,11 +456,11 @@
     }
 
     .card__descuento {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .home__main__preciototal {
-        font-size: 20px;
+        font-size: 18px;
     }
 
 }
@@ -478,5 +495,13 @@
     .swiper-notebook3:hover .swiper-button-prev,
     .swiper-notebook3:hover .swiper-button-next {
         opacity: 1;
+    }
+
+    .card__descuento {
+        font-size: 17px;
+    }
+
+    .home__main__preciototal {
+        font-size: 20px;
     }
 }

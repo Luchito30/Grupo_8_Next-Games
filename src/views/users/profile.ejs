@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+            <div class="home__main--titulo">
+                <h2>Perfil de Usuario</h2>
+            </div>
+
+            <main class="profile">
+                <section class="profile-form">
+                    <form>
+                        <div class="profile-form-box-image">
+                            <p class="profile-titulo">Avatar</p>
+                            <img class="profile-image-avatar" src="/images/users/<%= locals.userLogin.image %>"
+                                alt="Avatar">
+                        </div>
+                        <!-- <div class="profile-form-box-id">
+                            <label class="profile-titulo">Id: </label>
+                            <input class="profile-form-box-input" type="number" name="id"
+                                value="<%= locals.userLogin.id %>">
+                        </div> -->
+                        <div class="profile-form-box-firstname">
+                            <label class="profile-titulo">Nombre: </label>
+                            <input class="profile-form-box-input" type="text" name="firstName"
+                                value="<%= locals.userLogin.firstName %>">
+                        </div>
+                        <div class="profile-form-box-lastName">
+                            <label class="profile-titulo">Apellido: </label>
+                            <input class="profile-form-box-input" type="text" name="lastName"
+                                value="<%= locals.userLogin.lastName %>">
+                        </div>
+                        <div class="profile-form-box-email">
+                            <label class="profile-titulo">E-mail: </label>
+                            <input class="profile-form-box-input" type="email" name="email"
+                                value="<%= locals.userLogin.email %>">
+                        </div>
+                        <div class="profile-form-box-userName">
+                            <label class="profile-titulo">Usuario: </label>
+                            <input class="profile-form-box-input" type="text" name="userName"
+                                value="<%= locals.userLogin.userName %>">
+                        </div>
+                    </form>
+                </section>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+            <script src="/javascripts/fixed.js"></script>
+    </body>
+
+</html>

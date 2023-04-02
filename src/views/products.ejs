@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <%- include('partials/header') %> 
+    
+        <div class="home__main--titulo">
+            <h2>PRODUCTOS</h2>
+        </div>
+
+        <% if (searchallprodu) { %>
+            <h2 class="dashboard__sn"><span class="home__main--titulo"><%= searchallprodu %></span></h2>
+        <% }%>
+
+        <section class="home__main__section">
+			<% products.forEach(({id,image,price,discount,name,category,subCategory}) => { %>
+				<%- include('./partials/product',{
+					id,
+					image,
+					price,
+					discount,
+					name,
+                    category,
+                    subCategory
+				}) %>
+			<% }) %>
+        </section>
+        
+        <% if (!products.length) { %>
+            <h2 class="dashboard__sn">No se encontro producto</h2>
+        <% }%>
+    
+	 <!--whatsapp-->
+     <%- include('./partials/whatsApp.ejs') %>
+
+    <%- include('partials/footer') %>
+
+      <!-- fixed -->
+      <script src="/javascripts/fixed.js"></script>
+</body>
+</html>

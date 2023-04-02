@@ -1,11 +1,11 @@
-# Sprint 3
+# Sprint 5
 
 ## 1.Comenzar a hacer:
-Hacer resumen de cada reunión hecha.
+reviciones del proyecto más seguido
 ---
 
 ## 2.Hacer más:
-Ser más comunicativos a la hora de las conexiones o avisar de problemas si es que no se puede conectar.
+Hacer más reuniones
 
 ---
 
@@ -22,6 +22,7 @@ Cumplir con las fechas establecidas.
 Revision de Trello.
 Pedir ayuda al resto del equipo.
 dailys y compartir los avances desde el principio.
+Resumenes de reuniones.
 ---
 
 ### 4.Hacer menos.
@@ -29,5 +30,5 @@ Respetar lo que es Daily con el tiempo, si hay problemas en el código arreglar 
 ---
 
 ## 5.Dejar de hacer:
-Dejar las cosas para último momento y más decididos al tomar una decisión.
+Dudar menos a la hora de tomar decisiones
 ---

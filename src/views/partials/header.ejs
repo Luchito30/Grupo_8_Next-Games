@@ -1,0 +1,252 @@
+<header>
+ <div class="header__box">
+
+        <div class="header__inicio">
+
+            <section class="header__hamburgersa__menu">
+                <article class="header__menu1">
+                    <div class="menu-hamburguesa">
+                        <i class="fa-solid fa-bars"></i>
+
+                        <nav class="header__nav1">
+                            <div class="header__nav--navegacion">
+                                <ul>
+                                    <li class="header__nav--navegacion--primaria">
+                                        <a href="/"><i class="fa-solid fa-house"></i>
+                                        </a>
+                                    </li>
+                                            <li class="header__nav--navegacion--primaria">
+                                        <a href="#">Productos</a>
+                                        <ul>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/accesorios">Accesorios</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/consolas">Consolas</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/tarjetas">Gifts Cards</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/juegos">Juegos</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/notebook">Notebooks</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/perifericos">Perifericos</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/insale">Ofertas</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a
+                                                    href="/products/ingresos">Nuevos Ingresos</a></li>
+                                            <li class="header__nav--navegacion--secundaria"><a href="/products">Todos
+                                                    los Productos</a></li>
+                                        </ul>
+                                    </li>
+                                    <% if (locals.userLogin) { %>
+                                        <% if (userLogin.rol === "admin") { %>
+                                            <li class="header__nav--navegacion--primaria">
+                                                <a href="#" >Dashboard</a>
+                                                <ul id="header__nav__hamburger-secundary">
+                                                    <li class="header__nav--navegacion--secundaria"><a href="/admin/dashboardProduct">Productos</a></li>
+                                                    <li class="header__nav--navegacion--secundaria"><a href="/admin/dashboardUser">Usuarios</a></li>
+                                                </ul>
+                                            </li>
+                                        <% } %>
+                                        <li  class="header__nav--navegacion--primaria">
+                                            <a href="/users/profile/<%= userLogin.id %>"> <span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                                        </li>
+                                        <li  class="header__nav--navegacion--primaria">
+                                            <a href="/users/logout">SALIR</a>
+                                        </li>
+                                        <% } else { %>
+                                            <li  class="header__nav--navegacion--primaria">
+                                                <a href="/users/register">Registro
+                                                </a>
+                                            </li>
+                                            <li  class="header__nav--navegacion--primaria">
+                                                <a href="/users/login">Login
+                                                </a>
+                                            </li>
+                                            <% } %>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </article>
+            </section>
+
+
+            <div class="header__div__logo">
+                <a href="/"><img class="header__logo" src="/images/next-games-nuevologo-horizontal.png" alt="logo"></a>
+            </div>
+
+            <section class="right-nav-bar">
+                <form action="/search" method="GET" autocomplete="off" class="right-nav-bar--form">
+                    <div>
+                        <input type="search" name="keywords" class="right-nav-bar--busq" id="keywords"
+                            placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+            </section>
+
+            <section class="right-nav-bar2">
+                <form action="/search" method="GET" autocomplete="off" class="right-nav-bar--form2">
+                    <div>
+                        <input type="search" name="keywords" class="right-nav-bar--busq2" id="keywords"
+                            placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                        <button class="right-nav-bar--button">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <div>
+
+                <button class="carro">
+                    <a href="/products/carrito"><i class="fa-solid fa-cart-shopping" id="carrito"></i></a>
+                </button>
+            </div>
+        </div>
+
+
+        <section class="header__container__menu" id="bloker">
+            <article class="header__menu">
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                            <a href="/" id="selected"><i class="fa-solid fa-house"></i>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <p class="home__nav--productos">Productos</p>
+                            <ul>
+                                <div>
+                                    <li><a href="/products/accesorios">Accesorios</a></li>
+                                    <li><a href="/products/consolas">Consolas</a></li>
+                                    <li><a href="/products/tarjetas">Gifts Cards</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/juegos">Juegos</a></li>
+                                    <li><a href="/products/notebook">Notebooks</a></li>
+                                    <li><a href="/products/perifericos">Perifericos</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/insale">Ofertas</a></li>
+                                    <li><a href="/products/ingresos">Nuevos Ingresos</a></li>
+                                    <li><a href="/products">Todos los Productos</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <% if (locals.userLogin) { %>
+                            <% if (userLogin.rol === "admin") { %>
+                                <li>
+                                    <p class="home__nav--productos">Dashboard</p>
+                                    <ul id="header__nav--submenudash">
+                                        <li><a href="/admin/dashboardProduct">Productos</a></li>
+                                        <li><a href="/admin/dashboardUser">Usuarios</a></li>
+                                    </ul>
+                                </li>
+                            <% } %>
+                            <li id="header__admin--li2">
+                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                            </li>
+                            <li id="header__admin--li">
+                                <a href="/users/logout">SALIR</a>
+                            </li>
+                            <% } else { %>
+                                <li>
+                                    <a href="/users/register">Registro
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/users/login">Login
+                                    </a>
+                                </li>
+                                <% } %>
+                    </ul>
+                </nav>
+            </article>
+        </section>
+
+        <section class="header__container__menu2" id="fixed">
+            <article class="header__menu">
+                <nav class="header__nav">
+                    <ul>
+                        <li>
+                            <a href="/" id="selected"><i class="fa-solid fa-house"></i>
+                            </a>
+                        </li>
+    
+    
+                        <li>
+                            <p class="home__nav--productos">Productos</p>
+                            <ul>
+                                <div>
+                                    <li><a href="/products/accesorios">Accesorios</a></li>
+                                    <li><a href="/products/consolas">Consolas</a></li>
+                                    <li><a href="/products/tarjetas">Gifts Cards</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/juegos">Juegos</a></li>
+                                    <li><a href="/products/notebook">Notebooks</a></li>
+                                    <li><a href="/products/perifericos">Perifericos</a></li>
+                                </div>
+                                <div>
+                                    <li><a href="/products/insale">Ofertas</a></li>
+                                    <li><a href="/products/ingresos">Nuevos Ingresos</a></li>
+                                    <li><a href="/products">Todos los Productos</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                        <% if (locals.userLogin) { %>
+                            <% if (userLogin.rol === "admin") { %>
+                                <li>
+                                    <p class="home__nav--productos">Dashboard</p>
+                                    <ul id="header__nav--submenudash">
+                                        <li><a href="/admin/dashboardProduct">Productos</a></li>
+                                        <li><a href="/admin/dashboardUser">Usuarios</a></li>
+                                    </ul>
+                                </li>
+                            <% } %>
+    
+                             <li class="dashboardp__buscarprodu">
+                                <form action="/products" method="GET" autocomplete="off">
+                                    <div class="dashboardp__buscarprodu--box">
+                                        <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                        <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                    </div>
+                                </form>
+                            </li>
+                            <li id="header__admin--li2">
+                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                            </li>
+                            <li id="header__admin--li">
+                                <a href="/users/logout">SALIR</a>
+                            </li>
+                            <% } else { %>
+                                
+                                <li class="dashboardp__buscarprodu">
+                                    <form action="/products" method="GET" autocomplete="off">
+                                        <div>
+                                            <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                            <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                        </div>
+                                    </form>
+                                </li>
+                                <li>
+                                    <a href="/users/register">Registro
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/users/login">Login
+                                    </a>
+                                </li>
+                                <% } %>
+                    </ul>
+                </nav>
+            </article>
+        </section>
+    
+    </div>
+
+</header>

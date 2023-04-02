@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs') %>
+<body class="body-recuperar-contra">
+    <%- include('../partials/header.ejs') %>
+
+    <div class="logo-reset-password">
+        <img class="recuperarContraseña--img" src="/images/users/User Password.png" alt="">
+    </div>
+    <h1 class="recuperarContraseña--h1">Recupera tu contraseña</h1>
+    <h4 class="recuperarContraseña--h4">Ingresa tu email y te enviaremos instrucciones de como resetear tu contraseña</h4>
+    <div class="email-input">
+    <label for="email" ></label>
+<input class="input-recuperar-contraseña" type="email" id="email" name="email" placeholder="Ingresa tu email">
+</div>
+<div class="recuperarContraseña-btn">
+    <button class="boton-recuperar-contraseña">Enviar email</button>
+    <a href="/users/login"><button class="boton-recuperar-contraseña">Cancelar</button></a>
+</div>
+   <!--whatsapp-->
+   <%- include('../partials/whatsApp.ejs') %>
+   
+    <%- include('../partials/footer.ejs') %>
+
+      <!-- fixed -->
+      <script src="/javascripts/fixed.js"></script>
+
+    
+</body>
+</html>

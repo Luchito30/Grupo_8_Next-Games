@@ -1,0 +1,731 @@
+[
+   {
+      "id": 1,
+      "name": "FIFA 23",
+      "description": "Disfruta de la tecnología HyperMotion2 de nueva generación, el fútbol de clubes femenino, la FIFA World Cup™ masculina y femenina, función de juego cruzado y mucho más.",
+      "price": 25999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "normally",
+      "image": "1677359091729_products_.jpg",
+      "images": [
+         "img-1679600240532.jpg",
+         "img-1679600240530.jpg",
+         "img-1679600240531.jpg"
+      ]
+   },
+   {
+      "id": 2,
+      "name": "NBA2K23 PS4",
+      "description": "NBA 2K23 es un videojuego de baloncesto de 2022 desarrollado por Visual Concepts y publicado por 2K Sports, basado en la Asociación Nacional de Baloncesto",
+      "price": 23000,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "normally",
+      "image": "item2.jpg",
+      "images": [
+         "img-1679602776061.jpg",
+         "img-1679602776063.jpg",
+         "img-1679602776070.jpg"
+      ]
+   },
+   {
+      "id": 3,
+      "name": "Ghost Of Tsushima PS4",
+      "description": "Con este juego de Ghost of Tsushima vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 15000,
+      "discount": 25,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "item3.jpg",
+      "images": [
+         "img-1679603156202.jpg",
+         "img-1679603156203.jpg",
+         "img-1679603156204.jpg"
+      ]
+   },
+   {
+      "id": 4,
+      "name": "The King Of Fighters Xv",
+      "description": "Con este juego de The King of Fighters vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 15000,
+      "discount": 25,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "item4.jpg",
+      "images": [
+         "img-1679603293326.jpg",
+         "img-1679603293327.jpg",
+         "img-1679603293333.jpg",
+         "img-1679603293341.jpg"
+      ]
+   },
+   {
+      "id": 5,
+      "name": "One Piece Odyssey",
+      "description": "Con este juego de One Piece vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 24999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "item5.jpg",
+      "images": [
+         "img-1679604023559.jpg",
+         "img-1679604023563.jpg",
+         "img-1679604023564.jpg",
+         "img-1679604023571.jpg"
+      ]
+   },
+   {
+      "id": 6,
+      "name": "Dragon Ball The Breakers Special Edition Ps4",
+      "description": "Con este juego de Dragon Ball vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 20000,
+      "discount": 5,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "item6.jpg",
+      "images": [
+         "img-1679604220525.jpg",
+         "img-1679604220489.jpg",
+         "img-1679604220490.jpg"
+      ]
+   },
+   {
+      "id": 7,
+      "name": "Resident Evil Village Gold Edition",
+      "description": "Con este juego de Resident Evil vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 24999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "item7.jpg",
+      "images": [
+         "img-1679604480605.jpg",
+         "img-1679604480612.jpg",
+         "img-1679604480614.jpg",
+         "img-1679604480621.png"
+      ]
+   },
+   {
+      "id": 8,
+      "name": "DEATH STRANDING DIRECTOR'S CUT",
+      "description": "Remasterizado para PlayStation 5. Experimenta más acción de personajes, historias extendidas a través de nuevas misiones y un Sistema social de hebras exclusivo para conectarte con otros jugadores del mundo",
+      "price": 19999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "item8.jpg",
+      "images": [
+         "img-1679604652356.jpg",
+         "img-1679604652357.jpg",
+         "img-1679604652358.jpeg"
+      ]
+   },
+   {
+      "id": 9,
+      "name": "Digimon Survive Standard Edition",
+      "description": "Con este juego de Digimon vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 15000,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "item18.jpg",
+      "images": [
+         "img-1679604932365.jpg",
+         "img-1679604932370.jpg"
+      ]
+   },
+   {
+      "id": 10,
+      "name": "Naruto Shippuden Ultimate Ninja Storm Trilogy Ps4",
+      "description": "Juego Naruto Shippuden: Incluye las ediciones remasterizadas HD:Naruto: Ultimate Ninja StormNaruto: Ultimate Ninja Storm 2.Naruto: Ultimate Ninja Storm 3 Full Burst",
+      "price": 12999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "item10.jpg",
+      "images": [
+         "img-1679605191489.jpg",
+         "img-1679605191491.jpg",
+         "img-1679605191493.jpg"
+      ]
+   },
+   {
+      "id": 11,
+      "name": "Heavy Rain + Beyond Two Souls Ps4",
+      "description": "Beyond para PS4 es una aventura gráfica que nos contará la historia durante quince años de la complicada vida de Jodie Holmes (interpretada por la actriz Ellen Page), desde la infancia a la madurez, siempre acompañada de una presencia, un espíritu qué no sabemos quién es, ni por qué se mantiene a su lado, pero que la ayudara.",
+      "price": 14999,
+      "discount": 5,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "item17.jpg",
+      "images": [
+         "img-1679607511495.jpg",
+         "img-1679607511491.jpg",
+         "img-1679607511494.jpg"
+      ]
+   },
+   {
+      "id": 12,
+      "name": "Call Of Duty Modern Warfare Remastered Ps4",
+      "description": "Call of Duty: Modern Warfare Remastered lleva a la generación de PlayStation 4, Xbox One y de los PCs de la actualidad el exitoso videojuego de acción bélica en primera persona que supuso el salto a la era moderna de una franquicia que, hasta la fecha, se conocía por estar ambientada en la Segunda Guerra Mundial. Con la campaña y 10 mapas multijugador, los jugadores pueden rememorar una contemporánea guerra en un ficticio conflicto ambientado en Oriente Medio y otros lugares de Europa",
+      "price": 14999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "item11.jpg",
+      "images": [
+         "img-1679607815417.jpg",
+         "img-1679607815406.jpg",
+         "img-1679607815414.jpg",
+         "img-1679607815416.jpg"
+      ]
+   },
+   {
+      "id": 13,
+      "name": "Fallout 76 Standard Edition",
+      "description": "Con este juego de Fallout vas a disfrutar de horas de diversión y de nuevos desafíos que te permitirán mejorar como gamer.",
+      "price": 12999,
+      "discount": 5,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "item12.jpg",
+      "images": [
+         "img-1679608169684.jpeg",
+         "img-1679608169686.jpg",
+         "img-1679608169694.jpg",
+         "img-1679608169699.jpg"
+      ]
+   },
+   {
+      "id": 14,
+      "name": "Apple MacBook Air A2337",
+      "description": "La notebook más delgada y ligera de Apple viene con los superpoderes del chip M1. Termina todos tus proyectos mucho más rápido con el CPU de 8 núcleos y disfruta como nunca antes de apps y juegos con gráficos avanzados gracias al GPU de hasta 8 núcleos.",
+      "price": 688999,
+      "discount": 5,
+      "subCategory": "Notebooks",
+      "category": "in-sale",
+      "image": "note1.jpg",
+      "images": [
+         "img-1679609186774.jpg",
+         "img-1679609186775.jpg",
+         "img-1679609186776.jpg",
+         "img-1679609186778.jpg"
+      ]
+   },
+   {
+      "id": 15,
+      "name": "Dell G15-RE-A975GRY-PUS",
+      "description": "Potencie sus habilidades con la nueva Dell G15 Ryzen Edition. Especialmente diseñada para jugadores exigentes, esta laptop gamer tiene una pantalla de 15.6 pulgadas con una tasa de refresco de 120 Hz, procesador AMD de la serie 5000, gráficos Nvidia GeForce y tecnología Game Shift.\r\n\r\nCaracteristicas:\r\n\r\nMICROPROCESADOR RYZEN 7 5800H\r\nPLACA DE VIDEO GEFORCE 3050Ti RTX\r\nMEMORIA 8GB DDR4\r\nDISCO 512GB SSD\r\nPANTALLA 15.6\" FHD 120Hz\r\nSISTEMA OPERATIVO WIN 11 HOME\r\nPUERTOS HDMI x1 / ETHERNET x1 / USB x4\r\nCOLOR PHANTOM GREY\r\nTECLADO EN INGLES",
+      "price": 410000,
+      "discount": 5,
+      "subCategory": "Notebooks",
+      "category": "in-sale",
+      "image": "note2.jpg",
+      "images": [
+         "img-1679609378138.jpg",
+         "img-1679609378141.jpg",
+         "img-1679609378147.jpg",
+         "img-1679609378181.jpg"
+      ]
+   },
+   {
+      "id": 16,
+      "name": "HP Victus Gaming",
+      "description": "Alimentada por la nueva generación de gráficos NVIDIA® GeForce GTX™ y procesador Intel® Core™, la laptop gaming Victus tiene todo lo que necesitas para jugar y gestionar tus tareas diarias respetando el medio ambiente gracias a los materiales reciclados que integra.\r\n\r\n\r\n\r\nCaracteristicas:\r\n\r\n\r\nMICROPROCESADOR Ryzen 7 5800\r\nPLACA DE VIDEO GEFORCE 3050 RTX\r\nMEMORIA 16GB DDR4\r\nDISCO 512GB SSD\r\nPANTALLA 16.1\" FHD 60Hz\r\nSISTEMA OPERATIVO WIN 11 HOME\r\nPUERTOS 3.5MM JACK x1 / HDMI 2.1 x1 / USB 3.0 x4 / LAN x1 / DISPLAY PORT x1\r\nCOLOR NEGRO\r\nTECLADO EN INGLES",
+      "price": 415000,
+      "discount": 10,
+      "subCategory": "Notebooks",
+      "category": "in-sale",
+      "image": "note3.jpg",
+      "images": [
+         "img-1679609776342.png",
+         "img-1679609776349.jpg",
+         "img-1679609776350.png"
+      ]
+   },
+   {
+      "id": 17,
+      "name": "Acer NH.Q7MAA Nitro 5",
+      "description": "Los procesadores Intel® Core™ te ofrecen un rendimiento superior para gaming y proporcionan la flexibilidad para realizar múltiples tareas sin problemas. La innovadora arquitectura nueva se adapta al núcleo correcto de la carga de trabajo adecuada, por lo que las tareas en segundo plano no interrumpirán tu sesión de juegos, y te da la libertad de chatear, navegar, transmitir, editar, grabar y reproducir sin ningún problema.",
+      "price": 265000,
+      "discount": 7,
+      "subCategory": "Notebooks",
+      "category": "in-sale",
+      "image": "note4.jpg",
+      "images": [
+         "img-1679610258857.jpg",
+         "img-1679610258859.jpg",
+         "img-1679610258861.jpg"
+      ]
+   },
+   {
+      "id": 18,
+      "name": "Lenovo Legion 5",
+      "description": "Caracteristicas: \r\nPROCESADOR\r\nMarca: AMD / Modelo: Ryzen 7 5800H\r\nNúcleos: 8/16 / Frecuencia: 4.40 GHz\r\n\r\nGRÁFICOS\r\nMarca: nVidia / Modelo: GeForce RTX 3060 6Gb\r\n\r\nMEMORIA\r\nCapacidad: 16GB 3200Mhz (2x8GB)  / Tipo: DDR4 SODIMM\r\nExpansión: No\r\n\r\nALMACENAMIENTO\r\nCapacidad: 512Gb NVME / Clase: NVME SSD\r\nPuerto M2: Si\r\n\r\nPANTALLA\r\nTamaño: 15.6 / Resolución: 1920x1080 165Hz IPS G-Sync\r\n\r\nCONECTIVIDAD\r\nWiFi: Si, AX / Bluetooth: Si, 5.1\r\nHDMI: Si / Red: Si\r\nUSB Type A: 4 / USB Type C: 2\r\nGrabadora DVD: No / Lector Memorias: Si\r\n\r\nSISTEMA OPERATIVO\r\nOS: Windows 11 Home\r\n\r\nOTRAS ESPECIFICACIONES\r\nColor: Phantom Blue (Arriba), Shadow Black (Abajo) / WebCam: Si, HD\r\nTeclado: Español RGB / Pad Numérico: Si\r\nDimensiones: 26.06cm Profundidad, 36.25cm Ancho, 2.57cm Alto\r\nBatería: 60 Wh / Garantía: 12 Meses Lenovo Oficial\r\nPeso: 2.40Kg / Modelo: 82JU00ENAR",
+      "price": 640000,
+      "discount": 0,
+      "subCategory": "Notebooks",
+      "category": "newer",
+      "image": "note5.jpg",
+      "images": [
+         "img-1679611534655.jpg",
+         "img-1679611534656.jpg",
+         "img-1679611534659.jpg"
+      ]
+   },
+   {
+      "id": 19,
+      "name": "MSI GEFORCE NVIDIA RTX 3080Ti",
+      "description": "La última iteración de la serie GAMING emblemática de MSI una vez más ofrece alto desempeño, bajo ruido y una estética que los gamers han llegado a reconocer y confiar. Ahora tú también puedes disfrutar de tus juegos favoritos con una tarjeta gráfica poderosa que se mantiene fría y silenciosa. Justo como te gusta",
+      "price": 378000,
+      "discount": 10,
+      "subCategory": "Perifericos",
+      "category": "in-sale",
+      "image": "nuevo10.jpg",
+      "images": [
+         "img-1679611804460.jpg",
+         "img-1679611804461.jpg",
+         "img-1679611804462.jpg"
+      ]
+   },
+   {
+      "id": 20,
+      "name": "PS5 Consola Edición GOD Digital",
+      "description": "Play Has No Limits \r\nExperimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.\r\nincluye juego God of War Ragnarok",
+      "price": 327000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "newer",
+      "image": "nuevo2.jpg",
+      "images": [
+         "img-1679611922528.jpg",
+         "img-1679611922533.jpg"
+      ]
+   },
+   {
+      "id": 21,
+      "name": "PSN Gift Card 10 usd Región USA",
+      "description": "Solo digital. Se entrega el codigo para jugar en tu cuenta personal. Evitá comprar cuentas, es ilegal y te estafan.",
+      "price": 5244,
+      "discount": 0,
+      "image": "card10usa.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card10usa.jpg"
+      ]
+   },
+   {
+      "id": 22,
+      "name": "PSN Gift Card 100 usd Región USA",
+      "description": "Solo digital. Se entrega el codigo para jugar en tu cuenta personal. Evitá comprar cuentas, es ilegal y te estafan.",
+      "price": 45600,
+      "discount": 0,
+      "image": "card100usa.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card100usa.jpg"
+      ]
+   },
+   {
+      "id": 23,
+      "name": "PSN Gift Card 50 usd Región ARG",
+      "description": "Tarjeta PSN de saldo para el store Argentino.\r\nEntrega inmediata.",
+      "price": 22000,
+      "discount": 0,
+      "image": "card50arg.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card50arg.jpg"
+      ]
+   },
+   {
+      "id": 24,
+      "name": "PS4 Joystick Dualshock 4 white",
+      "description": "joystick\r\ncontrol\r\ngamepad\r\njostin",
+      "price": 21000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "normally",
+      "image": "play6.png",
+      "images": [
+         "img-1679612373813.jpg",
+         "img-1679612373815.jpg",
+         "img-1679612373819.jpg"
+      ]
+   },
+   {
+      "id": 25,
+      "name": "Asus Notebook Gamer Tuf Dash",
+      "description": "Diseñado para juegos serios y durabilidad en el mundo real, TUF Gaming es una computadora portátil para juegos que puede llevarte a la victoria.",
+      "price": 409999,
+      "discount": 0,
+      "subCategory": "Notebooks",
+      "category": "normally",
+      "image": "note11.jpg",
+      "images": [
+         "img-1679612531951.jpg",
+         "img-1679612531922.jpg",
+         "img-1679612531923.jpg",
+         "img-1679612531928.png"
+      ]
+   },
+   {
+      "id": 26,
+      "name": "Asus Tuf Dash",
+      "description": "MICROPROCESADOR INTEL i7-12650H\r\nPLACA DE VIDEO GEFORCE 3070 RTX\r\nMEMORIA 16GB DDR5\r\nDISCO 512GB SSD\r\nPANTALLA 15.6\" 144Hz\r\nSISTEMA OPERATIVO WIN 11 HOME\r\nCOLOR BLACK\r\nTECLADO EN INGLES",
+      "price": 590000,
+      "discount": 0,
+      "subCategory": "Notebooks",
+      "category": "newer",
+      "image": "note12.jpg",
+      "images": [
+         "img-1679612776053.png",
+         "img-1679612776138.jpg",
+         "img-1679612776140.jpg",
+         "img-1679612776147.jpg"
+      ]
+   },
+   {
+      "id": 27,
+      "name": "PS5  + Fifa 23",
+      "description": "Play Has No Limits™\r\nExperimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.",
+      "price": 342000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "newer",
+      "image": "play2.jpg",
+      "images": [
+         "img-1679612981992.jpg"
+      ]
+   },
+   {
+      "id": 28,
+      "name": "PS5 Consola",
+      "description": "Play Has No Limits™\r\nExperimentá una carga increíblemente rápida con un SSD de ultra alta velocidad, inmersión más profunda con soporte para retroalimentación háptica, disparadores adaptativos y audio 3D, y una nueva generación de increíbles juegos de PlayStation®.",
+      "price": 319000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "normally",
+      "image": "play4.jpg",
+      "images": [
+         "img-1679613061744.jpg",
+         "img-1679613061746.jpg"
+      ]
+   },
+   {
+      "id": 29,
+      "name": "Atari Flashback Blast",
+      "description": "Consola retro",
+      "price": 6000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "normally",
+      "image": "nuevo8.jpg",
+      "images": [
+         "img-1679614569669.jpg",
+         "img-1679614569670.png"
+      ]
+   },
+   {
+      "id": 30,
+      "name": "XBOX Consola Xbox Series S",
+      "description": "Producto nuevo, en caja cerrada.",
+      "price": 170000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "normally",
+      "image": "oferta17.jpg",
+      "images": [
+         "img-1679614800074.jpg",
+         "img-1679614800077.png"
+      ]
+   },
+   {
+      "id": 31,
+      "name": "PSN Gift Card 10 usd Región ARG",
+      "description": "Tarjeta PSN de saldo para el store Argentino.\r\nEntrega inmediata.",
+      "price": 4560,
+      "discount": 0,
+      "image": "card10arg.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card10arg.jpg"
+      ]
+   },
+   {
+      "id": 32,
+      "name": "PSN Gift Card 100 usd Región ARG",
+      "description": "Tarjeta PSN de saldo para el store Argentino.\r\nEntrega inmediata",
+      "price": 43500,
+      "discount": 0,
+      "image": "card100arg.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card100arg.jpg"
+      ]
+   },
+   {
+      "id": 33,
+      "name": "PSN Gift Card 75 usd ARG",
+      "description": "Solo digital. Se entrega el codigo para jugar en tu cuenta personal. Evitá comprar cuentas, es ilegal y te estafan.",
+      "price": 32000,
+      "discount": 0,
+      "image": "card75arg.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card75arg.jpg"
+      ]
+   },
+   {
+      "id": 34,
+      "name": "PSN Gift Card 20 usd  Región ARG",
+      "description": "Tarjeta PSN de saldo para el store Argentino.\r\nEntrega inmediata",
+      "price": 9500,
+      "discount": 0,
+      "image": "card20arg.jpg",
+      "subCategory": "Gifts Cards",
+      "category": "normally",
+      "images": [
+         "card20arg.jpg"
+      ]
+   },
+   {
+      "id": 35,
+      "name": "Steam Deck 256GB",
+      "description": "Steam Deck es el dispositivo de juego portátil más potente y lleno de funcionalidad del mundo.",
+      "price": 430000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "newer",
+      "image": "play8.jpg",
+      "images": [
+         "img-1679615106556.jpg",
+         "img-1679615106558.jpg",
+         "img-1679615106560.jpg"
+      ]
+   },
+   {
+      "id": 36,
+      "name": "Nintendo Switch Consola Oled 64gb Neon (JPN)",
+      "description": "La consola Nintendo Switch está diseñada para cualquier estilo de vida, transformándose rápidamente de una consola casera a una consola portátil.",
+      "price": 210000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "normally",
+      "image": "play9.jpg",
+      "images": [
+         "img-1679615400384.jpg",
+         "img-1679615400385.jpg",
+         "img-1679615400386.jpg"
+      ]
+   },
+   {
+      "id": 37,
+      "name": "XBOX Series X + Joystick Blue",
+      "description": "La Xbox más rápida y potente de la historia.",
+      "price": 306000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "normally",
+      "image": "play10.jpg",
+      "images": [
+         "img-1679615567261.jpg",
+         "img-1679615567262.jpg"
+      ]
+   },
+   {
+      "id": 38,
+      "name": "Nintendo Switch 64GB Neon JPN + Zelda Breath of the Wilds",
+      "description": "La consola Nintendo Switch está diseñada para cualquier estilo de vida, transformándose rápidamente de una consola casera a una consola portátil.",
+      "price": 227590,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "newer",
+      "image": "play11.jpg",
+      "images": [
+         "img-1679615772300.jpg",
+         "img-1679615772301.jpg",
+         "img-1679615772319.jpg",
+         "img-1679615772320.jpg"
+      ]
+   },
+   {
+      "id": 39,
+      "name": "Steam Deck 64GB",
+      "description": "Steam Deck es el dispositivo de juego portátil más potente y lleno de funcionalidad del mundo.",
+      "price": 305000,
+      "discount": 15,
+      "subCategory": "Consolas",
+      "category": "in-sale",
+      "image": "play12.jpg",
+      "images": [
+         "img-1679615822759.jpg",
+         "img-1679615822760.jpg",
+         "img-1679615822761.jpg"
+      ]
+   },
+   {
+      "id": 40,
+      "name": "Nintendo Switch Joy-Con Azul / Amarillo Neon",
+      "description": "Tipo de control: Gamepad\r\nEs inalámbrico: Sí\r\nCon detección de movimiento: Sí\r\nCon vibración: Sí\r\nCon Bluetooth: Sí\r\nUnidades por paquete: 2\r\nCon touchpad: No",
+      "price": 30000,
+      "discount": 0,
+      "subCategory": "Consolas",
+      "category": "newer",
+      "image": "play13.jpg",
+      "images": [
+         "img-1679615961730.png",
+         "img-1679615961738.jpg",
+         "img-1679615961739.jpg"
+      ]
+   },
+   {
+      "id": 41,
+      "name": "God of War Ragnarok",
+      "description": "Embárcate en un épico y cordial viaje mientras Kratos y Atreus luchan por aferrarse y soltar",
+      "price": 19999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679901605891.jpg",
+      "images": [
+         "img-1679901605893.jpg",
+         "img-1679901605892.jpg"
+      ]
+   },
+   {
+      "id": 42,
+      "name": "God of War Ragnarok + Dualshock 4",
+      "description": "Embárcate en un épico y cordial viaje mientras Kratos y Atreus luchan por aferrarse y soltar",
+      "price": 45000,
+      "discount": 20,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "img-1679901803064.jpg",
+      "images": [
+         "img-1679901803066.jpg",
+         "img-1679901803069.jpg"
+      ]
+   },
+   {
+      "id": 43,
+      "name": "Dead space",
+      "description": "Dead Space es un videojuego de disparos en tercera persona con ambientación de videojuego de terror, desarrollado por EA Redwood Shores y distribuido por Electronic Arts. Es el primer título de la serie Dead Space, franquicia que incluye videojuegos, cómics y películas",
+      "price": 20999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679902224812.jpg",
+      "images": [
+         "img-1679902224813.jpg",
+         "img-1679902224815.jpg"
+      ]
+   },
+   {
+      "id": 44,
+      "name": "PS4 Resident Evil 4 Remake",
+      "description": "Resident Evil 4 es un remake del Resident Evil 4 original del 2005.",
+      "price": 27000,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679902478645.jpg",
+      "images": [
+         "img-1679902478646.jpg",
+         "img-1679902478647.jpg"
+      ]
+   },
+   {
+      "id": 45,
+      "name": "PS5 Resident Evil 4 Remake",
+      "description": "Resident Evil 4 es un remake del Resident Evil 4 original del 2005.",
+      "price": 28000,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679902586423.jpg",
+      "images": [
+         "img-1679902586424.jpg",
+         "img-1679902586425.jpg",
+         "img-1679902586426.jpg"
+      ]
+   },
+   {
+      "id": 46,
+      "name": "PS4 Resident Evil 4",
+      "description": "Resident Evil 4, es un videojuego de acción-aventura y disparos en tercera persona de estilo terror y supervivencia desarrollado por Capcom Production Studio 4 y distribuido por varias compañías de videojuegos",
+      "price": 6000,
+      "discount": 15,
+      "subCategory": "Juegos",
+      "category": "in-sale",
+      "image": "img-1679902738122.jpg",
+      "images": [
+         "img-1679902738123.jpg"
+      ]
+   },
+   {
+      "id": 47,
+      "name": "Hogwarts Legacy",
+      "description": "Experimenta Hogwarts a finales del siglo XIX y decide el futuro del mundo de la hechicería",
+      "price": 28500,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679903235124.jpg",
+      "images": [
+         "img-1679903287837.jpg",
+         "img-1679903287836.jpg"
+      ]
+   },
+   {
+      "id": 48,
+      "name": "Playstation VR2 HORIZON CALL OF THE MOUNTAIN BUNDLE",
+      "description": "Experimenta la nueva generación de juegos de realidad virtual con impresionantes efectos virtuales 4K HDR, juegos que definen el género y sensaciones únicas gracias al innovador casco PLaystation VR2 y al control Playstation VR2 Sense",
+      "price": 422000,
+      "discount": 0,
+      "subCategory": "Accesorios",
+      "category": "normally ",
+      "image": "img-1679903537875.jpeg",
+      "images": [
+         "img-1679903537876.jpg",
+         "img-1679903537878.jpg"
+      ]
+   },
+   {
+      "id": 49,
+      "name": "Oculus Casco de Realidad Virtual Meta Quest 2 128gb + Resident Evil 4",
+      "description": "Lleva la realidad virtual tu Quest 2 ligero y portátil dondequiera que vayas en el mundo real",
+      "price": 250000,
+      "discount": 20,
+      "subCategory": "Accesorios",
+      "category": "in-sale",
+      "image": "img-1679903655020.jpg",
+      "images": [
+         "img-1679903655020.jpg",
+         "img-1679903655021.jpg",
+         "img-1679903655022.jpg"
+      ]
+   },
+   {
+      "id": 50,
+      "name": "Metroid Prime Remastered",
+      "description": "Colócate detrás del visor de la cazarrecompensas intergaláctica Samus Aran en esta aclamada aventura con perspectiva de primera persona",
+      "price": 19999,
+      "discount": 0,
+      "subCategory": "Juegos",
+      "category": "newer",
+      "image": "img-1679903901812.jpg",
+      "images": [
+         "img-1679903951105.jpg",
+         "img-1679903951106.jpg"
+      ]
+   }
+]
