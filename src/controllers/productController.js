@@ -4,42 +4,104 @@ const { readJSON, writeJSON } = require('../data');
 const products = readJSON("productDataBase.json");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const db = require("../database/models")
+
 module.exports = {
 
   index: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    let allproducts;
-    const {searchallprodu} = req.query
 
-      if(searchallprodu){
-        allproducts = products.filter(product => product.name.toLowerCase().includes(searchallprodu.toLowerCase()) || product.subCategory.toLowerCase().includes(searchallprodu.toLowerCase()) || product.category.toLowerCase().includes(searchallprodu.toLowerCase()) || product.description.toLowerCase().includes(searchallprodu.toLowerCase()))
-      }else{
-        allproducts = products
-      }
-
-
-    return res.render('products', {
-      title: "Next Games | Productos",
-      products: allproducts,searchallprodu ,
-      toThousand
+    db.products.findAll({
+      include: ["image"]
     })
+      /*  const products = readJSON("productDataBase.json");
+       let allproducts;
+       const {searchallprodu} = req.query
+   
+         if(searchallprodu){
+           allproducts = products.filter(product => product.name.toLowerCase().includes(searchallprodu.toLowerCase()) || product.subCategory.toLowerCase().includes(searchallprodu.toLowerCase()) || product.category.toLowerCase().includes(searchallprodu.toLowerCase()) || product.description.toLowerCase().includes(searchallprodu.toLowerCase()))
+         }else{
+           allproducts = products
+         } */
+        .then(products => {
+        return res.render('products', {
+          title: "Next Games | Productos",
+          products: allproducts, searchallprodu,
+          toThousand
+        });
+      }).catch(error => {
+        console.log(error)
+      })
   },
   carrito: (req, res) => {
-    return res.render('productos/carrito', {
-      title: "Next Games | Carrito"
+
+    const products = db.products.findAll({
+      order: [["name"]],
+      attributes: ["name", "id"]
     });
+
+    const categories = db.subcategory.findAll({
+      order: [["name"]],
+      attributes: ["name", "id"]
+    });
+
+
+    Promise.all([products])
+    .then(({products}) => {
+      return res.render('productos/edicion', {
+        title: "Next Games | Editar Producto",
+        product,
+        categories,
+        toThousand
+    });
+  }).catch(error => {
+    console.log(error)
+  })
+    /* return res.render('productos/carrito', {
+      title: "Next Games | Carrito"
+    }); */
   },
   detalleproducto: (req, res) => {
-    const products = readJSON("productDataBase.json");
+  
+    const {id} = req.params;
+
+    db.products.findByPk(id,{
+      include : [{
+        association : "images",
+        attributes : ["images"]
+    },{
+      association : "category",
+      attributes : ["name"]
+    },{
+      association : "sub-category",
+      attributes : ["name"]
+    }]
+    }).then(products => {
+      return res.render('productos/detalle-producto', {
+        title: "Next Games | Detalle de producto",
+        ...product.dataValues,
+        toThousand
+      });
+    }).catch(error => {
+      console.log(error)
+    })
+
+   /*  const products = readJSON("productDataBase.json");
     let product = products.find(product => product.id === +req.params.id);
     return res.render('productos/detalle-producto', {
       title: "Next Games | Detalle de producto",
       ...product,
       toThousand
-    });
+    }); */
   },
   edicion: (req, res) => {
-    const products = readJSON("productDataBase.json");
+
+    const { id } = req.params;
+    
+    const product = db.products.findByPk(id,{
+      include: ["image",""]
+    })
+  },
+   /*  const products = readJSON("productDataBase.json");
     const { id } = req.params;
     const product = products.find(product => product.id === +id);
     return res.render('productos/edicion', {
@@ -47,7 +109,7 @@ module.exports = {
       ...product,
       toThousand
     });
-  },
+  } */
   update: (req, res) => {
 
     const errors = validationResult(req);
@@ -72,9 +134,41 @@ module.exports = {
 
 
     if (errors.isEmpty()) {
+  
+      const {id} = +req.params
+      const { name, discount, price, description, category, subCategory } = req.body;
 
-      const products = readJSON("productDataBase.json");
-      const id = +req.params.id
+      db.products.findByPk(id)
+        .then(product => {
+          const productEdit = db.Address.update({
+            name: name.trim(),
+            description: description.trim(),
+            price: +price,
+            discount: +discount,
+            subCategory,
+            category,
+            image: req.files && req.files.image ? req.files.image[0].filename : product.image,
+            images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
+            },
+            {
+              where: {
+                id
+              }
+            })
+            Promise.all(([productEdit]))
+              .then(() => {
+
+                (req.file && fs.existsSync('public/images/products/' + products.image)) && fs.unlinkSync('public/images/products/' + products.image)
+   
+                (req.file && fs.existsSync('public/images/products/' + products.images)) && fs.unlinkSync('public/images/products/' + products.images)
+             
+                req.
+              })
+        })
+            
+
+      /* const products = readJSON("productDataBase.json");
+      const {id} = +req.params
       const { name, discount, price, description, category, subCategory } = req.body;
 
       const productsModified = products.map(product => {
@@ -101,9 +195,9 @@ module.exports = {
 
       writeJSON("productDataBase.json", productsModified)
       return res.redirect("/admin/dashboardProduct")
+ */
+    } else {
 
-    }else{
-      
 
       if (req.files.image) {
         req.files.image.forEach(file => {
@@ -125,8 +219,8 @@ module.exports = {
         title: "Next Games | Editar Producto",
         ...product,
         toThousand,
-        errors : errors.mapped(),
-        old : req.body
+        errors: errors.mapped(),
+        old: req.body
       });
     }
 
