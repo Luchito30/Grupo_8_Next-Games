@@ -3,7 +3,7 @@ const { validationResult } = require('express-validator');
 const { readJSON, writeJSON } = require('../data');
 const products = readJSON("productDataBase.json");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const db = require('../database/models');
 module.exports = {
 
   index: (req, res) => {
