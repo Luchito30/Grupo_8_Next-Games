@@ -1,6 +1,6 @@
 const { check, body } = require('express-validator');
-const {readJSON } = require("../data")
 
+const db = require('../database/models');
 module.exports = [
     check('firstName')
         .notEmpty().withMessage('El nombre es obligatorio').bail()
@@ -34,9 +34,19 @@ module.exports = [
         .notEmpty().withMessage('El email es obligatorio').bail()
         .isEmail().withMessage('Debe ser un email con formato válido')
         .custom((value, {req}) => {
-            let user = readJSON('user.json').find(user => user.email === value);
-            return !user 
-        }).withMessage('El email ya se encuentra registrado'),
+            return db.User.findOne({
+                where : {
+                    email : value
+                }
+            }).then(user => {
+                if(user){
+                    return Promise.reject()
+                }
+            }).catch((error) => {
+                console.log(error)
+                return Promise.reject('El email ya se encuentra registrado')
+            })
+        }),
 
     check('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()
