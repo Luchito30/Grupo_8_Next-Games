@@ -21,7 +21,7 @@ module.exports = {
       password: {
         type: Sequelize.STRING
       },
-      UserName: {
+      userName: {
         type: Sequelize.STRING
       },
       image: {
@@ -36,7 +36,7 @@ module.exports = {
           key : 'id'
         }
       },
-      AddressId: {
+      addressId: {
         type: Sequelize.INTEGER,
         references : {
           model :{
