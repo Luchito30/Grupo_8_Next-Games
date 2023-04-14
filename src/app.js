@@ -38,7 +38,10 @@ app.use(
 
 app.use(checkCookie);
 app.use(localsUserCheck);
-
+app.use((req,res,next) => {
+  req.session.message = null
+  next()
+})
 
 
 // routes
