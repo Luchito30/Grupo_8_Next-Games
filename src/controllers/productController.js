@@ -10,9 +10,14 @@ module.exports = {
 
   index: (req, res) => {
 
-    db.products.findAll({
-      include: ["image"]
-    })
+    db.product.findAll()
+    .then(products => {
+      return res.render('/products', {
+        title: "Next Games | Productos",
+        products,
+        toThousand
+      });
+    }).catch(error => console.log(error))
       /*  const products = readJSON("productDataBase.json");
        let allproducts;
        const {searchallprodu} = req.query
@@ -22,15 +27,6 @@ module.exports = {
          }else{
            allproducts = products
          } */
-        .then(products => {
-        return res.render('products', {
-          title: "Next Games | Productos",
-          products: allproducts, searchallprodu,
-          toThousand
-        });
-      }).catch(error => {
-        console.log(error)
-      })
   },
   carrito: (req, res) => {
 
@@ -72,7 +68,7 @@ module.exports = {
       association : "category",
       attributes : ["name"]
     },{
-      association : "sub-category",
+      association : "SubCategories",
       attributes : ["name"]
     }]
     }).then(products => {
@@ -94,13 +90,13 @@ module.exports = {
     }); */
   },
   edicion: (req, res) => {
-
+/* 
     const { id } = req.params;
     
     const product = db.products.findByPk(id,{
       include: ["image",""]
     })
-  },
+  }, */
    /*  const products = readJSON("productDataBase.json");
     const { id } = req.params;
     const product = products.find(product => product.id === +id);
@@ -108,8 +104,8 @@ module.exports = {
       title: "Next Games | Editar Producto",
       ...product,
       toThousand
-    });
-  } */
+    });*/
+  },
   update: (req, res) => {
 
     const errors = validationResult(req);
@@ -135,7 +131,7 @@ module.exports = {
 
     if (errors.isEmpty()) {
   
-      const {id} = +req.params
+   /*    const {id} = +req.params
       const { name, discount, price, description, category, subCategory } = req.body;
 
       db.products.findByPk(id)
@@ -165,7 +161,7 @@ module.exports = {
                 req.
               })
         })
-            
+             */
 
       /* const products = readJSON("productDataBase.json");
       const {id} = +req.params
