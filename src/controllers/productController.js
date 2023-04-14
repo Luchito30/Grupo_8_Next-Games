@@ -5,7 +5,6 @@ const products = readJSON("productDataBase.json");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const db = require("../database/models");
-const product = require('../database/models/product');
 
 module.exports = {
 
@@ -410,13 +409,22 @@ module.exports = {
     })
   },
   remove: (req, res) => {
-    const products = readJSON("productDataBase.json");
+
+    db.Product.destroy({
+      where: {
+id: req.params.id
+      }
+    }).then(()=>{
+      return res.redirect('/dashboard')
+    }) .catch((error) => console.log(error))
+  
+    /* const products = readJSON("productDataBase.json");
     const id = req.params.id;
     const productsModified = products.filter(product => product.id !== +id);
 
 
     writeJSON("productDataBase.json", productsModified)
-    return res.redirect("/admin/dashboardProduct")
+    return res.redirect("/admin/dashboardProduct") */
   },
   notebook: (req, res) => {
     const products = readJSON("productDataBase.json");

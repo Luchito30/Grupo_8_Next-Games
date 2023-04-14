@@ -4,6 +4,9 @@ const { readJSON, writeJSON } = require("../data");
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const db = require("../database/models");
+const { Op } = require("sequelize");
+
 module.exports = {
     home: (req, res) => {
 
@@ -16,7 +19,7 @@ module.exports = {
         const computacion = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
@@ -30,7 +33,7 @@ module.exports = {
         const ingresos = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
@@ -44,7 +47,7 @@ module.exports = {
         const tarjetas = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
@@ -58,7 +61,7 @@ module.exports = {
         const consolas = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
@@ -72,7 +75,8 @@ module.exports = {
         const juegos = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
