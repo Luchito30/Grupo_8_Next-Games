@@ -15,7 +15,7 @@
         <% }%>
 
         <section class="home__main__section">
-			<% products.forEach(({id,image,price,discount,name,category,subCategory}) => { %>
+			<% product.forEach(({id,image,price,discount,name,category,subCategory}) => { %>
 				<%- include('./partials/product',{
 					id,
 					image,
