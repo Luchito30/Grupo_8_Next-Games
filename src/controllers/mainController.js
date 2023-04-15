@@ -3,7 +3,10 @@ const path = require('path');
 const { readJSON, writeJSON } = require("../data");
 const db = require("../database/models");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+const db = require("../database/models");
 const { Op } = require("sequelize");
+
 module.exports = {
     home: (req, res) => {
 
@@ -16,35 +19,26 @@ module.exports = {
         const computacion = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
             where: {
                 CategoryId: {
-                    [Op.eq]: 3
+                    [Op.eq]: 5
                 }
             }
         });
 
         const ingresos = db.Product.findAll({
-            include: [
-                {
-                    association: "category",
-                    attibutes: ["name"]
-                }
-            ],
-            where: {
-                CategoryId: {
-                    [Op.eq]: 3
-                }
-            }
+            order: [["createdAt", "DESC"]],
+            include : ['images']
         });
 
         const tarjetas = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
@@ -58,13 +52,13 @@ module.exports = {
         const consolas = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
             where: {
                 CategoryId: {
-                    [Op.eq]: 3
+                    [Op.eq]: 4
                 }
             }
         });
@@ -72,13 +66,14 @@ module.exports = {
         const juegos = db.Product.findAll({
             include: [
                 {
-                    association: "category",
+                    association: "SubCategory",
+                    association: "SubCategory",
                     attibutes: ["name"]
                 }
             ],
             where: {
                 CategoryId: {
-                    [Op.eq]: 3
+                    [Op.eq]: 1
                 }
             }
         });
