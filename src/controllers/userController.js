@@ -29,13 +29,13 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            const { firstName, lastName, email, password, userName, image } = req.body
+            const { firstName, LastName, email, password, userName, image } = req.body
 
             db.Address.create()
                 .then(address => {
                     db.User.create({
                         firstName: firstName.trim(),
-                        lastName: lastName.trim(),
+                        LastName: LastName.trim(),
                         email: email.trim(),
                         password: hashSync(password, 10),
                         userName: userName.trim(),
@@ -58,7 +58,7 @@ module.exports = {
             /*   const newUser = {
                   id: users.length ? users[users.length -1].id +1 : 1,
                   firstName: firstName.trim(),
-                  lastName: lastName.trim(),
+                  LastName: LastName.trim(),
                   email: email.trim(),
                   password: hashSync(password,12),
                   userName: userName.trim(),
@@ -90,7 +90,7 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            db.User.findOne({
+            db.Usuario.findOne({
                 where: {
                     email: req.body.email
                 }
@@ -130,8 +130,8 @@ module.exports = {
         /*  const users = readJSON('user.json');
          const { id } = req.session.userLogin;
          const user = users.find((user) => user.id === +id) */
-        db.User.findByPk(req.session.userLogin.id, {
-            attributes: ['firstName', 'lastName', 'userName', 'email', 'image'],
+        db.Usuario.findByPk(req.session.userLogin.id, {
+            attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
             include: [
                 {
                     association: 'address',
@@ -150,10 +150,10 @@ module.exports = {
             .catch(error => console.log(error))
     },
     update: (req, res) => {
-        const { firstName, lastName, userName, address, city, province, zipCode } = req.body
+        const { firstName, LastName, userName, address, city, province, zipCode } = req.body
         const { id } = req.session.userLogin;
 
-        db.User.findByPk(id)
+        db.Usuario.findByPk(id)
             .then(user => {
                 const addressUpdate = db.Address.update(
                     {
@@ -168,10 +168,10 @@ module.exports = {
                         }
                     }
                 )
-                const userUpdate = db.User.update(
+                const userUpdate = db.Usuario.update(
                     {
                         firstName: firstName.trim(),
-                        lastName: lastName.trim(),
+                        LastName: LastName.trim(),
                         userName: userName.trim(),
                         image: req.file ? req.file.filename : user.image
                     },
@@ -199,7 +199,7 @@ module.exports = {
     },
     list: (req, res) => {
 
-        db.User.findAll({
+        db.Usuario.findAll({
             include: ['address', 'rol']
         })
             .then(users => {
@@ -255,12 +255,12 @@ module.exports = {
         if (errors.isEmpty()) {
 
             const users = readJSON("user.json")
-            const { firstName, lastName, email, password, userName, image } = req.body
+            const { firstName, LastName, email, password, userName, image } = req.body
 
             const newUser = {
                 id: users.length ? users[users.length - 1].id + 1 : 1,
                 firstName: firstName.trim(),
-                lastName: lastName.trim(),
+                LastName: LastName.trim(),
                 email: email.trim(),
                 password: hashSync(password, 12),
                 userName: userName.trim(),

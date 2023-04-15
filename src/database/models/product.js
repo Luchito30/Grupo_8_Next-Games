@@ -19,6 +19,7 @@ module.exports = (sequelize, DataTypes) => {
         as : 'SubCategory'
       });
     }
+    
   }
   Product.init({
     name: DataTypes.STRING,
