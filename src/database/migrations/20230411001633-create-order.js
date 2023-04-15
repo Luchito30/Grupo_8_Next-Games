@@ -15,11 +15,11 @@ module.exports = {
       total: {
         type: Sequelize.INTEGER
       },
-      UserId: {
+      userId: {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tableName : "Usuarios"
+            tableName : "Users"
           },
           key : 'id'
         }

@@ -22,11 +22,11 @@ module.exports = {
         }
         
       },
-      subCategoryId: {
+      subcategoryId: {
         type: Sequelize.INTEGER,
         references:{
           model:{
-            tableName:'SubCategories'
+            tableName:'Subcategories'
           },
           key: 'id'
         }

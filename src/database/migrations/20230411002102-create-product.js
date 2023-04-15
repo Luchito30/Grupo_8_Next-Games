@@ -24,11 +24,11 @@ module.exports = {
       visible: {
         type: Sequelize.BOOLEAN
       },
-      CategoryId: {
+      stateId: {
         type: Sequelize.INTEGER,
         references : {
           model :{
-            tableName : "Categories"
+            tableName : "States"
           },
           key : 'id'
         }

@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     /**
@@ -10,28 +8,36 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Product.belongsTo(models.Category, {
-        foreignKey : 'categoryId',
-        as : 'category'
+      Product.belongsTo(models.State, {
+        foreignKey: "stateId",
+        as: "state",
       });
-      Product.belongsTo(models.SubCategory, {
-        foreignKey : 'productId',
-        as : 'SubCategory'
+      Product.belongsToMany(models.Subcategory, {
+        foreignKey: "productId",
+        otherKey: "subcategoryId",
+        as: "subcategories",
+        through: "SubcategoriesProducts",
+      });
+      Product.hasMany(models.Image, {
+        foreignKey: "productId",
+        as: "images",
       });
     }
-    
   }
-  Product.init({
-    name: DataTypes.STRING,
-    price: DataTypes.INTEGER,
-    discount: DataTypes.INTEGER,
-    description: DataTypes.TEXT,
-    visible: DataTypes.BOOLEAN,
-    categoryId: DataTypes.INTEGER,
-    image: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Product',
-  });
+  Product.init(
+    {
+      name: DataTypes.STRING,
+      price: DataTypes.INTEGER,
+      discount: DataTypes.INTEGER,
+      description: DataTypes.TEXT,
+      visible: DataTypes.BOOLEAN,
+      stateId: DataTypes.INTEGER,
+      image: DataTypes.STRING,
+    },
+    {
+      sequelize,
+      modelName: "Product",
+    }
+  );
   return Product;
 };

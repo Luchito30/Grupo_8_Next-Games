@@ -90,7 +90,7 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            db.Usuario.findOne({
+            db.User.findOne({
                 where: {
                     email: req.body.email
                 }
@@ -130,7 +130,7 @@ module.exports = {
         /*  const users = readJSON('user.json');
          const { id } = req.session.userLogin;
          const user = users.find((user) => user.id === +id) */
-        db.Usuario.findByPk(req.session.userLogin.id, {
+        db.User.findByPk(req.session.userLogin.id, {
             attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
             include: [
                 {
@@ -168,7 +168,7 @@ module.exports = {
                         }
                     }
                 )
-                const userUpdate = db.Usuario.update(
+                const userUpdate = db.User.update(
                     {
                         firstName: firstName.trim(),
                         LastName: LastName.trim(),
@@ -199,7 +199,7 @@ module.exports = {
     },
     list: (req, res) => {
 
-        db.Usuario.findAll({
+        db.User.findAll({
             include: ['address', 'rol']
         })
             .then(users => {

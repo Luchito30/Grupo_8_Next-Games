@@ -1,6 +1,6 @@
 'use strict';
 
-const subCategoriesJSON = ['Juegos', 'Perifericos', 'Gifts Cards', 'Consolas', 'Notebooks', 'Accesorios']
+const subCategoriesJSON = ['Juegos', 'Periféricos', 'Gifts Cards', 'Consolas', 'Notebooks', 'Accesorios']
 const subCategories = subCategoriesJSON.map(subCategory => {
   return {
     name: subCategory,

@@ -13,13 +13,13 @@ const bcryptjs = require('bcryptjs')
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
-      "Usuarios",
+      "Users",
       users,
       {}
     );
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Usuarios", null, {});
+    await queryInterface.bulkDelete("Users", null, {});
   },
 };

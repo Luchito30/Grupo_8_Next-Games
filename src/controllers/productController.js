@@ -1,26 +1,25 @@
-const fs = require('fs');
-const { validationResult } = require('express-validator');
-const { readJSON, writeJSON } = require('../data');
-const products = readJSON("productDataBase.json");
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const fs = require("fs");
+const { validationResult } = require("express-validator");
+const { readJSON } = require("../data");
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const db = require("../database/models");
 
 module.exports = {
-
   index: (req, res) => {
-
-    db.Product.findAll()
-    .then(products => {
-      return res.render('/products', {
-        title: "Next Games | Productos",
-        products,
-        toThousand
-      });
-    }).catch(error => console.log(error))
-      /*  const products = readJSON("productDataBase.json");
+    const { searchallprodu } = req.query;
+    db.Product.findAll({ include: ["images", "state", "subcategories"] })
+      .then((products) => {
+        return res.render("products", {
+          title: "Next Games | Productos",
+          products,
+          toThousand,
+          searchallprodu,
+        });
+      })
+      .catch((error) => console.log(error));
+    /*  const products = readJSON("productDataBase.json");
        let allproducts;
-       const {searchallprodu} = req.query
    
          if(searchallprodu){
            allproducts = products.filter(product => product.name.toLowerCase().includes(searchallprodu.toLowerCase()) || product.subCategory.toLowerCase().includes(searchallprodu.toLowerCase()) || product.category.toLowerCase().includes(searchallprodu.toLowerCase()) || product.description.toLowerCase().includes(searchallprodu.toLowerCase()))
@@ -29,36 +28,42 @@ module.exports = {
          } */
   },
   carrito: (req, res) => {
-    return res.render('productos/carrito', {
-      title: "Next Games | Carrito"
+    return res.render("productos/carrito", {
+      title: "Next Games | Carrito",
     });
   },
   detalleproducto: (req, res) => {
-  
-    const {id} = req.params;
+    const { id } = req.params;
 
-    db.Product.findByPk(id,{
-      include : [{
-        association : "images",
-        attributes : ["image"]
-    },{
-      association : "category",
-      attributes : ["name"]
-    },{
-      association : "SubCategories",
-      attributes : ["name"]
-    }]
-    }).then(products => {
-      return res.render('productos/detalle-producto', {
-        title: "Next Games | Detalle de producto",
-        ...products.dataValues,
-        toThousand
-      });
-    }).catch(error => {
-      console.log(error)
+    db.Product.findByPk(id, {
+      include: [
+        {
+          association: "images",
+          attributes: ["image"],
+        },
+        {
+          association: "state",
+          attributes: ["name"],
+        },
+        {
+          association: "subcategories",
+          attributes: ["name"],
+        },
+      ],
     })
+      .then((product) => {
+        console.log(product)
+        return res.render("productos/detalle-producto", {
+          title: "Next Games | Detalle de producto",
+          ...product.dataValues,
+          toThousand,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-   /*  const products = readJSON("productDataBase.json");
+    /*  const products = readJSON("productDataBase.json");
     let product = products.find(product => product.id === +req.params.id);
     return res.render('productos/detalle-producto', {
       title: "Next Games | Detalle de producto",
@@ -66,31 +71,54 @@ module.exports = {
       toThousand
     }); */
   },
+  getFromSubcategory:(req, res) => {
+    const { subcategoryId } = req.params;
+    const searchallprodu = false
+    db.Subcategory.findByPk(subcategoryId,{
+      include:[
+        {
+          association:'products',
+          include:['images','state']
+        }
+      ]
+    })
+      .then((subcategory) => {
+        console.log(subcategory);
+        return res.render("products", {
+          title: "Next Games | Productos",
+          products:subcategory.products,
+          toThousand,
+          searchallprodu,
+          titleView: subcategory.name
+        });
+      })
+      .catch((error) => console.log(error));
+
+  },
   edicion: (req, res) => {
+    const { id } = req.params;
 
-    const {id} = req.params;
-
-    const product = db.Product.findByPk(id,{
-      include: ["image"]
+    const product = db.Product.findByPk(id, {
+      include: ["image"],
     });
 
-    const categories = db.SubCategory.findAll({
+    const categories = db.Subcategory.findAll({
       order: [["name"]],
-      attributes: ["name", "id"]
+      attributes: ["name", "id"],
     });
 
-    Promise.all([product,categories])
-    .then(([product,categories]) => {
-      return res.render('productos/edicion', {
-        title: "Next Games | Editar Producto",
-        ...product.dataValues,
-        categories,
-        toThousand
-      });
-    }).catch(error => console.log(error))
+    Promise.all([product, categories])
+      .then(([product, categories]) => {
+        return res.render("productos/edicion", {
+          title: "Next Games | Editar Producto",
+          ...product.dataValues,
+          categories,
+          toThousand,
+        });
+      })
+      .catch((error) => console.log(error));
 
-    
-   /*  const products = readJSON("productDataBase.json");
+    /*  const products = readJSON("productDataBase.json");
     const { id } = req.params;
     const product = products.find(product => product.id === +id);
     return res.render('productos/edicion', {
@@ -100,7 +128,6 @@ module.exports = {
     });*/
   },
   update: (req, res) => {
-
     const errors = validationResult(req);
 
     if (req.fileValidationError) {
@@ -108,8 +135,8 @@ module.exports = {
         value: "",
         msg: req.fileValidationError,
         param: "images",
-        location: "files"
-      })
+        location: "files",
+      });
     }
 
     if (req.fileValidationError) {
@@ -117,38 +144,43 @@ module.exports = {
         value: "",
         msg: req.fileValidationError,
         param: "image",
-        location: "files"
-      })
+        location: "files",
+      });
     }
 
-
     if (errors.isEmpty()) {
-   const {id} = +req.params
-      const { name, discount, price, description, category, subCategory } = req.body;
+      const { id } = +req.params;
+      const { name, discount, price, description, category, subCategory } =
+        req.body;
 
-      db.products.findByPk(id)
-        .then(product => {
-          const productEdit = db.Address.update({
+      db.products.findByPk(id).then((product) => {
+        const productEdit = db.Address.update(
+          {
             name: name.trim(),
             description: description.trim(),
             price: +price,
             discount: +discount,
             subCategory,
             category,
-            image: req.files && req.files.image ? req.files.image[0].filename : product.image,
-            images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
+            image:
+              req.files && req.files.image
+                ? req.files.image[0].filename
+                : product.image,
+            images:
+              req.files && req.files.images
+                ? req.files.images.map((file) => file.filename)
+                : product.images,
+          },
+          {
+            where: {
+              id,
             },
-            {
-              where: {
-                id
-              }
-            })
-            Promise.all(([productEdit]))
-            .then(() => {
-                return res.redirect("/admin/dashboardProduct")
-              })
-        })
-            
+          }
+        );
+        Promise.all([productEdit]).then(() => {
+          return res.redirect("/admin/dashboardProduct");
+        });
+      });
 
       /* const products = readJSON("productDataBase.json");
       const {id} = +req.params
@@ -180,44 +212,44 @@ module.exports = {
       return res.redirect("/admin/dashboardProduct")
  */
     } else {
-    
       const { id } = req.params;
 
       if (req.files.image) {
-        req.files.image.forEach(file => {
-          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        req.files.image.forEach((file) => {
+          fs.existsSync(`./public/images/products/${file.filename}`) &&
+            fs.unlinkSync(`./public/images/products/${file.filename}`);
         });
       }
 
       if (req.files.images) {
-        req.files.images.forEach(file => {
-          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        req.files.images.forEach((file) => {
+          fs.existsSync(`./public/images/products/${file.filename}`) &&
+            fs.unlinkSync(`./public/images/products/${file.filename}`);
         });
       }
 
-      const product = db.Product.findByPk(id,{
-        include: ["image"]
-      })
+      const product = db.Product.findByPk(id, {
+        include: ["image"],
+      });
 
-      const categories = db.SubCategory.findAll({
+      const categories = db.Subcategory.findAll({
         order: [["name"]],
-        attributes: ["name", "id"]
+        attributes: ["name", "id"],
       });
 
-      Promise.all([product,categories])
-      .then(([product,categories]) => {
-      return res.render('productos/edicion', {
-        title: "Next Games | Editar Producto",
-        ...product.dataValues,
-        categories,
-        toThousand,
-        errors: errors.mapped(),
-        old: req.body
+      Promise.all([product, categories]).then(([product, categories]) => {
+        return res.render("productos/edicion", {
+          title: "Next Games | Editar Producto",
+          ...product.dataValues,
+          categories,
+          toThousand,
+          errors: errors.mapped(),
+          old: req.body,
+        });
       });
-    })
-  }
+    }
 
-      /* const products = readJSON("productDataBase.json");
+    /* const products = readJSON("productDataBase.json");
       const { id } = req.params;
       const product = products.find(product => product.id === +id);
       return res.render('productos/edicion', {
@@ -228,39 +260,36 @@ module.exports = {
         old: req.body
       });
     } */
-
   },
   createItem: (req, res) => {
-
     const products = db.Product.findAll({
       order: [["name"]],
-      attributes: ["name", "id"]
+      attributes: ["name", "id"],
     });
 
-    const categories = db.SubCategory.findAll({
+    const categories = db.Subcategory.findAll({
       order: [["name"]],
-      attributes: ["name", "id"]
+      attributes: ["name", "id"],
     });
 
-
-    Promise.all([products,categories])
-    .then(([products,categories]) => {
-      return res.render('productos/edicion', {
-        title: "Next Games | Editar Producto",
-        products,
-        categories,
-        toThousand
-    });
-  }).catch(error => {
-    console.log(error)
-  })
-},
-   /*  return res.render('productos/crear-item', {
+    Promise.all([products, categories])
+      .then(([products, categories]) => {
+        return res.render("productos/edicion", {
+          title: "Next Games | Editar Producto",
+          products,
+          categories,
+          toThousand,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
+  /*  return res.render('productos/crear-item', {
       title: "Next Games | Crear Producto"
     });
   }, */
   storeMainImage: (req, res) => {
-
     const errors = validationResult(req);
 
     if (!req.files.images && !req.fileValidationError) {
@@ -268,8 +297,8 @@ module.exports = {
         value: "",
         msg: "El producto debe tener por lo menos una imagen",
         param: "images",
-        location: "files"
-      })
+        location: "files",
+      });
     }
 
     if (req.fileValidationError) {
@@ -277,8 +306,8 @@ module.exports = {
         value: "",
         msg: req.fileValidationError,
         param: "images",
-        location: "files"
-      })
+        location: "files",
+      });
     }
 
     if (!req.files.image && !req.fileValidationError) {
@@ -286,8 +315,8 @@ module.exports = {
         value: "",
         msg: "El producto debe tener una imagen",
         param: "image",
-        location: "files"
-      })
+        location: "files",
+      });
     }
 
     if (req.fileValidationError) {
@@ -295,13 +324,21 @@ module.exports = {
         value: "",
         msg: req.fileValidationError,
         param: "image",
-        location: "files"
-      })
+        location: "files",
+      });
     }
 
     if (errors.isEmpty()) {
-
-      const { name, price, description, discount, image, images, category, subCategory } = req.body;
+      const {
+        name,
+        price,
+        description,
+        discount,
+        image,
+        images,
+        category,
+        subCategory,
+      } = req.body;
 
       db.Product.create({
         name: name.trim(),
@@ -309,17 +346,16 @@ module.exports = {
         price: +price,
         discount: +discount,
         subCategory,
-        category
-      })
-        .then((product => {
-          req.files.forEach((image, index) => {
-            db.Image.create({
-              name: image.filename,
-              productId: product.id
-            })
-          })
-          return res.redirect(`detalle-producto/${newProduct.id}`);
-        }))
+        category,
+      }).then((product) => {
+        req.files.forEach((image, index) => {
+          db.Image.create({
+            name: image.filename,
+            productId: product.id,
+          });
+        });
+        return res.redirect(`/products/detalle-producto/${newProduct.id}`);
+      });
       /* const products = readJSON("productDataBase.json")
       const { name, price, description, discount, image, images, category, subCategory } = req.body;
 
@@ -343,81 +379,79 @@ module.exports = {
       return res.redirect(`detalle-producto/${newProduct.id}`);
  */
     } else {
-
       const products = db.Product.findAll({
         order: [["name"]],
-        attributes: ["name", "id"]
+        attributes: ["name", "id"],
       });
-  
-      const categories = db.SubCategory.findAll({
+
+      const categories = db.Subcategory.findAll({
         order: [["name"]],
-        attributes: ["name", "id"]
+        attributes: ["name", "id"],
       });
-  
 
       if (req.files.image) {
-        req.files.image.forEach(file => {
-          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        req.files.image.forEach((file) => {
+          fs.existsSync(`./public/images/products/${file.filename}`) &&
+            fs.unlinkSync(`./public/images/products/${file.filename}`);
           errors.errors.push({
             value: "",
             msg: "Debe seleccionar de nuevo la imagen",
             param: "image",
-            location: "files"
-          })
+            location: "files",
+          });
         });
       }
 
       if (req.files.images) {
-        req.files.images.forEach(file => {
-          fs.existsSync(`./public/images/products/${file.filename}`) && fs.unlinkSync(`./public/images/products/${file.filename}`);
+        req.files.images.forEach((file) => {
+          fs.existsSync(`./public/images/products/${file.filename}`) &&
+            fs.unlinkSync(`./public/images/products/${file.filename}`);
           errors.errors.push({
             value: "",
             msg: "Debe seleccionar de nuevo las imagenes",
             param: "images",
-            location: "files"
-          })
+            location: "files",
+          });
         });
       }
 
-      Promise.all([product,categories])
-      .then(([product,categories]) => {
-        return res.render('productos/crear-item', {
+      Promise.all([product, categories]).then(([product, categories]) => {
+        return res.render("productos/crear-item", {
           title: "Next Games | Crear Producto",
           errors: errors.mapped(),
           product,
           categories,
-          old: req.body
-        })
-      })
+          old: req.body,
+        });
+      });
       /* return res.render('productos/crear-item', {
         title: "Next Games | Crear Producto",
         errors: errors.mapped(),
         old: req.body
       }) */
     }
-
   },
-
   removeConfirm: (req, res) => {
     const products = readJSON("productDataBase.json");
     const id = req.params.id;
-    const product = products.find(product => product.id === +id);
+    const product = products.find((product) => product.id === +id);
 
-    return res.render('productos/confirmRemove', {
+    return res.render("productos/confirmRemove", {
       ...product,
-      title: "Next Games | Advertencia"
-    })
+      title: "Next Games | Advertencia",
+    });
   },
   remove: (req, res) => {
-
     db.Product.destroy({
       where: {
-id: req.params.id
-      }
-    }).then(()=>{
-      return res.redirect('/dashboard')
-    }) .catch((error) => console.log(error))
-  
+        id: req.params.id,
+      },
+    })
+      .then(() => {
+        return res.redirect("/dashboard");
+      })
+      .catch((error) => console.log(error));
+
     /* const products = readJSON("productDataBase.json");
     const id = req.params.id;
     const productsModified = products.filter(product => product.id !== +id);
@@ -426,76 +460,22 @@ id: req.params.id
     writeJSON("productDataBase.json", productsModified)
     return res.redirect("/admin/dashboardProduct") */
   },
-  notebook: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const computacion = products.filter(product => product.subCategory === "Notebooks")
-    return res.render('productos/compu', {
-      title: "Next Games | Notebook",
-      computacion,
-      toThousand
-    })
-  },
-  accesorios: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const Accesorios = products.filter(product => product.subCategory === "Accesorios")
-    return res.render('productos/accesorios', {
-      title: "Next Games | Accesorios",
-      Accesorios,
-      toThousand
-    })
-  },
-  consolas: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const consolas = products.filter(product => product.subCategory === "Consolas")
-    return res.render('productos/consolas', {
-      title: "Next Games | Consolas",
-      consolas,
-      toThousand
-    })
-  },
-  tarjetas: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const tarjetas = products.filter(product => product.subCategory === "Gifts Cards")
-    return res.render('productos/tarjetas', {
-      title: "Next Game | Gifts Cards",
-      tarjetas,
-      toThousand
-    })
-  },
-  juegos: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const juegos = products.filter(product => product.subCategory === "Juegos")
-    return res.render('productos/juegos', {
-      title: "Next Games | Juegos",
-      juegos,
-      toThousand
-    })
-  },
-  perifericos: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const perifericos = products.filter(product => product.subCategory === "Perifericos")
-    return res.render('productos/perifericos', {
-      title: "Next Games | Perifericos",
-      perifericos,
-      toThousand
-    })
-  },
   ofertas: (req, res) => {
     const products = readJSON("productDataBase.json");
-    const inSale = products.filter(product => product.category === "in-sale")
-    return res.render('productos/insale', {
+    const inSale = products.filter((product) => product.category === "in-sale");
+    return res.render("productos/insale", {
       title: "Next Games | Ofertas",
       inSale,
-      toThousand
-    })
+      toThousand,
+    });
   },
   ingresos: (req, res) => {
     const products = readJSON("productDataBase.json");
-    const ingresos = products.filter(product => product.category === "newer")
-    return res.render('productos/ingresos', {
+    const ingresos = products.filter((product) => product.category === "newer");
+    return res.render("productos/ingresos", {
       title: "Next Games | Ingresos",
       ingresos,
-      toThousand
-    })
-  }
-}
+      toThousand,
+    });
+  },
+};

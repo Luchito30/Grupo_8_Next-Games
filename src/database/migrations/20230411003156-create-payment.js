@@ -9,7 +9,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      metodoPago: {
+      methodPayment: {
         type: Sequelize.STRING
       },
       orderId: {

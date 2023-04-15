@@ -4,10 +4,10 @@
         <img class="home__main--img" src="/images/products/<%= image %>" alt="imagen">
 
         <div class="home__main--div">
-            <% if ( category == "in-sale" ) { %>
+            <% if ( state.name == "in-sale" ) { %>
                 <img src="/images/p-oferta.png" alt="oferta">
                 <% } %>
-                <% if (category == "newer") { %>
+                <% if (state.name == "newer") { %>
                   <img src="/images/p-nuevo.png" alt="nuevo">
                   <% } %>
             <div class="home__main--flex">

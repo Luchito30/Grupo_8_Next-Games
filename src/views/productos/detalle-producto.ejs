@@ -15,10 +15,10 @@
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
                                     <!-- Slides -->
-                                    <% images.forEach(image => { %>
+                                    <% images.forEach(i => { %>
                                         <!--slide-->
                                         <div class="swiper-slide">
-                                            <img src="/images/products/<%= image %>" class="img-detalle-carrusel">
+                                            <img src="/images/products/<%= i.image %>" class="img-detalle-carrusel">
                                         </div>
                                         <% }) %>
                                 </div>
@@ -78,7 +78,9 @@
                         </div>
                         <div class="rank">
                             <p>
-                                <%=subCategory%>
+                                <% subcategories.forEach(c => { %>
+                                    <%= c.name %>
+                                <% }) %>
                             </p>
                             <div class="stars">
                                 <i class="fa-solid fa-star"></i>
