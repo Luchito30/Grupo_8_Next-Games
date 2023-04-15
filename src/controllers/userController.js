@@ -90,7 +90,7 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            db.User.findOne({
+            db.Usuario.findOne({
                 where: {
                     email: req.body.email
                 }
@@ -130,7 +130,7 @@ module.exports = {
         /*  const users = readJSON('user.json');
          const { id } = req.session.userLogin;
          const user = users.find((user) => user.id === +id) */
-        db.User.findByPk(req.session.userLogin.id, {
+        db.Usuario.findByPk(req.session.userLogin.id, {
             attributes: ['firstName', 'lastName', 'userName', 'email', 'image'],
             include: [
                 {
@@ -153,7 +153,7 @@ module.exports = {
         const { firstName, lastName, userName, address, city, province, zipCode } = req.body
         const { id } = req.session.userLogin;
 
-        db.User.findByPk(id)
+        db.Usuario.findByPk(id)
             .then(user => {
                 const addressUpdate = db.Address.update(
                     {
@@ -168,7 +168,7 @@ module.exports = {
                         }
                     }
                 )
-                const userUpdate = db.User.update(
+                const userUpdate = db.Usuario.update(
                     {
                         firstName: firstName.trim(),
                         lastName: lastName.trim(),
@@ -199,7 +199,7 @@ module.exports = {
     },
     list: (req, res) => {
 
-        db.User.findAll({
+        db.Usuario.findAll({
             include: ['address', 'rol']
         })
             .then(users => {

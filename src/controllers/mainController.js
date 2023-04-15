@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const { readJSON, writeJSON } = require("../data");
-
+const db = require("../database/models");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const { Op } = require("sequelize");
 module.exports = {
     home: (req, res) => {
 
