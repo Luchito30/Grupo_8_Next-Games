@@ -76,7 +76,16 @@ module.exports = {
          }) */
   },
   newslletter: (req, res) => {
-    const noticias = readJSON("newsletter.json");
+
+    const { email } = req.body;
+
+    db.NewsLatter.create({
+      email: email
+    }).then((newslatter => {
+      return res.redirect("/");
+    })
+    ).catch(error => console.log)
+    /* const noticias = readJSON("newsletter.json");
     const { email } = req.body;
 
     const newNoticia = {
@@ -85,7 +94,7 @@ module.exports = {
     };
     noticias.push(newNoticia);
     writeJSON("newsletter.json", noticias);
-    return res.redirect("/");
+    return res.redirect("/"); */
   },
   search: (req, res) => {
     const products = readJSON("productDataBase.json");

@@ -3,7 +3,7 @@ const productsJSON = require("../../data/productDataBase.json");
 const states = [
   { id: 1, name: "normally" },
   { id: 2, name: "newer" },
-  { id: 1, name: "in-sale" },
+  { id: 3, name: "in-sale" },
 ];
 const products = productsJSON.map(
   ({ name, price, description, discount, image, state }) => {
