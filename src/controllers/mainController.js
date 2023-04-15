@@ -25,23 +25,14 @@ module.exports = {
             ],
             where: {
                 CategoryId: {
-                    [Op.eq]: 3
+                    [Op.eq]: 5
                 }
             }
         });
 
         const ingresos = db.Product.findAll({
-            include: [
-                {
-                    association: "SubCategory",
-                    attibutes: ["name"]
-                }
-            ],
-            where: {
-                CategoryId: {
-                    [Op.eq]: 3
-                }
-            }
+            order: [["createdAt", "DESC"]],
+            include : ['images']
         });
 
         const tarjetas = db.Product.findAll({
@@ -67,7 +58,7 @@ module.exports = {
             ],
             where: {
                 CategoryId: {
-                    [Op.eq]: 3
+                    [Op.eq]: 4
                 }
             }
         });
@@ -82,7 +73,7 @@ module.exports = {
             ],
             where: {
                 CategoryId: {
-                    [Op.eq]: 3
+                    [Op.eq]: 1
                 }
             }
         });
