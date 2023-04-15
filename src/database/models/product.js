@@ -28,7 +28,6 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.TEXT,
     visible: DataTypes.BOOLEAN,
     categoryId: DataTypes.INTEGER,
-    CategoryId: DataTypes.INTEGER,
     image: DataTypes.STRING
   }, {
     sequelize,
