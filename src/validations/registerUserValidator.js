@@ -11,7 +11,7 @@ module.exports = [
             ignore: " "
         }).withMessage('Solo caracteres alfabéticos'),
 
-    check('lastName')
+    check('LastName')
         .notEmpty().withMessage('El apellido es obligatorio').bail()
         .isLength({
             min: 2
@@ -25,10 +25,20 @@ module.exports = [
         .isLength({
             min: 2
         }).withMessage('Mínimo dos letras').bail()
-        .custom((value, {req}) => {
-            let user = readJSON('user.json').find(user => user.userName === value);
-            return !user 
-        }).withMessage('El nombre de usuario ya se encuentra en uso'),
+        .custom((value, {req}) => { 
+            return db.User.findOne({
+            where : {
+                userName : value
+            }
+        }).then(user => {
+            if(user){
+                return Promise.reject()
+            }
+        }).catch((error) => {
+            console.log(error)
+            return Promise.reject('El usuario ya se encuentra registrado')
+        })
+    }),
 
     body('email')
         .notEmpty().withMessage('El email es obligatorio').bail()
