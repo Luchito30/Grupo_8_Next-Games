@@ -464,7 +464,7 @@ module.exports = {
   getFromCategory:(req, res) => {
     const { CategoryId } = req.params;
    
-    db.state.findByPk(CategoryId,{
+    db.states.findByPk(CategoryId,{
       include:[
         {
           association:'products',
