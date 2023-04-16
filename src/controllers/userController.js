@@ -42,15 +42,9 @@ module.exports = {
                         image: req.file ? req.file.filename : "default-image.png",
                         rolId: 2,
                         addressId: address.id
-                    }).then(({ id, firstName, userName, rolId }) => {
+                    }).then(() => {
 
-                        req.session.userLogin = {
-                            id,
-                            firstName,
-                            userName,
-                            rol: rolId
-                        };
-                        return res.redirect('/');
+                        return res.redirect('/users/login');
 
                     })
                 })
@@ -93,7 +87,8 @@ module.exports = {
             db.User.findOne({
                 where: {
                     email: req.body.email
-                }
+                },
+                include: ['address']
             })
                 .then(({ id, firstName, image, rolId }) => {
 
