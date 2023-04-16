@@ -12,7 +12,7 @@ router.get('/', index);
 router.get('/carrito', carrito);
 router.get('/detalle-producto/:id', detalleproducto);
 router.get('/subcategory/:subcategoryId', getFromSubcategory);
-router.get('/categoriasImagenes/:categoryId',  getFromCategory);
+router.get('/categoriasImagenes/:CategoryId',  getFromCategory);
 router.get("/insale", ofertas);
 router.get("/ingresos", ingresos);
 

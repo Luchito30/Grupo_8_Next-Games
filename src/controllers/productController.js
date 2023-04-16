@@ -15,7 +15,7 @@ module.exports = {
           products,
           toThousand,
           searchallprodu,
-            titleView
+           
         });
       })
       .catch((error) => console.log(error));

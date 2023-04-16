@@ -8,11 +8,12 @@
 
             <div class="home__main--titulo">
                 <h2>
-                <% if(titleView){ %>
-                    <%= titleView %>
-                <% } else { %>
-                      PRODUCTOS
-                <% } %>
+                    <% if(locals.titleView){ %>
+                        <%= locals.titleView %>
+                    <% } else { %>
+                        PRODUCTOS
+                    <% } %>
+                    
                 </h2>
             </div>
 
