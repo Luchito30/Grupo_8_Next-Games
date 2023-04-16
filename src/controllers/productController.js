@@ -460,6 +460,29 @@ module.exports = {
     writeJSON("productDataBase.json", productsModified)
     return res.redirect("/admin/dashboardProduct") */
   },
+  getFromCategory:(req, res) => {
+    const { CategoryId } = req.params;
+   
+    db.state.findByPk(CategoryId,{
+      include:[
+        {
+          association:'products',
+          include:['images','subcategories']
+        }
+      ]
+    })
+      .then((category) => {
+        console.log(category);
+        return res.render("categoriasImagenes", {
+          title: "Next Games | Productos",
+          products:category.products,
+          toThousand,
+         titleView: category.name
+        });
+      })
+      .catch((error) => console.log(error));
+
+  },
   ofertas: (req, res) => {
     const products = readJSON("productDataBase.json");
     const inSale = products.filter((product) => product.category === "in-sale");

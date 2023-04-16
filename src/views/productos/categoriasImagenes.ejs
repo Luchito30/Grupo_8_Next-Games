@@ -7,26 +7,18 @@
     <%- include('../partials/header.ejs') %> 
     
         <div class="home__main--titulo">
-            <h2>ULTIMAS OFERTAS</h2>
+            <h2> <%= titleView %></h2>
         </div>
 
         <section class="home__main__section">
-			<% inSale.forEach(({id,image,price,discount,name,category,subCategory}) => { %>
-				<%- include('../partials/product.ejs',{
-					id,
-					image,
-					price,
-					discount,
-					name,
-                    category,
-                    subCategory
-				}) %>
-			<% }) %>
+            <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
+                    %>
+                    <% }) %>
         </section>
-
+    
          <!--whatsapp-->
          <%- include('../partials/whatsApp.ejs') %>
-    
 	
     <%- include('../partials/footer.ejs') %>
 

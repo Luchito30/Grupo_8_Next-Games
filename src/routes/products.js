@@ -1,5 +1,5 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos,getFromSubcategory} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,removeConfirm,remove,ofertas,ingresos,getFromSubcategory, getFromCategory} = require('../controllers/productController');
 const checkAdmin = require('../middlewares/checkAdmin');
 const {uploadproductImages} = require("../middlewares/upload");
 const { productValidator } = require('../validations');
@@ -12,7 +12,7 @@ router.get('/', index);
 router.get('/carrito', carrito);
 router.get('/detalle-producto/:id', detalleproducto);
 router.get('/subcategory/:subcategoryId', getFromSubcategory);
-
+router.get('/categoriasImagenes/:categoryId',  getFromCategory);
 router.get("/insale", ofertas);
 router.get("/ingresos", ingresos);
 
