@@ -15,7 +15,6 @@ module.exports = {
           products,
           toThousand,
           searchallprodu,
-            titleView
         });
       })
       .catch((error) => console.log(error));
@@ -462,44 +461,45 @@ module.exports = {
     return res.redirect("/admin/dashboardProduct") */
   },
   getFromCategory:(req, res) => {
-    const { CategoryId } = req.params;
+    const { stateId } = req.params;
    
-    db.state.findByPk(CategoryId,{
-      include:[
-        {
-          association:'products',
-          include:['images','subcategories']
-        }
-      ]
+    db.Product.findByPk(stateId,{
+      include:[{
+        association:'state',
+      },'images','subcategories']
     })
       .then((category) => {
         console.log(category);
         return res.render("categoriasImagenes", {
           title: "Next Games | Productos",
-          products:category.products,
+          category,
           toThousand,
-         titleView: category.name
         });
       })
       .catch((error) => console.log(error));
 
-  },
-  ofertas: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const inSale = products.filter((product) => product.category === "in-sale");
-    return res.render("productos/insale", {
-      title: "Next Games | Ofertas",
-      inSale,
-      toThousand,
-    });
-  },
-  ingresos: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const ingresos = products.filter((product) => product.category === "newer");
-    return res.render("productos/ingresos", {
-      title: "Next Games | Ingresos",
-      ingresos,
-      toThousand,
-    });
-  },
+  },  
+  as:(req, res) => {
+    const { subcategoryId } = req.params;
+    const searchallprodu = false
+    db.Subcategory.findByPk(subcategoryId,{
+      include:[
+        {
+          association:'products',
+          include:['images','state']
+        }
+      ]
+    })
+      .then((subcategory) => {
+        console.log(subcategory);
+        return res.render("products", {
+          title: "Next Games | Productos",
+          products:subcategory.products,
+          toThousand,
+          searchallprodu,
+          titleView: subcategory.name
+        });
+      })
+      .catch((error) => console.log(error));
+}
 };
