@@ -3,8 +3,9 @@ const db = require('../database/models');
 const {compareSync} = require('bcryptjs');
 
 module.exports = [
-    check('useremail')
+    check('email')
         .notEmpty().withMessage('El Usuario o Email es obligatorio'),
+        
     
     body('password')
         .notEmpty().withMessage('La contraseña es obligatoria').bail()

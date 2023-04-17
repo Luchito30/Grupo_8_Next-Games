@@ -101,6 +101,22 @@ module.exports = {
     const { keywords } = req.query;
     const productFiltered = products.filter(
       (product) =>
+        (product.name?.toLowerCase().includes(keywords.toLowerCase()) || // added optional chaining operator
+          product.subcategory?.toLowerCase().includes(keywords.toLowerCase()) || // added optional chaining operator
+          product.description?.toLowerCase().includes(keywords.toLowerCase())) // added optional chaining operator
+    );
+    
+    return res.render("results", {
+      title: "Next Games | Search",
+      productFiltered,
+      toThousand,
+      keywords,
+    });
+  },
+};
+/**
+    const productFiltered = products.filter(
+      (product) =>
         product.name.toLowerCase().includes(keywords.toLowerCase()) ||
         product.subcategory.toLowerCase().includes(keywords.toLowerCase()) ||
         product.description.toLowerCase().includes(keywords.toLowerCase())
@@ -110,6 +126,4 @@ module.exports = {
       productFiltered,
       toThousand,
       keywords,
-    });
-  },
-};
+    }); */
