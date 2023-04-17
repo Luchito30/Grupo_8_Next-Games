@@ -41,7 +41,7 @@
                         </tr>
                     </thead>
                     <tbody class="table-light">
-                        <% users.forEach(({id,firstName,lastName,email,userName,rol,image})=> { %>
+                        <% user.forEach(({id,firstName,lastName,email,userName,rol,image})=> { %>
                             <tr>
                                 <th scope="row" class="dashboard--id"><%= id %></th>
                                 <td class="dashboarduser--name"><%= firstName %></td>
@@ -68,7 +68,7 @@
                 </table>
             </div> 
 
-            <% if (!users.length) { %>
+            <% if (!user.length) { %>
                 <h2 class="dashboard__sn">No se encontro Usuario</h2>
             <% }%>
 

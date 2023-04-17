@@ -1,9 +1,10 @@
 const {check, body} = require('express-validator');
 const db = require('../database/models');
 const {compareSync} = require('bcryptjs');
+const { Op } = require("sequelize");
 
 module.exports = [
-    check('email')
+    check('useremail')
         .notEmpty().withMessage('El Usuario o Email es obligatorio'),
         
     
@@ -12,7 +13,14 @@ module.exports = [
         .custom((value, {req}) => {
             return db.User.findOne({
                 where : {
-                    email : req.body.email
+                    [Op.or]:[
+                        {
+                        email: req.body.useremail
+                        },
+                        {
+                        userName: req.body.useremail
+                        }
+                    ]
                 }
             }).then(user => {
                 if(!user || !compareSync(value, user.password)){

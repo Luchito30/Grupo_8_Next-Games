@@ -7,15 +7,22 @@
     <%- include('../partials/header.ejs') %> 
     
         <div class="home__main--titulo">
-            <h2> <%= locals.titleView %></h2>
+            <h2> <% if (stateName === "newer") { %>
+                Nuevos Ingresos
+            <% } else { %>
+                Ofertas
+                <% } %>
+            </h2>
         </div>
 
+     
         <section class="home__main__section">
             <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
-                <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
+                <%- include('../partials/product',{ id, image, price, discount, name, state, subcategories })
                     %>
                     <% }) %>
         </section>
+
     
          <!--whatsapp-->
          <%- include('../partials/whatsApp.ejs') %>

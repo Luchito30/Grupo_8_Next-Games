@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator');
 
 const { hashSync } = require('bcryptjs');
 const db = require('../database/models');
+const { Op } = require("sequelize");
 
 module.exports = {
 
@@ -86,9 +87,16 @@ module.exports = {
 
             db.User.findOne({
                 where: {
-                    email: req.body.email
+                    [Op.or]:[
+                        {
+                        email: req.body.useremail
+                        },
+                        {
+                        userName: req.body.useremail
+                        }
+                    ]
+                  
                 },
-                include: ['address']
             })
                 .then(({ id, firstName, image, rolId }) => {
 
@@ -138,8 +146,7 @@ module.exports = {
             .then(user => {
                 return res.render('users/profile', {
                     title: "Next Games | Perfil de usuario",
-                    ...user,
-                    old: req.body
+                    user,
                 })
             })
             .catch(error => console.log(error))

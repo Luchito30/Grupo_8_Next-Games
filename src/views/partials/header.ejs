@@ -39,7 +39,7 @@
                                         </ul>
                                     </li>
                                     <% if (locals.userLogin) { %>
-                                        <% if (userLogin.rol === "admin") { %>
+                                        <% if (userLogin.rol === 1) { %>
                                             <li class="header__nav--navegacion--primaria">
                                                 <a href="#" >Dashboard</a>
                                                 <ul id="header__nav__hamburger-secundary">
@@ -138,7 +138,7 @@
                             </ul>
                         </li>
                         <% if (locals.userLogin) { %>
-                            <% if (userLogin.rol === "admin") { %>
+                            <% if (userLogin.rol === 1) { %>
                                 <li>
                                     <p class="home__nav--productos">Dashboard</p>
                                     <ul id="header__nav--submenudash">
@@ -199,7 +199,7 @@
                             </ul>
                         </li>
                         <% if (locals.userLogin) { %>
-                            <% if (userLogin.rol === "admin") { %>
+                            <% if (userLogin.rol === 1) { %>
                                 <li>
                                     <p class="home__nav--productos">Dashboard</p>
                                     <ul id="header__nav--submenudash">
@@ -210,9 +210,9 @@
                             <% } %>
     
                              <li class="dashboardp__buscarprodu">
-                                <form action="/products" method="GET" autocomplete="off">
+                                <form action="/search" method="GET" autocomplete="off">
                                     <div class="dashboardp__buscarprodu--box">
-                                        <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                        <input type="search" name="keywords" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
                                         <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
                                     </div>
                                 </form>
@@ -226,9 +226,9 @@
                             <% } else { %>
                                 
                                 <li class="dashboardp__buscarprodu">
-                                    <form action="/products" method="GET" autocomplete="off">
+                                    <form action="/search" method="GET" autocomplete="off">
                                         <div>
-                                            <input type="search" name="searchallprodu" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
+                                            <input type="search" name="keywords" id="searchallprodu" class="dashboardp__buscador2" placeholder="Buscar Producto" title="¿Que desea Buscar?">
                                             <button class="dashboardp__lupa2"><i class="fa-solid fa-magnifying-glass"></i></button>
                                         </div>
                                     </form>

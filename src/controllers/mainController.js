@@ -1,4 +1,3 @@
-const { readJSON, writeJSON } = require("../data");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require("../database/models");
 const { Op } = require("sequelize");
@@ -97,21 +96,30 @@ module.exports = {
     return res.redirect("/"); */
   },
   search: (req, res) => {
-    const products = readJSON("productDataBase.json");
     const { keywords } = req.query;
-    const productFiltered = products.filter(
-      (product) =>
-        (product.name?.toLowerCase().includes(keywords.toLowerCase()) || // added optional chaining operator
-          product.subcategory?.toLowerCase().includes(keywords.toLowerCase()) || // added optional chaining operator
-          product.description?.toLowerCase().includes(keywords.toLowerCase())) // added optional chaining operator
-    );
-    
-    return res.render("results", {
-      title: "Next Games | Search",
-      productFiltered,
-      toThousand,
-      keywords,
-    });
+    db.Product.findAll({
+      where: {
+        [Op.or]:[{
+          name: {
+          [Op.like] : `%${keywords}%`
+        }},
+        {
+        description:{
+          [Op.like] : `%${keywords}%`
+        }}
+        ]
+        
+      },
+      include:['images','state','subcategories']
+    })
+    .then(product => {
+      return res.render("results", {
+        title: "Next Games | Search",
+        product,
+        toThousand,
+        keywords
+      });
+    })   
   },
 };
 /**

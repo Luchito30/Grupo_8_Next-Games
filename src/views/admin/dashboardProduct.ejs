@@ -7,7 +7,8 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <body class="headeradmin_body" id="arriba">
-        <%- include('../partials/headerAdmin.ejs') %>
+    
+        <%- include('../partials/headerAdmin') %>
 
             <main>
 
@@ -44,7 +45,7 @@
                             </tr>
                         </thead>
                         <tbody class="table-light">
-                            <% products.forEach(({id,name,image,price,discount,category,subCategory})=> { %>
+                            <% products.forEach(({id,name,image,price,discount,state,subcategories})=> { %>
                                 <tr>
                                     <th scope="row" class="dashboard--id">
                                         <%= id %>
@@ -66,18 +67,18 @@
                                                         <% } %>
                                     </td>
                                     <td class="dashboard--category">
-                                    <% if (category === "in-sale") { %>
+                                    <% if (state.name === "in-sale") { %>
                                         <span>Oferta</span>
                                     <% } %>
-                                    <% if (category === "newer") { %>
+                                    <% if (state.name === "newer") { %>
                                         <span>Nuevo</span>
                                     <% } %>
-                                    <% if (category === "normally") { %>
+                                    <% if (state.name === "normally") { %>
                                         <span>Normal</span>
                                     <% } %>
                                     </td>
                                     <td class="dashboard--subCategory">
-                                        <%= subCategory %>
+                                    <%= subcategories.name %>
                                     </td>
                                     <td class="dashboard--image"><img class="dashboard--img"
                                             src="/images/products/<%= image %>"></td>

@@ -7,14 +7,12 @@ const db = require("../database/models");
 
 module.exports = {
   index: (req, res) => {
-    const { searchallprodu } = req.query;
     db.Product.findAll({ include: ["images", "state", "subcategories"] })
       .then((products) => {
         return res.render("products", {
           title: "Next Games | Productos",
           products,
-          toThousand,
-          searchallprodu,
+          toThousand
         });
       })
       .catch((error) => console.log(error));
@@ -463,43 +461,23 @@ module.exports = {
   getFromCategory:(req, res) => {
     const { stateId } = req.params;
    
-    db.Product.findByPk(stateId,{
-      include:[{
-        association:'state',
-      },'images','subcategories']
+    db.Product.findAll({
+      where: {
+        stateId: stateId
+      },
+      include: [{
+        association: 'state'
+      }, 'images', 'subcategories']
     })
-      .then((category) => {
-        console.log(category);
-        return res.render("categoriasImagenes", {
-          title: "Next Games | Productos",
-          category,
-          toThousand,
-        });
-      })
-      .catch((error) => console.log(error));
-
-  },  
-  as:(req, res) => {
-    const { subcategoryId } = req.params;
-    const searchallprodu = false
-    db.Subcategory.findByPk(subcategoryId,{
-      include:[
-        {
-          association:'products',
-          include:['images','state']
-        }
-      ]
+    .then((products) => {
+      const stateName = products[0].state.name; 
+      return res.render("productos/categorias", {
+        title: `Next Games | Productos de ${stateName}`, 
+        products,
+        toThousand,
+        stateName
+      });
     })
-      .then((subcategory) => {
-        console.log(subcategory);
-        return res.render("products", {
-          title: "Next Games | Productos",
-          products:subcategory.products,
-          toThousand,
-          searchallprodu,
-          titleView: subcategory.name
-        });
-      })
-      .catch((error) => console.log(error));
+    .catch((error) => console.log(error));
 }
 };
