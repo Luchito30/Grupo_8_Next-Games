@@ -80,36 +80,27 @@
 
                             <section>
                                 <div class="edition-form-box">
-                                    <label for="edition-products">Seleccioná la Categoria</label>
-                                    <small class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
-                                    <select id="edition-products" name="subCategory">
-                                        <option value="Perifericos" <%=subCategory==="Perifericos" && 'selected' %>
-                                            >Perifericos</option>
-                                        <option value="Juegos" <%=subCategory==="Juegos" && 'selected' %>>Juegos
-                                        </option>
-                                        <option value="Gifts Cards" <%=subCategory==="Gifts Cards" && 'selected' %>
-                                            >Gifts Cards</option>
-                                        <option value="Consolas" <%=subCategory==="Consolas" && 'selected' %>>Consolas
-                                        </option>
-                                        <option value="Notebooks" <%=subCategory==="Notebooks" && 'selected' %>
-                                            >Notebooks</option>
-                                        <option value="Accesorios" <%=subCategory==="Accesorios" && 'selected' %>
-                                            >Accesorios</option>
-                                    </select>
+                                  <label for="edition-categories">Categoría</label>
+                                  <small class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
+                                  <select id="edition-categories" name="subCategory">
+                                    <% categories.forEach(({name, id}) => { %>
+                                      <option value="<%= id %>" <%= id === subcategory.id && 'selected' %>><%= name %></option> 
+                                    <% }) %>
+                                  </select>
                                 </div>
-                            </section>
-
-                            <section>
+                              </section>
+                              
+                              <section>
                                 <div class="edition-form-box">
-                                    <label for="edition-products">Estado del Producto</label>
-                                    <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
-                                    <select id="edition-products" name="category">
-                                        <option value="newer" <%=category==="newer" && 'selected' %>>Nuevo</option>
-                                        <option value="normally" <%=category==="normally" && 'selected' %>>Normal</option>
-                                        <option value="in-sale" <%=category==="in-sale" && 'selected' %>>Oferta</option>
-                                    </select>
+                                  <label for="edition-states">Estado del Producto</label>
+                                  <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+                                  <select id="edition-states" name="category">
+                                    <% states.forEach(({name, id}) => { %>
+                                      <option value="<%= id %>" <%= id === stateId && 'selected' %>><%= name %></option> 
+                                    <% }) %>
+                                  </select>
                                 </div>
-                            </section>
+                              </section>
 
                             <section>
                                 <div class="edition-form-box">

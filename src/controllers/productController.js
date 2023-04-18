@@ -97,35 +97,37 @@ module.exports = {
     const { id } = req.params;
 
     const product = db.Product.findByPk(id, {
-      include: ["image"],
+      include: ["images"],
     });
 
-    const categories = db.Subcategory.findAll({
+    const states = db.State.findAll({
       order: [["name"]],
       attributes: ["name", "id"],
     });
 
-    Promise.all([product, categories])
-      .then(([product, categories]) => {
+    const categories =  db.Subcategory.findAll(ID_NOTEBOOK, {
+      include: [
+        {
+          association: "products",
+          include: ["images", "state"],
+        },
+      ],
+    });
+
+    Promise.all([product, states,categories])
+      .then(([product, states,categories]) => {
         return res.render("productos/edicion", {
           title: "Next Games | Editar Producto",
           ...product.dataValues,
+          states,
           categories,
           toThousand,
         });
       })
       .catch((error) => console.log(error));
 
-    /*  const products = readJSON("productDataBase.json");
-    const { id } = req.params;
-    const product = products.find(product => product.id === +id);
-    return res.render('productos/edicion', {
-      title: "Next Games | Editar Producto",
-      ...product,
-      toThousand
-    });*/
   },
-  update: (req, res) => {
+  update: async (req, res) => {
     const errors = validationResult(req);
 
     if (req.fileValidationError) {
@@ -151,15 +153,15 @@ module.exports = {
       const { name, discount, price, description, category, subCategory } =
         req.body;
 
-      db.products.findByPk(id).then((product) => {
-        const productEdit = db.Address.update(
+      db.Product.findByPk(id).then((product) => {
+        const productEdit = db.Product.update(
           {
             name: name.trim(),
             description: description.trim(),
-            price: +price,
-            discount: +discount,
-            subCategory,
-            category,
+            price,
+            discount,
+            subcategoryId: subCategory,
+            stateId: category,
             image:
               req.files && req.files.image
                 ? req.files.image[0].filename
@@ -176,39 +178,11 @@ module.exports = {
           }
         );
         Promise.all([productEdit]).then(() => {
-          return res.redirect("/admin/dashboardProduct");
+          return res.redirect("/admin/dashboardProduct",{
+            productEdit
+          });
         });
       });
-
-      /* const products = readJSON("productDataBase.json");
-      const {id} = +req.params
-      const { name, discount, price, description, category, subCategory } = req.body;
-
-      const productsModified = products.map(product => {
-        if (product.id === +id) {
-
-          const productUpdated = {
-            id,
-            name: name.trim(),
-            description: description.trim(),
-            price: +price,
-            discount: +discount,
-            subCategory,
-            category,
-            image: req.files && req.files.image ? req.files.image[0].filename : product.image,
-            images: req.files && req.files.images ? req.files.images.map(file => file.filename) : product.images,
-          };
-
-          return productUpdated
-        }
-
-        return product;
-      })
-
-
-      writeJSON("productDataBase.json", productsModified)
-      return res.redirect("/admin/dashboardProduct")
- */
     } else {
       const { id } = req.params;
 
@@ -226,38 +200,26 @@ module.exports = {
         });
       }
 
-      const product = db.Product.findByPk(id, {
-        include: ["image"],
-      });
-
-      const categories = db.Subcategory.findAll({
+      const states =  db.State.findAll({
         order: [["name"]],
         attributes: ["name", "id"],
       });
+      
+      const product =  db.Product.findByPk(id, {
+        include: ["images",],
+      });
 
-      Promise.all([product, categories]).then(([product, categories]) => {
+      Promise.all([product, states]).then(([product, states]) => {
         return res.render("productos/edicion", {
           title: "Next Games | Editar Producto",
           ...product.dataValues,
-          categories,
+          states,
           toThousand,
           errors: errors.mapped(),
           old: req.body,
         });
       });
     }
-
-    /* const products = readJSON("productDataBase.json");
-      const { id } = req.params;
-      const product = products.find(product => product.id === +id);
-      return res.render('productos/edicion', {
-        title: "Next Games | Editar Producto",
-        ...product,
-        toThousand,
-        errors: errors.mapped(),
-        old: req.body
-      });
-    } */
   },
   createItem: (req, res) => {
     const products = db.Product.findAll({
