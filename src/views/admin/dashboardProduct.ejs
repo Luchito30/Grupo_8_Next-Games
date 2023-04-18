@@ -78,7 +78,11 @@
                                     <% } %>
                                     </td>
                                     <td class="dashboard--subCategory">
-                                    <%= subcategories.name %>
+                                        <% subcategories.forEach((subcategories) => { %>
+                                           
+                                        <%= subcategories.name %>
+                                            
+                                          <% }); %>
                                     </td>
                                     <td class="dashboard--image"><img class="dashboard--img"
                                             src="/images/products/<%= image %>"></td>
