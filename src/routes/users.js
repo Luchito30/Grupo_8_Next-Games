@@ -27,6 +27,6 @@ router.get("/removeuser/:id", checkAdmin ,removeuserConfirm);
 router.delete("/removeuser/:id", removeusers);
 
 router.put('/update',update);
-router.get('/logout',checkUserLogin,logout);
+router.get('/logout',logout);
 
 module.exports = router;

@@ -19,14 +19,14 @@ module.exports = {
 
         const errors = validationResult(req);
 
-        /*  if(req.fileValidationError){
+         if(req.fileValidationError){
              errors.errors.push({
                value : "",
                msg : req.fileValidationError,
                param : "images",
                location : "files"
              })
-           } */
+           }
 
         if (errors.isEmpty()) {
 
@@ -50,22 +50,6 @@ module.exports = {
                     })
                 })
                 .catch(error => console.log(error))
-            /*   const newUser = {
-                  id: users.length ? users[users.length -1].id +1 : 1,
-                  firstName: firstName.trim(),
-                  LastName: LastName.trim(),
-                  email: email.trim(),
-                  password: hashSync(password,12),
-                  userName: userName.trim(),
-                  image: req.file ? req.file.filename : "default-image.png",
-                  rol : 'user'
-              };
-      
-              users.push(newUser);
-      
-              writeJSON("user.json",users);
-      
-              return res.redirect('/users/login'); */
         } else {
             return res.render('users/register', {
                 title: "Next Games | Register",
@@ -106,14 +90,6 @@ module.exports = {
                         image,
                         rol: rolId
                     };
-                    /*  const {id, firstName, rol, image} = readJSON('user.json').find(user =>user.email === req.body.useremail || user.userName === req.body.useremail);
-        
-                    req.session.userLogin = {
-                        id,
-                        firstName,
-                        rol,
-                        image
-                        }; */
 
                     if (req.body.remember) {
                         res.cookie('usernextgames', req.session.userLogin, { maxAge: 1000 * 60 * 10 })
@@ -196,7 +172,7 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy();
-        /* res.clearCookie("usernextgames") */
+        res.clearCookie("usernextgames")
         return res.redirect('/')
     },
     list: (req, res) => {

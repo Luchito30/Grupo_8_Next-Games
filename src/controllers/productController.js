@@ -105,7 +105,7 @@ module.exports = {
       attributes: ["name", "id"],
     });
 
-    const categories =  db.Subcategory.findAll(ID_NOTEBOOK, {
+    const categories =  db.Subcategory.findAll({
       include: [
         {
           association: "products",
