@@ -56,23 +56,6 @@ module.exports = {
     } catch (error) {
       console.log(error.message);
     }
-    /* const products = readJSON("productDataBase.json");
-        const inSale = products.filter(product => product.category === "in-sale" );
-        const computacion = products.filter(product => product.subcategory === "Notebooks" );
-        const ingresos = products.filter(product => product.category === "newer" );
-        const tarjetas = products.filter(product => product.subcategory === "Gifts Cards" );
-        const consolas = products.filter(product => product.subcategory === "Consolas" );
-        const juegos = products.filter(product => product.subcategory === "Juegos" );
-         return res.render('home',{
-            title: " Next Games | Home",
-            inSale,
-            computacion,
-            ingresos,
-            tarjetas,
-            consolas,
-            juegos,
-            toThousand
-         }) */
   },
   newslletter: (req, res) => {
 
@@ -83,17 +66,7 @@ module.exports = {
     }).then((newslatter => {
       return res.redirect("/");
     })
-    ).catch(error => console.log)
-    /* const noticias = readJSON("newsletter.json");
-    const { email } = req.body;
-
-    const newNoticia = {
-      id: +noticias[noticias.length - 1].id + 1,
-      email: email,
-    };
-    noticias.push(newNoticia);
-    writeJSON("newsletter.json", noticias);
-    return res.redirect("/"); */
+    ).catch(error => console.log(error))
   },
   search: (req, res) => {
     const { keywords } = req.query;
@@ -119,19 +92,6 @@ module.exports = {
         toThousand,
         keywords
       });
-    })   
+    }).catch(error => console.log(error)) 
   },
 };
-/**
-    const productFiltered = products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(keywords.toLowerCase()) ||
-        product.subcategory.toLowerCase().includes(keywords.toLowerCase()) ||
-        product.description.toLowerCase().includes(keywords.toLowerCase())
-    );
-    return res.render("results", {
-      title: "Next Games | Search",
-      productFiltered,
-      toThousand,
-      keywords,
-    }); */

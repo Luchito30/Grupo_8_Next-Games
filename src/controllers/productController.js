@@ -16,14 +16,6 @@ module.exports = {
         });
       })
       .catch((error) => console.log(error));
-    /*  const products = readJSON("productDataBase.json");
-       let allproducts;
-   
-         if(searchallprodu){
-           allproducts = products.filter(product => product.name.toLowerCase().includes(searchallprodu.toLowerCase()) || product.subCategory.toLowerCase().includes(searchallprodu.toLowerCase()) || product.category.toLowerCase().includes(searchallprodu.toLowerCase()) || product.description.toLowerCase().includes(searchallprodu.toLowerCase()))
-         }else{
-           allproducts = products
-         } */
   },
   carrito: (req, res) => {
     return res.render("productos/carrito", {
@@ -60,14 +52,6 @@ module.exports = {
       .catch((error) => {
         console.log(error);
       });
-
-    /*  const products = readJSON("productDataBase.json");
-    let product = products.find(product => product.id === +req.params.id);
-    return res.render('productos/detalle-producto', {
-      title: "Next Games | Detalle de producto",
-      ...product,
-      toThousand
-    }); */
   },
   getFromSubcategory:(req, res) => {
     const { subcategoryId } = req.params;
@@ -105,22 +89,13 @@ module.exports = {
       attributes: ["name", "id"],
     });
 
-    const categories =  db.Subcategory.findAll({
-      include: [
-        {
-          association: "products",
-          include: ["images", "state"],
-        },
-      ],
-    });
 
-    Promise.all([product, states,categories])
-      .then(([product, states,categories]) => {
+    Promise.all([product, states])
+      .then(([product, states]) => {
         return res.render("productos/edicion", {
           title: "Next Games | Editar Producto",
           ...product.dataValues,
           states,
-          categories,
           toThousand,
         });
       })
@@ -149,12 +124,11 @@ module.exports = {
     }
 
     if (errors.isEmpty()) {
-      const { id } = +req.params;
-      const { name, discount, price, description, category, subCategory } =
+      const { id } = req.params;
+      const { name, discount, price, description, category, subCategory,image,images } =
         req.body;
 
-      db.Product.findByPk(id).then((product) => {
-        const productEdit = db.Product.update(
+          const productEdit = db.Product.update(
           {
             name: name.trim(),
             description: description.trim(),
@@ -162,27 +136,17 @@ module.exports = {
             discount,
             subcategoryId: subCategory,
             stateId: category,
-            image:
-              req.files && req.files.image
-                ? req.files.image[0].filename
-                : product.image,
-            images:
-              req.files && req.files.images
-                ? req.files.images.map((file) => file.filename)
-                : product.images,
-          },
-          {
-            where: {
-              id,
-            },
-          }
-        );
-        Promise.all([productEdit]).then(() => {
+            image:image,
+            images:images
+          },{
+          where:{
+          id: id
+          }},
+        ).then((productEdit) => {
           return res.redirect("/admin/dashboardProduct",{
             productEdit
           });
         });
-      });
     } else {
       const { id } = req.params;
 
@@ -222,22 +186,24 @@ module.exports = {
     }
   },
   createItem: (req, res) => {
-    const products = db.Product.findAll({
+
+    const product = db.Product.findAll({
       order: [["name"]],
       attributes: ["name", "id"],
     });
 
-    const categories = db.Subcategory.findAll({
+    const states = db.State.findAll({
       order: [["name"]],
       attributes: ["name", "id"],
     });
 
-    Promise.all([products, categories])
-      .then(([products, categories]) => {
-        return res.render("productos/edicion", {
-          title: "Next Games | Editar Producto",
-          products,
-          categories,
+
+    Promise.all([product, states])
+      .then(([product, states]) =>  {
+        return res.render('productos/crear-item', {
+          title: "Next Games | Crear Producto",
+          product,
+          states,
           toThousand,
         });
       })

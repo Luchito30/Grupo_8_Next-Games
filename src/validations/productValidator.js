@@ -15,9 +15,7 @@ module.exports = [
     check("category")
         .notEmpty().withMessage("Se debe elejir un estado"),
 
-    check("subCategory")
-        .notEmpty().withMessage("Se debe elejir una categoria"),
-
+    
     check("description")
         .notEmpty().withMessage("Se debe ingresar una descripción al producto").bail()
         .isLength({min:5, max:1000}).withMessage("La descripción debe tener entre 5 y 1000 caracteres")

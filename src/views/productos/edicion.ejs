@@ -78,17 +78,7 @@
                                 </div>
                             </section>
 
-                            <section>
-                                <div class="edition-form-box">
-                                  <label for="edition-categories">Categoría</label>
-                                  <small class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
-                                  <select id="edition-categories" name="subCategory">
-                                    <% categories.forEach(({name, id}) => { %>
-                                      <option value="<%= id %>" <%= id === subcategory.id && 'selected' %>><%= name %></option> 
-                                    <% }) %>
-                                  </select>
-                                </div>
-                              </section>
+                        
                               
                               <section>
                                 <div class="edition-form-box">

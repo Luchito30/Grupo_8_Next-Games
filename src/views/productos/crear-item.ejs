@@ -48,10 +48,9 @@
 
         <div class="dropdown--crear">
           <select name="category" id="lang" class="form-control">
-            <option value="" selected hidden>Seleccione...</option>
-            <option value="newer" <%= locals.old && old.category && old.category === "newer" ? 'selected' : null %>>Nuevo</option>
-            <option value="normally " <%= locals.old && old.category && old.category === "normally " ? 'selected' : null %>>Normal</option>
-            <option value="in-sale" <%= locals.old && old.category && old.category === "in-sale" ? 'selected' : null %>>Oferta</option>
+            <% states.forEach(({name, id}) => { %>
+              <option value="<%= id %>"><%= name %></option> 
+            <% }) %>
           </select>
           <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
         </div>
@@ -60,18 +59,7 @@
           <h3>Seleccioná la categoria</h3>
         </div>
 
-        <div class="dropdown--crear">
-          <select name="subCategory" id="lang" class="form-control">
-            <option value="" selected hidden>Seleccione...</option>
-            <option value="Perifericos" <%= locals.old && old.subCategory && old.subCategory === "Perifericos" ? 'selected' : null %>>Perifericos</option>
-            <option value="Juegos" <%= locals.old && old.subCategory && old.subCategory === "Juegos" ? 'selected' : null %>>Juegos</option>
-            <option value="Gifts Cards" <%= locals.old && old.subCategory && old.subCategory === "Gifts Cards" ? 'selected' : null %>>Gifts Cards</option>
-            <option value="Consolas" <%= locals.old && old.subCategory && old.subCategory === "Consolas" ? 'selected' : null %>>Consolas</option>
-            <option value="Notebooks" <%= locals.old && old.subCategory && old.subCategory === "Notebooks" ? 'selected' : null %>>Notebooks</option>
-            <option value="Accesorios" <%= locals.old && old.subCategory && old.subCategory === "Accesorios" ? 'selected' : null %>>Accesorios</option>
-          </select>
-          <smallp class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></smallp>
-        </div>
+        
 
 
         
