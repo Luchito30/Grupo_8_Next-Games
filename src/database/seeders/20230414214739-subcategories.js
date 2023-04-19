@@ -1,9 +1,18 @@
 'use strict';
 
-const subCategoriesJSON = ['Juegos', 'Periféricos', 'Gifts Cards', 'Consolas', 'Notebooks', 'Accesorios']
-const subCategories = subCategoriesJSON.map(subCategory => {
+const subCategoriesseed = [
+  {name :'Juegos'}, 
+  {name:'Periféricos'}, 
+  {name: 'Gifts Cards'}, 
+  {name:'Consolas'}, 
+  {name:'Notebooks'}, 
+  {name:'Accesorios'}
+]
+const subCategories = subCategoriesseed.map(({name},index) => {
+  const isActive = index !== 0;
   return {
-    name: subCategory,
+    name,
+    active: isActive,
     createdAt: new Date(),
     updatedAt: new Date()
   }

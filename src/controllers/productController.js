@@ -1,8 +1,6 @@
 const fs = require("fs");
 const { validationResult } = require("express-validator");
-const { readJSON } = require("../data");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 const db = require("../database/models");
 
 module.exports = {
@@ -55,27 +53,47 @@ module.exports = {
   },
   getFromSubcategory:(req, res) => {
     const { subcategoryId } = req.params;
-    const searchallprodu = false
-    db.Subcategory.findByPk(subcategoryId,{
-      include:[
-        {
-          association:'products',
-          include:['images','state']
-        }
-      ]
+   
+    db.Product.findAll({
+      where: {
+        subcategoryId : subcategoryId
+      },
+      include: [{
+        association: 'subcategories'
+      }, 'images', 'state']
     })
-      .then((subcategory) => {
-        console.log(subcategory);
+      .then((products) => {
+        const subName = products[0].subcategories.name; 
         return res.render("products", {
           title: "Next Games | Productos",
-          products:subcategory.products,
+          products,
           toThousand,
-          searchallprodu,
-          titleView: subcategory.name
+          subName : subName
         });
       })
       .catch((error) => console.log(error));
-
+    },
+    getFromCategory:(req, res) => {
+      const { stateId } = req.params;
+     
+      db.Product.findAll({
+        where: {
+          stateId: stateId
+        },
+        include: [{
+          association: 'state'
+        }, 'images', 'subcategories']
+      })
+      .then((products) => {
+        const stateName = products[0].state.name; 
+        return res.render("productos/categorias", {
+          title: `Next Games | Productos de ${stateName}`, 
+          products,
+          toThousand,
+          stateName: stateName
+        });
+      })
+      .catch((error) => console.log(error));
   },
   edicion: (req, res) => {
     const { id } = req.params;
@@ -84,18 +102,24 @@ module.exports = {
       include: ["images"],
     });
 
+    const categories = db.Subcategory.findAll({
+      order: [["name"]],
+      attributes: ["name", "id"],
+    });
+
     const states = db.State.findAll({
       order: [["name"]],
       attributes: ["name", "id"],
     });
 
 
-    Promise.all([product, states])
-      .then(([product, states]) => {
+    Promise.all([product, states, categories])
+      .then(([product, states,categories]) => {
         return res.render("productos/edicion", {
           title: "Next Games | Editar Producto",
           ...product.dataValues,
           states,
+          categories,
           toThousand,
         });
       })
@@ -125,10 +149,10 @@ module.exports = {
 
     if (errors.isEmpty()) {
       const { id } = req.params;
-      const { name, discount, price, description, category, subCategory,image,images } =
+      const { name, discount, price, description, category, subCategory,image} =
         req.body;
 
-          const productEdit = db.Product.update(
+          db.Product.update(
           {
             name: name.trim(),
             description: description.trim(),
@@ -136,17 +160,14 @@ module.exports = {
             discount,
             subcategoryId: subCategory,
             stateId: category,
-            image:image,
-            images:images
+            image:req.files && req.files.image ? req.files.image[0].filename : image
           },{
           where:{
           id: id
           }},
-        ).then((productEdit) => {
-          return res.redirect("/admin/dashboardProduct",{
-            productEdit
-          });
-        });
+        ).then(() => {
+          return res.redirect("/admin/dashboardProduct");
+        }).catch((error) => console.log(error))
     } else {
       const { id } = req.params;
 
@@ -168,16 +189,23 @@ module.exports = {
         order: [["name"]],
         attributes: ["name", "id"],
       });
+
+      const categories = db.Subcategory.findAll({
+      order: [["name"]],
+      attributes: ["name", "id"],
+    });
+
       
       const product =  db.Product.findByPk(id, {
         include: ["images",],
       });
 
-      Promise.all([product, states]).then(([product, states]) => {
+      Promise.all([product, states, categories]).then(([product, states, categories]) => {
         return res.render("productos/edicion", {
           title: "Next Games | Editar Producto",
           ...product.dataValues,
           states,
+          categories,
           toThousand,
           errors: errors.mapped(),
           old: req.body,
@@ -192,18 +220,25 @@ module.exports = {
       attributes: ["name", "id"],
     });
 
+    const categories = db.Subcategory.findAll({
+      order: [["name"]],
+      attributes: ["name", "id"],
+    });
+
+
     const states = db.State.findAll({
       order: [["name"]],
       attributes: ["name", "id"],
     });
 
 
-    Promise.all([product, states])
-      .then(([product, states]) =>  {
+    Promise.all([product, states, categories])
+      .then(([product, states, categories]) =>  {
         return res.render('productos/crear-item', {
           title: "Next Games | Crear Producto",
           product,
           states,
+          categories,
           toThousand,
         });
       })
@@ -258,6 +293,7 @@ module.exports = {
         discount,
         image,
         category,
+        subCategory
       } = req.body;
 
       db.Product.create({
@@ -266,16 +302,11 @@ module.exports = {
         discount,
         description: description.trim(),
         stateId: category,
-        image
+        subcategoryId: subCategory,
+        image:req.files && req.files.image ? req.files.image[0].filename : product.image,
       }).then((product) => {
-        req.files.forEach((image, index) => {
-          db.Image.create({
-            name: image.filename,
-            productId: product.id,
-          });
-        });
-        return res.redirect(`/products/detalle-producto/${id}`);
-      });
+        return res.redirect("/admin/dashboardProduct");
+      }).catch((error) => console.log(error))
     } else {
      
       if (req.files.image) {
@@ -309,19 +340,28 @@ module.exports = {
         attributes: ["name", "id"],
       });
   
+      const categories = db.Subcategory.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
+      });
+  
+  
       const states = db.State.findAll({
         order: [["name"]],
         attributes: ["name", "id"],
       });
   
   
-      Promise.all([product, states])
-        .then(([product, states]) =>  {
+      Promise.all([product, states, categories])
+        .then(([product, states, categories]) =>  {
           return res.render('productos/crear-item', {
             title: "Next Games | Crear Producto",
             product,
             states,
+            categories,
             toThousand,
+            errors: errors.mapped(),
+            old: req.body
           });
         })
         .catch((error) => {
@@ -354,27 +394,5 @@ module.exports = {
         return res.redirect("/admin/dashboardProduct");
       })
       .catch((error) => console.log(error));
-  },
-  getFromCategory:(req, res) => {
-    const { stateId } = req.params;
-   
-    db.Product.findAll({
-      where: {
-        stateId: stateId
-      },
-      include: [{
-        association: 'state'
-      }, 'images', 'subcategories']
-    })
-    .then((products) => {
-      const stateName = products[0].state.name; 
-      return res.render("productos/categorias", {
-        title: `Next Games | Productos de ${stateName}`, 
-        products,
-        toThousand,
-        stateName
-      });
-    })
-    .catch((error) => console.log(error));
-}
+  }
 };

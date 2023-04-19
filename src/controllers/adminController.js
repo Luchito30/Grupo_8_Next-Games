@@ -78,7 +78,7 @@ module.exports = {
           ]
 
         },
-        include: ["rols"]
+        include: ["rol"]
       }).then((user) => {
         return res.render("admin/dashboardUser", {
           title: "Next Games | dashboard Productos",

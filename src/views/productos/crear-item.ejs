@@ -60,10 +60,16 @@
           <h3>Seleccioná la categoria</h3>
         </div>
 
-        
+        <div class="dropdown--crear">
+          <select name="subCategory" id="lang" class="form-control">
+            <option value="" selected hidden>Seleccione una categoria</option>
+            <% categories.forEach(({name, id}) => { %>
+              <option value="<%= id %>"><%= name %></option> 
+            <% }) %>
+          </select>
+          <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+        </div>
 
-
-        
         <div class="crear__subtitulo">
           <h3>Imagen del Producto</h3>
         </div>

@@ -78,13 +78,23 @@
                                 </div>
                             </section>
 
-                        
+                            <section>
+                                <div class="edition-form-box">
+                                <label for="edition-products">Seleccioná la Categoria</label>
+                                <small class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
+                                <select id="edition-products" name="subCategory">
+                                    <% categories.forEach(({name, id}) => { %>
+                                      <option value="<%= id %>" <%= id === subcategoryId && 'selected' %>><%= name %></option> 
+                                    <% }) %>
+                                  </select>
+                                </div>
+                              </section>
                               
                               <section>
                                 <div class="edition-form-box">
-                                  <label for="edition-states">Estado del Producto</label>
-                                  <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
-                                  <select id="edition-states" name="category">
+                                    <label for="edition-products">Estado del Producto</label>
+                                    <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+                                    <select id="edition-products" name="category">
                                     <% states.forEach(({name, id}) => { %>
                                       <option value="<%= id %>" <%= id === stateId && 'selected' %>><%= name %></option> 
                                     <% }) %>

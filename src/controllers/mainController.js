@@ -3,59 +3,61 @@ const db = require("../database/models");
 const { Op } = require("sequelize");
 
 module.exports = {
-  home: async (req, res) => {
-    const ID_JUEGOS = 1;
-    const ID_CARDS = 3;
-    const ID_CONSOLAS = 4;
-    const ID_NOTEBOOK = 5;
-
-    try {
-      const inSale = await db.Product.findAll({
+  home: (req, res) => {
+      const inSale = db.Product.findAll({
         where: {
           discount: { [Op.gt]: 0 },
         },
         include: ["state", "images"],
       });
 
-      const computacion = await db.Subcategory.findByPk(ID_NOTEBOOK, {
-        include: [
-          {
-            association: "products",
-            include: ["images", "state"],
-          },
-        ],
+      const computacion = db.Product.findAll({
+        where:{
+          subcategoryId: 5
+        },
+          include: ["images", "state"],
       });
 
-      const ingresos = await db.Product.findAll({
+      const ingresos =  db.Product.findAll({
         order: [["createdAt", "DESC"]],
         include: ["images", "state"],
       });
 
-      const tarjetas = await db.Subcategory.findByPk(ID_CARDS, {
-        include: [{ association: "products", include: ["images", "state"] }],
+      const tarjetas =  db.Product.findAll({
+        where:{
+          subcategoryId: 3
+        },
+          include: ["images", "state"],
       });
 
-      const consolas = await db.Subcategory.findByPk(ID_CONSOLAS, {
-        include: [{ association: "products", include: ["images", "state"] }],
+      const consolas =  db.Product.findAll({
+        where:{
+          subcategoryId: 4
+        },
+          include: ["images", "state"],
       });
 
-      const juegos = await db.Subcategory.findByPk(ID_JUEGOS, {
-        include: [{ association: "products", include: ["images", "state"] }],
+      const juegos =  db.Product.findAll({
+        where:{
+          subcategoryId: 1
+        },
+          include: ["images", "state"],
       });
 
-      return res.render("home", {
-        title: "Next Games | Home",
-        inSale,
-        computacion: computacion?.products,
-        ingresos,
-        tarjetas: tarjetas?.products,
-        consolas: consolas?.products,
-        juegos: juegos?.products,
-        toThousand,
-      });
-    } catch (error) {
-      console.log(error.message);
-    }
+      Promise.all([inSale,computacion,ingresos,tarjetas,consolas,juegos])
+      .then(([inSale,computacion,ingresos,tarjetas,consolas,juegos]) =>{
+        return res.render("home", {
+          title: "Next Games | Home",
+          inSale,
+          computacion,
+          tarjetas,
+          consolas,
+          juegos,
+          ingresos,
+          toThousand,
+      })
+      
+      }).catch(error => console.log(error))
   },
   newslletter: (req, res) => {
 

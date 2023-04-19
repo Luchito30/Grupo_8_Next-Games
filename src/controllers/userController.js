@@ -5,6 +5,7 @@ const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs');
 const db = require('../database/models');
 const { Op } = require("sequelize");
+const { error } = require('console');
 
 module.exports = {
 
@@ -185,13 +186,13 @@ module.exports = {
             .catch(error => console.log(error))
     },
     removeuserConfirm: (req, res) => {
-        const users = readJSON('user.json');
-        const id = req.params.id;
-        const user = users.find(user => user.id === +id);
+        const {id} = req.params;
 
-        return res.render("users/removeuserConfirm", {
-            ...user,
-            title: "Next Games | Advertencia"
+        db.User.findByPk(id).then((user) => {
+            return res.render("users/removeuserConfirm", {
+                ...user.dataValues,
+                title: "Next Games | Advertencia"
+        });
         })
     },
     recuperarContraseña: (req, res) => {
@@ -200,12 +201,20 @@ module.exports = {
         });
     },
     removeusers: (req, res) => {
-        const users = readJSON('user.json');
-        const id = req.params.id;
-        const usersModified = users.filter(user => user.id !== +id);
+        const {id} = req.params;
+       
+        const user = db.User.findByPk(id,{
+            include : {all:true}
+        })
 
-        writeJSON("user.json", usersModified);
-        return res.redirect("/admin/dashboardUser")
+        db.User.destroy({
+            where:{
+                id
+            }
+        }).then(() =>{
+            return res.redirect("/admin/dashboardUser")
+        })
+        .catch((error) => console.log(error))
     },
     registerAdmin: (req, res) => {
         return res.render('users/crearAdmin', {

@@ -12,11 +12,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: "stateId",
         as: "state",
       });
-      Product.belongsToMany(models.Subcategory, {
-        foreignKey: "productId",
-        otherKey: "subcategoryId",
+      Product.belongsTo(models.Subcategory, {
+        foreignKey: "subcategoryId",
         as: "subcategories",
-        through: "SubcategoriesProducts",
       });
       Product.hasMany(models.Image, {
         foreignKey: "productId",
@@ -33,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       description: DataTypes.TEXT,
       visible: DataTypes.BOOLEAN,
       stateId: DataTypes.INTEGER,
+      subcategoryId: DataTypes.INTEGER,
       image: DataTypes.STRING,
     },
     {

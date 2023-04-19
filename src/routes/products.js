@@ -3,6 +3,7 @@ const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,r
 const checkAdmin = require('../middlewares/checkAdmin');
 const {uploadproductImages} = require("../middlewares/upload");
 const { productValidator } = require('../validations');
+const checkUser = require('../middlewares/checkUser');
 
 
 const router = express.Router();
