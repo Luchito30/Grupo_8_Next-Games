@@ -330,33 +330,30 @@ module.exports = {
     }
   },
   removeConfirm: (req, res) => {
-    const products = readJSON("productDataBase.json");
-    const id = req.params.id;
-    const product = products.find((product) => product.id === +id);
-
-    return res.render("productos/confirmRemove", {
-      ...product,
-      title: "Next Games | Advertencia",
-    });
+    const {id} = req.params;
+    
+    db.Product.findByPk(id).then(product => {
+      return res.render("productos/confirmRemove", {
+        ...product.dataValues,
+        title: "Next Games | Advertencia",
+      });
+    })
   },
   remove: (req, res) => {
+    const {id} = req.params
+  
+   const product = db.Product.findByPk(id,{
+    include : {all:true}
+   })
+   
     db.Product.destroy({
       where: {
-        id: req.params.id,
+        id
       },
-    })
-      .then(() => {
-        return res.redirect("/dashboard");
+    }).then(() => {
+        return res.redirect("/admin/dashboardProduct");
       })
       .catch((error) => console.log(error));
-
-    /* const products = readJSON("productDataBase.json");
-    const id = req.params.id;
-    const productsModified = products.filter(product => product.id !== +id);
-
-
-    writeJSON("productDataBase.json", productsModified)
-    return res.redirect("/admin/dashboardProduct") */
   },
   getFromCategory:(req, res) => {
     const { stateId } = req.params;
