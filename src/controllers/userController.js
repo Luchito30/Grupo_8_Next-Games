@@ -19,14 +19,14 @@ module.exports = {
 
         const errors = validationResult(req);
 
-         if(req.fileValidationError){
-             errors.errors.push({
-               value : "",
-               msg : req.fileValidationError,
-               param : "images",
-               location : "files"
-             })
-           }
+        if (req.fileValidationError) {
+            errors.errors.push({
+                value: "",
+                msg: req.fileValidationError,
+                param: "images",
+                location: "files"
+            })
+        }
 
         if (errors.isEmpty()) {
 
@@ -71,15 +71,15 @@ module.exports = {
 
             db.User.findOne({
                 where: {
-                    [Op.or]:[
+                    [Op.or]: [
                         {
-                        email: req.body.useremail
+                            email: req.body.useremail
                         },
                         {
-                        userName: req.body.useremail
+                            userName: req.body.useremail
                         }
                     ]
-                  
+
                 },
             })
                 .then(({ id, firstName, image, rolId }) => {
@@ -106,9 +106,6 @@ module.exports = {
         }
     },
     profile: (req, res) => {
-        /*  const users = readJSON('user.json');
-         const { id } = req.session.userLogin;
-         const user = users.find((user) => user.id === +id) */
         db.User.findByPk(req.session.userLogin.id, {
             attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
             include: [
@@ -232,30 +229,31 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            const users = readJSON("user.json")
             const { firstName, LastName, email, password, userName, image } = req.body
 
-            const newUser = {
-                id: users.length ? users[users.length - 1].id + 1 : 1,
-                firstName: firstName.trim(),
-                LastName: LastName.trim(),
-                email: email.trim(),
-                password: hashSync(password, 12),
-                userName: userName.trim(),
-                image: req.file ? req.file.filename : "default-image.png",
-                rol: 'admin'
-            };
+            db.Address.create()
+                .then(address => {
+                    db.User.create({
+                        firstName: firstName.trim(),
+                        LastName: LastName.trim(),
+                        email: email.trim(),
+                        password: hashSync(password, 10),
+                        userName: userName.trim(),
+                        image: req.file ? req.file.filename : "default-image.png",
+                        rolId: 1,
+                        addressId: address.id
+                    }).then(() => {
 
-            users.push(newUser);
+                        return res.redirect('/admin/dashboardUser');
 
-            writeJSON("user.json", users);
-
-            return res.redirect('/admin/dashboardUser');
+                    })
+                })
+                .catch(error => console.log(error))
         } else {
-            return res.render('users/crearAdmin', {
+            return res.render('users/crearAdmin',{
                 title: "Next Games | Crear Administrador",
-                errors: errors.mapped(),
-                old: req.body
+                errors : errors.mapped(),
+                old:req.body
             });
         }
     },

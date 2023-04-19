@@ -77,7 +77,8 @@ module.exports = {
           }
           ]
 
-        }
+        },
+        include: ["rols"]
       }).then((user) => {
         return res.render("admin/dashboardUser", {
           title: "Next Games | dashboard Productos",
@@ -89,6 +90,7 @@ module.exports = {
     } else {
       userDashboard = db.User.findAll()
         .then((user) => {
+          console.log(user)
           return res.render("admin/dashboardUser", {
             title: "Next Games | dashboard Productos",
             user,

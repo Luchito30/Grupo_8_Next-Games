@@ -41,14 +41,18 @@
                         </tr>
                     </thead>
                     <tbody class="table-light">
-                        <% user.forEach(({id,firstName,lastName,email,userName,rol,image})=> { %>
+                        <% user.forEach(({id,firstName,LastName,email,userName,rolId,image})=> { %>
                             <tr>
                                 <th scope="row" class="dashboard--id"><%= id %></th>
                                 <td class="dashboarduser--name"><%= firstName %></td>
-                                <td class="dashboarduser--lastname"><%= lastName %></td>
+                                <td class="dashboarduser--lastname"><%= LastName %></td>
                                 <td class="dashboarduser--user"><%= userName %></td>
                                 <td class="dashboarduser--email"><%= email %></td>
-                                <td class="dashboarduser--rol"><%= rol %></td>
+                                <td class="dashboarduser--rol"><% if (rolId === 1) { %>
+                                Admin
+                                <% } else {%>
+                                User
+                                    <% } %></td>
                                 <td class="dashboard--image"><img class="dashboard--img" src="/images/users/<%= image %>"></td>
                                 <td class="dashboarduser--accion">
                                     <div class="d-flex gap-2">
