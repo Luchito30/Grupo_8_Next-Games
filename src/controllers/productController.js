@@ -211,10 +211,6 @@ module.exports = {
         console.log(error);
       });
   },
-  /*  return res.render('productos/crear-item', {
-      title: "Next Games | Crear Producto"
-    });
-  }, */
   storeMainImage: (req, res) => {
     const errors = validationResult(req);
 
@@ -261,18 +257,16 @@ module.exports = {
         description,
         discount,
         image,
-        images,
         category,
-        subCategory,
       } = req.body;
 
       db.Product.create({
         name: name.trim(),
+        price,
+        discount,
         description: description.trim(),
-        price: +price,
-        discount: +discount,
-        subCategory,
-        category,
+        stateId: category,
+        image
       }).then((product) => {
         req.files.forEach((image, index) => {
           db.Image.create({
@@ -280,41 +274,10 @@ module.exports = {
             productId: product.id,
           });
         });
-        return res.redirect(`/products/detalle-producto/${newProduct.id}`);
+        return res.redirect(`/products/detalle-producto/${id}`);
       });
-      /* const products = readJSON("productDataBase.json")
-      const { name, price, description, discount, image, images, category, subCategory } = req.body;
-
-      const newProduct = {
-        id: products.length ? products[products.length - 1].id + 1 : 1,
-        name: name.trim(),
-        description: description.trim(),
-        price: +price,
-        discount: +discount,
-        subCategory,
-        category,
-        image: req.files && req.files.image ? req.files.image[0].filename : "default-image.png",
-        images: req.files && req.files.images ? req.files.images.map(file => file.filename) : [],
-      };
-
-
-      products.push(newProduct);
-
-      writeJSON("productDataBase.json", products);
-
-      return res.redirect(`detalle-producto/${newProduct.id}`);
- */
     } else {
-      const products = db.Product.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-
-      const categories = db.Subcategory.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-
+     
       if (req.files.image) {
         req.files.image.forEach((file) => {
           fs.existsSync(`./public/images/products/${file.filename}`) &&
@@ -341,20 +304,29 @@ module.exports = {
         });
       }
 
-      Promise.all([product, categories]).then(([product, categories]) => {
-        return res.render("productos/crear-item", {
-          title: "Next Games | Crear Producto",
-          errors: errors.mapped(),
-          product,
-          categories,
-          old: req.body,
-        });
+      const product = db.Product.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
       });
-      /* return res.render('productos/crear-item', {
-        title: "Next Games | Crear Producto",
-        errors: errors.mapped(),
-        old: req.body
-      }) */
+  
+      const states = db.State.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
+      });
+  
+  
+      Promise.all([product, states])
+        .then(([product, states]) =>  {
+          return res.render('productos/crear-item', {
+            title: "Next Games | Crear Producto",
+            product,
+            states,
+            toThousand,
+          });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     }
   },
   removeConfirm: (req, res) => {

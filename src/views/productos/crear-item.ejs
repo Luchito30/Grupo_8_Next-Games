@@ -48,6 +48,7 @@
 
         <div class="dropdown--crear">
           <select name="category" id="lang" class="form-control">
+            <option value="" selected hidden>Seleccione un estado</option>
             <% states.forEach(({name, id}) => { %>
               <option value="<%= id %>"><%= name %></option> 
             <% }) %>
