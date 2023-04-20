@@ -41,7 +41,7 @@ module.exports = {
                         email: email.trim(),
                         password: hashSync(password, 10),
                         userName: userName.trim(),
-                        image: req.file ? req.file.filename : "default-image.png",
+                        image: req.file ? req.file.filename : "userdefault.png",
                         rolId: 2,
                         addressId: address.id
                     }).then(() => {
@@ -248,7 +248,7 @@ module.exports = {
                         email: email.trim(),
                         password: hashSync(password, 10),
                         userName: userName.trim(),
-                        image: req.file ? req.file.filename : "default-image.png",
+                        image: req.file ? req.file.filename : "userdefault.png",
                         rolId: 1,
                         addressId: address.id
                     }).then(() => {

@@ -40,22 +40,22 @@
               
                     <div class="profile-form-box">
                       <label class="profile-titulo">Calle:</label>
-                      <input class="profile-form-box-input" type="text" value="<%= user.address %>" disabled>
+                      <input class="profile-form-box-input" type="text" value="<%= user.address.address %>" disabled>
                     </div>
               
                     <div class="profile-form-box">
                       <label class="profile-titulo">Ciudad:</label>
-                      <input class="profile-form-box-input" type="text" value="<%= user.city %>" disabled>
+                      <input class="profile-form-box-input" type="text" value="<%= user.address.city %>" disabled>
                     </div>
               
                     <div class="profile-form-box">
                       <label class="profile-titulo">Provincia:</label>
-                      <input class="profile-form-box-input" type="text" value="<%= user.province %>" disabled>
+                      <input class="profile-form-box-input" type="text" value="<%= user.address.province %>" disabled>
                     </div>
               
                     <div class="profile-form-box">
                       <label class="profile-titulo">Codigo postal:</label>
-                      <input class="profile-form-box-input" type="text" value="<%= user.zipCode %>" disabled>
+                      <input class="profile-form-box-input" type="text" value="<%= user.address.zipCode %>" disabled>
                     </div>
                   </form>
                 </section>
