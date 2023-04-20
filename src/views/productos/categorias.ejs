@@ -3,33 +3,34 @@
 
 <%- include('../partials/head.ejs') %>
 
-<body>
-    <%- include('../partials/header.ejs') %> 
-    
-        <div class="home__main--titulo">
-            <h2> <% if (stateName === "newer") { %>
-                Nuevos Ingresos
-            <% } else { %>
-                Ofertas
-                <% } %>
-            </h2>
-        </div>
+    <body>
+        <%- include('../partials/header.ejs') %>
 
-     
-        <section class="home__main__section">
-            <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
-                <%- include('../partials/product',{ id, image, price, discount, name, state, subcategories })
-                    %>
-                    <% }) %>
-        </section>
+            <div class="home__main--titulo">
+                <h2> 
+                    <% if( locals.subName = "in-sale"){ %>
+                        OFERTAS
+                        <% } else { %>
+                            NUEVOS INGRESOS
+                      <% } %>
+                </h2>
+            </div>
 
-    
-         <!--whatsapp-->
-         <%- include('../partials/whatsApp.ejs') %>
-	
-    <%- include('../partials/footer.ejs') %>
 
-      <!-- fixed -->
-      <script src="/javascripts/fixed.js"></script>
-</body>
+            <section class="home__main__section">
+                <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                    <%- include('../partials/product',{ id, image, price, discount, name, state, subcategories }) %>
+                        <% }) %>
+            </section>
+
+
+            <!--whatsapp-->
+            <%- include('../partials/whatsApp.ejs') %>
+
+                <%- include('../partials/footer.ejs') %>
+
+                    <!-- fixed -->
+                    <script src="/javascripts/fixed.js"></script>
+    </body>
+
 </html>

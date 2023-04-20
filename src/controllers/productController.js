@@ -68,7 +68,7 @@ module.exports = {
           title: "Next Games | Productos",
           products,
           toThousand,
-          subName : subName
+          subName : subName.toUpperCase()
         });
       })
       .catch((error) => console.log(error));
