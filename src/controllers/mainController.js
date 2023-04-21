@@ -4,42 +4,54 @@ const { Op } = require("sequelize");
 
 module.exports = {
   home: (req, res) => {
+
+      const ID_compu = 5;
+      const ID_ingresos = 2;
+      const ID_tarjeta = 3;
+      const ID_consolas = 4;
+      const ID_juegos = 1;
+
       const inSale = db.Product.findAll({
         where: {
           discount: { [Op.gt]: 0 },
         },
         include: ["state", "images"],
+         limit: 10,
       });
 
       const computacion = db.Product.findAll({
         where:{
-          subcategoryId: 5
+          subcategoryId: ID_compu
         },
           include: ["images", "state"],
       });
 
-      const ingresos =  db.Product.findAll({
-        order: [["createdAt", "DESC"]],
-        include: ["images", "state"],
-      });
+      const ingresos = db.Product.findAll({
+        where: {
+          stateId: ID_ingresos
+        },
+        include: [{
+          association: 'state'
+        }, 'images', 'subcategories']
+      })
 
       const tarjetas =  db.Product.findAll({
         where:{
-          subcategoryId: 3
+          subcategoryId: ID_tarjeta
         },
           include: ["images", "state"],
       });
 
       const consolas =  db.Product.findAll({
         where:{
-          subcategoryId: 4
+          subcategoryId: ID_consolas
         },
           include: ["images", "state"],
       });
 
       const juegos =  db.Product.findAll({
         where:{
-          subcategoryId: 1
+          subcategoryId: ID_juegos
         },
           include: ["images", "state"],
       });
