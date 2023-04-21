@@ -40,8 +40,6 @@ module.exports = {
       ],
     })
       .then((product) => {
-        console.log(product)
-
         if (!product) {
           return res.redirect("/")
         }
@@ -67,6 +65,13 @@ module.exports = {
       }, 'images', 'state']
     })
       .then((products) => {
+
+        const subtotal = 6
+
+        if (req.params.subcategoryId > subtotal) {
+          return res.redirect("/")
+        }
+
         const subName = products[0].subcategories.name; 
         return res.render("products", {
           title: "Next Games | Productos",
@@ -89,6 +94,11 @@ module.exports = {
         }, 'images', 'subcategories']
       })
       .then((products) => {
+        const cattotal = 3
+
+        if (req.params.stateId > cattotal) {
+          return res.redirect("/")
+        }
         const stateName = products[0].state.name; 
         return res.render("productos/categorias", {
           title: `Next Games | Productos de ${stateName}`, 
