@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator');
 const { hashSync } = require('bcryptjs');
 const db = require('../database/models');
 const { Op } = require("sequelize");
-const { error } = require('console');
+
 
 module.exports = {
 

@@ -2,12 +2,12 @@ const express = require('express');
 const {home,newslletter,search} = require('../controllers/mainController');
 
 const router = express.Router();
-const checkAdmin = require('../middlewares/checkAdmin');
+const newslettrsvalidator = require('../validations/newslettrsvalidator');
 
 router.get('/', home);
 
 router.get('/search', search);
 
-router.post("/newslletter", newslletter);
+router.post("/newslletter", newslettrsvalidator,newslletter);
 
 module.exports = router;
