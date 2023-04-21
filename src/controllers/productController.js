@@ -41,6 +41,10 @@ module.exports = {
     })
       .then((product) => {
         console.log(product)
+
+        if (!product) {
+          return res.redirect("/")
+        }
         return res.render("productos/detalle-producto", {
           title: "Next Games | Detalle de producto",
           ...product.dataValues,
