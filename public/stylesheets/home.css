@@ -96,6 +96,8 @@
     border: 3px solid black;
     border-radius: 8px;
     height: 270px;
+    object-fit: contain;
+    background-color: white;
 }
 
 .home__main--img:hover {
