@@ -65,7 +65,7 @@
             <hr>
             <div class="footer__section2--links-li">
                 <p class="footer__section__contacto--titulo">Newsletter</p>
-                <form method="POST" action="/newslletter">
+                <form method="POST" action="/#email">
                     <small class="text"> <%= (locals.errors && errors.email) && errors.email.msg %></small>
                     <input type="email" name="email" id="email" placeholder="Ingrese su email" required>
                     <button type="submit">Suscribite</button>
