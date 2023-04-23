@@ -3,6 +3,7 @@ const { check, body } = require('express-validator');
 const db = require('../database/models');
 module.exports = [
     body('email')
+    .isEmail().withMessage('Debe ser un email con formato válido')
     .custom((value, {req}) => {
         return db.NewsLatter.findOne({
             where : {

@@ -113,10 +113,6 @@ footer {
    color: var(--letrasSubtitulos2);
 }
 
-.footer__section__categoria {
-   text-align: center;
-}
-
 .footer__section__categoria li a {
    margin-bottom: 10px;
    font-size: 20px;
