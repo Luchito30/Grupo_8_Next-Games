@@ -1,3 +1,4 @@
+const subcategory = require('../../database/models/subcategory');
 const {getAllProducts,  getProductById}=require('../../services/productServices');
 
 
@@ -5,7 +6,7 @@ const {getAllProducts,  getProductById}=require('../../services/productServices'
 module.exports = {
     'index': async (req, res) => {
         try {
-            const{count,categoryCount,products} = await getAllProducts(req);
+            const{count,categoryCount,products, subcategory} = await getAllProducts(req);
 
             return res.status(200).json({
                 ok:true,

@@ -23,8 +23,16 @@ module.exports = {
                     ]
                 }
             });
-            const categoryCount = await db.Product.count("subcategoryId", {
-                distinct: true,
+            const categoryCount = await db.Subcategory.findAndCountAll({
+                attributes : {
+                    exclude:['createdAt', 'updatedAt','id','active'],
+                    include : [
+                       'name'
+                    ]
+                }
+
+
+                
             });
             return {
                 count,
