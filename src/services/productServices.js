@@ -23,7 +23,7 @@ module.exports = {
                     ]
                 }
             });
-            const categoryCount = await db.Product.count("categoryId", {
+            const categoryCount = await db.Product.count("subcategoryId", {
                 distinct: true,
             });
             return {
