@@ -22,9 +22,13 @@ module.exports = {
                         literalQueryUrl(req,'products','Product.id')
                     ]
                 }
-            })
+            });
+            const categoryCount = await db.Product.count("categoryId", {
+                distinct: true,
+            });
             return {
                 count,
+                categoryCount,
                 products
             }
             

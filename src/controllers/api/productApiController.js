@@ -5,12 +5,14 @@ const {getAllProducts,  getProductById}=require('../../services/productServices'
 module.exports = {
     'index': async (req, res) => {
         try {
-            const{count,products} = await getAllProducts(req);
+            const{count,categoryCount,products} = await getAllProducts(req);
 
             return res.status(200).json({
                 ok:true,
                 count,
+                categoryCount,
                 products
+               
             })
         } catch (error) {
             console.log(error)
