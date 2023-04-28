@@ -5,11 +5,11 @@ const literalQueryUrlImage = (
     entity,
     nameImage,
     field,
-  ) => {
+) => {
     const urlImage = (req) =>
-      `${req.protocol}://${req.get("host")}/images/${entity}/`;
+    `${req.protocol}://${req.get("host")}/image/${entity}/`;
     /* field = campo */
-    return [literal(`CONCAT('${urlImage(req)}',${nameImage})`), field];
-  };
+    return [literal(`CONCAT('${urlImage(req)}',${nameImage})`),field];
+};
 
-  module.exports = literalQueryUrlImage
+module.exports = literalQueryUrlImage
