@@ -8,14 +8,15 @@ module.exports = {
             const { count, rows: users } = await db.User.findAndCountAll(
                 {
                     attributes: {
-                        exclude: ['password'],
+                        exclude: ['password','rolId'],
                         include: [
                             literalQueryUrlImage(req, 'users', 'firstName', 'image', 'urlImage')
                         ]
                     },
                     attributes: {
+                        exclude: ['password','rolId'],
                         include: [
-                            literalQueryUrl(req, 'users', 'rolId')
+                            literalQueryUrl(req, 'users', 'id')
                         ]
                     }
                 }
@@ -38,14 +39,11 @@ module.exports = {
         try {
             const user = await db.User.findByPk(id, {
                 attributes: {
-                    exclude: ['password'],
+                    exclude: ['password','rolId'],
                     include: [
                         literalQueryUrlImage(req, 'users', 'image', 'urlImage')
                     ]
-                },
-                include: [{
-                    association: "rol"
-                }]
+                }
             })
             return user
         } catch (error) {
