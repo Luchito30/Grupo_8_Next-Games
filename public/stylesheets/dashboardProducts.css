@@ -101,6 +101,14 @@
     color: white;
 }
 
+#button-border{
+    border: 2.5px solid black;
+}
+
+#button-bold{
+    font-weight: bold;
+}
+
 @media (min-width: 560px) {
 
     .dashboard--price,
@@ -137,11 +145,14 @@
     }
 
     .dashboard--img {
-        width: 50%;
+        width: 100%;
         height: 190px;
+        object-fit: contain;
+        border: 4px solid black;
+        background-color: white;
     }
 
-     .dashboardp__buscarprodu{
+    .dashboardp__buscarprodu{
         display: block;
     }
     .dashboardp__buscador2{

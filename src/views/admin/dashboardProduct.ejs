@@ -51,45 +51,45 @@
                                         <%= id %>
                                     </th>
                                     <td class="dashboard--name">
-                                        <%= name %>
+                                        <strong><%= name %></strong>
                                     </td>
                                     <td class="dashboard--price">
-                                        <%= toThousand(price) %>
+                                        <strong><%= toThousand(price) %></strong>
                                     </td>
                                     <td class="dashboard--discount">
-                                        <%= discount %>%
+                                        <strong><%= discount %>%</strong>
                                     </td>
                                     <td class="dashboard--total">
                                         <% if (discount) { %>
-                                            $<%= toThousand(Math.round(price - (price * discount) / 100))%>
+                                            <strong>$<%= toThousand(Math.round(price - (price * discount) / 100))%></strong>
                                                 <% }else{ %>
-                                                    $<%= toThousand(Math.round(price)) %>
+                                                    <strong>$<%= toThousand(Math.round(price)) %></strong> 
                                                         <% } %>
                                     </td>
                                     <td class="dashboard--category">
                                     <% if (state.name === "in-sale") { %>
-                                        <span>Oferta</span>
+                                        <strong>Oferta</strong>
                                     <% } %>
                                     <% if (state.name === "newer") { %>
-                                        <span>Nuevo</span>
+                                        <strong>Nuevo</strong>
                                     <% } %>
                                     <% if (state.name === "normally") { %>
-                                        <span>Normal</span>
+                                        <strong>Normal</strong>
                                     <% } %>
                                     </td>
                                     <td class="dashboard--subCategory">
-                                            <%= subcategories.name %>
+                                           <strong><%= subcategories.name %></strong>
                                     </td>
                                     <td class="dashboard--image"><img class="dashboard--img"
                                             src="/images/products/<%= image %>"></td>
                                     <td class="dashboard--accion">
                                         <div class="d-flex gap-2">
-                                            <a class="btn btn-sm btn-primary"
+                                            <a class="btn btn-sm btn-primary" id="button-border"
                                                 href="/products/detalle-producto/<%= id %>"><i
-                                                    class="far fa-eye"></i></a>
-                                            <a class="btn btn-sm btn-success" href="/products/edicion/<%= id %>"><i
-                                                    class="far fa-edit"></i></a>
-                                            <a class="btn btn-sm btn-danger" href="/products/remove/<%- id %>"><i
+                                                    class="far fa-eye" id="button-bold"></i></a>
+                                            <a class="btn btn-sm btn-success" id="button-border" href="/products/edicion/<%= id %>"><i
+                                                    class="far fa-edit" id="button-bold"></i></a>
+                                            <a class="btn btn-sm btn-danger" id="button-border" href="/products/remove/<%- id %>"><i
                                                     class="fas fa-trash"></i></a>
                                         </div>
                                     </td>
