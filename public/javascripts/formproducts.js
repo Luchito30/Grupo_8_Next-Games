@@ -248,7 +248,6 @@ inputImages.addEventListener('change', function (e) {
   }
 });
 
-
 formAddProduct.addEventListener('submit', function (event) {
   event.preventDefault();
   let error = false;
@@ -261,30 +260,27 @@ formAddProduct.addEventListener('submit', function (event) {
     subCategory: "Debe elegir una categoria",
     description: "Se debe ingresar una descripción al producto",
     image: "Debe seleccionar una imagen",
+    images: "Debe elegir mínimo 1 imagen",
   };
 
   // Verificar cada campo del formulario
-  for (let i = 0; i < this.elements.length; i++) {
-    const element = this.elements[i];
-    const fieldId = element.id;
+  const fields = this.querySelectorAll('input, textarea, select');
+  fields.forEach(field => {
+    const fieldId = field.id;
+    if (!field.value || field.classList.contains('is-invalid')) {
+      error = true;
 
-    // Verificar solo los campos de entrada
-    if (element.tagName.toLowerCase() === 'input' || element.tagName.toLowerCase() === 'textarea' || element.tagName.toLowerCase() === 'select') {
-      if (!element.value || element.classList.contains('is-invalid')) {
-        error = true;
-
-        const errorElement = $(`${fieldId}Error`);
-        if (errorElement) {
-          errorElement.innerHTML = errorMessages[fieldId] || "";
-        }
-
-        element.classList.add('is-invalid');
+      const errorElement = document.getElementById(`${fieldId}Error`);
+      if (errorElement) {
+        errorElement.innerHTML = errorMessages[fieldId] || "";
       }
+
+      field.classList.add('is-invalid');
     }
-  }
+  });
 
   const submitBtnContainer = document.querySelector('.submit-btn--crear');
-    submitBtnContainer.classList.add('is-invalid');
+  submitBtnContainer.classList.add('is-invalid');
 
   const priceField = document.getElementById('price');
   if (!priceField.value) {
@@ -317,11 +313,13 @@ formAddProduct.addEventListener('submit', function (event) {
   }
 
   const imagesField = document.getElementById('images');
-  if (imagesField.files.length === 0) {
+  const existingImages = imagesField.getAttribute('data-existing-images') || '';
+
+  if (imagesField.files.length === 0 && existingImages.trim().length === 0) {
     error = true;
     const imagesErrorElement = document.getElementById('imagesError');
     if (imagesErrorElement) {
-      imagesErrorElement.innerHTML = "Debe elegir mínimo 1 imagen";
+      imagesErrorElement.innerHTML = errorMessages.images;
     }
     const submitBtnContainer2 = document.querySelector('.submit-btn--crear2');
     submitBtnContainer2.classList.add('is-invalid');

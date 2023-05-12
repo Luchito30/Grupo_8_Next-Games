@@ -141,31 +141,31 @@ module.exports = {
   },
   update: async (req, res) => {
     const errors = validationResult(req);
-
-    if (req.fileValidationError) {
-      errors.errors.push({
-        value: "",
-        msg: req.fileValidationError,
-        param: "images",
-        location: "files",
-      });
-    }
-
-    if (req.fileValidationError) {
-      errors.errors.push({
-        value: "",
-        msg: req.fileValidationError,
-        param: "image",
-        location: "files",
-      });
-    }
-
+  
     if (errors.isEmpty()) {
       const { id } = req.params;
-      const { name, discount, price, description, category, subCategory,image} =
-        req.body;
-
-          db.Product.update(
+      const { name, discount, price, description, category, subCategory, image } = req.body;
+  
+      try {
+        const product = await db.Product.findByPk(id, {
+          include: ["images"],
+        });
+  
+        // Eliminar la imagen antigua del servidor
+        if (product.image) {
+          fs.existsSync(`public/images/products/${product.image}`) &&
+            fs.unlinkSync(`public/images/products/${product.image}`);
+        }
+  
+        // Eliminar las imágenes antiguas del servidor y de la base de datos
+        product.images.forEach((image) => {
+          fs.existsSync(`public/images/products/${image.image}`) &&
+            fs.unlinkSync(`public/images/products/${image.image}`);
+          image.destroy();
+        });
+  
+        // Actualizar los datos del producto
+        await db.Product.update(
           {
             name: name.trim(),
             description: description.trim(),
@@ -173,59 +173,72 @@ module.exports = {
             discount,
             subcategoryId: subCategory,
             stateId: category,
-            image:req.files && req.files.image ? req.files.image[0].filename : image
-          },{
-          where:{
-          id: id
-          }},
-        ).then(() => {
-          return res.redirect("/admin/dashboardProduct");
-        }).catch((error) => console.log(error))
+            image: req.files && req.files.image ? req.files.image[0].filename : image,
+          },
+          {
+            where: {
+              id: id,
+            },
+          }
+        );
+  
+        // Guardar las nuevas imágenes en la base de datos
+        if (req.files && req.files.images) {
+          req.files.images.forEach(async (file) => {
+            await db.Image.create({
+              productId: product.id,
+              image: file.filename,
+            });
+          });
+        }
+  
+        return res.redirect("/admin/dashboardProduct");
+      } catch (error) {
+        console.log(error);
+        return res.redirect("/admin/dashboardProduct");
+      }
     } else {
       const { id } = req.params;
-
+  
       if (req.files.image) {
         req.files.image.forEach((file) => {
-          fs.existsSync(`./public/images/products/${file.filename}`) &&
-            fs.unlinkSync(`./public/images/products/${file.filename}`);
+          fs.existsSync(`public/images/products/${file.filename}`) &&
+            fs.unlinkSync(`public/images/products/${file.filename}`);
         });
       }
-
+  
       if (req.files.images) {
         req.files.images.forEach((file) => {
-          fs.existsSync(`./public/images/products/${file.filename}`) &&
-            fs.unlinkSync(`./public/images/products/${file.filename}`);
+          fs.existsSync(`public/images/products/${file.filename}`) &&
+            fs.unlinkSync(`public/images/products/${file.filename}`);
         });
       }
-
-      const states =  db.State.findAll({
+  
+      const states = await db.State.findAll({
         order: [["name"]],
         attributes: ["name", "id"],
       });
-
-      const categories = db.Subcategory.findAll({
-      order: [["name"]],
-      attributes: ["name", "id"],
-    });
-
-      
-      const product =  db.Product.findByPk(id, {
-        include: ["images",],
+  
+      const categories = await db.Subcategory.findAll({
+        order: [["name"]],
+        attributes: ["name", "id"],
       });
-
-      Promise.all([product, states, categories]).then(([product, states, categories]) => {
-        return res.render("productos/edicion", {
-          title: "Next Games | Editar Producto",
-          ...product.dataValues,
-          states,
-          categories,
-          toThousand,
-          errors: errors.mapped(),
-          old: req.body,
-        });
+  
+      const product = await db.Product.findByPk(id, {
+        include: ["images"],
+      });
+  
+      return res.render("productos/edicion", {
+        title: "Next Games | Editar Producto",
+        ...product.dataValues,
+        states,
+        categories,
+        toThousand,
+        errors: errors.mapped(),
+        old: req.body,
       });
     }
-  },
+  },  
   createItem: (req, res) => {
 
     const product = db.Product.findAll({
@@ -259,9 +272,9 @@ module.exports = {
         console.log(error);
       });
   },
-  storeMainImage: (req, res) => {
+  storeMainImage: async (req, res) => {
     const errors = validationResult(req);
-
+  
     if (!req.files.images && !req.fileValidationError) {
       errors.errors.push({
         value: "",
@@ -270,7 +283,7 @@ module.exports = {
         location: "files",
       });
     }
-
+  
     if (req.fileValidationError) {
       errors.errors.push({
         value: "",
@@ -279,7 +292,7 @@ module.exports = {
         location: "files",
       });
     }
-
+  
     if (!req.files.image && !req.fileValidationError) {
       errors.errors.push({
         value: "",
@@ -288,7 +301,7 @@ module.exports = {
         location: "files",
       });
     }
-
+  
     if (req.fileValidationError) {
       errors.errors.push({
         value: "",
@@ -297,91 +310,74 @@ module.exports = {
         location: "files",
       });
     }
-
+  
     if (errors.isEmpty()) {
-      const {
-        name,
-        price,
-        description,
-        discount,
-        image,
-        category,
-        subCategory
-      } = req.body;
-
-      db.Product.create({
-        name: name.trim(),
-        price,
-        discount,
-        description: description.trim(),
-        stateId: category,
-        subcategoryId: subCategory,
-        image:req.files && req.files.image ? req.files.image[0].filename : product.image,
-      }).then((product) => {
-        return res.redirect("/admin/dashboardProduct");
-      }).catch((error) => console.log(error))
+      try {
+        const {
+          name,
+          price,
+          description,
+          discount,
+          category,
+          subCategory
+        } = req.body;
+  
+        const product = await db.Product.create({
+          name: name.trim(),
+          price,
+          discount,
+          description: description.trim(),
+          stateId: category,
+          subcategoryId: subCategory,
+          image: req.files.image[0].filename,
+        });
+  
+        const productImages = req.files.images || [];
+        const imagePromises = productImages.map((file) =>
+          db.Image.create({
+            image: file.filename,
+            productId: product.id,
+          })
+        );
+  
+        await Promise.all(imagePromises);
+  
+        return res.redirect(`/products/detalle-producto/${product.id}`);
+      } catch (error) {
+        console.log(error);
+        return res.redirect(`/admin/dashboardProduct`);
+      }
     } else {
-     
-      if (req.files.image) {
-        req.files.image.forEach((file) => {
-          fs.existsSync(`./public/images/products/${file.filename}`) &&
-            fs.unlinkSync(`./public/images/products/${file.filename}`);
-          errors.errors.push({
-            value: "",
-            msg: "Debe seleccionar de nuevo la imagen",
-            param: "image",
-            location: "files",
-          });
+      try {
+        const [product, states, categories] = await Promise.all([
+          db.Product.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+          }),
+          db.State.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+          }),
+          db.Subcategory.findAll({
+            order: [["name"]],
+            attributes: ["name", "id"],
+          }),
+        ]);
+  
+        return res.render("productos/crear-item", {
+          title: "Next Games | Crear Producto",
+          product,
+          states,
+          categories,
+          toThousand,
+          errors: errors.mapped(),
+          old: req.body,
         });
+      } catch (error) {
+        console.log(error);
       }
-
-      if (req.files.images) {
-        req.files.images.forEach((file) => {
-          fs.existsSync(`./public/images/products/${file.filename}`) &&
-            fs.unlinkSync(`./public/images/products/${file.filename}`);
-          errors.errors.push({
-            value: "",
-            msg: "Debe seleccionar de nuevo las imagenes",
-            param: "images",
-            location: "files",
-          });
-        });
-      }
-
-      const product = db.Product.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-  
-      const categories = db.Subcategory.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-  
-  
-      const states = db.State.findAll({
-        order: [["name"]],
-        attributes: ["name", "id"],
-      });
-  
-  
-      Promise.all([product, states, categories])
-        .then(([product, states, categories]) =>  {
-          return res.render('productos/crear-item', {
-            title: "Next Games | Crear Producto",
-            product,
-            states,
-            categories,
-            toThousand,
-            errors: errors.mapped(),
-            old: req.body
-          });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
     }
-  },
+  },  
   removeConfirm: (req, res) => {
     const {id} = req.params;
     
@@ -392,20 +388,37 @@ module.exports = {
       });
     })
   },
-  remove: (req, res) => {
-    const {id} = req.params
+  remove: async (req, res) => {
+    const { id } = req.params;
   
-   const product = db.Product.findByPk(id,{
-    include : {all:true}
-   })
-   
-    db.Product.destroy({
-      where: {
-        id
-      },
-    }).then(() => {
-        return res.redirect("/admin/dashboardProduct");
-      })
-      .catch((error) => console.log(error));
+    try {
+      const product = await db.Product.findByPk(id, {
+        include: 'images',
+      });
+
+      if (product.image) {
+        fs.existsSync(`public/images/products/${product.image}`) &&
+          fs.unlinkSync(`public/images/products/${product.image}`);
+      }
+  
+      product.images.forEach((image) => {
+        const imagePath = `public/images/products/${image.image}`;
+  
+        if (fs.existsSync(imagePath)) {
+          fs.unlinkSync(imagePath);
+        }
+      });
+  
+      await db.Product.destroy({
+        where: {
+          id,
+        },
+      });
+  
+      return res.redirect("/admin/dashboardProduct");
+    } catch (error) {
+      console.log(error);
+      return res.redirect("/admin/dashboardProduct");
+    }
   }
-};
+}

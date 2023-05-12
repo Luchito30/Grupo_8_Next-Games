@@ -1,31 +1,28 @@
-const subcategory = require('../../database/models/subcategory');
 const {getAllProducts,  getProductById}=require('../../services/productServices');
-
-
 
 module.exports = {
     'index': async (req, res) => {
         try {
-            const{count,categoryCount,products, subcategory} = await getAllProducts(req);
-
-            return res.status(200).json({
-                ok:true,
-                count,
-                categoryCount,
-                products
-               
-            })
+          const { count, products} = await getAllProducts(req);
+  
+          return res.status(200).json({
+            ok: true,
+            url:"/api/products",
+            count:products.length,
+            products,
+          });
         } catch (error) {
-            console.log(error)
-            return res.status(error.status || 500).json({
-                ok : false,
-                error : {
-                    status : error.status || 500,
-                    message : error.message || "Upss, hubo un error"
-                }
-            })
-         }
-    },
+          console.log(error);
+          return res.status(error.status || 500).json({
+            ok: false,
+            error: {
+              status: error.status || 500,
+              message: error.message || "Ups, hubo un error",
+            },
+          });
+        }
+      },
+      
     'detail': async(req, res) => {
         try {
 

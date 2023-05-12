@@ -5,153 +5,189 @@
 
 <%- include('../partials/head.ejs') %>
 
-    <body>
-        <!-- Header -->
-        <%- include('../partials/headerAdmin.ejs') %>
+  <body>
+    <!-- Header -->
+    <%- include('../partials/headerAdmin.ejs') %>
 
-            <main class="edition">
-                <div class="edition-container">
-                    <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
-                    <section class="edition-form">
-                        <form action="/products/edicion/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="crear-item-from" novalidate>
+      <main class="edition">
+        <div class="edition-container">
+          <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
+          <section class="edition-form">
+            <form action="/products/edicion/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data"
+              id="crear-item-from" novalidate>
 
-                            <section>
-                                <label class="edicion__label--titulo" for="name">Nombre del Producto</label>
-                                <div class="edition-form-box">
-                                    <small class="text-crear" id="nameError"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-                                </div>
-                                <div class="edition-form-box">
-                                    <input type="text"  class="form-produ-control <%= locals.errors && errors.name ? 'is-invalid' : null%>" id="name" id="name" name="name"  value="<%= locals.old && old.name ? old.name : name %>">
-                                </div>
-                            </section>
-
-                            <section>
-                                <label class="edicion__label--titulo" for="price">Precio</label>
-                                <div class="edition-form-box">
-                                    <small class="text-crear" id="precioError"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
-                                </div>
-                                <div class="edition-form-box">
-                                    <input type="number" name="price"  class="form-produ-control <%= locals.errors && errors.price ? 'is-invalid' : null%>" id="price" value="<%= price %>">
-                                </div>
-                            </section>
-
-                            <section>
-                                <label class="edicion__label--titulo" for="discount">Descuento</label>
-                                <div class="edition-form-box">
-                                    <small class="text-crear" id="discountError"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
-                                </div>
-                                <div class="edition-form-box">
-                                    <input type="number" name="discount" class="form-produ-control <%= locals.errors && errors.discount ? 'is-invalid' : null%>" id="discount" value="<%= discount %>">
-                                </div>
-                            </section>
-
-                            <section>
-                                <div class="edicion__subtitulos">Imagen del Producto</div>
-                                <div class="edition-form-box">
-                                    <small class="text-crear" id="imageError"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
-                                </div>
-                                <div class="submit-btn--crear" id="crear__color">
-                                    <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
-                                    <label for="image">
-                                      <div id="boxImagePreview">
-                                        <i class="fa-solid fa-image" id="edicion__fanull"></i>
-                                        <img id="selectedImage">
-                                      </div>
-                                      <div class="submit-btn--crea__nombrearchi">
-                                        <span id="btnImage"><img class="edicion--image__form" src="/images/products/<%= image %>" alt=""><br>Cambiar imagen</span>
-                                      </div>
-                                    </label>
-                                  </div>
-                            </section>
-                            <!--imagenes-->
-
-                            <section>
-                                <div class="edicion__subtitulos">Imagenes del Producto</div>
-                                <div class="edition-form-box">
-                                    <small class="text-crear" id="imagesError"><%= locals.errors && errors.images ? errors.images.msg : null %></small>
-                                </div>
-                                <div class="submit-btn--crear2" id="crear__color">
-                                  <input type="file" class="submit-btn--crear__buscar" id="images" name="images" multiple />
-                                  <label for="images">
-                                    <div id="boxImagesPreview">
-                                        <i class="fa-solid fa-image" id="edicion__fanull"></i>
-                                      <div id="selectedImages"></div>
-                                    </div>
-                                    <div class="submit-btn--crea__nombrearchi">
-                                      <span id="btnImages">
-                                        <div class="edicion__container--images">
-                                          <% images.forEach(i => { %>
-                                            <img class="edicion--image__form2" src="/images/products/<%= i.image %>">
-                                          <% }) %>
-                                        </div>
-                                        <br><span>Cambiar imagenes</span>
-                                    </span>
-                                    </div>
-                                  </label>
-                                </div>
-                              </section>
-                              
-
-                            <section>
-                                <label class="edicion__label--titulo" for="subCategory">Seleccioná la Categoria</label>
-                                <div class="edition-form-box">
-                                <small class="text-crear" id="categoryError"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
-                                <select name="subCategory" id="subCategory"
-                                class="edition-products <%= locals.errors && errors.subCategory ? 'is-invalid' : null%>">>
-                                    <% categories.forEach(({name, id}) => { %>
-                                      <option value="<%= id %>" <%= id === subcategoryId && 'selected' %>><%= name %></option> 
-                                    <% }) %>
-                                  </select>
-                                </div>
-                              </section>
-                              
-                              <section>
-                                <label class="edicion__label--titulo" for="category">Estado del Producto</label>
-                                <div class="edition-form-box">
-                                    <small class="text-crear" id="stateError"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
-                                    <select name="category" id="category"
-                                    class="edition-products <%= locals.errors && errors.category ? 'is-invalid' : null%>">>
-                                    <% states.forEach(({name, id}) => { %>
-                                      <option value="<%= id %>" <%= id === stateId && 'selected' %>><%= name %></option> 
-                                    <% }) %>
-                                  </select>
-                                </div>
-                              </section>
-
-                            <section>
-                                <label class="edicion__label--titulo" for="description">Descripcion  <small class="descriptioninfo--small" id="descriptionInfo" hidden>(<span
-                                    id="numberCharacters"></span> caracteres disponibles)</small></label>
-                                    <div class="edition-form-box">
-                                        <small class="text-crear" id="descriptionError"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
-                                    </div>
-                                <div class="edition-form-box">
-                                    <textarea name="description"
-                                    class="edicion__texto <%= locals.errors && errors.description ? 'is-invalid' : null%>"
-                                    id="description" cols="30"
-                                    rows="10" value=""><%= description %></textarea>
-                                </div>
-                            </section>
-
-                            <small class="text-crear" id="formError">
-
-                            </small>
-
-
-                            <div class="edition-form-box-button">
-                                <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
-                                <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span
-                                        class="buton1">Eliminar Producto</span></a>
-                                <a href="/admin/dashboardProduct" class="edition-form-box-button__a"><span
-                                        class="edicion-form-box-button__letra">Cancelar</span> </a>
-                            </div>
-                        </form>
-                    </section>
+              <section>
+                <label class="edicion__label--titulo" for="name">Nombre del Producto</label>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="nameError">
+                    <%= locals.errors && errors.name ? errors.name.msg : null %>
+                  </small>
                 </div>
-            </main>
-            <script src="/javascripts/buscarimagen.js"></script>
-            <!-- Footer -->
-            <%- include('../partials/footer.ejs') %>
+                <div class="edition-form-box">
+                  <input type="text" class="form-produ-control <%= locals.errors && errors.name ? 'is-invalid' : null%>"
+                    id="name" id="name" name="name" value="<%= locals.old && old.name ? old.name : name %>">
+                </div>
+              </section>
 
-            <script src="/javascripts/formproducts.js"></script>
-    </body>
+              <section>
+                <label class="edicion__label--titulo" for="price">Precio</label>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="precioError">
+                    <%= locals.errors && errors.price ? errors.price.msg : null %>
+                  </small>
+                </div>
+                <div class="edition-form-box">
+                  <input type="number" name="price"
+                    class="form-produ-control <%= locals.errors && errors.price ? 'is-invalid' : null%>" id="price"
+                    value="<%= price %>">
+                </div>
+              </section>
+
+              <section>
+                <label class="edicion__label--titulo" for="discount">Descuento</label>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="discountError">
+                    <%= locals.errors && errors.discount ? errors.discount.msg : null %>
+                  </small>
+                </div>
+                <div class="edition-form-box">
+                  <input type="number" name="discount"
+                    class="form-produ-control <%= locals.errors && errors.discount ? 'is-invalid' : null%>"
+                    id="discount" value="<%= discount %>">
+                </div>
+              </section>
+
+              <section>
+                <div class="edicion__subtitulos">Imagen del Producto</div>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="imageError">
+                    <%= locals.errors && errors.image ? errors.image.msg : null %>
+                  </small>
+                </div>
+                <div class="submit-btn--crear" id="crear__color">
+                  <input type="file" id="image" name="image" class="submit-btn--crear__buscar" value="<%= image %>">
+                  <label for="image">
+                    <div id="boxImagePreview">
+                      <i class="fa-solid fa-image" id="edicion__fanull"></i>
+                      <img id="selectedImage">
+                    </div>
+                    <div class="submit-btn--crea__nombrearchi">
+                      <span id="btnImage"><img class="edicion--image__form" src="/images/products/<%= image %>"
+                          alt=""><br>Cambiar imagen</span>
+                    </div>
+                  </label>
+                </div>
+              </section>
+              <!--imagenes-->
+
+              <section>
+                <div class="edicion__subtitulos">Imagenes del Producto</div>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="imagesError">
+                    <%= locals.errors && errors.images ? errors.images.msg : null %>
+                  </small>
+                </div>
+                <div class="submit-btn--crear2" id="crear__color">
+                  <input type="file" class="submit-btn--crear__buscar" id="images" name="images" multiple
+                    value="<%= images.image %>" />
+                  <label for="images">
+                    <div id="boxImagesPreview">
+                      <i class="fa-solid fa-image" id="edicion__fanull"></i>
+                      <div id="selectedImages"></div>
+                    </div>
+                    <div class="submit-btn--crea__nombrearchi">
+                      <span id="btnImages">
+                        <div class="edicion__container--images">
+                          <% images.forEach(i=> { %>
+                            <img class="edicion--image__form2" src="/images/products/<%= i.image %>">
+                            <% }) %>
+                        </div>
+                        <br><span>Cambiar imagenes</span>
+                      </span>
+                    </div>
+                  </label>
+                </div>
+              </section>
+
+
+              <section>
+                <label class="edicion__label--titulo" for="subCategory">Seleccioná la Categoria</label>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="categoryError">
+                    <%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %>
+                  </small>
+                  <select name="subCategory" id="subCategory"
+                    class="edition-products <%= locals.errors && errors.subCategory ? 'is-invalid' : null%>">>
+                    <% categories.forEach(({name, id})=> { %>
+                      <option value="<%= id %>" <%=id===subcategoryId && 'selected' %>><%= name %>
+                      </option>
+                      <% }) %>
+                  </select>
+                </div>
+              </section>
+
+              <section>
+                <label class="edicion__label--titulo" for="category">Estado del Producto</label>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="stateError">
+                    <%= locals.errors && errors.category ? errors.category.msg : null %>
+                  </small>
+                  <select name="category" id="category"
+                    class="edition-products <%= locals.errors && errors.category ? 'is-invalid' : null%>">>
+                    <% states.forEach(({name, id})=> { %>
+                      <option value="<%= id %>" <%=id===stateId && 'selected' %>>
+                        <% if (name==="in-sale" ) { %>
+                          Oferta
+                          <% } %>
+                            <% if (name==="newer" ) { %>
+                              Nuevo
+                              <% } %>
+                                <% if (name==="normally" ) { %>
+                                  Normal
+                                  <% } %>
+                      </option>
+                      <% }) %>
+                  </select>
+                </div>
+              </section>
+
+              <section>
+                <label class="edicion__label--titulo" for="description">Descripcion <small
+                    class="descriptioninfo--small" id="descriptionInfo" hidden>(<span id="numberCharacters"></span>
+                    caracteres disponibles)</small></label>
+                <div class="edition-form-box">
+                  <small class="text-crear" id="descriptionError">
+                    <%= locals.errors && errors.description ? errors.description.msg : null %>
+                  </small>
+                </div>
+                <div class="edition-form-box">
+                  <textarea name="description"
+                    class="edicion__texto <%= locals.errors && errors.description ? 'is-invalid' : null%>"
+                    id="description" cols="30" rows="10" value=""><%= description %></textarea>
+                </div>
+              </section>
+
+              <small class="text-crear" id="formError">
+
+              </small>
+
+
+              <div class="edition-form-box-button">
+                <button type="submit" class="edition-form-box-button__a">Confirmar Edicion</button>
+                <a href="/products/remove/<%- id %>" class="edition-form-box-button__a"><span class="buton1">Eliminar
+                    Producto</span></a>
+                <a href="/admin/dashboardProduct" class="edition-form-box-button__a"><span
+                    class="edicion-form-box-button__letra">Cancelar</span> </a>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+      <script src="/javascripts/buscarimagen.js"></script>
+      <!-- Footer -->
+      <%- include('../partials/footer.ejs') %>
+
+        <script src="/javascripts/formproducts.js"></script>
+  </body>
+
 </html>

@@ -67,7 +67,15 @@
               <option value="" selected hidden>Seleccione un estado</option>
               <% states.forEach(({name, id})=> { %>
                 <option value="<%= id %>">
-                  <%= name %>
+                  <% if (name==="in-sale" ) { %>
+                    Oferta
+                    <% } %>
+                      <% if (name==="newer" ) { %>
+                        Nuevo
+                        <% } %>
+                          <% if (name==="normally" ) { %>
+                            Normal
+                            <% } %>
                 </option>
                 <% }) %>
             </select>
@@ -90,7 +98,7 @@
                 </option>
                 <% }) %>
             </select>
-          </div> 
+          </div>
 
           <div class="crear__subtitulo">
             <h3>Imagen del Producto</h3>
@@ -132,7 +140,7 @@
               </div>
             </label>
           </div>
-          
+
 
 
           <div class="crear__subtitulo">
@@ -149,7 +157,8 @@
               <label for="description"></label>
               <textarea name="description"
                 class="form-produ-control <%= locals.errors && errors.description ? 'is-invalid' : null%>"
-                id="description" cols="50" rows="60" placeholder="Breve descripcion del Producto..."><%= (locals.old && old.description) && old.description %></textarea>
+                id="description" cols="50" rows="60"
+                placeholder="Breve descripcion del Producto..."><%= (locals.old && old.description) && old.description %></textarea>
             </div>
           </section>
 
@@ -169,10 +178,10 @@
           </div>
         </form>
       </main>
-      
+
       <%- include('../partials/footer.ejs') %>
 
-      <script src="/javascripts/formproducts.js"></script>
+        <script src="/javascripts/formproducts.js"></script>
   </body>
 
 </html>
