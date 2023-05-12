@@ -149,8 +149,7 @@
               <label for="description"></label>
               <textarea name="description"
                 class="form-produ-control <%= locals.errors && errors.description ? 'is-invalid' : null%>"
-                id="description" cols="30"
-                rows="10"><%= (locals.old && old.description) && old.description %></textarea>
+                id="description" cols="50" rows="60" placeholder="Breve descripcion del Producto..."><%= (locals.old && old.description) && old.description %></textarea>
             </div>
           </section>
 
@@ -173,7 +172,7 @@
       
       <%- include('../partials/footer.ejs') %>
 
-        <script src="/javascripts/crearItem.js"></script>
+      <script src="/javascripts/formproducts.js"></script>
   </body>
 
 </html>

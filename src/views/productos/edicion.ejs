@@ -13,76 +13,91 @@
                 <div class="edition-container">
                     <h1 class="edition-titular">Estás editando: <i>Art. <%= id %></i></h1>
                     <section class="edition-form">
-                        <form action="/products/edicion/<%= id %>?_method=PUT" method="POST"
-                            enctype="multipart/form-data" novalidate>
+                        <form action="/products/edicion/<%= id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="crear-item-from" novalidate>
 
                             <section>
+                                <label class="edicion__label--titulo" for="name">Nombre del Producto</label>
                                 <div class="edition-form-box">
-                                    <label for="name">Nombre del Producto</label>
-                                    <small class="text-crear"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
-                                    <input type="text" id="name" name="name"  value="<%= locals.old && old.name ? old.name : name %>">
+                                    <small class="text-crear" id="nameError"><%= locals.errors && errors.name ? errors.name.msg : null %></small>
+                                </div>
+                                <div class="edition-form-box">
+                                    <input type="text"  class="form-produ-control <%= locals.errors && errors.name ? 'is-invalid' : null%>" id="name" id="name" name="name"  value="<%= locals.old && old.name ? old.name : name %>">
                                 </div>
                             </section>
 
                             <section>
+                                <label class="edicion__label--titulo" for="price">Precio</label>
                                 <div class="edition-form-box">
-                                    <label for="price">Precio</label>
-                                    <small class="text-crear"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
+                                    <small class="text-crear" id="precioError"><%= locals.errors && errors.price ? errors.price.msg : null %></small>
                                 </div>
                                 <div class="edition-form-box">
-                                    <input type="number" name="price" id="price" value="<%= price %>">
+                                    <input type="number" name="price"  class="form-produ-control <%= locals.errors && errors.price ? 'is-invalid' : null%>" id="price" value="<%= price %>">
                                 </div>
                             </section>
 
                             <section>
+                                <label class="edicion__label--titulo" for="discount">Descuento</label>
                                 <div class="edition-form-box">
-                                    <label for="discount">Descuento</label>
-                                    <small class="text-crear"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
+                                    <small class="text-crear" id="discountError"><%= locals.errors && errors.discount ? errors.discount.msg : null %></small>
                                 </div>
                                 <div class="edition-form-box">
-                                    <input type="number" name="discount" id="discount" value="<%= discount %>">
+                                    <input type="number" name="discount" class="form-produ-control <%= locals.errors && errors.discount ? 'is-invalid' : null%>" id="discount" value="<%= discount %>">
                                 </div>
                             </section>
 
                             <section>
                                 <div class="edicion__subtitulos">Imagen del Producto</div>
-                                <small class="text-crear"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
-                                <div class="submit-btn--crear" id="crear__color">
-                                    <input type="file" id="image" name="image" class="submit-btn--crear__buscar3"
-                                        value="<%= image %>">
-                                    <label for="image">
-                                        <i class="fa-solid fa-image"></i><br>
-                                        <div class="submit-btn--crea__nombrearchi3">
-                                            <span>
-                                                <%= image %>
-                                            </span>
-                                        </div>
-                                    </label>
+                                <div class="edition-form-box">
+                                    <small class="text-crear" id="imageError"><%= locals.errors && errors.image ? errors.image.msg : null %></small>
                                 </div>
+                                <div class="submit-btn--crear" id="crear__color">
+                                    <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
+                                    <label for="image">
+                                      <div id="boxImagePreview">
+                                        <i class="fa-solid fa-image" id="edicion__fanull"></i>
+                                        <img id="selectedImage">
+                                      </div>
+                                      <div class="submit-btn--crea__nombrearchi">
+                                        <span id="btnImage"><img class="edicion--image__form" src="/images/products/<%= image %>" alt=""><br>Cambiar imagen</span>
+                                      </div>
+                                    </label>
+                                  </div>
                             </section>
                             <!--imagenes-->
 
                             <section>
                                 <div class="edicion__subtitulos">Imagenes del Producto</div>
-                                <small class="text-crear"><%= locals.errors && errors.images ? errors.images.msg : null %></small>
-                                <div class="submit-btn--crear" id="crear__color">
-                                    <input type="file" class="submit-btn--crear__buscar2" id="images" name="images" value="<%= images.length + " Imagenes seleccionadas" %>" multiple>
-                                    <label for="images">
-                                        <i class="fa-solid fa-image"></i><br>
-                                        <div class="submit-btn--crea__nombrearchi2">
-                                            <span>
-                                                <%= images.length + " Imagenes seleccionadas" %>
-                                            </span>
-                                        </div>
-                                    </label>
+                                <div class="edition-form-box">
+                                    <small class="text-crear" id="imagesError"><%= locals.errors && errors.images ? errors.images.msg : null %></small>
                                 </div>
-                            </section>
+                                <div class="submit-btn--crear2" id="crear__color">
+                                  <input type="file" class="submit-btn--crear__buscar" id="images" name="images" multiple />
+                                  <label for="images">
+                                    <div id="boxImagesPreview">
+                                        <i class="fa-solid fa-image" id="edicion__fanull"></i>
+                                      <div id="selectedImages"></div>
+                                    </div>
+                                    <div class="submit-btn--crea__nombrearchi">
+                                      <span id="btnImages">
+                                        <div class="edicion__container--images">
+                                          <% images.forEach(i => { %>
+                                            <img class="edicion--image__form2" src="/images/products/<%= i.image %>">
+                                          <% }) %>
+                                        </div>
+                                        <br><span>Cambiar imagenes</span>
+                                    </span>
+                                    </div>
+                                  </label>
+                                </div>
+                              </section>
+                              
 
                             <section>
+                                <label class="edicion__label--titulo" for="subCategory">Seleccioná la Categoria</label>
                                 <div class="edition-form-box">
-                                <label for="edition-products">Seleccioná la Categoria</label>
-                                <small class="text-crear"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
-                                <select id="edition-products" name="subCategory">
+                                <small class="text-crear" id="categoryError"><%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %></small>
+                                <select name="subCategory" id="subCategory"
+                                class="edition-products <%= locals.errors && errors.subCategory ? 'is-invalid' : null%>">>
                                     <% categories.forEach(({name, id}) => { %>
                                       <option value="<%= id %>" <%= id === subcategoryId && 'selected' %>><%= name %></option> 
                                     <% }) %>
@@ -91,10 +106,11 @@
                               </section>
                               
                               <section>
+                                <label class="edicion__label--titulo" for="category">Estado del Producto</label>
                                 <div class="edition-form-box">
-                                    <label for="edition-products">Estado del Producto</label>
-                                    <small class="text-crear"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
-                                    <select id="edition-products" name="category">
+                                    <small class="text-crear" id="stateError"><%= locals.errors && errors.category ? errors.category.msg : null %></small>
+                                    <select name="category" id="category"
+                                    class="edition-products <%= locals.errors && errors.category ? 'is-invalid' : null%>">>
                                     <% states.forEach(({name, id}) => { %>
                                       <option value="<%= id %>" <%= id === stateId && 'selected' %>><%= name %></option> 
                                     <% }) %>
@@ -103,13 +119,22 @@
                               </section>
 
                             <section>
+                                <label class="edicion__label--titulo" for="description">Descripcion  <small class="descriptioninfo--small" id="descriptionInfo" hidden>(<span
+                                    id="numberCharacters"></span> caracteres disponibles)</small></label>
+                                    <div class="edition-form-box">
+                                        <small class="text-crear" id="descriptionError"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
+                                    </div>
                                 <div class="edition-form-box">
-                                    <label for="description">Descripcion</label>
-                                    <small class="text-crear"><%= locals.errors && errors.description ? errors.description.msg : null %></small>
-                                    <textarea name="description" id="description" value=""
-                                        class="edicion__texto"><%= description %></textarea>
+                                    <textarea name="description"
+                                    class="edicion__texto <%= locals.errors && errors.description ? 'is-invalid' : null%>"
+                                    id="description" cols="30"
+                                    rows="10" value=""><%= description %></textarea>
                                 </div>
                             </section>
+
+                            <small class="text-crear" id="formError">
+
+                            </small>
 
 
                             <div class="edition-form-box-button">
@@ -126,5 +151,7 @@
             <script src="/javascripts/buscarimagen.js"></script>
             <!-- Footer -->
             <%- include('../partials/footer.ejs') %>
+
+            <script src="/javascripts/formproducts.js"></script>
     </body>
 </html>

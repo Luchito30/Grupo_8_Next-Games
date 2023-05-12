@@ -79,7 +79,7 @@
 .crear-formulario-2__descripcion textarea{
     padding-left: 15px;
     padding-top: 10px;
-    width: 50%;
+    width: 100%;
     height: 100px;
     background-color: #7110bd;
     border-color: white;
@@ -90,7 +90,6 @@
 .submit-btn--crear{
     border: 1px solid white;
     background-color: #7110bd;
-    width: 50%;
     margin: 0 auto;
     height: 250px;
     border-radius: 20px;
@@ -104,12 +103,11 @@
     cursor: pointer;
 }
 .submit-btn--crear label i:hover{
-    color:var(--fondo1VioletaO);
+    color: black;
 }
 .submit-btn--crear2{
     border: 1px solid white;
     background-color: #7110bd;
-    width: 50%;
     margin: 0 auto;
     height: 250px;
     border-radius: 20px;
@@ -123,7 +121,7 @@
     cursor: pointer;
 }
 .submit-btn--crear2 label i:hover{
-    color:var(--fondo1VioletaO);
+    color: black;
 }
 .submit-btn--crea__nombrearchi{
     cursor: pointer;
@@ -136,7 +134,16 @@
     font-size: 20px;
 }
 .submit-btn--crear span:hover{
-    color:var(--fondo1VioletaO);
+    color: black;
+    font-weight: 600;
+}
+.submit-btn--crear div{
+    color: white;
+    font-size: 20px;
+}
+.submit-btn--crear div:hover{
+    color: black;
+    font-weight: 600;
 }
 .submit-btn--crear__buscar{
     display: none;
@@ -146,7 +153,8 @@
     font-size: 20px;
 }
 .submit-btn--crear2 span:hover{
-    color:var(--fondo1VioletaO);
+    color: black;
+    font-weight: 600;
 }
 .form-control{
     height: 25px;
@@ -226,14 +234,8 @@
 .crear-btnform{
     filter: drop-shadow(2px 6px 3px black);
 }
-.custom-image-class {
-    margin-bottom: 8px;
-    display: inline-block;
-    height: 180px;
-    margin-top: 20px;
-    object-fit: contain;
-    border: 2px solid black;
-    background-color: white;
+.form-produ-control::placeholder{
+    color: white;
 }
 .custom-selectedimg{
     display: flex;

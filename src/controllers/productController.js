@@ -125,8 +125,7 @@ module.exports = {
       order: [["name"]],
       attributes: ["name", "id"],
     });
-
-
+    
     Promise.all([product, states, categories])
       .then(([product, states,categories]) => {
         return res.render("productos/edicion", {

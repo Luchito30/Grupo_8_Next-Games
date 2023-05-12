@@ -30,6 +30,7 @@ inputName.addEventListener('blur', function (event) {
       break;
     case this.value.trim().length > 80:
       msgError('nameError', "El titulo debe tener maximo 80 caracteres", event)
+      break;
     default:
       this.classList.add('is-valid')
       break;
@@ -61,6 +62,9 @@ inputPrecio.addEventListener('focus', function (event) {
 
 inputDiscount.addEventListener('blur', function (event) {
   switch (true) {
+    case !this.value.trim():
+      msgError('discountError', "Se debe indicar un descuento", event)
+      break;
     case this.value < 0:
       msgError('discountError', "Se permite numeros positivos", event)
       break;
@@ -179,16 +183,23 @@ inputImage.addEventListener('change', function (e) {
       reader.onload = function (e) {
         selectedImage.src = e.target.result;
         selectedImage.style.display = 'inline-block';
+        selectedImage.style.marginBottom = '8px';
+        selectedImage.style.display = 'inline-block';
+        selectedImage.style.height = '180px';
+        selectedImage.style.marginTop = '20px';
+        selectedImage.style.objectFit = 'contain';
+        selectedImage.style.border = '2px solid black';
+        selectedImage.style.backgroundColor = 'white';
         boxImagePreview.querySelector('.fa-image').style.display = 'none';
-        selectedImage.classList.add('custom-image-class');
       };
       reader.readAsDataURL(this.files[0]);
     }
   }
 });
 
+
 inputImages.addEventListener('change', function (e) {
-  $('btnImages').innerText = "Subir imágenes";
+  document.getElementById('btnImages').innerText = "Subir imágenes";
   const submitBtnCrear = document.querySelector('.submit-btn--crear2');
   const selectedImagesContainer = document.getElementById('selectedImages');
   const boxImagesPreview = document.getElementById('boxImagesPreview');
@@ -197,30 +208,32 @@ inputImages.addEventListener('change', function (e) {
   selectedImagesContainer.innerHTML = '';
 
   switch (true) {
-    case Array.from(this.files).some(file => !regExExt.test(file.name)):
-      $('imagesError').innerHTML = "Solo se admiten imágenes jpg | jpeg | png | gif | webp";
+    case Array.from(this.files).some(file => !/\.(jpg|jpeg|png|gif|webp)$/i.test(file.name)):
+      document.getElementById('imagesError').innerHTML = "Solo se admiten imágenes jpg | jpeg | png | gif | webp";
       boxImagesPreview.querySelector('.fa-image').style.display = 'inline-block';
       selectedImagesContainer.style.display = 'none';
       submitBtnCrear.classList.remove('is-valid');
       submitBtnCrear.classList.add('is-invalid');
       break;
     case this.files.length > 5:
-      $('imagesError').innerHTML = "Solo se permiten subir hasta 5 imágenes";
+      document.getElementById('imagesError').innerHTML = "Solo se permiten subir hasta 5 imágenes";
       boxImagesPreview.querySelector('.fa-image').style.display = 'inline-block';
       selectedImagesContainer.style.display = 'none';
       submitBtnCrear.classList.remove('is-valid');
       submitBtnCrear.classList.add('is-invalid');
       break;
     default:
-      cleanError('imagesError', event);
-      $('btnImages').innerText = "Cambiar imágenes";
+      document.getElementById('imagesError').innerHTML = "";
+      document.getElementById('btnImages').innerText = "Cambiar imágenes";
       boxImagesPreview.querySelector('.fa-image').style.display = 'none';
       submitBtnCrear.classList.remove('is-invalid');
       submitBtnCrear.classList.add('is-valid');
-      selectedImagesContainer.style.display = 'block';
+      selectedImagesContainer.style.display = 'flex';
+      selectedImagesContainer.style.justifyContent = 'center';
+      selectedImagesContainer.style.gap = '5px';
 
       Array.from(this.files).slice(0, 5).forEach(file => {
-        if (regExExt.test(file.name)) {
+        if (/\.(jpg|jpeg|png|gif|webp)$/i.test(file.name)) {
           const reader = new FileReader();
           reader.onload = function (e) {
             const image = document.createElement('img');
@@ -243,6 +256,7 @@ formAddProduct.addEventListener('submit', function (event) {
   const errorMessages = {
     name: "El nombre del producto es obligatorio",
     price: "Se debe indicar un precio",
+    discount: "Se debe indicar un descuento",
     category: "Debe elegir un estado",
     subCategory: "Debe elegir una categoria",
     description: "Se debe ingresar una descripción al producto",
