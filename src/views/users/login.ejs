@@ -25,22 +25,22 @@
         </section>
 
         <section class="login__main__section2">
-            <form autocomplete="off" action="" method="POST" class="login__main__section2--form">
+            <form autocomplete="off" action="" method="POST" class="login__main__section2--form" id="formLogin">
                 <div class="login__main__form-control">
                     <label for="username">Usuario o correo electrónico</label>
                     <input type="text" id="username" placeholder="Usuario o correo electrónico" name="useremail">
-                    <small class="text"> <%= (locals.errors && errors.useremail) && errors.useremail.msg %></small>
+                    <small class="text" id="errorEmail"> <%= (locals.errors && errors.useremail) && errors.useremail.msg %></small>
                 </div>
                 <div class="login__main__form-control">
                     <label for="password">Contraseña <button class="form__button" type="button" onclick="mostrarContrasena()"><i class="fa-solid fa-eye"></i></button></label>
                     <input type="password" id="password" placeholder="Contraseña" name="password">
-                    <small class="text"><%= (locals.errors && errors.password) && errors.password.msg %></small>
+                    <small class="text" id="errorPass"><%= (locals.errors && errors.password) && errors.password.msg %></small>
                 </div>
                 <div class="login__recordame">
                     <label for="remember">Recordarme</label>
                     <input style="margin:20px 10px"  type="checkbox" name="remember">
                 </div>
-                
+                <div id="errorFormLogin"></div>
                 <div>
                     <input class="login__enviar" type="submit" value="Ingresar">
                 </div>

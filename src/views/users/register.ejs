@@ -23,7 +23,7 @@
 
 
         <div class="right-register">
-          <form method="POST" action="" enctype="multipart/form-data">
+          <form method="POST" action="" enctype="multipart/form-data" id="formRegister" >
             <section class="titles-register">
               <div class="titles-left">
                 <h2 class="titulo-register1">CREA TU CUENTA</h2>
@@ -44,40 +44,49 @@
 
             </div>
 
-            <div class="card">
-              <div class="forms">
+            <div class="card" style="background-color: #4439AA;">
+              <div class="forms" >
                 <div class="name">
                   <input type="file" name="image" id="<%= locals.errors && errors.images ? "boder-color2" : "register-image" %>">
                   <label for="">Avatar</label>
                   <p class="text"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
 
 
-                  <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>"  id="<%= locals.errors && errors.firstName ? "boder-color" : null%>" style="color: white;">
+                  <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>" id="name" style="color: white;">
                   <label for="">Nombre</label>
-                  <p class="text"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></p>
+                  <p class="text" id="errorName"><%= locals.errors && errors.firstName ? errors.firstName.msg : null %></p>
 
-                  <input type="text" name="LastName" value="<%= (locals.old && old.LastName) && old.LastName%>" id="<%= locals.errors && errors.LastName ? "boder-color" : null%>" style="color: white;">
+                  <input type="text" name="LastName" value="<%= (locals.old && old.LastName) && old.LastName%>"  id="surname"style="color: white;">
                   <label for="">Apellido</label>
-                  <p class="text"><%= locals.errors && errors.LastName ? errors.LastName.msg : null %></p>
+                  <p class="text" id="errorSurname"><%= locals.errors && errors.LastName ? errors.LastName.msg : null %></p>
 
-                  <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>" id="<%= locals.errors && errors.userName ? "boder-color" : null%>" style="color: white;">
+                  <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>" id="user" style="color: white;">
                   <label for="">Usuario</label>
-                  <p class="text"><%= locals.errors && errors.userName ? errors.userName.msg : null %></p>
+                  <p class="text" id="errorUsername"><%= locals.errors && errors.userName ? errors.userName.msg : null %></p>
 
-                  <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="<%= locals.errors && errors.email ? "boder-color" : null%>" style="color: white;">
+                  <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="email" style="color: white;">
                   <label for="">E-mail</label>
-                  <p class="text"><%= locals.errors && errors.email ? errors.email.msg : null %></p>
+                  <p class="text" id="errorEmail"><%= locals.errors && errors.email ? errors.email.msg : null %></p>
 
-                  <input type="password" name="password" id="<%= locals.errors && errors.password ? "boder-color" : null%>" style="color: white;">
+                  <input type="password" name="password" id="password"  style="color: white;">
                   <label for="">Contraseña</label>
-                  <p class="text"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
+                  <p class="text" id="errorPass"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
+                  <ul  id="msgPassword" class="small ms-2" hidden style="background-color: #BC79F0;">
+                    <li id="mayu">Una mayúscula</li>
+                    <li id="minu">Una minúscula</li>
+                    <li id="num">Un número</li>
+                    <li id="esp">Un caracter especial ($@!%*?&_-)</li>
+                    <li id="min">Mínimo 6 caracteres</li>
+                    <li id="max">Máximo 12 caracteres</li>
+                  </ul>
 
-                  <input type="password" name="password2" id="<%= locals.errors && errors.password2 ? "boder-color" : null%>" style="color: white;">
+                  <input type="password" name="password2" id="password2" style="color: white;">
                   <label for="" >Confirmar</label>
-                  <p class="text"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></p>
+                  <p class="text" id="errorPass2"><%= locals.errors && errors.password2 ? errors.password2.msg : null %></p>
 
                   <small class="register__avataradv">*Nombre de usuario se debe respetaran mayusculas y minusculas para el ingreso </small>
                 </div>
+                <p id="error-form"></p>
                 <button type="submit" class="guardar">Registrar</button>
 
               </div>
@@ -96,6 +105,7 @@
 
       <!-- fixed -->
       <script src="/javascripts/fixed.js"></script>
+      <script src="/javascripts/register.js"></script>
 
 </body>
 
