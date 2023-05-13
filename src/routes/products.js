@@ -3,14 +3,13 @@ const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,r
 const checkAdmin = require('../middlewares/checkAdmin');
 const {uploadproductImages} = require("../middlewares/upload");
 const { productValidator } = require('../validations');
-const checkUser = require('../middlewares/checkUser');
-
+const checkUserLogin = require('../middlewares/checkUserLogin');
 
 const router = express.Router();
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', index); 
-router.get('/carrito', carrito);
+router.get('/carrito',checkUserLogin, carrito);
 router.get('/detalle-producto/:id', detalleproducto);
 router.get('/subcategory/:subcategoryId', getFromSubcategory);
 router.get('/categorias/:stateId',  getFromCategory);

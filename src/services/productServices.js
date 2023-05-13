@@ -68,5 +68,74 @@ module.exports = {
         message: error.message
       }
     }
-  }
+  },
+  getCreateProduct: async (body) => {
+    try {
+      const {
+        name,
+        price,
+        description,
+        discount,
+        state,
+        subcategory,
+        image
+      } = body;
+  
+      // Validación de datos
+      if (!name || !price || !state || !subcategory) {
+        throw {
+          status: 400,
+          message: "Falta información requerida para crear el producto."
+        };
+      }
+  
+      // Verificar existencia de estado y subcategoría en la base de datos
+      const stateExists = await db.State.findByPk(state);
+      const subcategoryExists = await db.Subcategory.findByPk(subcategory);
+      if (!stateExists || !subcategoryExists) {
+        throw {
+          status: 404,
+          message: "Estado o subcategoría no encontrada."
+        };
+      }
+  
+      // Uso de transacción para asegurar la integridad de los datos
+      const createdProduct = await db.sequelize.transaction(async (transaction) => {
+        const newProduct = await db.Product.create({
+          name: name.trim(),
+          price,
+          discount,
+          description: description.trim(),
+          stateId: state,
+          subcategoryId: subcategory,
+          image
+        }, { transaction });
+  
+        return newProduct;
+      });
+  
+      return createdProduct;
+    } catch (error) {
+      throw {
+        status: error.status || 500,
+        message: error.message || "Error al crear el producto."
+      };
+    }
+  },
+   getImagesCreate : async (file,id) => {
+    try{
+      const images = files.forEach(async(image) => {
+        await db.Image.create({
+          image: image.filename,
+          productId:id
+        });
+      });
+      return images
+    } catch(error) {
+    throw{
+      status: 500,
+      message: error.message,
+    }
+    }
+   },
 }

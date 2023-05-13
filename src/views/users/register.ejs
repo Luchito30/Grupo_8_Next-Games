@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <%- include('../partials/head.ejs') %>
 
 <body>
@@ -47,10 +47,17 @@
             <div class="card" style="background-color: #4439AA;">
               <div class="forms" >
                 <div class="name">
-                  <input type="file" name="image" id="<%= locals.errors && errors.images ? "boder-color2" : "register-image" %>">
-                  <label for="">Avatar</label>
-                  <p class="text"><%= locals.errors && errors.images ? errors.images.msg : null %></p>
 
+                  <section class="register__imagecontainer">
+                  <div class="register__imagecontainer--div">
+                  <input type="file" name="image" id="image" class="register--image">
+                  <label class="register--titulo--avatar" for="image">Avatar</label>
+                  <p class="text" id="imageError"></p>
+                  <div id="imagePreviewContainer">
+                    <div class="image-preview" id="imagePreview"></div>
+                  </div>  
+                 </div>                
+                </section>
 
                   <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>" id="name" style="color: white;">
                   <label for="">Nombre</label>
@@ -71,7 +78,7 @@
                   <input type="password" name="password" id="password"  style="color: white;">
                   <label for="">Contraseña</label>
                   <p class="text" id="errorPass"><%= locals.errors && errors.password ? errors.password.msg : null %></p>
-                  <ul  id="msgPassword" class="small ms-2" hidden style="background-color: #BC79F0;">
+                  <ul  id="msgPassword" class="register__passcaracter" hidden>
                     <li id="mayu">Una mayúscula</li>
                     <li id="minu">Una minúscula</li>
                     <li id="num">Un número</li>

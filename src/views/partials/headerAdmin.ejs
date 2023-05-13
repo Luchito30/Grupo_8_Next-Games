@@ -14,7 +14,7 @@
                             <li class="header__nav--navegacion--primaria"><a href="/" id="headeradmin-color"><i class="fa-solid fa-house"></i></a></li>
                             <li class="header__nav--navegacion--primaria"><a href="/admin/dashboardProduct" id="headeradmin-color">Productos</a></li>
                             <li class="header__nav--navegacion--primaria"><a href="/admin/dashboardUser" id="headeradmin-color">Usuarios</a></li>
-                            <li><a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a></li>
+                            <li class="header__nav--navegacion--primaria"><a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="/images/users/<%= userLogin.image ? userLogin.image : " default-image.png"%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a></li>
                             <li class="header__nav--navegacion--primaria"><a href="/users/logout" id="headeradmin-color">SALIR</a></li>
                         </ul>
                     </div>

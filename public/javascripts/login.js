@@ -1,133 +1,80 @@
-const $ = (id) => document.getElementById(id)
+const $ = (id) => document.getElementById(id);
 
-const emailInput = document.getElementById("username")
+const emailUserInput = $("username");
+const passwordInput = $("password");
+const errorUserEmail = $("errorUserEmail");
+const errorPass = $("errorPass");
+const errorFormLogin = $("errorFormLogin");
 
-const msgError = (element, message, {target}) => {
-    $(element).innerHTML = message
-    target.classList.add('errorInput')
-}
-
-const cleanError = (element, {target}) => {
-    target.classList.remove('errorInput')
-    target.classList.remove('validInput')
-    $(element).innerHTML = null
-}
-
-const checkedFields = () =>{
-    const elements = $("formLogin").elements;
-    $("errorFormLogin").innerHTML = null;
-
-    for (let i = 0; i < elements.length -2; i++) {
-        if(elements[i].classList.contains("errorInput")){
-            $("errorFormLogin").innerHTML = "Hay campos con errores o están vacios"
-        }
-        
-    }
-
+const showErrorMessage = (element, message) => {
+  element.innerHTML = message;
 };
-let regExLetter = /^[A-Z]+$/i;
-let regExEmail =
-  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //mayuscula, numero y 6 a 12 caracteres
-let regExPass2 =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_-])[A-Za-z\d$@$!%*?&_-]{6,12}/;
 
- /**
-  input email
+const hideErrorMessage = (element) => {
+  element.innerHTML = "";
+};
 
-  */ 
-  
+const validateEmail = () => {
+  const value = emailUserInput.value.trim();
+  if (!value) {
+    showErrorMessage(errorUserEmail, "El usuario o email es obligatorio");
+    emailUserInput.classList.remove("is-valid");
+    emailUserInput.classList.add("is-invalid");
+    return false;
+  } else if (!/^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()\[\]\.,;:\s@"]+\.)+[^<>()\[\]\.,;:\s@"]{2,})$/.test(value) && !/^[A-Za-z0-9]+$/.test(value)) {
+    showErrorMessage(errorUserEmail, "Tiene que ser un usuario o email válido");
+    emailUserInput.classList.remove("is-valid");
+    emailUserInput.classList.add("is-invalid");
+    return false;
+  } else {
+    hideErrorMessage(errorUserEmail);
+    emailUserInput.classList.remove("is-invalid");
+    emailUserInput.classList.add("is-valid");
+    return true;
+  }
+};
 
- $('username').addEventListener('blur',function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorEmail', "El usuario o email es obligatorio", e);
-            break;
-        case !regExEmail.test(this.value.trim()) && !/^[A-Za-z0-9]+$/.test(this.value.trim()):
-            msgError('errorEmail', "Tiene que ser un usuario o email válido", e);
-            break;
-        default:
-            this.classList.add('validInput');
-            checkedFields();
+const validatePassword = () => {
+  const value = passwordInput.value.trim();
+  if (!value) {
+    showErrorMessage(errorPass, "La contraseña es obligatoria");
+    passwordInput.classList.remove("is-valid");
+    passwordInput.classList.add("is-invalid");
+    return false;
+  } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/.test(value)) {
+    showErrorMessage(
+      errorPass,
+      "Debe tener entre 6 y 12 caracteres, al menos una mayúscula, una minúscula y un número"
+    );
+    passwordInput.classList.remove("is-valid");
+    passwordInput.classList.add("is-invalid");
+    return false;
+  } else {
+    hideErrorMessage(errorPass);
+    passwordInput.classList.remove("is-invalid");
+    passwordInput.classList.add("is-valid");
+    return true;
+  }
+};
 
-            
+const validateFields = () => {
+  const isEmailValid = validateEmail();
+  const isPasswordValid = validatePassword();
+  return isEmailValid && isPasswordValid;
+};
 
-            break;
-    }
+$("username").addEventListener("input", validateEmail);
+$("username").addEventListener("focus", () => hideErrorMessage(errorUserEmail));
+$("password").addEventListener("input", validatePassword);
+$("password").addEventListener("focus", () => hideErrorMessage(errorPass));
+
+$("formLogin").addEventListener("submit", (event) => {
+  event.preventDefault();
+  const isFormValid = validateFields();
+  if (isFormValid) {
+    $("formLogin").submit();
+  }
 });
-
-
-
- 
-
- 
-  $('username').addEventListener('focus', function(e){
-    cleanError('errorEmail', e)
-  })
-
-  $('password').addEventListener('blur', async function(e){
-    switch (true) {
-        case !this.value.trim():
-            msgError('errorPass', "la contraseña es obligatoria", e)
-            break;
-
-        case !regExPass.test(this.value.trim()):
-            msgError('errorPass', "Debe ser entre 6 y 12 caracteres y tener una mayúscula, minúscula y un número",e)
-        break
-        case await verifyPass(emailInput.value.trim(),this.value.trim()) :
-          msgError('errorPass', "Credenciales inválidas", e)
-          
-        break
-    
-        default:
-            this.classList.add('validInput')
-            checkedFields();
-            break;
-    }
-  });
-
-  $('password').addEventListener('focus',function(e){
-    cleanError('errorPass', e)
-  })
-
-//   $('formLogin').addEventListener('submit', function(e){
-//     e.preventDefault();
-
-//     let error = false
-
-//     for (let i = 0; i < this.elements.length -1; i++) {
-        
-//         if(!this.elements[i].value.trim() || this.elements[i].classList.contains('errorInput')) {
-//             error = true
-//             this.elements[i].classList.add('errorInput')
-//             $('errorFormLogin').innerHTML = "¡Hay campos vacíos o con errores!"
-//         }
-        
-//     }
-
-//     !error && this.submit()
-
-//   })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function mostrarContrasena(){
     var tipo = document.getElementById("password");

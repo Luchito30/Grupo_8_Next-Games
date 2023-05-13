@@ -49,12 +49,9 @@ app.use("/users", userRouter);
 app.use("/products", productRouter);
 app.use("/admin", adminRouter)
 
-app.use('/api/users', require('./routes/api/apiUsuario'))
-
 /*apis*/
-
-app
-.use('/api/products', require('./routes/api/productsApi'))
+app.use('/api/users', require('./routes/api/apiUsuario'))
+app.use('/api/products', require('./routes/api/productsApi'))
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

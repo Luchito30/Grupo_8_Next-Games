@@ -128,7 +128,7 @@ body {
 
 .card {
     position: relative;
-    bottom: 144px;
+    bottom: 125px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -217,6 +217,35 @@ form {
     margin-bottom: -50px;
 }
 
+.register__passcaracter{
+    background-color: rgba(48, 6, 103, 0.83);
+    margin-bottom: 20px;
+    color: white;
+    filter: drop-shadow(2px 4px 3px black);
+}
+
+.pass-invalid{
+    color: red;
+}
+
+.pass-valid{
+    color: green;
+}
+
+.register__imagecontainer{
+    position: relative;
+    width: 130%;
+    right: 37px;
+}
+
+.register--image{
+    height: 300px !important;
+}
+
+.register--titulo--avatar{
+    top: -321px !important;
+}
+
 @media(min-width :769px) {
     .login-register {
         top: 1px;
@@ -235,7 +264,7 @@ form {
     .card {
         align-items: center;
         position: relative;
-        bottom: 85px;
+        bottom: 65px;
         right: -0.65%;
         display: flex;
     }
@@ -275,13 +304,13 @@ form {
         left: 1%;
         background: var(--fondo1VioletaO);
         border-radius: 37px;
-        height: 55pc;
+        height: 77pc;
         z-index: -1;
     }
 
     .titles h1 {
         position: relative;
-        top: 42px;
+        top: 75px;
         font-size: 50px;
         color: var(--letrasSubtitulos2);
         font-family: var(--FontTitulo);
@@ -296,26 +325,28 @@ form {
         text-align: center;
         margin: 0px 50px 15px;
         height: 80px;
-        top: 80px;
+        top: 160px;
     }
     
     .register__titulo--import2 {
         position: relative;
-        top: 220px;
-        font-size: 20px;
+        top: 350px;
+        font-size: 30px;
         color: mediumpurple;
         font-family: var(--FontSubtitulo);
         text-align: center;
         height: 80px;
+        font-weight: 900;
     }
 
     .register__img--import{
-        top: 220px;
-        text-align: center;
-        position: relative;
+        top: 460px;
+    text-align: center;
+    position: relative;
     }
     .register__img--img{
-        width: 55%;
+        width: 50%;
+        filter: drop-shadow(2px 5px 6px black);
     }
 
     .divider {
@@ -348,12 +379,10 @@ form {
         bottom: 67px;
         right: 75px;
         position: relative;
-
-
     }
 
     .titles {
-        height: 55pc;
+        height: 77pc;
     }
 
     .titles h1 {
@@ -377,8 +406,12 @@ form {
     .card {
         align-items: center;
         position: relative;
-        bottom: 85px;
-        right: 16.35%;
+        bottom: 65px;
+        right: 17.35%;
         display: flex;
+    }
+    .login-register {
+        top: 1px;
+        right: -7px;
     }
 }
