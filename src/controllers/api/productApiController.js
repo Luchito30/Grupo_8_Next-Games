@@ -1,5 +1,5 @@
 const createResponseError = require("../../helpers/createResponseError")
-const { getAllProducts, getProductById,getCreateProduct,getImagesCreate,getUpdate,getUpdateImage,getUpdateProduct } = require('../../services/productServices');
+const { getAllProducts, getProductById,getCreateProduct,getImagesCreate,getUpdate,getUpdateImage,getUpdateProduct,getDelete,getDeleteProduct } = require('../../services/productServices');
 const { validationResult } = require("express-validator");
 
 module.exports = {
@@ -123,6 +123,51 @@ module.exports = {
     } catch (error) { 
     return createResponseError(res,error)
     } 
+  },
+  deleteProduct: async (req,res) => {
+    try{
+      const product = await getDelete(req.params.id)
+      return res.status(200).json({
+        ok:true,
+        data: product,
+        meta:{
+          status:200,
+          total:1
+        }
+      })
+    } catch (error) {
+      return createResponseError(res,error)
+    }
+  },
+  deleteAllProduct : async (req, res) => {
+    try {
+      const errors = validationResult(req);
+      const { id } = req.params;
+      console.log(id);
+  
+      if (!errors.isEmpty()) {
+        throw {
+          status: 400,
+          message: errors.mapped(),
+        };
+      }
+  
+      const productDelete = await getDeleteProduct(id);
+  
+      return res.status(200).json({
+        ok: true,
+        meta: {
+          status: 200,
+          total: 1,
+          url: `/api/products/${id}`,
+        },
+        data: {
+          productDelete: productDelete,
+        },
+      });
+    } catch (error) {
+      return createResponseError(res, error);
+    }
   }
-}
+  }
 

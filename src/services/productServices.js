@@ -246,4 +246,55 @@ module.exports = {
       };
     }
   },
+  getDelete: async (id) => {
+    try {
+      const product = await db.Product.findByPk(id, {
+        attributes: ["name"],
+      });
+      if (!product) {
+        throw {
+          status: 404,
+          message: "Producto no encontrado",
+        };
+      }
+      return product.name;
+    } catch (error) {
+      throw {
+        status: 500,
+        message: error.message,
+      };
+    }
+  },
+  getDeleteProduct: async (id) => {
+    try {
+      await db.Image.destroy({
+        where: {
+          productId: id,
+        },
+      });
+      const deletedProduct = await db.Product.destroy({
+        where: {
+          id: id,
+        },
+      });
+  
+      if (deletedProduct === 0) {
+        throw {
+          status: 404,
+          message: "Producto no encontrado",
+        };
+      }
+  
+      return {
+        success: true,
+        message: "Producto eliminado correctamente",
+      };
+    } catch (error) {
+      throw {
+        status: 500,
+        message: error.message,
+      };
+    }
+  },
+  
 }
