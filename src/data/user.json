@@ -4,7 +4,7 @@
       "firstName": "admin",
       "LastName": "nextgames",
       "email": "nextventa@nextgames.com.ar",
-      "password": "$2a$12$5aIUzLxeDjkoUa8BY4sZYu0F0OZM/EYC6c5jvsjZIqbAaSKszsvBm",
+      "password": "bcryptjs.hashSync(Juga_primero1,12)",
       "userName": "nextgamesAdmin",
       "image": "admin.jpg",
       "rolId": 1,
@@ -15,21 +15,11 @@
       "firstName": "Luis",
       "LastName": "Dick",
       "email": "luchodick24@gmail.com",
-      "password": "$2a$12$1/FcB/KCX/2qeNcmtP2jju/uvPPCcbsaLqhmoaREo.JYR4GIrirjO",
+      "password": "bcryptjs.hashSync(Lucho_3323,12)",
       "userName": "Murdoy",
       "image": "1680127198004_users_.png",
       "rolId": 1,
       "addressId": 2
-   },
-   {
-      "id": 3,
-      "firstName": "Laureano",
-      "LastName": "Zarate",
-      "email": "lauri@gmail.com",
-      "password": "$2a$12$7/WuwbQdLkn0xzziKrm4rObj2.nYyczwiM0qG86o6XBBUPQvc0/Fu",
-      "userName": "Lauri13",
-      "image": "1680401215317_users_.jpg",
-      "rolId": 2,
-      "addressId": 3
    }
+   
 ]

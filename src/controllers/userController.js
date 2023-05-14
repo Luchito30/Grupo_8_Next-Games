@@ -1,7 +1,5 @@
 const fs = require('fs');
-
 const { validationResult } = require('express-validator');
-
 const { hashSync } = require('bcryptjs');
 const db = require('../database/models');
 const { Op } = require("sequelize");
@@ -125,11 +123,11 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
-    update: (req, res) => {
-        const { firstName, LastName, userName, address, city, province, zipCode } = req.body
+    updateUser: (req, res) => {
+        const { firstName, LastName, userName, address, city, province, zipCode } = req.body;
         const { id } = req.session.userLogin;
 
-        db.Usuario.findByPk(id)
+        db.User.findByPk(id)
             .then(user => {
                 const addressUpdate = db.Address.update(
                     {
@@ -143,7 +141,7 @@ module.exports = {
                             id: user.addressId
                         }
                     }
-                )
+                );
                 const userUpdate = db.User.update(
                     {
                         firstName: firstName.trim(),
@@ -156,18 +154,30 @@ module.exports = {
                             id
                         }
                     }
-                )
+                );
 
-                Promise.all(([addressUpdate, userUpdate]))
+                Promise.all([addressUpdate, userUpdate])
                     .then(() => {
+                        req.session.userLogin = {
+                            id,
+                            firstName: firstName.trim(),
+                            image: req.file ? req.file.filename : user.image,
+                            rol: user.rolId
+                        };
 
-                        (req.file && fs.existsSync('public/images/users/' + user.image)) && fs.unlinkSync('public/images/users/' + user.image)
+                        if (req.file && fs.existsSync('public/images/users/' + user.image)) {
+                            fs.unlinkSync('public/images/users/' + user.image);
+                        }
 
-                        req.session.message = "Datos actualizados"
-                        return res.redirect('/users/profile')
+                        req.session.message = "Datos actualizados";
+                        return res.redirect(`/users/profile/${id}?message=Datos%20actualizados`);
+
                     })
-            }).catch(error => console.log(error))
+                    .catch(error => console.log(error));
+            })
+            .catch(error => console.log(error));
     },
+
     logout: (req, res) => {
         req.session.destroy();
         res.clearCookie("usernextgames")
@@ -186,13 +196,13 @@ module.exports = {
             .catch(error => console.log(error))
     },
     removeuserConfirm: (req, res) => {
-        const {id} = req.params;
+        const { id } = req.params;
 
         db.User.findByPk(id).then((user) => {
             return res.render("users/removeuserConfirm", {
                 ...user.dataValues,
                 title: "Next Games | Advertencia"
-        });
+            });
         })
     },
     recuperarContraseña: (req, res) => {
@@ -201,20 +211,20 @@ module.exports = {
         });
     },
     removeusers: (req, res) => {
-        const {id} = req.params;
-       
-        const user = db.User.findByPk(id,{
-            include : {all:true}
+        const { id } = req.params;
+
+        const user = db.User.findByPk(id, {
+            include: { all: true }
         })
 
         db.User.destroy({
-            where:{
+            where: {
                 id
             }
-        }).then(() =>{
+        }).then(() => {
             return res.redirect("/admin/dashboardUser")
         })
-        .catch((error) => console.log(error))
+            .catch((error) => console.log(error))
     },
     registerAdmin: (req, res) => {
         return res.render('users/crearAdmin', {
@@ -259,10 +269,10 @@ module.exports = {
                 })
                 .catch(error => console.log(error))
         } else {
-            return res.render('users/crearAdmin',{
+            return res.render('users/crearAdmin', {
                 title: "Next Games | Crear Administrador",
-                errors : errors.mapped(),
-                old:req.body
+                errors: errors.mapped(),
+                old: req.body
             });
         }
     },

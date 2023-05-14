@@ -126,7 +126,7 @@ body {
     background-color: var(--fondo2VioletaC);
 }
 
-.card {
+.register-card {
     position: relative;
     bottom: 125px;
     align-items: center;
@@ -267,10 +267,10 @@ form {
         margin-bottom: 0;
     }
 
-    .card {
+    .register-card {
         align-items: center;
         position: relative;
-        bottom: 65px;
+        bottom: 42px;
         right: -0.65%;
         display: flex;
     }
@@ -357,13 +357,13 @@ form {
     }
 
     .divider {
-        bottom: 67px;
+        bottom: 45px;
         right: 12px;
         position: relative;
     }
 
     .titles-register {
-        bottom: 53px;
+        bottom: 30px;
         position: relative;
     }
 
@@ -388,10 +388,6 @@ form {
         position: relative;
     }
 
-    .titles {
-        height: 77pc;
-    }
-
     .titles h1 {
         margin-left: 21px;
     }
@@ -410,7 +406,7 @@ form {
     }
 
 
-    .card {
+    .register-card {
         align-items: center;
         position: relative;
         bottom: 65px;

@@ -1,45 +1,73 @@
-.profile{
-margin:20px;
+.profile_body a{
+   color:white;
+   text-decoration: none;
+}
+#profile--titulo{
+    font-family: auto;
+}
+.profile__conteinerbox{
+    margin-top: 72px;
+    margin-bottom: 50px;
+}
+#profile--conteiner{
+    margin-right: 0; 
+    margin-left: 0
+}
+#prodile-cardshadow{
+    --bs-card-spacer-y: 1.5rem;
+    --bs-card-spacer-x: 1.5rem;
+    --bs-card-bg: var(--bs-dark);
+    --bs-card-color: white;
+    --bs-card-cap-color: white;
+    --bs-card-title-color: white;
+    --bs-card-border-color: wheat;
+    border: 2px solid wheat;
+    width: 90%;
+    margin: 0 auto;
+}
+.nav-link{
+    font-weight: 700;
+    color: white;
+}
+.nav-link:focus, .nav-link:hover {
+    color: var(--letrasSubtitulos2);
+}
+.porfolio--datos input{
+    width: 100%;
+}
+.profile--domicilio input{
+    width: 100%;
+}
+#profile--footer{
+    padding-bottom: 0;
+    background-color: var(--fondo2VioletaC);
+    margin-bottom: 1px;
+    bottom: -17px;
+    position: relative;
+    font-family: auto;
+}
+#profile--footer .footer-right{
+    line-height:0;
+}
+#profile--footer hr{
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: white;
+    opacity: 1;
+    border: 1px solid;
+}
+.form-control:disabled {
+    background-color: var(--bs-form-control-disabled-bg);
+    opacity: 1;
+    color: black;
+}
+#profile--imgavatar{
+    max-height: 300px;
 }
 
-.profile-titulo{
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasSubtitulos1);
-    font-size: 20px;
-}
-
-.profile-image-avatar{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 20px;
-    border: 1px solid var(--letrasTitulos);
-    box-shadow: 15px 10px 5px #BC79F0;  
-}
-
-.profile-form-box-input{
-    background-color: var(--fondo1VioletaO);
-    margin: 20px 10px;
-    max-width: 768px;
-    border: 1px solid var(--letrasTitulos);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 15px 10px 5px #BC79F0;
-    width: 80%;
-    height: 50px;
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasSubtitulos1);
-    font-size: 20px;
-}
-
-@media(min-width:478px){
-.profile-form-box-input{
-    width: 50%;
-}
-}
-
-@media(min-width:1024px){
-    .profile-form-box-input{
-        width: 30%;
+@media(min-width: 769px){
+    #profile--footer{
+        bottom: -2;
     }
+
 }

@@ -178,34 +178,41 @@ let regExPass2 =
   };
   
   const validPassword = (element, exReg, value) => {
+    const elementClass = $(element).classList;
     if (!exReg.test(value)) {
-      $(element).classList.add("pass-invalid");
+      elementClass.add("pass-invalid");
+      elementClass.remove("pass-valid");
     } else {
-      $(element).classList.add("pass-valid");
-      $(element).classList.remove("pass-invalid");
+      elementClass.add("pass-valid");
+      elementClass.remove("pass-invalid");
     }
   };
   
   const validMaxPassword = (element, exReg, value) => {
-    if (exReg.test(value)) {
-      $(element).classList.remove("pass-valid");
-      $(element).classList.add("pass-invalid");
+    const elementClass = $(element).classList;
+    if (!exReg.test(value)) {
+      elementClass.add("pass-valid");
+      elementClass.remove("pass-invalid");
     } else {
-      $(element).classList.add("pass-valid");
-      $(element).classList.remove("pass-invalid");
+      elementClass.remove("pass-valid");
+      elementClass.add("pass-invalid");
     }
   };
   
-  $("password").addEventListener("keyup", function () {
+  $("password").addEventListener("keyup", function() {
     validPassword("mayu", exRegs.exRegMayu, this.value);
     validPassword("minu", exRegs.exRegMinu, this.value);
     validPassword("num", exRegs.exRegNum, this.value);
     validPassword("esp", exRegs.exRegEsp, this.value);
     validPassword("min", exRegs.exRegMin, this.value);
     validMaxPassword("max", exRegs.exRegMax, this.value);
+  
+    // Verificar si el valor es vacío y eliminar la clase pass-invalid
+    if (this.value === "") {
+      $("max").classList.remove("pass-invalid");
+    }
   });
   
-
   $('password2').addEventListener('blur', function(e){
     switch (true) {
         case !this.value.trim():

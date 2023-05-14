@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {login,register,processLogin,processRegister,profile,update,logout,removeuserConfirm,removeusers,ProcessAdmin,registerAdmin,recuperarContraseña} = require('../controllers/userController');
+const {login,register,processLogin,processRegister,profile,updateUser,logout,removeuserConfirm,removeusers,ProcessAdmin,registerAdmin,recuperarContraseña} = require('../controllers/userController');
 const checkUser = require('../middlewares/checkUser');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkAdmin = require('../middlewares/checkAdmin');
@@ -26,7 +26,7 @@ router.get('/profile/:id',checkUserLogin, profile);
 router.get("/removeuser/:id", checkAdmin ,removeuserConfirm);
 router.delete("/removeuser/:id", removeusers);
 
-router.put('/update/:id',update);
+router.put('/update',uploadperdilImages.single("image"),registerUserValidator,checkUserLogin,updateUser);
 router.get('/logout',logout);
 
 module.exports = router;
