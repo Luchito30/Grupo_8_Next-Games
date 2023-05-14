@@ -1,4 +1,7 @@
-const { getUserById, getAllUsers } = require('../../services/usuariosServices')
+const { getUserById, getAllUsers, getRegister,getRegisterAdmin,getUpdate,getUpdateUser,getDelete,getDeleteUser } = require('../../services/usuariosServices')
+const {validationResult} = require('express-validator');
+const createResponseError = require('../../helpers/createResponseError');
+
 
 module.exports = {
     listUser: async (req, res) => {
@@ -45,5 +48,142 @@ module.exports = {
                 }
             })
         }
-    }
+    },
+    registerUser: async (req, res) => {
+        try {
+            const errors = validationResult(req)
+
+            if (!errors.isEmpty()) throw {
+                status: 400,
+                message: errors.mapped()
+            }
+            const newUser = await getRegister(req.body);
+
+            return res.status(200).json({
+                ok: true,
+                message: "Usuario registrado exitosamente",
+                data: newUser,
+                meta:{
+                    status: 200,
+                    total:1,
+                    url:`/api/users/${newUser.id}`
+                }
+            });
+        } catch (error) {
+            return createResponseError(res, error)
+        }
+    },
+    registerUserAdmin: async (req, res) => {
+        try {
+            const errors = validationResult(req)
+
+            if (!errors.isEmpty()) throw {
+                status: 400,
+                message: errors.mapped()
+            }
+            const newUser = await getRegisterAdmin(req.body);
+
+            return res.status(200).json({
+                ok: true,
+                message: "Usuario registrado exitosamente",
+                data: newUser,
+                meta:{
+                    status: 200,
+                    total:1,
+                    url:`/api/users/${newUser.id}`
+                }
+            });
+        } catch (error) {
+            return createResponseError(res, error)
+        }
+    },
+    editUser: async (req,res) => {
+        try{
+          const user = await getUpdate(req.params.id)
+          return res.status(200).json({
+            ok:true,
+            data: user,
+            meta:{
+              status:200,
+              total:1
+            }
+          })
+        } catch (error) {
+          return createResponseError(res,error)
+        }
+      },
+      updateUser : async (req,res) => {
+        try{
+          const errors = validationResult(req);
+          const {id} = req.params
+          console.log(id)
+    
+          if(!errors.isEmpty()) throw{
+            status:400,
+            message: errors.mapped()
+          }
+      
+        const userUpdate = await getUpdateUser(req.body,id)
+    
+        return res.status(200).json({
+          ok:true,
+          meta:{
+            status: 200,
+            total: 1,
+            url: `/api/products/${id}`
+          },
+          data:{
+            userUpdate : userUpdate
+          }
+          })
+        } catch (error) { 
+        return createResponseError(res,error)
+        } 
+      },
+      deleteUser: async (req,res) => {
+        try{
+          const user = await getDelete (req.params.id)
+          return res.status(200).json({
+            ok:true,
+            data: user,
+            meta:{
+              status:200,
+              total:1
+            }
+          })
+        } catch (error) {
+          return createResponseError(res,error)
+        }
+      },
+      deleteAllUser : async (req, res) => {
+        try {
+          const errors = validationResult(req);
+          const { id } = req.params;
+          console.log(id);
+      
+          if (!errors.isEmpty()) {
+            throw {
+              status: 400,
+              message: errors.mapped(),
+            };
+          }
+      
+          const userDelete = await getDeleteUser(id);
+      
+          return res.status(200).json({
+            ok: true,
+            meta: {
+              status: 200,
+              total: 1,
+              url: `/api/products/${id}`,
+            },
+            data: {
+                userDelete: userDelete,
+            },
+          });
+        } catch (error) {
+          return createResponseError(res, error);
+        }
+      }
 }
+
