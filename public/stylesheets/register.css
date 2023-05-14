@@ -154,6 +154,7 @@ form {
     padding: 15px 15px;
     height: 43px;
     margin: 8px 0;
+    color: white;
     font-size: 16px;
 }
 
@@ -246,6 +247,11 @@ form {
     top: -321px !important;
 }
 
+.register--image::placeholder{
+    background-color: black;
+    border: 3px solid black;
+}
+
 @media(min-width :769px) {
     .login-register {
         top: 1px;
@@ -304,8 +310,9 @@ form {
         left: 1%;
         background: var(--fondo1VioletaO);
         border-radius: 37px;
-        height: 77pc;
+        height: 70pc;
         z-index: -1;
+        top: 40px;
     }
 
     .titles h1 {

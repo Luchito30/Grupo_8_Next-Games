@@ -253,12 +253,7 @@ let regExPass2 =
       msgError('errorPass2', "Confirme la contraseña", { target: $('password2') });
     }
   
-    if (!validateImage()) {
-      msgError('errorImage', "La imagen es obligatoria y debe ser válida", { target: $('image') });
-      $('image').classList.add('is-invalid');
-    }
-  
-    if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword() && validateImage()) {
+    if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword()) {
       this.submit();
     }
   });
@@ -294,9 +289,5 @@ let regExPass2 =
     return confirmPassword.length > 0 && confirmPassword === password;
   };
   
-  const validateImage = () => {
-    const imageInput = $('image');
-    return imageInput.files.length > 0;
-  };
   
   
