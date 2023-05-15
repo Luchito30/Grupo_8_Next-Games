@@ -1,4 +1,4 @@
-const { getUserById, getAllUsers, getRegister,getRegisterAdmin,getUpdate,getUpdateUser,getDelete,getDeleteUser } = require('../../services/usuariosServices')
+const { getUserById, getAllUsers, getRegister,getRegisterAdmin,getUpdate,getUpdateUser,getDelete,getDeleteUser,verifyUserByEmail,verifyUserByuserName } = require('../../services/usuariosServices')
 const {validationResult} = require('express-validator');
 const createResponseError = require('../../helpers/createResponseError');
 
@@ -184,6 +184,40 @@ module.exports = {
         } catch (error) {
           return createResponseError(res, error);
         }
+      },
+      verifyEmail: async (req, res) => {
+        try {
+
+            const existUser = await verifyUserByEmail(req.body.email);
+
+            return res.status(200).json({
+                ok: true,
+                data: {
+                    existUser
+                }
+            })
+
+        } catch (error) {
+            console.log(error)
+            return createResponseError(res, error)
+        }
+    },
+    verifyuserName: async (req, res) => {
+      try {
+
+          const existUser = await verifyUserByuserName(req.body.userName);
+
+          return res.status(200).json({
+              ok: true,
+              data: {
+                  existUser
+              }
+          })
+
+      } catch (error) {
+          console.log(error)
+          return createResponseError(res, error)
       }
+  }
 }
 

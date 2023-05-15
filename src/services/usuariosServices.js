@@ -206,5 +206,42 @@ module.exports = {
           };
         }
       },
-      
+      verifyUserByEmail : async (email) => {
+        try {
+
+            const user = await db.User.findOne({
+                where : {
+                    email
+                }
+            })
+
+            return user ? true : false
+            
+        } catch (error) {
+            console.log(error);
+            throw{
+                status : 500,
+                message : error.message
+            }
+        }
+    },
+    verifyUserByuserName : async (userName) => {
+      try {
+
+          const user = await db.User.findOne({
+              where : {
+                userName
+              }
+          })
+
+          return user ? true : false
+          
+      } catch (error) {
+          console.log(error);
+          throw{
+              status : 500,
+              message : error.message
+          }
+      }
+  }   
 }

@@ -44,7 +44,7 @@ const validatePassword = () => {
   } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/.test(value)) {
     showErrorMessage(
       errorPass,
-      "Debe tener entre 6 y 12 caracteres, al menos una mayúscula, una minúscula y un número"
+      "Debe tener entre 6 y 12 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial ($@!%*?&_-)"
     );
     passwordInput.classList.remove("is-valid");
     passwordInput.classList.add("is-invalid");

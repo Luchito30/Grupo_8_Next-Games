@@ -11,6 +11,54 @@ const cleanError = (element, {target}) => {
     $(element).innerHTML = null
 }
 
+async function verifyEmail(email) {
+  try {
+    const response = await fetch('/api/users/verify-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email
+      })
+    });
+
+    const result = await response.json();
+
+    return result.data.existUser;
+  } catch (error) {
+    console.error(error);
+    throw {
+      status: 500,
+      message: error.message
+    };
+  }
+}
+
+async function verifyuserName(userName) {
+  try {
+    const response = await fetch('/api/users/verify-username', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        userName: userName
+      })
+    });
+
+    const result = await response.json();
+
+    return result.data.existUser;
+  } catch (error) {
+    console.error(error);
+    throw {
+      status: 500,
+      message: error.message
+    };
+  }
+}
+
 
 let regExLetter = /^[A-Z]+$/i;
 let regExEmail =
@@ -77,7 +125,7 @@ let regExPass2 =
     cleanError('errorName', e)
   })
 
-  $('surname').addEventListener('blur', function(e) {
+  $('surname').addEventListener('blur', async function(e) {
     switch (true) {
       case !this.value.trim():
         msgError('errorSurname', "El apellido es obligatorio", e);
@@ -101,10 +149,10 @@ let regExPass2 =
   });
   
 
-  $('user').addEventListener('blur', function(e){
+  $('user').addEventListener('blur',async function(e){
     switch (true) {
         case !this.value.trim():
-            msgError('errorUsername', "El  es obligatorio", e)
+            msgError('errorUsername', "El usuario es obligatorio", e)
             break;
         case this.value.trim().length < 2:
         msgError('errorUsername', "Minimo 2 caracteres",e)
@@ -115,6 +163,9 @@ let regExPass2 =
         case !regExLetter.test(this.value.trim()):
             msgError('errorUsername', "Solo caracteres alfabeticos",e)
         break
+        case await verifyuserName(this.value.trim()):
+        msgError("errorUsername", "El usuario ya se encuentra registrado", e);
+        break;
         default:
             this.classList.add('is-valid')
             checkedFields()
@@ -127,16 +178,22 @@ let regExPass2 =
   })
 
   
-  $('email').addEventListener('blur', function(e) {
+  $('email').addEventListener('blur',async function(e) {
     const emailInput = this.value.trim();
   
     if (!emailInput) {
       msgError('errorEmail', "El email es obligatorio", e);
+      this.classList.remove('is-valid');
       this.classList.add('is-invalid');
     } else if (!regExEmail.test(emailInput)) {
       msgError('errorEmail', "Tiene que ser un email válido", e);
+      this.classList.remove('is-valid');
       this.classList.add('is-invalid');
-    } else {
+    }else if (await verifyEmail(this.value.trim())) {
+      msgError("errorEmail", "El email ya se encuentra registrado", e);
+      this.classList.remove('is-valid');
+      this.classList.add('is-invalid');    
+    } else{
       this.classList.remove('is-invalid');
       this.classList.add('is-valid');
       checkedFields();
@@ -153,7 +210,7 @@ let regExPass2 =
         msgError('errorPass', "La contraseña es obligatoria", e);
         break;
       case !regExPass.test(this.value.trim()):
-        msgError('errorPass', "Debe tener entre 6 y 12 caracteres y contener al menos una mayúscula, una minúscula y un número", e);
+        msgError('errorPass', "Debe tener entre 6 y 12 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial ($@!%*?&_-)", e);
         break;
       default:
         this.classList.add('is-valid');
