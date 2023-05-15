@@ -151,20 +151,17 @@ module.exports = {
           include: ["images"],
         });
   
-        // Eliminar la imagen antigua del servidor
         if (product.image) {
           fs.existsSync(`public/images/products/${product.image}`) &&
             fs.unlinkSync(`public/images/products/${product.image}`);
         }
-  
-        // Eliminar las imágenes antiguas del servidor y de la base de datos
+
         product.images.forEach((image) => {
           fs.existsSync(`public/images/products/${image.image}`) &&
             fs.unlinkSync(`public/images/products/${image.image}`);
           image.destroy();
         });
   
-        // Actualizar los datos del producto
         await db.Product.update(
           {
             name: name.trim(),
@@ -182,7 +179,6 @@ module.exports = {
           }
         );
   
-        // Guardar las nuevas imágenes en la base de datos
         if (req.files && req.files.images) {
           req.files.images.forEach(async (file) => {
             await db.Image.create({

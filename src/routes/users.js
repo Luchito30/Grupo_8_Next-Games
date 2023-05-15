@@ -5,7 +5,7 @@ const checkUser = require('../middlewares/checkUser');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkAdmin = require('../middlewares/checkAdmin');
 const { uploadperdilImages } = require('../middlewares/uploadPerfil');
-const { registerUserValidator, loginUserValidator } = require('../validations');
+const { registerUserValidator, loginUserValidator,editUserValidator } = require('../validations');
 
 const router = express.Router();
 
@@ -26,7 +26,7 @@ router.get('/profile/:id',checkUserLogin, profile);
 router.get("/removeuser/:id", checkAdmin ,removeuserConfirm);
 router.delete("/removeuser/:id", removeusers);
 
-router.put('/update',uploadperdilImages.single("image"),registerUserValidator,checkUserLogin,updateUser);
+router.put('/update',uploadperdilImages.single("image"),checkUserLogin,editUserValidator,updateUser);
 router.get('/logout',logout);
 
 module.exports = router;

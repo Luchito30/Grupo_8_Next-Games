@@ -124,60 +124,84 @@ module.exports = {
             .catch(error => console.log(error))
     },
     updateUser: (req, res) => {
-        const { firstName, LastName, userName, address, city, province, zipCode } = req.body;
-        const { id } = req.session.userLogin;
+        const errors = validationResult(req);
 
-        db.User.findByPk(id)
-            .then(user => {
-                const addressUpdate = db.Address.update(
-                    {
-                        address: address ? address.trim() : null,
-                        city: city ? city.trim() : null,
-                        province: province ? province.trim() : null,
-                        zipCode: zipCode ? zipCode : null
-                    },
-                    {
-                        where: {
-                            id: user.addressId
-                        }
-                    }
-                );
-                const userUpdate = db.User.update(
-                    {
-                        firstName: firstName.trim(),
-                        LastName: LastName.trim(),
-                        userName: userName.trim(),
-                        image: req.file ? req.file.filename : user.image
-                    },
-                    {
-                        where: {
-                            id
-                        }
-                    }
-                );
+        if (errors.isEmpty()) {
 
-                Promise.all([addressUpdate, userUpdate])
-                    .then(() => {
-                        req.session.userLogin = {
-                            id,
+
+            const { firstName, LastName, userName, address, city, province, zipCode } = req.body;
+            const { id } = req.session.userLogin;
+
+            db.User.findByPk(id)
+                .then(user => {
+                    const addressUpdate = db.Address.update(
+                        {
+                            address: address ? address.trim() : null,
+                            city: city ? city.trim() : null,
+                            province: province ? province.trim() : null,
+                            zipCode: zipCode ? zipCode : null
+                        },
+                        {
+                            where: {
+                                id: user.addressId
+                            }
+                        }
+                    );
+                    const userUpdate = db.User.update(
+                        {
                             firstName: firstName.trim(),
-                            image: req.file ? req.file.filename : user.image,
-                            rol: user.rolId
-                        };
-
-                        if (req.file && fs.existsSync('public/images/users/' + user.image)) {
-                            fs.unlinkSync('public/images/users/' + user.image);
+                            LastName: LastName.trim(),
+                            userName: userName.trim(),
+                            image: req.file ? req.file.filename : user.image
+                        },
+                        {
+                            where: {
+                                id
+                            }
                         }
+                    );
 
-                        req.session.message = "Datos actualizados";
-                        return res.redirect(`/users/profile/${id}?message=Datos%20actualizados`);
+                    Promise.all([addressUpdate, userUpdate])
+                        .then(() => {
+                            req.session.userLogin = {
+                                id,
+                                firstName: firstName.trim(),
+                                image: req.file ? req.file.filename : user.image,
+                                rol: user.rolId
+                            };
 
-                    })
-                    .catch(error => console.log(error));
+                            if (req.file && fs.existsSync('public/images/users/' + user.image)) {
+                                fs.unlinkSync('public/images/users/' + user.image);
+                            }
+
+                            req.session.message = "Datos actualizados";
+                            return res.redirect(`/users/profile/${id}?message=Datos%20actualizados`);
+
+                        })
+                        .catch(error => console.log(error));
+                })
+                .catch(error => console.log(error));
+        } else {
+            db.User.findByPk(req.session.userLogin.id, {
+                attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
+                include: [
+                    {
+                        association: 'address',
+                        attributes: ['address', 'city', 'province', 'zipCode']
+                    }
+                ],
+    
             })
-            .catch(error => console.log(error));
+                .then(user => {
+                    return res.render('users/profile', {
+                        title: "Next Games | Perfil de usuario",
+                        user,
+                        errors: errors.mapped(),
+                    })
+                })
+                .catch(error => console.log(error))
+        }
     },
-
     logout: (req, res) => {
         req.session.destroy();
         res.clearCookie("usernextgames")
