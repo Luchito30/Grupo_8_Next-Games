@@ -290,8 +290,27 @@ const regExPass2 =
   })
 
   $('formRegister').addEventListener('submit', function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
   
+    const showRecaptchaErrorMessage = (message) => {
+      const errorFormLogin = $("errorFormLogin");
+      errorFormLogin.innerHTML = message;
+      errorFormLogin.classList.add("text");
+    };
+
+    const validateRecaptcha = () => {
+  const response = grecaptcha.getResponse();
+  if (!response) {
+    showRecaptchaErrorMessage("Completa el reCAPTCHA");
+    return false;
+  } else {
+    const errorFormLogin = $("errorFormLogin");
+    errorFormLogin.innerHTML = "";
+    errorFormLogin.classList.remove("text");
+    return true;
+  }
+};
+
     if (!validateName()) {
       msgError('errorName', "El nombre es obligatorio", { target: $('name') });
     }
@@ -316,7 +335,7 @@ const regExPass2 =
       msgError('errorPass2', "Confirme la contraseña", { target: $('password2') });
     }
   
-    if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword()) {
+    if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword() && validateRecaptcha()) {
       this.submit();
     }
   });

@@ -199,9 +199,13 @@
 }
 
 .login__recordame{
+    align-items: center;
     color: white;
     font-family: 'Inter';
-    margin-top: -30px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 /* tablet */
@@ -300,14 +304,14 @@
     .login__main__costados--left {
         position: absolute;
         width: 285px;
-        min-height: 736px;
+        min-height: 764px;
         background-color: rgba(188, 121, 240, 0.4);
     }
 
     .login__main__costados--right {
         width: 285px;
         position: absolute;
-        min-height: 736px;
+        min-height: 764px;
         background-color: rgba(188, 121, 240, 0.4);
         right: 0;
     }
@@ -315,14 +319,14 @@
     .login__main_left--img {
         width: 285px;
         position: absolute;
-        min-height: 736px;
+        min-height: 764px;
         z-index: -1;
     }
 
     .login__main_right--img {
         width: 285px;
         position: absolute;
-        min-height: 736px;
+        min-height: 764px;
         z-index: -1;
     }
 

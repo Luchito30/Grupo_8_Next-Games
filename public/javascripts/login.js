@@ -10,8 +10,27 @@ const showErrorMessage = (element, message) => {
   element.innerHTML = message;
 };
 
+const showRecaptchaErrorMessage = (message) => {
+  const errorFormLogin = $("errorFormLogin");
+  errorFormLogin.innerHTML = message;
+  errorFormLogin.classList.add("text");
+};
+
 const hideErrorMessage = (element) => {
   element.innerHTML = "";
+};
+
+const validateRecaptcha = () => {
+  const response = grecaptcha.getResponse();
+  if (!response) {
+    showRecaptchaErrorMessage("Completa el reCAPTCHA");
+    return false;
+  } else {
+    const errorFormLogin = $("errorFormLogin");
+    errorFormLogin.innerHTML = "";
+    errorFormLogin.classList.remove("text");
+    return true;
+  }
 };
 
 const validateEmail = () => {
@@ -62,8 +81,10 @@ const validatePassword = () => {
 const validateFields = () => {
   const isEmailValid = validateEmail();
   const isPasswordValid = validatePassword();
-  return isEmailValid && isPasswordValid;
+  const isRecaptchaValid = validateRecaptcha();
+  return isEmailValid && isPasswordValid && isRecaptchaValid;
 };
+
 
 $("username").addEventListener("input", validateEmail);
 $("username").addEventListener("focus", () => hideErrorMessage(errorUserEmail));

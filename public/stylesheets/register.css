@@ -252,6 +252,13 @@ form {
     border: 3px solid black;
 }
 
+.register--catch{
+    margin-top: 25px;
+    margin-bottom: 22px;
+    position: relative;
+    right: 30px;
+}
+
 @media(min-width :769px) {
     .login-register {
         top: 1px;
@@ -310,7 +317,7 @@ form {
         left: 1%;
         background: var(--fondo1VioletaO);
         border-radius: 37px;
-        height: 70pc;
+        height: 80pc;
         z-index: -1;
         top: 40px;
     }
