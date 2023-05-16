@@ -59,12 +59,11 @@ async function verifyuserName(userName) {
   }
 }
 
-
-let regExLetter = /^[A-Z]+$/i;
-let regExEmail =
+const regExLetter = /^[A-Z]+$/i;
+const regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //mayuscula, numero y 6 a 12 caracteres
-let regExPass2 =
+const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //mayuscula, numero y 6 a 12 caracteres
+const regExPass2 =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_-])[A-Za-z\d$@$!%*?&_-]{6,12}/;
 
   const inputImage = document.getElementById('image');
@@ -87,9 +86,10 @@ let regExPass2 =
         img.src = e.target.result;
         img.alt = 'Vista previa de la imagen';
         img.style.position = 'absolute';
-        img.style.width = '60%';
-        img.style.top = '66px';
-        img.style.right = '60px';
+        img.style.width = '72%';
+        img.style.top = '75px';
+        img.style.right = '42px';
+        img.style.height = '180px';
         imagePreview.innerHTML = '';
         imagePreview.appendChild(img);
         imagePreviewContainer.style.display = 'block';
@@ -264,7 +264,6 @@ let regExPass2 =
     validPassword("min", exRegs.exRegMin, this.value);
     validMaxPassword("max", exRegs.exRegMax, this.value);
   
-    // Verificar si el valor es vacío y eliminar la clase pass-invalid
     if (this.value === "") {
       $("max").classList.remove("pass-invalid");
     }

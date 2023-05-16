@@ -18,6 +18,7 @@
           <div class="card shadow" id="prodile-cardshadow">
             <div class="card-header">
               <h5 class="card-title">DATOS DEL USUARIO</h5>
+              <div id="messageContainer"></div>
             </div>
             <div class="card-body">
                 <ul class="nav  nav-tabs mb-3" id="pills-tab" role="tablist">
@@ -43,6 +44,7 @@
                     aria-labelledby="pills-home-tab" tabindex="0">
 
                     <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data" id="myForm">
+                      
                       <div class="col-12 col-md-4">
                         <img class="img-fluid" src="/images/users/<%= user.image ? user.image :  'userdefault.png'%>"
                           alt="" id="profile--imgavatar">
@@ -96,8 +98,6 @@
                         </div>
                       </div>
                       
-                      <div id="messageContainer"></div>
-
                       <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Guardar cambios</button>
                       </div>
@@ -111,7 +111,7 @@
                         <label for="address" class="form-label">Domicilio</label>
                         <input type="text" class="form-control  <%= (locals.errors && errors.address) && 'is-invalid'%>"
                           id="address" name="address" value="<%= user.address.address%>">
-                        <small class="text-crear">
+                        <small class="text-crear" id="addressError">
                           <%= locals.errors && errors.address ? errors.address.msg : null %>
                         </small>
 
@@ -120,7 +120,7 @@
                         <label for="address" class="form-label">Ciudad</label>
                         <input type="text" class="form-control  <%= (locals.errors && errors.city) && 'is-invalid'%>"
                           id="city" name="city" value="<%= user.address.city%>">
-                        <small class="text-crear">
+                        <small class="text-crear" id="cityError">
                           <%= locals.errors && errors.city ? errors.city.msg : null %>
                         </small>
 
@@ -130,7 +130,7 @@
                         <input type="text"
                           class="form-control  <%= (locals.errors && errors.province) && 'is-invalid'%>" id="province"
                           name="province" value="<%= user.address.province%>">
-                        <small class="text-crear">
+                        <small class="text-crear" id="provinceError">
                           <%= locals.errors && errors.province ? errors.province.msg : null %>
                         </small>
 
@@ -140,11 +140,10 @@
                         <input type="number"
                           class="form-control  <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode"
                           name="zipCode" value="<%= user.address.zipCode%>">
-                        <small class="text-crear">
+                        <small class="text-crear" id="zipCodeError">
                           <%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %>
                         </small>
 
-                        <div id="messageContainer"></div>
                       </div>
                       <div class="d-flex justify-content-end">
                         <button for="submit" class="btn btn-primary">Actualizar domicilio</button>
@@ -177,8 +176,7 @@
           <%- include('../partials/footer.ejs') %>
         </div>
    
-            <script src="/javascripts/porfoliovalidator.js"></script>       
-            <script src="/javascripts/datosActualizados.js"></script>
+            <script src="/javascripts/porfoliovalidator.js"></script>
             <script src="/javascripts/fixed.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"

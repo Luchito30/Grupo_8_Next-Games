@@ -18,18 +18,23 @@ const validateEmail = () => {
   const value = emailUserInput.value.trim();
   if (!value) {
     showErrorMessage(errorUserEmail, "El usuario o email es obligatorio");
-    emailUserInput.classList.remove("is-valid");
+    emailUserInput.classList.add("is-invalid");
+    return false;
+  } else if (value.length < 2) {
+    showErrorMessage(errorUserEmail, "Minimo 2 caracteres");
+    emailUserInput.classList.add("is-invalid");
+    return false;
+  } else if (value.length > 50) {
+    showErrorMessage(errorUserEmail, "Maximo 50 caracteres");
     emailUserInput.classList.add("is-invalid");
     return false;
   } else if (!/^(([^<>()\[\]\.,;:\s@"]+(\.[^<>()\[\]\.,;:\s@"]+)*)|(".+"))@(([^<>()\[\]\.,;:\s@"]+\.)+[^<>()\[\]\.,;:\s@"]{2,})$/.test(value) && !/^[A-Za-z0-9]+$/.test(value)) {
     showErrorMessage(errorUserEmail, "Tiene que ser un usuario o email válido");
-    emailUserInput.classList.remove("is-valid");
     emailUserInput.classList.add("is-invalid");
     return false;
   } else {
     hideErrorMessage(errorUserEmail);
     emailUserInput.classList.remove("is-invalid");
-    emailUserInput.classList.add("is-valid");
     return true;
   }
 };
@@ -38,7 +43,6 @@ const validatePassword = () => {
   const value = passwordInput.value.trim();
   if (!value) {
     showErrorMessage(errorPass, "La contraseña es obligatoria");
-    passwordInput.classList.remove("is-valid");
     passwordInput.classList.add("is-invalid");
     return false;
   } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/.test(value)) {
@@ -46,13 +50,11 @@ const validatePassword = () => {
       errorPass,
       "Debe tener entre 6 y 12 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial ($@!%*?&_-)"
     );
-    passwordInput.classList.remove("is-valid");
     passwordInput.classList.add("is-invalid");
     return false;
   } else {
     hideErrorMessage(errorPass);
     passwordInput.classList.remove("is-invalid");
-    passwordInput.classList.add("is-valid");
     return true;
   }
 };

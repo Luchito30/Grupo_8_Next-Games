@@ -7,8 +7,9 @@ const cityInput = document.getElementById('city');
 const provinceInput = document.getElementById('province');
 const zipCodeInput = document.getElementById('zipCode');
 const messageContainer = document.getElementById('messageContainer');
+const imageInput = document.getElementById('formFile');
+const imagePreview = document.getElementById('profile--imgavatar');
 
-// Agregar eventos de cambio de entrada
 firstNameInput.addEventListener('input', validateFirstName);
 lastNameInput.addEventListener('input', validateLastName);
 userNameInput.addEventListener('input', validateUserName);
@@ -17,7 +18,6 @@ cityInput.addEventListener('input', validateCity);
 provinceInput.addEventListener('input', validateProvince);
 zipCodeInput.addEventListener('input', validateZipCode);
 
-// Validar el formulario en el envío
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     validateForm();
@@ -42,10 +42,97 @@ function validateForm() {
         isZipCodeValid
     ) {
         form.submit();
+        
+        setTimeout(function () {
+            showMessage('Datos actualizados');
+        }, 500); // Cambia el valor si deseas ajustar el retraso antes de mostrar el mensaje
     } else {
         scrollToError();
     }
 }
+
+const urlParams = new URLSearchParams(window.location.search);
+const message = urlParams.get('message');
+
+if (message) {
+    showMessage(message);
+}
+
+function showMessage(message) {
+    console.log("Mostrando mensaje:", message);
+    messageContainer.textContent = message;
+    messageContainer.style.backgroundColor = '#dff0d8';
+    messageContainer.style.color = '#3c763d';
+    messageContainer.style.padding = '10px';
+    messageContainer.style.marginBottom = '20px';
+    messageContainer.style.borderRadius = '5px';
+    messageContainer.style.textAlign = 'center';
+
+    const closeButton = document.createElement('span');
+    closeButton.innerHTML = '&times;';
+    closeButton.className = 'close-button';
+    closeButton.style.position = 'absolute';
+    closeButton.style.top = '32px';
+    closeButton.style.right = '20px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.color = 'black';
+    closeButton.style.fontSize = '21px';
+    messageContainer.appendChild(closeButton);
+
+    function closeMessage() {
+        messageContainer.style.display = 'none';
+    }
+
+    closeButton.addEventListener('click', closeMessage);
+}
+
+async function verifyuserName(userName) {
+    try {
+        const response = await fetch('/api/users/verify-username', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userName: userName
+            })
+        });
+
+        const result = await response.json();
+
+        return result.data.existUser;
+    } catch (error) {
+        console.error(error);
+        throw {
+            status: 500,
+            message: error.message
+        };
+    }
+}
+
+imageInput.addEventListener('change', function() {
+    const file = this.files[0];
+  const validExtensions = /\.(jpg|jpeg|png|gif|webp)$/i;
+  const maxSizeInBytes = 1 * 1024 * 1024; 
+
+  if (validExtensions.test(file.name) && file.size <= maxSizeInBytes) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      imagePreview.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+    imageInput.classList.remove('is-invalid');
+  } else {
+    imageInput.classList.add('is-invalid');
+    imageInput.value = '';
+
+    let errorMessage = 'Formato de imagen no válido. Se aceptan archivos JPG, JPEG, PNG, GIF y WebP.';
+    if (file.size > maxSizeInBytes) {
+      errorMessage = 'El tamaño de la imagen excede el límite permitido (1 MB).';
+    }
+    showMessage(errorMessage);
+  }
+});
 
 function validateFirstName() {
     const value = firstNameInput.value.trim();
@@ -101,7 +188,10 @@ function validateLastName() {
     }
 }
 
-function validateUserName() {
+const userNameField = document.querySelector('input[name="userName"]');
+let previousUserNameValue = userNameField.value;
+
+async function validateUserName() {
     const value = userNameInput.value.trim();
     const errorContainer = userNameInput.nextElementSibling;
 
@@ -114,6 +204,14 @@ function validateUserName() {
         userNameInput.classList.remove('is-valid');
         userNameInput.classList.add('is-invalid');
         errorContainer.textContent = 'Mínimo dos letras';
+        return false;
+    } else if (value.toLowerCase() === previousUserNameValue.toLowerCase()) {
+        userNameInput.classList.remove('is-valid');
+        return false;
+    } else if (await verifyuserName(this.value.trim())) {
+        userNameInput.classList.remove('is-valid');
+        userNameInput.classList.add('is-invalid');
+        errorContainer.textContent = 'El usuario ya se encuentra registrado';
         return false;
     } else {
         userNameInput.classList.remove('is-invalid');
@@ -215,4 +313,6 @@ function validateZipCode() {
         return true;
     }
 }
+
+
 
