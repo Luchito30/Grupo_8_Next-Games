@@ -27,6 +27,12 @@ module.exports = {
       image: {
         type: Sequelize.STRING
       },
+      socialId:{
+        type: Sequelize.STRING
+      },
+      socialprovider:{
+        type: Sequelize.STRING
+      },
       rolId: {
         type: Sequelize.INTEGER,
         references : {
