@@ -1,7 +1,3 @@
-body {
-    background-color: var(--fondo1VioletaO);
-}
-
 a {
     color: white;
 }
@@ -120,12 +116,10 @@ a {
     border: 1px solid var(--fondo2VioletaC);
 }
 
-.carro:hover  {
-    background-color: var(--letrasSubtitulos1);
-}
-
-.carro:hover i {
-    color: black
+.header__carrito-animad{
+    left: 1px;
+    position: relative;
+    width: 20px;
 }
 
 .header__container__menu {
@@ -470,6 +464,7 @@ a {
     .right-nav-bar--busq2:hover {
         background-color: var(--letrasSubtitulos1);
         color: black;
+        filter: drop-shadow(9px 5px 3px black);
     }
 
     .right-nav-bar--button:hover {
@@ -490,11 +485,18 @@ a {
     }
 
     .carro {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         font-size: 17px;
         margin-top: 3px;
         margin-right: 25px;
+        border: 2px solid black;
+        filter: drop-shadow(3px 1px 3px black);
+    }
+
+    .header__carrito-animad {
+        left: 2px;
+        width: 32px;
     }
 
     .header__container__menu{
@@ -508,6 +510,11 @@ a {
     .scroll__fixer--nav{
         display: block;
         top: 0;
+    }
+    .header__houseanimated{
+        height: 50px;
+        position: relative;
+        bottom: 7px;
     }
     
 
@@ -563,6 +570,12 @@ a {
         position: relative;
         right: 10px;
     }
+
+    .header__carrito-animad {
+        left: 6px;
+        width: 35px;
+    }
+
 }
 
 @media(min-width:1024px) {

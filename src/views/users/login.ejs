@@ -19,11 +19,9 @@
                     </div>
                 </section>
 
-                <section class="login__main__section">
-                    <div class="login__main__section--titulo">
-                        <h1 class="login__main__section--h1">Iniciar Sesion</h1>
-                    </div>
-                </section>
+                <div class="home__main--titulo">
+                    <h2>INICIAR SECIÓN</h2>
+                </div>
 
                 <section class="login__main__section2">
                     <form autocomplete="off" action="" method="POST" class="login__main__section2--form" id="formLogin">
@@ -36,7 +34,7 @@
                             </small>
                         </div>
                         <div class="login__main__form-control">
-                            <label for="password">Contraseña <button class="form__button" type="button"
+                            <label class="login__contraseña__label" for="password">Contraseña <button class="form__button" type="button"
                                     onclick="mostrarContrasena()"><i class="fa-solid fa-eye"></i></button></label>
                             <input type="password" id="password" placeholder="Contraseña" name="password">
                             <small class="text" id="errorPass">
@@ -44,13 +42,15 @@
                             </small>
                         </div>
                         <div class="login__recordame">
-                            <div class="g-recaptcha" data-sitekey='6LfqPBQmAAAAAAxiCfpUuWZSaoLsRUPe8HK67eNm'></div>
-                            <label for="remember">Recordarme</label>
-                            <input style="margin:20px 10px" type="checkbox" name="remember">
+                            <div id="login__recaptcha" class="g-recaptcha" data-sitekey='6LfqPBQmAAAAAAxiCfpUuWZSaoLsRUPe8HK67eNm'></div>
+                            <div class="recordame__checkbox">
+                                <label class="login__label--remember" for="remember">Recordarme</label>
+                                <input class="login__label__checkbox" type="checkbox" name="remember">
+                            </div>
                         </div>
                      
 
-                        <small id="errorFormLogin"></small>
+                        <small id="errorFormLogin" class="form__login-error"></small>
 
                         <div>
                             <input class="login__enviar" type="submit" value="Ingresar">
@@ -83,31 +83,29 @@
                                 <a href="/auth/login/google"><img class="login__main-div2--img"
                                         src="/images/Logo-logeo.png" alt="Google"
                                         class="login__main__section4_div2--img">
-                                    <span>Login con Google</span></a>
+                                    <span class="login__animation--robot">Login con Google <lottie-player class="login__animation--robot--saludo" src="https://assets5.lottiefiles.com/packages/lf20_BWcL6WonZx.json"  background="transparent"  speed="1" loop  autoplay></lottie-player></span></a>
                             </div>
                         </button>
                     </div>
                 </section>
-
-
+ 
                 <section class="login__main__section5">
-                    <div class="login__main__section5_div">
-                        <p class="login__main__section5_div--p">
-                            <a class="login__main__section5_div--link" href="/users/recuperarPassword"> ¿No podes
-                                iniciar sesión?<i class="fa-solid fa-up-right-from-square"></i>
-                        </p>
+                    <div class="login__main__section5_div  login__main--sectibajo">
+                            <span class="login__main__section5_div--link"><a class="login__main__link-a1" href="/users/recuperarPassword"> ¿No podes
+                                iniciar sesión?<i class="fa-solid fa-up-right-from-square"></i></a></span>
                     </div>
 
                     <div class="login__main__section5_div2">
-                        <p class="login__main__section5_div2--p">
-                            ¿No tienes cuenta? <span class="login__main_div2--span"><a
+                            <span class="login__main__section5_div--link">¿No tienes cuenta? </span><span class="login__main_div2--span"><a
                                     class="login__main__section5_div--link2" href="/users/register">Create
                                     una</a></span>
-                        </p>
                     </div>
                 </section>
 
             </main>
+
+            <!-- carrito-->
+            <%- include('../partials/carrito.ejs') %>
             <!--whatsapp-->
             <%- include('../partials/whatsApp.ejs') %>
 

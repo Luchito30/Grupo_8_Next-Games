@@ -16,24 +16,23 @@ body {
     background-color: var(--fondo1VioletaO);
 }
 
-.titulo-register1 {
-    bottom: 55px;
-}
-
-.titulo-register1,
-.titulo-register2 {
+.titulo-register1{
     color: #fff;
-    font-family: sans-serif;
-    position: relative;
     font-size: 24px;
     text-align: center;
-    height: 80px;
+    height: 70px;
+    filter: drop-shadow(4px 8px 2px black);
+    margin-top: 36px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .titulo-register2 {
-    position: relative;
-    bottom: 92px;
-    font-size: 24px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    filter: drop-shadow(4px 8px 2px black);
+    height: 60px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .left-register {
@@ -47,6 +46,10 @@ body {
     margin: 15px;
     position: relative;
     bottom: 118px;
+}
+
+.register__juegaprimero{
+    display: none;
 }
 
 .aca {
@@ -66,19 +69,32 @@ body {
 }
 
 .google {
-    background-color: transparent;
+    background-color: var(--fondo1VioletaO);
     font-family: 'Inter', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 40px;
+    justify-content: center;
     width: 280px;
+    align-items: center;
+    display: flex;
     border-radius: 7px;
+    filter: drop-shadow(0px 0px 3px white);
+    margin-top: 30px;
     border: 2px solid var(--letrasSubtitulos1);
     cursor: pointer;
+}
 
+.google span{
+    position: relative;
+    bottom: 5px;
+}
+
+#register__divider{
+    position: relative;
+    bottom: 85px;
+    margin: 0 auto;
+    width: 80%;
 }
 
 .guardar {
@@ -92,46 +108,27 @@ body {
     left: 39px;
     align-items: center;
     justify-content: center;
-    background-color: var(--fondo1VioletaO);
+    background-color: var(--swiper-theme-color);
     border: none;
     transition: all 1s;
-    margin-top: 5px;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 .guardar:hover {
     background-color: var(--letrasSubtitulos2);
 }
 
-.hr-register {
-    color: var(--letrasSubtitulos1);
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.divider {
-    margin-top: 35px;
-    position: relative;
-    bottom: 130px;
-}
-
-.orSpan {
-    color: var(--letrasSubtitulos1);
-    font-size: 15px;
-    font-family: 'Inter', sans-serif;
-    position: relative;
-    bottom: -7px;
-    margin-left: -1%;
-    padding: 0 5px;
-    background-color: var(--fondo2VioletaC);
-}
-
 .register-card {
-    position: relative;
-    bottom: 125px;
     align-items: center;
     justify-content: center;
     display: flex;
+    border: 1px solid white;
+    border-radius: 30px;
+    margin: -25px auto 100px;
+    filter: drop-shadow(0px 0px 3px white);
+    width: 80%;
+    background-color: var(--fondo1VioletaO);
 }
 
 form {
@@ -143,6 +140,7 @@ form {
 .forms {
     width: 265px;
     position: relative;
+    margin-top: 30px;
 }
 
 .forms input  {
@@ -158,17 +156,38 @@ form {
     font-size: 16px;
 }
 
-#register-image{
-    color: white;
-    font-size: 10px;
-    padding-top: 12px;
+#avatar--register{
+    background-color: transparent;
 }
 
-#boder-color2{
-    border: 4px solid red;
-    color: white;
-    font-size: 10px;
-    padding-top: 12px;
+.avatar--register--image{
+    background-color: transparent !important;
+    filter: drop-shadow(0px 0px 0px black) !important;
+    top: 7px !important;
+    left: 0 !important;
+    width: 100% !important;
+}
+
+#register--divider{
+    justify-content: space-around;
+    display: flex;
+    font-weight: 900;
+    filter: drop-shadow(0px 0px 3px white);
+    bottom: 85px;
+    position: relative;
+    border: 1px solid white;
+    background-color: var(--fondo1VioletaO)
+}
+
+.titles-left{
+    position: relative;
+    background-color: var(--fondo1VioletaO);
+    border: 1px solid white;
+    margin: 0 auto;
+    width: 85%;
+    filter: drop-shadow(0px 0px 3px white);
+    bottom: 121px;
+    margin-top: 50px;
 }
 
 .forms label {
@@ -177,13 +196,15 @@ form {
     left: -51px;
     text-transform: capitalize;
     font-size: 16px;
+    display: inline-block;
+    width: 110px;
     transition: top .2s;
-    background-color: var(--fondo2VioletaC);
-    pointer-events: none;
-    color: rgba(255, 255, 255, 1);
+    background-color: darkblue;
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
+    font-weight: 900;
+    color: wheat;
     font-style: normal;
+    filter: drop-shadow(0px 0px 3px white);
 }
 
 .us-name {
@@ -233,37 +254,42 @@ form {
     color: green;
 }
 
-.register__imagecontainer{
-    position: relative;
-    width: 130%;
-    right: 37px;
-}
-
-.register--image{
-    height: 300px !important;
-}
-
-.register--titulo--avatar{
-    top: -321px !important;
-}
-
-.register--image::placeholder{
-    background-color: black;
-    border: 3px solid black;
-}
-
 .register--catch{
     margin-top: 25px;
     margin-bottom: 22px;
     position: relative;
-    right: 30px;
+    right: 18px;
+}
+
+.image--register__avatar{
+    text-transform: capitalize;
+    font-size: 16px;
+    display: inline-block;
+    width: 110px;
+    right: 43px;
+    position: relative;
+    transition: top .2s;
+    background-color: darkblue;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    color: wheat;
+    font-style: normal;
+    filter: drop-shadow(0px 0px 3px white);
 }
 
 @media(min-width :769px) {
-    .login-register {
-        top: 1px;
-        right: 11px;
+    .register--box{
+        width: 50%;
     }
+
+    .login-register {
+        bottom: 0;
+    }
+
+   #register--divider{
+    bottom: 0;
+    margin-top: 40px;
+   }
 
     .right-register {
         display: flex;
@@ -277,35 +303,16 @@ form {
     .register-card {
         align-items: center;
         position: relative;
-        bottom: 42px;
-        right: -0.65%;
+        bottom: -70px;
         display: flex;
+        margin-bottom: 110px;
     }
 
     .titles-left {
-        right: 7px;
-        height: 205px;
-        margin-left: 40px;
+        top: 0;
         position: relative;
     }
 
-    .titles-left h3 {
-        width: 80%;
-        top: 16%;
-        left: 10px;
-        font-size: 22px;
-}
-
-    .titles-left h2 {
-        height: 50%;
-        top: 41%;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 21px;
-        right: 26px;
-    }
-    
     .left-register {
         position: relative;
     }
@@ -313,11 +320,11 @@ form {
     .titles {
         visibility: visible;
         position: absolute;
-        width: 45%;
-        left: 1%;
+        width: 40%;
+        left: 4%;
         background: var(--fondo1VioletaO);
         border-radius: 37px;
-        height: 80pc;
+        height: 90pc;
         z-index: -1;
         top: 40px;
     }
@@ -363,65 +370,23 @@ form {
         filter: drop-shadow(2px 5px 6px black);
     }
 
-    .divider {
-        bottom: 45px;
-        right: 12px;
-        position: relative;
-    }
-
-    .titles-register {
-        bottom: 30px;
-        position: relative;
-    }
-
     .google {
         height: 42px;
-        width: 262px;
+    }
+
+    .register__juegaprimero{
+        position: relative;
+        width: 200px;
+        bottom: 110px;
+        margin: 0 auto;
+        display: block;
     }
 
 
 }
 
 @media(min-width : 1024px) {
-    .titles-register {
-        bottom: 53px;
-        position: relative;
-        right: 82px;
+    .register__juegaprimero{
+        width: 280px;
     }
-
-    .divider {
-        bottom: 67px;
-        right: 75px;
-        position: relative;
     }
-
-    .titles h1 {
-        margin-left: 21px;
-    }
-
-    .right-register {
-        width: 91%;
-        position: relative;
-        left: 46px;
-    }
-
-    .hr-register {
-        color: var(--letrasSubtitulos1);
-        width: 96%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-
-    .register-card {
-        align-items: center;
-        position: relative;
-        bottom: 65px;
-        right: 17.35%;
-        display: flex;
-    }
-    .login-register {
-        top: 1px;
-        right: -7px;
-    }
-}

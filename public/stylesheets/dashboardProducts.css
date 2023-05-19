@@ -69,9 +69,10 @@
 }
 
 .dashboardp__section--nav{
-        background-color: #023877;
-        padding-top: 30px;
-        padding-bottom: 10px;
+    background-color: #023877;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
     }
 
 .dashboardp__buscarprodu{
@@ -92,6 +93,14 @@
     font-size: 22px;
     width: 40px;
 }
+
+.headeradmin__tituloletra{
+    position: relative;
+    font-size: 18px;
+    top: 15px;
+    font-family: 'Press Start 2P', cursive;
+}
+
 
 .dashboard--flecha:hover{
     transform: scale(1.3);
@@ -136,6 +145,9 @@
     .dashboardp__buscador{
         width: 350px;
     }
+    .headeradmin__tituloletra {
+        font-size: 30px;
+    }  
 }
 
 @media(min-width:1024px) {
@@ -187,12 +199,16 @@
     color: black;
     position: relative;
     right: 40px;
-}
-.dashboardp__lupa2:hover{
+    }
+    .dashboardp__lupa2:hover{
     background-color: var(--letrasSubtitulos2);
     color: white;
-}
-.dashboardp__buscarprodu--box{
+    }
+    .dashboardp__buscarprodu--box{
     margin-left: 5px;
-}
+    }
+    .headeradmin__tituloletra {
+        font-size: 40px;
+        top: 5px;
+    }
 }

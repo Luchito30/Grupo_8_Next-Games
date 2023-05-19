@@ -1,3 +1,3 @@
-[{"address":"Pellegrini 9718","city":"Casilda","province":"San Luis","zipCode":1317},
-{"address":"siempre viva 123","city":"Berazategui","province":"Buenos Aires","zipCode":6251},
-{"address":"La Republica 6168","city":"Rosario","province":"Santa Fe","zipCode":2000}]
+[{"address":"Pellegrini 9718","municipio":"Casilda","localidad":"borfa","province":"San Luis","zipCode":1317},
+{"address":"siempre viva 123","municipio":"Berazategui","localidad":"villa españa","province":"Buenos Aires","zipCode":6251},
+{"address":"La Republica 6168","municipio":"Rosario","localidad":"huigo","province":"Santa Fe","zipCode":2000}]

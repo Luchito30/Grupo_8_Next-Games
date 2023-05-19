@@ -4,7 +4,8 @@ const db = require("../database/models");
 module.exports={
     loginGoogle: async(req,res) =>{
         const {
-         provider,   
+         provider,
+         emails:[{value:email}],   
         _json:{
             sub:googleId,
             given_name:firstName,
@@ -22,6 +23,7 @@ module.exports={
             defaults:{
                 firstName:firstName,
                 LastName: LastName,
+                email,
                 image: picture,
                 rolId: 2,
                 addressId:address.id,

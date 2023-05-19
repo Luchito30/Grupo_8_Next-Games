@@ -37,7 +37,7 @@
 
 .login__main__section2--form .login__main__form-control input::placeholder {
     color: white;
-    font-size: 12px;
+    font-size: 18px;
     font-family: var(--FontSubtitulo);
 }
 
@@ -56,12 +56,20 @@
 
 .login__main__form-control {
     margin-bottom: 30px;
+    filter: drop-shadow(1px 1px 3px white);
 }
 
 .login__main__form-control label {
     color: white;
     font-family: var(--FontSubtitulo);
-    font-size: 15px;
+    font-size: 18px;
+    border: 2px solid var(--fondo1VioletaO);
+    background-color: var(--fondo1VioletaO)
+}
+
+.login__contraseña__label{
+    position: relative;
+    top: 4px;
 }
 
 #username,
@@ -78,6 +86,7 @@
     position: relative;
     z-index: 2;
     float: right;
+    bottom: 2px;
 }
 
 .form__button:hover {
@@ -86,25 +95,34 @@
 
 .login__enviar {
     font-size: 14px;
-    background-color: var(--fondo1VioletaO);
-    color: #fff;
+    color: black;
     width: 100%;
     border: none;
     padding: 8px 13px;
     border-radius: 30px;
-    margin-top: 25px;
+    margin-top: 35px;
     cursor: pointer;
     transition: all 1s;
+    position: relative;
+    background-color: #0075fd;
+    z-index: 100;
+    filter: drop-shadow(1px 1px 3px white);
+    font-weight: 900;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .login__enviar:hover {
-    background-color: var(--letrasSubtitulos2);;
+    background-color: var(--letrasSubtitulos2);
     border: none;
+    color: currentColor;
 }
 
 .login__main__section3 {
     justify-content: space-around;
     display: flex;
+    font-weight: 900;
+    border: 1px solid white;
+    background-color: var(--fondo1VioletaO)
 }
 
 .login__main__section3--inicio {
@@ -117,29 +135,35 @@
 .login__main_div--hrleft {
     width: 70px;
     margin-right: 20px;
+    filter: drop-shadow(3px 3px 1px black);
 }
 
 .login__main__section3--span {
-    font-size: 12px;
-    font-family: var(--FontSubtitulo);
-    color: white;
+    font-size: 11px;
+    color: aqua;
+    filter: drop-shadow(2px 9px 1px black);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: inline-block;
 }
 
 .login__main-div--hrrigth {
     width: 70px;
     margin-left: 20px;
+    filter: drop-shadow(3px 3px 1px black);
 }
 
 .login__main__section4 {
     margin-bottom: 43px;
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 40px;
+    filter: drop-shadow(0px 0px 3px white);
 }
 
 .login__main__section4_div--button {
     border-radius: 30px;
-    background-color: transparent;
+    background-color: var(--fondo1VioletaO);
     border-color: white;
 }
 
@@ -166,10 +190,43 @@
     text-align: center;
     font-size: 16px;
     font-family: var(--FontSubtitulo);
+    border: 1px solid white;
+    background-color: var(--fondo1VioletaO);
+    margin-bottom: 40px;
+}
+
+.login__animation--robot{
+    position: relative;
+}
+
+.login__animation--robot--saludo{
+    width: 160px;
+    height: 170px;
+    position: absolute;
+    bottom: -75px;
+    right: 125px;
+    filter: drop-shadow(4px 1px 0px black);
 }
 
 .login__main__section5_div {
     padding-bottom: 35px;
+}
+
+.login__main--sectibajo{
+    margin-top: 25px;
+}
+
+.login__main__section5_div--link{
+    font-size: 11px;
+    filter: drop-shadow(2px 9px 1px black);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    display: inline-block;
+    color: aqua;
+}
+
+.login__main__link-a1{
+    color: aqua;
 }
 
 .login__main__section5_div--link i {
@@ -187,6 +244,10 @@
 
 .login__main__section5_div--link2 {
     color: var(--letrasSubtitulos2);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    margin-left: 15px;
+    filter: drop-shadow(2px 9px 1px black);
 }
 
 .login__main__section5_div--link2:hover {
@@ -199,13 +260,43 @@
 }
 
 .login__recordame{
-    align-items: center;
     color: white;
     font-family: 'Inter';
-    display: flex;
-    gap: 25px;
-    justify-content: center;
     margin-top: 40px;
+}
+
+.login__label--remember{
+    font-weight: 900;
+    display: inline-block;
+    margin-top: 30px;
+    filter: drop-shadow(2px 8px 3px black);
+}
+
+.login__label__checkbox{
+    margin: 20px 10px;
+    filter: drop-shadow(2px 8px 3px black);
+}
+
+.recordame__checkbox{
+    margin: 0 auto;
+    border: 1px solid white;
+    background-color: var(--fondo1VioletaO);
+    margin-top: -20px;
+    width: 95%;
+    font-size: 13px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#login__recaptcha{
+    margin: 0 auto;
+    display: inline-block;
+    filter: drop-shadow(5px 6px 2px black);
+}
+
+.form__login-error{
+    display: inline-block;
+    margin-top: 30px !important;
+    margin-bottom: 0px !important;
 }
 
 /* tablet */
@@ -237,6 +328,9 @@
     .login__enviar {
         font-size: 15px;
     }
+    
+    .login__animation--robot--saludo{
+    }
 }
 
 /* Tablets, Ipads */
@@ -258,16 +352,24 @@
     }
 
     .login__main__section3--span {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .login__main__section5 {
-        font-size: 19px;
+        font-size: 20px;
     }
 
     .login__enviar {
-        font-size: 17px;
+        font-size: 18px;
     }
+
+    .login__animation--robot--saludo{
+    }
+
+    .login__main__section5_div--link{
+        font-size: 14px;
+    }
+    
 }
 
 /* Desktops */
@@ -304,14 +406,14 @@
     .login__main__costados--left {
         position: absolute;
         width: 285px;
-        min-height: 764px;
+        min-height: 738px;
         background-color: rgba(188, 121, 240, 0.4);
     }
 
     .login__main__costados--right {
         width: 285px;
         position: absolute;
-        min-height: 764px;
+        min-height: 738px;
         background-color: rgba(188, 121, 240, 0.4);
         right: 0;
     }
@@ -319,18 +421,22 @@
     .login__main_left--img {
         width: 285px;
         position: absolute;
-        min-height: 764px;
+        min-height: 738px;
         z-index: -1;
     }
 
     .login__main_right--img {
         width: 285px;
         position: absolute;
-        min-height: 764px;
+        min-height: 738px;
         z-index: -1;
     }
 
     .login__enviar {
         font-size: 18px;
+    }
+
+    .login__animation--robot--saludo{
+       
     }
 }

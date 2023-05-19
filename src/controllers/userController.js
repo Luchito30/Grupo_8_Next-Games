@@ -105,31 +105,53 @@ module.exports = {
         }
     },
     profile: (req, res) => {
-        db.User.findByPk(req.session.userLogin.id, {
+        const errors = validationResult(req);
+      
+        if (errors.isEmpty()) {
+          db.User.findByPk(req.session.userLogin.id, {
             attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
             include: [
-                {
-                    association: 'address',
-                    attributes: ['address', 'city', 'province', 'zipCode']
-                }
+              {
+                association: 'address',
+                attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+              }
             ],
-
-        })
+          })
             .then(user => {
-                return res.render('users/profile', {
-                    title: "Next Games | Perfil de usuario",
-                    user,
-                })
+              return res.render('users/profile', {
+                title: "Next Games | Perfil de usuario",
+                user,
+              });
             })
-            .catch(error => console.log(error))
-    },
+            .catch(error => console.log(error));
+        } else {
+          db.User.findByPk(req.session.userLogin.id, {
+            attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
+            include: [
+              {
+                association: 'address',
+                attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+              }
+            ],
+          })
+            .then(user => {
+              return res.render('users/profile', {
+                title: "Next Games | Perfil de usuario",
+                user,
+                errors: errors.mapped(),
+                old: req.body,
+              });
+            })
+            .catch(error => console.log(error));
+        }
+      },      
     updateUser: (req, res) => {
         const errors = validationResult(req);
 
         if (errors.isEmpty()) {
 
 
-            const { firstName, LastName, userName, address, city, province, zipCode } = req.body;
+            const { firstName, LastName, userName, address, municipio, province, zipCode, localidad } = req.body;
             const { id } = req.session.userLogin;
 
             db.User.findByPk(id)
@@ -137,9 +159,10 @@ module.exports = {
                     const addressUpdate = db.Address.update(
                         {
                             address: address ? address.trim() : null,
-                            city: city ? city.trim() : null,
                             province: province ? province.trim() : null,
-                            zipCode: zipCode ? zipCode : null
+                            zipCode: zipCode ? zipCode : null,
+                            localidad: localidad ? localidad : null,
+                            municipio: municipio ? municipio : null
                         },
                         {
                             where: {
@@ -187,10 +210,10 @@ module.exports = {
                 include: [
                     {
                         association: 'address',
-                        attributes: ['address', 'city', 'province', 'zipCode']
+                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
                     }
                 ],
-    
+
             })
                 .then(user => {
                     return res.render('users/profile', {

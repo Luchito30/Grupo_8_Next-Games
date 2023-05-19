@@ -108,14 +108,38 @@
                         </div>
                         <div class="box-metodos">
                             <div class="tarjetas-detalle">
-                                <div class="metodos" style="color:white;">
-                                    <h3>metodos de pago:</h3>
+                                <div>
+                                    <h3 class="metodos">metodos de pago:</h3>
                                 </div>
+                                <% if (discount) { %>
+                                    <div class="detalle__select--pagos">
+                                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                                            <option value="1 pago">1 pago de $<%= toThousand(Math.round(price - (price * discount) / 100)) %></option>
+                                            <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price - (price * discount) / 100) / 3) %></option>
+                                            <option value="6 pago">6 pagos de <%= toThousand(Math.round(price - (price * discount) / 100) / 6) %></option>
+                                            <option value="9 pago">9 pagos de <%= toThousand(Math.round(price - (price * discount) / 100) / 9) %></option>
+                                            <option value="12 pago">12 pagos de <%= toThousand(Math.round(price - (price * discount) / 100) / 12) %></option>
+                                        </select>
+                                    </div>
+                                <% } else {%>
+                                <div class="detalle__select--pagos">
+                                    <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                                        <option value="1 pago">1 pago de $<%= toThousand(Math.round(price )) %></option>
+                                        <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price /3 )) %></option>
+                                        <option value="6 pago">6 pagos de <%= toThousand(Math.round(price / 6)) %></option>
+                                        <option value="9 pago">9 pagos de <%= toThousand(Math.round(price / 9)) %></option>
+                                        <option value="12 pago">12 pagos de <%= toThousand(Math.round(price / 12)) %></option>
+                                    </select>
+                                </div>
+                                <% } %>
                                 <img src="/images/tarjetas.png" alt="">
                             </div>
-                            <div class="envios">
-                                <h3>metodos de envío:</h3>
-                                <h4>envios gratis a todo el pais</h4>
+                            <div class="detalle--boxenvio">
+                                <h3 class="envios">metodos de envío:</h3>
+                                <h4 class="enviosh4">envios gratis a todo el pais</h4>
+                                <div>
+                                    <lottie-player class="envios__camion" src="https://assets7.lottiefiles.com/packages/lf20_obRWQvbwIA.json"  background="transparent"  speed="1" loop  autoplay></lottie-player>
+                                </div>
                             </div>
                         </div>
 

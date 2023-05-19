@@ -66,42 +66,46 @@ const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/; //mayuscula, numero
 const regExPass2 =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&_-])[A-Za-z\d$@$!%*?&_-]{6,12}/;
 
-  const inputImage = document.getElementById('image');
-  const imageError = document.getElementById('imageError');
-  const imagePreview = document.getElementById('imagePreview');
-  const imagePreviewContainer = document.getElementById('imagePreviewContainer');
+  const regExExt = /\.(jpg|jpeg|png|gif|webp)$/i;
+
+  $('image').addEventListener('change', function (e) {
+    const submitBtnContainer = document.querySelector('.submit-btn--crear');
+    const selectedImage = document.getElementById('selectedImage');
+    const boxImagePreview = document.getElementById('boxImagePreview');
   
-    inputImage.addEventListener('change', function (event) {
-    const regExExt = /\.(jpg|jpeg|png|gif|webp)$/i;
+    $('btnImage').innerText = "Subir imagen";
   
     if (!regExExt.test(this.value)) {
-      imageError.innerHTML = 'Solo se admiten imágenes jpg | jpeg | png | gif | webp';
-      inputImage.classList.remove('is-valid');
-      inputImage.classList.add('is-invalid');
-      imagePreviewContainer.style.display = 'none';
+      $('imageError').innerHTML = "Solo se admiten imágenes jpg | jpeg | png | gif | webp";
+      selectedImage.style.display = 'none';
+      boxImagePreview.querySelector('.fa-image').style.display = 'inline-block';
+      submitBtnContainer.classList.remove('is-valid');
+      submitBtnContainer.classList.add('is-invalid');
     } else {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        const img = document.createElement('img');
-        img.src = e.target.result;
-        img.alt = 'Vista previa de la imagen';
-        img.style.position = 'absolute';
-        img.style.width = '72%';
-        img.style.top = '75px';
-        img.style.right = '42px';
-        img.style.height = '180px';
-        imagePreview.innerHTML = '';
-        imagePreview.appendChild(img);
-        imagePreviewContainer.style.display = 'block';
-      };
-      reader.readAsDataURL(this.files[0]);
-  
-      imageError.innerHTML = '';
-      inputImage.classList.remove('is-invalid');
-      inputImage.classList.add('is-valid');
+      cleanError('imageError', event);
+      $('btnImage').innerText = "Cambiar imagen";
+      submitBtnContainer.classList.remove('is-invalid');
+      submitBtnContainer.classList.add('is-valid');
+      if (this.files && this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          selectedImage.src = e.target.result;
+          selectedImage.style.display = 'inline-block';
+          selectedImage.style.marginBottom = '8px';
+          selectedImage.style.display = 'inline-block';
+          selectedImage.style.height = '180px';
+          selectedImage.style.marginTop = '20px';
+          selectedImage.style.objectFit = 'contain';
+          selectedImage.style.border = '2px solid black';
+          selectedImage.style.backgroundColor = 'white';
+          boxImagePreview.querySelector('.fa-image').style.display = 'none';
+        };
+        reader.readAsDataURL(this.files[0]);
+      }
     }
-  });
-  
+});
+
+
   $('name').addEventListener('blur', function(e){
     switch (true) {
         case !this.value.trim():
@@ -370,6 +374,3 @@ const regExPass2 =
     const confirmPassword = $('password2').value.trim();
     return confirmPassword.length > 0 && confirmPassword === password;
   };
-  
-  
-  
