@@ -3,6 +3,7 @@
 
 <%- include('../partials/head.ejs') %>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <%- include('../partials/background.ejs') %>
 
     <body>
         <%- include('../partials/header.ejs') %>
@@ -78,12 +79,11 @@
 
                 <section class="login__main__section4">
                     <div class="login__main__section4_div">
+                        <span><lottie-player class="google__animated" src="https://assets1.lottiefiles.com/private_files/lf30_3nvqj06a.json"  background="transparent"  speed="1" loop  autoplay></lottie-player></span>
                         <button class="login__main__section4_div--button">
                             <div class="login__main__section4_div2--span">
-                                <a href="/auth/login/google"><img class="login__main-div2--img"
-                                        src="/images/Logo-logeo.png" alt="Google"
-                                        class="login__main__section4_div2--img">
-                                    <span class="login__animation--robot">Login con Google <lottie-player class="login__animation--robot--saludo" src="https://assets5.lottiefiles.com/packages/lf20_BWcL6WonZx.json"  background="transparent"  speed="1" loop  autoplay></lottie-player></span></a>
+                                <a href="/auth/login/google">
+                                    <span>Login con Google</span></a>
                             </div>
                         </button>
                     </div>
@@ -104,8 +104,6 @@
 
             </main>
 
-            <!-- carrito-->
-            <%- include('../partials/carrito.ejs') %>
             <!--whatsapp-->
             <%- include('../partials/whatsApp.ejs') %>
 

@@ -67,7 +67,7 @@
     background-color: var(--fondo1VioletaO)
 }
 
-.login__contraseña__label{
+.login__contraseña__label {
     position: relative;
     top: 4px;
 }
@@ -85,6 +85,7 @@
     font-size: 18px;
     position: relative;
     z-index: 2;
+    filter: drop-shadow(3px 4px 3px black);
     float: right;
     bottom: 2px;
 }
@@ -162,9 +163,20 @@
 }
 
 .login__main__section4_div--button {
-    border-radius: 30px;
     background-color: var(--fondo1VioletaO);
-    border-color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    height: 40px;
+    justify-content: center;
+    width: 280px;
+    align-items: center;
+    display: flex;
+    border-radius: 7px;
+    filter: drop-shadow(0px 0px 3px white);
+    margin-top: 30px;
+    border: 2px solid var(--letrasSubtitulos1);
+    cursor: pointer;
 }
 
 .login__main__section4_div--button:hover {
@@ -183,7 +195,7 @@
     margin-left: 10px;
     margin-right: 3px;
     position: relative;
-    bottom: 6px;
+    filter: drop-shadow(3px 6px 3px black);
 }
 
 .login__main__section5 {
@@ -195,28 +207,15 @@
     margin-bottom: 40px;
 }
 
-.login__animation--robot{
-    position: relative;
-}
-
-.login__animation--robot--saludo{
-    width: 160px;
-    height: 170px;
-    position: absolute;
-    bottom: -75px;
-    right: 125px;
-    filter: drop-shadow(4px 1px 0px black);
-}
-
 .login__main__section5_div {
     padding-bottom: 35px;
 }
 
-.login__main--sectibajo{
+.login__main--sectibajo {
     margin-top: 25px;
 }
 
-.login__main__section5_div--link{
+.login__main__section5_div--link {
     font-size: 11px;
     filter: drop-shadow(2px 9px 1px black);
     font-family: 'Press Start 2P', cursive;
@@ -225,7 +224,7 @@
     color: aqua;
 }
 
-.login__main__link-a1{
+.login__main__link-a1 {
     color: aqua;
 }
 
@@ -259,25 +258,25 @@
     display: none;
 }
 
-.login__recordame{
+.login__recordame {
     color: white;
     font-family: 'Inter';
     margin-top: 40px;
 }
 
-.login__label--remember{
+.login__label--remember {
     font-weight: 900;
     display: inline-block;
     margin-top: 30px;
     filter: drop-shadow(2px 8px 3px black);
 }
 
-.login__label__checkbox{
+.login__label__checkbox {
     margin: 20px 10px;
     filter: drop-shadow(2px 8px 3px black);
 }
 
-.recordame__checkbox{
+.recordame__checkbox {
     margin: 0 auto;
     border: 1px solid white;
     background-color: var(--fondo1VioletaO);
@@ -287,16 +286,24 @@
     font-family: 'Press Start 2P', cursive;
 }
 
-#login__recaptcha{
+#login__recaptcha {
     margin: 0 auto;
     display: inline-block;
     filter: drop-shadow(5px 6px 2px black);
 }
 
-.form__login-error{
+.form__login-error {
     display: inline-block;
     margin-top: 30px !important;
     margin-bottom: 0px !important;
+}
+
+.google__animated{
+    position: absolute;
+    z-index: 10;
+    right: 90px;
+    top: 15px;
+    filter: drop-shadow(3px 6px 3px black);
 }
 
 /* tablet */
@@ -328,115 +335,107 @@
     .login__enviar {
         font-size: 15px;
     }
-    
-    .login__animation--robot--saludo{
-    }
-}
 
-/* Tablets, Ipads */
-@media(min-width:769px) {
-    .login__main__section {
-        font-size: 20px;
-    }
+    /* Tablets, Ipads */
+    @media(min-width:769px) {
+        .login__main__section {
+            font-size: 20px;
+        }
 
-    .login__main__section2--form .login__main__form-control input::placeholder {
-        font-size: 17;
-    }
+        .login__main__section2--form .login__main__form-control input::placeholder {
+            font-size: 17;
+        }
 
-    .login__main__section2--form .login__main__form-control input {
-        font-size: 17px;
-    }
+        .login__main__section2--form .login__main__form-control input {
+            font-size: 17px;
+        }
 
-    .login__main__form-control label {
-        font-size: 19px;
-    }
+        .login__main__form-control label {
+            font-size: 19px;
+        }
 
-    .login__main__section3--span {
-        font-size: 16px;
-    }
+        .login__main__section3--span {
+            font-size: 16px;
+        }
 
-    .login__main__section5 {
-        font-size: 20px;
-    }
+        .login__main__section5 {
+            font-size: 20px;
+        }
 
-    .login__enviar {
-        font-size: 18px;
-    }
+        .login__enviar {
+            font-size: 18px;
+        }
 
-    .login__animation--robot--saludo{
-    }
+        .login__main__section5_div--link {
+            font-size: 14px;
+        }
 
-    .login__main__section5_div--link{
-        font-size: 14px;
-    }
-    
-}
-
-/* Desktops */
-@media(min-width:1024px) {
-    .login__main__section {
-        font-size: 21px;
     }
 
-    .login__main__section2--form .login__main__form-control input::placeholder {
-        font-size: 18;
-    }
+    /* Desktops */
+    @media(min-width:1024px) {
+        .login__main__section {
+            font-size: 21px;
+        }
 
-    .login__main__section2--form .login__main__form-control input {
-        font-size: 18px;
-    }
+        .login__main__section2--form .login__main__form-control input::placeholder {
+            font-size: 18;
+        }
 
-    .login__main__form-control label {
-        font-size: 20px;
-    }
+        .login__main__section2--form .login__main__form-control input {
+            font-size: 18px;
+        }
 
-    .login__main__section3--span {
-        font-size: 16px;
-    }
+        .login__main__form-control label {
+            font-size: 20px;
+        }
 
-    .login__main__section5 {
-        font-size: 20px;
-    }
+        .login__main__section3--span {
+            font-size: 16px;
+        }
 
-    .login__main__costados {
-        display: flex;
-        justify-content: space-between;
-    }
+        .login__main__section5 {
+            font-size: 20px;
+        }
 
-    .login__main__costados--left {
-        position: absolute;
-        width: 285px;
-        min-height: 738px;
-        background-color: rgba(188, 121, 240, 0.4);
-    }
+        .login__main__costados {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .login__main__costados--right {
-        width: 285px;
-        position: absolute;
-        min-height: 738px;
-        background-color: rgba(188, 121, 240, 0.4);
-        right: 0;
-    }
+        .login__main__costados--left {
+            position: absolute;
+            width: 285px;
+            min-height: 738px;
+            background-color: rgba(188, 121, 240, 0.4);
+        }
 
-    .login__main_left--img {
-        width: 285px;
-        position: absolute;
-        min-height: 738px;
-        z-index: -1;
-    }
+        .login__main__costados--right {
+            width: 285px;
+            position: absolute;
+            min-height: 738px;
+            background-color: rgba(188, 121, 240, 0.4);
+            right: 0;
+        }
 
-    .login__main_right--img {
-        width: 285px;
-        position: absolute;
-        min-height: 738px;
-        z-index: -1;
-    }
+        .login__main_left--img {
+            width: 285px;
+            position: absolute;
+            min-height: 738px;
+            z-index: -1;
+            filter: drop-shadow(4px 8px 1px black);
+        }
 
-    .login__enviar {
-        font-size: 18px;
-    }
+        .login__main_right--img {
+            width: 285px;
+            position: absolute;
+            min-height: 738px;
+            z-index: -1;
+            filter: drop-shadow(4px 8px 1px black);
+        }
 
-    .login__animation--robot--saludo{
-       
+        .login__enviar {
+            font-size: 18px;
+        }
     }
 }

@@ -45,6 +45,7 @@
 .home__main__section__article {
     margin: 2px;
     transition: all 1s;
+    overflow: hidden;
 }
 
 .home__main__section {
@@ -83,6 +84,7 @@
     margin-top: 10px;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
+    filter: drop-shadow(4px 6px 3px black);
 }
 
 .home__main--titulo a {
@@ -115,10 +117,14 @@
     height: 270px;
     object-fit: contain;
     background-color: white;
+    transition: all 3s ease;
 }
 
 .home__main--img:hover {
     box-shadow: 6px 0px 10px 1px rgb(0, 0, 0, 0.9);
+    transform: scale(1.5);
+    transition: all 3s ease;
+    filter: brightness(0.5);
 }
 
 .home__main--div {
@@ -126,6 +132,7 @@
     background-color: var(--fondo1VioletaO);
     position: relative;
     color: white;
+    border-radius: 0px 0px 25px 25px;
 }
 
 .home__main--div:hover {

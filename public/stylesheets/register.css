@@ -45,7 +45,7 @@ body {
     justify-content: center;
     margin: 15px;
     position: relative;
-    bottom: 118px;
+    bottom: 75px;
 }
 
 .register__juegaprimero{
@@ -98,25 +98,28 @@ body {
 }
 
 .guardar {
-    width: 152px;
-    height: 40px;
-    border-radius: 10px;
-    color: #fff;
-    font-family: var(--FontTitulo);
-    display: flex;
-    position: relative;
-    left: 39px;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--swiper-theme-color);
+    font-size: 14px;
+    color: black;
+    width: 100%;
     border: none;
+    padding: 8px 13px;
+    border-radius: 30px;
+    margin-top: 35px;
+    cursor: pointer;
     transition: all 1s;
-    margin-top: 30px;
-    margin-bottom: 40px;
+    position: relative;
+    background-color: #0075fd;
+    z-index: 100;
+    filter: drop-shadow(1px 1px 3px white);
+    font-weight: 900;
+    font-family: 'Press Start 2P', cursive;
+    margin-bottom: 50px;
 }
 
 .guardar:hover {
     background-color: var(--letrasSubtitulos2);
+    border: none;
+    color: currentColor;
 }
 
 .register-card {
@@ -146,7 +149,7 @@ form {
 .forms input  {
     width: 100%;
     background: transparent;
-    border: 2px solid var(--letrasSubtitulos1);
+    border: 5px solid var(--letrasSubtitulos1);
     border-radius: 6px;
     outline: none;
     padding: 15px 15px;
@@ -158,6 +161,7 @@ form {
 
 #avatar--register{
     background-color: transparent;
+    border: 5px solid white;
 }
 
 .avatar--register--image{
@@ -257,6 +261,7 @@ form {
 .register--catch{
     margin-top: 25px;
     margin-bottom: 22px;
+    filter: drop-shadow(5px 6px 2px black);
     position: relative;
     right: 18px;
 }
@@ -326,6 +331,7 @@ form {
         border-radius: 37px;
         height: 90pc;
         z-index: -1;
+        filter: drop-shadow(0px 0px 3px white);
         top: 40px;
     }
 
@@ -337,6 +343,8 @@ form {
         font-family: var(--FontTitulo);
         margin: 0px 50px;
         text-align: center;
+        font-weight: 900;
+        filter: drop-shadow(5px 6px 3px black);
     }
     .register__titulo--import1 {
         position: relative;
@@ -358,6 +366,7 @@ form {
         text-align: center;
         height: 80px;
         font-weight: 900;
+        filter: drop-shadow(5px 6px 3px black);
     }
 
     .register__img--import{
@@ -367,7 +376,7 @@ form {
     }
     .register__img--img{
         width: 50%;
-        filter: drop-shadow(2px 5px 6px black);
+        filter: drop-shadow(5px 7px 3px black);
     }
 
     .google {
@@ -377,6 +386,7 @@ form {
     .register__juegaprimero{
         position: relative;
         width: 200px;
+        filter: drop-shadow(10px 15px 5px black);
         bottom: 110px;
         margin: 0 auto;
         display: block;
