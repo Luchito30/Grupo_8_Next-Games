@@ -158,8 +158,10 @@
     margin-bottom: 43px;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 15px;
     filter: drop-shadow(0px 0px 3px white);
+    top: 115px;
+    position: relative;
 }
 
 .login__main__section4_div--button {
@@ -187,15 +189,12 @@
     color: white;
 }
 
-.login__main__section4_div2--span img {
-    width: 25px;
-}
-
 .login__main__section4_div2--span span {
     margin-left: 10px;
     margin-right: 3px;
     position: relative;
     filter: drop-shadow(3px 6px 3px black);
+    top: -17px;
 }
 
 .login__main__section5 {
@@ -298,14 +297,6 @@
     margin-bottom: 0px !important;
 }
 
-.google__animated{
-    position: absolute;
-    z-index: 10;
-    right: 90px;
-    top: 15px;
-    filter: drop-shadow(3px 6px 3px black);
-}
-
 /* tablet */
 @media(min-width:485px) {
     .login__main__section {
@@ -370,6 +361,11 @@
             font-size: 14px;
         }
 
+        .login__main__section4 {
+            top: 0;
+        }
+        
+
     }
 
     /* Desktops */
@@ -421,7 +417,7 @@
         .login__main_left--img {
             width: 285px;
             position: absolute;
-            min-height: 738px;
+            min-height: 730px;
             z-index: -1;
             filter: drop-shadow(4px 8px 1px black);
         }
@@ -429,7 +425,7 @@
         .login__main_right--img {
             width: 285px;
             position: absolute;
-            min-height: 738px;
+            min-height: 730px;
             z-index: -1;
             filter: drop-shadow(4px 8px 1px black);
         }

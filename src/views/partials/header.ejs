@@ -148,7 +148,7 @@
                                 </li>
                             <% } %>
                             <li id="header__admin--li2">
-                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image : `/images/users/${userLogin.image}`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png' }`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                             </li>
                             <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>
@@ -218,7 +218,7 @@
                                 </form>
                             </li>
                             <li id="header__admin--li2">
-                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image : `/images/users/${userLogin.image}`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png'}`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                             </li>
                             <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>

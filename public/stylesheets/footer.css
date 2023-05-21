@@ -219,7 +219,10 @@ footer {
    margin-right: 5px;
    height: 23px;
 }
-
+      
+.footer__enviodeemaiol{
+   font-size: 18px;
+}
 
 /*--------TABLET---------*/
 @media(min-width:485px) {

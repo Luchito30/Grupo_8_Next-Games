@@ -282,6 +282,39 @@ form {
     filter: drop-shadow(0px 0px 3px white);
 }
 
+.register--bootm_google{
+    background-color: var(--fondo1VioletaO);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    height: 40px;
+    justify-content: center;
+    width: 280px;
+    align-items: center;
+    display: flex;
+    border-radius: 7px;
+    filter: drop-shadow(0px 0px 3px white);
+    margin-top: 30px;
+    border: 2px solid var(--letrasSubtitulos1);
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.register__sociality{
+    position: relative;
+    bottom: 122px;
+}
+
+.google-img{
+    position: relative;
+    right: 10px;
+}
+
+.register__facebook-img{
+    height: 53px;
+}
+
 @media(min-width :769px) {
     .register--box{
         width: 50%;
@@ -377,6 +410,11 @@ form {
     .register__img--img{
         width: 50%;
         filter: drop-shadow(5px 7px 3px black);
+    }
+
+    .register__sociality{
+        position: relative;
+        bottom: 0;
     }
 
     .google {

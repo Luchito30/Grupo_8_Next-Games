@@ -36,30 +36,37 @@
               <h3 class="titulo-register2">Ya tenes una cuenta? ingresa <a class="aca" href="/users/login">aca</a>
               </h3>
             </div>
-
-            <section class="login__main__section3" id="register--divider">
-              <div class="login__main__section3--inicio">
-                  <div>
-                      <hr class="login__main_div--hrleft">
-                  </div>
-  
-                  <div>
-                      <span class="login__main__section3--span">O REGISTRATE</span>
-                  </div>
-  
-                  <div>
-                      <hr class="login__main-div--hrrigth">
-                  </div>
-              </div>
-          </section>
-            <div class="login-register">
-              <button class="google">
-                <a href="/auth/login/google"><img src="/images/google-icon.png" alt="logo-google"
-                    class="log"><span>Registrate con Google</span></a>
-              </button>
-
-          </section>
           
+            <div class="register__sociality">
+            <a class="register--bootm_google" href="/auth/login/google">
+              <img class="google-img" src="/images/Logo-logeo.png" alt="Google">
+                <span>Registrate con Google </span>
+                    </a>
+
+            <a class="register--bootm_google" href="/auth/login/facebook">
+              <img class="register__facebook-img" src="/images/logo-facebook.png" alt="facebook">
+              <span>Registrate con Facebook</span>
+            </a>
+          </div>
+
+          </section>
+         
+          <section class="login__main__section3" id="register--divider">
+            <div class="login__main__section3--inicio">
+                <div>
+                    <hr class="login__main_div--hrleft">
+                </div>
+
+                <div>
+                    <span class="login__main__section3--span">O REGISTRATE</span>
+                </div>
+
+                <div>
+                    <hr class="login__main-div--hrrigth">
+                </div>
+            </div>
+        </section>
+
           <div class="register-card">
             <div class="forms">
               <div class="name">
@@ -159,6 +166,29 @@
         <script src="/javascripts/register.js"></script>
           <!-- fixed -->
           <script src="/javascripts/fixed.js"></script>
+
+          
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 
   </body>

@@ -9,6 +9,7 @@ const methodOverride = require("method-override");
 const session = require("express-session");
 const passport = require("passport")
 const { loginGoogleService } = require('./services/googleServices');
+const { loginFacebookService } = require('./services/facebookServices');
 
 const mainRouter = require("./routes/main");
 const userRouter = require("./routes/users");
@@ -19,8 +20,10 @@ const localsUserCheck = require("./middlewares/localsUserCheck");
 const checkCookie = require("./middlewares/checkCookie");
 
 
+
 const app = express();
 loginGoogleService()
+loginFacebookService()
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
