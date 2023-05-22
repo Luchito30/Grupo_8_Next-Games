@@ -106,45 +106,45 @@ module.exports = {
     },
     profile: (req, res) => {
         const errors = validationResult(req);
-      
+
         if (errors.isEmpty()) {
-          db.User.findByPk(req.session.userLogin.id, {
-            attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
-            include: [
-              {
-                association: 'address',
-                attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
-              }
-            ],
-          })
-            .then(user => {
-              return res.render('users/profile', {
-                title: "Next Games | Perfil de usuario",
-                user,
-              });
+            db.User.findByPk(req.session.userLogin.id, {
+                attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
+                include: [
+                    {
+                        association: 'address',
+                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+                    }
+                ],
             })
-            .catch(error => console.log(error));
+                .then(user => {
+                    return res.render('users/profile', {
+                        title: "Next Games | Perfil de usuario",
+                        user,
+                    });
+                })
+                .catch(error => console.log(error));
         } else {
-          db.User.findByPk(req.session.userLogin.id, {
-            attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
-            include: [
-              {
-                association: 'address',
-                attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
-              }
-            ],
-          })
-            .then(user => {
-              return res.render('users/profile', {
-                title: "Next Games | Perfil de usuario",
-                user,
-                errors: errors.mapped(),
-                old: req.body,
-              });
+            db.User.findByPk(req.session.userLogin.id, {
+                attributes: ['firstName', 'LastName', 'userName', 'email', 'image'],
+                include: [
+                    {
+                        association: 'address',
+                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+                    }
+                ],
             })
-            .catch(error => console.log(error));
+                .then(user => {
+                    return res.render('users/profile', {
+                        title: "Next Games | Perfil de usuario",
+                        user,
+                        errors: errors.mapped(),
+                        old: req.body,
+                    });
+                })
+                .catch(error => console.log(error));
         }
-      },      
+    },
     updateUser: (req, res) => {
         const errors = validationResult(req);
 
@@ -242,6 +242,11 @@ module.exports = {
             })
             .catch(error => console.log(error))
     },
+    recuperarContraseña: (req, res) => {
+        return res.render('users/recuperarContraseña', {
+            title: "Next Games | Recuperar contraseña"
+        });
+    },
     removeuserConfirm: (req, res) => {
         const { id } = req.params;
 
@@ -252,26 +257,30 @@ module.exports = {
             });
         })
     },
-    recuperarContraseña: (req, res) => {
-        return res.render('users/recuperarContraseña', {
-            title: "Next Games | Recuperar contraseña"
-        });
-    },
-    removeusers: (req, res) => {
+    removeusers: async (req, res) => {
         const { id } = req.params;
 
-        const user = db.User.findByPk(id, {
-            include: { all: true }
-        })
+        try {
+            const user = db.User.findByPk(id, {
+                include: { all: true }
+            })
 
-        db.User.destroy({
-            where: {
-                id
+            if (user.image) {
+                fs.existsSync(`public/users/products/${product.image}`) &&
+                    fs.unlinkSync(`public/users/products/${product.image}`);
             }
-        }).then(() => {
-            return res.redirect("/admin/dashboardUser")
-        })
-            .catch((error) => console.log(error))
+
+            await db.User.destroy({
+                where: {
+                    id
+                }
+            })
+
+            return res.redirect("/admin/dashboardUser");
+        } catch (error) {
+            console.log(error);
+            return res.redirect("/admin/dashboardUser");
+        }
     },
     registerAdmin: (req, res) => {
         return res.render('users/crearAdmin', {

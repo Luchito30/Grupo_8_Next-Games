@@ -223,6 +223,9 @@ footer {
 .footer__enviodeemaiol{
    font-size: 18px;
 }
+.footer__enviodeemaiol:hover{
+   color: var(--letrasSubtitulos2);
+}
 
 /*--------TABLET---------*/
 @media(min-width:485px) {

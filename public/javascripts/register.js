@@ -340,6 +340,13 @@ const regExPass2 =
     }
   
     if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword() && validateRecaptcha()) {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Usuario creado con exito',
+        showConfirmButton: false,
+        timer: 1500
+      })
       this.submit();
     }
   });

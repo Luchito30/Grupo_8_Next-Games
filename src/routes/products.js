@@ -1,5 +1,5 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,removeConfirm,remove,getFromSubcategory, getFromCategory} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,remove,getFromSubcategory, getFromCategory} = require('../controllers/productController');
 const checkAdmin = require('../middlewares/checkAdmin');
 const {uploadproductImages} = require("../middlewares/upload");
 const { productValidator } = require('../validations');
@@ -23,7 +23,6 @@ router.get('/edicion/:id',checkAdmin, edicion);
 router.put('/edicion/:id',uploadproductImages.fields([{name: 'image'},{name: 'images'}]),productValidator,update);
 
 /*** Eliminar producto ***/
-router.get("/remove/:id",checkAdmin,removeConfirm);
 router.delete("/remove/:id",remove);
 
 module.exports = router;

@@ -374,16 +374,6 @@ module.exports = {
       }
     }
   },  
-  removeConfirm: (req, res) => {
-    const {id} = req.params;
-    
-    db.Product.findByPk(id).then(product => {
-      return res.render("productos/confirmRemove", {
-        ...product.dataValues,
-        title: "Next Games | Advertencia",
-      });
-    })
-  },
   remove: async (req, res) => {
     const { id } = req.params;
   

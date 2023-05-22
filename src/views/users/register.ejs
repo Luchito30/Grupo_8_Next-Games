@@ -74,7 +74,7 @@
                 <p class="text-crear" id="imageError">
                   <%= locals.errors && errors.image ? errors.image.msg : null %>
                 </p>
-                <span class="image--register__avatar">Imagen</span>
+                <span class="image--register__avatar">Avatar</span>
                 <div class="submit-btn--crear" id="avatar--register">
                   <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
                   <label for="image"  class="avatar--register--image">
@@ -162,34 +162,12 @@
       <%- include('../partials/whatsApp.ejs') %>
         <!-- footer -->
         <%- include('../partials/footer.ejs') %>
+           <!-- SweetAlert-->
+           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <script src="/javascripts/register.js"></script>
           <!-- fixed -->
           <script src="/javascripts/fixed.js"></script>
-
-          
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '{your-app-id}',
-      cookie     : true,
-      xfbml      : true,
-      version    : '{api-version}'
-    });
-      
-    FB.AppEvents.logPageView();   
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
   </body>
 

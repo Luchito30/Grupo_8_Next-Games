@@ -72,8 +72,9 @@ module.exports={
               defaults: {
                 firstName: firstName,
                 email,
-                image:'userdefault.png',
+                image:picture,
                 rolId: 2,
+                picture,
                 addressId:address.id,
                 socialId:facebookId,
                 socialprovider: provider
@@ -83,10 +84,12 @@ module.exports={
             if (!isCreate) {
               await address.destroy();
             }
+        
       
             req.session.userLogin = {
               id,
               firstName,
+              image:picture,
               rol: rolId
             };
       
