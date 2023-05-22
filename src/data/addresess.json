@@ -1,0 +1,20 @@
+[
+  {
+    "address": "Lavalle 850",
+    "municipio": "Ciudad autonoma de buenos aires",
+    "localidad": "Comuna 1",
+    "province": "Buenos Aires",
+    "codArea": 11,
+    "telefono": "0800-420-0809",
+    "zipCode": 1047
+  },
+  {
+    "address": "siempre viva 123",
+    "municipio": "Berazategui",
+    "localidad": "villa españa",
+    "province": "Buenos Aires",
+    "codArea": 11,
+    "telefono": "69430476",
+    "zipCode": 1884
+  }
+]

@@ -1,3 +1,7 @@
+.crear__body{
+    background-image: url(/images/fondoformulario.jpg);
+    background-size: contain;
+}
 .text-crear {
     font-family: 'Inter', sans-serif;
     color: red;
@@ -6,18 +10,22 @@
     margin-top: -20px;
     background-color: snow;
     font-size: 13px;
+    filter: drop-shadow(2px -6px 4px black);
 }
 .titulo-crear{
     text-align: center;
     color: white;
     margin-bottom: 30px;
+    filter: drop-shadow(6px 3px 1px black);
 }
 .crear-form{
     border: 1px solid white;
     display: block;
-    margin: 30px auto;
+    border-radius: 80px;
+    filter: drop-shadow(0px 0px 20px black);
+    margin: 100px auto;
     padding: 30px 0;
-    width: 80%;
+    width: 70%;
     padding-right: 15px;
     padding-left: 15px;
     background-color: var(--fondo1VioletaO);
@@ -59,9 +67,6 @@
     font-family: var(--FontSubtitulo);
     font-size: 15px;
 }
-#nameprodu, #precio, #discount{
-    color: white;
-}
 .crear__boxprecio{
     display: flex;
     justify-content: center;
@@ -80,7 +85,7 @@
 .crear-formulario-2__descripcion textarea{
     padding-left: 15px;
     padding-top: 10px;
-    width: 50%;
+    width: 100%;
     height: 100px;
     background-color: #7110bd;
     border-color: white;
@@ -91,21 +96,38 @@
 .submit-btn--crear{
     border: 1px solid white;
     background-color: #7110bd;
-    width: 50%;
     margin: 0 auto;
-    height: 100px;
+    height: 250px;
     border-radius: 20px;
     margin-bottom: 30px;
 }
 .submit-btn--crear label i{
-    font-size: 40px;
-    margin-top: 15px;
+    font-size: 100px;
+    margin-top: 50px;
     color: white;
     margin-bottom: 10px;
     cursor: pointer;
 }
 .submit-btn--crear label i:hover{
-    color:var(--fondo1VioletaO);
+    color: black;
+}
+.submit-btn--crear2{
+    border: 1px solid white;
+    background-color: #7110bd;
+    margin: 0 auto;
+    height: 250px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+.submit-btn--crear2 label i{
+    font-size: 100px;
+    margin-top: 50px;
+    color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.submit-btn--crear2 label i:hover{
+    color: black;
 }
 .submit-btn--crea__nombrearchi{
     cursor: pointer;
@@ -115,58 +137,30 @@
 }
 .submit-btn--crear span{
     color: white;
-    font-size: 14px;
+    font-size: 20px;
 }
 .submit-btn--crear span:hover{
-    color:var(--fondo1VioletaO);
+    color: black;
+    font-weight: 600;
+}
+.submit-btn--crear div{
+    color: white;
+    font-size: 20px;
+}
+.submit-btn--crear div:hover{
+    color: black;
+    font-weight: 600;
 }
 .submit-btn--crear__buscar{
     display: none;
 }
-.submit-btn--crear2{
-    border: 1px solid white;
-    background-color: #7110bd;
-    width: 50%;
-    margin: 0 auto;
-    height: 100px;
-    border-radius: 20px;
-    margin-bottom: 30px;
-}
-.submit-btn--crear2 label i{
-    font-size: 40px;
-    margin-top: 15px;
-    color: white;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-.submit-btn--crear2 label i:hover{
-    color:var(--fondo1VioletaO);
-}
-.submit-btn--crea__nombrearchi2{
-    cursor: pointer;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 .submit-btn--crear2 span{
     color: white;
-    font-size: 14px;
+    font-size: 20px;
 }
 .submit-btn--crear2 span:hover{
-    color:var(--fondo1VioletaO);
-}
-.submit-btn--crear__buscar2{
-    display: none;
-}
-.submit-btn--crear3 span{
-    color: white;
-    font-size: 14px;
-}
-.submit-btn--crear3 span:hover{
-    color:var(--fondo1VioletaO);
-}
-.submit-btn--crear__buscar3{
-    display: none;
+    color: black;
+    font-weight: 600;
 }
 .form-control{
     height: 25px;
@@ -190,6 +184,7 @@
     transition: all 0.3s;
     background-color: #7110bd;
     font-size: 13px;
+    color: white;
 }
 .crear-form .crear-formulario-2__precio input::placeholder{
     color: white;
@@ -212,7 +207,7 @@
 .crear-btn--submit, .crear-btn--reset{
     color: white;
     border: none;
-    background-color: var(--fondo2VioletaC);
+    background-color: #0075fd;
     border-radius: 10px;
     width: 30%;
     height: 30px;
@@ -222,7 +217,7 @@
 .crear-btn--cancelar{
     color: white;
     border: none;
-    background-color: var(--fondo2VioletaC);
+    background-color: #0075fd;
     border-radius: 10px;
     width: 30%;
     height: 30px;
@@ -239,4 +234,59 @@
 .crear-btn--submit:hover , .crear-btn--reset:hover , .crear-btn--cancelar:hover{
     background-color: var(--letrasSubtitulos2);
 }
+.descriptioninfo--small{
+    filter: drop-shadow(2px 1px 0px black);
+}
+.crear-btnform{
+    filter: drop-shadow(2px 6px 3px black);
+}
+.form-produ-control::placeholder{
+    color: white;
+}
+.custom-selectedimg{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.custom-image-class2 {
+    margin-bottom: 8px;
+    display: inline-block;
+    height: 180px;
+    margin-top: 20px;
+    object-fit: contain;
+    border: 2px solid black;
+    background-color: white;
+    width: 19%;
+}
+.is-invalid{
+    border: 3px solid rgba(255, 0, 0, 0.8)!important;
+    filter: drop-shadow(2px,4px,2px black);
+}
+.is-valid{
+    border: 3px solid rgba(0, 255, 0, 0.8)!important;
+    filter: drop-shadow(2px,4px,2px black);
+}
 
+.edicion--image__form{
+    height: 180px;
+    margin-top: 0px;
+    object-fit: contain;
+    border: 2px solid black;
+    background-color: white;
+}
+.edicion__container--images{
+    gap: 5px;
+    justify-content: center;
+    display: flex;
+}
+.edicion--image__form2{
+    width: 19%;
+    object-fit: contain;
+    border: 2px solid black;
+    margin-top: 20px;
+    background-color: white;
+    height: 180px;
+}
+#edicion__fanull{
+    display: none;
+}

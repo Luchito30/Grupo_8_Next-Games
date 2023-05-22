@@ -7,7 +7,8 @@
 }
 
 #headeradmin__table{
-    margin-bottom: 0;
+    position: relative;
+    top: 16px;
 }
 
 .headeradmin__logo{
@@ -23,12 +24,6 @@
 #headeradmin__titulo{
     height: 75px;
     width: 50%;
-}
-
-.headeradmin__tituloletra{
-    font-family: var(--FontTitulo);
-    position: relative;
-    top: 15px;
 }
 
 .headeradmin__section{

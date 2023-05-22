@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+body{
+    background-image: url(/images/fondohome.jpg);
+    background-size: contain;
+}
+
 a {
     text-decoration: none;
 }

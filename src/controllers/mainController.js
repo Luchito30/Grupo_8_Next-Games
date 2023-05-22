@@ -1,51 +1,130 @@
-const fs = require('fs');
-const path = require('path');
-const { readJSON, writeJSON} = require("../data");
+const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+const db = require("../database/models");
+const { Op } = require("sequelize");
+const { validationResult } = require('express-validator');
 
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+module.exports = {
+  home: (req, res) => {
 
-module.exports  = {
-    home: (req,res) =>{
-    const products = readJSON("productDataBase.json");
-    const inSale = products.filter(product => product.category === "in-sale" );
-    const computacion = products.filter(product => product.subCategory === "Notebooks" );
-    const ingresos = products.filter(product => product.category === "newer" );
-    const tarjetas = products.filter(product => product.subCategory === "Gifts Cards" );
-    const consolas = products.filter(product => product.subCategory === "Consolas" );
-    const juegos = products.filter(product => product.subCategory === "Juegos" );
-     return res.render('home',{
-        title: " Next Games | Home",
-        inSale,
-        computacion,
-        ingresos,
-        tarjetas,
-        consolas,
-        juegos,
-        toThousand
-     })   
-    },
-    newslletter: (req,res) =>{
-        const noticias =  readJSON("newsletter.json")
-        const{email}= req.body;
+      const ID_compu = 5;
+      const ID_ingresos = 2;
+      const ID_tarjeta = 3;
+      const ID_consolas = 4;
+      const ID_juegos = 1;
 
-        const newNoticia={
-            id:+noticias[noticias.length -1].id +1,
+      const inSale = db.Product.findAll({
+        where: {
+          discount: { [Op.gt]: 0 },
+        },
+        include: ["state", "images"],
+         limit: 10,
+      });
+
+      const computacion = db.Product.findAll({
+        where:{
+          subcategoryId: ID_compu
+        },
+          include: ["images", "state"],
+      });
+
+      const ingresos = db.Product.findAll({
+        where: {
+          stateId: ID_ingresos
+        },
+        include: [{
+          association: 'state'
+        }, 'images', 'subcategories']
+      })
+
+      const tarjetas =  db.Product.findAll({
+        where:{
+          subcategoryId: ID_tarjeta
+        },
+          include: ["images", "state"],
+      });
+
+      const consolas =  db.Product.findAll({
+        where:{
+          subcategoryId: ID_consolas
+        },
+          include: ["images", "state"],
+      });
+
+      const juegos =  db.Product.findAll({
+        where:{
+          subcategoryId: ID_juegos
+        },
+          include: ["images", "state"],
+      });
+
+      const errors = validationResult(req);
+
+      if (errors.isEmpty()) {
+        const { email } = req.body;
+        
+        if (email) {
+          db.NewsLatter.create({
             email: email
-        };
-          noticias.push(newNoticia);
-          writeJSON("newsletter.json", noticias)
-          return res.redirect('/')
-
-    },
-     search: (req, res) => {
-        const products = readJSON("productDataBase.json")
-        const {keywords} = req.query;
-        const productFiltered = products.filter(product => product.name.toLowerCase().includes(keywords.toLowerCase()) || product.subCategory.toLowerCase().includes(keywords.toLowerCase()) || product.description.toLowerCase().includes(keywords.toLowerCase()))
-        return res.render('results', {
-            title: "Next Games | Search",
-			productFiltered,
-			toThousand,
-			keywords,
-		})
-    }
-}
+          });
+        }
+      
+        Promise.all([inSale,computacion,ingresos,tarjetas,consolas,juegos])
+          .then(([inSale,computacion,ingresos,tarjetas,consolas,juegos]) =>{
+            return res.render("home", {
+              title: "Next Games | Home",
+              inSale,
+              computacion,
+              tarjetas,
+              consolas,
+              juegos,
+              ingresos,
+              toThousand,
+            })
+          })
+          .catch(error => console.log(error));
+      } else {
+        Promise.all([inSale,computacion,ingresos,tarjetas,consolas,juegos])
+          .then(([inSale,computacion,ingresos,tarjetas,consolas,juegos]) =>{
+            return res.render("home", {
+              title: "Next Games | Home",
+              inSale,
+              computacion,
+              tarjetas,
+              consolas,
+              juegos,
+              ingresos,
+              toThousand,
+              errors: errors.mapped(),
+              old: req.body
+            })
+          })
+          .catch(error => console.log(error));
+      }
+  },
+  search: (req, res) => {
+    const { keywords } = req.query;
+    db.Product.findAll({
+      where: {
+        [Op.or]:[{
+          name: {
+          [Op.like] : `%${keywords}%`
+        }},
+        {
+        description:{
+          [Op.like] : `%${keywords}%`
+        }}
+        ]
+        
+      },
+      include:['images','state','subcategories']
+    })
+    .then(product => {
+      return res.render("results", {
+        title: "Next Games | Search",
+        product,
+        toThousand,
+        keywords
+      });
+    }).catch(error => console.log(error)) 
+  },
+};

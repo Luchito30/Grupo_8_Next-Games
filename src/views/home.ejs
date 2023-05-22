@@ -3,7 +3,8 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
+<body class="body__home">
+    
     <%- include('./partials/header.ejs') %>
         <main>
 
@@ -12,18 +13,18 @@
                 <%- include('./partials/formadepago.ejs') %>
 
                     <div class="home__main--titulo">
-                        <h2>ULTIMAS OFERTAS</h2><a href="/products/insale"> ver más</a>
+                        <h2>ULTIMAS OFERTAS</h2><a href="/products/categorias/3"> ver más</a>
                     </div>
                     <section class="home__main__section">
-                        <% inSale.forEach(({id,image,price,discount,name,category})=> { %>
-                            <%- include('./partials/product',{ id, image, price, discount, name, category }) %>
+                        <% inSale.forEach(({id,image,price,discount,name, state})=> { %>
+                            <%- include('./partials/product',{ id, image, price, discount, name, state,toThousand }) %>
                                 <% }) %>
                     </section>
 
 
 
                     <div class="home__main--titulo">
-                        <h2>JUEGOS</h2> <a href="/products/juegos"> ver más</a>
+                        <h2>JUEGOS</h2> <a href="/products/subcategory/1"> ver más</a>
                     </div>
 
                     <section class="home__main__juegos">
@@ -33,8 +34,8 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <% juegos.forEach(({id,image,price,discount,name,category})=> { %>
-                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                <% juegos.forEach(({id,image,price,discount,name,state})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, state }) %>
                                         <% }) %>
                             </div>
                         
@@ -48,7 +49,7 @@
                 <%- include('./partials/bannermid.ejs') %>
 
                     <div class="home__main--titulo">
-                        <h2>NOTEBOOKS</h2> <a href="/products/notebook"> ver más</a>
+                        <h2>NOTEBOOKS</h2> <a href="/products/subcategory/5"> ver más</a>
                     </div>
 
                     <section class="home__main__notebook">
@@ -58,8 +59,8 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <% computacion.forEach(({id,image,price,discount,name,category})=> { %>
-                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                <% computacion.forEach(({id,image,price,discount,name,state})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, state }) %>
                                         <% }) %>
                             </div>
                             <!-- If we need navigation buttons -->
@@ -70,7 +71,7 @@
                     </section>
 
                     <div class="home__main--titulo">
-                        <h2>NUEVOS INGRESOS</h2> <a href="/products/ingresos"> ver más</a>
+                        <h2>NUEVOS INGRESOS</h2> <a href="/products/categorias/2"> ver más</a>
                     </div>
 
                     <section class="home__main__ingresos">
@@ -80,8 +81,8 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <% ingresos.forEach(({id,image,price,discount,name,category})=> { %>
-                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                <% ingresos.forEach(({id,image,price,discount,name,state})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, state }) %>
                                         <% }) %>
                             </div>
                             <!-- If we need navigation buttons -->
@@ -96,7 +97,7 @@
                     <%- include('./partials/bannerfinal.ejs') %>
 
                     <div class="home__main--titulo">
-                        <h2>TARJETAS DIGITALES PS4</h2><a href="/products/tarjetas"> ver más</a>
+                        <h2>TARJETAS DIGITALES PS4</h2><a href="/products/subcategory/3"> ver más</a>
                     </div>
 
 
@@ -107,8 +108,8 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <% tarjetas.forEach(({id,image,price,discount,name,category})=> { %>
-                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                <% tarjetas.forEach(({id,image,price,discount,name,state})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, state }) %>
                                         <% }) %>
                             </div>
                             <!-- If we need navigation buttons -->
@@ -118,7 +119,7 @@
                     </section>
 
                     <div class="home__main--titulo">
-                        <h2>CONSOLAS</h2><a href="/products/consolas"> ver más</a>
+                        <h2>CONSOLAS</h2><a href="/products/subcategory/4"> ver más</a>
                     </div>
 
 
@@ -129,8 +130,8 @@
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
-                                <% consolas.forEach(({id,image,price,discount,name,category})=> { %>
-                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, category }) %>
+                                <% consolas.forEach(({id,image,price,discount,name,state})=> { %>
+                                    <%- include('./partials/carrusel',{ id, image, price, discount, name, state }) %>
                                         <% }) %>
                             </div>
                             <!-- If we need navigation buttons -->
@@ -142,6 +143,8 @@
 
                     </section>
         </main>
+        <!-- carrito -->
+        <%- include('./partials/carrito.ejs') %>
         <!--whatsapp-->
         <%- include('./partials/whatsApp.ejs') %>
         <!-- footer -->

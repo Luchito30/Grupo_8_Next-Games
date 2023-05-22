@@ -3,41 +3,35 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
-    <%- include('partials/header') %> 
-    
-        <div class="home__main--titulo">
-            <h2>PRODUCTOS</h2>
-        </div>
+    <body>
+        <%- include('partials/header') %>
 
-        <% if (searchallprodu) { %>
-            <h2 class="dashboard__sn"><span class="home__main--titulo"><%= searchallprodu %></span></h2>
-        <% }%>
+            <div class="home__main--titulo">
+                <h2>
+                 
+                <% if( locals.subName ){ %>
+                    <%= locals.subName %>
+                <% } else { %>
+                      PRODUCTOS
+                <% } %>
+                </h2>
+            </div>
 
-        <section class="home__main__section">
-			<% products.forEach(({id,image,price,discount,name,category,subCategory}) => { %>
-				<%- include('./partials/product',{
-					id,
-					image,
-					price,
-					discount,
-					name,
-                    category,
-                    subCategory
-				}) %>
-			<% }) %>
-        </section>
-        
-        <% if (!products.length) { %>
-            <h2 class="dashboard__sn">No se encontro producto</h2>
-        <% }%>
-    
-	 <!--whatsapp-->
-     <%- include('./partials/whatsApp.ejs') %>
+                    <section class="home__main__section">
+                        <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                            <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
+                                %>
+                                <% }) %>
+                    </section>
 
-    <%- include('partials/footer') %>
+                        <%- include('./partials/carrito.ejs') %>
+                            <!--whatsapp-->
+                            <%- include('./partials/whatsApp.ejs') %>
 
-      <!-- fixed -->
-      <script src="/javascripts/fixed.js"></script>
-</body>
+                                <%- include('partials/footer') %>
+
+                                    <!-- fixed -->
+                                    <script src="/javascripts/fixed.js"></script>
+    </body>
+
 </html>

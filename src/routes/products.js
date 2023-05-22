@@ -1,24 +1,18 @@
 const express = require('express');
-const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,removeConfirm,remove,notebook,accesorios, consolas,tarjetas,juegos,perifericos,ofertas,ingresos} = require('../controllers/productController');
+const {carrito,detalleproducto,edicion, createItem,storeMainImage,index,update,remove,getFromSubcategory, getFromCategory} = require('../controllers/productController');
 const checkAdmin = require('../middlewares/checkAdmin');
 const {uploadproductImages} = require("../middlewares/upload");
 const { productValidator } = require('../validations');
-
+const checkUserLogin = require('../middlewares/checkUserLogin');
 
 const router = express.Router();
 
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', index); 
-router.get('/carrito', carrito);
+router.get('/carrito',checkUserLogin, carrito);
 router.get('/detalle-producto/:id', detalleproducto);
-router.get("/notebook", notebook);
-router.get("/accesorios", accesorios);
-router.get("/consolas", consolas);
-router.get("/tarjetas", tarjetas);
-router.get("/juegos", juegos);
-router.get("/perifericos", perifericos);
-router.get("/insale", ofertas);
-router.get("/ingresos", ingresos);
+router.get('/subcategory/:subcategoryId', getFromSubcategory);
+router.get('/categorias/:stateId',  getFromCategory);
 
 /*** CREATE ONE PRODUCT ***/
 router.get('/createItem/',checkAdmin, createItem);
@@ -29,7 +23,6 @@ router.get('/edicion/:id',checkAdmin, edicion);
 router.put('/edicion/:id',uploadproductImages.fields([{name: 'image'},{name: 'images'}]),productValidator,update);
 
 /*** Eliminar producto ***/
-router.get("/remove/:id",checkAdmin,removeConfirm);
 router.delete("/remove/:id",remove);
 
 module.exports = router;
