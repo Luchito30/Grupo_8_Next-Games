@@ -494,6 +494,7 @@ h3 {
     .main-detalledeproducto-boxOne {
         width: 45%;
         flex-wrap: wrap;
+        margin-left: 40px;
     }
 
     .detalle-carrito {
