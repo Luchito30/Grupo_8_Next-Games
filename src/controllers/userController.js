@@ -113,7 +113,7 @@ module.exports = {
                 include: [
                     {
                         association: 'address',
-                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad', 'codArea', 'telefono']
                     }
                 ],
             })
@@ -130,7 +130,7 @@ module.exports = {
                 include: [
                     {
                         association: 'address',
-                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad', 'codArea', 'telefono']
                     }
                 ],
             })
@@ -151,7 +151,7 @@ module.exports = {
         if (errors.isEmpty()) {
 
 
-            const { firstName, LastName, userName, address, municipio, province, zipCode, localidad } = req.body;
+            const { firstName, LastName, userName, address, municipio, province, zipCode, localidad , codArea, telefono } = req.body;
             const { id } = req.session.userLogin;
 
             db.User.findByPk(id)
@@ -159,10 +159,12 @@ module.exports = {
                     const addressUpdate = db.Address.update(
                         {
                             address: address ? address.trim() : null,
-                            province: province ? province.trim() : null,
+                            province: province ? province : null,
                             zipCode: zipCode ? zipCode : null,
                             localidad: localidad ? localidad : null,
-                            municipio: municipio ? municipio : null
+                            municipio: municipio ? municipio : null,
+                            codArea: codArea ? codArea : null, 
+                            telefono: telefono ? telefono.trim() : null
                         },
                         {
                             where: {
@@ -210,7 +212,7 @@ module.exports = {
                 include: [
                     {
                         association: 'address',
-                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad']
+                        attributes: ['address', 'municipio', 'province', 'zipCode', 'localidad', 'codArea', 'telefono']
                     }
                 ],
 

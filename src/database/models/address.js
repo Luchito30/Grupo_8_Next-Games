@@ -18,6 +18,8 @@ module.exports = (sequelize, DataTypes) => {
     province: DataTypes.STRING,
     municipio: DataTypes.STRING,
     localidad: DataTypes.STRING,
+    codArea: DataTypes.INTEGER,
+    telefono: DataTypes.STRING,
     zipCode: DataTypes.INTEGER
   }, {
     sequelize,

@@ -169,6 +169,26 @@
                             <%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %>
                           </small>
                         </div>
+
+                        <div class="col-12 col-md-2">
+                          <label for="address" class="form-label profile--titulo__input">Código de Area</label>
+                          <input type="number"
+                            class="form-control etiloprofile <%= (locals.errors && errors.codArea) && 'is-invalid'%>" id="codArea"
+                            name="codArea" value="<%= user.address.codArea%>">
+                          <small class="text-crear" id="codAreaError">
+                            <%= locals.errors && errors.codArea ? errors.codArea.msg : null %>
+                          </small>
+                        </div>
+
+                        <div class="col-12 col-md-4">
+                          <label for="address" class="form-label profile--titulo__input">Telefóno</label>
+                          <input type="text"
+                            class="form-control etiloprofile <%= (locals.errors && errors.telefono) && 'is-invalid'%>" id="telefono"
+                            name="telefono" value="<%= user.address.telefono%>">
+                          <small class="text-crear" id="telefonoError">
+                            <%= locals.errors && errors.telefono ? errors.telefono.msg : null %>
+                          </small>
+                        </div>
                       
                       <div class="d-flex justify-content-end">
                         <button for="submit" class="btn btn-primary">Actualizar domicilio</button>

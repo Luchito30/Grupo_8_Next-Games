@@ -21,6 +21,12 @@ module.exports = {
       localidad: {
         type: Sequelize.STRING
       },
+      codArea:{
+      type: Sequelize.INTEGER
+      },
+      telefono:{
+      type: Sequelize.STRING
+      },
       zipCode: {
         type: Sequelize.INTEGER
       },

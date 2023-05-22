@@ -49,6 +49,23 @@ module.exports = [
     check('address')
     .isLength({ min: 2 }).withMessage('Mínimo dos letras').bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('No se permiten caracteres especiales en la dirección'),
+
+    check('province')
+    .notEmpty().withMessage('Se debe Elejir una provincia'),
+
+    check('municipio')
+    .notEmpty().withMessage('Se debe Elejir un Municipio'),
+
+    check('localidad')
+    .notEmpty().withMessage('Se debe Elejir una localidad'),
+
+    check('codArea')
+    .isNumeric().withMessage('Solo se permiten números en el código de area').bail()
+    .isLength({ min: 2, max: 4 }).withMessage('El código de area debe tener entre 2 y 4 dígitos'),
+
+    check('telefono')
+    .isNumeric().withMessage('Solo se permiten números en el telefóno').bail()
+    .isLength({ min: 4, max: 10 }).withMessage('El telefóno debe tener entre 4 y 10 dígitos'),
     
     check('zipCode')
   .isNumeric().withMessage('Solo se permiten números en el código postal').bail()

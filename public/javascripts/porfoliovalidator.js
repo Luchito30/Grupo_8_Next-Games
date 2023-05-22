@@ -3,6 +3,8 @@ const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('LastName');
 const userNameInput = document.getElementById('userName');
 const addressInput = document.getElementById('address');
+const codAreaInput = document.getElementById('codArea');
+const telefonoInput = document.getElementById('telefono');
 const zipCodeInput = document.getElementById('zipCode');
 const messageContainer = document.getElementById('messageContainer');
 const imageInput = document.getElementById('formFile');
@@ -12,6 +14,8 @@ firstNameInput.addEventListener('input', validateFirstName);
 lastNameInput.addEventListener('input', validateLastName);
 userNameInput.addEventListener('input', validateUserName);
 addressInput.addEventListener('input', validateAddress);
+codAreaInput.addEventListener('input', validatecodArea);
+telefonoInput.addEventListener('input', validatetelefono);
 zipCodeInput.addEventListener('input', validateZipCode);
 
 form.addEventListener('submit', function (event) {
@@ -24,6 +28,8 @@ function validateForm() {
     const isLastNameValid = validateLastName();
     const isUserNameValid = validateUserName();
     const isAddressValid = validateAddress();
+    const iscodAreaValid = validatecodArea();
+    const istelefonoValid = validatetelefono();
     const isZipCodeValid = validateZipCode();
 
     if (
@@ -31,6 +37,8 @@ function validateForm() {
         isLastNameValid &&
         isUserNameValid &&
         isAddressValid &&
+        iscodAreaValid &&
+        istelefonoValid &&
         isZipCodeValid
     ) {
         form.submit();
@@ -225,6 +233,50 @@ function validateAddress() {
     } else {
         addressInput.classList.remove('is-invalid');
         addressInput.classList.add('is-valid');
+        errorContainer.textContent = '';
+        return true;
+    }
+}
+
+function validatecodArea() {
+    const codAreaInput = document.getElementById('codArea');
+    const errorContainer = document.getElementById('codAreaError');
+
+    if (!/^[0-9]+$/.test(codAreaInput.value.trim())) {
+        codAreaInput.classList.add('is-invalid');
+        codAreaInput.classList.remove('is-valid');
+        errorContainer.textContent = 'Código de area inválido';
+        return false;
+    } else if (codAreaInput.value.trim().length > 4) {
+        codAreaInput.classList.add('is-invalid');
+        codAreaInput.classList.remove('is-valid');
+        errorContainer.textContent = 'El código de area no puede tener más de 4 caracteres';
+        return false;
+    } else {
+        codAreaInput.classList.remove('is-invalid');
+        codAreaInput.classList.add('is-valid');
+        errorContainer.textContent = '';
+        return true;
+    }
+}
+
+function validatetelefono() {
+    const telefonoInput = document.getElementById('telefono');
+    const errorContainer = document.getElementById('telefonoError');
+
+    if (!/^[0-9]+$/.test(telefonoInput.value.trim())) {
+        telefonoInput.classList.add('is-invalid');
+        telefonoInput.classList.remove('is-valid');
+        errorContainer.textContent = 'Telefóno inválido';
+        return false;
+    } else if (telefonoInput.value.trim().length > 10) {
+        telefonoInput.classList.add('is-invalid');
+        telefonoInput.classList.remove('is-valid');
+        errorContainer.textContent = 'El telefóno no puede tener más de 10 caracteres';
+        return false;
+    } else {
+        telefonoInput.classList.remove('is-invalid');
+        telefonoInput.classList.add('is-valid');
         errorContainer.textContent = '';
         return true;
     }
