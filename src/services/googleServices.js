@@ -1,9 +1,9 @@
 const passport = require('passport')
 const OAuth2Strategy = require('passport-google-oauth').OAuth2Strategy
 
-const clientID = "619041089594-eslhkpst0jp03b8sk5a5lhjdvnakr8n4.apps.googleusercontent.com"
-const clientSecret = "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"
-const callbackURL = "https://nextgames.onrender.com/auth/google/callback"
+const clientID = process.env.GOOGLE_CLIENT_ID
+const clientSecret = process.env.GOOGLE_CLIENT_SECRET
+const callbackURL = process.env.GOOGLE_REDIRECT_CALLBACK
 
 const strategyConfing = new OAuth2Strategy({
     clientID,

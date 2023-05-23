@@ -1,9 +1,9 @@
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 
-const clientID = "633357834994765"
-const clientSecret = "a4e279e07cb38ca386f649a3479ffb00"
-const callbackURL = "https://nextgames.onrender.com/auth/facebook/callback"
+const clientID = process.env.FACEBOOK_CLIENT_ID
+const clientSecret = process.env.FACEBOOK_SECRET_KEY
+const callbackURL = process.env.FACEBOOK_CALLBACK_URL
 
 const strategyConfig = new FacebookStrategy(
     {
