@@ -248,101 +248,110 @@ inputImages.addEventListener('change', function (e) {
   }
 });
 
-formAddProduct.addEventListener('submit', function (event) {
-  event.preventDefault();
-  let error = false;
+function resetFormState() {
+    const errorElements = formAddProduct.querySelectorAll('.is-invalid');
+    errorElements.forEach(element => {
+      element.classList.remove('is-invalid');
+    });
+}
 
-  const errorMessages = {
-    name: "El nombre del producto es obligatorio",
-    price: "Se debe indicar un precio",
-    discount: "Se debe indicar un descuento",
-    category: "Debe elegir un estado",
-    subCategory: "Debe elegir una categoria",
-    description: "Se debe ingresar una descripción al producto",
-    image: "Debe seleccionar una imagen",
-    images: "Debe elegir mínimo 1 imagen",
-  };
-
-  const fields = this.querySelectorAll('input, textarea, select');
-  fields.forEach(field => {
-    const fieldId = field.id;
-    if (!field.value || field.classList.contains('is-invalid')) {
-      error = true;
-
-      const errorElement = document.getElementById(`${fieldId}Error`);
-      if (errorElement) {
-        errorElement.innerHTML = errorMessages[fieldId] || "";
-      }
-
-      field.classList.add('is-invalid');
-    }
-  });
-
-  const submitBtnContainer = document.querySelector('.submit-btn--crear');
-  submitBtnContainer.classList.add('is-invalid');
-
-  const priceField = document.getElementById('price');
-  if (!priceField.value) {
-    error = true;
-    const priceErrorElement = document.getElementById('precioError');
-    if (priceErrorElement) {
-      priceErrorElement.innerHTML = errorMessages.price;
-    }
-    priceField.classList.add('is-invalid');
-  }
-
-  const categoryField = document.getElementById('category');
-  if (!categoryField.value) {
-    error = true;
-    const categoryErrorElement = document.getElementById('stateError');
-    if (categoryErrorElement) {
-      categoryErrorElement.innerHTML = errorMessages.category;
-    }
-    categoryField.classList.add('is-invalid');
-  }
-
-  const subCategoryField = document.getElementById('subCategory');
-  if (!subCategoryField.value) {
-    error = true;
-    const subCategoryErrorElement = document.getElementById('categoryError');
-    if (subCategoryErrorElement) {
-      subCategoryErrorElement.innerHTML = errorMessages.subCategory;
-    }
-    subCategoryField.classList.add('is-invalid');
-  }
-
-  const imagesField = document.getElementById('images');
-  const existingImages = imagesField.getAttribute('data-existing-images') || '';
-
-  if (imagesField.files.length > 0) {
-    imagesField.classList.remove('is-invalid');
-    const imagesErrorElement = document.getElementById('imagesError');
-    if (imagesErrorElement) {
-      imagesErrorElement.innerHTML = "";
-    }
-  } else if (existingImages.trim().length === 0) {
-    error = true;
-    const imagesErrorElement = document.getElementById('imagesError');
-    if (imagesErrorElement) {
-      imagesErrorElement.innerHTML = errorMessages.images;
-    }
-    const submitBtnContainer2 = document.querySelector('.submit-btn--crear2');
-    submitBtnContainer2.classList.add('is-invalid');
-  }
-
-  if (error) {
-    const formErrorElement = document.getElementById('formError');
-    if (formErrorElement) {
-      formErrorElement.innerHTML = "Los campos señalados son obligatorios.";
-    }
-  } else {
-    Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Accion realizada con exito',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    this.submit();
-  }
-});
+    formAddProduct.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let error = false;
+      
+        const errorMessages = {
+          name: "El nombre del producto es obligatorio",
+          price: "Se debe indicar un precio",
+          discount: "Se debe indicar un descuento",
+          category: "Debe elegir un estado",
+          subCategory: "Debe elegir una categoria",
+          description: "Se debe ingresar una descripción al producto",
+          image: "Debe seleccionar una imagen",
+          images: "Debe elegir mínimo 1 imagen",
+        };
+      
+        const fields = this.querySelectorAll('input, textarea, select');
+        fields.forEach(field => {
+          const fieldId = field.id;
+          if (!field.value || field.classList.contains('is-invalid')) {
+            error = true;
+      
+            const errorElement = document.getElementById(`${fieldId}Error`);
+            if (errorElement) {
+              errorElement.innerHTML = errorMessages[fieldId] || "";
+            }
+      
+            field.classList.add('is-invalid');
+          }
+        });
+      
+        const submitBtnContainer = document.querySelector('.submit-btn--crear');
+        submitBtnContainer.classList.add('is-invalid');
+      
+        const priceField = document.getElementById('price');
+        if (!priceField.value) {
+          error = true;
+          const priceErrorElement = document.getElementById('precioError');
+          if (priceErrorElement) {
+            priceErrorElement.innerHTML = errorMessages.price;
+          }
+          priceField.classList.add('is-invalid');
+        }
+      
+        const categoryField = document.getElementById('category');
+        if (!categoryField.value) {
+          error = true;
+          const categoryErrorElement = document.getElementById('stateError');
+          if (categoryErrorElement) {
+            categoryErrorElement.innerHTML = errorMessages.category;
+          }
+          categoryField.classList.add('is-invalid');
+        }
+      
+        const subCategoryField = document.getElementById('subCategory');
+        if (!subCategoryField.value) {
+          error = true;
+          const subCategoryErrorElement = document.getElementById('categoryError');
+          if (subCategoryErrorElement) {
+            subCategoryErrorElement.innerHTML = errorMessages.subCategory;
+          }
+          subCategoryField.classList.add('is-invalid');
+        }
+      
+        const imagesField = document.getElementById('images');
+        const existingImages = imagesField.getAttribute('data-existing-images') || '';
+      
+        if (imagesField.files.length > 0) {
+          imagesField.classList.remove('is-invalid');
+          const imagesErrorElement = document.getElementById('imagesError');
+          if (imagesErrorElement) {
+            imagesErrorElement.innerHTML = "";
+          }
+        } else if (existingImages.trim().length === 0) {
+          error = true;
+          const imagesErrorElement = document.getElementById('imagesError');
+          if (imagesErrorElement) {
+            imagesErrorElement.innerHTML = errorMessages.images;
+          }
+          const submitBtnContainer2 = document.querySelector('.submit-btn--crear2');
+          submitBtnContainer2.classList.add('is-invalid');
+        }
+      
+        if (error) {
+          const formErrorElement = document.getElementById('formError');
+          if (formErrorElement) {
+            formErrorElement.innerHTML = "Los campos señalados son obligatorios.";
+          }
+          resetFormState();
+        } else {
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Acción realizada con éxito',
+            showConfirmButton: false,
+            timer: 1500
+          });
+          resetFormState();
+          formAddProduct.submit();
+        }
+      });

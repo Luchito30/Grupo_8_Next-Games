@@ -213,6 +213,7 @@
     height: 30px;
     transition: all 1.5s;
     display: inline-block;
+    cursor: pointer;
 }
 .crear-btn--cancelar{
     color: white;
