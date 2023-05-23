@@ -20,12 +20,12 @@ const subCategories = subCategoriesseed.map(({name},index) => {
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('subCategories', subCategories, {});
+    await queryInterface.bulkInsert('Subcategories', subCategories, {});
 
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('subCategories', null, {});
+    await queryInterface.bulkDelete('Subcategories', null, {});
 
   }
 };
