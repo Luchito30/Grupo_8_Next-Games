@@ -64,6 +64,26 @@
 #profile--imgavatar{
     max-height: 300px;
 }
+.etiloprofile{
+    height: 39px;
+    border-radius: 7px;
+    background-color: #7110bd;
+    width: 50%;
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+.etiloprofile2{
+    background-color: #7110bd;
+    border: 1px solid white;
+    margin-bottom: 30px;
+    color: white;
+}
+.profile--titulo__input{
+    font-weight: 900;
+    filter: drop-shadow(4px 2px 2px black);
+}
 
 @media(min-width: 769px){
     #profile--footer{

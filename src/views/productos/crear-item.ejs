@@ -3,7 +3,7 @@
 
 <%- include('../partials/head.ejs') %>
 
-  <body>
+  <body class="crear__body">
     <!-- header -->
     <%- include('../partials/headerAdmin.ejs') %>
 
@@ -86,7 +86,7 @@
           </div>
 
           <small class="text-crear" id="categoryError">
-            <%= locals.errors && errors.category ? errors.category.msg : null %>
+            <%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %>
           </small>
           <div class="dropdown--crear">
             <select name="subCategory" id="subCategory"
@@ -181,7 +181,10 @@
 
       <%- include('../partials/footer.ejs') %>
 
+      
+      <!-- SweetAlert-->
         <script src="/javascripts/formproducts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 
 </html>

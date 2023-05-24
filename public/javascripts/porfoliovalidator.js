@@ -3,8 +3,8 @@ const firstNameInput = document.getElementById('firstName');
 const lastNameInput = document.getElementById('LastName');
 const userNameInput = document.getElementById('userName');
 const addressInput = document.getElementById('address');
-const cityInput = document.getElementById('city');
-const provinceInput = document.getElementById('province');
+const codAreaInput = document.getElementById('codArea');
+const telefonoInput = document.getElementById('telefono');
 const zipCodeInput = document.getElementById('zipCode');
 const messageContainer = document.getElementById('messageContainer');
 const imageInput = document.getElementById('formFile');
@@ -14,8 +14,8 @@ firstNameInput.addEventListener('input', validateFirstName);
 lastNameInput.addEventListener('input', validateLastName);
 userNameInput.addEventListener('input', validateUserName);
 addressInput.addEventListener('input', validateAddress);
-cityInput.addEventListener('input', validateCity);
-provinceInput.addEventListener('input', validateProvince);
+codAreaInput.addEventListener('input', validatecodArea);
+telefonoInput.addEventListener('input', validatetelefono);
 zipCodeInput.addEventListener('input', validateZipCode);
 
 form.addEventListener('submit', function (event) {
@@ -28,8 +28,8 @@ function validateForm() {
     const isLastNameValid = validateLastName();
     const isUserNameValid = validateUserName();
     const isAddressValid = validateAddress();
-    const isCityValid = validateCity();
-    const isProvinceValid = validateProvince();
+    const iscodAreaValid = validatecodArea();
+    const istelefonoValid = validatetelefono();
     const isZipCodeValid = validateZipCode();
 
     if (
@@ -37,15 +37,15 @@ function validateForm() {
         isLastNameValid &&
         isUserNameValid &&
         isAddressValid &&
-        isCityValid &&
-        isProvinceValid &&
+        iscodAreaValid &&
+        istelefonoValid &&
         isZipCodeValid
     ) {
         form.submit();
         
         setTimeout(function () {
             showMessage('Datos actualizados');
-        }, 500); // Cambia el valor si deseas ajustar el retraso antes de mostrar el mensaje
+        }, 500);
     } else {
         scrollToError();
     }
@@ -225,12 +225,7 @@ function validateAddress() {
     const addressInput = document.getElementById('address');
     const errorContainer = document.getElementById('addressError');
 
-    if (addressInput.value.trim() === '') {
-        addressInput.classList.add('is-invalid');
-        addressInput.classList.remove('is-valid');
-        errorContainer.textContent = 'La dirección es obligatoria';
-        return false;
-    } else if (!/^[a-zA-Z0-9\s]+$/.test(addressInput.value.trim())) {
+    if (!/^[a-zA-Z0-9\s]+$/.test(addressInput.value.trim())) {
         addressInput.classList.add('is-invalid');
         addressInput.classList.remove('is-valid');
         errorContainer.textContent = 'Dirección inválida';
@@ -243,45 +238,45 @@ function validateAddress() {
     }
 }
 
-function validateCity() {
-    const cityInput = document.getElementById('city');
-    const errorContainer = document.getElementById('cityError');
+function validatecodArea() {
+    const codAreaInput = document.getElementById('codArea');
+    const errorContainer = document.getElementById('codAreaError');
 
-    if (cityInput.value.trim() === '') {
-        cityInput.classList.add('is-invalid');
-        cityInput.classList.remove('is-valid');
-        errorContainer.textContent = 'La ciudad es obligatoria';
+    if (!/^[0-9]+$/.test(codAreaInput.value.trim())) {
+        codAreaInput.classList.add('is-invalid');
+        codAreaInput.classList.remove('is-valid');
+        errorContainer.textContent = 'Código de area inválido';
         return false;
-    } else if (!/^[a-zA-Z\s]+$/.test(cityInput.value.trim())) {
-        cityInput.classList.add('is-invalid');
-        cityInput.classList.remove('is-valid');
-        errorContainer.textContent = 'Ciudad inválida';
+    } else if (codAreaInput.value.trim().length > 4) {
+        codAreaInput.classList.add('is-invalid');
+        codAreaInput.classList.remove('is-valid');
+        errorContainer.textContent = 'El código de area no puede tener más de 4 caracteres';
         return false;
     } else {
-        cityInput.classList.remove('is-invalid');
-        cityInput.classList.add('is-valid');
+        codAreaInput.classList.remove('is-invalid');
+        codAreaInput.classList.add('is-valid');
         errorContainer.textContent = '';
         return true;
     }
 }
 
-function validateProvince() {
-    const provinceInput = document.getElementById('province');
-    const errorContainer = document.getElementById('provinceError');
+function validatetelefono() {
+    const telefonoInput = document.getElementById('telefono');
+    const errorContainer = document.getElementById('telefonoError');
 
-    if (provinceInput.value.trim() === '') {
-        provinceInput.classList.add('is-invalid');
-        provinceInput.classList.remove('is-valid');
-        errorContainer.textContent = 'La provincia es obligatoria';
+    if (!/^[0-9]+$/.test(telefonoInput.value.trim())) {
+        telefonoInput.classList.add('is-invalid');
+        telefonoInput.classList.remove('is-valid');
+        errorContainer.textContent = 'Telefóno inválido';
         return false;
-    } else if (!/^[a-zA-Z\s]+$/.test(provinceInput.value.trim())) {
-        provinceInput.classList.add('is-invalid');
-        provinceInput.classList.remove('is-valid');
-        errorContainer.textContent = 'Provincia inválida';
+    } else if (telefonoInput.value.trim().length > 10) {
+        telefonoInput.classList.add('is-invalid');
+        telefonoInput.classList.remove('is-valid');
+        errorContainer.textContent = 'El telefóno no puede tener más de 10 caracteres';
         return false;
     } else {
-        provinceInput.classList.remove('is-invalid');
-        provinceInput.classList.add('is-valid');
+        telefonoInput.classList.remove('is-invalid');
+        telefonoInput.classList.add('is-valid');
         errorContainer.textContent = '';
         return true;
     }
@@ -291,12 +286,7 @@ function validateZipCode() {
     const zipCodeInput = document.getElementById('zipCode');
     const errorContainer = document.getElementById('zipCodeError');
 
-    if (zipCodeInput.value.trim() === '') {
-        zipCodeInput.classList.add('is-invalid');
-        zipCodeInput.classList.remove('is-valid');
-        errorContainer.textContent = 'El código postal es obligatorio';
-        return false;
-    } else if (!/^[0-9]+$/.test(zipCodeInput.value.trim())) {
+    if (!/^[0-9]+$/.test(zipCodeInput.value.trim())) {
         zipCodeInput.classList.add('is-invalid');
         zipCodeInput.classList.remove('is-valid');
         errorContainer.textContent = 'Solo se permiten números';

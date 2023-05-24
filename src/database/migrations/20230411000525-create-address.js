@@ -12,11 +12,20 @@ module.exports = {
       address: {
         type: Sequelize.STRING
       },
-      city: {
-        type: Sequelize.STRING
-      },
       province: {
         type: Sequelize.STRING
+      },
+      municipio: {
+        type: Sequelize.STRING
+      },
+      localidad: {
+        type: Sequelize.STRING
+      },
+      codArea:{
+      type: Sequelize.INTEGER
+      },
+      telefono:{
+      type: Sequelize.STRING
       },
       zipCode: {
         type: Sequelize.INTEGER

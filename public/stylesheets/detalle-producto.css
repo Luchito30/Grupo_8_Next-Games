@@ -1,5 +1,4 @@
 .main-detalledeproducto {
-    background-color: var(--fondo2VioletaC);
     display: flex;
     flex-direction: column;
 }
@@ -15,6 +14,11 @@
 #description--more {
     margin-top: 15px;
     margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    filter: drop-shadow(2px 4px 2px black);
+    color: white;
 }
 
 
@@ -48,11 +52,22 @@
     border-radius: 20px;
 }
 
-.envios h4 {
-    color: #fff;
-    font-family: var(--FontSubtitulo);
+.envios{
+    color: white;
     margin: 5px;
-    font-size: 13px;
+    font-size: 11px;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 2px;
+    filter: drop-shadow(2px 4px 2px black);
+}
+
+.enviosh4{
+    color: wheat;
+    margin-left: 15px;
+    margin-top: 13px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 h3 {
@@ -99,9 +114,10 @@ h3 {
 
 .titulo-1 {
     color: var(--letrasTitulos);
-    font-family: var(--FontTitulo);
-    font-size: 22px;
-
+    font-size: 16px;
+    letter-spacing: 3px;
+    filter: drop-shadow(2px 8px 2px black);
+    font-family: 'Press Start 2P', cursive;
 }
 
 .stars i {
@@ -131,6 +147,7 @@ h3 {
     background: none;
     color: violet;
     border: none;
+    filter: drop-shadow(2px 4px 2px black);
 }
 
 .detalle-carritodecompras {
@@ -138,8 +155,9 @@ h3 {
     padding: 30px;
     display: flex;
     justify-content: space-around;
-    background: #1A027A;
+    background: var(--fondo1VioletaO);
     border-radius: 50px;
+    border: 1px solid white;
 }
 
 .detalle__add-card {
@@ -151,7 +169,6 @@ h3 {
 
 .detalle__add-card2 {
     display: flex;
-    align-items: center;
     gap: 116px;
 }
 
@@ -176,25 +193,30 @@ h3 {
 }
 
 .card-btn {
+    font-size: 10px;
     width: 110px;
-    background-color: var(--fondo1VioletaO);
-    color: #fff;
     border: none;
     border-radius: 10px;
     transition: all 1s;
+    color: white;
+    background-color: var(--swiper-theme-color);
     height: 30px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .card-btn2 {
     top: 5px;
     position: relative;
-    width: 121px;
-    background-color: var(--fondo1VioletaO);
+    width: 125px;
+    background-color: var(--swiper-theme-color);
     color: #fff;
     border: none;
+    font-size: 13px;
     border-radius: 10px;
+    filter: drop-shadow(5px 6px 2px black);
     transition: all 1s;
-    height: 32px;
+    font-family: 'Press Start 2P', cursive;
+    height: 40px;
 }
 
 .card-btn1 {
@@ -212,8 +234,20 @@ h3 {
     background-color: #1A027A;
 }
 
+.descripcion-detalle{
+    border: 1px solid white;
+    background-color: var(--fondo1VioletaO);
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 30px;
+    filter: drop-shadow(0px 0px 3px white);
+    margin-bottom: 50px;
+    margin-top: 15px;
+}
+
 .detalle__cantidad {
     color: white;
+    font-size: 14px;
 }
 
 .detalle__precio--box {
@@ -250,7 +284,27 @@ h3 {
 }
 
 .metodos {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    filter: drop-shadow(2px 4px 2px black);
+}
+
+.detalle__select--pagos{
+    margin-bottom: 20px;
+}
+
+.detalle__select--pagos-op{
+    display: inline-block;
+    color: white;
+    width: 80%;
+    font-weight: 900;
+    background-color: var(--letrasSubtitulos2);
+    border: 1px solid white;
+    border-radius: 15px;
+    filter: drop-shadow(3px 4px 3px black);
 }
 
 .box-metodos {
@@ -259,6 +313,10 @@ h3 {
 }
 
 #datalle__ocult2 {
+    display: none;
+}
+
+.envios__camion{
     display: none;
 }
 
@@ -404,12 +462,23 @@ h3 {
         top: 5px;
         position: relative;
         width: 121px;
-        background-color: var(--fondo1VioletaO);
         color: #fff;
         border: none;
         border-radius: 10px;
         transition: all 1s;
         height: 32px;
+    }
+
+    .envios__camion{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        bottom: -15px; 
+    }
+
+    .detalle--boxenvio{
+        margin-top: 10px;
     }
 }
 
@@ -480,6 +549,8 @@ h3 {
         width: 70%;
         height: 125px;
         justify-content: space-around;
+        margin-bottom: 50px;
+        filter: drop-shadow(0px 0px 3px white);
     }
 
     #datalle__ocult1 {

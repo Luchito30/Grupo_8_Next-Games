@@ -263,7 +263,6 @@ formAddProduct.addEventListener('submit', function (event) {
     images: "Debe elegir mínimo 1 imagen",
   };
 
-  // Verificar cada campo del formulario
   const fields = this.querySelectorAll('input, textarea, select');
   fields.forEach(field => {
     const fieldId = field.id;
@@ -315,7 +314,13 @@ formAddProduct.addEventListener('submit', function (event) {
   const imagesField = document.getElementById('images');
   const existingImages = imagesField.getAttribute('data-existing-images') || '';
 
-  if (imagesField.files.length === 0 && existingImages.trim().length === 0) {
+  if (imagesField.files.length > 0) {
+    imagesField.classList.remove('is-invalid');
+    const imagesErrorElement = document.getElementById('imagesError');
+    if (imagesErrorElement) {
+      imagesErrorElement.innerHTML = "";
+    }
+  } else if (existingImages.trim().length === 0) {
     error = true;
     const imagesErrorElement = document.getElementById('imagesError');
     if (imagesErrorElement) {
@@ -331,6 +336,13 @@ formAddProduct.addEventListener('submit', function (event) {
       formErrorElement.innerHTML = "Los campos señalados son obligatorios.";
     }
   } else {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Accion realizada con exito',
+      showConfirmButton: false,
+      timer: 1500
+    })
     this.submit();
   }
 });

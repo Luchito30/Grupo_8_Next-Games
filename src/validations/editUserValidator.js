@@ -47,26 +47,27 @@ module.exports = [
     }),
 
     check('address')
-    .notEmpty().withMessage('La dirección es obligatoria').bail()
     .isLength({ min: 2 }).withMessage('Mínimo dos letras').bail()
     .matches(/^[a-zA-Z0-9\s]+$/).withMessage('No se permiten caracteres especiales en la dirección'),
 
-    check('city')
-    .notEmpty().withMessage('La ciudad es obligatoria').bail()
-    .isLength({ min: 2 }).withMessage('Mínimo dos letras').bail()
-    .isAlpha('es-ES', {
-      ignore: " "
-    }).withMessage('Solo caracteres alfabéticos'),
-
     check('province')
-    .notEmpty().withMessage('La provincia es obligatoria').bail()
-    .isLength({ min: 2 }).withMessage('Mínimo dos letras').bail()
-    .isAlpha('es-ES', {
-      ignore: " "
-    }).withMessage('Solo caracteres alfabéticos'),
+    .notEmpty().withMessage('Se debe Elejir una provincia'),
 
+    check('municipio')
+    .notEmpty().withMessage('Se debe Elejir un Municipio'),
+
+    check('localidad')
+    .notEmpty().withMessage('Se debe Elejir una localidad'),
+
+    check('codArea')
+    .isNumeric().withMessage('Solo se permiten números en el código de area').bail()
+    .isLength({ min: 2, max: 4 }).withMessage('El código de area debe tener entre 2 y 4 dígitos'),
+
+    check('telefono')
+    .isNumeric().withMessage('Solo se permiten números en el telefóno').bail()
+    .isLength({ min: 4, max: 10 }).withMessage('El telefóno debe tener entre 4 y 10 dígitos'),
+    
     check('zipCode')
-  .notEmpty().withMessage('El código postal es obligatorio').bail()
   .isNumeric().withMessage('Solo se permiten números en el código postal').bail()
   .isLength({ min: 2, max: 8 }).withMessage('El código postal debe tener entre 2 y 8 dígitos')
 ];

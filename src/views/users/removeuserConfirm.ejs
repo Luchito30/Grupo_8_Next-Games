@@ -6,8 +6,6 @@
 <body>
     <%- include('../partials/headerAdmin') %> 
     
-            
-    
        <% if (userName === "nextgamesAdmin") { %>
         <section class="remove__section">
         <div class="col-12">
@@ -28,13 +26,17 @@
                    <h3 class="remove__name">Si eliminas el Usuario <%- userName %> no podra recuperarlo</h3><br><br>
                        <h5 class="remove__confirm">¿Estas seguro que quieres continuar?</h5>
                    <div class="remove__buttoms">
-                       <form action="/users/removeuser/<%- id %>?_method=DELETE" method="post">
+                       <form action="/users/removeuser/<%- id %>?_method=DELETE" method="post" id="form-delete-user">
                        <button type="submit" class="remove__buttom">Borrar</button>
                    </form>
                    <button class="remove__buttom"><a href="/admin/dashboardUser">Cancelar</a></button>
                </div>
                    </section>
         <% } %>
+
+         <!-- SweetAlert-->
+         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+         <script src="/javascripts/useralertdelete.js"></script>
     
 </body>
 </html>
