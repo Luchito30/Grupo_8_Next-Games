@@ -1,0 +1,126 @@
+const {Op} = require("sequelize")
+const db = require('../database/models')
+module.exports = mtd ={
+    getOrder:async ({userId}) =>{
+      if(!userId){
+            throw{
+                ok:false,
+                message:"Debes ingresar el userId"
+            }}
+    const [order] = await   db.Order.findOrCreate({
+            where:{
+           [Op.and]:[
+            {
+                userId,
+        },
+        {
+            status:'pending'
+        }
+        ]
+            },
+            defaults:{
+                 userId,
+            },
+            include: [
+                {
+                association: 'cart',
+                include: ["images"]
+            }]
+        }); 
+        return order
+
+
+
+
+    },
+
+    createProductCart: async({userId, productId}) =>{
+        if(!userId || !productId){
+            throw{
+                ok:false,
+                message:"Debes ingresar el userId y productId"
+            }}
+            const order = await mtd.getOrder({userId});
+            await mtd.getCart({orderId:order.id,productId})
+            const orderReload = await order.reload({include:{all:true}})
+            order.total = mtd.calcTotal(orderReload)
+        },
+        
+        
+         removeCart:({orderId, productId}) =>{
+            db.Cart.destroy({
+                where:{
+                    [Op.and]:[
+                        {
+                            orderId,
+                        },
+                        {productId
+                        },
+                    ],
+                },
+            });
+         },
+         removeProductFromCart: async({userId,productId})=>{
+            if(!userId || !productId){
+                throw{
+                    ok:false,
+                    message:"Debes ingresar el userId y productId",
+                };
+            }
+            const order = await mtd.getOrder({userId});
+            return mtd.removeCart({orderId: order.id, productId})
+         },
+         moreQuantityFromProduct: async({userId, productId}) =>{
+            if(!userId || !productId){
+                throw{
+                    ok:false,
+                    message:"Debes ingresar el userId y productId",
+                };
+            }
+            const order = await mtd.getOrder({userId});
+            
+            const [cart,isCreated] = await mtd.getCart({
+                
+                orderId:order.id,
+                productId,
+            });
+
+
+            if(!isCreated){
+
+        cart.quantity++
+            await cart.save();
+        }
+             const orderReload = await order.reload({include:{all:true}})
+            order.total = mtd.calcTotal(orderReload);
+            
+             await order.save();
+            
+             return order
+            //mtd.calcTotal(order)
+           },
+           getCart:({orderId,productId}) =>{
+                return db.Cart.findOrCreate({where:{
+                    [Op.and]:[
+                        {
+                            orderId,
+                        },
+                        {
+                            productId,
+                        },
+                    ],
+                },
+                defaults:{
+                    orderId,
+                    productId,
+                }
+            });
+           },
+           calcTotal:({cart})=>{
+            return cart.reduce((acum,{price,Cart,discount})=>{
+                const priceCalc = discount ? price - (price * discount /100):price
+                acum += priceCalc * Cart.quantity
+                return acum; },0)
+           }
+
+}

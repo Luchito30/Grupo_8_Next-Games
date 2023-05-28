@@ -21,6 +21,13 @@ module.exports = (sequelize, DataTypes) => {
         as: "images",
         onDelete : 'cascade'
       });
+
+      Product.belongsToMany(models.Order,{
+        through:"Cart",
+        foreignKey:"productId",
+        otherKey:"orderId",
+        as:"cart"        
+      });
     }
   }
   Product.init(
