@@ -4,36 +4,184 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
-        <%- include('../partials/header.ejs') %>
+        <%- include('../partials/loader.ejs') %>
+            <%- include('../partials/header.ejs') %>
 
-            <main class="main-detalledeproducto">
-                <div class="main-detalledeproducto-boxOne">
-                    <section class="detalle-imagenes">
-                        <div class="detalle-img--conteiner">
-                            <!-- Slider main container -->
-                            <div class="swiper swiper-imagenes">
-                                <!-- Additional required wrapper -->
-                                <div class="swiper-wrapper">
-                                    <!-- Slides -->
-                                    <% images.forEach(i => { %>
-                                        <!--slide-->
-                                        <div class="swiper-slide">
-                                            <img src="/images/products/<%= i.image %>" class="img-detalle-carrusel">
-                                        </div>
-                                        <% }) %>
+                <main class="main-detalledeproducto">
+                    <div class="main-detalledeproducto-boxOne">
+                        <section class="detalle-imagenes">
+                            <div class="detalle-img--conteiner">
+                                <!-- Slider main container -->
+                                <div class="swiper swiper-imagenes">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <% images.forEach(i=> { %>
+                                            <!--slide-->
+                                            <div class="swiper-slide">
+                                                <img src="/images/products/<%= i.image %>" class="img-detalle-carrusel">
+                                            </div>
+                                            <% }) %>
+                                    </div>
+                                    <!-- If we need pagination -->
+                                    <div class="swiper-pagination"></div>
+
+                                    <!-- If we need navigation buttons -->
+                                    <div class="swiper-button-prev" id="boton__prev"></div>
+                                    <div class="swiper-button-next" id="boton__next"></div>
                                 </div>
-                                <!-- If we need pagination -->
-                                <div class="swiper-pagination"></div>
+                            </div>
+                        </section>
 
-                                <!-- If we need navigation buttons -->
-                                <div class="swiper-button-prev" id="boton__prev"></div>
-                                <div class="swiper-button-next" id="boton__next"></div>
+
+                        <section class="detalle-carritodecompras" id="datalle__ocult1">
+                            <div>
+                                <% if (discount) { %>
+                                    <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
+                                    <span class="detalle__precio--barra">/</span>
+                                    <b class="detalle__precio--porcentaje">
+                                        <%= discount %>% OFF
+                                    </b>
+                                    <p class="detalle__precio--descuento">
+                                        $<%= toThousand(Math.round(price - (price * discount) / 100))%>
+                                    </p>
+                                    <% } else { %>
+                                        <p class="detalle__precio--sincambio">
+                                            $<%= toThousand(Math.round(price)) %>
+                                        </p>
+                                        <% } %>
+                            </div>
+                            <div class="detalle__add-card">
+                                <div>
+                                    <h5 class="detalle__cantidad">cantidad:</h5>
+                                    <button>-</button>
+                                    <input type="number" style="width: 30px;">
+                                    <button>+</button>
+                                </div>
+                                <div>
+                                    <a href="/products/carrito"><button class="card-btn">
+                                            Agregar Carrito</button></a>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+
+
+
+                    <section class="descripcion-detalle">
+                        <div class="descripciones">
+
+                            <div class="titulos">
+                                <h2 class="titulo-1">
+                                    <%=name%>
+                                </h2>
+                            </div>
+                            <div class="rank">
+                                <p>
+                                    <%= subcategories.name %>
+                                </p>
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+
+
+                                </div>
+                                <p>(103)</p>
+                            </div>
+
+
+                            <div class="description-22">
+                                <div class="category-product">
+
+                                    <div class="sub">
+                                        <p class="detalle--description--produ">DESCRIPCIÓN :
+                                        </p>
+                                        <p>
+                                            <%=description%>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="box-metodos">
+                                <div class="tarjetas-detalle">
+                                    <div>
+                                        <h3 class="metodos">metodos de pago:</h3>
+                                    </div>
+                                    <% if (discount) { %>
+                                        <div class="detalle__select--pagos">
+                                            <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                                                <option value="1 pago">1 pago de $<%= toThousand(Math.round(price -
+                                                        (price * discount) / 100)) %>
+                                                </option>
+                                                <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price -
+                                                        (price * discount) / 100) / 3) %>
+                                                </option>
+                                                <option value="6 pago">6 pagos de <%= toThousand(Math.round(price -
+                                                        (price * discount) / 100) / 6) %>
+                                                </option>
+                                                <option value="9 pago">9 pagos de <%= toThousand(Math.round(price -
+                                                        (price * discount) / 100) / 9) %>
+                                                </option>
+                                                <option value="12 pago">12 pagos de <%= toThousand(Math.round(price -
+                                                        (price * discount) / 100) / 12) %>
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <% } else {%>
+                                            <div class="detalle__select--pagos">
+                                                <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                                                    <option value="1 pago">1 pago de $<%= toThousand(Math.round(price ))
+                                                            %>
+                                                    </option>
+                                                    <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price
+                                                            /3 )) %>
+                                                    </option>
+                                                    <option value="6 pago">6 pagos de <%= toThousand(Math.round(price /
+                                                            6)) %>
+                                                    </option>
+                                                    <option value="9 pago">9 pagos de <%= toThousand(Math.round(price /
+                                                            9)) %>
+                                                    </option>
+                                                    <option value="12 pago">12 pagos de <%= toThousand(Math.round(price
+                                                            / 12)) %>
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <% } %>
+                                                <img src="/images/tarjetas.png" alt="">
+                                </div>
+                                <div class="detalle--boxenvio">
+                                    <h3 class="envios">metodos de envío:</h3>
+                                    <h4 class="enviosh4">envios gratis a todo el pais</h4>
+                                    <div>
+                                        <lottie-player class="envios__camion"
+                                            src="https://assets7.lottiefiles.com/packages/lf20_obRWQvbwIA.json"
+                                            background="transparent" speed="1" loop autoplay></lottie-player>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="description--more">
+                                <h3 id="description--more">DESCRIPCIÓN :
+                                </h3>
+                                <p>...<span id="dots"></span>
+                                    <span id="more">
+                                        <%= description %>
+                                    </span>
+                                </p>
+                                <button onclick="myFunction()" id="myBtn" class="read-btn">Ver más</button>
+
+
                             </div>
                         </div>
                     </section>
 
-                    
-                    <section class="detalle-carritodecompras" id="datalle__ocult1">
+                    <section class="detalle-carritodecompras" id="datalle__ocult2">
                         <div>
                             <% if (discount) { %>
                                 <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
@@ -50,7 +198,7 @@
                                     </p>
                                     <% } %>
                         </div>
-                        <div class="detalle__add-card">
+                        <div class="detalle__add-card2">
                             <div>
                                 <h5 class="detalle__cantidad">cantidad:</h5>
                                 <button>-</button>
@@ -58,184 +206,62 @@
                                 <button>+</button>
                             </div>
                             <div>
-                                <a href="/products/carrito"><button class="card-btn">
-                                       Agregar Carrito</button></a>
+                                <a href="/products/carrito"><button class="card-btn2">
+                                        Agregar Carrito</button></a>
                             </div>
                         </div>
                     </section>
-                </div>
-
-                
 
 
-                <section class="descripcion-detalle">
-                    <div class="descripciones">
-
-                        <div class="titulos">
-                            <h2 class="titulo-1">
-                                <%=name%>
-                            </h2>
-                        </div>
-                        <div class="rank">
-                            <p>
-                               <%= subcategories.name %>
-                            </p>
-                            <div class="stars">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                </main>
 
 
-                            </div>
-                            <p>(103)</p>
-                        </div>
+                <%- include('../partials/carrito.ejs') %>
+                    <!--whatsapp-->
+                    <%- include('../partials/whatsApp.ejs') %>
+                        <!-- footer -->
+                        <%- include('../partials/footer.ejs') %>
 
+                            <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-                        <div class="description-22">
-                            <div class="category-product">
+                            <script>
+                                const swiper = new Swiper('.swiper-imagenes', {
+                                    // Optional parameters
+                                    direction: 'horizontal',
+                                    loop: true,
+                                    // If we need pagination
+                                    pagination: {
+                                        el: '.swiper-pagination',
+                                    },
+                                    // Navigation arrows
+                                    navigation: {
+                                        nextEl: '.swiper-button-next',
+                                        prevEl: '.swiper-button-prev',
+                                    },
+                                });
+                            </script>
 
-                                <div class="sub">
-                                    <h3>DESCRIPCIÓN :
-                                    </h3>
-                                    <h4>
-                                        <%=description%>
-                                    </h4>
+                            <script>
+                                function myFunction() {
+                                    var dots = document.getElementById("dots");
+                                    var moreText = document.getElementById("more");
+                                    var btnText = document.getElementById("myBtn");
 
-                                </div>
-                            </div>
+                                    if (dots.style.display === "none") {
+                                        dots.style.display = "inline";
+                                        btnText.innerHTML = "Ver más";
+                                        moreText.style.display = "none";
+                                    } else {
+                                        dots.style.display = "none";
+                                        btnText.innerHTML = "Ver menos";
+                                        moreText.style.display = "inline";
+                                    }
+                                }
+                            </script>
 
-                        </div>
-                        <div class="box-metodos">
-                            <div class="tarjetas-detalle">
-                                <div>
-                                    <h3 class="metodos">metodos de pago:</h3>
-                                </div>
-                                <% if (discount) { %>
-                                    <div class="detalle__select--pagos">
-                                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                            <option value="1 pago">1 pago de $<%= toThousand(Math.round(price - (price * discount) / 100)) %></option>
-                                            <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price - (price * discount) / 100) / 3) %></option>
-                                            <option value="6 pago">6 pagos de <%= toThousand(Math.round(price - (price * discount) / 100) / 6) %></option>
-                                            <option value="9 pago">9 pagos de <%= toThousand(Math.round(price - (price * discount) / 100) / 9) %></option>
-                                            <option value="12 pago">12 pagos de <%= toThousand(Math.round(price - (price * discount) / 100) / 12) %></option>
-                                        </select>
-                                    </div>
-                                <% } else {%>
-                                <div class="detalle__select--pagos">
-                                    <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                        <option value="1 pago">1 pago de $<%= toThousand(Math.round(price )) %></option>
-                                        <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price /3 )) %></option>
-                                        <option value="6 pago">6 pagos de <%= toThousand(Math.round(price / 6)) %></option>
-                                        <option value="9 pago">9 pagos de <%= toThousand(Math.round(price / 9)) %></option>
-                                        <option value="12 pago">12 pagos de <%= toThousand(Math.round(price / 12)) %></option>
-                                    </select>
-                                </div>
-                                <% } %>
-                                <img src="/images/tarjetas.png" alt="">
-                            </div>
-                            <div class="detalle--boxenvio">
-                                <h3 class="envios">metodos de envío:</h3>
-                                <h4 class="enviosh4">envios gratis a todo el pais</h4>
-                                <div>
-                                    <lottie-player class="envios__camion" src="https://assets7.lottiefiles.com/packages/lf20_obRWQvbwIA.json"  background="transparent"  speed="1" loop  autoplay></lottie-player>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="description--more">
-                            <h3 id="description--more">DESCRIPCIÓN :
-                            </h3>
-                            <p>...<span id="dots"></span>
-                                <span id="more"><%= description %></span>
-                            </p>
-                            <button onclick="myFunction()" id="myBtn" class="read-btn">Ver más</button>
-
-
-                        </div>
-                    </div>
-                </section>
-
-                <section class="detalle-carritodecompras" id="datalle__ocult2">
-                    <div>
-                        <% if (discount) { %>
-                            <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
-                            <span class="detalle__precio--barra">/</span>
-                            <b class="detalle__precio--porcentaje">
-                                <%= discount %>% OFF
-                            </b>
-                            <p class="detalle__precio--descuento">
-                                $<%= toThousand(Math.round(price - (price * discount) / 100))%>
-                            </p>
-                            <% } else { %>
-                                <p class="detalle__precio--sincambio">
-                                    $<%= toThousand(Math.round(price)) %>
-                                </p>
-                                <% } %>
-                    </div>
-                    <div class="detalle__add-card2">
-                        <div>
-                            <h5 class="detalle__cantidad">cantidad:</h5>
-                            <button>-</button>
-                            <input type="number" style="width: 30px;">
-                            <button>+</button>
-                        </div>
-                        <div>
-                            <a href="/products/carrito"><button class="card-btn2">
-                                Agregar Carrito</button></a>
-                        </div>
-                    </div>
-                </section>
-
-
-            </main>
-
-
-            <%- include('../partials/carrito.ejs') %>
-            <!--whatsapp-->
-            <%- include('../partials/whatsApp.ejs') %>
-                <!-- footer -->
-                <%- include('../partials/footer.ejs') %>
-
-                    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-                    <script>
-                        const swiper = new Swiper('.swiper-imagenes', {
-                            // Optional parameters
-                            direction: 'horizontal',
-                            loop: true,
-                            // If we need pagination
-                            pagination: {
-                                el: '.swiper-pagination',
-                            },
-                            // Navigation arrows
-                            navigation: {
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            },
-                        });
-                    </script>
-
-                    <script>
-                        function myFunction() {
-                            var dots = document.getElementById("dots");
-                            var moreText = document.getElementById("more");
-                            var btnText = document.getElementById("myBtn");
-                          
-                            if (dots.style.display === "none") {
-                              dots.style.display = "inline";
-                              btnText.innerHTML = "Ver más";
-                              moreText.style.display = "none";
-                            } else {
-                              dots.style.display = "none";
-                              btnText.innerHTML = "Ver menos";
-                              moreText.style.display = "inline";
-                            }
-                          }
-                    </script>
-
-                      <!-- fixed -->
-            <script src="/javascripts/fixed.js"></script>
+                            <!-- fixed -->
+                            <script src="/javascripts/fixed.js"></script>
+                            <script src="/javascripts/loader.js"></script>
 
     </body>
 

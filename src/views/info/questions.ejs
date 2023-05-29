@@ -4,141 +4,162 @@
 <%- include('../partials/head.ejs') %>
 
     <body class="questions_body">
+        <%- include('../partials/loader.ejs') %>
+            <%- include('../partials/header.ejs') %>
 
-        <%- include('../partials/header.ejs') %>
+                <main>
 
-            <main>
-
-                <div>
-                    <h1 class="home__main--titulo questions_titulo">Preguntas Frecuentes</h1>
-                </div>
-
-            <div class="question__box">   
-                <section>
-                    <h2 class="question__subtirulo"><span class="questions__h2--span">General</span></h2>
-                    <div class="accordion">
-                        <button class="accordion-btn">¿Cómo puedo realizar un pedido?</button>
-                        <div class="accordion-content">
-                            <p>Para realizar un pedido, sigue estos pasos:</p>
-                            <ol>
-                                <li>Ingresa a nuestro sitio web</li>
-                                <li>Explora los productos disponibles</li>
-                                <li>Agrega los productos deseados al carrito</li>
-                                <li>Completa el proceso de pago</li>
-                                <li>Se confirmara la transacción</li>
-                            </ol>
-                        </div>
-
-                        <button class="accordion-btn">¿Cuáles son los métodos de pago aceptados?</button>
-                        <div class="accordion-content">
-                            <p>Aceptamos los siguientes métodos de pago:</p>
-                            <ul>
-                                <li>Tarjeta de crédito</li>
-                                <li>Mercadopago</li>
-                                <li>Transferencia bancaria</li>
-                            </ul>
-                        </div>
-
-                        <button class="accordion-btn">¿Puedo cancelar o modificar mi pedido después de
-                            realizarlo?</button>
-                        <div class="accordion-content">
-                            <p>Una vez que hayas realizado tu pedido, no podrás realizar cambios en él. Sin embargo, si
-                                deseas cancelarlo, contáctanos lo antes posible y haremos todo lo posible para ayudarte.
-                            </p>
-                        </div>
-
-                        <button class="accordion-btn">¿Cómo puedo contactar al servicio al cliente?</button>
-                        <div class="accordion-content">
-                            <p>Puedes contactar a nuestro servicio al cliente a través de los siguientes medios:</p>
-                            <ul>
-                                <li>Teléfono: 0800 420 0809 / 0810 590 2059</li>
-                                <li>Correo electrónico: nextgamesventas@google.com</li>
-                                <li>Por whatsApp al 011 6943 0476</li>
-                            </ul>
-                        </div>
-
-                        <button class="accordion-btn">¿Ofrecen descuentos para compras?</button>
-                        <div class="accordion-content">
-                            <p>Sí, ofrecemos descuentos, estos se aplican en los productos en oferta</p>
-                        </div>
+                    <div>
+                        <h1 class="home__main--titulo questions_titulo">Preguntas Frecuentes</h1>
                     </div>
-                </section>
 
-                <section>
-                    <h2 class="question__subtirulo"><span class="questions__h2--span">Envío</span></h2>
-                    <div class="accordion">
-                        <button class="accordion-btn">¿Cuánto tiempo tarda en llegar mi pedido?</button>
-                        <div class="accordion-content">
-                            <p>El tiempo de entrega varía según tu ubicación. Por lo general, los pedidos se entregan en
-                                un plazo de 3 a 7 días hábiles. Ten en cuenta que durante períodos de alta demanda, como
-                                promociones especiales o días festivos, los tiempos de entrega pueden ser más largos.
-                            </p>
-                        </div>
+                    <div class="question__box">
+                        <section>
+                            <h2 class="question__subtirulo"><span class="questions__h2--span">General</span></h2>
+                            <div class="accordion">
+                                <button class="accordion-btn">¿Cómo puedo realizar un pedido?</button>
+                                <div class="accordion-content">
+                                    <p>Para realizar un pedido, sigue estos pasos:</p>
+                                    <ol>
+                                        <li>Ingresa a nuestro sitio web</li>
+                                        <li>Explora los productos disponibles</li>
+                                        <li>Agrega los productos deseados al carrito</li>
+                                        <li>Completa el proceso de pago</li>
+                                        <li>Se confirmara la transacción</li>
+                                    </ol>
+                                </div>
 
-                        <button class="accordion-btn">¿Cuánto cuesta el envío?</button>
-                        <div class="accordion-content">
-                            <p>El envio de los productos que compres no tienen ningun costo, los envios son gratis.</p>
-                        </div>
+                                <button class="accordion-btn">¿Cuáles son los métodos de pago aceptados?</button>
+                                <div class="accordion-content">
+                                    <p>Aceptamos los siguientes métodos de pago:</p>
+                                    <ul>
+                                        <li>Tarjeta de crédito</li>
+                                        <li>Mercadopago</li>
+                                        <li>Transferencia bancaria</li>
+                                    </ul>
+                                </div>
 
-                        <button class="accordion-btn">¿Realizan envíos internacionales?</button>
-                        <div class="accordion-content">
-                            <p>No, realizamos solo envíos nacionales. solo se entrega en toda la republica argentina,de momento no estamos realizando envio internacionales. </p>
-                        </div>
+                                <button class="accordion-btn">¿Puedo cancelar o modificar mi pedido después de
+                                    realizarlo?</button>
+                                <div class="accordion-content">
+                                    <p>Una vez que hayas realizado tu pedido, no podrás realizar cambios en él. Sin
+                                        embargo, si
+                                        deseas cancelarlo, contáctanos lo antes posible y haremos todo lo posible para
+                                        ayudarte.
+                                    </p>
+                                </div>
 
-                        <button class="accordion-btn">¿Cómo puedo ubicar mi pedido?</button>
-                        <div class="accordion-content">
-                            <p>Una vez que tu pedido haya sido confirmado, recibirás un correo electrónico o se comunicaron con vos para confirmarte que el padido esta en curso y lo recibiras en los terminos de envio</p>
-                        </div>
+                                <button class="accordion-btn">¿Cómo puedo contactar al servicio al cliente?</button>
+                                <div class="accordion-content">
+                                    <p>Puedes contactar a nuestro servicio al cliente a través de los siguientes medios:
+                                    </p>
+                                    <ul>
+                                        <li>Teléfono: 0800 420 0809 / 0810 590 2059</li>
+                                        <li>Correo electrónico: nextgamesventas@google.com</li>
+                                        <li>Por whatsApp al 011 6943 0476</li>
+                                    </ul>
+                                </div>
+
+                                <button class="accordion-btn">¿Ofrecen descuentos para compras?</button>
+                                <div class="accordion-content">
+                                    <p>Sí, ofrecemos descuentos, estos se aplican en los productos en oferta</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="question__subtirulo"><span class="questions__h2--span">Envío</span></h2>
+                            <div class="accordion">
+                                <button class="accordion-btn">¿Cuánto tiempo tarda en llegar mi pedido?</button>
+                                <div class="accordion-content">
+                                    <p>El tiempo de entrega varía según tu ubicación. Por lo general, los pedidos se
+                                        entregan en
+                                        un plazo de 3 a 7 días hábiles. Ten en cuenta que durante períodos de alta
+                                        demanda, como
+                                        promociones especiales o días festivos, los tiempos de entrega pueden ser más
+                                        largos.
+                                    </p>
+                                </div>
+
+                                <button class="accordion-btn">¿Cuánto cuesta el envío?</button>
+                                <div class="accordion-content">
+                                    <p>El envio de los productos que compres no tienen ningun costo, los envios son
+                                        gratis.</p>
+                                </div>
+
+                                <button class="accordion-btn">¿Realizan envíos internacionales?</button>
+                                <div class="accordion-content">
+                                    <p>No, realizamos solo envíos nacionales. solo se entrega en toda la republica
+                                        argentina,de momento no estamos realizando envio internacionales. </p>
+                                </div>
+
+                                <button class="accordion-btn">¿Cómo puedo ubicar mi pedido?</button>
+                                <div class="accordion-content">
+                                    <p>Una vez que tu pedido haya sido confirmado, recibirás un correo electrónico o se
+                                        comunicaron con vos para confirmarte que el padido esta en curso y lo recibiras
+                                        en los terminos de envio</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section>
+                            <h2 class="question__subtirulo"><span class="questions__h2--span">Devoluciones y
+                                    Reembolsos</span></h2>
+                            <div class="accordion">
+                                <button class="accordion-btn">¿Cuál es la política de devoluciones?</button>
+                                <div class="accordion-content">
+                                    <p>Aceptamos devoluciones dentro de los 30 días posteriores a la recepción del
+                                        pedido. El
+                                        producto debe estar en su estado original y sin usar. Ponte en contacto con
+                                        nuestro
+                                        servicio de atención al cliente para obtener más información sobre cómo realizar
+                                        una
+                                        devolución.</p>
+                                </div>
+
+                                <button class="accordion-btn">¿Cuánto tiempo tarda en procesarse un reembolso?</button>
+                                <div class="accordion-content">
+                                    <p>Una vez que recibamos la devolución y la hayamos procesado, el reembolso se
+                                        realizará
+                                        dentro de los 5 días hábiles. Ten en cuenta que puede tomar algunos días
+                                        adicionales
+                                        para que el reembolso se refleje en tu cuenta, dependiendo del método de pago
+                                        utilizado.
+                                    </p>
+                                </div>
+
+                                <button class="accordion-btn">¿Qué debo hacer si recibo un producto dañado o
+                                    incorrecto?</button>
+                                <div class="accordion-content">
+                                    <p>Si recibes un producto dañado o incorrecto, contáctanos de inmediato y te
+                                        ayudaremos a
+                                        resolver el problema. Podremos reemplazar el producto o realizar un reembolso,
+                                        según sea
+                                        necesario.</p>
+                                </div>
+
+                                <button class="accordion-btn">¿Cuál es el plazo para realizar una devolución?</button>
+                                <div class="accordion-content">
+                                    <p>El plazo para realizar una devolución es de 30 días posteriores a la recepción
+                                        del
+                                        pedido. Después de ese período, no se aceptarán devoluciones.</p>
+                                </div>
+                            </div>
+                        </section>
                     </div>
-                </section>
+                </main>
 
-                <section>
-                    <h2 class="question__subtirulo"><span class="questions__h2--span">Devoluciones y Reembolsos</span></h2>
-                    <div class="accordion">
-                        <button class="accordion-btn">¿Cuál es la política de devoluciones?</button>
-                        <div class="accordion-content">
-                            <p>Aceptamos devoluciones dentro de los 30 días posteriores a la recepción del pedido. El
-                                producto debe estar en su estado original y sin usar. Ponte en contacto con nuestro
-                                servicio de atención al cliente para obtener más información sobre cómo realizar una
-                                devolución.</p>
-                        </div>
 
-                        <button class="accordion-btn">¿Cuánto tiempo tarda en procesarse un reembolso?</button>
-                        <div class="accordion-content">
-                            <p>Una vez que recibamos la devolución y la hayamos procesado, el reembolso se realizará
-                                dentro de los 5 días hábiles. Ten en cuenta que puede tomar algunos días adicionales
-                                para que el reembolso se refleje en tu cuenta, dependiendo del método de pago utilizado.
-                            </p>
-                        </div>
-
-                        <button class="accordion-btn">¿Qué debo hacer si recibo un producto dañado o
-                            incorrecto?</button>
-                        <div class="accordion-content">
-                            <p>Si recibes un producto dañado o incorrecto, contáctanos de inmediato y te ayudaremos a
-                                resolver el problema. Podremos reemplazar el producto o realizar un reembolso, según sea
-                                necesario.</p>
-                        </div>
-
-                        <button class="accordion-btn">¿Cuál es el plazo para realizar una devolución?</button>
-                        <div class="accordion-content">
-                            <p>El plazo para realizar una devolución es de 30 días posteriores a la recepción del
-                                pedido. Después de ese período, no se aceptarán devoluciones.</p>
-                        </div>
-                    </div>
-                </section>
-            </div>    
-            </main>
-
-        
                 <%- include('../partials/whatsApp.ejs') %>
-                <%- include('../partials/carrito.ejs') %>
+                    <%- include('../partials/carrito.ejs') %>
 
-                    <%- include('../partials/footer.ejs') %>
+                        <%- include('../partials/footer.ejs') %>
 
-                     <!-- fixed -->
-            <script src="/javascripts/fixed.js"></script>
+                            <!-- fixed -->
+                            <script src="/javascripts/fixed.js"></script>
 
-                        <script src="/javascripts/questions.js"></script>
+                            <script src="/javascripts/questions.js"></script>
+                            <script src="/javascripts/loader.js"></script>
     </body>
 
 </html>

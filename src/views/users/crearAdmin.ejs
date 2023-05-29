@@ -4,150 +4,153 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <%- include('../partials/head.ejs') %>
 
-<%- include('../partials/background.ejs') %>
+  <%- include('../partials/background.ejs') %>
 
-<body>
-  <!-- header -->
-  <%- include('../partials/headerAdmin.ejs') %>
-
-
-  <main>
-    <div class="split-screen">
-
-      <div class="left-register">
-        <div class="titles">
-          <h1>Next Games Juega Primero</h1>
-          <h2 class="register__titulo--import1">Puedes registrar a un administrador del sitio, que pueda agregar, editar o eliminar productos</h2>
-          <h2 class="register__titulo--import2">Recuerda que desde aqui solo podras crear un administrador</h2>
-          <div class="register__img--import"><img class="register__img--img"
-              src="/images/next-games-nuevologo-horizontal.png" alt="logo"></div>
-            </div>
-      </div>
+    <body>
+      <%- include('../partials/loader.ejs') %>
+        <%- include('../partials/headerAdmin.ejs') %>
 
 
-      <div class="right-register">
-        <form method="POST" action="" enctype="multipart/form-data" class="register--box" id="formRegister">
-          <section class="titles-register">
-            <div class="titles-left">
-              <h2 class="titulo-register1">CREA LA CUENTA</h2>
-              <h3 class="titulo-register2">Ya tenes una cuenta administradora? ingresa deslogeandote e ingresando por login
-              </h3>
-            </div>
+          <main>
+            <div class="split-screen">
 
-          </section>
-         
-          <section class="login__main__section3" id="register--divider">
-            <div class="login__main__section3--inicio">
-                <div>
-                    <hr class="login__main_div--hrleft">
+              <div class="left-register">
+                <div class="titles">
+                  <h1>Next Games Juega Primero</h1>
+                  <h2 class="register__titulo--import1">Puedes registrar a un administrador del sitio, que pueda
+                    agregar, editar o eliminar productos</h2>
+                  <h2 class="register__titulo--import2">Recuerda que desde aqui solo podras crear un administrador</h2>
+                  <div class="register__img--import"><img class="register__img--img"
+                      src="/images/next-games-nuevologo-horizontal.png" alt="logo"></div>
                 </div>
-
-                <div>
-                    <span class="login__main__section3--span">REGISTRACION ADMIN</span>
-                </div>
-
-                <div>
-                    <hr class="login__main-div--hrrigth">
-                </div>
-            </div>
-        </section>
-
-          <div class="register-card">
-            <div class="forms">
-              <div class="name">
-
-                <p class="text-crear" id="imageError">
-                  <%= locals.errors && errors.image ? errors.image.msg : null %>
-                </p>
-                <span class="image--register__avatar">Avatar</span>
-                <div class="submit-btn--crear" id="avatar--register">
-                  <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
-                  <label for="image"  class="avatar--register--image">
-                    <div id="boxImagePreview">
-                      <i class="fa-solid fa-image"></i>
-                      <img id="selectedImage">
-                    </div>
-                    <div class="submit-btn--crea__nombrearchi">
-                      <span id="btnImage">Subir imagen</span>
-                    </div>
-                  </label>
-                </div>
-
-                <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>"
-                  id="name">
-                <label for="">Nombre</label>
-                <p class="text" id="errorName">
-                  <%= locals.errors && errors.firstName ? errors.firstName.msg : null %>
-                </p>
-
-                <input type="text" name="LastName" value="<%= (locals.old && old.LastName) && old.LastName%>"
-                  id="surname">
-                <label for="">Apellido</label>
-                <p class="text" id="errorSurname">
-                  <%= locals.errors && errors.LastName ? errors.LastName.msg : null %>
-                </p>
-
-                <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>"
-                  id="user">
-                <label for="">Usuario</label>
-                <p class="text" id="errorUsername">
-                  <%= locals.errors && errors.userName ? errors.userName.msg : null %>
-                </p>
-
-                <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="email"
-                >
-                <label for="">E-mail</label>
-                <p class="text" id="errorEmail">
-                  <%= locals.errors && errors.email ? errors.email.msg : null %>
-                </p>
-
-                <input type="password" name="password" id="password">
-                <label for="">Contraseña</label>
-                <p class="text" id="errorPass">
-                  <%= locals.errors && errors.password ? errors.password.msg : null %>
-                </p>
-                <ul id="msgPassword" class="register__passcaracter" hidden>
-                  <li id="mayu">Una mayúscula</li>
-                  <li id="minu">Una minúscula</li>
-                  <li id="num">Un número</li>
-                  <li id="esp">Un caracter especial ($@!%*?&_-)</li>
-                  <li id="min">Mínimo 6 caracteres</li>
-                  <li id="max">Máximo 12 caracteres</li>
-                </ul>
-
-                <input type="password" name="password2" id="password2">
-                <label for="">Confirmar</label>
-                <p class="text" id="errorPass2">
-                  <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
-                </p>
-
-                <section class="register--catch">
-                  <div class="g-recaptcha" data-sitekey="6LfqPBQmAAAAAAxiCfpUuWZSaoLsRUPe8HK67eNm"></div>
-                </section>
-
-                <div><small id="errorFormLogin"></small></div>
-
-                <small class="register__avataradv">*Nombre de usuario se debe respetaran mayusculas y minusculas
-                  para el ingreso 
-                </small>
               </div>
 
-              <button type="submit" class="guardar">Registrar</button>
-              <button class="guardar"><a href="/admin/dashboardUser">Cancelar</a></button>
+
+              <div class="right-register">
+                <form method="POST" action="" enctype="multipart/form-data" class="register--box" id="formRegister">
+                  <section class="titles-register">
+                    <div class="titles-left">
+                      <h2 class="titulo-register1">CREA LA CUENTA</h2>
+                      <h3 class="titulo-register2">Ya tenes una cuenta administradora? ingresa deslogeandote e
+                        ingresando por login
+                      </h3>
+                    </div>
+
+                  </section>
+
+                  <section class="login__main__section3" id="register--divider">
+                    <div class="login__main__section3--inicio">
+                      <div>
+                        <hr class="login__main_div--hrleft">
+                      </div>
+
+                      <div>
+                        <span class="login__main__section3--span">REGISTRACION ADMIN</span>
+                      </div>
+
+                      <div>
+                        <hr class="login__main-div--hrrigth">
+                      </div>
+                    </div>
+                  </section>
+
+                  <div class="register-card">
+                    <div class="forms">
+                      <div class="name">
+
+                        <p class="text-crear" id="imageError">
+                          <%= locals.errors && errors.image ? errors.image.msg : null %>
+                        </p>
+                        <span class="image--register__avatar">Avatar</span>
+                        <div class="submit-btn--crear" id="avatar--register">
+                          <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
+                          <label for="image" class="avatar--register--image">
+                            <div id="boxImagePreview">
+                              <i class="fa-solid fa-image"></i>
+                              <img id="selectedImage">
+                            </div>
+                            <div class="submit-btn--crea__nombrearchi">
+                              <span id="btnImage">Subir imagen</span>
+                            </div>
+                          </label>
+                        </div>
+
+                        <input type="text" name="firstName"
+                          value="<%= (locals.old && old.firstName) && old.firstName %>" id="name">
+                        <label for="">Nombre</label>
+                        <p class="text" id="errorName">
+                          <%= locals.errors && errors.firstName ? errors.firstName.msg : null %>
+                        </p>
+
+                        <input type="text" name="LastName" value="<%= (locals.old && old.LastName) && old.LastName%>"
+                          id="surname">
+                        <label for="">Apellido</label>
+                        <p class="text" id="errorSurname">
+                          <%= locals.errors && errors.LastName ? errors.LastName.msg : null %>
+                        </p>
+
+                        <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>"
+                          id="user">
+                        <label for="">Usuario</label>
+                        <p class="text" id="errorUsername">
+                          <%= locals.errors && errors.userName ? errors.userName.msg : null %>
+                        </p>
+
+                        <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>"
+                          id="email">
+                        <label for="">E-mail</label>
+                        <p class="text" id="errorEmail">
+                          <%= locals.errors && errors.email ? errors.email.msg : null %>
+                        </p>
+
+                        <input type="password" name="password" id="password">
+                        <label for="">Contraseña</label>
+                        <p class="text" id="errorPass">
+                          <%= locals.errors && errors.password ? errors.password.msg : null %>
+                        </p>
+                        <ul id="msgPassword" class="register__passcaracter" hidden>
+                          <li id="mayu">Una mayúscula</li>
+                          <li id="minu">Una minúscula</li>
+                          <li id="num">Un número</li>
+                          <li id="esp">Un caracter especial ($@!%*?&_-)</li>
+                          <li id="min">Mínimo 6 caracteres</li>
+                          <li id="max">Máximo 12 caracteres</li>
+                        </ul>
+
+                        <input type="password" name="password2" id="password2">
+                        <label for="">Confirmar</label>
+                        <p class="text" id="errorPass2">
+                          <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
+                        </p>
+
+                        <section class="register--catch">
+                          <div class="g-recaptcha" data-sitekey="6LfqPBQmAAAAAAxiCfpUuWZSaoLsRUPe8HK67eNm"></div>
+                        </section>
+
+                        <div><small id="errorFormLogin"></small></div>
+
+                        <small class="register__avataradv">*Nombre de usuario se debe respetaran mayusculas y minusculas
+                          para el ingreso
+                        </small>
+                      </div>
+
+                      <button type="submit" class="guardar">Registrar</button>
+                      <button class="guardar"><a href="/admin/dashboardUser">Cancelar</a></button>
+
+                    </div>
+                  </div>
+                </form>
+              </div>
 
             </div>
-          </div>
-        </form>
-      </div>
 
-    </div>
+          </main>
 
-  </main>
-
-        <!-- SweetAlert-->
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/javascripts/buscarimagen.js"></script>
-    <script src="/javascripts/register.js"></script>
-</body>
+          <!-- SweetAlert-->
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="/javascripts/buscarimagen.js"></script>
+          <script src="/javascripts/register.js"></script>
+          <script src="/javascripts/loader.js"></script>
+    </body>
 
 </html>

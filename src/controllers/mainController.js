@@ -57,49 +57,20 @@ module.exports = {
       include: ["images", "state"],
     });
 
-    const errors = validationResult(req);
-
-    if (errors.isEmpty()) {
-      const { email } = req.body;
-
-      if (email) {
-        db.NewsLatter.create({
-          email: email
-        });
-      }
-
-      Promise.all([inSale, computacion, ingresos, tarjetas, consolas, juegos])
-        .then(([inSale, computacion, ingresos, tarjetas, consolas, juegos]) => {
-          return res.render("home", {
-            title: "Next Games | Home",
-            inSale,
-            computacion,
-            tarjetas,
-            consolas,
-            juegos,
-            ingresos,
-            toThousand,
-          })
+    Promise.all([inSale, computacion, ingresos, tarjetas, consolas, juegos])
+      .then(([inSale, computacion, ingresos, tarjetas, consolas, juegos]) => {
+        return res.render("home", {
+          title: "Next Games | Home",
+          inSale,
+          computacion,
+          tarjetas,
+          consolas,
+          juegos,
+          ingresos,
+          toThousand,
         })
-        .catch(error => console.log(error));
-    } else {
-      Promise.all([inSale, computacion, ingresos, tarjetas, consolas, juegos])
-        .then(([inSale, computacion, ingresos, tarjetas, consolas, juegos]) => {
-          return res.render("home", {
-            title: "Next Games | Home",
-            inSale,
-            computacion,
-            tarjetas,
-            consolas,
-            juegos,
-            ingresos,
-            toThousand,
-            errors: errors.mapped(),
-            old: req.body
-          })
-        })
-        .catch(error => console.log(error));
-    }
+      })
+      .catch(error => console.log(error));
   },
   search: (req, res) => {
     const { keywords } = req.query;
@@ -128,5 +99,24 @@ module.exports = {
           keywords
         });
       }).catch(error => console.log(error))
+  },
+  NewsLatter: (req, res) => {
+    const errors = validationResult(req);
+
+    if (errors.isEmpty()) {
+      const { email } = req.body;
+
+      if (email) {
+        db.NewsLatter.create({
+          email: email
+        }).then(() => {
+          return res.redirect('/')
+        }).catch(error => console.log(error));
+      }
+    } else {
+      return res.redirect('/')
+
+    }
+
   }
 }

@@ -329,12 +329,13 @@ h3 {
     }
 
     .titulo-1 {
-
-        bottom: -25px;
+        width: 83%;
+        margin: 0 auto;
     }
 
     .rank {
-        bottom: -33px;
+        width: 83%;
+        margin: 0 auto;
     }
 
     .detalle-imagenes {
@@ -350,11 +351,18 @@ h3 {
     .otros-colores,
     .colores {
         display: flex;
+        width: 83%;
+        margin: 0 auto;
     }
 
     .colores {
         top: 55px;
         right: 426px;
+    }
+
+    .detalle--description--produ{
+        font-weight: 900;
+        font-size: 15px;
     }
 
 

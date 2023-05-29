@@ -4,41 +4,48 @@
 <%- include('./partials/head.ejs') %>
 
     <body>
-        <%- include('./partials/header.ejs') %>
+        <%- include('./partials/loader.ejs') %>
+            <%- include('./partials/header.ejs') %>
 
-            <div class="home__main--titulo">
-                <h2><%= keywords %></h2>
-            </div>
+                <div class="home__main--titulo">
+                    <h2>
+                        <%= keywords %>
+                    </h2>
+                </div>
 
-            <section class="home__main__section">
-                <% if (product.length) { %>
-                    <% product.forEach(({id, image, price, discount, name, state, subcategories})=> { %>
-                        <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
-                        %>
-                   
-                        <% }) %>
-                <% } else { %>
-                                <div>
-                                    <h2 class="products-title" style="text-align: center; color:tomato; margin-bottom: 40px;">No hay productos que coincidan
-                                        con esa búsqueda</h2>
-                                </div>
-                                <div>
-                                    <a href="/"><button class="card-btn" style="position:sticky; margin: 0px 25px;margin-bottom: 40px;">
-                                            Next Game</button></a>
-                                </div>
-                                <% } %>
-                            </section>
-        
-        
+                <section class="home__main__section">
+                    <% if (product.length) { %>
+                        <% product.forEach(({id, image, price, discount, name, state, subcategories})=> { %>
+                            <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
+                                %>
 
-            <%- include('./partials/carrito.ejs') %>
-  
-            <%- include('./partials/whatsApp.ejs') %>
+                                <% }) %>
+                                    <% } else { %>
+                                        <div>
+                                            <h2 class="products-title"
+                                                style="text-align: center; color:tomato; margin-bottom: 40px;">No hay
+                                                productos que coincidan
+                                                con esa búsqueda</h2>
+                                        </div>
+                                        <div>
+                                            <a href="/"><button class="card-btn"
+                                                    style="position:sticky; margin: 0px 25px;margin-bottom: 40px;">
+                                                    Next Game</button></a>
+                                        </div>
+                                        <% } %>
+                </section>
 
-    <%- include('./partials/footer.ejs') %>
 
-      <!-- fixed -->
-      <script src="/javascripts/fixed.js"></script>
+
+                <%- include('./partials/carrito.ejs') %>
+
+                    <%- include('./partials/whatsApp.ejs') %>
+
+                        <%- include('./partials/footer.ejs') %>
+
+                            <!-- fixed -->
+                            <script src="/javascripts/fixed.js"></script>
+                            <script src="/javascripts/loader.js"></script>
 
     </body>
 
