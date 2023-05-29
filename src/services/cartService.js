@@ -70,7 +70,7 @@ module.exports = mtd ={
             const order = await mtd.getOrder({userId});
             return mtd.removeCart({orderId: order.id, productId})
          },
-         moreQuantityFromProduct: async({userId, productId}) =>{
+         moreOrLessQuantityFromProduct: async({userId, productId,action="more"}) =>{
             if(!userId || !productId){
                 throw{
                     ok:false,
@@ -87,8 +87,14 @@ module.exports = mtd ={
 
 
             if(!isCreated){
+                if(action === "more"){
+                    cart.quantity++
 
-        cart.quantity++
+                } else{
+                    cart.quantity--
+                }
+
+        
             await cart.save();
         }
              const orderReload = await order.reload({include:{all:true}})
@@ -99,7 +105,34 @@ module.exports = mtd ={
              return order
             //mtd.calcTotal(order)
            },
-           getCart:({orderId,productId}) =>{
+           clearAllProductFromCart:async({userId}) =>{
+            if(!userId){
+                throw{
+                    ok:false,
+                    message:"Debes ingresar el userId",
+                };
+            }
+            const order = await mtd.getOrder({userId})
+           return  db.Cart.destroy({
+                where:{orderId:order.id}
+            })
+
+
+
+
+           },
+           modifyStatusFromOrder:async({userId,status})=>{
+          if(!userId || !status){
+           throw{
+          ok:false,
+             message:"Debes ingresar el userId y el status"
+                                                  }
+}
+          const order = await mtd.getOrder({userId});
+          order.status = status
+          await order.save();
+           },
+          getCart:({orderId,productId}) =>{
                 return db.Cart.findOrCreate({where:{
                     [Op.and]:[
                         {
