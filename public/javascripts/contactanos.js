@@ -37,9 +37,8 @@ $('description').addEventListener("keyup", function (event) {
 })
 
 document.getElementById('formContacto').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita el envío del formulario por defecto
+    event.preventDefault(); 
   
-    // Verificar los campos del formulario
     const name = document.getElementById('name');
     const emails = document.getElementById('emails');
     const tel = document.getElementById('tel');
@@ -49,7 +48,6 @@ document.getElementById('formContacto').addEventListener('submit', function(even
     const asunto = document.getElementById('asunto');
     const description = document.getElementById('description');
   
-    // Validar los campos del formulario
     let errors = [];
   
     if (name.value.trim() === '') {
@@ -95,7 +93,6 @@ document.getElementById('formContacto').addEventListener('submit', function(even
         showConfirmButton: true,
       });
     } else {
-      // No hay errores, enviar el formulario y mostrar la alerta de éxito
       Swal.fire({
         position: 'center',
         icon: 'success',

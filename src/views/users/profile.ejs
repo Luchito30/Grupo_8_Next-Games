@@ -2,16 +2,12 @@
 <html lang="en">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
 <%- include('../partials/head.ejs') %>
-
   <body class="profile_body" >
     <%- include('../partials/header.ejs') %>
-
     <div class="home__main--titulo" id="profile--titulo">
       <h2>PERFIL DE USUARIO</h2>
     </div>
-
     <section class="profile__conteinerbox">
       <div class="row mb-5" id="profile--conteiner">
         <div class="mx-auto">
@@ -37,12 +33,10 @@
                       data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
                       aria-selected="false">Mis Compras</button>
                   </li>
-
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
                   <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                     aria-labelledby="pills-home-tab" tabindex="0">
-
                     <form action="/users/update?_method=PUT" method="POST" class="row" enctype="multipart/form-data" id="myForm">
                       
                       <div class="col-12 col-md-4">
@@ -53,8 +47,6 @@
                           <input class="form-control" name="image" type="file" id="formFile" hidden>
                         </div>
                       </div>
-
-
                       <div class="col-12 col-md-8 porfolio--datos">
                         <div>
                           <label for="firstName" class="form-label profile--titulo__input">Nombre</label>
@@ -64,8 +56,6 @@
                             <%= locals.errors && errors.firstName ? errors.firstName.msg : null %>
                           </small>
                         </div>
-
-
                         <div>
                           <label for="LastName" class="form-label profile--titulo__input">Apellido</label>
                           <input type="text"
@@ -74,13 +64,7 @@
                           <small class="text-crear">
                             <%= locals.errors && errors.LastName ? errors.LastName.msg : null %>
                           </small>
-                        <div class="profile-form-box-lastName">
-                            <label class="profile-titulo">Apellido: </label>
-                            <input class="profile-form-box-input" type="text" name="lastName"
-                                value="<%= lastName %>" disabled>
                         </div>
-
-
                         <div>
                           <label for="email" class="form-label profile--titulo__input">Correo electrónico</label>
                           <input type="email"
@@ -90,7 +74,6 @@
                             <%= locals.errors && errors.email ? errors.email.msg : null %>
                           </small>
                         </div>
-
                         <div>
                           <label for="userName" class="form-label profile--titulo__input">Usuario</label>
                           <input type="text"
@@ -106,12 +89,9 @@
                         <button type="submit" class="btn btn-primary">Guardar cambios</button>
                       </div>
                     </div>
-
-
                   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
                     tabindex="0">
                     <div class="row profile--domicilio">
-
                       <div class="col-12 col-md-6">
                         <label for="address" class="form-label profile--titulo__input">Domicilio</label>
                         <input type="text" class="form-control etiloprofile <%= (locals.errors && errors.address) && 'is-invalid'%>"
@@ -120,7 +100,6 @@
                           <%= locals.errors && errors.address ? errors.address.msg : null %>
                         </small>
                       </div>
-
                       <div class="col-12 col-md-6">
                         <label for="address" class="form-label profile--titulo__input">Provincia</label>
                         <select class="form-select etiloprofile2 <%= (locals.errors && errors.province) && 'is-invalid'%>"
@@ -135,7 +114,6 @@
                           <%= locals.errors && errors.province ? errors.province.msg : null %>
                         </small>
                       </div>
-
                       <div class="col-12 col-md-6">
                         <label for="address" class="form-label profile--titulo__input">Municipio</label>
                         <select class="form-select etiloprofile2 <%= (locals.errors && errors.municipio) && 'is-invalid'%>"
@@ -162,7 +140,7 @@
                             <%= locals.errors && errors.localidad ? errors.localidad.msg : null %>
                           </small>
                         </div>
-                        
+
 
                         <div class="col-12 col-md-4">
                           <label for="address" class="form-label profile--titulo__input">Código Postal</label>
@@ -200,7 +178,6 @@
                     </div>
                     </form>
                   </div>
-
                   <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
                     tabindex="0">
                     <ul class="list-group">
@@ -217,10 +194,8 @@
         </div>
       </div>
     </section>
-
       <%- include('../partials/carrito.ejs') %>
         <%- include('../partials/whatsApp.ejs') %>
-
         <div  id="profile--footer">
           <%- include('../partials/footer.ejs') %>
         </div>
@@ -232,5 +207,4 @@
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
             crossorigin="anonymous"></script>
   </body>
-
 </html>

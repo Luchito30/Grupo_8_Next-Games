@@ -24,6 +24,8 @@
 #headeradmin__titulo{
     height: 75px;
     width: 50%;
+    padding-top: 0;
+    padding-bottom: 70px;
 }
 
 .headeradmin__section{
