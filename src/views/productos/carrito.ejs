@@ -2,135 +2,56 @@
 <html lang="en">
 
 <%- include('../partials/head.ejs') %>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <body>
     <%- include('../partials/header.ejs') %>
 
-    <main>
-        <section class="header-2">
-            <div class="web-segura">
-                <div class="venta-telefonica">
-                    <h3>Venta Telefónica <i class="fa-solid fa-phone"></i></h3>
-                    <h5>Lun a Vi de 10 a 21hs. y Sáb de 10 a 16hs.</h5>
-                </div>
-                <div class="sitio-seguro">
-                    <h3>Sitio Seguro <i class="fa-sharp fa-solid fa-lock"></i></h3>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="mi-carrito">
-                <h1><i class="fa-sharp fa-solid fa-cart-shopping"></i> Mi Carrito</h1>
-            </div>
-        </section>
+    <main class="container">
 
-        <section class="descripcion-resumen">
-            <section class="descripcion-carrito">
-                <div class="descripcion">
-                    <h4 class="product">Producto</h4>
-                    <h4 class="price">Precio</h4>
-                    <h4 class="quantity">Cantidad</h4>
-                    <h4 class="cost">Total</h4>
-                </div>
-                <div>
-                    <button class="cruz">
-                        <p>x</p>
-                    </button>
-                </div>
-                <div class="detalle-carrito">
-                    <div class="imagen-detalle"><img src="/images/products/item1.jpg" alt="juego">
-                        <h6 class="producto"> PS5 EA SPORT FIFA 23</h6>
-                    </div>
-                    <h5 class="precio">$29.999</h5>
-                    <div class="unidad">
-                        <button class="menos">
-                            <p>-</p>
-                        </button>
-                        <button class="numero">
-                            <p>1</p>
-                        </button>
-                        <button class="mas">
-                            <p>+</p>
-                        </button>
-                    </div>
-                    <h5 class="total">$29.999</h5>
-                </div>
-            </section>
+        <div class="row position-relative">
 
-            <section class="resumen-despacho">
-                <section>
-                    <div class="resumen-carrito">
-                        <h4>Resumen</h4>
-                        <div class="resume-cost">
-                            <div class="resume-cost-total">
-                                <h5>SUBTOTAL</h5>
-                                <h5>ENVIO</h5>
-                                <h5>DESCUENTO</h5>
-                                <h5>TOTAL</h5>
-                            </div>
-                            <div class="resume-cost-total1">
-                                <h5>$29.999</h5>
-                                <h5>$1000</h5>
-                                <h5>$-4.999</h5>
-                                <h5>$25.000</h5>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+          <div id="cards-container" class="col-8">
+          </div>
 
-                <section>
-                    <div class="despacho">
-                        <div class="envio-domicilio">
-                            <button class="boton1">
-                                <h5>Envio a Domicilio</h5>
-                                <i class="fa-solid fa-truck-fast"></i></i>
-                            </button>
-                        </div>
-                        <div class="retiro-tienda">
-                            <button class="boton1">
-                                <h5>Retiro en Tienda</h5>
-                                <i class="fa-solid fa-store"></i>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </section>
+          <!-- TEMPLATE CARD COURSE -->
+          <div class="card col-4 my-5 position-sticky" style="height:fit-content;top:20px">
+            <div class="card-body my-2 d-flex flex-column gap-2">
+              <button class="btn w-100 btn-danger" id="clear-cart">Vaciar Carrito</button>
+              <button class="btn w-100 btn-success" id="btn-buy">Comprar</button>
+              <a href="/products" class="btn w-100 btn-dark">Seguir mirando</a>
+              <div class="text-end fs-3" >
+                <span >
+                  Total:
+                </span>
+                <output id="output-total">
+                  0
+                </output>
+              </div>
+            </div>
+          </div>
 
+        </div>
+      </main>
 
-        <section>
-            <div class="medio-pago">
-                <button class="boton2">
-                    <h5>Medios de Pago <i class="fa-solid fa-hand-holding-dollar"></i> <i
-                            class="fa-regular fa-credit-card"></i></h5>
-                </button>
-            </div>
-        </section>
-        <section class="fin-compra">
-            <div class="finalizar-compra">
-                <button class="boton3">
-                    <h5>Finalizar compra</h5>
-                </button>
-            </div>
-            <div class="agregar-prductos">
-                <button class="boton2">
-                    <h5>Agregar mas productos</h5>
-                </button>
-            </div>
-            <div class="cancelar-compra">
-                <button class="boton2">
-                    <h5>Cancelar compra</h5>
-                </button>
-            </div>
-        </section>
-    </main>
+   
      <!--whatsapp-->
      <%- include('../partials/whatsApp.ejs') %>
     <!-- footer -->
-<%- include('../partials/footer.ejs') %>
+    <div  id="profile--footer">
+        <%- include('../partials/footer.ejs') %>
+      </div>
 
   <!-- fixed -->
   <script src="/javascripts/fixed.js"></script>
+
+  <script src="/javascripts/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
 </body>
 
 

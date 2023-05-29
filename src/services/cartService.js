@@ -7,14 +7,14 @@ module.exports = mtd ={
                 ok:false,
                 message:"Debes ingresar el userId"
             }}
-    const [order] = await   db.Order.findOrCreate({
+         const [order] = await   db.Order.findOrCreate({
             where:{
            [Op.and]:[
             {
                 userId,
         },
         {
-            status:'pending'
+            status:'pending',
         }
         ]
             },
