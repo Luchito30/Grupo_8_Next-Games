@@ -68,9 +68,9 @@
             <hr>
             <div class="footer__section2--links-li">
                 <p class="footer__section__contacto--titulo">Newsletter</p>
-                <form method="POST" action="/#email">
+                <form method="POST" action="" id="form__enviar">
                     <small class="text"> <%= (locals.errors && errors.email) && errors.email.msg %></small>
-                    <input type="email" name="email" id="email" placeholder="Ingrese su email" required>
+                    <input type="email" name="email" id="email" placeholder="Ingrese su email">
                     <button type="submit">Suscribite</button>
                 </form>
             </div>
@@ -97,3 +97,7 @@
 El uso de este sitio web implica la aceptación de los Términos y Condiciones y de las Políticas de Privacidad de Next Games S.A. Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a la verificación de stock. Los precios online para los productos presentados/publicados en www.nextgames.net son válidos exclusivamente para la compra vía internet en las página antes mencionada.
     </p>
 </footer>
+
+<!-- SweetAlert-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/javascripts/Newsletter.js"></script>
