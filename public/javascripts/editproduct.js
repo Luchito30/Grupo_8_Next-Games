@@ -28,8 +28,8 @@ inputName.addEventListener('blur', function (event) {
     case this.value.trim().length < 5:
       msgError('nameError', "El titulo debe tener minimo 5 caracteres", event)
       break;
-    case this.value.trim().length > 80:
-      msgError('nameError', "El titulo debe tener maximo 80 caracteres", event)
+    case this.value.trim().length > 50:
+      msgError('nameError', "El titulo debe tener maximo 50 caracteres", event)
       break;
     default:
       this.classList.add('is-valid')

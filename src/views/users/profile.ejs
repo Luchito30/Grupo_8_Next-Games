@@ -16,7 +16,7 @@
       <div class="row mb-5" id="profile--conteiner">
         <div class="mx-auto">
           <div class="card shadow" id="prodile-cardshadow">
-            <div class="card-header">
+            <div class="card-header profile__encabezado">
               <h5 class="card-title">DATOS DEL USUARIO</h5>
               <div id="messageContainer"></div>
             </div>
@@ -160,7 +160,7 @@
                         </div>
                         
 
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-4">
                           <label for="address" class="form-label profile--titulo__input">Código Postal</label>
                           <input type="number"
                             class="form-control etiloprofile <%= (locals.errors && errors.zipCode) && 'is-invalid'%>" id="zipCode"
@@ -170,8 +170,8 @@
                           </small>
                         </div>
 
-                        <div class="col-12 col-md-2">
-                          <label for="address" class="form-label profile--titulo__input">Código de Area</label>
+                        <div class="col-12 col-md-3">
+                          <label for="address" class="form-label profile--titulo__input">Cód. de Area</label>
                           <input type="number"
                             class="form-control etiloprofile <%= (locals.errors && errors.codArea) && 'is-invalid'%>" id="codArea"
                             name="codArea" value="<%= user.address.codArea%>">
@@ -180,7 +180,7 @@
                           </small>
                         </div>
 
-                        <div class="col-12 col-md-4">
+                        <div class="col-12 col-md-5">
                           <label for="address" class="form-label profile--titulo__input">Telefóno</label>
                           <input type="text"
                             class="form-control etiloprofile <%= (locals.errors && errors.telefono) && 'is-invalid'%>" id="telefono"

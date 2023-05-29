@@ -293,8 +293,23 @@ const regExPass2 =
     cleanError('errorPass2', e)
   })
 
+  $("terms").addEventListener("click", function (e) {
+    if ($("terms").checked) {
+      error = true;
+      $("error-terms").innerHTML = "Debes aceptar las bases y condiciones";
+      $("terms").classList.add("is-invalid");
+    } else {
+      $("error-terms").innerHTML = "";
+      $("terms").classList.remove("is-invalid");
+    }
+  });
+
   $('formRegister').addEventListener('submit', function(e) {
     e.preventDefault();
+
+    if (!validateTerm()) {
+      msgError('error-terms', "Debes aceptar las bases y condiciones", { target: $('terms') });
+    }
   
     const showRecaptchaErrorMessage = (message) => {
       const errorFormLogin = $("errorFormLogin");
@@ -339,7 +354,7 @@ const regExPass2 =
       msgError('errorPass2', "Confirme la contraseña", { target: $('password2') });
     }
   
-    if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword() && validateRecaptcha()) {
+    if (validateName() && validateSurname() && validateUsername() && validateEmail() && validatePassword() && validateConfirmPassword() && validateRecaptcha() && validateTerm()) {
       Swal.fire({
         position: 'center',
         icon: 'success',
@@ -381,3 +396,9 @@ const regExPass2 =
     const confirmPassword = $('password2').value.trim();
     return confirmPassword.length > 0 && confirmPassword === password;
   };
+
+  const validateTerm = () => {
+  const term = $("terms");
+  return term.checked;
+};
+  

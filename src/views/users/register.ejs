@@ -89,35 +89,34 @@
                 </div>
 
                 <input type="text" name="firstName" value="<%= (locals.old && old.firstName) && old.firstName %>"
-                  id="name">
-                <label for="">Nombre</label>
+                  id="name" class="register__input">
+                <label for="" class="register__label">Nombre</label>
                 <p class="text" id="errorName">
                   <%= locals.errors && errors.firstName ? errors.firstName.msg : null %>
                 </p>
 
                 <input type="text" name="LastName" value="<%= (locals.old && old.LastName) && old.LastName%>"
-                  id="surname">
-                <label for="">Apellido</label>
+                  id="surname" class="register__input">
+                <label for="" class="register__label">Apellido</label>
                 <p class="text" id="errorSurname">
                   <%= locals.errors && errors.LastName ? errors.LastName.msg : null %>
                 </p>
 
                 <input type="text" name="userName" value="<%= (locals.old && old.userName) && old.userName%>"
-                  id="user">
-                <label for="">Usuario</label>
+                  id="user" class="register__input">
+                <label for="" class="register__label">Usuario</label>
                 <p class="text" id="errorUsername">
                   <%= locals.errors && errors.userName ? errors.userName.msg : null %>
                 </p>
 
-                <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="email"
-                >
-                <label for="">E-mail</label>
+                <input type="email" name="email" value="<%= (locals.old && old.email) && old.email%>" id="email" class="register__input">
+                <label for="" class="register__label">E-mail</label>
                 <p class="text" id="errorEmail">
                   <%= locals.errors && errors.email ? errors.email.msg : null %>
                 </p>
 
-                <input type="password" name="password" id="password">
-                <label for="">Contraseña</label>
+                <input type="password" name="password" id="password" class="register__input">
+                <label for="" class="register__label">Contraseña</label>
                 <p class="text" id="errorPass">
                   <%= locals.errors && errors.password ? errors.password.msg : null %>
                 </p>
@@ -130,17 +129,25 @@
                   <li id="max">Máximo 12 caracteres</li>
                 </ul>
 
-                <input type="password" name="password2" id="password2">
-                <label for="">Confirmar</label>
+                <input type="password" name="password2" id="password2" class="register__input">
+                <label for="" class="register__label">Confirmar</label>
                 <p class="text" id="errorPass2">
                   <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
                 </p>
 
                 <section class="register--catch">
-                  <div class="g-recaptcha" data-sitekey="6LfFzDEmAAAAAI3svn4X8hwkOai0q9emgICxY365"></div>
+                  <div class="g-recaptcha" data-sitekey="6LfqPBQmAAAAAAxiCfpUuWZSaoLsRUPe8HK67eNm"></div>
                 </section>
 
                 <div><small id="errorFormLogin"></small></div>
+
+                <div class="register__term--box">
+                  <input type="checkbox" value="" id="terms" class="register__term--input">
+                  <label for="terms">Acepto<a class="register__term--a" href="/users/term"> los terminos y condiciones</a></label>
+                </div>
+                <p class="text" id="error-terms">
+                  <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
+                </p>
 
                 <small class="register__avataradv">*Nombre de usuario se debe respetaran mayusculas y minusculas
                   para el ingreso 

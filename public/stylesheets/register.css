@@ -12,10 +12,6 @@
     border: 4px solid red;
 }
 
-body {
-    background-color: var(--fondo1VioletaO);
-}
-
 .titulo-register1{
     color: #fff;
     font-size: 24px;
@@ -110,7 +106,7 @@ body {
     position: relative;
     background-color: #0075fd;
     z-index: 100;
-    filter: drop-shadow(1px 1px 3px white);
+    filter: drop-shadow(4px 6px 3px black);
     font-weight: 900;
     font-family: 'Press Start 2P', cursive;
     margin-bottom: 50px;
@@ -134,7 +130,7 @@ body {
     border: 1px solid white;
     border-radius: 30px;
     margin: -25px auto 100px;
-    filter: drop-shadow(0px 0px 3px white);
+    filter: drop-shadow(5px 8px 3px black);
     width: 80%;
     background-color: var(--fondo1VioletaO);
 }
@@ -151,13 +147,14 @@ form {
     margin-top: 30px;
 }
 
-.forms input  {
+.register__input{
     width: 100%;
     background: transparent;
     border: 5px solid var(--letrasSubtitulos1);
     border-radius: 6px;
     outline: none;
     padding: 15px 15px;
+    filter: drop-shadow(4px 6px 3px black);
     height: 43px;
     margin: 8px 0;
     color: white;
@@ -167,6 +164,7 @@ form {
 #avatar--register{
     background-color: transparent;
     border: 5px solid white;
+    filter: drop-shadow(4px 6px 3px black);
 }
 
 .avatar--register--image{
@@ -181,7 +179,7 @@ form {
     justify-content: space-around;
     display: flex;
     font-weight: 900;
-    filter: drop-shadow(0px 0px 3px white);
+    filter: drop-shadow(6px 8px 3px black);
     bottom: 85px;
     position: relative;
     border: 1px solid white;
@@ -194,12 +192,12 @@ form {
     border: 1px solid white;
     margin: 0 auto;
     width: 85%;
-    filter: drop-shadow(0px 0px 3px white);
+    filter: drop-shadow(6px 8px 3px black);
     bottom: 121px;
     margin-top: 50px;
 }
 
-.forms label {
+.register__label {
     position: relative;
     top: -65px;
     left: -51px;
@@ -298,7 +296,6 @@ form {
     align-items: center;
     display: flex;
     border-radius: 7px;
-    filter: drop-shadow(0px 0px 3px white);
     margin-top: 30px;
     border: 2px solid var(--letrasSubtitulos1);
     cursor: pointer;
@@ -313,6 +310,7 @@ form {
 .register__sociality{
     position: relative;
     bottom: 122px;
+    filter: drop-shadow(6px 8px 3px black);
 }
 
 .google-img{
@@ -339,6 +337,22 @@ form {
     display: flex;
     margin: -25px auto 100px;
     background-color: var(--fondo1VioletaO);
+}
+
+
+.register__term--box{
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.register__term--input{
+    margin-left: 5px;
+}
+
+.register__term--a{
+    color: var(--letrasSubtitulos2);
+    font-weight: 900;
 }
 
 @media(min-width :769px) {
@@ -390,7 +404,7 @@ form {
         border-radius: 37px;
         height: 90pc;
         z-index: -1;
-        filter: drop-shadow(0px 0px 3px white);
+        filter: drop-shadow(6px 8px 3px black);
         top: 40px;
     }
 

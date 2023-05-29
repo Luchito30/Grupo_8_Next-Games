@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+
+            <div>
+                <h1 class="home__main--titulo questions_titulo">Next Games</h1>
+            </div>
+
+            <section class="contacto__section">
+                <div class="footer__section2--links-li">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d580.5459570440477!2d-58.37901122170322!3d-34.60254655259196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacec77d2d2d%3A0x852d4e027ca9461f!2sLavalle%20850%2C%20C1047AAR%20CABA!5e0!3m2!1ses!2sar!4v1685069240878!5m2!1ses!2sar"
+                        width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="contactanos--datosbox">
+                    <div>
+                        <div>
+                            <h3 class="home__main--titulo questions_titulo contacto__datoscontact">Datos de contacto
+                            </h3>
+                        </div>
+                        <div class="contactanos__direccion">
+                            <p class="contactanos__direccion--Titulo"><i class="fa fa-location-dot"></i> Direccion:</p>
+                            <p class="contactanos__direccion--lugar"> Encontranos en Lavalle 850</p>
+                        </div>
+
+                        <div class="contactanos__email">
+                            <p class="contactanos__direccion--Titulo"><i class="fa-regular fa-envelope"></i> Email:</p>
+                            <a class="footer__enviodeemaiol  contactanos__email--envio"
+                                href="mailto:nextgamesventas@gmail.com?Subject=Consulta%20de%20venta&body=Necesito%20informacion%20de%20un%20producto">nextgamesventas@google.com</a>
+                        </div>
+
+                        <div class="contactanos__telefonos">
+                            <p class="contactanos__direccion--Titulo"><i class="fa fa-phone"></i> Telefonos:</p>
+                            <p class="contactanos__direccion--telefono1">0800 420 0809</p>
+                            <p class="contactanos__direccion--telefono2">0810 590 2059</p>
+                        </div>
+
+                        <div class="contactanos__horarios">
+                            <p class="contactanos__direccion--Titulo"><i class="fa-regular fa-clock"></i> Horarios:</p>
+                            <p class="contactanos__direccion--telefono1">LU-VI de 09:00 a 18:00</p>
+                            <p class="contactanos__direccion--telefono2">SA de 9:00 a 13:00</p>
+                        </div>
+
+                        <div class="contactanos__redes">
+                            <p class="contactanos__direccion--Titulo"><i class="fa-solid fa-comments"></i> Redes:</p>
+                            <div class="redes__container">
+                                <p class="contactanos__direccion--face"><a href="#"><i
+                                            class="fa-brands fa-facebook"></i></a>
+                                </p>
+                                <p class="contactanos__direccion--insta"><a href="#"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </p>
+                                <p class="contactanos__direccion--twiter"><a href="#"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                </p>
+                                <p class="contactanos__direccion--whasapp"><a href="https://bit.ly/next-games"><i
+                                            class="fa-brands fa-whatsapp"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <h3 class="home__main--titulo questions_titulo contacto__datosescribinos">Escribinos</h3>
+                        </div>
+
+                        <div class="contactanos__escribinos">
+                            <form action="" method="POST" id="formContacto">
+                                <div>
+                                    <label for="name" class="contactanos__formname">Nombre</label>
+                                    <input type="text" name="name" id="name" class="contactanos__formname--name" value="<%= (locals.old && old.name) && old.name %>">
+                                    <small class="text-crear contactanos__errors" id="errorName">
+                                        <%= locals.errors && errors.name ? errors.name.msg : null %>
+                                    </small>
+                                </div>
+
+                                <div>
+                                    <label for="emails" class="contactanos__formemail">Email</label>
+                                    <input type="email" name="emails" id="emails" class="contactanos__formname--email" value="<%= (locals.old && old.emails) && old.emails %>">
+                                    <small class="text-crear contactanos__errors" id="errorEmail">
+                                        <%= locals.errors && errors.emails ? errors.emails.msg : null %>
+                                    </small>
+                                </div>
+
+                                <div>
+                                    <label for="tel" class="contactanos__formtel">Telefono</label>
+                                    <input type="number" name="tel" id="tel" class="contactanos__formname--tel" value="<%= (locals.old && old.tel) && old.tel %>">
+                                    <small class="text-crear contactanos__errors" id="errortel">
+                                        <%= locals.errors && errors.tel ? errors.tel.msg : null %>
+                                    </small>
+                                </div>
+
+                                <div>
+                                    <label for="province" class="contactanos__formprovince">Provincia</label>
+                                    <select name="province" id="province"
+                                        class="contactanos__formname--province"></select>
+                                        <small class="text-crear contactanos__errors" id="errorprovince">
+                                            <%= locals.errors && errors.province ? errors.province.msg : null %>
+                                        </small>
+                                </div>
+
+                                <div>
+                                    <label for="municipio" class="contactanos__formmunicipio">Municipio</label>
+                                    <select name="municipio" id="municipio"
+                                        class="contactanos__formname--municipio"></select>
+                                        <small class="text-crear contactanos__errors" id="errormunicipio">
+                                            <%= locals.errors && errors.municipio ? errors.municipio.msg : null %>
+                                        </small>
+                                </div>
+
+                                <div>
+                                    <label for="localidad" class="contactanos__formlocalidad">Localidad</label>
+                                    <select name="localidad" id="localidad"
+                                        class="contactanos__formname--localidad"></select>
+                                        <small class="text-crear contactanos__errors" id="errorlocalidad">
+                                            <%= locals.errors && errors.localidad ? errors.localidad.msg : null %>
+                                        </small>
+                                </div>
+
+                                <div>
+                                    <label for="asunto" class="contactanos__formasunto">Asunto de la consulta</label>
+                                    <input type="text" name="asunto" id="asunto" class="contactanos__formname--asunto" value="<%= (locals.old && old.asunto) && old.asunto %>">
+                                    <small class="text-crear contactanos__errors" id="errorasunto">
+                                        <%= locals.errors && errors.asunto ? errors.asunto.msg : null %>
+                                    </small>
+                                </div>
+
+                                <div>
+                                    <label for="description" class="contactanos__formconsulta">Consulta</label><small class="descriptioninfo--small contactanos__contador" id="descriptionInfo" hidden>(<span
+                                        id="numberCharacters"></span> caracteres disponibles)</small>
+                                    <textarea name="description" class="contactanos__formname--consulta" id="description"
+                                        cols="30" rows="10"><%= (locals.old && old.description) && old.description %></textarea>
+                                        <small class="text-crear contactanos__errors" id="descriptionError">
+                                            <%= locals.errors && errors.description ? errors.description.msg : null %>
+                                        </small>
+                                </div>
+
+
+                                <div>
+                                    <button class="login__enviar contactanos__enviar" type="submit" class="guardar">Enviar</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <%- include('../partials/carrito.ejs') %>
+            <%- include('../partials/whatsApp.ejs') %>
+
+            <%- include('../partials/footer.ejs') %>
+
+            <script src="/javascripts/fixed.js"></script>
+            
+                <!-- SweetAlert-->
+           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="/javascripts/contactanos.js"></script>
+                <script src="/javascripts/argAddress.js"></script>
+    </body>
+
+</html>

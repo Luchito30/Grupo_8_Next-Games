@@ -28,8 +28,8 @@ inputName.addEventListener('blur', function (event) {
     case this.value.trim().length < 5:
       msgError('nameError', "El titulo debe tener minimo 5 caracteres", event)
       break;
-    case this.value.trim().length > 80:
-      msgError('nameError', "El titulo debe tener maximo 80 caracteres", event)
+    case this.value.trim().length > 50:
+      msgError('nameError', "El titulo debe tener maximo 50 caracteres", event)
       break;
     default:
       this.classList.add('is-valid')
@@ -305,7 +305,7 @@ const regExLetter = /^[A-Z]+$/i;
 
 const validatename = () => {
   const name = $('name').value.trim();
-  return name.length > 5 && name.length < 80 && regExLetter.test(name);
+  return name.length > 5 && name.length < 50 && regExLetter.test(name);
 };
 
 const validateprice = () => {

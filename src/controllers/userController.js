@@ -334,7 +334,20 @@ module.exports = {
             });
         }
     },
-
-
+    term: (req,res) => {
+        return res.render('users/term', {
+            title: "Next Games | Terminos y Condiciones"
+        });
+    },
+    privacidad: (req,res) => {
+        return res.render('users/privacidad', {
+            title: "Next Games | Politica de Privacidad"
+        });
+    },
+    devolucion: (req,res) => {
+        return res.render('users/devolucion', {
+            title: "Next Games | Política de Devoluciones"
+        });
+    }
 }
 

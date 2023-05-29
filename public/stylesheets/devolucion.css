@@ -1,0 +1,74 @@
+.devolucion--titulo{
+    font-size: 20px;
+    width: 70%;
+    font-family: 'Press Start 2P', cursive;
+}
+.devolucion__conteiner{
+    width: 80%;
+    margin: 0 auto;
+}
+.devolucion__conteiner h2{
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    font-size: 16px;
+    filter: drop-shadow(6px 8px 3px black);
+    margin-top: 20px;
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid white;
+    border-radius: 15px;
+    background-color:  #372aa5;;
+    line-height: 2;
+}
+.devolucion__h2--span{
+    filter: drop-shadow(3px 6px 3px black);
+}
+.devolucion__conteiner p{
+    margin-bottom: 35px;
+    margin-top: 20px;
+    color: white;
+    font-size: 16px;
+}
+.devolucion__conteiner ul{
+    margin-bottom: 35px;
+    margin-top: 20px;
+    color: white;
+    font-size: 16px;
+}
+.devolucion__strong{
+    color: cornflowerblue;
+}
+
+@media(min-width:769px){
+    .devolucion--titulo{
+        font-size: 40px;
+    }
+    .devolucion__conteiner{
+        width: 65%;
+    }
+    .devolucion__conteiner h2{
+        font-size: 24px;
+    }
+    .devolucion__conteiner p{
+        font-size: 18px;
+    }
+    .devolucion__conteiner ul{
+        font-size: 18px;
+    }
+}
+
+@media(min-width:1024px){
+    .devolucion__conteiner{
+        width: 50%;
+    }
+    .devolucion__conteiner h2{
+        font-size: 28px;
+    }
+    .devolucion__conteiner p{
+        font-size: 20px;
+    }
+    .devolucion__conteiner ul{
+        font-size: 20px;
+    }
+}
