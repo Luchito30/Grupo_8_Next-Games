@@ -99,6 +99,7 @@
     font-size: 18px;
     top: 15px;
     font-family: 'Press Start 2P', cursive;
+    filter: drop-shadow(4px 6px 3px black);
 }
 
 

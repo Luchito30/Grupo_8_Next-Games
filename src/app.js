@@ -14,6 +14,7 @@ const { loginFacebookService } = require('./services/facebookServices');
 const mainRouter = require("./routes/main");
 const userRouter = require("./routes/users");
 const authRouter = require("./routes/auth")
+const infoRouter = require("./routes/info")
 const productRouter = require('./routes/products');
 const adminRouter = require('./routes/admin')
 const localsUserCheck = require("./middlewares/localsUserCheck");
@@ -59,6 +60,7 @@ app.use("/users", userRouter);
 app.use("/products", productRouter);
 app.use("/admin", adminRouter)
 app.use("/auth",authRouter)
+app.use("/info",infoRouter);
 
 /*apis*/
 app.use('/api/users', require('./routes/api/apiUsuario'))

@@ -373,6 +373,16 @@ module.exports = {
         console.log(error);
       }
     }
+  },
+  confirmRemove: (req,res) => {
+    const { id } = req.params;
+
+    db.Product.findByPk(id).then((product) => {
+    return res.render('productos/confirmRemove',{
+      title: "Next Games | Confirmar eliminación",
+      ...product.dataValues
+    })
+  })
   },  
   remove: async (req, res) => {
     const { id } = req.params;

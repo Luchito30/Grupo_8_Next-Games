@@ -28,8 +28,8 @@ inputName.addEventListener('blur', function (event) {
     case this.value.trim().length < 5:
       msgError('nameError', "El titulo debe tener minimo 5 caracteres", event)
       break;
-    case this.value.trim().length > 80:
-      msgError('nameError', "El titulo debe tener maximo 80 caracteres", event)
+    case this.value.trim().length > 50:
+      msgError('nameError', "El titulo debe tener maximo 50 caracteres", event)
       break;
     default:
       this.classList.add('is-valid')
@@ -204,7 +204,6 @@ inputImages.addEventListener('change', function (e) {
   const selectedImagesContainer = document.getElementById('selectedImages');
   const boxImagesPreview = document.getElementById('boxImagesPreview');
 
-  // Limpiar el contenedor de imágenes antes de agregar las nuevas imágenes
   selectedImagesContainer.innerHTML = '';
 
   switch (true) {
@@ -251,101 +250,85 @@ inputImages.addEventListener('change', function (e) {
 formAddProduct.addEventListener('submit', function (event) {
   event.preventDefault();
 
-  const submitBtnContainer = document.querySelector('.submit-btn--crear');
-  const submitBtnCrear = document.querySelector('.submit-btn--crear2');
+  const inputName = $('name');
+  const inputPrecio = $('price');
+  const inputDiscount = $('discount');
+  const selectState = $('category');
+  const selectCategory = $('subCategory');
+  const inputDescription = $('description');
+  const inputImage = $('image');
+  const inputImages = $('images');
 
-  if (!validatename()) {
-    msgError('nameError', "El nombre es obligatorio", { target: $('name') });
+  let errors = [];
+
+  if (inputName.value.trim() === '') {
+    errors.push('Debe ingresar el nombre del producto');
+  } else if(inputName.value.trim().length < 5){
+    errors.push('El nombre debe tener como minimo 5 carecteres');
+  } else if(inputName.value.trim().length > 50){
+    errors.push('El nombre debe tener como maximo 50 carecteres');
   }
 
-  if (!validateprice()) {
-    msgError('precioError', "El precio es obligatorio", { target: $('price') });
+  if (inputPrecio.value.trim() === '') {
+    errors.push('Debe ingresar el precio del producto');
+  } else if (inputPrecio.value < 0) {
+    errors.push('Debe ingresar números positivos');
   }
 
-  if (!validatediscount()) {
-    msgError('discountError', "El descuento es obligatorio", { target: $('discount') });
-  }
-  
-  if (!validatecategory()) {
-    msgError('stateError', "El estado es obligatorio", { target: $('category') });
-  }
-
-  if (!validatesubCategory()) {
-    msgError('categoryError', "La categoría es obligatoria", { target: $('subCategory') });
+  if (inputDiscount.value.trim() === '') {
+    errors.push('Debe ingresar el descuento del producto');
+  } else if (inputDiscount.value < 0) {
+    errors.push('Debe ingresar números positivos');
+  } else if (inputDiscount.value > 100) {
+    errors.push('El descuento no puede superar los 100');
   }
 
-  if (!validateimage()) {
-    msgError('imageError', "La imagen es obligatoria", { target: $('image') });
-    submitBtnContainer.classList.add('is-invalid');
+  if (selectState.value.trim() === '') {
+    errors.push('Debe seleccionar un estado');
   }
 
-  if (!validateimages()) {
-    msgError('imagesError', "Las imágenes son obligatorias", { target: $('images') });
-    submitBtnCrear.classList.add('is-invalid');
+  if (selectCategory.value.trim() === '') {
+    errors.push('Debe seleccionar una categoría');
   }
 
-  if (!validatedescription()) {
-    msgError('descriptionError', "La descripción del producto es obligatoria", { target: $('description') });
+  if (inputDescription.value.trim() === '') {
+    errors.push('Debe ingresar una descripción');
+  } else if(inputDescription.value.trim().length < 5){
+    errors.push('La descripción debe tener como minimo 5 carecteres');
+  } else if(inputDescription.value.trim().length > 350){
+    errors.push('La descripción debe tener como maximo 350 carecteres');
   }
 
-  if (validatename() && validateprice() && validatediscount() && validatecategory() && validatesubCategory() && validateimage() && validateimages() && validatedescription()) {
+  if (inputImage.value.trim() === '') {
+    errors.push('Debe ingresar una imagen');
+  }
+
+  if (inputImages.files.length === 0) {
+    errors.push('Debe ingresar como mínimo una imagen');
+  } else if (inputImages.files.length > 5) {
+    errors.push('Solo se permiten 5 imágenes');
+  }
+
+  if (errors.length > 0) {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Datos inválidos',
+      html: errors.join('<br>'),
+      showConfirmButton: true,
+    });
+  } else {
     Swal.fire({
       position: 'center',
       icon: 'success',
-      title: 'Acción realizada con éxito',
-      showConfirmButton: false,
-      timer: 1500
-    })
-    this.submit();
+      title: 'Producto creado con éxito',
+      showConfirmButton: true,
+    }).then(() => {
+      this.submit();
+    });
   }
 });
 
 
-const regExLetter = /^[A-Z]+$/i;
-
-const validatename = () => {
-  const name = $('name').value.trim();
-  return name.length > 5 && name.length < 80 && regExLetter.test(name);
-};
-
-const validateprice = () => {
-  const price = $('price').value.trim();
-  return price.length > 0 && /^\d+$/.test(price);
-};
-
-console.log(validatename);
-  console.log(validateprice);
-const validatediscount = () => {
-  const discount = $('discount').value.trim();
-  return discount.length > 0 && discount.length < 3 && /^\d+$/.test(discount);
-};
-
-const validatecategory = () => {
-  const category = $('category').value.trim();
-  return category.length > 0;
-};
-
-const validatesubCategory = () => {
-  const subCategory = $('subCategory').value.trim();
-  return subCategory.length > 0;
-};
-
-const validateimage = () => {
-  const image = $('image').value.trim();
-  return image.length > 0;
-};
-
-const validateimages = () => {
-  const images = $('images').value.trim();
-  return images.length > 0 && images.length > 5;
-};
-
-const validatedescription = () => {
-  const description = $('description').value.trim();
-  return description.length > 5 && description.length < 80 && regExLetter.test(description);
-};
 
 
-
-
-  

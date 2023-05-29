@@ -3,27 +3,31 @@
 
 <%- include('../partials/head.ejs') %>
 
-<body>
-    <%- include('../partials/headerAdmin') %> 
-    
-            
-    
-       
-    
-    <section class="remove__section">
- <div class="col-12">
-            <h2 class="remove__titulo">¡ADVERTENCIA!</h2>
-        </div>
-   
-        <h4 class="remove__name">Si eliminas el producto <%- name %> no podras recuperarlo</h3><br><br>
-            <h5 class="remove__confirm">¿Estas seguro que quieres continuar?</h5>
-        <div class="remove__buttoms">
-            <form action="/products/remove/<%- id %>?_method=DELETE" method="post">
-            <button type="submit" class="remove__buttom">Borrar</button>
-        </form>
-        <button class="remove__buttom"><a href="/admin/dashboardProduct">Cancelar</a></button>
-    </div>
-        </section>
-	
-</body>
+    <body>
+        <%- include('../partials/loader.ejs') %>
+            <%- include('../partials/headerAdmin') %>
+
+                <section class="remove__section">
+                    <div class="col-12">
+                        <h2 class="remove__titulo">¡ADVERTENCIA!</h2>
+                    </div>
+
+                    <h4 class="remove__name">Si eliminas el producto <%- name %> no podras recuperarlo</h3><br><br>
+                            <h5 class="remove__confirm">¿Estas seguro que quieres continuar?</h5>
+                            <div class="remove__buttoms">
+                                <form action="/products/remove/<%- id %>?_method=DELETE" method="post" id="form-delete">
+                                    <button type="submit" class="remove__buttom">Borrar</button>
+                                </form>
+                                <button class="remove__buttom"><a href="/admin/dashboardProduct">Cancelar</a></button>
+                            </div>
+                </section>
+
+
+                <!-- SweetAlert-->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script src="/javascripts/productalertdelete.js"></script>
+                <script src="/javascripts/loader.js"></script>
+
+    </body>
+
 </html>

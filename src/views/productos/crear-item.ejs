@@ -4,187 +4,188 @@
 <%- include('../partials/head.ejs') %>
 
   <body class="crear__body">
-    <!-- header -->
-    <%- include('../partials/headerAdmin.ejs') %>
+    <%- include('../partials/loader.ejs') %>
+      <%- include('../partials/headerAdmin.ejs') %>
 
 
-      <main class="main-crear">
+        <main class="main-crear">
 
-        <form method="POST" class="crear-form" enctype="multipart/form-data" id="crear-item-from">
+          <form method="POST" class="crear-form" enctype="multipart/form-data" id="crear-item-from">
 
-          <h1 class="titulo-crear">
-            Crea un nuevo producto
-          </h1>
+            <h1 class="titulo-crear">
+              Crea un nuevo producto
+            </h1>
 
-          <small class="text-crear" id="nameError">
-            <%= locals.errors && errors.name ? errors.name.msg : null %>
-          </small>
-          <div class="crear__nameprodu">
-            <label for="name">Nombre del producto</label>
-            <input type="text" name="name"
-              class="form-produ-control <%= locals.errors && errors.name ? 'is-invalid' : null%>" id="name"
-              placeholder="Nombre del producto" value="<%= (locals.old && old.name) && old.name %>">
-          </div>
-
-          <div class="crear__boxprecio">
-
-            <section class="crear-formulario-2">
-              <small class="text-crear" id="precioError">
-                <%= locals.errors && errors.price ? errors.price.msg : null %>
-              </small>
-              <div class="crear-formulario-2__precio">
-                <label for="price">Precio</label>
-                <input type="number" placeholder="Precio" name="price"
-                  class="form-produ-control <%= locals.errors && errors.price ? 'is-invalid' : null%>" id="price"
-                  value="<%= (locals.old && old.price) && old.price %>">
-              </div>
-            </section>
-
-            <section class="crear-formulario-2">
-              <small class="text-crear" id="discountError">
-                <%= locals.errors && errors.discount ? errors.discount.msg : null %>
-              </small>
-              <div class="crear-formulario-2__precio">
-                <label for="discount">Descuento</label>
-                <input type="number" placeholder="Ingrese Descuento" name="discount"
-                  class="form-produ-control <%= locals.errors && errors.discount ? 'is-invalid' : null%>" id="discount"
-                  value="<%= locals.old && old.discount ? old.discount : 0 %>">
-              </div>
-            </section>
-
-          </div>
-
-          <div class="crear__subtitulo">
-            <h3>Estado del Producto</h3>
-          </div>
-
-          <small class="text-crear" id="stateError">
-            <%= locals.errors && errors.category ? errors.category.msg : null %>
-          </small>
-          <div class="dropdown--crear">
-            <select name="category" id="category"
-              class="form-control <%= locals.errors && errors.category ? 'is-invalid' : null%>">
-              <option value="" selected hidden>Seleccione un estado</option>
-              <% states.forEach(({name, id})=> { %>
-                <option value="<%= id %>">
-                  <% if (name==="in-sale" ) { %>
-                    Oferta
-                    <% } %>
-                      <% if (name==="newer" ) { %>
-                        Nuevo
-                        <% } %>
-                          <% if (name==="normally" ) { %>
-                            Normal
-                            <% } %>
-                </option>
-                <% }) %>
-            </select>
-          </div>
-
-          <div class="crear__subtitulo">
-            <h3>Seleccioná la categoria</h3>
-          </div>
-
-          <small class="text-crear" id="categoryError">
-            <%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %>
-          </small>
-          <div class="dropdown--crear">
-            <select name="subCategory" id="subCategory"
-              class="form-control <%= locals.errors && errors.subCategory ? 'is-invalid' : null%>">
-              <option value="" selected hidden>Seleccione una categoria</option>
-              <% categories.forEach(({name, id})=> { %>
-                <option value="<%= id %>">
-                  <%= name %>
-                </option>
-                <% }) %>
-            </select>
-          </div>
-
-          <div class="crear__subtitulo">
-            <h3>Imagen del Producto</h3>
-          </div>
-
-          <small class="text-crear" id="imageError">
-            <%= locals.errors && errors.image ? errors.image.msg : null %>
-          </small>
-          <div class="submit-btn--crear">
-            <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
-            <label for="image">
-              <div id="boxImagePreview">
-                <i class="fa-solid fa-image"></i>
-                <img id="selectedImage">
-              </div>
-              <div class="submit-btn--crea__nombrearchi">
-                <span id="btnImage">Subir imagen</span>
-              </div>
-            </label>
-          </div>
-
-
-          <div class="crear__subtitulo">
-            <h3>Imagenes del Producto</h3>
-          </div>
-
-          <small class="text-crear" id="imagesError">
-            <%= locals.errors && errors.images ? errors.images.msg : null %>
-          </small>
-          <div class="submit-btn--crear2">
-            <input type="file" class="submit-btn--crear__buscar" id="images" name="images" multiple />
-            <label for="images">
-              <div id="boxImagesPreview">
-                <i class="fa-solid fa-image"></i>
-                <div id="selectedImages"></div>
-              </div>
-              <div class="submit-btn--crea__nombrearchi">
-                <span id="btnImages">Subir imágenes</span>
-              </div>
-            </label>
-          </div>
-
-
-
-          <div class="crear__subtitulo">
-            <h3>Descripción del producto</h3><small class="descriptioninfo--small" id="descriptionInfo" hidden>(<span
-                id="numberCharacters"></span> caracteres disponibles)</small>
-          </div>
-
-
-          <section class="crear__descripcion">
-            <small class="text-crear" id="descriptionError">
-              <%= locals.errors && errors.description ? errors.description.msg : null %>
+            <small class="text-crear" id="nameError">
+              <%= locals.errors && errors.name ? errors.name.msg : null %>
             </small>
-            <div class="crear-formulario-2__descripcion">
-              <label for="description"></label>
-              <textarea name="description"
-                class="form-produ-control <%= locals.errors && errors.description ? 'is-invalid' : null%>"
-                id="description" cols="50" rows="60"
-                placeholder="Breve descripcion del Producto..."><%= (locals.old && old.description) && old.description %></textarea>
+            <div class="crear__nameprodu">
+              <label for="name">Nombre del producto</label>
+              <input type="text" name="name"
+                class="form-produ-control <%= locals.errors && errors.name ? 'is-invalid' : null%>" id="name"
+                placeholder="Nombre del producto" value="<%= (locals.old && old.name) && old.name %>">
             </div>
-          </section>
 
-          <small class="text-crear" id="formError">
+            <div class="crear__boxprecio">
 
-          </small>
+              <section class="crear-formulario-2">
+                <small class="text-crear" id="precioError">
+                  <%= locals.errors && errors.price ? errors.price.msg : null %>
+                </small>
+                <div class="crear-formulario-2__precio">
+                  <label for="price">Precio</label>
+                  <input type="number" placeholder="Precio" name="price"
+                    class="form-produ-control <%= locals.errors && errors.price ? 'is-invalid' : null%>" id="price"
+                    value="<%= (locals.old && old.price) && old.price %>">
+                </div>
+              </section>
 
-          <div class="crear-btnform">
-            <button type="submit" class="crear-btn--submit">Aceptar</button>
+              <section class="crear-formulario-2">
+                <small class="text-crear" id="discountError">
+                  <%= locals.errors && errors.discount ? errors.discount.msg : null %>
+                </small>
+                <div class="crear-formulario-2__precio">
+                  <label for="discount">Descuento</label>
+                  <input type="number" placeholder="Ingrese Descuento" name="discount"
+                    class="form-produ-control <%= locals.errors && errors.discount ? 'is-invalid' : null%>"
+                    id="discount" value="<%= locals.old && old.discount ? old.discount : 0 %>">
+                </div>
+              </section>
+
+            </div>
+
+            <div class="crear__subtitulo">
+              <h3>Estado del Producto</h3>
+            </div>
+
+            <small class="text-crear" id="stateError">
+              <%= locals.errors && errors.category ? errors.category.msg : null %>
+            </small>
+            <div class="dropdown--crear">
+              <select name="category" id="category"
+                class="form-control <%= locals.errors && errors.category ? 'is-invalid' : null%>">
+                <option value="" selected hidden>Seleccione un estado</option>
+                <% states.forEach(({name, id})=> { %>
+                  <option value="<%= id %>">
+                    <% if (name==="in-sale" ) { %>
+                      Oferta
+                      <% } %>
+                        <% if (name==="newer" ) { %>
+                          Nuevo
+                          <% } %>
+                            <% if (name==="normally" ) { %>
+                              Normal
+                              <% } %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+
+            <div class="crear__subtitulo">
+              <h3>Seleccioná la categoria</h3>
+            </div>
+
+            <small class="text-crear" id="categoryError">
+              <%= locals.errors && errors.subCategory ? errors.subCategory.msg : null %>
+            </small>
+            <div class="dropdown--crear">
+              <select name="subCategory" id="subCategory"
+                class="form-control <%= locals.errors && errors.subCategory ? 'is-invalid' : null%>">
+                <option value="" selected hidden>Seleccione una categoria</option>
+                <% categories.forEach(({name, id})=> { %>
+                  <option value="<%= id %>">
+                    <%= name %>
+                  </option>
+                  <% }) %>
+              </select>
+            </div>
+
+            <div class="crear__subtitulo">
+              <h3>Imagen del Producto</h3>
+            </div>
+
+            <small class="text-crear" id="imageError">
+              <%= locals.errors && errors.image ? errors.image.msg : null %>
+            </small>
+            <div class="submit-btn--crear">
+              <input type="file" id="image" name="image" class="submit-btn--crear__buscar">
+              <label for="image">
+                <div id="boxImagePreview">
+                  <i class="fa-solid fa-image"></i>
+                  <img id="selectedImage">
+                </div>
+                <div class="submit-btn--crea__nombrearchi">
+                  <span id="btnImage">Subir imagen</span>
+                </div>
+              </label>
+            </div>
 
 
-            <button type="reset" class="crear-btn--reset">Resetear</button>
+            <div class="crear__subtitulo">
+              <h3>Imagenes del Producto</h3>
+            </div>
+
+            <small class="text-crear" id="imagesError">
+              <%= locals.errors && errors.images ? errors.images.msg : null %>
+            </small>
+            <div class="submit-btn--crear2">
+              <input type="file" class="submit-btn--crear__buscar" id="images" name="images" multiple />
+              <label for="images">
+                <div id="boxImagesPreview">
+                  <i class="fa-solid fa-image"></i>
+                  <div id="selectedImages"></div>
+                </div>
+                <div class="submit-btn--crea__nombrearchi">
+                  <span id="btnImages">Subir imágenes</span>
+                </div>
+              </label>
+            </div>
 
 
-            <a href="/admin/dashboardProduct" class="crear-btn--cancelar"><span
-                class="crear-btn--cancelar--letra">Cancelar</span></a>
-          </div>
-        </form>
-      </main>
 
-      <%- include('../partials/footer.ejs') %>
+            <div class="crear__subtitulo">
+              <h3>Descripción del producto</h3><small class="descriptioninfo--small" id="descriptionInfo" hidden>(<span
+                  id="numberCharacters"></span> caracteres disponibles)</small>
+            </div>
 
-      
-      <!-- SweetAlert-->
-        <script src="/javascripts/createproducts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+            <section class="crear__descripcion">
+              <small class="text-crear" id="descriptionError">
+                <%= locals.errors && errors.description ? errors.description.msg : null %>
+              </small>
+              <div class="crear-formulario-2__descripcion">
+                <label for="description"></label>
+                <textarea name="description"
+                  class="form-produ-control <%= locals.errors && errors.description ? 'is-invalid' : null%>"
+                  id="description" cols="50" rows="60"
+                  placeholder="Breve descripcion del Producto..."><%= (locals.old && old.description) && old.description %></textarea>
+              </div>
+            </section>
+
+            <small class="text-crear" id="formError">
+
+            </small>
+
+            <div class="crear-btnform">
+              <button type="submit" class="crear-btn--submit">Aceptar</button>
+
+
+              <button type="reset" class="crear-btn--reset">Resetear</button>
+
+
+              <a href="/admin/dashboardProduct" class="crear-btn--cancelar"><span
+                  class="crear-btn--cancelar--letra">Cancelar</span></a>
+            </div>
+          </form>
+        </main>
+
+        <%- include('../partials/footer.ejs') %>
+
+
+          <!-- SweetAlert-->
+          <script src="/javascripts/createproducts.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script src="/javascripts/loader.js"></script>
   </body>
 
 </html>

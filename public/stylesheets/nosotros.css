@@ -1,0 +1,71 @@
+.nosotros__img{
+    border: 2px solid black;
+    width: 90%;
+    margin: 0 auto;
+    height: 200px;
+    border-radius: 15px;
+    display: block;
+    filter: drop-shadow(0px 0px 7px white);
+}
+.nosotros_container{
+    color: white;
+    border: 2px solid white;
+    padding: 25px 20px;
+    width: 70%;
+    border-radius: 15px;
+    margin: 40px auto 30px;
+    filter: drop-shadow(4px 3px 2px black);
+}
+.nosotros_container p{
+    filter: drop-shadow(4px 6px 3px black);
+    font-size: 20px;
+}
+.nosotros_titulo{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    padding: 20px 0;
+}
+.nosotros__img--final{
+    margin: 65px auto;
+    display: block;
+    width: 50%;
+    filter: drop-shadow(4px 7px 3px black);
+}
+
+@media(min-width: 769px){
+    .nosotros__img {
+        width: 80%;
+        height: 250px;
+    }
+    .nosotros_container {
+        width: 65%;
+    }
+    .nosotros__section{
+        margin-bottom: 40px;
+    }
+    .container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: baseline;
+    }
+    .nosotros_container p{
+        font-size: 24px;
+        line-height: 35px;
+        letter-spacing: 2px;
+    }
+    .nosotros_titulo{
+        font-size: 24px;
+    }
+    .nosotros__img--final{
+        width: 30%;
+    }
+}
+
+@media(min-width: 1024px){
+    .nosotros__img--final{
+        width: 20%;
+    }
+    .nosotros_container {
+        width: 50%;
+    }
+}

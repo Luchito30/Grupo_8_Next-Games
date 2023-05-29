@@ -18,6 +18,8 @@ footer {
    display: flex;
    justify-content: space-between;
    align-items: center;
+   border-top: 1px solid currentColor;
+   filter: drop-shadow(5px 4px 3px black);
 }
 
 .footer__section--left {
@@ -71,6 +73,7 @@ footer {
    font-size: 26px;
    font-weight: 600;
    color: var(--letrasSubtitulos2);
+   filter: drop-shadow(5px 6px 3px black);
 }
 
 .footer__section__contacto--telefono {
@@ -226,11 +229,13 @@ footer {
 .footer__enviodeemaiol:hover{
    color: var(--letrasSubtitulos2);
 }
+.footer__emailcontact{
+   margin-top: 40px;
+}
 
-/*--------TABLET---------*/
 @media(min-width:485px) {
    .footer__section2--links li a {
-      font-size: 14px;
+      font-size: 18px;
    }
 
    .tarjetas img {

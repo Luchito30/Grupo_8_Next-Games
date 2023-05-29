@@ -5,118 +5,126 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <%- include('../partials/background.ejs') %>
 
-    <body>
-        <%- include('../partials/header.ejs') %>
+        <body>
+            <%- include('../partials/loader.ejs') %>
+                <%- include('../partials/header.ejs') %>
 
-            <main class="login__main">
+                    <main class="login__main">
 
-                <section class="login__main__costados">
-                    <div class="login__main__costados--left">
-                        <img src="/images/Fondo_1.png" alt="Imagen no encontrada" class="login__main_left--img">
-                    </div>
-
-                    <div class="login__main__costados--right">
-                        <img src="/images/Fondo_2.png" alt="Imagen no encontrada" class="login__main_right--img">
-                    </div>
-                </section>
-
-                <div class="home__main--titulo">
-                    <h2>INICIAR SECIÓN</h2>
-                </div>
-
-                <section class="login__main__section2">
-                    <form autocomplete="off" action="" method="POST" class="login__main__section2--form" id="formLogin">
-                        <div class="login__main__form-control">
-                            <label for="username">Usuario o correo electrónico</label>
-                            <input type="text" id="username" placeholder="Usuario o correo electrónico"
-                                name="useremail">
-                            <small class="text" id="errorUserEmail">
-                                <%= (locals.errors && errors.useremail) && errors.useremail.msg %>
-                            </small>
-                        </div>
-                        <div class="login__main__form-control">
-                            <label class="login__contraseña__label" for="password">Contraseña <button class="form__button" type="button"
-                                    onclick="mostrarContrasena()"><i class="fa-solid fa-eye"></i></button></label>
-                            <input type="password" id="password" placeholder="Contraseña" name="password">
-                            <small class="text" id="errorPass">
-                                <%= (locals.errors && errors.password) && errors.password.msg %>
-                            </small>
-                        </div>
-                        <div class="login__recordame">
-                            <div id="login__recaptcha" class="g-recaptcha" data-sitekey='6LfFzDEmAAAAAI3svn4X8hwkOai0q9emgICxY365'></div>
-                            <div class="recordame__checkbox">
-                                <label class="login__label--remember" for="remember">Recordarme</label>
-                                <input class="login__label__checkbox" type="checkbox" name="remember">
+                        <section class="login__main__costados">
+                            <div class="login__main__costados--left">
+                                <img src="/images/Fondo_1.png" alt="Imagen no encontrada" class="login__main_left--img">
                             </div>
-                        </div>
-                     
 
-                        <small id="errorFormLogin" class="form__login-error"></small>
+                            <div class="login__main__costados--right">
+                                <img src="/images/Fondo_2.png" alt="Imagen no encontrada"
+                                    class="login__main_right--img">
+                            </div>
+                        </section>
 
-                        <div>
-                            <input class="login__enviar" type="submit" value="Ingresar">
-                        </div>
-
-                    </form>
-                </section>
-
-                <section class="login__main__section3">
-                    <div class="login__main__section3--inicio">
-                        <div>
-                            <hr class="login__main_div--hrleft">
+                        <div class="home__main--titulo">
+                            <h2>INICIAR SECIÓN</h2>
                         </div>
 
-                        <div>
-                            <span class="login__main__section3--span">O INICIA
-                                SESIÓN CON</span>
-                        </div>
+                        <section class="login__main__section2">
+                            <form autocomplete="off" action="" method="POST" class="login__main__section2--form"
+                                id="formLogin">
+                                <div class="login__main__form-control">
+                                    <label for="username">Usuario o correo electrónico</label>
+                                    <input type="text" id="username" placeholder="Usuario o correo electrónico"
+                                        name="useremail">
+                                    <small class="text" id="errorUserEmail">
+                                        <%= (locals.errors && errors.useremail) && errors.useremail.msg %>
+                                    </small>
+                                </div>
+                                <div class="login__main__form-control">
+                                    <label class="login__contraseña__label" for="password">Contraseña <button
+                                            class="form__button" type="button" onclick="mostrarContrasena()"><i
+                                                class="fa-solid fa-eye"></i></button></label>
+                                    <input type="password" id="password" placeholder="Contraseña" name="password">
+                                    <small class="text" id="errorPass">
+                                        <%= (locals.errors && errors.password) && errors.password.msg %>
+                                    </small>
+                                </div>
+                                <div class="login__recordame">
+                                    <div id="login__recaptcha" class="g-recaptcha"
+                                        data-sitekey='6LfqPBQmAAAAAAxiCfpUuWZSaoLsRUPe8HK67eNm'></div>
+                                    <div class="recordame__checkbox">
+                                        <label class="login__label--remember" for="remember">Recordarme</label>
+                                        <input class="login__label__checkbox" type="checkbox" name="remember">
+                                    </div>
+                                </div>
 
-                        <div>
-                            <hr class="login__main-div--hrrigth">
-                        </div>
-                    </div>
-                </section>
 
-                <section class="login__main__section4">
-                    <div class="register__sociality">
-                        <a class="register--bootm_google" href="/auth/login/google">
-                          <img class="google-img" src="/images/Logo-logeo.png" alt="Google">
-                            <span>Logeate con Google </span>
+                                <small id="errorFormLogin" class="form__login-error"></small>
+
+                                <div>
+                                    <input class="login__enviar" type="submit" value="Ingresar">
+                                </div>
+
+                            </form>
+                        </section>
+
+                        <section class="login__main__section3">
+                            <div class="login__main__section3--inicio">
+                                <div>
+                                    <hr class="login__main_div--hrleft">
+                                </div>
+
+                                <div>
+                                    <span class="login__main__section3--span">O INICIA
+                                        SESIÓN CON</span>
+                                </div>
+
+                                <div>
+                                    <hr class="login__main-div--hrrigth">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="login__main__section4">
+                            <div class="register__sociality">
+                                <a class="register--bootm_google" href="/auth/login/google">
+                                    <img class="google-img" src="/images/Logo-logeo.png" alt="Google">
+                                    <span>Logeate con Google </span>
                                 </a>
-            
-                        <a class="register--bootm_google" href="/auth/login/facebook">
-                          <img class="register__facebook-img" src="/images/logo-facebook.png" alt="facebook">
-                          <span>Logeate con Facebook</span>
-                        </a>
-                      </div>
-                </section>
- 
-                <section class="login__main__section5">
-                    <div class="login__main__section5_div  login__main--sectibajo">
-                            <span class="login__main__section5_div--link"><a class="login__main__link-a1" href="/users/recuperarPassword"> ¿No podes
-                                iniciar sesión?<i class="fa-solid fa-up-right-from-square"></i></a></span>
-                    </div>
 
-                    <div class="login__main__section5_div2">
-                            <span class="login__main__section5_div--link">¿No tienes cuenta? </span><span class="login__main_div2--span"><a
-                                    class="login__main__section5_div--link2" href="/users/register">Create
-                                    una</a></span>
-                    </div>
-                </section>
+                                <a class="register--bootm_google" href="/auth/login/facebook">
+                                    <img class="register__facebook-img" src="/images/logo-facebook.png" alt="facebook">
+                                    <span>Logeate con Facebook</span>
+                                </a>
+                            </div>
+                        </section>
 
-            </main>
+                        <section class="login__main__section5">
+                            <div class="login__main__section5_div  login__main--sectibajo">
+                                <span class="login__main__section5_div--link"><a class="login__main__link-a1"
+                                        href="/users/recuperarPassword"> ¿No podes
+                                        iniciar sesión?<i class="fa-solid fa-up-right-from-square"></i></a></span>
+                            </div>
 
-            <!--whatsapp-->
-            <%- include('../partials/whatsApp.ejs') %>
+                            <div class="login__main__section5_div2">
+                                <span class="login__main__section5_div--link">¿No tienes cuenta? </span><span
+                                    class="login__main_div2--span"><a class="login__main__section5_div--link2"
+                                        href="/users/register">Create
+                                        una</a></span>
+                            </div>
+                        </section>
 
-                <!-- footer -->
-                <%- include('../partials/footer.ejs') %>
+                    </main>
 
-                    <!-- fixed -->
-                    <script src="/javascripts/fixed.js"></script>
+                    <!--whatsapp-->
+                    <%- include('../partials/whatsApp.ejs') %>
 
-                    <script src="/javascripts/login.js"></script>
+                        <!-- footer -->
+                        <%- include('../partials/footer.ejs') %>
 
-    </body>
+                            <!-- fixed -->
+                            <script src="/javascripts/fixed.js"></script>
+
+                            <script src="/javascripts/login.js"></script>
+                            <script src="/javascripts/loader.js"></script>
+
+        </body>
 
 </html>

@@ -28,8 +28,8 @@ inputName.addEventListener('blur', function (event) {
     case this.value.trim().length < 5:
       msgError('nameError', "El titulo debe tener minimo 5 caracteres", event)
       break;
-    case this.value.trim().length > 80:
-      msgError('nameError', "El titulo debe tener maximo 80 caracteres", event)
+    case this.value.trim().length > 50:
+      msgError('nameError', "El titulo debe tener maximo 50 caracteres", event)
       break;
     default:
       this.classList.add('is-valid')
@@ -204,7 +204,6 @@ inputImages.addEventListener('change', function (e) {
   const selectedImagesContainer = document.getElementById('selectedImages');
   const boxImagesPreview = document.getElementById('boxImagesPreview');
 
-  // Limpiar el contenedor de imágenes antes de agregar las nuevas imágenes
   selectedImagesContainer.innerHTML = '';
 
   switch (true) {
@@ -255,103 +254,88 @@ function resetFormState() {
     });
 }
 
-    formAddProduct.addEventListener('submit', function(event) {
-        event.preventDefault();
-        let error = false;
-      
-        const errorMessages = {
-          name: "El nombre del producto es obligatorio",
-          price: "Se debe indicar un precio",
-          discount: "Se debe indicar un descuento",
-          category: "Debe elegir un estado",
-          subCategory: "Debe elegir una categoria",
-          description: "Se debe ingresar una descripción al producto",
-          image: "Debe seleccionar una imagen",
-          images: "Debe elegir mínimo 1 imagen",
-        };
-      
-        const fields = this.querySelectorAll('input, textarea, select');
-        fields.forEach(field => {
-          const fieldId = field.id;
-          if (!field.value || field.classList.contains('is-invalid')) {
-            error = true;
-      
-            const errorElement = document.getElementById(`${fieldId}Error`);
-            if (errorElement) {
-              errorElement.innerHTML = errorMessages[fieldId] || "";
-            }
-      
-            field.classList.add('is-invalid');
-          }
-        });
-      
-        const submitBtnContainer = document.querySelector('.submit-btn--crear');
-        submitBtnContainer.classList.add('is-invalid');
-      
-        const priceField = document.getElementById('price');
-        if (!priceField.value) {
-          error = true;
-          const priceErrorElement = document.getElementById('precioError');
-          if (priceErrorElement) {
-            priceErrorElement.innerHTML = errorMessages.price;
-          }
-          priceField.classList.add('is-invalid');
-        }
-      
-        const categoryField = document.getElementById('category');
-        if (!categoryField.value) {
-          error = true;
-          const categoryErrorElement = document.getElementById('stateError');
-          if (categoryErrorElement) {
-            categoryErrorElement.innerHTML = errorMessages.category;
-          }
-          categoryField.classList.add('is-invalid');
-        }
-      
-        const subCategoryField = document.getElementById('subCategory');
-        if (!subCategoryField.value) {
-          error = true;
-          const subCategoryErrorElement = document.getElementById('categoryError');
-          if (subCategoryErrorElement) {
-            subCategoryErrorElement.innerHTML = errorMessages.subCategory;
-          }
-          subCategoryField.classList.add('is-invalid');
-        }
-      
-        const imagesField = document.getElementById('images');
-        const existingImages = imagesField.getAttribute('data-existing-images') || '';
-      
-        if (imagesField.files.length > 0) {
-          imagesField.classList.remove('is-invalid');
-          const imagesErrorElement = document.getElementById('imagesError');
-          if (imagesErrorElement) {
-            imagesErrorElement.innerHTML = "";
-          }
-        } else if (existingImages.trim().length === 0) {
-          error = true;
-          const imagesErrorElement = document.getElementById('imagesError');
-          if (imagesErrorElement) {
-            imagesErrorElement.innerHTML = errorMessages.images;
-          }
-          const submitBtnContainer2 = document.querySelector('.submit-btn--crear2');
-          submitBtnContainer2.classList.add('is-invalid');
-        }
-      
-        if (error) {
-          const formErrorElement = document.getElementById('formError');
-          if (formErrorElement) {
-            formErrorElement.innerHTML = "Los campos señalados son obligatorios.";
-          }
-          resetFormState();
-        } else {
-          Swal.fire({
-            position: 'center',
-            icon: 'success',
-            title: 'Acción realizada con éxito',
-            showConfirmButton: false,
-            timer: 1500
-          });
-          resetFormState();
-          formAddProduct.submit();
-        }
-      });
+formAddProduct.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const inputName = $('name');
+  const inputPrecio = $('price');
+  const inputDiscount = $('discount');
+  const selectState = $('category');
+  const selectCategory = $('subCategory');
+  const inputDescription = $('description');
+  const inputImage = $('image');
+  const inputImages = $('images');
+
+  let errors = [];
+
+  if (inputName.value.trim() === '') {
+    errors.push('Debe ingresar el nombre del producto');
+  } else if(inputName.value.trim().length < 5){
+    errors.push('El nombre debe tener como minimo 5 carecteres');
+  } else if(inputName.value.trim().length > 50){
+    errors.push('El nombre debe tener como maximo 50 carecteres');
+  }
+
+  if (inputPrecio.value.trim() === '') {
+    errors.push('Debe ingresar el precio del producto');
+  } else if (inputPrecio.value < 0) {
+    errors.push('Debe ingresar números positivos');
+  }
+
+  if (inputDiscount.value.trim() === '') {
+    errors.push('Debe ingresar el descuento del producto');
+  } else if (inputDiscount.value < 0) {
+    errors.push('Debe ingresar números positivos');
+  } else if (inputDiscount.value > 100) {
+    errors.push('El descuento no puede superar los 100');
+  }
+
+  if (selectState.value.trim() === '') {
+    errors.push('Debe seleccionar un estado');
+  }
+
+  if (selectCategory.value.trim() === '') {
+    errors.push('Debe seleccionar una categoría');
+  }
+
+  if (inputDescription.value.trim() === '') {
+    errors.push('Debe ingresar una descripción');
+  } else if(inputDescription.value.trim().length < 5){
+    errors.push('La descripción debe tener como minimo 5 carecteres');
+  } else if(inputDescription.value.trim().length > 350){
+    errors.push('La descripción debe tener como maximo 350 carecteres');
+  }
+
+  if (inputImage.value.trim() === '') {
+    errors.push('Debe ingresar una imagen');
+  }
+
+  if (inputImages.files.length === 0) {
+    errors.push('Debe ingresar como mínimo una imagen');
+  } else if (inputImages.files.length > 5) {
+    errors.push('Solo se permiten 5 imágenes');
+  }
+
+  if (errors.length > 0) {
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Datos inválidos',
+      html: errors.join('<br>'),
+      showConfirmButton: true,
+    });
+  } else {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto editado con éxito',
+      showConfirmButton: true,
+    }).then(() => {
+      this.submit();
+    });
+  }
+});
+
+
+
+

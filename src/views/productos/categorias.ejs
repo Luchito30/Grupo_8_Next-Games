@@ -4,34 +4,36 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
-        <%- include('../partials/header.ejs') %>
+        <%- include('../partials/loader.ejs') %>
+            <%- include('../partials/header.ejs') %>
 
-            <div class="home__main--titulo">
-                <h2> 
-                    <% if( locals.stateName === "newer" ){ %>
-                        NUEVOS INGRESOS
-                        <% } else { %>
-                       OFERTAS
-                      <% } %>
-                </h2>
-            </div>
-
-
-            <section class="home__main__section">
-                <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
-                    <%- include('../partials/product',{ id, image, price, discount, name, state, subcategories }) %>
-                        <% }) %>
-            </section>
+                <div class="home__main--titulo">
+                    <h2>
+                        <% if( locals.stateName==="newer" ){ %>
+                            NUEVOS INGRESOS
+                            <% } else { %>
+                                OFERTAS
+                                <% } %>
+                    </h2>
+                </div>
 
 
-            <%- include('../partials/carrito.ejs') %>
-            <!--whatsapp-->
-            <%- include('../partials/whatsApp.ejs') %>
+                <section class="home__main__section">
+                    <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                        <%- include('../partials/product',{ id, image, price, discount, name, state, subcategories }) %>
+                            <% }) %>
+                </section>
 
-                <%- include('../partials/footer.ejs') %>
 
-                    <!-- fixed -->
-                    <script src="/javascripts/fixed.js"></script>
+                <%- include('../partials/carrito.ejs') %>
+                    <!--whatsapp-->
+                    <%- include('../partials/whatsApp.ejs') %>
+
+                        <%- include('../partials/footer.ejs') %>
+
+                            <!-- fixed -->
+                            <script src="/javascripts/fixed.js"></script>
+                            <script src="/javascripts/loader.js"></script>
     </body>
 
 </html>

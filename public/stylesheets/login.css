@@ -56,7 +56,7 @@
 
 .login__main__form-control {
     margin-bottom: 30px;
-    filter: drop-shadow(1px 1px 3px white);
+    filter: drop-shadow(6px 8px 3px black);
 }
 
 .login__main__form-control label {
@@ -107,7 +107,7 @@
     position: relative;
     background-color: #0075fd;
     z-index: 100;
-    filter: drop-shadow(1px 1px 3px white);
+    filter: drop-shadow(4px 6px 3px black);
     font-weight: 900;
     font-family: 'Press Start 2P', cursive;
 }
@@ -122,8 +122,10 @@
     justify-content: space-around;
     display: flex;
     font-weight: 900;
+    position: relative;
     border: 1px solid white;
-    background-color: var(--fondo1VioletaO)
+    background-color: var(--fondo1VioletaO);
+    filter: drop-shadow(6px 8px 3px black);
 }
 
 .login__main__section3--inicio {
@@ -159,7 +161,6 @@
     display: flex;
     justify-content: center;
     margin-top: 15px;
-    filter: drop-shadow(0px 0px 3px white);
     top: 115px;
     position: relative;
 }
@@ -204,6 +205,7 @@
     border: 1px solid white;
     background-color: var(--fondo1VioletaO);
     margin-bottom: 40px;
+    filter: drop-shadow(6px 8px 3px black);
 }
 
 .login__main__section5_div {
@@ -282,6 +284,7 @@
     margin-top: -20px;
     width: 95%;
     font-size: 13px;
+    filter: drop-shadow(6px 8px 3px black);
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -289,6 +292,8 @@
     margin: 0 auto;
     display: inline-block;
     filter: drop-shadow(5px 6px 2px black);
+    position: relative;
+    z-index: 2;
 }
 
 .form__login-error {

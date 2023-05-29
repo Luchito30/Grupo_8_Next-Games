@@ -4,34 +4,40 @@
 <%- include('./partials/head.ejs') %>
 
     <body>
-        <%- include('partials/header') %>
+        <%- include('./partials/loader.ejs') %>
+            <%- include('partials/header') %>
 
-            <div class="home__main--titulo">
-                <h2>
-                 
-                <% if( locals.subName ){ %>
-                    <%= locals.subName %>
-                <% } else { %>
-                      PRODUCTOS
-                <% } %>
-                </h2>
-            </div>
+                <div class="home__main--titulo">
+                    <h2>
 
-                    <section class="home__main__section">
-                        <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
-                            <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
-                                %>
-                                <% }) %>
-                    </section>
+                        <% if( locals.subName ){ %>
+                            <%= locals.subName %>
+                                <% } else { %>
+                                    PRODUCTOS
+                                    <% } %>
+                    </h2>
+                </div>
+                <div>
+                    <%- include('partials/paginator') %>
+                </div>
 
-                        <%- include('./partials/carrito.ejs') %>
-                            <!--whatsapp-->
-                            <%- include('./partials/whatsApp.ejs') %>
 
-                                <%- include('partials/footer') %>
+                <section class="home__main__section">
+                    <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                        <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories }) %>
+                            <% }) %>
+                </section>
 
-                                    <!-- fixed -->
-                                    <script src="/javascripts/fixed.js"></script>
+                <%- include('./partials/carrito.ejs') %>
+                    <!--whatsapp-->
+                    <%- include('./partials/whatsApp.ejs') %>
+
+                        <%- include('partials/footer') %>
+
+                            <!-- fixed -->
+                            <script src="/javascripts/fixed.js"></script>
+                            <script src="/javascripts/paginator.js"></script>
+                            <script src="/javascripts/loader.js"></script>
     </body>
 
 </html>

@@ -30,37 +30,47 @@
                         LU-VI de 09:00 a 18:00
                     </p>
                     <p class="footer__section__contacto--horario">SA de 9:00 a 13:00</p>
+                    <p class="footer__section__contacto--titulo footer__emailcontact">
+                        Contactanos por Email
+                    </p>
+                    <a class="footer__enviodeemaiol" href="mailto:nextgamesventas@gmail.com?Subject=Consulta%20de%20venta&body=Necesito%20informacion%20de%20un%20producto">nextgamesventas@google.com</a>
                 </div>
             </div>
             <hr>
             <div class="footer__section2--links-li">
                     <div class="footer__section__contacto1">
-                        <p class="footer__section__contacto--titulo">
-                            Contactanos por Email
-                        </p>
-                        <a class="footer__enviodeemaiol" href="mailto:nextgamesventas@gmail.com?Subject=Consulta%20de%20venta&body=Necesito%20informacion%20de%20un%20producto">nextgamesventas@google.com</a>
+                        <p class="footer__section__contacto--titulo">Información Útil</p>
+                        <ul class="footer__section__categoria">
+                            <li><a href="/info/questions">Preguntas Frecuentes</a></li>
+                            <li><a href="/info/nosotros">Sobre nosotros</a></li>
+                            <li><a href="/info/contactanos">Contactanos</a></li>
+                            <li><a href="/users/term">Termino y condiciones</a></li>
+                            <li><a href="/users/privacidad">Política de Privacidad</a></li>
+                            <li><a href="/users/devolucion">Política de Devolución</a></li>
+                        </ul>   
                     </div>   
             </div>
             <hr>
             <div class="footer__section2--links-li">
                 <p class="footer__section__contacto--titulo">Categorias</p>
                 <ul class="footer__section__categoria">
-                    <li><a href="/products/accesorios">Accesorios</a></li>
-                    <li><a href="/products/consolas">Consolas</a></li>
-                    <li><a href="/products/tarjetas">Gifts cards</a></li>
-                    <li><a href="/products/juegos">Juegos</a></li>
-                    <li><a href="/products/notebook">Notebooks</a></li>
-                    <li><a href="/products/perifericos">Perifericos</a></li>
-                    <li><a href="/products/ingresos">Nuevos ingresos</a></li>
+                    <li><a href="/products/subcategory/6">Accesorios</a></li>
+                    <li><a href="/products/subcategory/4">Consolas</a></li>
+                    <li><a href="/products/subcategory/3">Gifts cards</a></li>
+                    <li><a href="/products/subcategory/1">Juegos</a></li>
+                    <li><a href="/products/subcategory/5">Notebooks</a></li>
+                    <li><a href="/products/subcategory/2">Perifericos</a></li>
+                    <li><a href="/products/categorias/3">Ofertas</a></li>
+                    <li><a href="/products/categorias/2">Nuevos Ingresos</a></li>
                     <li><a href="/products">Todos los productos</a></li>
                 </ul>
             </div>
             <hr>
             <div class="footer__section2--links-li">
                 <p class="footer__section__contacto--titulo">Newsletter</p>
-                <form method="POST" action="/#email">
+                <form method="POST" action="/" id="form__enviar">
                     <small class="text"> <%= (locals.errors && errors.email) && errors.email.msg %></small>
-                    <input type="email" name="email" id="email" placeholder="Ingrese su email" required>
+                    <input type="email" name="email" id="email" placeholder="Ingrese su email">
                     <button type="submit">Suscribite</button>
                 </form>
             </div>
@@ -87,3 +97,7 @@
 El uso de este sitio web implica la aceptación de los Términos y Condiciones y de las Políticas de Privacidad de Next Games S.A. Las fotos son a modo ilustrativo. La venta de cualquiera de los productos publicados está sujeta a la verificación de stock. Los precios online para los productos presentados/publicados en www.nextgames.net son válidos exclusivamente para la compra vía internet en las página antes mencionada.
     </p>
 </footer>
+
+<!-- SweetAlert-->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/javascripts/Newsletter.js"></script>
