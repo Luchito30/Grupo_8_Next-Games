@@ -16,13 +16,17 @@
                 <% } %>
                 </h2>
             </div>
+            <div>
+                <%- include('partials/paginator') %>
+            </div>
 
-                    <section class="home__main__section">
-                        <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
-                            <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
-                                %>
-                                <% }) %>
-                    </section>
+                    
+            <section class="home__main__section">
+                <% products.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                    <%- include('./partials/product',{ id, image, price, discount, name, state, subcategories })
+                        %>
+                        <% }) %>
+            </section>
 
                         <%- include('./partials/carrito.ejs') %>
                             <!--whatsapp-->
@@ -32,6 +36,7 @@
 
                                     <!-- fixed -->
                                     <script src="/javascripts/fixed.js"></script>
+                                    <script src="/javascripts/paginator.js"></script>
     </body>
 
 </html>

@@ -5,13 +5,30 @@ const { validationResult } = require("express-validator");
 module.exports = {
   index: async (req, res) => {
     try {
-      const { count, products } = await getAllProducts(req);
+      const {withPagination = "true",page=1,limit=6} = req.query;
+      const { count, products, pages } = await getAllProducts(req,{
+        withPagination,
+        page,
+        limit: +limit,
+      });
+      let data = {
+        count,
+        products
+      }
+      if(withPagination === "true"){
+        data = {
+          ...data,
+          pages,
+          currentPage: +page
+        }
+      }
 
       return res.status(200).json({
         ok: true,
-        url: "/api/products",
-        count: products.length,
-        products,
+        data,
+        // url: "/api/products",
+        // count: products.length,
+        // products,
       });
     } catch (error) {
       console.log(error);
