@@ -51,6 +51,7 @@ const paintProducts = (products) => {
                 </div>
             </div>
        </div >
+       
    </article >
             `;
 

@@ -47,8 +47,8 @@ const paintProducts = ({ products }) => {
             : ""
         }</p>
                     <p class="d-flex align-items-center gap-2">
-                      <label for=""></label>
-                      <button onclick="lessProduct(${id},${
+                      
+                      <button onclick="lessProduct( ${id} ,${
           Cart.quantity
         })" class="btn btn-light">-</button>
                       <output style="width:50px"  class="form-control text-center">

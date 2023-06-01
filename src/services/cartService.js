@@ -24,6 +24,9 @@ module.exports = mtd ={
             include: [
                 {
                 association: 'cart',
+                through: {
+                    attributes: ["quantity"],
+                  },
                 include: ["images"]
             }]
         }); 
@@ -44,6 +47,7 @@ module.exports = mtd ={
             await mtd.getCart({orderId:order.id,productId})
             const orderReload = await order.reload({include:{all:true}})
             order.total = mtd.calcTotal(orderReload)
+            await order.save();
         },
         
         
