@@ -348,6 +348,11 @@ module.exports = {
         return res.render('users/devolucion', {
             title: "Next Games | Política de Devoluciones"
         });
-    }
+    },
+    favorites: (req,res) => {
+        return res.render('users/favorites', {
+            title: "Next Games | Favoritos"
+        });
+    },
 }
 

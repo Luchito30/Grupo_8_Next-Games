@@ -1,6 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
-/* const sequelizePaginate = require('sequelize-paginate') */
+const sequelizePaginate = require('sequelize-paginate')
 module.exports = (sequelize, DataTypes) => {
   class Product extends Model {
     /**
@@ -22,13 +22,18 @@ module.exports = (sequelize, DataTypes) => {
         as: "images",
         onDelete : 'cascade'
       });
-
       Product.belongsToMany(models.Order,{
         through:"Cart",
         foreignKey:"productId",
         otherKey:"orderId",
         as:"cart"        
       });
+      Product.belongsToMany(models.User,{
+        foreignKey: "productId",
+        otherKey: "userId",
+        through: "favorites",
+        as: "usersFavorites"
+       })
     }
   }
   Product.init(
@@ -47,6 +52,6 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "Product",
     }
   );
-/*   sequelizePaginate.paginate(Product) */
+  sequelizePaginate.paginate(Product)
   return Product;
 };

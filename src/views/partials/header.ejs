@@ -78,7 +78,7 @@
 
             <section class="right-nav-bar">
                 <form action="/search" method="GET" autocomplete="off" class="right-nav-bar--form">
-                    <div>
+                    <div class="header__acomodadorboostrap">
                         <input type="search" name="keywords" class="right-nav-bar--busq" id="keywords"
                             placeholder="Buscar Producto" title="¿Que desea Buscar?">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -151,6 +151,9 @@
                                 <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png' }`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
                             </li>
                             <li id="header__admin--li">
+                                <a href="/users/favorites">Favoritos</a>
+                            </li>
+                            <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>
                             </li>
                             <% } else { %>
@@ -219,6 +222,9 @@
                             </li>
                             <li id="header__admin--li2">
                                 <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png'}`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                            </li>
+                            <li id="header__admin--li">
+                                <a href="/users/favorites">Favoritos</a>
                             </li>
                             <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>

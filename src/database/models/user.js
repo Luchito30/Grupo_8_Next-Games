@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey : 'addressId',
         as : 'address'
       });
-
       Usuario.belongsTo(models.Rol, {
         foreignKey : 'rolId',
         as : 'rol'
@@ -22,7 +21,13 @@ module.exports = (sequelize, DataTypes) => {
       Usuario.hasMany(models.Order,{
         foreignKey: "userId",
         as:''
-       })
+       });
+       Usuario.belongsToMany(models.Product,{
+        foreignKey: "userId",
+        otherKey: "productId",
+        through: "favorites",
+        as: "productsFavorites"
+       });
     }
   }
   Usuario.init({

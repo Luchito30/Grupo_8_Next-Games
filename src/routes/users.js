@@ -1,6 +1,6 @@
 const express = require('express');
 
-const {login,register,processLogin,processRegister,profile,updateUser,logout,removeuserConfirm,removeusers,ProcessAdmin,registerAdmin,recuperarContraseña, term, privacidad, devolucion} = require('../controllers/userController');
+const {login,register,processLogin,processRegister,profile,updateUser,logout,removeuserConfirm,removeusers,ProcessAdmin,registerAdmin,recuperarContraseña, term, privacidad, devolucion, favorites} = require('../controllers/userController');
 const checkUser = require('../middlewares/checkUser');
 const checkUserLogin = require('../middlewares/checkUserLogin');
 const checkAdmin = require('../middlewares/checkAdmin');
@@ -19,7 +19,7 @@ router.post('/register',uploadperdilImages.single("image"),registerUserValidator
 router.get('/recuperarPassword',checkUser, recuperarContraseña);
 
 router.get("/createAdmin", checkAdmin, registerAdmin);
-router.post("/createAdmin",uploadperdilImages.single("image"),registerUserValidator,ProcessAdmin)
+router.post("/createAdmin",uploadperdilImages.single("image"),registerUserValidator,ProcessAdmin);
 
 router.get('/profile/:id',checkUserLogin, profile);
 
@@ -31,6 +31,8 @@ router.get('/logout',logout);
 
 router.get('/term',term);
 router.get('/privacidad',privacidad);
-router.get('/devolucion',devolucion)
+router.get('/devolucion',devolucion);
+
+router.get('/favorites',checkUserLogin,favorites )
 
 module.exports = router;

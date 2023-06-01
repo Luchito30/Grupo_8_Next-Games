@@ -1,0 +1,10 @@
+.product__paginador{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.limit-anchura{
+    width: 130px;
+    height: 33px;
+}

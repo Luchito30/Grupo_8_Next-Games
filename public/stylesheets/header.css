@@ -424,6 +424,11 @@ a {
 #header__nav__hamburger-secundary{
     top: 109px;
 }
+.header__boostrap .header__acomodadorboostrap{
+    width: 35px;
+    height: 35px;
+    top: 17px;
+}
 
 
 @media (min-width: 658px) {

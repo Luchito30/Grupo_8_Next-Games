@@ -27,6 +27,7 @@
         <div class="home__main--ocultar">
             <h5 class="home__main--descripcion"><%- name %></h5>
             <div class="home__main--producto"><a href="/products/detalle-producto/<%= id %>"><button>Ver Detalle</button></a></div>
+               <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:15px;right:15px;cursor:pointer" onclick= toggleFavorite(id)></i>
         </div>
     </div>
 </article>

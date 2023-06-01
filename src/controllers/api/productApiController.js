@@ -13,7 +13,7 @@ module.exports = {
       });
       let data = {
         count,
-        products
+        products,
       }
       if(withPagination === "true"){
         data = {
@@ -26,9 +26,6 @@ module.exports = {
       return res.status(200).json({
         ok: true,
         data,
-        // url: "/api/products",
-        // count: products.length,
-        // products,
       });
     } catch (error) {
       console.log(error);
