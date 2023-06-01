@@ -87,7 +87,15 @@ const addProductToCart = async (id) => {
 
 const toggleFavorite = async (id) => {
   try {
-   
+    const result = await Swal.fire({
+      title: "¿Quieres quitar el producto de favoritos?",
+      icon: "question",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+      confirmButtonText: "Quitar",
+    });
+
+    if (result.isConfirmed) {
       const objProductId = {
         productId: id,
       };
@@ -104,7 +112,7 @@ const toggleFavorite = async (id) => {
         console.log({ ok, data })
         paintProducts({ products: data });
       }
-
+    }
   } catch (error) {
     console.log(error);
   }

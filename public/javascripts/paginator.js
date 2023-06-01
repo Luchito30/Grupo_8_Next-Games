@@ -6,7 +6,7 @@ const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
 
 let pageActive = 1;
-const apiGetProduct = "https://nextgames.onrender.com/api/products";
+const apiGetProduct = "http://localhost:3000/api/products";
 
 const getProduct = ({ page = 1, limit = 6 } = {}) =>
     fetch(`${apiGetProduct}?page=${page}&limit=${limit}`).then((res) =>
@@ -47,6 +47,7 @@ const paintProducts = (products) => {
                     <a href="/products/detalle-producto/${id} ">
                         <button>Ver Detalle</button>
                     </a>
+                    <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:30px;right:6px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
                 </div>
             </div>
        </div >
@@ -132,3 +133,27 @@ const paintProducts = (products) => {
     const { data } = await getProduct({ page: pageActive, limit: target.value });
     visualImpact(data);
   });
+
+  const toggleFavorite = async (id) => {
+    try {
+      const objProductId = {
+          productId: id,
+        };
+        const { ok } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
+          method: "POST",
+          body: JSON.stringify(objProductId),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((res) => res.json());
+  
+        if (ok) {
+          const { ok, data } = await getFavorites();
+          console.log({ ok, data })
+          paintProducts({ products: data });
+        }
+  
+    } catch (error) {
+      console.log(error);
+    }
+  };

@@ -73,7 +73,7 @@ module.exports = {
         }
 
         const subName = products[0].subcategories.name; 
-        return res.render("products", {
+        return res.render("productos/categorias", {
           title: "Next Games | Productos",
           products,
           toThousand,
@@ -100,7 +100,7 @@ module.exports = {
           return res.redirect("/")
         }
         const stateName = products[0].state.name; 
-        return res.render("productos/categorias", {
+        return res.render("productos/estados", {
           title: `Next Games | Productos de ${stateName}`, 
           products,
           toThousand,
