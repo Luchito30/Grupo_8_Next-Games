@@ -6,7 +6,7 @@ const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
 
 let pageActive = 1;
-const apiGetProduct = "http://localhost:3000/api/products";
+const apiGetProduct = "https://nextgames.onrender.com/api/products";
 
 const getProduct = ({ page = 1, limit = 6 } = {}) =>
     fetch(`${apiGetProduct}?page=${page}&limit=${limit}`).then((res) =>
