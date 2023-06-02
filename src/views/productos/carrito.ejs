@@ -5,7 +5,10 @@
 <%- include('../partials/head.ejs') %>
 
 <body>
-    <%- include('../partials/header.ejs') %>
+  <%- include('../partials/loader.ejs') %>
+  <div class="header__boostrap">
+      <%- include('../partials/header') %>
+  </div>
 
     <main class="container">
 
@@ -44,7 +47,7 @@
 
   <!-- fixed -->
   <script src="/javascripts/fixed.js"></script>
-
+  <script src="/javascripts/loader.js"></script>
   <script src="/javascripts/cart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

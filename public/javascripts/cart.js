@@ -37,18 +37,18 @@ const paintProducts = ({ products }) => {
                     image
                   }" alt="">
                   <div class="col-8 position-relative">
-                    <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:10px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+                  <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:-5px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
     
                     <h5 class="card-name">${name}</h5>
                     
                     <p class="card-text">${priceFormatARG}${
           discount
-            ? `<span class="text-danger mx-3">${discount}% OFF</span>`
+            ? `<span class="text-danger mx-3">${discount}%</span>`
             : ""
         }</p>
                     <p class="d-flex align-items-center gap-2">
-                      
-                      <button onclick="lessProduct( ${id} ,${
+                    <label for=""></label>
+                      <button onclick="lessProduct(${id} ,${
           Cart.quantity
         })" class="btn btn-light">-</button>
                       <output style="width:50px"  class="form-control text-center">
@@ -89,12 +89,12 @@ window.addEventListener("load", async () => {
 });
 
 const moreProduct = async (id) => {
-  const objCourseId = {
+  const objProductId = {
     productId: id,
   };
   const { ok } = await fetch(`${URL_API_SERVER}/cart/moreQuantity`, {
     method: "PUT",
-    body: JSON.stringify(objCourseId),
+    body: JSON.stringify(objProductId),
     headers: {
       "Content-Type": "application/json",
     },
@@ -132,7 +132,6 @@ const lessProduct = async (id, quantity) => {
     }
   }
 };
-
 const removeProductToCart = async (id) => {
   try {
     const result = await Swal.fire({
@@ -145,12 +144,12 @@ const removeProductToCart = async (id) => {
     });
 
     if (result.isConfirmed) {
-      const objCourseId = {
+      const objProductId = {
         productId: id,
       };
       const { ok } = await fetch(`${URL_API_SERVER}/cart/removeProduct`, {
         method: "DELETE",
-        body: JSON.stringify(objCourseId),
+        body: JSON.stringify(objProductId),
         headers: {
           "Content-Type": "application/json",
         },
