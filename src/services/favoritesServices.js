@@ -18,7 +18,7 @@ module.exports = {
     };
     return db.User.findByPk(userId, config);
     },
-    addOrRemoveToFavorite:async ({userId,productId}) => {
+    addOrRemoveToFavorite: async ({userId,productId}) => {
         if(!userId || !productId){
             throw{
                 status :400,
@@ -29,19 +29,19 @@ module.exports = {
             where: {
                 [Op.and] : [
                     {
-                        userId
+                        userId,
                     },
                     {
-                        productId
+                        productId,
                     }
                 ]
             },
-            default: {userId,productId}
+            default: { userId, productId},
         }
-        const [favorite, isCreated] = await db.Favorites.findOrCreate(config);
+        const [favorites, isCreated] = await db.Favorites.findOrCreate(config);
 
         if(!isCreated) {
-           await favorite.destroy()
+           await favorites.destroy()
         }
         return !isCreated;
     },

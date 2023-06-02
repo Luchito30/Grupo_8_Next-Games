@@ -57,7 +57,7 @@
                             <input type="text"
                               class="form-control etiloprofile <%= (locals.errors && errors.firstName) && 'is-invalid'%>"
                               id="firstName" name="firstName"
-                              value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>">
+                              value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>" placeholder="Ingrese su Nombre">
                             <small class="text-crear">
                               <%= locals.errors && errors.firstName ? errors.firstName.msg : null %>
                             </small>
@@ -67,7 +67,7 @@
                             <input type="text"
                               class="form-control etiloprofile <%= (locals.errors && errors.LastName) && 'is-invalid'%>"
                               id="LastName" name="LastName"
-                              value="<%= locals.old && old.LastName ? old.LastName : user.LastName %>">
+                              value="<%= locals.old && old.LastName ? old.LastName : user.LastName %>" placeholder="Ingrese su Apellido">
                             <small class="text-crear">
                               <%= locals.errors && errors.LastName ? errors.LastName.msg : null %>
                             </small>
@@ -86,7 +86,7 @@
                             <input type="text"
                               class="form-control etiloprofile <%= (locals.errors && errors.userName) && 'is-invalid'%>"
                               id="userName" name="userName"
-                              value="<%= locals.old && old.userName ? old.userName : user.userName %>">
+                              value="<%= locals.old && old.userName ? old.userName : user.userName %>" placeholder="Ingrese nombre de usuario">
                             <small class="text-crear">
                               <%= locals.errors && errors.userName ? errors.userName.msg : null %>
                             </small>
@@ -104,7 +104,7 @@
                           <label for="address" class="form-label profile--titulo__input">Domicilio</label>
                           <input type="text"
                             class="form-control etiloprofile <%= (locals.errors && errors.address) && 'is-invalid'%>"
-                            id="address" name="address" value="<%= user.address.address%>">
+                            id="address" name="address" value="<%= user.address.address%>" placeholder="Ingrese su dirección">
                           <small class="text-crear" id="addressError">
                             <%= locals.errors && errors.address ? errors.address.msg : null %>
                           </small>
@@ -164,7 +164,7 @@
                           <label for="address" class="form-label profile--titulo__input">Código Postal</label>
                           <input type="number"
                             class="form-control etiloprofile <%= (locals.errors && errors.zipCode) && 'is-invalid'%>"
-                            id="zipCode" name="zipCode" value="<%= user.address.zipCode%>">
+                            id="zipCode" name="zipCode" value="<%= user.address.zipCode%>" placeholder="Ingrese su Código Postal">
                           <small class="text-crear" id="zipCodeError">
                             <%= locals.errors && errors.zipCode ? errors.zipCode.msg : null %>
                           </small>
@@ -174,17 +174,17 @@
                           <label for="address" class="form-label profile--titulo__input">Cód. de Area</label>
                           <input type="number"
                             class="form-control etiloprofile <%= (locals.errors && errors.codArea) && 'is-invalid'%>"
-                            id="codArea" name="codArea" value="<%= user.address.codArea%>">
+                            id="codArea" name="codArea" value="<%= user.address.codArea%>" placeholder="Ingrese cód. de area">
                           <small class="text-crear" id="codAreaError">
                             <%= locals.errors && errors.codArea ? errors.codArea.msg : null %>
                           </small>
                         </div>
 
                         <div class="col-12 col-md-5">
-                          <label for="address" class="form-label profile--titulo__input">Telefóno</label>
+                          <label for="address" class="form-label profile--titulo__input">Télefono</label>
                           <input type="text"
                             class="form-control etiloprofile <%= (locals.errors && errors.telefono) && 'is-invalid'%>"
-                            id="telefono" name="telefono" value="<%= user.address.telefono%>">
+                            id="telefono" name="telefono" value="<%= user.address.telefono%>" placeholder="Ingrese numero télefonico">
                           <small class="text-crear" id="telefonoError">
                             <%= locals.errors && errors.telefono ? errors.telefono.msg : null %>
                           </small>

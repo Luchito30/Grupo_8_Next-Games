@@ -163,7 +163,7 @@
 
 
 .home__main__section__article:hover .home__main--ocultar {
-    height: 150px;
+    height: 200px;
     font-size: 19px;
     padding-top: 15px;
     overflow: hidden;
@@ -195,7 +195,8 @@
 }
 
 .home__main--descripcion {
-    margin-top: 12px;
+    font-size: 16px !important;
+    margin-top: -2px;
 }
 
 .home__main--producto{

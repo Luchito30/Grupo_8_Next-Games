@@ -48,8 +48,15 @@
                                                 </ul>
                                             </li>
                                         <% } %>
+                                        <li class="header__nav--navegacion--primaria">
+                                            <a href="#"><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                                            <ul class="header__nav-profile">
+                                                <li class="header__nav--navegacion--secundaria"><a href="/users/profile/<%= userLogin.id %>">Mi Perfil</a></li>
+                                                <li class="header__nav--navegacion--secundaria"><a href="/users/favorites">Favoritos</a></li>
+                                            </ul>
+                                        </li>
                                         <li  class="header__nav--navegacion--primaria">
-                                            <a href="/users/profile/<%= userLogin.id %>"> <span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
+                                          
                                         </li>
                                         <li  class="header__nav--navegacion--primaria">
                                             <a href="/users/logout">SALIR</a>
@@ -120,17 +127,17 @@
                         <li>
                             <p class="home__nav--productos">Productos</p>
                             <ul>
-                                <div>
+                                <div class="header__nav--productoSub">
                                     <li><a href="/products/subcategory/6">Accesorios</a></li>
                                     <li><a href="/products/subcategory/4">Consolas</a></li>
                                     <li><a href="/products/subcategory/3">Gifts Cards</a></li>
                                 </div>
-                                <div>
+                                <div class="header__nav--productoSub">
                                     <li><a href="/products/subcategory/1">Juegos</a></li>
                                     <li><a href="/products/subcategory/5">Notebooks</a></li>
                                     <li><a href="/products/subcategory/2">Perifericos</a></li>
                                 </div>
-                                <div>
+                                <div class="header__nav--productoSub">
                                     <li><a href="/products/categorias/3">Ofertas</a></li>
                                     <li><a href="/products/categorias/2">Nuevos Ingresos</a></li>
                                     <li><a href="/products">Todos los Productos</a></li>
@@ -148,10 +155,11 @@
                                 </li>
                             <% } %>
                             <li id="header__admin--li2">
-                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png' }`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
-                            </li>
-                            <li id="header__admin--li">
-                                <a href="/users/favorites">Favoritos</a>
+                                <p class="home__nav--productos"><img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png' }`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></p>
+                                <ul class="header__nav--profilestatick">
+                                    <li><a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color">Mi Perfil</a></li>
+                                    <li><a class="header__nav--favorites" href="/users/favorites">Favoritos</a></li>
+                                </ul>
                             </li>
                             <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>
@@ -184,17 +192,17 @@
                         <li>
                             <p class="home__nav--productos">Productos</p>
                             <ul>
-                                <div>
+                                <div class="header__nav--productoSub">
                                     <li><a href="/products/subcategory/6">Accesorios</a></li>
                                     <li><a href="/products/subcategory/4">Consolas</a></li>
                                     <li><a href="/products/subcategory/3">Gifts Cards</a></li>
                                 </div>
-                                <div>
+                                <div class="header__nav--productoSub">
                                     <li><a href="/products/subcategory/1">Juegos</a></li>
                                     <li><a href="/products/subcategory/5">Notebooks</a></li>
                                     <li><a href="/products/subcategory/2">Perifericos</a></li>
                                 </div>
-                                <div>
+                                <div class="header__nav--productoSub">
                                     <li><a href="/products/categorias/3">Ofertas</a></li>
                                     <li><a href="/products/categorias/2">Nuevos Ingresos</a></li>
                                     <li><a href="/products">Todos los Productos</a></li>
@@ -221,10 +229,11 @@
                                 </form>
                             </li>
                             <li id="header__admin--li2">
-                                <a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color"> <img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png'}`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></a>
-                            </li>
-                            <li id="header__admin--li">
-                                <a href="/users/favorites">Favoritos</a>
+                                <p class="home__nav--productos"><img class="header__avatar--image" src="<%= /http/.test(userLogin.image) ? userLogin.image?.toString().trim() : `/images/users/${userLogin.image || 'userdefault.png' }`%>" alt=""><span class="headeradmin__saludo">Hola</span>, <%= locals.userLogin.firstName %></p>
+                                <ul class="header__nav--profilestatick">
+                                    <li><a href="/users/profile/<%= userLogin.id %>" id="headeradmin-color">Mi Perfil</a></li>
+                                    <li><a class="header__nav--favorites" href="/users/favorites">Favoritos</a></li>
+                                </ul>
                             </li>
                             <li id="header__admin--li">
                                 <a href="/users/logout">SALIR</a>

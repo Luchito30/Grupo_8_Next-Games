@@ -5,6 +5,8 @@ const selectLimit = $("#select-limit");
 const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
 
+const URL_API_SERVER = "http://localhost:3000/api";
+
 let pageActive = 1;
 const apiGetProduct = "http://localhost:3000/api/products";
 
@@ -43,13 +45,16 @@ const paintProducts = (products) => {
                </div >
             <div class="home__main--ocultar">
                 <h5 class="home__main--descripcion">${ name }</h5>
-                <div class="home__main--producto">
-                    <a href="/products/detalle-producto/${id} ">
-                        <button>Ver Detalle</button>
-                    </a>
-                    <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:30px;right:6px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
+                <div class="d-flex flex-column align-items-center gap-2 home__main--producto">
+                  <div>
+                    <a href="/products/detalle-producto/${id} "><button>Ver Detalle</button></a>
+                  </div>
+                  <div>
+                    <button class="btn btn-success" onclick="addProductToCart(${id})">Agregar a carrito</button>
+                  </div>
                 </div>
             </div>
+            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:30px;right:6px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
        </div >
        
    </article >
@@ -134,6 +139,32 @@ const paintProducts = (products) => {
     const { data } = await getProduct({ page: pageActive, limit: target.value });
     visualImpact(data);
   });
+
+  const addProductToCart = async (id) => {
+    try {
+      const objProductId = {
+        productId: id,
+      };
+      const { ok } = await fetch(`${URL_API_SERVER}/cart/addProduct`, {
+        method: "POST",
+        body: JSON.stringify(objProductId),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }).then((res) => res.json());
+  
+      await Swal.fire({
+        title: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
+        icon: ok ? "success" : "warning",
+        showConfirmButton: false,
+        timer: 1200,
+      });
+  
+      !ok && (location.href = "/users/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const toggleFavorite = async (id) => {
     try {
