@@ -31,17 +31,17 @@ const paintProducts = ({ products }) => {
         const template = `
               <!-- COURSE TEMPLATE CARD -->
               <div class="card col-12 col-lg-8 my-5">
-                <div class="card-body row">
+                <div class="card-body row" id="body-carrito">
                   
                   <img class="col-4" style="width:150px" style="object-fit: contain;" src="/images/products/${
                     image
                   }" alt="">
                   <div class="col-8 position-relative">
-                  <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:-5px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+                  <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger "id="remove-product-icon-carrito" style="top:-8px;right:224px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
     
-                    <h5 class="card-name">${name}</h5>
+                    <h5 class="card-name" id="name-carrito">${name}</h5>
                     
-                    <p class="card-text">${priceFormatARG}${
+                    <p class="card-text" id="precio-carrito">${priceFormatARG}${
           discount
             ? `<span class="text-danger mx-3">${discount}%</span>`
             : ""
@@ -51,11 +51,11 @@ const paintProducts = ({ products }) => {
                       <button onclick="lessProduct(${id} ,${
           Cart.quantity
         })" class="btn btn-light">-</button>
-                      <output style="width:50px"  class="form-control text-center">
+                      <output style="width:50px"  class="form-control text-center" id="cantidad-carrito">
                         ${Cart.quantity}
                       </output>
                       <button onclick="moreProduct(${id})" class="btn btn-light">+</button>
-                      <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark">Ver más</a>
+                      <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark" id="ver-mas-carrito">Ver más</a>
                     </p>
                   </div>
                

@@ -371,3 +371,36 @@
         font-size: 16px;
     }
 }
+.my-5 {
+    background-color: #4439AA;
+}
+
+#body-carrito{
+    width: 801px;
+}
+#name-carrito{
+    color: white;
+}
+#precio-carrito{
+    color: white;
+    font-family: 'Inter',sans-serif;
+}
+ #cantidad-carrito{
+    position: relative;
+    top: 10px;
+    height: 35px;
+    border-radius: 20px;
+ }
+ #ver-mas-carrito{
+    color: white;
+    background-color: #7110bd;
+ }
+ #check-out{
+    position: relative;
+    right: 185px;
+ }
+ #total-carrito{
+    color: white;
+    font-family: 'Inter',sans-serif;
+ }
+
