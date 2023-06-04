@@ -6,12 +6,14 @@ const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
 
 const URL_API_SERVER = "http://localhost:3000/api";
-
 let pageActive = 1;
-const apiGetProduct = "http://localhost:3000/api/products";
+const apiGetProduct = "http://localhost:3000/api/products/states";
+
+const path = window.location.pathname;
+const stateId = path.match(/\/products\/categorias\/(\d+)/)[1];
 
 const getProduct = ({ page = 1, limit = 6 } = {}) =>
-    fetch(`${apiGetProduct}?page=${page}&limit=${limit}`).then((res) =>
+  fetch(`${apiGetProduct}/${stateId}?page=${page}&limit=${limit}`).then((res) =>
     res.json()
   );
 
@@ -64,7 +66,7 @@ const paintProducts = (products) => {
 
  const getPage = async (page) => {
     pageActive = page;
-    const { data } = await getProduct({ page, limit: selectLimit.value });
+    const { data } = await getProduct({ page, limit: selectLimit.value});
     visualImpact(data);
   };
 

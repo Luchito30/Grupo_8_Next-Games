@@ -8,6 +8,13 @@ a {
     background-image: url(/images/1600_Featured_Games.jpg);
 }
 
+.header__fixed--hamburger{
+    position: fixed;
+    width: 100%;
+    background-image: url(/images/1600_Featured_Games.jpg);
+    top: 0;
+}
+
 .header__inicio {
     display: flex;
     justify-content: space-between;
@@ -449,6 +456,10 @@ a {
 
 
 @media (min-width: 658px) {
+    .header__fixed--hamburger{
+        display: none;
+    }
+
     .header__hamburgersa__menu {
         display: none;
     }

@@ -88,6 +88,80 @@ module.exports = {
       }
     }
   },
+  getProductsBySubcategory : async (subcategoryId,{withPagination = "false", page = 1,limit=6}) => {
+  try{
+    let options ={
+      where: { subcategoryId },
+      attributes: {
+            exclude: ["createdAt", "updatedAt", "visible"],
+        }
+      };
+
+      if(withPagination === "true"){
+        options = {
+          ...options,
+          page,
+          paginate: limit,
+        };
+  
+    const { docs, pages, total } = await db.Product.paginate(options);
+    return {
+      products: docs,
+      pages,
+      count: total,
+    }
+  }
+  const { count, rows: products } = await db.Product.findAndCountAll(options);
+      return {
+        count,
+        products,
+      };
+      
+  } catch (error) {
+    console.log(error);
+    throw {
+      status: 500,
+      message: error.message,
+    };
+  }
+},
+getProductsByState : async (stateId,{withPagination = "false", page = 1,limit=6}) => {
+  try{
+    let options ={
+      where: { stateId },
+      attributes: {
+            exclude: ["createdAt", "updatedAt", "visible"],
+        }
+      };
+
+      if(withPagination === "true"){
+        options = {
+          ...options,
+          page,
+          paginate: limit,
+        };
+  
+    const { docs, pages, total } = await db.Product.paginate(options);
+    return {
+      products: docs,
+      pages,
+      count: total,
+    }
+  }
+  const { count, rows: products } = await db.Product.findAndCountAll(options);
+      return {
+        count,
+        products,
+      };
+      
+  } catch (error) {
+    console.log(error);
+    throw {
+      status: 500,
+      message: error.message,
+    };
+  }
+},
   getCreateProduct: async (body) => {
     try {
       const {

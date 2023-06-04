@@ -1,33 +1,40 @@
 <article class="home__main__section__article" id="oferta">
     <img class="home__main--img" src="/images/products/<%= image %>" alt="imagen">
     <div class="home__main--div">
-     <% if ( state.name == "in-sale" ) { %>
-      <img src="/images/p-oferta.png" alt="oferta">
-      <% } %>
-      <% if (state.name == "newer") { %>
-        <img src="/images/p-nuevo.png" alt="nuevo">
-        <% } %>
-        <div class="home__main--flex">
-            <div class="card__precio">
-                <p class="home__main--descuento">
-                    <% if (discount) { %>
-                        <h2 class="home__main__preciototal">$<%= toThousand(Math.round(price - (price * discount) /
-                                100))%>
-                        </h2>
-                        <span class="card__descuento">
-                            <%= discount %>%
-                        </span>
-                        <% }else{ %>
-                            <h2 class="home__main__preciototal">$<%= toThousand(Math.round(price)) %>
-                            </h2>
-                            <% } %>
-                </p>
-            </div>
-        </div>
-        <div class="home__main--ocultar">
-            <h5 class="home__main--descripcion"><%- name %></h5>
-            <div class="home__main--producto"><a href="/products/detalle-producto/<%= id %>"><button>Ver Detalle</button></a></div>
-               <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:15px;right:15px;cursor:pointer" onclick= toggleFavorite(id)></i>
-        </div>
+        <% if ( state.name=="in-sale" ) { %>
+            <img src="/images/p-oferta.png" alt="oferta">
+            <% } %>
+                <% if (state.name=="newer" ) { %>
+                    <img src="/images/p-nuevo.png" alt="nuevo">
+                    <% } %>
+                        <div class="home__main--flex">
+                            <div class="card__precio">
+                                <p class="home__main--descuento">
+                                <h2 class="home__main__preciototal">$ <%= discount ? price - (price * discount) / 100 :
+                                        price %>
+                                        <% if (discount) { %>
+                                            <span class="card__descuento">
+                                                <%= discount %>%
+                                            </span>
+                                            <% } %>
+
+                                                </p>
+                            </div>
+                        </div>
+                        <div class="home__main--ocultar">
+                            <h5 class="home__main--descripcion"><%- name %></h5>
+                            <div class="d-flex flex-column align-items-center gap-2 home__main--producto">
+                                <div>
+                                    <a href="/products/detalle-producto/<%= id %> "><button>Ver Detalle</button></a>
+                                </div>
+                                <div>
+                                    <button class="btn btn-success" onclick=<%=`addProductToCart(${id})`%>>Agregar a
+                                        carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star"
+                            style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite()"></i>
     </div>
+
 </article>

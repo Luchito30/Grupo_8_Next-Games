@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {index,detail,storeProduct,editProduct,updateProduct,deleteProduct,deleteAllProduct} = require('../../controllers/api/productApiController') ;
+const {index,detail,storeProduct,editProduct,updateProduct,deleteProduct,deleteAllProduct, subcategories,states} = require('../../controllers/api/productApiController') ;
 const {uploadproductImages} = require("../../middlewares/upload");
 const { productValidator } = require('../../validations');
 
@@ -12,6 +12,8 @@ router
 .put('/edit/:id',uploadproductImages.fields([{name: 'image'},{name: 'images'}]), productValidator,updateProduct)
 .get('/delete/:id',deleteProduct)
 .delete('/delete/:id',deleteAllProduct)
+.get('/subcategories/:subcategoryId',subcategories )
+.get('/states/:stateId',states )
 
 
 module.exports = router;

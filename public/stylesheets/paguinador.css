@@ -5,6 +5,47 @@
     align-items: center;
 }
 .limit-anchura{
-    width: 130px;
+    width: 140px;
+    appearance: auto;
     height: 33px;
+    border: none;
+    filter: drop-shadow(4px 6px 6px black);
+}
+.limit-anchura:hover,
+.limit-anchura:focus {
+    background-color: #7110bd;
+    color: white;
+}
+.pagination{
+    --bs-pagination-padding-x: 0.6rem;
+    --bs-pagination-padding-y: 0.5rem;
+    --bs-pagination-font-size: 1rem;
+    --bs-pagination-color: white;
+    --bs-pagination-bg: #7110bd;
+    --bs-pagination-border-radius: var(--bs-border-radius);
+    --bs-pagination-hover-color: black;
+    --bs-pagination-hover-bg: var(--bs-tertiary-bg);
+    --bs-pagination-hover-border-color: var(--bs-border-color);
+    --bs-pagination-focus-color: black;
+    --bs-pagination-focus-bg: var(--bs-secondary-bg);
+    --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    --bs-pagination-active-color: black;
+    --bs-pagination-active-bg: #0d6efd;
+    --bs-pagination-active-border-color: #0d6efd;
+    --bs-pagination-disabled-color: var(--bs-secondary-color);
+    --bs-pagination-disabled-bg: var(--bs-secondary-bg);
+    --bs-pagination-disabled-border-color: var(--bs-border-color);
+    --bs-pagination-border-width: none;
+    --bs-pagination-border-color: none;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    filter: drop-shadow(4px 6px 6px black);
+}
+@media(min-width:658px){
+    .product__paginador{
+        flex-direction: row;
+        align-items: baseline;
+        gap: 20px;
+    }
 }

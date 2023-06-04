@@ -232,6 +232,7 @@
     transform: scale(1.2);
     color: black;
     font-weight: 600;
+    font-size: 14px;
 }
 
 .home__main__carrusel__item {
@@ -411,10 +412,6 @@
     display: none;
 }
 
-.carrito__scroll{
-    display: block !important;
-}
-
 .home__button--volver{
     height: 30px;
     width: 100px;
@@ -436,7 +433,11 @@
 }
 
 
-@media(min-width:560px) {
+@media(min-width:658px) {
+    .carrito__scroll{
+        display: block !important;
+    } 
+
     .card__descuento {
         font-size: 19px;
     }
