@@ -35,32 +35,38 @@
 
 
                         <section class="detalle-carritodecompras" id="datalle__ocult1">
-                            <div>
+                            <div class="detalle--boxcompras">
                                 <% if (discount) { %>
-                                    <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
+                                    <span class="detalle__precio--original">$<%= Math.round(price).toFixed(2) %></span>
                                     <span class="detalle__precio--barra">/</span>
                                     <b class="detalle__precio--porcentaje">
                                         <%= discount %>% OFF
                                     </b>
                                     <p class="detalle__precio--descuento">
-                                        $<%= toThousand(Math.round(price - (price * discount) / 100))%>
+                                        $<%= Math.round(price - (price * discount) / 100).toFixed(2)%>
                                     </p>
                                     <% } else { %>
                                         <p class="detalle__precio--sincambio">
-                                            $<%= toThousand(Math.round(price)) %>
+                                            $<%= Math.round(price).toFixed(2) %>
                                         </p>
                                         <% } %>
                             </div>
                             <div class="detalle__add-card">
-                                <div>
-                                    <h5 class="detalle__cantidad">cantidad:</h5>
-                                    <button>-</button>
-                                    <input type="number" style="width: 30px;">
-                                    <button>+</button>
+                                <div class="detalle__add-cardquantity" id="quantity-card">
+                                    <p class="d-flex align-items-center gap-2">
+                                        <button data-lessProduct="<%= id %>" data-quantity="<%= cart.quantity %>"
+                                            class="btn--resta" id="btn-lessProduct">-</button>
+                                        <output class="form-control quantity--output"
+                                            id="cantidad-carrito<%= id %>">
+                                            <%= cart.quantity=0 %>
+                                        </output>
+                                        <button data-moreProduct="<%= id %>" class="btn--resta"
+                                            id="btn-moreProduct">+</button>
+                                    </p>
                                 </div>
                                 <div>
-                                    <a href="/products/carrito"><button class="card-btn">
-                                            Agregar Carrito</button></a>
+                                    <button class="card-btn" data-id="<%= id %>" id="btn-addCart" <%=locals.disabled
+                                        && 'disabled' %>>Agregar al carrito</button>
                                 </div>
                             </div>
                         </section>
@@ -108,53 +114,33 @@
 
                             </div>
                             <div class="box-metodos">
-                                <div class="tarjetas-detalle">
+                                <div class="tarjetas-detalle" data-price="<%= price %>" data-discount="<%= discount %>">
                                     <div>
-                                        <h3 class="metodos">metodos de pago:</h3>
+                                      <h3 class="metodos">metodos de pago:</h3>
                                     </div>
                                     <% if (discount) { %>
-                                        <div class="detalle__select--pagos">
-                                            <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                                <option value="1 pago">1 pago de $<%= toThousand(Math.round(price -
-                                                        (price * discount) / 100)) %>
-                                                </option>
-                                                <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price -
-                                                        (price * discount) / 100) / 3) %>
-                                                </option>
-                                                <option value="6 pago">6 pagos de <%= toThousand(Math.round(price -
-                                                        (price * discount) / 100) / 6) %>
-                                                </option>
-                                                <option value="9 pago">9 pagos de <%= toThousand(Math.round(price -
-                                                        (price * discount) / 100) / 9) %>
-                                                </option>
-                                                <option value="12 pago">12 pagos de <%= toThousand(Math.round(price -
-                                                        (price * discount) / 100) / 12) %>
-                                                </option>
-                                            </select>
-                                        </div>
-                                        <% } else {%>
-                                            <div class="detalle__select--pagos">
-                                                <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                                    <option value="1 pago">1 pago de $<%= toThousand(Math.round(price ))
-                                                            %>
-                                                    </option>
-                                                    <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price
-                                                            /3 )) %>
-                                                    </option>
-                                                    <option value="6 pago">6 pagos de <%= toThousand(Math.round(price /
-                                                            6)) %>
-                                                    </option>
-                                                    <option value="9 pago">9 pagos de <%= toThousand(Math.round(price /
-                                                            9)) %>
-                                                    </option>
-                                                    <option value="12 pago">12 pagos de <%= toThousand(Math.round(price
-                                                            / 12)) %>
-                                                    </option>
-                                                </select>
-                                            </div>
-                                            <% } %>
-                                                <img src="/images/tarjetas.png" alt="">
-                                </div>
+                                      <div class="detalle__select--pagos">
+                                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                                          <option value="1 pago">1 pago de $<%= Math.round(price - (price * discount) / 100).toFixed(2) %></option>
+                                          <option value="3 pago">3 pagos de $<%= Math.round((price - (price * discount) / 100) / 3).toFixed(2) %></option>
+                                          <option value="6 pago">6 pagos de $<%= Math.round((price - (price * discount) / 100) / 6).toFixed(2) %></option>
+                                          <option value="9 pago">9 pagos de $<%= Math.round((price - (price * discount) / 100) / 9).toFixed(2) %></option>
+                                          <option value="12 pago">12 pagos de $<%= Math.round((price - (price * discount) / 100) / 12).toFixed(2) %></option>
+                                        </select>
+                                      </div>
+                                    <% } else { %>
+                                      <div class="detalle__select--pagos">
+                                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                                          <option value="1 pago">1 pago de $<%= Math.round(price).toFixed(2) %></option>
+                                          <option value="3 pago">3 pagos de $<%= Math.round(price / 3).toFixed(2) %></option>
+                                          <option value="6 pago">6 pagos de $<%= Math.round(price / 6).toFixed(2) %></option>
+                                          <option value="9 pago">9 pagos de $<%= Math.round(price / 9).toFixed(2) %></option>
+                                          <option value="12 pago">12 pagos de $<%= Math.round(price / 12).toFixed(2) %></option>
+                                        </select>
+                                      </div>
+                                    <% } %>
+                                    <img src="/images/tarjetas.png" alt="">
+                                  </div>
                                 <div class="detalle--boxenvio">
                                     <h3 class="envios">metodos de envío:</h3>
                                     <h4 class="enviosh4">envios gratis a todo el pais</h4>
@@ -180,39 +166,6 @@
                             </div>
                         </div>
                     </section>
-
-                    <section class="detalle-carritodecompras" id="datalle__ocult2">
-                        <div>
-                            <% if (discount) { %>
-                                <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
-                                <span class="detalle__precio--barra">/</span>
-                                <b class="detalle__precio--porcentaje">
-                                    <%= discount %>% OFF
-                                </b>
-                                <p class="detalle__precio--descuento">
-                                    $<%= toThousand(Math.round(price - (price * discount) / 100))%>
-                                </p>
-                                <% } else { %>
-                                    <p class="detalle__precio--sincambio">
-                                        $<%= toThousand(Math.round(price)) %>
-                                    </p>
-                                    <% } %>
-                        </div>
-                        <div class="detalle__add-card2">
-                            <div>
-                                <h5 class="detalle__cantidad">cantidad:</h5>
-                                <button>-</button>
-                                <input type="number" style="width: 30px;">
-                                <button>+</button>
-                            </div>
-                            <div>
-                                
-                                <button class="btn btn-dark mt-auto" data-id="<%= id %>" id="btn-addCart" <%= locals.disabled && 'disabled' %>>Agregar al carrito</button>
-                            </div>
-                        </div>
-                    </section>
-
-
                 </main>
 
 
@@ -263,6 +216,8 @@
                             <script src="/javascripts/fixed.js"></script>
                             <script src="/javascripts/loader.js"></script>
                             <script src="/javascripts/addproductToCard.js"></script>
+
+
 
     </body>
 

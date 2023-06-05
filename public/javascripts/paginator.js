@@ -25,8 +25,8 @@ const paintProducts = (products) => {
     containerProductCard.innerHTML = "";
     products.forEach(({ id, image, name, price, discount,stateId  }) => {
         const priceWithDiscount = discount
-          ? price - (price * discount) / 100
-          : price;
+          ? Math.round(price - (price * discount) / 100).toFixed(2)
+          : Math.round(price).toFixed(2);
         const priceFormatARG = convertFormatPeso(priceWithDiscount);
         const template = `
        <article class="home__main__section__article" id="oferta">
@@ -37,7 +37,7 @@ const paintProducts = (products) => {
                <div class="home__main--flex">
                    <div class="card__precio">
                        <p class="home__main--descuento">
-                        <h2 class="home__main__preciototal">${priceFormatARG}${discount ?  `<span class="card__descuento">${discount}%</span>`: "" } </h2> 
+                        <h2 class="home__main__preciototal">$ ${priceFormatARG}${discount ?  `<span class="card__descuento">${discount}%</span>`: "" } </h2> 
                         </p >
                    </div >
                </div >

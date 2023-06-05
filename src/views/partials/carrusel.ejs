@@ -12,8 +12,8 @@
                             <div class="home__main--flex">
                                 <div class="card__precio">
                                     <p class="home__main--descuento">
-                                    <h2 class="home__main__preciototal">$ <%= discount ? price - (price * discount) /
-                                            100 : price %>
+                                    <h2 class="home__main__preciototal">$ <%= discount ? Math.round(price - (price * discount) /
+                                            100).toFixed(2) : Math.round(price).toFixed(2) %>
                                             <% if (discount) { %>
                                                 <span class="card__descuento">
                                                     <%= discount %>%

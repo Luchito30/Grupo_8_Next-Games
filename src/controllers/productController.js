@@ -37,6 +37,9 @@ module.exports = {
           association: "subcategories",
           attributes: ["name"],
         },
+        {
+          association: "cart",
+        }
       ],
     })
       .then((product) => {
