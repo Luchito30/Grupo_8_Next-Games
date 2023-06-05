@@ -185,11 +185,11 @@ h3 {
 }
 
 .descripciones {
-
     padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 100%;
 }
 
 .card-btn {
@@ -324,6 +324,7 @@ h3 {
     border: 1px solid white;
     border-radius: 15px;
     filter: drop-shadow(3px 4px 3px black);
+    padding-left: 10px;
 }
 
 .box-metodos {
@@ -482,23 +483,29 @@ h3 {
         top: 5px;
         position: relative;
         height: 32px;
-        gap: 120px;
+        gap: 60px;
     }
 
     .envios__camion{
-        position: absolute;
+        position: relative;
         width: 200px;
         height: 200px;
         display: inline-block;
-        bottom: -15px; 
+        bottom: 58px;
     }
 
     .detalle--boxenvio{
         margin-top: 10px;
+        position: relative;
     }
 
     .detalle__select--pagos-op {
         width: 90%;
+    }
+
+    .detalle__select--pagos {
+        margin-bottom: 25px;
+        margin-top: 30px;
     }
 }
 
@@ -523,7 +530,7 @@ h3 {
 
     .descripcion-detalle {
         width: 45%;
-        height: 456px;
+        height: 100%;
     }
 
     .detalle-imagenes {
@@ -592,7 +599,7 @@ h3 {
     }
 
     .envios__camion {
-        bottom: 17px;
+        bottom: 58px;
     }
 
     .card-btn {
@@ -617,7 +624,12 @@ h3 {
         right: 10px;
     }
 
+    .detalle__select--pagos {
+        margin-bottom: 25px;
+        margin-top: 15px;
+    }
+
     .detalle__select--pagos-op {
-        width: 95%;
+        width: 100%;
     }
 }

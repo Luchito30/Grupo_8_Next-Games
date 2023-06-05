@@ -16,7 +16,7 @@ module.exports = mtd = {
                     },
                     {
                         status: "pending",
-                    },
+                    }
                 ],
             },
             defaults: {
@@ -26,24 +26,25 @@ module.exports = mtd = {
                 {
                     association: "cart",
                     through: {
-                        attributes: ["quantity"],
+                        attributes: ["quantity","cuotas"],
                     }
                 },
             ],
         });
         return order;
     },
-    createProductCart: async ({ userId, productId }) => {
+    createProductCart: async ({ userId, productId, cuotas }) => {
         if (!userId || !productId) {
             throw {
                 ok: false,
                 message: "Debes ingresar el userId y productId"
-            }
+            };
         }
         const order = await mtd.getOrder({ userId });
-        await mtd.getCart({ orderId: order.id, productId })
-        const orderReload = await order.reload({ include: { all: true } })
-        order.total = mtd.calcTotal(orderReload)
+        await mtd.getCart({ orderId: order.id, productId });
+        const orderReload = await order.reload({ include: { all: true } });
+        order.total = mtd.calcTotal(orderReload);
+        order.cuotas = cuotas;
         await order.save();
     },
     removeProductFromCart: async ({ userId, productId }) => {
@@ -143,7 +144,7 @@ module.exports = mtd = {
                     {
                         productId,
                     },
-                ],
+                ]
             },
             defaults: {
                 orderId,
@@ -157,5 +158,23 @@ module.exports = mtd = {
             acum += priceCalc * Cart.quantity;
             return acum;
         }, 0);
-    }
-}
+    },
+    saveCuotas : async (productId, cuotas) => {
+        try {
+          const cart = await db.Cart.findOne({ where: { productId } });
+      
+          if (!cart) {
+            await db.Cart.create({ productId, cuotas });
+          } else {
+            cart.cuotas = cuotas;
+            await cart.save();
+          }
+      
+          return true;
+        } catch (error) {
+          console.error(error);
+          throw error;
+        }
+      }
+      
+};

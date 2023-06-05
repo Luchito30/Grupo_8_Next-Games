@@ -10,7 +10,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       quantity: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,defaultValue: 1
+      },
+      cuotas: { 
+        type: Sequelize.STRING, defaultValue: 1
       },
       productId: {
         type: Sequelize.INTEGER,
@@ -26,15 +29,6 @@ module.exports = {
         references : {
           model :{
             tableName : "Orders"
-          },
-          key : 'id'
-        }
-      },
-      addressId: {
-        type: Sequelize.INTEGER,
-              references : {
-          model :{
-            tableName : "Addresses"
           },
           key : 'id'
         }

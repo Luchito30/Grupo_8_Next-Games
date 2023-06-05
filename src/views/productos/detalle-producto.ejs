@@ -37,17 +37,17 @@
                         <section class="detalle-carritodecompras" id="datalle__ocult1">
                             <div class="detalle--boxcompras">
                                 <% if (discount) { %>
-                                    <span class="detalle__precio--original">$<%= Math.round(price).toFixed(2) %></span>
+                                    <span class="detalle__precio--original">$<%= toThousand(Math.round(price)) %></span>
                                     <span class="detalle__precio--barra">/</span>
                                     <b class="detalle__precio--porcentaje">
-                                        <%= discount %>% OFF
+                                        <%= discount %>%
                                     </b>
                                     <p class="detalle__precio--descuento">
-                                        $<%= Math.round(price - (price * discount) / 100).toFixed(2)%>
+                                        $<%= toThousand(Math.round(price - (price * discount) / 100))%>
                                     </p>
                                     <% } else { %>
                                         <p class="detalle__precio--sincambio">
-                                            $<%= Math.round(price).toFixed(2) %>
+                                            $<%= toThousand(Math.round(price)) %>
                                         </p>
                                         <% } %>
                             </div>
@@ -114,28 +114,28 @@
 
                             </div>
                             <div class="box-metodos">
-                                <div class="tarjetas-detalle" data-price="<%= price %>" data-discount="<%= discount %>">
+                                <div class="tarjetas-detalle" data-id="<%= id %>" data-price="<%= price %>" data-discount="<%= discount %>">
                                     <div>
                                       <h3 class="metodos">metodos de pago:</h3>
                                     </div>
                                     <% if (discount) { %>
                                       <div class="detalle__select--pagos">
                                         <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                          <option value="1 pago">1 pago de $<%= Math.round(price - (price * discount) / 100).toFixed(2) %></option>
-                                          <option value="3 pago">3 pagos de $<%= Math.round((price - (price * discount) / 100) / 3).toFixed(2) %></option>
-                                          <option value="6 pago">6 pagos de $<%= Math.round((price - (price * discount) / 100) / 6).toFixed(2) %></option>
-                                          <option value="9 pago">9 pagos de $<%= Math.round((price - (price * discount) / 100) / 9).toFixed(2) %></option>
-                                          <option value="12 pago">12 pagos de $<%= Math.round((price - (price * discount) / 100) / 12).toFixed(2) %></option>
+                                          <option value="1 pago">1 pago de $<%= toThousand(Math.round(price - (price * discount) / 100)) %></option>
+                                          <option value="3 pago">3 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 3)) %></option>
+                                          <option value="6 pago">6 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 6)) %></option>
+                                          <option value="9 pago">9 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 9)) %></option>
+                                          <option value="12 pago">12 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 12)) %></option>
                                         </select>
                                       </div>
                                     <% } else { %>
                                       <div class="detalle__select--pagos">
                                         <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                          <option value="1 pago">1 pago de $<%= Math.round(price).toFixed(2) %></option>
-                                          <option value="3 pago">3 pagos de $<%= Math.round(price / 3).toFixed(2) %></option>
-                                          <option value="6 pago">6 pagos de $<%= Math.round(price / 6).toFixed(2) %></option>
-                                          <option value="9 pago">9 pagos de $<%= Math.round(price / 9).toFixed(2) %></option>
-                                          <option value="12 pago">12 pagos de $<%= Math.round(price / 12).toFixed(2) %></option>
+                                          <option value="1 pago">1 pago de $<%= toThousand(Math.round(price)) %></option>
+                                          <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price / 3)) %></option>
+                                          <option value="6 pago">6 pagos de $<%= toThousand(Math.round(price / 6)) %></option>
+                                          <option value="9 pago">9 pagos de $<%= toThousand(Math.round(price / 9)) %></option>
+                                          <option value="12 pago">12 pagos de $<%= toThousand(Math.round(price / 12)) %></option>
                                         </select>
                                       </div>
                                     <% } %>

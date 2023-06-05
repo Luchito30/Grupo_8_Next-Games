@@ -1,6 +1,6 @@
 const sendErrorResponse = require("../../helpers/sendErrorResponse");
 const sendSuccesResponse = require("../../helpers/sendSuccesResponse");
-const { getOrder, createProductCart, moreOrLessQuantityFromProduct, removeProductFromCart,clearAllProductFromCart, modifyStatusFromOrder } = require("../../services/cartService");
+const { getOrder, createProductCart, moreOrLessQuantityFromProduct, removeProductFromCart,clearAllProductFromCart, modifyStatusFromOrder,saveCuotas } = require("../../services/cartService");
 
 module.exports = {
     getOrderPending: async (req, res) => {
@@ -69,10 +69,19 @@ module.exports = {
             const { id } = req.session.userLogin;
             await modifyStatusFromOrder({ userId: id, status });
             sendSuccesResponse(res);
-
         } catch (error) {
             sendErrorResponse(res, error)
         }
-
-    }
+    },
+    guardarCuotas :  async (req, res) => {
+        try {
+          const { productId, cuotas } = req.body;
+          await saveCuotas(productId, cuotas);
+      
+          res.json({ ok: true });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ ok: false, error: 'Error al guardar las cuotas' });
+        }
+      }
 }

@@ -26,9 +26,10 @@ const getProduct = ({ page = 1, limit = 6 } = {}) =>
 const paintProducts = (products) => {
     containerProductCard.innerHTML = "";
     products.forEach(({ id, image, name, price, discount,stateId  }) => {
+      const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
       const priceWithDiscount = discount
-      ? Math.round(price - (price * discount) / 100).toFixed(2)
-      : Math.round(price).toFixed(2);
+        ? toThousand(Math.round(price - (price * discount) / 100))
+        : toThousand(Math.round(price));
         const priceFormatARG = convertFormatPeso(priceWithDiscount);
         const template = `
        <article class="home__main__section__article" id="oferta">

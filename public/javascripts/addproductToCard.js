@@ -21,6 +21,7 @@ btnAddCart.addEventListener('click',async () => {
         "Content-Type": "application/json",
       },
     }).then((res) => res.json());
+    
   
     await Swal.fire({
       title: ok ? "Producto agregado al carrito" : "Debes iniciar sesión",
@@ -30,10 +31,28 @@ btnAddCart.addEventListener('click',async () => {
     });
   
     !ok && (location.href = "/users/login");
+
   } catch (error) {
     console.log(error);
   }
 })
+
+btnAddCart.addEventListener('click', async () => {
+  const cuotas = cuotasSelect.value;
+  const productId = document.querySelector('.tarjetas-detalle').dataset.id;
+  try {
+    await fetch(`${URL_API_SERVER}/cart/cuotas`, {
+      method: 'POST',
+      body: JSON.stringify({ productId, cuotas }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }).then((res) => res.json());
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 btnLessProduct.addEventListener('click', async (event) => {
   const id = event.target.getAttribute('data-lessProduct');
   const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
@@ -108,15 +127,15 @@ function getCuotaPrice(cuotaValue, price, discount) {
     const priceWithDiscount = price - (price * discount) / 100;
     switch (cuotaValue) {
       case '1 pago':
-        return `$${Math.round(priceWithDiscount).toFixed(2)}`;
+        return `$${toThousand(Math.round(priceWithDiscount))}`;
       case '3 pago':
-        return `3 cuotas $${Math.round(priceWithDiscount / 3).toFixed(2)}`;
+        return `3 cuotas de $${toThousand(Math.round(priceWithDiscount / 3))}`;
       case '6 pago':
-        return `6 cuotas $${Math.round(priceWithDiscount / 6).toFixed(2)}`;
+        return `6 cuotas de $${toThousand(Math.round(priceWithDiscount / 6))}`;
       case '9 pago':
-        return `9 cuotas $${Math.round(priceWithDiscount / 9).toFixed(2)}`;
+        return `9 cuotas de $${toThousand(Math.round(priceWithDiscount / 9))}`;
       case '12 pago':
-        return `12 cuotas $${Math.round(priceWithDiscount / 12).toFixed(2)}`;
+        return `12 cuotas de $${toThousand(Math.round(priceWithDiscount / 12))}`;
       default:
         return '';
     }
@@ -125,13 +144,13 @@ function getCuotaPrice(cuotaValue, price, discount) {
       case '1 pago':
         return `$${Math.round(price).toFixed(2)}`;
       case '3 pago':
-        return `3 cuotas $${Math.round(price / 3).toFixed(2)}`;
+        return `3 cuotas de $${toThousand(Math.round(price / 3))}`;
       case '6 pago':
-        return `6 cuotas $${Math.round(price / 6).toFixed(2)}`;
+        return `6 cuotas de $${toThousand(Math.round(price / 6))}`;
       case '9 pago':
-        return `9 cuotas $${Math.round(price / 9).toFixed(2)}`;
+        return `9 cuotas de $${toThousand(Math.round(price / 9))}`;
       case '12 pago':
-        return `12 cuotas $${Math.round(price / 12).toFixed(2)}`;
+        return `12 cuotas de $${toThousand(Math.round(price / 12))}`;
       default:
         return '';
     }
