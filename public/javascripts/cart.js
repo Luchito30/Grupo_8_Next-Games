@@ -30,14 +30,14 @@ const paintProducts = ({ products }) => {
         const priceFormatARG = convertFormatPeso(priceWithDiscount);
         const template = `
               <!-- COURSE TEMPLATE CARD -->
-              <div class="card col-12 col-lg-8 my-5">
-                <div class="card-body row" id="body-carrito">
+              <div class="card col-12 col-lg-8 my-5" id="body-carrito">
+                <div class="card-body row" >
                   
-                  <img class="col-4" style="width:150px" style="object-fit: contain;" src="/images/products/${
+                  <img class="col-4" id="image-carrito" style="width:150px" style="object-fit: contain;" src="/images/products/${
                     image
                   }" alt="">
                   <div class="col-8 position-relative">
-                  <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger "id="remove-product-icon-carrito" style="top:-8px;right:224px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+                  <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger "id="remove-product-icon-carrito" style=""><i style="padding:2px; width=10px;" class="rounded-circle btn-clear far fa-times-circle"></i></button>
     
                     <h5 class="card-name" id="name-carrito">${name}</h5>
                     
@@ -48,13 +48,13 @@ const paintProducts = ({ products }) => {
         }</p>
                     <p class="d-flex align-items-center gap-2">
                     <label for=""></label>
-                      <button onclick="lessProduct(${id} ,${
+                      <button id="less-cantidad" onclick="lessProduct(${id} ,${
           Cart.quantity
         })" class="btn btn-light">-</button>
                       <output style="width:50px"  class="form-control text-center" id="cantidad-carrito">
                         ${Cart.quantity}
                       </output>
-                      <button onclick="moreProduct(${id})" class="btn btn-light">+</button>
+                      <button id="more-cantidad" onclick="moreProduct(${id})" class="btn btn-light">+</button>
                       <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark" id="ver-mas-carrito">Ver más</a>
                     </p>
                   </div>
