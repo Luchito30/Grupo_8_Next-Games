@@ -340,6 +340,22 @@ h3 {
     display: none;
 }
 
+.card-btn--cuotas{
+    position: relative;
+    bottom: 51px;
+    margin-right: 15px;
+    font-size: 10px;
+    width: 142px;
+    border: none;
+    border-radius: 10px;
+    transition: all 1s;
+    line-height: 1.5;
+    color: white;
+    background-color: var(--swiper-theme-color);
+    height: 32px;
+    font-family: 'Press Start 2P', cursive;
+}
+
 @media (min-width: 769px) {
 
     .box-metodos {
@@ -632,4 +648,9 @@ h3 {
     .detalle__select--pagos-op {
         width: 100%;
     }
+
+    .card-btn--cuotas{
+        bottom: 10px;
+    }
+    
 }

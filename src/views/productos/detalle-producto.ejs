@@ -56,9 +56,9 @@
                                     <p class="d-flex align-items-center gap-2">
                                         <button data-lessProduct="<%= id %>" data-quantity="<%= cart.quantity %>"
                                             class="btn--resta" id="btn-lessProduct">-</button>
-                                        <output class="form-control quantity--output"
+                                        <output class="form-control quantity--output" data-id="<%= id %>"
                                             id="cantidad-carrito<%= id %>">
-                                            <%= cart.quantity=0 %>
+                                            <%= cart.quantity = 0 %>
                                         </output>
                                         <button data-moreProduct="<%= id %>" class="btn--resta"
                                             id="btn-moreProduct">+</button>
@@ -139,6 +139,7 @@
                                         </select>
                                       </div>
                                     <% } %>
+                                    <button class="card-btn--cuotas" id="btn-updateCuotas">Actualizar Cuotas</button>
                                     <img src="/images/tarjetas.png" alt="">
                                   </div>
                                 <div class="detalle--boxenvio">
