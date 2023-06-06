@@ -24,9 +24,10 @@ const paintProducts = ({ products }) => {
   if (products.length) {
     products.forEach(
       ({ name,image, Cart, id, price, discount }) => {
+        const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         const priceWithDiscount = discount
-          ? price - (price * discount) / 100
-          : price;
+          ? toThousand(Math.round(price - (price * discount) / 100))
+          : toThousand(Math.round(price));
         const priceFormatARG = convertFormatPeso(priceWithDiscount);
         const template = `
               <!-- COURSE TEMPLATE CARD -->
@@ -41,7 +42,7 @@ const paintProducts = ({ products }) => {
     
                     <h5 class="card-name" id="name-carrito">${name}</h5>
                     
-                    <p class="card-text" id="precio-carrito">${priceFormatARG}${
+                    <p class="card-text" id="precio-carrito">$ ${priceFormatARG}${
           discount
             ? `<span class="text-danger mx-3">${discount}%</span>`
             : ""
@@ -56,7 +57,32 @@ const paintProducts = ({ products }) => {
                       </output>
                       <button id="more-cantidad" onclick="moreProduct(${id})" class="btn btn-light">+</button>
                       <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark" id="ver-mas-carrito">Ver más</a>
-                    </p>
+                      <span class="cuotas-carrito">Cuotas: ${Cart.cuotas}</span>
+                      <div>
+                      <h3 class="metodos">metodos de pago:</h3>
+                    </div>
+                    ${ discount ? 
+                     `<div class="detalle__select--pagos">
+                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                          <option value="1 pago">1 pago de $${ toThousand(Math.round(price - (price * discount) / 100))}</option>
+                          <option value="3 pago">3 pagos de $${ toThousand(Math.round((price - (price * discount) / 100) / 3))}</option>
+                          <option value="6 pago">6 pagos de $${ toThousand(Math.round((price - (price * discount) / 100) / 6)) }</option>
+                          <option value="9 pago">9 pagos de $${ toThousand(Math.round((price - (price * discount) / 100) / 9)) }</option>
+                          <option value="12 pago">12 pagos de $${ toThousand(Math.round((price - (price * discount) / 100) / 12))}</option>
+                        </select>
+                      </div>` :
+            
+                     `<div class="detalle__select--pagos">
+                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                          <option value="1 pago">1 pago de $${ toThousand(Math.round(price))}</option>
+                          <option value="3 pago">3 pagos de $${ toThousand(Math.round(price / 3))}</option>
+                          <option value="6 pago">6 pagos de $${ toThousand(Math.round(price / 6))}</option>
+                          <option value="9 pago">9 pagos de $${ toThousand(Math.round(price / 9))}</option>
+                          <option value="12 pago">12 pagos de $${ toThousand(Math.round(price / 12))}</option>
+                        </select>
+                      </div>`
+                    } 
+                      </p>
                   </div>
                
                 </div>
