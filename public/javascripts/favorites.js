@@ -16,7 +16,6 @@ const paintProducts = ({ products }) => {
 
   if (products.length) {
     products.forEach(({ name, discount, price, id, image }) => {
-      console.log(image)
       const priceWithDiscount = discount
         ? price - (price * discount) / 100
         : price;

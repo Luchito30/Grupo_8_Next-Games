@@ -4,6 +4,7 @@ const btnNext = $('#btn-next');
 const selectLimit = $("#select-limit");
 const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
+const userId = document.body.getAttribute("data-userId");
 
 const URL_API_SERVER = "http://localhost:3000/api";
 
@@ -23,7 +24,7 @@ const getProduct = ({ page = 1, limit = 6 } = {}) =>
 
 const paintProducts = (products) => {
     containerProductCard.innerHTML = "";
-    products.forEach(({ id, image, name, price, discount,stateId  }) => {
+    products.forEach(({ id, image, name, price, discount,stateId,usersFavorites  }) => {
       const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
       const priceWithDiscount = discount
         ? toThousand(Math.round(price - (price * discount) / 100))
@@ -53,7 +54,7 @@ const paintProducts = (products) => {
                   </div>
                 </div>
             </div>
-            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
+            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 ${usersFavorites.some(({id}) => id === +userId) ? "fas" : "far"} fa-star" style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(${id},event)"></i>
        </div >
        
    </article >
@@ -165,26 +166,45 @@ const paintProducts = (products) => {
     }
   };
 
-  const toggleFavorite = async (id) => {
+  const getFavorites = () => {
+    return fetch(`${URL_API_SERVER}/favorites`).then((res) => res.json());
+  };
+
+  const toggleFavorite = async (id, { target }) => {
     try {
+      if (!userId) {
+        await Swal.fire({
+          title: "Debes Iniciar Sesión",
+          icon: "info",
+          timer: 1000,
+          showConfirmButton: false,
+        });
+        location.href = "/users/login";
+        return;
+      }
+
       const objProductId = {
           productId: id,
         };
-        const { ok } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
-          method: "POST",
-          body: JSON.stringify(objProductId),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }).then((res) => res.json());
+       const {
+      ok,
+      data: { isRemove },
+    } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
+      method: "POST",
+      body: JSON.stringify(objProductId),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
   
-        if (ok) {
-          const { ok, data } = await getFavorites();
-          console.log({ ok, data })
-          paintProducts({ products: data });
-        }
-  
-    } catch (error) {
-      console.log(error);
+    if (!isRemove) {
+      target.classList.add("fas");
+      target.classList.remove("far");
+    } else {
+      target.classList.add("far");
+      target.classList.remove("fas");
     }
+  } catch (error) {
+    console.log(error);
+  }
   };

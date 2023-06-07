@@ -15,6 +15,9 @@ module.exports = {
                       literalQueryUrlImage(req,'products','name','urlImage'),
                   ]
               }
+          },
+          {
+            association: "usersFavorites"
           }
       ],
       attributes : {

@@ -58,7 +58,7 @@
                                             class="btn--resta" id="btn-lessProduct">-</button>
                                         <output class="form-control quantity--output" data-id="<%= id %>"
                                             id="cantidad-carrito<%= id %>">
-                                            <%= cart.quantity = 0 %>
+                                            <%= cart.quantity = 1 -1 %>
                                         </output>
                                         <button data-moreProduct="<%= id %>" class="btn--resta"
                                             id="btn-moreProduct">+</button>
@@ -121,21 +121,21 @@
                                     <% if (discount) { %>
                                       <div class="detalle__select--pagos">
                                         <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                          <option value="1 pago">1 pago de $<%= toThousand(Math.round(price - (price * discount) / 100)) %></option>
-                                          <option value="3 pago">3 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 3)) %></option>
-                                          <option value="6 pago">6 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 6)) %></option>
-                                          <option value="9 pago">9 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 9)) %></option>
-                                          <option value="12 pago">12 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 12)) %></option>
+                                          <option value="1">1 pago de $<%= toThousand(Math.round(price - (price * discount) / 100)) %></option>
+                                          <option value="3">3 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 3)) %></option>
+                                          <option value="6">6 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 6)) %></option>
+                                          <option value="9">9 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 9)) %></option>
+                                          <option value="12">12 pagos de $<%= toThousand(Math.round((price - (price * discount) / 100) / 12)) %></option>
                                         </select>
                                       </div>
                                     <% } else { %>
                                       <div class="detalle__select--pagos">
                                         <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
-                                          <option value="1 pago">1 pago de $<%= toThousand(Math.round(price)) %></option>
-                                          <option value="3 pago">3 pagos de $<%= toThousand(Math.round(price / 3)) %></option>
-                                          <option value="6 pago">6 pagos de $<%= toThousand(Math.round(price / 6)) %></option>
-                                          <option value="9 pago">9 pagos de $<%= toThousand(Math.round(price / 9)) %></option>
-                                          <option value="12 pago">12 pagos de $<%= toThousand(Math.round(price / 12)) %></option>
+                                          <option value="1">1 pago de $<%= toThousand(Math.round(price)) %></option>
+                                          <option value="3">3 pagos de $<%= toThousand(Math.round(price / 3)) %></option>
+                                          <option value="6">6 pagos de $<%= toThousand(Math.round(price / 6)) %></option>
+                                          <option value="9">9 pagos de $<%= toThousand(Math.round(price / 9)) %></option>
+                                          <option value="12">12 pagos de $<%= toThousand(Math.round(price / 12)) %></option>
                                         </select>
                                       </div>
                                     <% } %>

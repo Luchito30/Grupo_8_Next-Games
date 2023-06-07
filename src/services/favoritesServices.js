@@ -38,10 +38,10 @@ module.exports = {
             },
             default: { userId, productId},
         }
-        const [favorites, isCreated] = await db.Favorites.findOrCreate(config);
+        const [Favorites, isCreated] = await db.Favorites.findOrCreate(config);
 
         if(!isCreated) {
-           await favorites.destroy()
+           await Favorites.destroy()
         }
         return !isCreated;
     },

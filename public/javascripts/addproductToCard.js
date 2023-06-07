@@ -8,6 +8,8 @@ const precioSinCambioElement = document.querySelector('.detalle__precio--sincamb
 const botonCuotas = document.querySelector('#btn-updateCuotas')
 const URL_API_SERVER = "http://localhost:3000/api";
 
+let precioTotal = '';
+
 
 function toThousand(value) {
   return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
@@ -21,30 +23,30 @@ function getCuotaPrice(cuotaValue, price, discount) {
   if (discount) {
     const priceWithDiscount = price - (price * discount) / 100;
     switch (cuotaValue) {
-      case '1 pago':
+      case '1':
         return `$${toThousand(Math.round(priceWithDiscount))}`;
-      case '3 pago':
+      case '3':
         return `3 cuotas $${toThousand(Math.round(priceWithDiscount / 3))}`;
-      case '6 pago':
+      case '6':
         return `6 cuotas $${toThousand(Math.round(priceWithDiscount / 6))}`;
-      case '9 pago':
+      case '9':
         return `9 cuotas $${toThousand(Math.round(priceWithDiscount / 9))}`;
-      case '12 pago':
+      case '12':
         return `12 cuotas $${toThousand(Math.round(priceWithDiscount / 12))}`;
       default:
         return '';
     }
   } else {
     switch (cuotaValue) {
-      case '1 pago':
+      case '1':
         return `$${toThousand(Math.round(price))}`;
-      case '3 pago':
+      case '3':
         return `3 cuotas $${toThousand(Math.round(price / 3))}`;
-      case '6 pago':
+      case '6':
         return `6 cuotas $${toThousand(Math.round(price / 6))}`;
-      case '9 pago':
+      case '9':
         return `9 cuotas $${toThousand(Math.round(price / 9))}`;
-      case '12 pago':
+      case '12':
         return `12 cuotas $${toThousand(Math.round(price / 12))}`;
       default:
         return '';
@@ -79,15 +81,15 @@ function calcularPrecioTotal(cantidad, cuotas, price, discount) {
     const precioProducto = priceWithDiscount * cantidad;
 
     switch (cuotas) {
-      case '1 pago':
+      case '1':
         return `$${toThousand(Math.round(precioProducto))}`;
-      case '3 pago':
+      case '3':
         return `3 cuotas de $${toThousand(Math.round(precioProducto / 3))}`;
-      case '6 pago':
+      case '6':
         return `6 cuotas de $${toThousand(Math.round(precioProducto / 6))}`;
-      case '9 pago':
+      case '9':
         return `9 cuotas de $${toThousand(Math.round(precioProducto / 9))}`;
-      case '12 pago':
+      case '12':
         return `12 cuotas de $${toThousand(Math.round(precioProducto / 12))}`;
       default:
         return '';
@@ -96,15 +98,15 @@ function calcularPrecioTotal(cantidad, cuotas, price, discount) {
     const precioProducto = price * cantidad;
 
     switch (cuotas) {
-      case '1 pago':
+      case '1':
         return `$${toThousand(Math.round(precioProducto))}`;
-      case '3 pago':
+      case '3':
         return `3 cuotas de $${toThousand(Math.round(precioProducto / 3))}`;
-      case '6 pago':
+      case '6':
         return `6 cuotas de $${toThousand(Math.round(precioProducto / 6))}`;
-      case '9 pago':
+      case '9':
         return `9 cuotas de $${toThousand(Math.round(precioProducto / 9))}`;
-      case '12 pago':
+      case '12':
         return `12 cuotas de $${toThousand(Math.round(precioProducto / 12))}`;
       default:
         return '';
@@ -141,22 +143,6 @@ btnAddCart.addEventListener('click',async () => {
     console.log(error);
   }
 })
-
-btnAddCart.addEventListener('click', async () => {
-  const cuotas = cuotasSelect.value;
-  const productId = document.querySelector('.tarjetas-detalle').dataset.id;
-  try {
-    await fetch(`${URL_API_SERVER}/cart/cuotas`, {
-      method: 'POST',
-      body: JSON.stringify({ productId, cuotas }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((res) => res.json());
-  } catch (error) {
-    console.log(error);
-  }
-});
 
 btnLessProduct.addEventListener('click', async (event) => {
   const id = event.target.getAttribute('data-lessProduct');

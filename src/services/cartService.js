@@ -26,14 +26,14 @@ module.exports = mtd = {
                 {
                     association: "cart",
                     through: {
-                        attributes: ["quantity","cuotas"],
+                        attributes: ["quantity" ,"cuotas"],
                     }
                 },
             ],
         });
         return order;
     },
-    createProductCart: async ({ userId, productId, cuotas }) => {
+    createProductCart: async ({ userId, productId }) => {
         if (!userId || !productId) {
             throw {
                 ok: false,
@@ -44,7 +44,6 @@ module.exports = mtd = {
         await mtd.getCart({ orderId: order.id, productId });
         const orderReload = await order.reload({ include: { all: true } });
         order.total = mtd.calcTotal(orderReload);
-        order.cuotas = cuotas;
         await order.save();
     },
     removeProductFromCart: async ({ userId, productId }) => {
