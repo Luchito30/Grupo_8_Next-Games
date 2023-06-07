@@ -92,6 +92,25 @@ module.exports = mtd = {
 
         return order;
     },
+    saveQuantityFromProduct: async ({ userId, productId, quantity }) => {
+        if (!userId || !productId || !quantity) {
+            throw {
+                ok: false,
+                message: "Debes ingresar el userId, productId y quantity",
+            };
+        }
+        const order = await mtd.getOrder({ userId });
+
+        const [cart, isCreated] = await mtd.getCart({
+
+            orderId: order.id,
+            productId,
+        });
+
+        cart.quantity = +quantity
+        await cart.save(); // si ya existe
+        return isCreated
+    },
     clearAllProductFromCart: async ({ userId }) => {
         if (!userId) {
             throw {

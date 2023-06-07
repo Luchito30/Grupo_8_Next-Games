@@ -16,6 +16,7 @@ module.exports ={
         try{
         const {id} = req.session.userLogin;
         const {productId} = req.body
+        console.log("productId",productId)
         const isRemove =  await addOrRemoveToFavorite({userId:id, productId})    
         sendSuccesResponse(res,{ data: { isRemove } });
         } catch (error) {

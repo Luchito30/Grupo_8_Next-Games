@@ -3,7 +3,7 @@
 
 <%- include('../partials/head.ejs') %>
 
-    <body>
+    <body data-userId="<%= locals.userLogin?.id %>" data-existProductInCart="<%= existProductInCart %>">
         <%- include('../partials/loader.ejs') %>
             <%- include('../partials/header.ejs') %>
 
@@ -57,8 +57,7 @@
                                         <button data-lessProduct="<%= id %>" data-quantity="<%= cart.quantity %>"
                                             class="btn--resta" id="btn-lessProduct">-</button>
                                         <output class="form-control quantity--output" data-id="<%= id %>"
-                                            id="cantidad-carrito<%= id %>">
-                                            <%= cart.quantity = 1 -1 %>
+                                            id="cantidad-carrito<%= id %>"><%= quantity %>
                                         </output>
                                         <button data-moreProduct="<%= id %>" class="btn--resta"
                                             id="btn-moreProduct">+</button>

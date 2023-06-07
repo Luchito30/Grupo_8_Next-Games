@@ -183,6 +183,19 @@ const paintProducts = (products) => {
         return;
       }
 
+      if (target.classList.contains("fas")) {
+        const result = await Swal.fire({
+          title: "¿Quieres quitar el producto de favoritos?",
+          icon: "question",
+          showCancelButton: true,
+          cancelButtonText: "Cancelar",
+          confirmButtonText: "Quitar",
+        });
+        if(!result.isConfirmed){
+          return
+        }
+      }
+
       const objProductId = {
           productId: id,
         };

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { getOrderPending, addProduct, removeProduct, moreQuantity, lessQuantity, clearCart, statusOrder,guardarCuotas }
+const { getOrderPending, addProduct, removeProduct, moreQuantity, lessQuantity, clearCart, statusOrder,guardarCuotas, saveQuantity }
  = require('../../controllers/api/cartApiController');
 
 const {index, detail}
@@ -12,6 +12,7 @@ router
 .delete('/removeProduct',removeProduct)
 .put('/moreQuantity',moreQuantity)
 .put('/lessQuantity',lessQuantity)
+.put('/saveQuantity',saveQuantity)
 .delete('/clearCart',clearCart)
 .put('/statusOrder',statusOrder)
 .post('/cuotas',guardarCuotas);

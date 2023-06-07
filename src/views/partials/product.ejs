@@ -32,8 +32,8 @@
                                 </div>
                             </div>
                         </div>
-                        <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star"
-                            style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite()"></i>
+                        <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fa-star <%= locals.isFavorite ? "fas" : "far" %>"
+                            style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(<%= id %>,event)"></i>
     </div>
 
 </article>

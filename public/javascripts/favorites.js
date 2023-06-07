@@ -22,7 +22,7 @@ const paintProducts = ({ products }) => {
       const priceFormatARG = convertFormatPeso(priceWithDiscount);
 
       const template = `
-      <div class="card col-12 col-lg-6 position-relative">
+      <div class="card col-12 col-lg-4 position-relative">
               <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-star" style="top:15px;right:15px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
         <div class="card-body d-flex gap-2 align-items-center justify-content-evenly">
           
@@ -84,35 +84,54 @@ const addProductToCart = async (id) => {
   }
 };
 
-const toggleFavorite = async (id) => {
+const toggleFavorite = async (id, { target }) => {
   try {
-    const result = await Swal.fire({
-      title: "¿Quieres quitar el producto de favoritos?",
-      icon: "question",
-      showCancelButton: true,
-      cancelButtonText: "Cancelar",
-      confirmButtonText: "Quitar",
-    });
+    if (!userId) {
+      await Swal.fire({
+        title: "Debes Iniciar Sesión",
+        icon: "info",
+        timer: 1000,
+        showConfirmButton: false,
+      });
+      location.href = "/users/login";
+      return;
+    }
 
-    if (result.isConfirmed) {
-      const objProductId = {
-        productId: id,
-      };
-      const { ok } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
-        method: "POST",
-        body: JSON.stringify(objProductId),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) => res.json());
-
-      if (ok) {
-        const { ok, data } = await getFavorites();
-        console.log({ ok, data })
-        paintProducts({ products: data });
+    if (target.classList.contains("fas")) {
+      const result = await Swal.fire({
+        title: "¿Quieres quitar el producto de favoritos?",
+        icon: "question",
+        showCancelButton: true,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Quitar",
+      });
+      if(!result.isConfirmed){
+        return
       }
     }
-  } catch (error) {
-    console.log(error);
+
+    const objProductId = {
+        productId: id,
+      };
+     const {
+    ok,
+    data: { isRemove },
+  } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
+    method: "POST",
+    body: JSON.stringify(objProductId),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
+
+  if (!isRemove) {
+    target.classList.add("fas");
+    target.classList.remove("far");
+  } else {
+    target.classList.add("far");
+    target.classList.remove("fas");
   }
+} catch (error) {
+  console.log(error);
+}
 };
