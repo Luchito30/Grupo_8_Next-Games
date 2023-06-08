@@ -26,7 +26,7 @@ module.exports = mtd = {
                 {
                     association: "cart",
                     through: {
-                        attributes: ["quantity" ,"cuotas"],
+                        attributes: ["quantity", "cuotas"],
                     }
                 },
             ],
@@ -177,22 +177,22 @@ module.exports = mtd = {
             return acum;
         }, 0);
     },
-    saveCuotas : async (productId, cuotas) => {
+    saveCuotas: async (productId, cuotas) => {
         try {
-          const cart = await db.Cart.findOne({ where: { productId } });
-      
-          if (!cart) {
-            await db.Cart.create({ productId, cuotas });
-          } else {
-            cart.cuotas = cuotas;
-            await cart.save();
-          }
-      
-          return true;
+            const cart = await db.Cart.findOne({ where: { productId } });
+
+            if (!cart) {
+                await db.Cart.create({ productId, cuotas });
+            } else {
+                cart.cuotas = cuotas;
+                await cart.save();
+            }
+
+            return true;
         } catch (error) {
-          console.error(error);
-          throw error;
+            console.error(error);
+            throw error;
         }
-      }
-      
+    }
+
 };

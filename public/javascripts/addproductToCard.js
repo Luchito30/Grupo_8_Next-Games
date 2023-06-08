@@ -56,7 +56,7 @@ function getCuotaPrice(cuotaValue, price, discount) {
   }
 }
 
-botonCuotas.addEventListener("click", () => {
+botonCuotas.addEventListener("click", async () => {
   const cuotaValue = cuotasSelect.value;
   const cuotaPrice = getCuotaPrice(cuotaValue, price, discount);
 
@@ -73,7 +73,24 @@ botonCuotas.addEventListener("click", () => {
       precioSinCambioElement.textContent = "Sin descuento";
     }
   }
+
+  const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
+  quantityElement.textContent = 1; // Establecer el campo quantity en 1
+
+  const objProductId = {
+    productId: id,
+    quantity: 1, // Establecer la cantidad en 1
+  };
+
+  const { data: { isCreate } } = await fetch(`${URL_API_SERVER}/cart/saveQuantity`, {
+    method: "PUT",
+    body: JSON.stringify(objProductId),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) => res.json());
 });
+
 
 function calcularPrecioTotal(cantidad, cuotas, price, discount) {
   if (discount) {
@@ -143,6 +160,7 @@ btnAddCart.addEventListener("click", async () => {
 
 btnLessProduct.addEventListener("click", async (event) => {
   const id = event.target.getAttribute("data-lessProduct");
+  const existProductInCart = event.target.getAttribute("data-existProductInCart");
   const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
   let quantity = parseInt(quantityElement.textContent.trim());
   if (quantity > 1) {
@@ -200,12 +218,8 @@ btnMoreProduct.addEventListener("click", async (event) => {
   const id = event.target.getAttribute("data-moreProduct");
   const existProductInCart = event.target.getAttribute("data-existProductInCart");
   const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
-  
   let quantity = parseInt(quantityElement.textContent.trim());
- 
-
   try {
-
     if (!userId) {
       await Swal.fire({
         title: "Debes Iniciar Sesión",
@@ -217,12 +231,16 @@ btnMoreProduct.addEventListener("click", async (event) => {
       return;
     }
 
-    if (existProductInCart === "false") {
+    if (!existProductInCart && quantity == 1) {
       const result = await Swal.fire({
         title: "¿Quieres agregar el producto al carrito?",
         icon: "question",
-      });
-
+        showCancelButton: true,
+        confirmButtonColor: "#047f04",
+        cancelButtonColor: '#3005df',
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Agregar",
+      }); 
       if (!result.isConfirmed) {
         quantityElement.textContent = 1;
         return;

@@ -195,13 +195,13 @@
 }
 
 .home__main--descripcion {
-    font-size: 16px !important;
+    font-size: 17px !important;
     margin-top: -2px;
 }
 
 .home__main--producto{
     text-align: center;
-    margin-top: 15px;
+    margin-bottom: 25px;
 }
 
 .home__main__preciototal {
@@ -543,6 +543,10 @@
 
     .home__main__preciototal {
         font-size: 18px;
+    }
+
+    .home__main__section__article:hover .home__main--ocultar {
+        height: 220px;
     }
 
 }
