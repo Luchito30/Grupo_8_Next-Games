@@ -3,10 +3,11 @@ const { validationResult } = require("express-validator");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require("../database/models");
 const { Op } = require("sequelize");
+const mappedFavoritesProducts = require("../helpers/mappedFavoritesProducts");
 
 module.exports = {
   index: (req, res) => {
-    db.Product.findAll({ include: ["images", "state", "subcategories"] })
+    db.Product.findAll({ include: ["usersFavorites", "state", "subcategories"] })
       .then((products) => {
         return res.render("products", {
           title: "Next Games | Productos",
@@ -70,37 +71,44 @@ module.exports = {
       console.log(error);
     }
   },
-  getFromSubcategory: (req, res) => {
-    const { subcategoryId } = req.params;
+  getFromSubcategory: async (req, res) => {
+    try {
+      const { subcategoryId } = req.params;
 
-    db.Product.findAll({
-      where: {
-        subcategoryId: subcategoryId,
-      },
-      include: [
-        {
-          association: "subcategories",
+      let subcategories = await db.Product.findAll({
+        where: {
+          subcategoryId: subcategoryId,
         },
-        "images",
-        "state",
-      ],
-    })
-      .then((products) => {
-        const subtotal = 6;
-
-        if (req.params.subcategoryId > subtotal) {
-          return res.redirect("/");
-        }
-
-        const subName = products[0].subcategories.name;
-        return res.render("productos/categorias", {
-          title: "Next Games | Productos",
-          products,
-          toThousand,
-          subName: subName.toUpperCase(),
-        });
+        include: [
+          {
+            association: "subcategories",
+          },
+          "images",
+          "state",
+          "usersFavorites"
+        ],
       })
-      .catch((error) => console.log(error));
+
+      subcategories = mappedFavoritesProducts({ arrProducts: subcategories, req });
+
+      const subtotal = 6;
+
+      if (req.params.subcategoryId > subtotal) {
+        return res.redirect("/");
+      }
+
+      const subName = subcategories[0].subcategories.name;
+      return res.render("productos/categorias", {
+        title: "Next Games | Productos",
+        subcategories,
+        toThousand,
+        subName: subName.toUpperCase(),
+      });
+
+    } catch (error) {
+      console.log(error)
+    }
+
   },
   getFromCategory: (req, res) => {
     const { stateId } = req.params;
@@ -115,6 +123,7 @@ module.exports = {
         },
         "images",
         "subcategories",
+        "usersFavorites"
       ],
     })
       .then((products) => {

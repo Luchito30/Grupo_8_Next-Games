@@ -167,26 +167,58 @@ const paintProducts = (products) => {
     }
   };
 
-  const toggleFavorite = async (id) => {
+  const getFavorites = () => {
+    return fetch(`${URL_API_SERVER}/favorites`).then((res) => res.json());
+  };
+
+  const toggleFavorite = async (id, { target }) => {
     try {
+      if (!userId) {
+        await Swal.fire({
+          title: "Debes Iniciar Sesión",
+          icon: "info",
+          timer: 1000,
+          showConfirmButton: false,
+        });
+        location.href = "/users/login";
+        return;
+      }
+
+      if (target.classList.contains("fas")) {
+        const result = await Swal.fire({
+          title: "¿Quieres quitar el producto de favoritos?",
+          icon: "question",
+          showCancelButton: true,
+          cancelButtonText: "Cancelar",
+          confirmButtonText: "Quitar",
+        });
+        if(!result.isConfirmed){
+          return
+        }
+      }
+
       const objProductId = {
           productId: id,
         };
-        const { ok } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
-          method: "POST",
-          body: JSON.stringify(objProductId),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }).then((res) => res.json());
+       const {
+      ok,
+      data: { isRemove },
+    } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
+      method: "POST",
+      body: JSON.stringify(objProductId),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((res) => res.json());
   
-        if (ok) {
-          const { ok, data } = await getFavorites();
-          console.log({ ok, data })
-          paintProducts({ products: data });
-        }
-  
-    } catch (error) {
-      console.log(error);
+    if (!isRemove) {
+      target.classList.add("fas");
+      target.classList.remove("far");
+    } else {
+      target.classList.add("far");
+      target.classList.remove("fas");
     }
+  } catch (error) {
+    console.log(error);
+  }
   };

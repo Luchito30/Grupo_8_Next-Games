@@ -12,81 +12,82 @@ module.exports = {
       const ID_tarjeta = 3;
       const ID_consolas = 4;
       const ID_juegos = 1;
-
-      let inSale = await db.Product.findAll({
-        where: {
-          discount: { [Op.gt]: 0 },
-        },
-        include: ["state", "images", "usersFavorites"],
-        limit: 10,
-      });
-      // console.log(inSale)
-      let computacion = await db.Product.findAll({
-        where: {
-          subcategoryId: ID_compu,
-        },
-        include: ["images", "state", "usersFavorites"],
-      });
-
-      let ingresos = await db.Product.findAll({
-        where: {
-          stateId: ID_ingresos,
-        },
-        include: [
-          {
-            association: "state",
-          },
-          "images",
-          "subcategories",
-          "usersFavorites",
-        ],
-      });
-
-      let tarjetas = await db.Product.findAll({
-        where: {
-          subcategoryId: ID_tarjeta,
-        },
-        include: ["images", "state", "usersFavorites"],
-      });
-
-      let consolas = await db.Product.findAll({
-        where: {
-          subcategoryId: ID_consolas,
-        },
-        include: ["images", "state", "usersFavorites"],
-      });
-
-      let juegos = await db.Product.findAll({
-        where: {
-          subcategoryId: ID_juegos,
-        },
-        include: ["images", "state", "usersFavorites"],
-      });
-
-      inSale = mappedFavoritesProducts({ arrProducts: inSale, req });
-      computacion = mappedFavoritesProducts({
-        arrProducts: computacion,
-        req,
-      });
-      ingresos = mappedFavoritesProducts({ arrProducts: ingresos, req });
-      tarjetas = mappedFavoritesProducts({ arrProducts: tarjetas, req });
-      consolas = mappedFavoritesProducts({ arrProducts: consolas, req });
-      juegos = mappedFavoritesProducts({ arrProducts: juegos, req });
-
-      return res.render("home", {
-        title: "Next Games | Home",
+  
+      const [
         inSale,
         computacion,
+        ingresos,
         tarjetas,
         consolas,
-        juegos,
-        ingresos,
+        juegos
+      ] = await Promise.all([
+        db.Product.findAll({
+          where: {
+            discount: { [Op.gt]: 0 },
+          },
+          include: ["state", "usersFavorites"],
+          limit: 10,
+        }),
+        db.Product.findAll({
+          where: {
+            subcategoryId: ID_compu,
+          },
+          include: ["state", "usersFavorites"],
+        }),
+        db.Product.findAll({
+          where: {
+            stateId: ID_ingresos,
+          },
+          include: [
+            {
+              association: "state",
+            },
+            "subcategories",
+            "usersFavorites",
+          ],
+        }),
+        db.Product.findAll({
+          where: {
+            subcategoryId: ID_tarjeta,
+          },
+          include: ["state", "usersFavorites"],
+        }),
+        db.Product.findAll({
+          where: {
+            subcategoryId: ID_consolas,
+          },
+          include: [ "state", "usersFavorites"],
+        }),
+        db.Product.findAll({
+          where: {
+            subcategoryId: ID_juegos,
+          },
+          include: ["state", "usersFavorites"],
+        })
+      ]);
+  
+      let mappedInSale = mappedFavoritesProducts({ arrProducts: inSale, req });
+      let mappedComputacion = mappedFavoritesProducts({ arrProducts: computacion, req });
+      let mappedIngresos = mappedFavoritesProducts({ arrProducts: ingresos, req });
+      let mappedTarjetas = mappedFavoritesProducts({ arrProducts: tarjetas, req });
+      let mappedConsolas = mappedFavoritesProducts({ arrProducts: consolas, req });
+      let mappedJuegos = mappedFavoritesProducts({ arrProducts: juegos, req });
+  
+      return res.render("home", {
+        title: "Next Games | Home",
+        inSale: mappedInSale,
+        computacion: mappedComputacion,
+        tarjetas: mappedTarjetas,
+        consolas: mappedConsolas,
+        juegos: mappedJuegos,
+        ingresos: mappedIngresos,
         toThousand,
       });
     } catch (error) {
       console.log(error);
     }
   },
+  
   search: (req, res) => {
     const { keywords } = req.query;
     db.Product.findAll({

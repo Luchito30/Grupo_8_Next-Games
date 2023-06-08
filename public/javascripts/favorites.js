@@ -22,24 +22,23 @@ const paintProducts = ({ products }) => {
       const priceFormatARG = convertFormatPeso(priceWithDiscount);
 
       const template = `
-      <div class="card col-12 col-lg-4 position-relative">
-              <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-star" style="top:15px;right:15px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
+      <div class="card col-12 col-lg-6 position-relative favorite--card">
+      <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-star" style="top:15px;right:15px;cursor:pointer" onclick="toggleFavorite(${id}, this)"></i>
         <div class="card-body d-flex gap-2 align-items-center justify-content-evenly">
           
-          <img style="width:180px;height:120px" style="object-fit:contain;" src="/images/products/${image}" alt="">
-          <div class="">
-
-            <h5 class="card-name">${name}</h5>
-            <p class="card-text text-success fw-bold">${priceFormatARG} ${
-        discount ? `<span class="text-danger mx-3">${discount}% OFF</span>` : ""
-      }</p>
+              <img class="favorites--img" src="/images/products/${image}" alt="">
+          <div class="favorite--descriptionbox">
+            <div class="card-name favorite--titulo">
+               <h5>${name}</h5>
+            </div>
+            <p class="card-text text-success fw-bold">${priceFormatARG} ${discount ? `<span class="text-danger mx-3">${discount}% OFF</span>` : ""}</p>
             <p class="d-flex align-items-center gap-2">
-              <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark">Ver más</a>
+              <a href="/products/detalle-producto/${id}" class="btn btn-outline favorite--boton">Ver más</a>
               <button class="btn btn-success" onclick="addProductToCart(${id})">Agregar Carrito</button>
             </p>
           </div>
         </div>
-        </div>
+      </div>
       `;
 
       cardsContainer.innerHTML += template;
@@ -84,32 +83,25 @@ const addProductToCart = async (id) => {
   }
 };
 
-const toggleFavorite = async (id, { target }) => {
+const toggleFavorite = async (id, element) => {
   try {
-    if (!userId) {
-      await Swal.fire({
-        title: "Debes Iniciar Sesión",
-        icon: "info",
-        timer: 1000,
-        showConfirmButton: false,
-      });
-      location.href = "/users/login";
-      return;
-    }
-
-    if (target.classList.contains("fas")) {
+   
+    if (element.classList.contains("fas")) {
       const result = await Swal.fire({
         title: "¿Quieres quitar el producto de favoritos?",
         icon: "question",
         showCancelButton: true,
+        confirmButtonColor: "#ff1010",
+        cancelButtonColor: '#3005df',
         cancelButtonText: "Cancelar",
         confirmButtonText: "Quitar",
       });
       if(!result.isConfirmed){
         return
-      }
+      } 
     }
 
+    
     const objProductId = {
         productId: id,
       };
@@ -122,14 +114,19 @@ const toggleFavorite = async (id, { target }) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => res.json());
+  }).then((res) =>  res.json());
 
   if (!isRemove) {
-    target.classList.add("fas");
-    target.classList.remove("far");
+    element.classList.add("fas");
+    element.classList.remove("far");
   } else {
-    target.classList.add("far");
-    target.classList.remove("fas");
+    element.classList.add("far");
+    element.classList.remove("fas");
+      // Remover el elemento de la lista de favoritos
+      const card = element.closest(".favorite--card");
+      if (card) {
+        card.remove();
+      }
   }
 } catch (error) {
   console.log(error);

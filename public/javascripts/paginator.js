@@ -188,6 +188,8 @@ const paintProducts = (products) => {
           title: "¿Quieres quitar el producto de favoritos?",
           icon: "question",
           showCancelButton: true,
+          confirmButtonColor: "#ff1010",
+          cancelButtonColor: '#3005df',
           cancelButtonText: "Cancelar",
           confirmButtonText: "Quitar",
         });

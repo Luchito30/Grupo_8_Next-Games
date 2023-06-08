@@ -9,6 +9,8 @@
 #headeradmin__table{
     position: relative;
     top: 16px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .headeradmin__logo{
