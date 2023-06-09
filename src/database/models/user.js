@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       });
       Usuario.hasMany(models.Order,{
         foreignKey: "userId",
-        as:'orders'
+        as:'orders',
+        onDelete : 'cascade'
        });
        Usuario.belongsToMany(models.Product,{
         foreignKey: "userId",

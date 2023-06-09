@@ -74,13 +74,6 @@ botonCuotas.addEventListener("click", async () => {
     }
   }
 
-  const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
-  quantityElement.textContent = 1; // Establecer el campo quantity en 1
-
-  const objProductId = {
-    productId: id,
-    quantity: 1, // Establecer la cantidad en 1
-  };
 
   const { data: { isCreate } } = await fetch(`${URL_API_SERVER}/cart/saveQuantity`, {
     method: "PUT",
@@ -96,6 +89,8 @@ function calcularPrecioTotal(cantidad, cuotas, price, discount) {
   if (discount) {
     const priceWithDiscount = price - (price * discount) / 100;
     const precioProducto = priceWithDiscount * cantidad;
+    const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
+  let quantity = parseInt(quantityElement.textContent.trim());
 
     switch (cuotas) {
       case "1":
@@ -156,11 +151,10 @@ btnAddCart.addEventListener("click", async () => {
   } catch (error) {
     console.log(error);
   }
-});
+})
 
 btnLessProduct.addEventListener("click", async (event) => {
   const id = event.target.getAttribute("data-lessProduct");
-  const existProductInCart = event.target.getAttribute("data-existProductInCart");
   const quantityElement = document.querySelector(`#cantidad-carrito${id}`);
   let quantity = parseInt(quantityElement.textContent.trim());
   if (quantity > 1) {

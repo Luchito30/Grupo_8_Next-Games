@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       });
       Order.belongsTo(models.User,{
         foreignKey: "userId",
-        as:'user'
+        as:'user',
+        onDelete : 'cascade'
       });
     }
   }
