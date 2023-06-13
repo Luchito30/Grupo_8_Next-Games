@@ -4,7 +4,7 @@ const clearCart = $("#clear-cart");
 const btnBuy = $("#btn-buy");
 const outputTotal = $("#output-total");
 const cuotasList = $("#cuotas-container")
-const URL_API_SERVER = "http://localhost:3000/api";
+const URL_API_SERVER = "https://nextgames.onrender.com/api";
 
 const getOrder = () => {
   return fetch(`${URL_API_SERVER}/cart/getOrderPending`, {

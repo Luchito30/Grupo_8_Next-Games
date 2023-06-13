@@ -1,3 +1,4 @@
+const URL_API_SERVER = "https://nextgames.onrender.com/api";
 const addProductToCart = async (id) => {
     try {
       const objProductId = {

@@ -9,7 +9,7 @@ const precioSinCambioElement = document.querySelector(
 );
 const botonCuotas = document.querySelector("#btn-updateCuotas");
 const userId = document.body.getAttribute("data-userId");
-const URL_API_SERVER = "http://localhost:3000/api";
+const URL_API_SERVER = "https://nextgames.onrender.com/api";
 
 let precioTotal = "";
 

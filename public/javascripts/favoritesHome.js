@@ -1,5 +1,5 @@
 const userId = document.body.getAttribute("data-userId");
-const URL_API_SERVER = "http://localhost:3000/api";
+const URL_API_SERVER = "https://nextgames.onrender.com/api";
 
 const toggleFavorite = async (id, { target }) => {
   try {

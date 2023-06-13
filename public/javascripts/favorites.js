@@ -1,5 +1,5 @@
 const cardsContainer = document.querySelector("#cards-container");
-const URL_API_SERVER = "http://localhost:3000/api";
+const URL_API_SERVER = "https://nextgames.onrender.com/api";
 
 const getFavorites = () => {
   return fetch(`${URL_API_SERVER}/favorites`).then((res) => res.json());

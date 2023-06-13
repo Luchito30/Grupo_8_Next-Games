@@ -6,10 +6,10 @@ const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
 const userId = document.body.getAttribute("data-userId");
 
-const URL_API_SERVER = "http://localhost:3000/api";
+const URL_API_SERVER = "https://nextgames.onrender.com/api";
 
 let pageActive = 1;
-const apiGetProduct = "http://localhost:3000/api/products";
+const apiGetProduct = "https://nextgames.onrender.com/api/products";
 
 const getProduct = ({ page = 1, limit = 6 } = {}) =>
     fetch(`${apiGetProduct}?page=${page}&limit=${limit}`).then((res) =>
