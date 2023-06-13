@@ -4,6 +4,7 @@ const btnNext = $('#btn-next');
 const selectLimit = $("#select-limit");
 const containerItemsPage = $("#container-items-page");
 const containerProductCard = $('#container-products-card');
+const userId = document.body.getAttribute("data-userId");
 
 const URL_API_SERVER = "http://localhost:3000/api";
 let pageActive = 1;
@@ -55,7 +56,7 @@ const paintProducts = (products) => {
                   </div>
                 </div>
             </div>
-            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
+            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(${id},event)"></i>
        </div >
        
    </article >
@@ -189,6 +190,8 @@ const paintProducts = (products) => {
           title: "¿Quieres quitar el producto de favoritos?",
           icon: "question",
           showCancelButton: true,
+          confirmButtonColor: "#ff1010",
+          cancelButtonColor: '#3005df',
           cancelButtonText: "Cancelar",
           confirmButtonText: "Quitar",
         });

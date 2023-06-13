@@ -29,8 +29,8 @@
 
 
             <section class="home__main__section" id="container-products-card">
-                <% subcategories.forEach(({id,image,price,discount,name,state,subcategories,isFavorite})=> { %>
-                    <%- include('../partials/product',{ id, image, price, discount, name, state,subcategories,isFavorite }) %>
+                <% subcategories.forEach(({id,image,price,discount,name,state,subcategories})=> { %>
+                    <%- include('../partials/product',{ id, image, price, discount, name, state,subcategories }) %>
                         <% }) %>
             </section>
 
