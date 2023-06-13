@@ -3,6 +3,7 @@ const cardsContainer = $("#cards-container");
 const clearCart = $("#clear-cart");
 const btnBuy = $("#btn-buy");
 const outputTotal = $("#output-total");
+const cuotasList = $("#cuotas-container")
 const URL_API_SERVER = "http://localhost:3000/api";
 
 const getOrder = () => {
@@ -24,39 +25,84 @@ const paintProducts = ({ products }) => {
   if (products.length) {
     products.forEach(
       ({ name,image, Cart, id, price, discount }) => {
+        const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         const priceWithDiscount = discount
-          ? price - (price * discount) / 100
-          : price;
+          ? toThousand(Math.round(price - (price * discount) / 100))
+          : toThousand(Math.round(price));
         const priceFormatARG = convertFormatPeso(priceWithDiscount);
         const template = `
               <!-- COURSE TEMPLATE CARD -->
-              <div class="card col-12 col-lg-8 my-5">
-                <div class="card-body row">
+              <div class="card col-12 col-lg-8 my-5" id="body-carrito">
+                <div class="card-body row" >
                   
-                  <img class="col-4" style="width:150px" style="object-fit: contain;" src="/images/products/${
+                  <img class="col-4" id="image-carrito" style="width:150px" style="object-fit: contain;" src="/images/products/${
                     image
                   }" alt="">
                   <div class="col-8 position-relative">
-                    <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger " style="top:-3px;right:10px"><i style="padding:2px" class="rounded-circle btn-clear far fa-times-circle"></i></button>
+                  <button onclick="removeProductToCart(${id})" class="fs-5 p-0 border-0 bg-transparent position-absolute text-danger "id="remove-product-icon-carrito" style=""><i style="padding:2px; width=10px;" class="rounded-circle btn-clear far fa-times-circle"></i></button>
     
-                    <h5 class="card-name">${name}</h5>
+                    <h5 class="card-name" id="name-carrito">${name}</h5>
                     
-                    <p class="card-text">${priceFormatARG}${
+                    <p class="card-text" id="precio-carrito">$ ${priceFormatARG}${
           discount
-            ? `<span class="text-danger mx-3">${discount}% OFF</span>`
+            ? `<span class="text-danger mx-3">${discount}%</span>`
             : ""
         }</p>
                     <p class="d-flex align-items-center gap-2">
-                      <label for=""></label>
-                      <button onclick="lessProduct(${id},${
+                    <label for=""></label>
+                      <button id="less-cantidad" onclick="lessProduct(${id} ,${
           Cart.quantity
         })" class="btn btn-light">-</button>
-                      <output style="width:50px"  class="form-control text-center">
+                      <output style="width:50px"  class="form-control text-center" id="cantidad-carrito">
                         ${Cart.quantity}
                       </output>
-                      <button onclick="moreProduct(${id})" class="btn btn-light">+</button>
-                      <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark">Ver más</a>
-                    </p>
+                      <button id="more-cantidad" onclick="moreProduct(${id})" class="btn btn-light">+</button>
+                      <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark" id="ver-mas-carrito">Ver más</a>
+                      <div>
+                      <h3 class="metodos">metodos de pago:</h3>
+                    </div>
+                    ${ discount ? 
+                     `<div class="detalle__select--pagos">
+                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                        <option value="1">1 pago de $${toThousand(
+                          Math.round(price - (price * discount) / 100) * Cart.quantity
+                        )}</option>
+                         <option value="3">3 pagos de $${toThousand(
+                          Math.round((price - (price * discount) / 100) / 3) * Cart.quantity
+                        )}</option>
+                         <option value="6">6 pagos de $${toThousand(
+                          Math.round((price - (price * discount) / 100) / 6) * Cart.quantity
+                        )}</option>
+                         <option value="9">9 pagos de $${toThousand(
+                          Math.round((price - (price * discount) / 100) / 9) * Cart.quantity
+                        )}</option>
+                         <option value="12">12 pagos de $${toThousand(
+                          Math.round((price - (price * discount) / 100) / 12) * Cart.quantity
+                        )}</option>
+                        </select>
+                      </div>` :
+            
+                     `<div class="detalle__select--pagos">
+                        <select class="detalle__select--pagos-op" name="cuotas" id="cuotas">
+                        <option value="1">1 pago de $${toThousand(
+                          Math.round(price) * Cart.quantity
+                        )}</option>
+                         <option value="3">3 pagos de $${toThousand(
+                          Math.round(price / 3) * Cart.quantity
+                        )}</option>
+                         <option value="6">6 pagos de $${toThousand(
+                          Math.round(price / 6) * Cart.quantity
+                        )}</option>
+                         <option value="9">9 pagos de $${toThousand(
+                          Math.round(price / 9) * Cart.quantity
+                        )}</option>
+                         <option value="12">12 pagos de $${toThousand(
+                          Math.round(price / 12) * Cart.quantity
+                        )}</option>
+                        </select>
+                      </div>`
+                    } 
+                      </p>
                   </div>
                
                 </div>
@@ -89,12 +135,12 @@ window.addEventListener("load", async () => {
 });
 
 const moreProduct = async (id) => {
-  const objCourseId = {
+  const objProductId = {
     productId: id,
   };
   const { ok } = await fetch(`${URL_API_SERVER}/cart/moreQuantity`, {
     method: "PUT",
-    body: JSON.stringify(objCourseId),
+    body: JSON.stringify(objProductId),
     headers: {
       "Content-Type": "application/json",
     },
@@ -132,7 +178,6 @@ const lessProduct = async (id, quantity) => {
     }
   }
 };
-
 const removeProductToCart = async (id) => {
   try {
     const result = await Swal.fire({
@@ -145,12 +190,12 @@ const removeProductToCart = async (id) => {
     });
 
     if (result.isConfirmed) {
-      const objCourseId = {
+      const objProductId = {
         productId: id,
       };
       const { ok } = await fetch(`${URL_API_SERVER}/cart/removeProduct`, {
         method: "DELETE",
-        body: JSON.stringify(objCourseId),
+        body: JSON.stringify(objProductId),
         headers: {
           "Content-Type": "application/json",
         },

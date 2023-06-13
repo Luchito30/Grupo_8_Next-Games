@@ -7,12 +7,14 @@ const containerProductCard = $('#container-products-card');
 const userId = document.body.getAttribute("data-userId");
 
 const URL_API_SERVER = "http://localhost:3000/api";
-
 let pageActive = 1;
-const apiGetProduct = "http://localhost:3000/api/products";
+const apiGetProduct = "http://localhost:3000/api/products/subcategories";
+
+const path = window.location.pathname;
+const subcategoryId = path.match(/\/products\/subcategory\/(\d+)/)[1];
 
 const getProduct = ({ page = 1, limit = 6 } = {}) =>
-    fetch(`${apiGetProduct}?page=${page}&limit=${limit}`).then((res) =>
+  fetch(`${apiGetProduct}/${subcategoryId}?page=${page}&limit=${limit}`).then((res) =>
     res.json()
   );
 
@@ -54,7 +56,7 @@ const paintProducts = (products) => {
                   </div>
                 </div>
             </div>
-            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 ${usersFavorites.some(({id}) => id === +userId) ? "fas" : "far"} fa-star" style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(${id},event)"></i>
+            <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 far fa-star" style="top:33px;right:5px;cursor:pointer" onclick="toggleFavorite(${id},event)"></i>
        </div >
        
    </article >
@@ -66,7 +68,7 @@ const paintProducts = (products) => {
 
  const getPage = async (page) => {
     pageActive = page;
-    const { data } = await getProduct({ page, limit: selectLimit.value });
+    const { data } = await getProduct({ page, limit: selectLimit.value});
     visualImpact(data);
   };
 

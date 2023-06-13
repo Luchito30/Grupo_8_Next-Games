@@ -11,3 +11,8 @@ window.addEventListener("scroll", function () {
     const carritofixed= document.querySelector("#carritof");
     carritofixed.classList.toggle("carrito__scroll", window.scrollY > 1);
 });
+
+window.addEventListener("scroll", function () {
+    const hamburgerfixed= document.querySelector("#hamburgernav");
+    hamburgerfixed.classList.toggle("header__fixed--hamburger", window.scrollY > 1);
+});

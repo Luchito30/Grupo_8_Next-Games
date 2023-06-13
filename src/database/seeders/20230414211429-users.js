@@ -14,7 +14,7 @@ module.exports = {
           firstName: "admin",
           LastName: "nextgames",
           email: "nextventa@nextgames.com.ar",
-          password: bcryptjs.hashSync('Juga_primero1', 12),
+          password: bcryptjs.hashSync('Juga_prim1', 12),
           userName: "nextgamesAdmin",
           image: "admin.jpg",
           rolId: 1,

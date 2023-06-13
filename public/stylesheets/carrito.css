@@ -1,373 +1,194 @@
-.header-2 {
-    background-color: var(--fondo1VioletaO);
-    border: 1px solid white;
-    border-radius: 5px;
-    font-family: var(--FontSubtitulo);
-    width: 100%;
-    height: 70px;
+.my-5 {
+       
+    background-color: #4439AA;
 }
 
-.web-segura {
+
+#body-carrito{
+    width: 330px;
+   
+}
+#name-carrito{
     color: white;
-    display: flex;
-    justify-content: space-between;
 }
-
-.venta-telefonica {
-    display: inline-block;
-    margin: 15px 10px;
+#precio-carrito{
+    color: white;
+    font-family: 'Inter',sans-serif;
 }
-
-.venta-telefonica h3 {
-    font-size: 16px;
+ #cantidad-carrito{
+    position: relative;
+    top: 10px;
+    height: 35px;
+    border-radius: 20px;
+ }
+ #ver-mas-carrito{
+    color: white;
+    background-color: #7110bd;
+ }
+ #check-out{
+    position: absolute;
+    right: 185px;
+    width: 300px;
+ }
+ #total-carrito{
+    color: white;
+    font-family: 'Inter',sans-serif;
+ }
+ #remove-product-icon-carrito
+ {
+    top: -158px;
+    right: -94px;
 }
-
-.venta-telefonica h5 {
-    font-size: 8px;
-    font-weight: 400;
-}
-
-.sitio-seguro {
-    display: inline-block;
-    margin: auto 10px;
-}
-
-.sitio-seguro h3 {
-    font-size: 16px;
-}
-
-
-.mi-carrito {
-    font-family: var(--FontTitulo);
-    color: var(--letrasTitulos);
-    margin: 20px 10px;
-}
-
-.descripcion-carrito {
-    background-color: var(--fondo1VioletaO);
-    margin: 20px 10px;
-    max-width: 768px;
-    border: 1px solid var(--letrasTitulos);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgb(224, 97, 243, 0.87);
-}
-
-.descripcion {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.product {
-    width: 20%;
-    text-align: center;
-    margin: auto;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.cost {
-    width: 20%;
-    text-align: center;
-    margin: auto;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.price {
-    width: 20%;
-    text-align: center;
-    margin: auto;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.quantity {
-    width: 20%;
-    text-align: center;
-    margin: auto;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.cruz {
-    border: 1px solid white;
-    border-radius: 50%;
-    width: 15px;
-    padding: 2px;
-    background-color: var(--letrasSubtitulos1);
-    margin-bottom: 5px;
-}
-
-.cruz:hover {
-    background-color: var(--letrasSubtitulos2);
-    transition: all 0.3s;
-}
-
-.cruz p {
-    color: black;
-}
-
-.detalle-carrito {
-    display: flex;
-    justify-content: space-between;
-}
-
-.detalle-carrito img {
-    width: 40%;
-    height: 55px;
-}
-
-.detalle-carrito .producto {
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-    text-align: center;
-    display: inline-block;
-    width: 50%;
-}
-
-.imagen-detalle {
-    display: inline-block;
-    width: 20%;
-    margin: auto;
-}
-
-.precio {
-    width: 20%;
-    text-align: center;
-    margin: auto;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.unidad {
-    width: 20%;
-    text-align: center;
-    margin: auto;
-}
-
-.unidad button {
-    border: 1px solid white;
-    border-radius: 2px;
-    width: 15px;
-    padding: 2px;
-    background-color: var(--letrasSubtitulos1);
-}
-
-.unidad button:hover {
-    background-color: var(--letrasSubtitulos2);
-    transition: all 0.3s;
-}
-
-.unidad button p {
-    color: black;
-}
-
-.total {
-    width: 20%;
-    margin: auto;
-    text-align: center;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.resumen-carrito {
-    background-color: var(--fondo1VioletaO);
-    margin: auto;
-    margin-bottom: 20px;
-    border: 1px solid var(--letrasTitulos);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0px 0px 10px rgb(224, 97, 243, 0.87);
-    display: flex;
-    flex-direction: column;
-    max-width: 484px;
-    width: 80%;
-}
-
-.resume-cost {
-    display: flex;
-    justify-content: space-between;
-}
-
-.resume-cost-total {
-    text-align: left;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.resume-cost-total1 {
-    text-align: right;
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-}
-
-.resumen-carrito h4 {
-    color: var(--letrasSubtitulos1);
-    font-family: var(--FontSubtitulo);
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.boton1 {
-    background-color: var(--fondo1VioletaO);
-    border: 1px solid white;
-    border-radius: 5px;
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasTitulos);
-    font-size: 12px;
-    width: 70%;
-    height: 50px;
-    margin: auto;
-    margin-bottom: 20px;
-}
-
-.boton1:hover {
-    background-color: var(--letrasSubtitulos2);
-}
-
-.envio-domicilio {
-    display: inline-block;
-    text-align: right;
-}
-
-.retiro-tienda {
-    display: inline-block;
-}
-
-.despacho {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.boton2 {
-    background-color: var(--fondo1VioletaO);
-    border: 1px solid white;
-    border-radius: 5px;
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasTitulos);
-    font-size: 12px;
-    width: 50%;
-    height: 29px;
-    margin: 0px 25%;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
-.boton2:hover {
-    background-color: var(--letrasSubtitulos2);
-}
-
-.boton3 {
-    background-color: var(--letrasSubtitulos2);
-    border: 1px solid white;
-    border-radius: 5px;
-    font-family: var(--FontSubtitulo);
-    color: var(--letrasTitulos);
-    padding: 5px;
-    width: 50%;
-    height: 25px;
-    margin: 0px 25%;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.boton3:hover {
-    background-color: var(--fondo1VioletaO);
+#image-carrito{
+    position: relative;
+    left: 20px;
 }
 
 
 /* Tablet */
 @media(min-width: 485px) {
-    .resumen-carrito {
-        display: inline-block;
-        width: 100%;
-        margin: 0px 20px 20px 0px;
+    .my-5 {
+ background-color: #4439AA;
     }
-
-    .despacho {
-        display: inline-block;
-        margin: 20px;
+    
+    #body-carrito{
+        width: 277px;
     }
-
-    .envio-domicilio {
-        text-align: center;
+    #name-carrito{
+        color: white;
+    position: relative;
+    left: -16px;
+    font-size: 11px;
+        
     }
-
-    .retiro-tienda {
-        text-align: center;
-        margin-top: 15px;
+    #precio-carrito{
+        color: white;
+        font-family: 'Inter',sans-serif;
+        font-size: 15px;
     }
-
-    .resumen-despacho {
-        display: flex;
-        justify-content: space-evenly;
+    #less-cantidad{
+        width: 15px;
+        height: 38px;
+        position: relative;
+        left: -22px;
     }
-
-    .boton2 {
-        height: 32px;
+    #more-cantidad{
+        width: 15px;
+        height: 38px;
+        margin-right: 22px;
+        position: relative;
+        left: 24px;
     }
-
-    .boton3 {
-        height: 32px;
-    }
-
-    .medio-pago h5 {
-        font-size: 14px;
-    }
-
-    .fin-compra h5 {
-        font-size: 14px;
-    }
+     #cantidad-carrito{
+        position: absolute;
+    top: 63px;
+    left: 27px;
+    height: 31px;
+    width: 48px !important;
+     }
+     #ver-mas-carrito{
+      color: white;
+    background-color: #7110bd;
+    width: 42px;
+    border: none;
+    font-size: 8px;
+    height: 31px;
+    
 }
+#total-carrito{
+    position: relative;
+    right: 10px;
+    color: white;
+    font-family: 'Inter',sans-serif;
+    font-size: 20px !important;
+ }
+
+ #check-out{
+    position: absolute;
+    right: -61px;
+    width: 159px;
+ }
+
+ #remove-product-icon-carrito
+ {
+    top: -163px;
+    right: -80px;
+}
+ }
+ 
+     
+    
+    
+    
+
+
+
 
 /* Desktop */
 @media(min-width: 769px) {
-    .descripcion-carrito {
-        width: 52%;
-        float: left;
+    .my-5 {
+        
+        background-color: #4439AA;
     }
-
-    .resumen-carrito {
-        width: 130%;
-        float: left;
-        margin: 20px 0px;
+    #remove-product-icon-carrito
+    {
+        top:-8px;
+        right:8px;
     }
-
-    .envio-domicilio {
-        width: 65%;
-        float: left;
-        height: 40px;
+    
+    #body-carrito{
+        position: relative;
+        left: -114px;
+        width: 484px;
     }
-
-    .retiro-tienda {
-        width: 65%;
-        float: left;
+    #name-carrito{
+        color: white;
     }
-
-    .descripcion-resumen {
-        width: 100%;
+    #precio-carrito{
+        color: white;
+        font-family: 'Inter',sans-serif;
     }
-
-    .despacho {
-        margin: 20px 0px;
-        padding: 0px 5px 10px 75px;
-    }
-
-    .boton2 {
+     #cantidad-carrito{
+        position: relative;
+        width: 72px !important;
+        left: 2px;
+        top: 10px;
         height: 35px;
-    }
-
-    .boton3 {
-        height: 35px;
-    }
-
-    .medio-pago h5 {
-        font-size: 16px;
-    }
-
-    .fin-compra h5 {
-        font-size: 16px;
-    }
+        border-radius: 20px;
+     }
+     #ver-mas-carrito{
+        color: white;
+    font-size: 15px;
+    width: 87px;
+    height: 35px;
+    background-color: #7110bd;
 }
+       
+
+#check-out{
+    width: 250px;
+    position: absolute;
+    right: 151px;
+ }
+ #total-carrito{
+    color: white;
+    font-family: 'Inter',sans-serif;
+ }
+ #less-cantidad{
+     height: 38px;
+    width: 42px;
+    position: relative;
+    left: -7px;
+}
+#more-cantidad{
+    width: 42px;
+    height: 38px;
+    margin-right: 22px;
+    position: relative;
+    left: 7px;
+}
+
+     }
+    
+    
+    

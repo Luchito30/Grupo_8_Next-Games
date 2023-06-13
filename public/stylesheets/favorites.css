@@ -1,0 +1,52 @@
+.favorite--containerstilos{
+    margin-bottom: 50px;
+}
+
+.favorite--card{
+    --bs-card-bg: var(--bs-body-color);
+    --bs-card-spacer-x: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.favorite--titulo{
+    color: white
+}
+
+.favorite--boton{
+    --bs-btn-border-color: white;
+    --bs-btn-hover-border-color: dodgerblue;
+    --bs-btn-border-width: 2px;
+    --bs-btn-color: white;
+}
+
+.favorites--img{
+    width: 180px;
+    height: 120px;
+    object-fit: contain;
+    background-color: white;
+    margin-right: 15px;
+}
+
+.favorite--descriptionbox{
+    width: 40%;
+}
+
+@media(min-width:991px){
+    .favorite--main{
+        max-width: 991px;
+    }
+
+    .favorite--containerstilos {
+        width: 100%;
+    }
+
+    .favorite--card {
+        width: 48%;
+        margin: 0 auto;
+        margin: 0 auto 15px;
+    }
+
+    .favorite--descriptionbox {
+        width: 100%;
+    }
+}

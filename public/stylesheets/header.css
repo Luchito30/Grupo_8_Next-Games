@@ -8,6 +8,13 @@ a {
     background-image: url(/images/1600_Featured_Games.jpg);
 }
 
+.header__fixed--hamburger{
+    position: fixed;
+    width: 100%;
+    background-image: url(/images/1600_Featured_Games.jpg);
+    top: 0;
+}
+
 .header__inicio {
     display: flex;
     justify-content: space-between;
@@ -385,7 +392,7 @@ a {
     border-bottom: 12px solid #023877;
     position: absolute;
     top: -12px;
-    left: 20px;
+    left: 60px;
 }
 
 .header__nav ul li ul li a {
@@ -429,9 +436,30 @@ a {
     height: 35px;
     top: 17px;
 }
+.header__nav-profile{
+    top: 117px !important;
+}
+.header__nav--profilestatick{
+    left: 40px !important;
+    flex-direction: column !important;
+    width: 200px !important;
+}
+.header__nav--profilestatick::before{
+    left: 65px !important;
+}
+.header__nav--productoSub{
+    width: 100%;
+}
+.header__nav--favorites{
+    margin-top: -15px !important;
+}
 
 
 @media (min-width: 658px) {
+    .header__fixed--hamburger{
+        display: none;
+    }
+
     .header__hamburgersa__menu {
         display: none;
     }
@@ -528,8 +556,6 @@ a {
         position: relative;
         bottom: 7px;
     }
-    
-
 }
 
 @media(min-width: 769px) {

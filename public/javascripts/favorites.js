@@ -16,31 +16,29 @@ const paintProducts = ({ products }) => {
 
   if (products.length) {
     products.forEach(({ name, discount, price, id, image }) => {
-      console.log(image)
       const priceWithDiscount = discount
         ? price - (price * discount) / 100
         : price;
       const priceFormatARG = convertFormatPeso(priceWithDiscount);
 
       const template = `
-      <div class="card col-12 col-lg-6 position-relative">
-              <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-star" style="top:15px;right:15px;cursor:pointer" onclick="toggleFavorite(${id})"></i>
+      <div class="card col-12 col-lg-6 position-relative favorite--card">
+      <i class="text-primary p-0 border-0 bg-transparent position-absolute fs-5 fas fa-star" style="top:15px;right:15px;cursor:pointer" onclick="toggleFavorite(${id}, this)"></i>
         <div class="card-body d-flex gap-2 align-items-center justify-content-evenly">
           
-          <img style="width:180px;height:120px" style="object-fit:contain;" src="/images/products/${image}" alt="">
-          <div class="">
-
-            <h5 class="card-name">${name}</h5>
-            <p class="card-text text-success fw-bold">${priceFormatARG} ${
-        discount ? `<span class="text-danger mx-3">${discount}% OFF</span>` : ""
-      }</p>
+              <img class="favorites--img" src="/images/products/${image}" alt="">
+          <div class="favorite--descriptionbox">
+            <div class="card-name favorite--titulo">
+               <h5>${name}</h5>
+            </div>
+            <p class="card-text text-success fw-bold">${priceFormatARG} ${discount ? `<span class="text-danger mx-3">${discount}% OFF</span>` : ""}</p>
             <p class="d-flex align-items-center gap-2">
-              <a href="/products/detalle-producto/${id}" class="btn btn-outline-dark">Ver más</a>
+              <a href="/products/detalle-producto/${id}" class="btn btn-outline favorite--boton">Ver más</a>
               <button class="btn btn-success" onclick="addProductToCart(${id})">Agregar Carrito</button>
             </p>
           </div>
         </div>
-        </div>
+      </div>
       `;
 
       cardsContainer.innerHTML += template;
@@ -85,27 +83,52 @@ const addProductToCart = async (id) => {
   }
 };
 
-const toggleFavorite = async (id) => {
+const toggleFavorite = async (id, element) => {
   try {
    
-      const objProductId = {
+    if (element.classList.contains("fas")) {
+      const result = await Swal.fire({
+        title: "¿Quieres quitar el producto de favoritos?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonColor: "#ff1010",
+        cancelButtonColor: '#3005df',
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Quitar",
+      });
+      if(!result.isConfirmed){
+        return
+      } 
+    }
+
+    
+    const objProductId = {
         productId: id,
       };
-      const { ok } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
-        method: "POST",
-        body: JSON.stringify(objProductId),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }).then((res) => res.json());
+     const {
+    ok,
+    data: { isRemove },
+  } = await fetch(`${URL_API_SERVER}/favorites/toggle`, {
+    method: "POST",
+    body: JSON.stringify(objProductId),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((res) =>  res.json());
 
-      if (ok) {
-        const { ok, data } = await getFavorites();
-        console.log({ ok, data })
-        paintProducts({ products: data });
+  if (!isRemove) {
+    element.classList.add("fas");
+    element.classList.remove("far");
+  } else {
+    element.classList.add("far");
+    element.classList.remove("fas");
+      // Remover el elemento de la lista de favoritos
+      const card = element.closest(".favorite--card");
+      if (card) {
+        card.remove();
       }
-
-  } catch (error) {
-    console.log(error);
   }
+} catch (error) {
+  console.log(error);
+}
 };

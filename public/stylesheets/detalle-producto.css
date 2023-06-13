@@ -185,22 +185,23 @@ h3 {
 }
 
 .descripciones {
-
     padding: 30px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 100%;
 }
 
 .card-btn {
     font-size: 10px;
-    width: 110px;
+    width: 181px;
     border: none;
     border-radius: 10px;
     transition: all 1s;
+    line-height: 1.5;
     color: white;
     background-color: var(--swiper-theme-color);
-    height: 30px;
+    height: 46px;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -256,6 +257,24 @@ h3 {
     align-items: center;
 }
 
+.btn--resta{
+    height: 35px;
+    width: 50px;
+    font-size: 20px;
+}
+
+.quantity--output{
+    width: 55px !important;
+    display: inline-block;
+    height: 35px !important;
+    margin-bottom: 0 !important;
+    position: relative;
+    bottom: 2px;
+    padding: 7px 15px 0px 0px;
+    border-radius: 10px !important;
+    text-align: center;
+}
+
 .detalle__precio--original {
     color: white;
     text-decoration: line-through;
@@ -305,6 +324,7 @@ h3 {
     border: 1px solid white;
     border-radius: 15px;
     filter: drop-shadow(3px 4px 3px black);
+    padding-left: 10px;
 }
 
 .box-metodos {
@@ -318,6 +338,22 @@ h3 {
 
 .envios__camion{
     display: none;
+}
+
+.card-btn--cuotas{
+    position: relative;
+    bottom: 51px;
+    margin-right: 15px;
+    font-size: 10px;
+    width: 142px;
+    border: none;
+    border-radius: 10px;
+    transition: all 1s;
+    line-height: 1.5;
+    color: white;
+    background-color: var(--swiper-theme-color);
+    height: 32px;
+    font-family: 'Press Start 2P', cursive;
 }
 
 @media (min-width: 769px) {
@@ -463,30 +499,29 @@ h3 {
         top: 5px;
         position: relative;
         height: 32px;
-        gap: 120px;
-    }
-
-    .card-btn {
-        top: 5px;
-        position: relative;
-        width: 121px;
-        color: #fff;
-        border: none;
-        border-radius: 10px;
-        transition: all 1s;
-        height: 32px;
+        gap: 60px;
     }
 
     .envios__camion{
-        position: absolute;
+        position: relative;
         width: 200px;
         height: 200px;
         display: inline-block;
-        bottom: -15px; 
+        bottom: 58px;
     }
 
     .detalle--boxenvio{
         margin-top: 10px;
+        position: relative;
+    }
+
+    .detalle__select--pagos-op {
+        width: 90%;
+    }
+
+    .detalle__select--pagos {
+        margin-bottom: 25px;
+        margin-top: 30px;
     }
 }
 
@@ -511,10 +546,13 @@ h3 {
 
     .descripcion-detalle {
         width: 45%;
+        height: 100%;
     }
 
     .detalle-imagenes {
         width: 100%;
+        position: relative;
+        bottom: 24px;
     }
 
     .imagenes {
@@ -561,8 +599,58 @@ h3 {
         margin-bottom: 50px;
         filter: drop-shadow(0px 0px 3px white);
     }
-
-    #datalle__ocult1 {
-        display: none;
+    
+    .box-metodos {
+        margin-top: 30px;
     }
+
+    .detalle-carritodecompras {
+        width: 100%;
+        position: relative;
+        bottom: 68px;
+        height: 130px;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+
+    .envios__camion {
+        bottom: 58px;
+    }
+
+    .card-btn {
+        position: relative;
+        right: 10px;
+        top: -40px;
+    }
+
+    .detalle__add-card {
+        gap: 52px;
+        top: -28px;
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .detalle--boxcompras{
+        margin-left: 95px;
+    }
+
+    .detalle__add-cardquantity{
+        position: relative;
+        right: 10px;
+    }
+
+    .detalle__select--pagos {
+        margin-bottom: 25px;
+        margin-top: 15px;
+    }
+
+    .detalle__select--pagos-op {
+        width: 100%;
+    }
+
+    .card-btn--cuotas{
+        bottom: 10px;
+    }
+    
 }

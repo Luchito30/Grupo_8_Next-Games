@@ -39,6 +39,9 @@
 .porfolio--datos input{
     width: 100%;
 }
+.porfolio--datos input::placeholder {
+    color: darkgrey;
+}
 .profile--domicilio input{
     width: 100%;
 }

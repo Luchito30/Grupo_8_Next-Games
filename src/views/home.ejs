@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-
+     <!-- Bootstrap-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 <%- include('./partials/head.ejs') %>
 
-    <body class="body__home">
+    <body class="body__home" data-userId="<%= locals.userLogin?.id %>">
         <%- include('./partials/loader.ejs') %>
-            <%- include('./partials/header.ejs') %>
+        <div class="header__boostrap">
+            <%- include('./partials/header') %>
+        </div>
                 <main>
 
                     <%- include('./partials/bannerPrincipal.ejs') %>
@@ -16,9 +20,9 @@
                                 <h2>ULTIMAS OFERTAS</h2><a href="/products/categorias/3"> ver más</a>
                             </div>
                             <section class="home__main__section">
-                                <% inSale.forEach(({id,image,price,discount,name, state})=> { %>
+                                <% inSale.forEach(({id,image,price,discount,name, state,isFavorite})=> { %>
                                     <%- include('./partials/product',{ id, image, price, discount, name,
-                                        state,toThousand }) %>
+                                        state,toThousand,isFavorite }) %>
                                         <% }) %>
                             </section>
 
@@ -35,8 +39,8 @@
                                     <!-- Additional required wrapper -->
                                     <div class="swiper-wrapper">
                                         <!-- Slides -->
-                                        <% juegos.forEach(({id,image,price,discount,name,state})=> { %>
-                                            <%- include('./partials/carrusel',{ id, image, price, discount, name, state
+                                        <% juegos.forEach(({id,image,price,discount,name,state,isFavorite})=> { %>
+                                            <%- include('./partials/carrusel',{ id, image, price, discount, name, state,isFavorite
                                                 }) %>
                                                 <% }) %>
                                     </div>
@@ -61,9 +65,9 @@
                                         <!-- Additional required wrapper -->
                                         <div class="swiper-wrapper">
                                             <!-- Slides -->
-                                            <% computacion.forEach(({id,image,price,discount,name,state})=> { %>
+                                            <% computacion.forEach(({id,image,price,discount,name,state,isFavorite})=> { %>
                                                 <%- include('./partials/carrusel',{ id, image, price, discount, name,
-                                                    state }) %>
+                                                    state,isFavorite }) %>
                                                     <% }) %>
                                         </div>
                                         <!-- If we need navigation buttons -->
@@ -84,9 +88,9 @@
                                         <!-- Additional required wrapper -->
                                         <div class="swiper-wrapper">
                                             <!-- Slides -->
-                                            <% ingresos.forEach(({id,image,price,discount,name,state})=> { %>
+                                            <% ingresos.forEach(({id,image,price,discount,name,state,isFavorite})=> { %>
                                                 <%- include('./partials/carrusel',{ id, image, price, discount, name,
-                                                    state }) %>
+                                                    state,isFavorite }) %>
                                                     <% }) %>
                                         </div>
                                         <!-- If we need navigation buttons -->
@@ -112,9 +116,9 @@
                                             <!-- Additional required wrapper -->
                                             <div class="swiper-wrapper">
                                                 <!-- Slides -->
-                                                <% tarjetas.forEach(({id,image,price,discount,name,state})=> { %>
+                                                <% tarjetas.forEach(({id,image,price,discount,name,state,isFavorite})=> { %>
                                                     <%- include('./partials/carrusel',{ id, image, price, discount,
-                                                        name, state }) %>
+                                                        name, state,isFavorite }) %>
                                                         <% }) %>
                                             </div>
                                             <!-- If we need navigation buttons -->
@@ -135,9 +139,9 @@
                                             <!-- Additional required wrapper -->
                                             <div class="swiper-wrapper">
                                                 <!-- Slides -->
-                                                <% consolas.forEach(({id,image,price,discount,name,state})=> { %>
+                                                <% consolas.forEach(({id,image,price,discount,name,state,isFavorite})=> { %>
                                                     <%- include('./partials/carrusel',{ id, image, price, discount,
-                                                        name, state }) %>
+                                                        name, state,isFavorite }) %>
                                                         <% }) %>
                                             </div>
                                             <!-- If we need navigation buttons -->
@@ -154,18 +158,27 @@
                     <!--whatsapp-->
                     <%- include('./partials/whatsApp.ejs') %>
                         <!-- footer -->
-                        <%- include('./partials/footer.ejs') %>
-
+                        <div id="profile--footer">
+                            <%- include('./partials/footer.ejs') %>
+                          </div>
+              
                             <!--swiper  -->
                             <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
+                            
                             <!-- slider -->
                             <script src="/javascripts/notebook.js"></script>
 
                             <!-- fixed -->
                             <script src="/javascripts/fixed.js"></script>
-                            <script src="/javascripts/favorites.js"></script>
+                            <script src="/javascripts/favoritesHome.js"></script>
                             <script src="/javascripts/loader.js"></script>
+                            <script src="/javascripts/addproductToCardHome.js"></script>
+
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                            crossorigin="anonymous"></script>
+
     </body>
 
 </html>

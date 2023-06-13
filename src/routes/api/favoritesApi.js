@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { toggleProductFavorite, getFavorites } = require('../../controllers/api/favoritesApiController');
+const { getFavorites,toggleProductFavorite  } = require('../../controllers/api/favoritesApiController');
 
 /* /api/favorites */
 
